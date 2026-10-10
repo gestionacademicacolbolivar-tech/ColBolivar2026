@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Documentos institucionales · Colegio Integrado Simón Bolívar</title>
+<style>
+  :root{
+    --azul:#16365f; --azul-claro:#e8eef6; --papel:#fbfcfe; --texto:#1c2430;
+    --suave:#5a6678; --linea:#d5dde8; --acento:#b8872b;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--papel);color:var(--texto);
+    font-family:"Segoe UI",system-ui,-apple-system,Roboto,sans-serif;line-height:1.5}
+  header{background:var(--azul);color:#fff;padding:2.2rem 1.25rem 2rem;border-bottom:5px solid var(--acento)}
+  .wrap{max-width:820px;margin:0 auto}
+  header h1{margin:0 0 .35rem;font-family:Georgia,"Times New Roman",serif;font-weight:700;
+    font-size:clamp(1.6rem,4.5vw,2.3rem);line-height:1.2}
+  header p{margin:0;color:#c9d6e8;font-size:1rem}
+  main{padding:1.5rem 1.25rem 3rem}
+  .buscar{width:100%;padding:.8rem 1rem;font-size:1rem;border:1.5px solid var(--linea);
+    border-radius:8px;background:#fff;color:var(--texto)}
+  .buscar:focus{outline:3px solid #9db8dd;border-color:var(--azul)}
+  .conteo{margin:.8rem 0 1rem;color:var(--suave);font-size:.92rem}
+  ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--linea)}
+  li{border-bottom:1px solid var(--linea)}
+  a.doc{display:flex;align-items:center;gap:.9rem;padding:1rem .4rem;text-decoration:none;color:var(--texto)}
+  a.doc:hover,a.doc:focus-visible{background:var(--azul-claro);outline:none}
+  .icono{flex:none;width:2.4rem;height:2.9rem;border-radius:4px;background:var(--azul);color:#fff;
+    font-size:.7rem;font-weight:700;display:flex;align-items:flex-end;justify-content:center;
+    padding-bottom:.3rem;border-top:4px solid var(--acento)}
+  .nombre{flex:1;font-weight:600;overflow-wrap:anywhere}
+  .abrir{flex:none;color:var(--azul);font-size:.9rem;font-weight:600}
+  .aviso{padding:1.2rem;background:#fff6e0;border:1px solid #ecd49a;border-radius:8px}
+  footer{max-width:820px;margin:0 auto;padding:0 1.25rem 2rem;color:var(--suave);font-size:.85rem}
+  @media (max-width:520px){.abrir{display:none}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>Documentos institucionales</h1>
+    <p>Colegio Integrado Simón Bolívar · Cúcuta</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <input id="q" class="buscar" type="search" placeholder="Buscar un documento…" aria-label="Buscar un documento" autocomplete="off">
+  <div id="conteo" class="conteo">Cargando documentos…</div>
+  <ul id="lista"></ul>
+</main>
+
+<footer>Los documentos se actualizan solos cuando se sube un archivo nuevo al repositorio.</footer>
+
+<script>
+  // Datos del repositorio (ya configurados para este sitio)
+  const USUARIO = "gestionacademicacolbolivar-tech";
+  const REPO    = "ColBolivar2026";
+  const RAMA    = "main";
+
+  // Tipos de archivo que se muestran
+  const EXTENSIONES = ["pdf","doc","docx","xls","xlsx","ppt","pptx","html"];
+
+  const lista  = document.getElementById("lista");
+  const conteo = document.getElementById("conteo");
+  const buscar = document.getElementById("q");
+  let docs = [];
+
+  function limpiarNombre(archivo){
+    return archivo.replace(/\.[^.]+$/, "").replace(/_/g," ").replace(/\s+/g," ").trim();
+  }
+
+  function pintar(){
+    const t = buscar.value.trim().toLowerCase();
+    const visibles = docs.filter(d => d.nombre.toLowerCase().includes(t));
+    lista.innerHTML = "";
+    visibles.forEach(d => {
+      const li = document.createElement("li");
+      const a  = document.createElement("a");
+      a.className = "doc";
+      a.href = encodeURIComponent(d.archivo);
+      a.target = "_blank";
+      a.rel = "noopener";
+      a.innerHTML = '<span class="icono"></span><span class="nombre"></span><span class="abrir">Abrir</span>';
+      a.querySelector(".icono").textContent = d.ext.toUpperCase().slice(0,4);
+      a.querySelector(".nombre").textContent = d.nombre;
+      li.appendChild(a);
+      lista.appendChild(li);
+    });
+    conteo.textContent = visibles.length === 0
+      ? "No hay documentos que coincidan con la búsqueda."
+      : visibles.length + (visibles.length === 1 ? " documento" : " documentos");
+  }
+
+  async function cargar(){
+    try{
+      const url = `https://api.github.com/repos/${USUARIO}/${REPO}/contents/?ref=${RAMA}`;
+      const r = await fetch(url);
+      if(!r.ok) throw new Error("HTTP " + r.status);
+      const archivos = await r.json();
+      docs = archivos
+        .filter(f => f.type === "file" && f.name.toLowerCase() !== "index.html")
+        .map(f => ({archivo:f.name, ext:(f.name.split(".").pop()||"").toLowerCase(), nombre:limpiarNombre(f.name)}))
+        .filter(d => EXTENSIONES.includes(d.ext))
+        .sort((a,b) => a.nombre.localeCompare(b.nombre,"es",{numeric:true}));
+      pintar();
+    }catch(e){
+      conteo.innerHTML = '<div class="aviso">No se pudo cargar la lista de documentos. Recarga la página en unos minutos.</div>';
+    }
+  }
+
+  buscar.addEventListener("input", pintar);
+  cargar();
+</script>
+</body>
+</html>
