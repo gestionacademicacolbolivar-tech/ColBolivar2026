@@ -1,1 +1,18 @@
-{"nombre":"ColBolívar Radio","musica":[],"especiales":[]}
+{
+ "nombre": "ColBolívar Radio",
+ "musica": [
+  {
+   "t": "atlasaudio happy cheerful 606260",
+   "a": "GROZA — hip-hop, trap & pop beats. Clean. Modern. For creators.  Donate: https://buymeacoffee.com/andriigroza  Broadcast info: Composer: Andrii Hroza BMI IPI Number: 1336772239",
+   "f": "audio/atlasaudio-happy-cheerful-606260.mp3",
+   "d": 98
+  },
+  {
+   "t": "gr0za upbeat upbeat music 596488",
+   "a": "GROZA — hip-hop, trap & pop beats. Clean. Modern. For creators.  Donate: https://buymeacoffee.com/andriigroza  Broadcast info: Composer: Andrii Hroza BMI IPI Number: 1336772239",
+   "f": "audio/gr0za-upbeat-upbeat-music-596488.mp3",
+   "d": 121
+  }
+ ],
+ "especiales": []
+}
