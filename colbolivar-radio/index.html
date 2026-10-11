@@ -1,0 +1,62 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ColBolívar Radio</title><meta name="theme-color" content="#12306e">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;800&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="radio.css">
+<style>
+.pl{display:grid;grid-template-columns:150px 1fr;gap:22px;align-items:center}
+.disc{width:150px;height:150px;border-radius:50%;background:conic-gradient(var(--g),var(--n),var(--o),var(--r),var(--g));display:grid;place-items:center;box-shadow:0 6px 18px #0003}
+.disc i{width:46px;height:46px;border-radius:50%;background:#fff;display:block}.on .disc{animation:s 6s linear infinite}@keyframes s{to{transform:rotate(1turn)}}
+.tag{display:inline-block;font:800 .75rem Sora;padding:3px 10px;border-radius:99px;background:#e8f3e8;color:var(--gd);margin:8px 0 2px}.tag.pod{background:#fff0d8;color:#8a4b00}
+#t{font-size:clamp(1.2rem,3.4vw,1.8rem);color:var(--n);line-height:1.2}#a{color:var(--mut)}
+.bar{height:10px;background:#dfe9de;border-radius:9px;overflow:hidden;margin:14px 0 4px}.bar b{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--g),var(--o))}
+.eq{display:flex;gap:4px;align-items:flex-end;height:30px;margin-top:10px}.eq i{width:6px;background:var(--g);border-radius:3px;height:6px}
+.on .eq i{animation:e .9s ease-in-out infinite}.eq i:nth-child(2n){animation-delay:.2s;background:var(--o)}.eq i:nth-child(3n){animation-delay:.45s;background:var(--r)}.eq i:nth-child(5n){animation-delay:.1s}
+@keyframes e{50%{height:28px}}
+.ctl{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-top:12px}.ctl input{accent-color:var(--g)}
+.nx{margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:14px}.nx .card{padding:14px 18px;border-top-color:var(--g)}.nx h3{font-size:.9rem;color:var(--gd)}
+ul{list-style:none;padding:0}li{padding:5px 0;border-bottom:1px dashed #cfdccf}li b{color:var(--r);font-family:Sora}
+@media(max-width:640px){.pl{grid-template-columns:1fr;text-align:center;justify-items:center}.nx{grid-template-columns:1fr}.ctl,.eq{justify-content:center}}
+</style></head><body>
+<header class="ban"><img class="bd" src="logo-banner.webp" alt="Todos somos ColBolívar" width="1800" height="441"><img class="bm" src="logo-banner-movil.webp" alt="Todos somos ColBolívar" width="1200" height="505"></header>
+<main class="w">
+<div class="tit"><h1>Col<b>Bolívar</b> Radio</h1><p>La emisora de la Institución Educativa Colegio Integrado Simón Bolívar · Cúcuta</p></div>
+<section class="card" id="box"><div class="pl"><div class="disc"><i></i></div><div>
+<span class="live">EN VIVO</span><br><span class="tag" id="k">—</span>
+<h2 id="t">Pulsa «Escuchar» para sintonizar</h2><div id="a"></div>
+<div class="bar"><b id="pg"></b></div><div class="eq"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="ctl"><button class="btn" id="go">▶ Escuchar</button><label>🔊 <input id="vol" type="range" min="0" max="1" step=".05" value=".8"></label></div></div></div></section>
+<div class="nx"><section class="card"><h3>A CONTINUACIÓN</h3><div id="nxt">—</div></section><section class="card"><h3>PROGRAMAS DE HOY</h3><ul id="hoy"><li>Cargando…</li></ul></section></div>
+</main><footer>© 2026 ColBolívar Radio · Música libre de derechos · Cúcuta, Norte de Santander</footer>
+<audio id="au" preload="auto"></audio>
+<script>
+const $=s=>document.getElementById(s),au=$('au'),Z=-5*3600;let P=null,cur='',on=false;
+const pad=n=>String(n).padStart(2,'0'),hm=s=>pad(Math.floor(s/3600))+':'+pad(Math.floor(s%3600/60));
+const now=()=>{const t=Date.now()/1000+Z,d=new Date(t*1000);return{s:t%86400,dia:d.getUTCDay(),f:d.toISOString().slice(0,10)}};
+const tm=h=>{const[a,b]=h.split(':');return a*3600+b*60};
+const hoyOK=(e,n)=>e.fecha?e.fecha===n.f:(!e.dias||!e.dias.length||e.dias.includes(n.dia));
+function que(n){ // qué debe sonar ahora
+  for(const e of P.especiales||[]){if(hoyOK(e,n)){const i=tm(e.h);if(n.s>=i&&n.s<i+e.d)return{x:e,pos:n.s-i,fin:i+e.d,tipo:'pod'}}}
+  const M=P.musica||[],T=M.reduce((a,m)=>a+m.d,0);if(!T)return null;
+  let p=n.s%T,i=0;while(p>=M[i].d){p-=M[i].d;i=(i+1)%M.length}
+  let fin=n.s+(M[i].d-p),prox=M[(i+1)%M.length];
+  const sig=(P.especiales||[]).filter(e=>hoyOK(e,n)&&tm(e.h)>n.s).sort((a,b)=>tm(a.h)-tm(b.h))[0];
+  if(sig&&tm(sig.h)<fin){fin=tm(sig.h);prox=sig}
+  return{x:M[i],pos:p,fin,tipo:'mus',prox};
+}
+function tick(){
+  if(!P)return;const n=now(),q=que(n);
+  if(!q){$('t').textContent='Aún no hay música cargada';$('a').textContent='';$('k').textContent='—';return}
+  $('t').textContent=q.x.t;$('a').textContent=q.x.a||'';$('k').textContent=q.tipo==='pod'?'🎙️ PODCAST':'🎵 MÚSICA';$('k').className='tag '+q.tipo;
+  $('pg').style.width=Math.min(100,q.pos/q.x.d*100)+'%';
+  if(q.tipo==='pod')$('nxt').textContent='🎵 Vuelve la música a las '+hm(q.fin);
+  else $('nxt').innerHTML=q.prox?(q.prox.h?'🎙️ <b>'+q.prox.h+'</b> '+q.prox.t:'🎵 '+q.prox.t+(q.prox.a?' · '+q.prox.a:'')):'—';
+  if(on){const f=encodeURI(q.x.f);if(cur!==f){cur=f;au.src=f;au.currentTime=q.pos;au.play().catch(()=>{})}
+    else if(Math.abs(au.currentTime-q.pos)>3&&isFinite(q.pos)&&!au.seeking){au.currentTime=q.pos}}
+}
+$('go').onclick=()=>{on=!on;$('box').classList.toggle('on',on);$('go').textContent=on?'⏸ Pausar':'▶ Escuchar';if(on){cur='';tick()}else au.pause()};
+$('vol').oninput=e=>au.volume=e.target.value;au.volume=.8;au.onended=()=>{cur='';tick()};au.onerror=()=>{setTimeout(()=>{cur='';tick()},3000)};
+fetch('programacion.json?'+Date.now()).then(r=>r.json()).then(j=>{P=j;
+  const n=now(),l=(P.especiales||[]).filter(e=>hoyOK(e,n)).sort((a,b)=>tm(a.h)-tm(b.h));
+  $('hoy').innerHTML=l.length?l.map(e=>'<li><b>'+e.h+'</b> '+e.t+'</li>').join(''):'<li>Hoy solo música 🎶</li>';tick();setInterval(tick,1000)})
+ .catch(()=>{$('t').textContent='No se pudo cargar la programación'});
+</script></body></html>

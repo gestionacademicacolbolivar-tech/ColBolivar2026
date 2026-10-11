@@ -1,0 +1,59 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Panel · ColBolívar Radio</title><meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;800&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="radio.css">
+<style>
+.w{max-width:1100px}ol{padding-left:22px}ol li{margin:4px 0}
+.row{display:grid;grid-template-columns:2fr 1.2fr 1fr 1.9fr auto;gap:8px;align-items:center;padding:10px 0;border-bottom:1px dashed #cfdccf}
+.row input,.row select{font:inherit;padding:6px 8px;border:2px solid #cfdccf;border-radius:9px;width:100%;min-width:0}
+.row small{color:var(--mut)}.pod{background:#fff8ec}.dias label{margin-right:5px;font-size:.85rem;white-space:nowrap}
+.hd{font:800 .8rem Sora;color:var(--gd)}.acc{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}
+.mini{border:0;background:#e8f3e8;border-radius:8px;cursor:pointer;padding:5px 8px}
+#msg{font-weight:800;color:var(--gd);min-height:1.5em}.warn{color:var(--r)}
+@media(max-width:820px){.row{grid-template-columns:1fr 1fr}.hd{display:none}}
+</style></head><body>
+<header class="ban"><img class="bd" src="logo-banner.webp" alt="" width="1800" height="441"><img class="bm" src="logo-banner-movil.webp" alt="" width="1200" height="505"></header>
+<main class="w"><div class="tit"><h1>Panel de <b>programación</b></h1><p>Aquí armas la emisora sin tocar código.</p></div>
+<section class="card"><h3>Pasos</h3><ol>
+<li>Pulsa <b>«Agregar audios»</b> y elige los mp3 de tu computador (música libre de derechos o podcasts).</li>
+<li>Escribe el título, marca si es <b>Música</b> (suena todo el día en bucle) o <b>Podcast</b> (suena a una hora fija).</li>
+<li>Para un podcast pon la <b>hora</b> y los <b>días</b> (sin marcar = todos los días) o una <b>fecha</b> exacta.</li>
+<li>Pulsa <b>«Descargar programacion.json»</b>.</li>
+<li>En GitHub sube los mp3 a la carpeta <code>audio/</code> y reemplaza <code>programacion.json</code>. En 1-2 minutos la radio queda actualizada.</li></ol>
+<div class="acc"><label class="btn">＋ Agregar audios<input id="fi" type="file" accept="audio/*" multiple hidden></label>
+<label class="btn w2">📂 Abrir programacion.json<input id="fj" type="file" accept=".json" hidden></label>
+<button class="btn o" id="dl">⬇ Descargar programacion.json</button></div><div id="msg"></div></section>
+<section class="card" style="margin-top:16px;border-top-color:var(--g)"><div class="row hd"><span>TÍTULO / ARTISTA</span><span>TIPO</span><span>HORA · FECHA</span><span>DÍAS</span><span>ACCIONES</span></div><div id="L"><p>Aún no hay audios. Agrega algunos arriba.</p></div><p id="sum" style="margin-top:10px"></p></section></main>
+<footer>Este panel solo genera el archivo; no modifica nada por sí solo.</footer>
+<script>
+const $=s=>document.getElementById(s);let I=[];const D=['L','M','X','J','V','S','D'],dn=[1,2,3,4,5,6,0];
+const mm=s=>Math.floor(s/60)+':'+String(Math.round(s%60)).padStart(2,'0'),say=(t,w)=>{$('msg').innerHTML=w?'<span class="warn">'+t+'</span>':t};
+function draw(){
+  $('L').innerHTML=I.length?'':'<p>Aún no hay audios. Agrega algunos arriba.</p>';
+  I.forEach((x,i)=>{const p=x.tipo==='pod',r=document.createElement('div');r.className='row'+(p?' pod':'');
+    r.innerHTML=`<div><input value="${(x.t||'').replace(/"/g,'&quot;')}" data-k="t" placeholder="Título"><input value="${(x.a||'').replace(/"/g,'&quot;')}" data-k="a" placeholder="Artista / autor" style="margin-top:4px"><small>${x.f} · ${mm(x.d)}</small></div>
+    <select data-k="tipo"><option value="mus"${p?'':' selected'}>🎵 Música</option><option value="pod"${p?' selected':''}>🎙️ Podcast</option></select>
+    <div>${p?`<input type="time" value="${x.h||''}" data-k="h"><input type="date" value="${x.fecha||''}" data-k="fecha" style="margin-top:4px">`:'<small>suena en bucle</small>'}</div>
+    <div class="dias">${p?D.map((d,j)=>`<label><input type="checkbox" style="width:auto" data-d="${dn[j]}"${(x.dias||[]).includes(dn[j])?' checked':''}>${d}</label>`).join(''):''}</div>
+    <div><button class="mini" data-m="u">↑</button><button class="mini" data-m="d">↓</button>${x.file?'<button class="mini" data-m="p">▶</button>':''}<button class="mini" data-m="x">✕</button></div>`;
+    r.querySelectorAll('[data-k]').forEach(e=>e.onchange=()=>{x[e.dataset.k]=e.value;if(e.dataset.k==='tipo')draw();chk()});
+    r.querySelectorAll('[data-d]').forEach(e=>e.onchange=()=>{const d=+e.dataset.d;x.dias=x.dias||[];x.dias=e.checked?[...x.dias,d]:x.dias.filter(v=>v!==d)});
+    r.querySelectorAll('[data-m]').forEach(b=>b.onclick=()=>{const m=b.dataset.m;
+      if(m==='x'){I.splice(i,1)}else if(m==='u'&&i>0){[I[i-1],I[i]]=[I[i],I[i-1]]}else if(m==='d'&&i<I.length-1){[I[i+1],I[i]]=[I[i],I[i+1]]}
+      else if(m==='p'){const a=new Audio(URL.createObjectURL(x.file));a.play();setTimeout(()=>a.pause(),8000);return}draw()});
+    $('L').append(r)});chk()}
+function chk(){const M=I.filter(x=>x.tipo!=='pod'),T=M.reduce((a,x)=>a+x.d,0),P=I.filter(x=>x.tipo==='pod');
+  $('sum').innerHTML='🎵 '+M.length+' canciones ('+mm(T)+' min en bucle) · 🎙️ '+P.length+' podcasts'+(P.some(x=>!x.h)?' <span class="warn">— hay podcasts sin hora</span>':'')+(M.length&&T<1800?' <span class="warn">— conviene tener al menos 30 min de música para que no se repita tanto</span>':'')}
+$('fi').onchange=async e=>{for(const f of e.target.files){const u=URL.createObjectURL(f),a=new Audio(u);
+  await new Promise(r=>{a.onloadedmetadata=r;a.onerror=r});
+  I.push({t:f.name.replace(/\.[^.]+$/,'').replace(/[_-]+/g,' '),a:'',f:'audio/'+f.name,d:Math.round(a.duration)||0,tipo:'mus',h:'',dias:[],fecha:'',file:f})}
+  e.target.value='';draw();say('Listo. Recuerda subir estos mismos archivos a la carpeta audio/ de GitHub.')};
+function load(j){I=[...(j.musica||[]).map(x=>({...x,tipo:'mus'})),...(j.especiales||[]).map(x=>({...x,tipo:'pod'}))];draw()}
+$('fj').onchange=e=>{e.target.files[0].text().then(t=>{load(JSON.parse(t));say('Programación cargada.')})};
+fetch('programacion.json?'+Date.now()).then(r=>r.json()).then(load).catch(()=>{});
+$('dl').onclick=()=>{const bad=I.filter(x=>x.tipo==='pod'&&!x.h);if(bad.length)return say('Pon la hora a: '+bad.map(x=>x.t).join(', '),1);
+  if(I.some(x=>!x.d))return say('Algún audio no se pudo leer (duración 0). Revisa que sea mp3 válido.',1);
+  const c=({t,a,f,d})=>({t,a,f,d});
+  const j={nombre:'ColBolívar Radio',musica:I.filter(x=>x.tipo!=='pod').map(c),especiales:I.filter(x=>x.tipo==='pod').map(x=>({...c(x),h:x.h,dias:x.fecha?[]:(x.dias||[]),fecha:x.fecha||''}))};
+  const b=new Blob([JSON.stringify(j,null,1)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='programacion.json';a.click();say('✅ Descargado. Súbelo a GitHub reemplazando el anterior.')};
+</script></body></html>
