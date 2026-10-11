@@ -3,38 +3,55 @@
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;800&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="radio.css">
 <style>
+.modos{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
+.modos button{border:3px solid #cfdccf;background:#fff;border-radius:18px;padding:12px 10px;cursor:pointer;font:800 1.05rem Sora,sans-serif;color:var(--mut);transition:.2s}
+.modos button small{display:block;font:600 .8rem Nunito,sans-serif;margin-top:2px}
+.modos button:hover{transform:translateY(-2px)}
+#mL.on{background:var(--r);border-color:var(--r);color:#fff;box-shadow:0 6px 16px #d92d3a55}
+#mD.on{background:var(--n);border-color:var(--o);color:#fff;box-shadow:0 6px 16px #12306e55}
 .pl{display:grid;grid-template-columns:150px 1fr;gap:22px;align-items:center}
 .disc{width:150px;height:150px;border-radius:50%;background:conic-gradient(var(--g),var(--n),var(--o),var(--r),var(--g));display:grid;place-items:center;box-shadow:0 6px 18px #0003}
 .disc i{width:46px;height:46px;border-radius:50%;background:#fff;display:block}.on .disc{animation:s 6s linear infinite}@keyframes s{to{transform:rotate(1turn)}}
 .tag{display:inline-block;font:800 .75rem Sora;padding:3px 10px;border-radius:99px;background:#e8f3e8;color:var(--gd);margin:8px 0 2px}.tag.pod{background:#fff0d8;color:#8a4b00}
 #t{font-size:clamp(1.2rem,3.4vw,1.8rem);color:var(--n);line-height:1.2}#a{color:var(--mut)}
-.bar{height:10px;background:#dfe9de;border-radius:9px;overflow:hidden;margin:14px 0 4px}.bar b{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--g),var(--o))}
-.eq{display:flex;gap:4px;align-items:flex-end;height:30px;margin-top:10px}.eq i{width:6px;background:var(--g);border-radius:3px;height:6px}
+.live.dj{background:var(--o);color:#3b2400}.live.dj:before{background:#3b2400;animation:none}
+#sk{width:100%;margin:14px 0 0;accent-color:var(--o);height:8px;cursor:pointer}.lv #sk{pointer-events:none;accent-color:var(--r)}
+.tms{display:flex;justify-content:space-between;font:700 .8rem Sora;color:var(--mut)}
+.eq{display:flex;gap:4px;align-items:flex-end;height:30px;margin-top:8px}.eq i{width:6px;background:var(--g);border-radius:3px;height:6px}
 .on .eq i{animation:e .9s ease-in-out infinite}.eq i:nth-child(2n){animation-delay:.2s;background:var(--o)}.eq i:nth-child(3n){animation-delay:.45s;background:var(--r)}.eq i:nth-child(5n){animation-delay:.1s}
 @keyframes e{50%{height:28px}}
-.ctl{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-top:12px}.ctl input{accent-color:var(--g)}
-.nx{margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:14px}.nx .card{padding:14px 18px;border-top-color:var(--g)}.nx h3{font-size:.9rem;color:var(--gd)}
+.ctl{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:12px}.ctl input{accent-color:var(--g)}
+.ctl .btn{padding:10px 14px}.ctl #go{padding:12px 24px;font-size:1.05rem}
+.lv .dj-only{opacity:.35;pointer-events:none}
+.nx{margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:14px}.nx .card{padding:14px 18px;border-top-color:var(--g)}.nx h3,#lst h3{font-size:.9rem;color:var(--gd)}
 ul{list-style:none;padding:0}li{padding:5px 0;border-bottom:1px dashed #cfdccf}li b{color:var(--r);font-family:Sora}
-@media(max-width:640px){.pl{grid-template-columns:1fr;text-align:center;justify-items:center}.nx{grid-template-columns:1fr}.ctl,.eq{justify-content:center}}
+#lst{display:none;margin-top:14px;border-top-color:var(--n)}.dj #lst{display:block}
+#ql{max-height:300px;overflow:auto}#ql li{cursor:pointer;padding:8px 10px;border-radius:10px;display:flex;gap:8px;align-items:center}
+#ql li:hover{background:#eef6ee}#ql li.cur{background:#fff0d8;font-weight:800}#ql small{margin-left:auto;color:var(--mut)}
+@media(max-width:640px){.pl{grid-template-columns:1fr;text-align:center;justify-items:center}.nx{grid-template-columns:1fr}.ctl,.eq{justify-content:center}.modos button{font-size:.9rem}}
 </style></head><body>
 <header class="ban"><a class="back" href="https://gestionacademicacolbolivar-tech.github.io/ColBolivar2026/">← Volver a la portada</a><img class="bd" src="logo-banner.webp" alt="Todos somos ColBolívar" width="1800" height="441"><img class="bm" src="logo-banner-movil.webp" alt="Todos somos ColBolívar" width="1200" height="505"></header>
 <main class="w">
 <div class="tit"><h1>Col<b>Bolívar</b> Radio</h1><p>La emisora de la Institución Educativa Colegio Integrado Simón Bolívar · Cúcuta</p></div>
-<section class="card" id="box"><div class="pl"><div class="disc"><i></i></div><div>
-<span class="live">EN VIVO</span><br><span class="tag" id="k">—</span>
+<div class="modos"><button id="mL" class="on">📡 EN VIVO<small>Todos escuchamos lo mismo, al mismo tiempo</small></button><button id="mD">🎧 Cabina DJ<small>Tú controlas qué suena</small></button></div>
+<section class="card lv" id="box"><div class="pl"><div class="disc"><i></i></div><div>
+<span class="live" id="lv">EN VIVO</span><br><span class="tag" id="k">—</span>
 <h2 id="t">Pulsa «Escuchar» para sintonizar</h2><div id="a"></div>
-<div class="bar"><b id="pg"></b></div><div class="eq"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-<div class="ctl"><button class="btn" id="go">▶ Escuchar</button><label>🔊 <input id="vol" type="range" min="0" max="1" step=".05" value=".8"></label></div></div></div></section>
+<input id="sk" type="range" min="0" max="1" step="1" value="0" aria-label="Barra de avance"><div class="tms"><span id="tc">0:00</span><span id="td">0:00</span></div>
+<div class="eq"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="ctl"><button class="btn dj-only" id="pv" title="Anterior">⏮</button><button class="btn dj-only" id="b10" title="Atrasar 10 segundos">⏪ 10</button><button class="btn" id="go">▶ Escuchar</button><button class="btn dj-only" id="f10" title="Adelantar 10 segundos">10 ⏩</button><button class="btn dj-only" id="nx" title="Siguiente">⏭</button><label>🔊 <input id="vol" type="range" min="0" max="1" step=".05" value=".8"></label></div></div></div></section>
+<section class="card" id="lst"><h3>CABINA DJ · ELIGE TU CANCIÓN</h3><ul id="ql"></ul></section>
 <div class="nx"><section class="card"><h3>A CONTINUACIÓN</h3><div id="nxt">—</div></section><section class="card"><h3>PROGRAMAS DE HOY</h3><ul id="hoy"><li>Cargando…</li></ul></section></div>
-<div class="volver"><a href="https://gestionacademicacolbolivar-tech.github.io/ColBolivar2026/">← Volver a la portada</a></div></main><footer>© 2026 ColBolívar Radio · Música libre de derechos · Cúcuta, Norte de Santander</footer>
+<div class="volver"><a href="https://gestionacademicacolbolivar-tech.github.io/ColBolivar2026/">← Volver a la portada</a></div>
+</main><footer>© 2026 ColBolívar Radio · Música libre de derechos · Cúcuta, Norte de Santander</footer>
 <audio id="au" preload="auto"></audio>
 <script>
-const $=s=>document.getElementById(s),au=$('au'),Z=-5*3600;let P=null,cur='',on=false;
-const pad=n=>String(n).padStart(2,'0'),hm=s=>pad(Math.floor(s/3600))+':'+pad(Math.floor(s%3600/60));
+const $=s=>document.getElementById(s),au=$('au'),Z=-5*3600;let P=null,cur='',on=false,mode='live',Q=[],qi=0,drag=false,lq=-1;
+const pad=n=>String(n).padStart(2,'0'),hm=s=>pad(Math.floor(s/3600))+':'+pad(Math.floor(s%3600/60)),fm=s=>isFinite(s)?Math.floor(s/60)+':'+pad(Math.floor(s%60)):'0:00';
 const now=()=>{const t=Date.now()/1000+Z,d=new Date(t*1000);return{s:t%86400,dia:d.getUTCDay(),f:d.toISOString().slice(0,10)}};
 const tm=h=>{const[a,b]=h.split(':');return a*3600+b*60};
 const hoyOK=(e,n)=>e.fecha?e.fecha===n.f:(!e.dias||!e.dias.length||e.dias.includes(n.dia));
-function que(n){ // qué debe sonar ahora
+function que(n){
   for(const e of P.especiales||[]){if(hoyOK(e,n)){const i=tm(e.h);if(n.s>=i&&n.s<i+e.d)return{x:e,pos:n.s-i,fin:i+e.d,tipo:'pod'}}}
   const M=P.musica||[],T=M.reduce((a,m)=>a+m.d,0);if(!T)return null;
   let p=n.s%T,i=0;while(p>=M[i].d){p-=M[i].d;i=(i+1)%M.length}
@@ -43,20 +60,61 @@ function que(n){ // qué debe sonar ahora
   if(sig&&tm(sig.h)<fin){fin=tm(sig.h);prox=sig}
   return{x:M[i],pos:p,fin,tipo:'mus',prox};
 }
-function tick(){
-  if(!P)return;const n=now(),q=que(n);
+function info(x,tipo,pos,dur){
+  $('t').textContent=x.t;$('a').textContent=x.a||'';$('k').textContent=tipo==='pod'?'🎙️ PODCAST':'🎵 MÚSICA';$('k').className='tag '+tipo;
+  $('tc').textContent=fm(pos);$('td').textContent=fm(dur);
+  if(!drag){$('sk').max=Math.max(1,Math.floor(dur));$('sk').value=Math.floor(pos)}
+}
+function live(){
+  const n=now(),q=que(n);
   if(!q){$('t').textContent='Aún no hay música cargada';$('a').textContent='';$('k').textContent='—';return}
-  $('t').textContent=q.x.t;$('a').textContent=q.x.a||'';$('k').textContent=q.tipo==='pod'?'🎙️ PODCAST':'🎵 MÚSICA';$('k').className='tag '+q.tipo;
-  $('pg').style.width=Math.min(100,q.pos/q.x.d*100)+'%';
+  info(q.x,q.tipo,q.pos,q.x.d);
   if(q.tipo==='pod')$('nxt').textContent='🎵 Vuelve la música a las '+hm(q.fin);
   else $('nxt').innerHTML=q.prox?(q.prox.h?'🎙️ <b>'+q.prox.h+'</b> '+q.prox.t:'🎵 '+q.prox.t+(q.prox.a?' · '+q.prox.a:'')):'—';
   if(on){const f=encodeURI(q.x.f);if(cur!==f){cur=f;au.src=f;au.currentTime=q.pos;au.play().catch(()=>{})}
-    else if(Math.abs(au.currentTime-q.pos)>3&&isFinite(q.pos)&&!au.seeking){au.currentTime=q.pos}}
+    else if(Math.abs(au.currentTime-q.pos)>3&&!au.seeking){au.currentTime=q.pos}}
 }
-$('go').onclick=()=>{on=!on;$('box').classList.toggle('on',on);$('go').textContent=on?'⏸ Pausar':'▶ Escuchar';if(on){cur='';tick()}else au.pause()};
-$('vol').oninput=e=>au.volume=e.target.value;au.volume=.8;au.onended=()=>{cur='';tick()};au.onerror=()=>{setTimeout(()=>{cur='';tick()},3000)};
+function dj(){
+  const x=Q[qi];if(!x){$('t').textContent='Aún no hay audios cargados';return}
+  const pod=x.h!==undefined,d=isFinite(au.duration)&&cur?au.duration:x.d;
+  info(x,pod?'pod':'mus',cur?au.currentTime:0,d);
+  const y=Q[(qi+1)%Q.length];$('nxt').textContent='⏭ '+y.t+(y.a?' · '+y.a:'');
+  if(lq!==qi){lq=qi;[...$('ql').children].forEach((li,i)=>li.classList.toggle('cur',i===qi))}
+}
+function tick(){if(P)mode==='live'?live():dj()}
+function ui(){$('box').classList.toggle('on',on);$('go').textContent=on?'⏸ Pausar':'▶ Escuchar'}
+function playDJ(i,pos=0){qi=(i+Q.length)%Q.length;cur=encodeURI(Q[qi].f);au.src=cur;
+  au.addEventListener('loadedmetadata',()=>{if(pos)au.currentTime=pos},{once:true});on=true;ui();au.play().catch(()=>{});dj()}
+$('go').onclick=()=>{
+  if(mode==='live'){on=!on;ui();if(on){cur='';tick()}else au.pause();return}
+  if(!Q.length)return;
+  if(on){on=false;au.pause();ui()}else{if(cur===encodeURI(Q[qi].f)){on=true;ui();au.play().catch(()=>{})}else playDJ(qi)}};
+$('nx').onclick=()=>{if(mode==='dj'&&Q.length)playDJ(qi+1)};
+$('pv').onclick=()=>{if(mode==='dj'&&Q.length){if(cur&&au.currentTime>3)au.currentTime=0;else playDJ(qi-1)}};
+$('b10').onclick=()=>{if(mode==='dj'&&cur)au.currentTime=Math.max(0,au.currentTime-10)};
+$('f10').onclick=()=>{if(mode==='dj'&&cur)au.currentTime=Math.min(au.duration||1e9,au.currentTime+10)};
+$('sk').onpointerdown=()=>drag=true;$('sk').onchange=()=>{drag=false};
+$('sk').oninput=e=>{if(mode!=='dj')return;$('tc').textContent=fm(+e.target.value);if(cur)au.currentTime=+e.target.value};
+au.ontimeupdate=()=>{if(mode==='dj')dj()};
+$('vol').oninput=e=>au.volume=e.target.value;au.volume=.8;
+au.onended=()=>{if(mode==='dj'){if(Q.length)playDJ(qi+1)}else{cur='';tick()}};
+au.onerror=()=>setTimeout(()=>{if(!on)return;if(mode==='dj')playDJ(qi+1);else{cur='';tick()}},3000);
+function setMode(m){
+  if(m===mode||!P)return;
+  if(m==='dj'){const q=que(now());Q=[...(P.musica||[]),...(P.especiales||[])];
+    let i=q?Q.findIndex(z=>z.f===q.x.f):0;if(i<0)i=0;
+    $('ql').innerHTML=Q.map((z,j)=>'<li data-i="'+j+'">'+(z.h!==undefined?'🎙️':'🎵')+' '+z.t+'<small>'+fm(z.d)+'</small></li>').join('')||'<li>No hay audios cargados</li>';
+    [...$('ql').children].forEach(li=>li.onclick=()=>{if(Q.length)playDJ(+li.dataset.i)});
+    mode='dj';lq=-1;qi=i;const was=on;cur='';au.pause();if(was&&Q.length)playDJ(i,q?q.pos:0);else dj()}
+  else{mode='live';cur='';au.pause();au.removeAttribute('src');}
+  $('mL').classList.toggle('on',mode==='live');$('mD').classList.toggle('on',mode==='dj');
+  $('box').classList.toggle('lv',mode==='live');document.body.classList.toggle('dj',mode==='dj');
+  $('lv').textContent=mode==='live'?'EN VIVO':'TÚ CONTROLAS';$('lv').classList.toggle('dj',mode==='dj');
+  if(mode==='live'){$('box').classList.toggle('on',on);if(on){au.pause();tick()}else tick()}
+  tick()}
+$('mL').onclick=()=>setMode('live');$('mD').onclick=()=>setMode('dj');
 fetch('programacion.json?'+Date.now()).then(r=>r.json()).then(j=>{P=j;
   const n=now(),l=(P.especiales||[]).filter(e=>hoyOK(e,n)).sort((a,b)=>tm(a.h)-tm(b.h));
-  $('hoy').innerHTML=l.length?l.map(e=>'<li><b>'+e.h+'</b> '+e.t+'</li>').join(''):'<li>Hoy solo música 🎶</li>';tick();setInterval(tick,1000)})
+  $('hoy').innerHTML=l.length?l.map(e=>'<li><b>'+e.h+'</b> '+e.t+'</li>').join(''):'<li>Hoy solo música 🎶</li>';tick();setInterval(()=>{if(mode==='live')tick()},1000)})
  .catch(()=>{$('t').textContent='No se pudo cargar la programación'});
 </script></body></html>
