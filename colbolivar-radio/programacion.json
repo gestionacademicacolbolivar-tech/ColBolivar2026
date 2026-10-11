@@ -2,9 +2,15 @@
  "nombre": "ColBolívar Radio",
  "musica": [
   {
+   "t": "Bonito, Bonito   Thiago Navarro Music",
+   "a": "Bonito, Bonito - Thiago Navarro Music",
+   "f": "audio/Bonito, Bonito - Thiago Navarro Music.mp3",
+   "d": 206
+  },
+  {
    "t": "Modelo pedagógico del Colegio Simón Bolívar",
    "a": "Luis Avellaneda",
-   "f": "audio/Modelo_pedagógico_del_Colegio_Simón_Bolívar.m4a",
+   "f": "audio/Modelo_pedagógico_del_Colegio_Simón_Bolívar.mp3",
    "d": 1329
   }
  ],
