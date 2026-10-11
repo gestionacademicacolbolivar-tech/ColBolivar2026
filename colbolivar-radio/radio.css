@@ -15,3 +15,8 @@ h1,h2,h3,.btn{font-family:Sora,Nunito,sans-serif}
 .btn:hover{background:var(--gd)}.btn.o{background:var(--o);color:#3b2400}.btn.r{background:var(--r)}.btn.w2{background:#fff;color:var(--gd);border:2px solid var(--g)}
 .btn:disabled{opacity:.45;cursor:not-allowed}
 footer{text-align:center;color:var(--mut);padding:14px;font-size:.9rem}
+.ban{position:relative}
+.back{position:absolute;z-index:5;top:10px;left:10px;background:#ffffffe6;color:var(--gd);font:800 .95rem Nunito,sans-serif;padding:8px 16px;border-radius:99px;box-shadow:0 4px 12px #0003;text-decoration:none;line-height:1.4;transition:transform .2s,background .2s}
+.back:hover{transform:translateX(-3px);background:#fff}
+.volver{text-align:center;margin:22px 0 4px}.volver a{display:inline-block;background:var(--gd);color:#fff;font:800 1rem Sora,sans-serif;padding:12px 24px;border-radius:99px;text-decoration:none}.volver a:hover{background:var(--r)}
+@media(max-width:760px){.back{font-size:.85rem;padding:6px 12px}}
