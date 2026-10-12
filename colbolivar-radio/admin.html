@@ -11,6 +11,13 @@
 .mini{border:0;background:#e8f3e8;border-radius:8px;cursor:pointer;padding:5px 8px}
 #msg{font-weight:800;color:var(--gd);min-height:1.5em}.warn{color:var(--r)}
 @media(max-width:820px){.row{grid-template-columns:1fr 1fr}.hd{display:none}}
+.tm{font:800 1.4rem Sora,sans-serif;color:var(--n);min-width:70px}
+.meter{height:10px;background:#dfe9de;border-radius:9px;overflow:hidden;margin:6px 0}.meter b{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--g),var(--o),var(--r));transition:width .08s}
+.sm{font-weight:800;color:var(--gd);min-height:1.3em}.sm.e{color:var(--r)}
+.ra{display:grid;grid-template-columns:3fr 1fr 1fr auto;gap:8px;align-items:end;padding:8px 0;border-bottom:1px dashed #cfdccf}
+.ra input,#rt{font:inherit;padding:6px 8px;border:2px solid #cfdccf;border-radius:9px;width:100%;min-width:0}.ra label{font-size:.8rem;color:var(--mut)}
+.row .mi{font-size:.8rem;margin-top:4px}
+@media(max-width:820px){.ra{grid-template-columns:1fr 1fr}.ra>input{grid-column:1/-1}}
 </style></head><body>
 <header class="ban"><a class="back" href="https://gestionacademicacolbolivar-tech.github.io/ColBolivar2026/">← Volver a la portada</a><img class="bd" src="logo-banner.webp" alt="" width="1800" height="441"><img class="bm" src="logo-banner-movil.webp" alt="" width="1200" height="505"></header>
 <main class="w"><div class="tit"><h1>Panel de <b>programación</b></h1><p>Aquí armas la emisora sin tocar código.</p></div>
@@ -23,15 +30,23 @@
 <div class="acc"><label class="btn">＋ Agregar audios<input id="fi" type="file" accept="audio/*" multiple hidden></label>
 <label class="btn w2">📂 Abrir programacion.json<input id="fj" type="file" accept=".json" hidden></label>
 <button class="btn o" id="dl">⬇ Descargar programacion.json</button></div><div id="msg"></div></section>
+<section class="card" id="est" style="margin-top:16px;border-top-color:var(--r)"><h3>🎙️ Estudio de grabación</h3>
+<p>Graba un podcast con el micrófono de tu celular o computador. Habla a unos 15 cm del micrófono y en un lugar tranquilo. Se guarda como MP3 (máx. recomendado: 10 minutos).</p>
+<div class="acc"><button class="btn r" id="bR">● Grabar</button><button class="btn o" id="bP" hidden>⏸ Pausar</button><button class="btn" id="bS" hidden>■ Detener</button><span id="tm" class="tm">00:00</span></div>
+<div class="meter" id="mt" hidden><b id="mb"></b></div>
+<div id="rv" hidden><audio id="pvw" controls style="width:100%"></audio><div class="acc"><input id="rt" placeholder="Título del podcast" style="flex:1;min-width:200px"><button class="btn" id="bG">💾 Guardar podcast</button><button class="btn w2" id="bD">🗑 Descartar</button></div></div>
+<div id="sm" class="sm"></div></section>
+<section class="card" style="margin-top:16px;border-top-color:var(--o)"><h3>📢 Avisos institucionales (cinta)</h3>
+<p>Se muestran en una franja que corre bajo el banner. Cada aviso aparece entre su fecha de inicio y de fin, y se quita solo. Sin fecha de fin queda siempre visible.</p><div id="LA"></div><div class="acc"><button class="btn o" id="addA">＋ Agregar aviso</button></div></section>
 <section class="card" style="margin-top:16px;border-top-color:var(--g)"><div class="row hd"><span>TÍTULO / ARTISTA</span><span>TIPO</span><span>HORA · FECHA</span><span>DÍAS</span><span>ACCIONES</span></div><div id="L"><p>Aún no hay audios. Agrega algunos arriba.</p></div><p id="sum" style="margin-top:10px"></p></section></main>
 <footer>Este panel solo genera el archivo; no modifica nada por sí solo.</footer>
 <script>
-const $=s=>document.getElementById(s);let I=[];const D=['L','M','X','J','V','S','D'],dn=[1,2,3,4,5,6,0];
+const $=s=>document.getElementById(s),esc=v=>String(v||'').replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');let I=[],A=[];const D=['L','M','X','J','V','S','D'],dn=[1,2,3,4,5,6,0];
 const mm=s=>Math.floor(s/60)+':'+String(Math.round(s%60)).padStart(2,'0'),say=(t,w)=>{$('msg').innerHTML=w?'<span class="warn">'+t+'</span>':t};
 function draw(){
   $('L').innerHTML=I.length?'':'<p>Aún no hay audios. Agrega algunos arriba.</p>';
   I.forEach((x,i)=>{const p=x.tipo==='pod',r=document.createElement('div');r.className='row'+(p?' pod':'');
-    r.innerHTML=`<div><input value="${(x.t||'').replace(/"/g,'&quot;')}" data-k="t" placeholder="Título"><input value="${(x.a||'').replace(/"/g,'&quot;')}" data-k="a" placeholder="Artista / autor" style="margin-top:4px"><small>${x.f} · ${mm(x.d)}</small></div>
+    r.innerHTML=`<div><input value="${(x.t||'').replace(/"/g,'&quot;')}" data-k="t" placeholder="Título"><input value="${(x.a||'').replace(/"/g,'&quot;')}" data-k="a" placeholder="Artista / autor" style="margin-top:4px"><input class="mi" value="${esc(x.lic)}" data-k="lic" placeholder="Licencia (ej. CC BY 4.0, Pixabay)"><input class="mi" value="${esc(x.fuente)}" data-k="fuente" placeholder="Fuente (sitio o enlace)"><small>${x.f} · ${mm(x.d)}</small></div>
     <select data-k="tipo"><option value="mus"${p?'':' selected'}>🎵 Música</option><option value="pod"${p?' selected':''}>🎙️ Podcast</option></select>
     <div>${p?`<input type="time" value="${x.h||''}" data-k="h"><input type="date" value="${x.fecha||''}" data-k="fecha" style="margin-top:4px">`:'<small>suena en bucle</small>'}</div>
     <div class="dias">${p?D.map((d,j)=>`<label><input type="checkbox" style="width:auto" data-d="${dn[j]}"${(x.dias||[]).includes(dn[j])?' checked':''}>${d}</label>`).join(''):''}</div>
@@ -48,12 +63,62 @@ $('fi').onchange=async e=>{for(const f of e.target.files){const u=URL.createObje
   await new Promise(r=>{a.onloadedmetadata=r;a.onerror=r});
   I.push({t:f.name.replace(/\.[^.]+$/,'').replace(/[_-]+/g,' '),a:'',f:'audio/'+f.name,d:Math.round(a.duration)||0,tipo:'mus',h:'',dias:[],fecha:'',file:f})}
   e.target.value='';draw();say('Listo. Recuerda subir estos mismos archivos a la carpeta audio/ de GitHub.')};
-function load(j){I=[...(j.musica||[]).map(x=>({...x,tipo:'mus'})),...(j.especiales||[]).map(x=>({...x,tipo:'pod'}))];draw()}
+function load(j){I=[...(j.musica||[]).map(x=>({...x,tipo:'mus'})),...(j.especiales||[]).map(x=>({...x,tipo:'pod'}))];A=(j.avisos||[]).map(x=>({...x}));draw();drawA()}
 $('fj').onchange=e=>{e.target.files[0].text().then(t=>{load(JSON.parse(t));say('Programación cargada.')})};
 fetch('programacion.json?'+Date.now()).then(r=>r.json()).then(load).catch(()=>{});
 $('dl').onclick=()=>{const bad=I.filter(x=>x.tipo==='pod'&&!x.h);if(bad.length)return say('Pon la hora a: '+bad.map(x=>x.t).join(', '),1);
   if(I.some(x=>!x.d))return say('Algún audio no se pudo leer (duración 0). Revisa que sea mp3 válido.',1);
-  const c=({t,a,f,d})=>({t,a,f,d});
-  const j={nombre:'ColBolívar Radio',musica:I.filter(x=>x.tipo!=='pod').map(c),especiales:I.filter(x=>x.tipo==='pod').map(x=>({...c(x),h:x.h,dias:x.fecha?[]:(x.dias||[]),fecha:x.fecha||''}))};
+  const bA=A.filter(x=>x.t.trim()&&x.desde&&x.hasta&&x.hasta<x.desde);if(bA.length)return say('Un aviso termina antes de empezar: '+bA[0].t,1);
+  const c=({t,a,f,d,lic,fuente})=>{const o={t,a,f,d};if(lic)o.lic=lic;if(fuente)o.fuente=fuente;return o};
+  const j={nombre:'ColBolívar Radio',avisos:A.filter(x=>x.t.trim()).map(x=>({t:x.t.trim(),desde:x.desde||'',hasta:x.hasta||''})),musica:I.filter(x=>x.tipo!=='pod').map(c),especiales:I.filter(x=>x.tipo==='pod').map(x=>({...c(x),h:x.h,dias:x.fecha?[]:(x.dias||[]),fecha:x.fecha||''}))};
   const b=new Blob([JSON.stringify(j,null,1)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='programacion.json';a.click();say('✅ Descargado. Súbelo a GitHub reemplazando el anterior.')};
+
+/* ===== AVISOS ===== */
+function drawA(){const L=$('LA');L.innerHTML=A.length?'':'<p>No hay avisos. Agrega uno con el botón.</p>';
+  A.forEach((x,i)=>{const r=document.createElement('div');r.className='ra';
+    r.innerHTML='<input data-k="t" placeholder="Ej.: Mañana reunión de padres, 7:00 a. m." value="'+esc(x.t)+'"><label>Desde<input type="date" data-k="desde" value="'+esc(x.desde)+'"></label><label>Hasta<input type="date" data-k="hasta" value="'+esc(x.hasta)+'"></label><button class="mini" title="Quitar aviso">✕</button>';
+    r.querySelectorAll('[data-k]').forEach(e=>e.addEventListener('input',()=>x[e.dataset.k]=e.value));
+    r.querySelector('button').onclick=()=>{A.splice(i,1);drawA()};L.append(r)})}
+$('addA').onclick=()=>{A.push({t:'',desde:'',hasta:''});drawA()};drawA();
+/* ===== ESTUDIO DE GRABACIÓN ===== */
+let mr=null,ch=[],stream=null,ctxS=null,an2=null,tint=0,t0=0,acc=0,pz=false,raw=null;
+const sm=(t,e)=>{$('sm').textContent=t;$('sm').className='sm'+(e?' e':'')},pd=n=>String(n).padStart(2,'0');
+const el=()=>acc+(pz?0:Date.now()-t0);
+function ui(m){$('bR').hidden=m!=='idle';$('bP').hidden=$('bS').hidden=m!=='rec';$('mt').hidden=m!=='rec';$('rv').hidden=m!=='rev'}
+function stTick(){const s=Math.floor(el()/1000);$('tm').textContent=pd(Math.floor(s/60))+':'+pd(s%60);
+  if(an2&&!pz){const b=new Uint8Array(an2.fftSize);an2.getByteTimeDomainData(b);let m=0;for(const v of b)m=Math.max(m,Math.abs(v-128));$('mb').style.width=Math.min(100,m/128*160)+'%'}}
+$('bR').onclick=async()=>{
+  if(!navigator.mediaDevices||!window.MediaRecorder)return sm('Este navegador no permite grabar. Usa Chrome (Android o computador) o Safari actualizado.',1);
+  try{stream=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:true,noiseSuppression:true}})}
+  catch(e){return sm('No se pudo usar el micrófono. Permite el acceso (candado de la barra de direcciones) y vuelve a intentar.',1)}
+  ch=[];const mt=['audio/webm;codecs=opus','audio/webm','audio/mp4','audio/ogg;codecs=opus'].find(t=>MediaRecorder.isTypeSupported(t));
+  mr=new MediaRecorder(stream,mt?{mimeType:mt}:{});mr.ondataavailable=e=>{if(e.data.size)ch.push(e.data)};
+  mr.onstop=()=>{raw=new Blob(ch,{type:mr.mimeType||'audio/webm'});$('pvw').src=URL.createObjectURL(raw);ui('rev');sm('Escúchalo, ponle título y guárdalo.')};
+  const A2=window.AudioContext||window.webkitAudioContext;ctxS=new A2();an2=ctxS.createAnalyser();an2.fftSize=256;ctxS.createMediaStreamSource(stream).connect(an2);
+  mr.start(1000);acc=0;t0=Date.now();pz=false;tint=setInterval(stTick,100);ui('rec');sm('Grabando… habla con naturalidad.')};
+$('bP').onclick=()=>{if(!pz){acc+=Date.now()-t0;pz=true;mr.pause();$('bP').textContent='▶ Seguir';sm('En pausa.')}else{t0=Date.now();pz=false;mr.resume();$('bP').textContent='⏸ Pausar';sm('Grabando…')}};
+function cerrar(){clearInterval(tint);stream&&stream.getTracks().forEach(t=>t.stop());ctxS&&ctxS.close();an2=null}
+$('bS').onclick=()=>{cerrar();if(mr.state!=='inactive')mr.stop();$('bP').textContent='⏸ Pausar'};
+$('bD').onclick=()=>{raw=null;$('pvw').removeAttribute('src');$('rt').value='';$('tm').textContent='00:00';ui('idle');sm('')};
+const lame=()=>window.lamejs?Promise.resolve():new Promise((ok,no)=>{const s=document.createElement('script');s.src='lame.min.js';s.onload=ok;s.onerror=no;document.head.append(s)});
+function wav(p,sr){const b=new DataView(new ArrayBuffer(44+p.length*2)),w=(o,t)=>[...t].forEach((c,i)=>b.setUint8(o+i,c.charCodeAt(0)));
+  w(0,'RIFF');b.setUint32(4,36+p.length*2,true);w(8,'WAVEfmt ');b.setUint32(16,16,true);b.setUint16(20,1,true);b.setUint16(22,1,true);b.setUint32(24,sr,true);b.setUint32(28,sr*2,true);b.setUint16(32,2,true);b.setUint16(34,16,true);w(36,'data');b.setUint32(40,p.length*2,true);
+  p.forEach((v,i)=>b.setInt16(44+i*2,Math.max(-1,Math.min(1,v))*32767,true));return new Blob([b],{type:'audio/wav'})}
+async function convertir(){
+  const A2=window.AudioContext||window.webkitAudioContext,c=new A2(),buf=await c.decodeAudioData(await raw.arrayBuffer());c.close();
+  const sr=44100,off=new OfflineAudioContext(1,Math.max(1,Math.ceil(buf.duration*sr)),sr),s=off.createBufferSource();s.buffer=buf;s.connect(off.destination);s.start();
+  const pcm=(await off.startRendering()).getChannelData(0),dur=Math.round(buf.duration);
+  try{await lame();const enc=new lamejs.Mp3Encoder(1,sr,96),out=[],i16=new Int16Array(pcm.length);
+    for(let i=0;i<pcm.length;i++)i16[i]=Math.max(-1,Math.min(1,pcm[i]))*32767;
+    for(let i=0,n=0;i<i16.length;i+=1152,n++){const k=enc.encodeBuffer(i16.subarray(i,i+1152));if(k.length)out.push(k);if(n%300===0){sm('Convirtiendo a MP3… '+Math.round(i/i16.length*100)+'%');await new Promise(r=>setTimeout(r))}}
+    const f=enc.flush();if(f.length)out.push(f);return{blob:new Blob(out,{type:'audio/mpeg'}),ext:'mp3',dur}}
+  catch(e){return{blob:wav(pcm,sr),ext:'wav',dur}}}
+$('bG').onclick=async()=>{if(!raw)return;$('bG').disabled=true;const t=($('rt').value||'').trim()||'Podcast sin título';sm('Convirtiendo…');
+  try{const r=await convertir();let base=t.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')||'podcast',n=base,k=2;
+    while(I.some(x=>x.f==='audio/'+n+'.'+r.ext))n=base+'-'+k++;const name=n+'.'+r.ext;
+    const a=document.createElement('a');a.href=URL.createObjectURL(r.blob);a.download=name;a.click();
+    I.push({t,a:'ColBolívar Radio',f:'audio/'+name,d:r.dur,tipo:'pod',h:'',dias:[],fecha:'',lic:'Producción propia del colegio',fuente:'ColBolívar Radio',file:r.blob});draw();
+    sm('✅ Descargado '+name+(r.ext==='wav'?' (WAV: pesa más; si pasa de 25 MB no podrás subirlo desde el navegador)':'')+'. Ya está en la lista de abajo: ponle hora y días, sube el archivo a la carpeta audio/ de GitHub y descarga el programacion.json.');
+    $('bD').click();sm($('sm').textContent)}catch(e){sm('No se pudo convertir la grabación. Intenta grabar de nuevo.',1)}
+  $('bG').disabled=false};
 </script></body></html>
