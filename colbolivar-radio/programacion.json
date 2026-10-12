@@ -1,5 +1,12 @@
 {
  "nombre": "ColBolívar Radio",
+ "avisos": [
+  {
+   "t": "Volvemos a clases este jueves 15 de octubre",
+   "desde": "2026-10-12",
+   "hasta": "2026-10-15"
+  }
+ ],
  "musica": [
   {
    "t": "Bonito, Bonito   Thiago Navarro Music",
