@@ -1,8 +1,8 @@
 <!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>ColBolívar Radio</title><meta name="theme-color" content="#12306e">
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;800&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;800&family=Nunito:wght@400;700;800&family=Orbitron:wght@600;800&family=Special+Elite&display=swap" rel="stylesheet">
 <script>window.addEventListener("beforeinstallprompt",function(e){e.preventDefault();window.__dp=e})</script><link rel="manifest" href="manifest.json"><link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="ColBolívar Radio">
-<link rel="stylesheet" href="radio.css">
+<script>try{document.documentElement.dataset.skin=localStorage.getItem("cbRadioSkin")||"clasica"}catch(e){document.documentElement.dataset.skin="clasica"}</script><script src="config.js"></script><link rel="stylesheet" href="radio.css">
 <style>
 .modos{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
 .modos button{border:3px solid #cfdccf;background:#fff;border-radius:18px;padding:12px 10px;cursor:pointer;font:800 1.05rem Sora,sans-serif;color:var(--mut);transition:.2s}
@@ -41,20 +41,90 @@ ul{list-style:none;padding:0}li{padding:5px 0;border-bottom:1px dashed #cfdccf}l
 .inf{margin-top:8px;border:2px solid var(--g);background:#fff;color:var(--gd);font:800 .8rem Sora,sans-serif;padding:5px 12px;border-radius:99px;cursor:pointer}.inf:hover{background:#e8f3e8}
 dialog{border:0;border-radius:20px;padding:22px;max-width:min(460px,92vw);box-shadow:0 12px 40px #0006;color:var(--ink)}dialog::backdrop{background:#0008}
 #dc h3{font-family:Sora,sans-serif;color:var(--n);margin-bottom:8px}#dc p{margin:6px 0}#dc a{color:var(--g);word-break:break-all}dialog .btn{margin-top:14px}
+</style><style id="skins">
+/* ===== Mejoras generales ===== */
+.skins{display:flex;gap:8px;justify-content:center;align-items:center;flex-wrap:wrap;margin:0 0 12px}.skins span{font:800 .85rem var(--fh,Sora),sans-serif;color:var(--mut)}
+.skins button{border:2px solid var(--line,#cfdccf);background:var(--panel,#fff);color:var(--ink);font:800 .85rem var(--fh,Sora),sans-serif;padding:7px 14px;border-radius:99px;cursor:pointer;transition:.2s}
+.skins button:hover{transform:translateY(-2px)}.skins button.on{background:var(--g);border-color:var(--g);color:#fff;box-shadow:0 4px 12px #0003}
+.ctl{gap:12px;justify-content:center}.btn.rd{min-width:48px;height:48px;border-radius:24px;padding:0 14px;font-size:1rem}.btn.pri{height:54px;padding:0 28px;border-radius:27px;font-size:1.1rem;box-shadow:0 6px 16px #0003}
+.btn:active{transform:translateY(2px)}
+input[type=range]{-webkit-appearance:none;appearance:none;height:8px;border-radius:8px;background:#d6e2d5;outline:none}
+#sk{--p:0%;height:10px;background:linear-gradient(90deg,var(--o) var(--p),#d6e2d5 var(--p))}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:var(--o);border:3px solid #fff;box-shadow:0 2px 6px #0005;cursor:pointer}
+input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:var(--o);border:3px solid #fff;box-shadow:0 2px 6px #0005;cursor:pointer}
+#vol{width:110px}.card{border-radius:22px}.tit h1{letter-spacing:.01em}
+/* ===== Comentarios ===== */
+#cm{margin-top:14px;border-top-color:var(--o)}#cm h3{font-size:.9rem;color:var(--gd);margin-bottom:6px}.cmn{color:var(--mut);font-size:.92rem;margin-bottom:10px}
+.cmf{position:relative;display:grid;gap:8px}.cmf input,.cmf textarea{font:inherit;padding:10px 12px;border:2px solid var(--line,#cfdccf);border-radius:14px;background:var(--panel,#fff);color:var(--ink);width:100%;resize:vertical}
+.cmf input:focus,.cmf textarea:focus{outline:none;border-color:var(--o)}.cmr{display:flex;justify-content:space-between;align-items:center;color:var(--mut);font-size:.85rem}
+.cmsg{min-height:1.4em;font-weight:800;margin:8px 0}.cmsg.ok{color:var(--g)}.cmsg.er{color:var(--r)}
+#cml{max-height:420px;overflow:auto;display:grid;gap:10px;padding:2px}#cml li{display:flex;gap:10px;border:0;padding:0;align-items:flex-start}
+.av{flex:none;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;color:#fff;font:800 1.05rem var(--fh,Sora),sans-serif;box-shadow:0 2px 6px #0003}
+.bb{background:var(--bub,#eef6ee);border-radius:4px 16px 16px 16px;padding:8px 14px;min-width:0;flex:1}.bb b{font-family:var(--fh,Sora),sans-serif;color:var(--n);font-size:.9rem}.bb small{color:var(--mut);margin-left:8px}.bb p{overflow-wrap:anywhere;margin-top:2px}
+/* ===== SKIN 2 · RETRO (radio antigua / grabadora) ===== */
+html[data-skin=retro]{--g:#7a4b22;--gd:#4f2f14;--o:#d9a441;--r:#b23a2e;--n:#3b2210;--ink:#2b1c10;--bg:#d8c39a;--mut:#6b5338;--line:#c9b182;--panel:#fbf2da;--bub:#ecdcb4;--fh:'Special Elite',Georgia,serif}
+html[data-skin=retro]{background:#d8c39a}html[data-skin=futuro]{background:#070b1a}
+html[data-skin=retro] body{background:#d8c39a repeating-linear-gradient(90deg,#0000 0 46px,#5a3a1a12 46px 48px),radial-gradient(900px 500px at 50% 0,#fff5,#0000)}
+html[data-skin=retro] :is(h1,h2,h3,.btn,.live,.tag,.modos button,.inf,.cl,.skins button,.skins span,.tms,li b){font-family:'Special Elite',Georgia,serif}
+html[data-skin=retro] .card{background:#f4e7c8;border:3px solid #6b4423;border-radius:16px;box-shadow:0 6px 0 #4f2f14,0 12px 22px #0005}
+html[data-skin=retro] #box{background:linear-gradient(145deg,#9a6a35,#5a3517);border:0;padding:16px;box-shadow:inset 0 0 0 4px #3b2210,inset 0 0 0 7px #c9973f77,0 8px 0 #3b2210,0 16px 26px #0006}
+html[data-skin=retro] #box .pl{background:#f1e2bd;border-radius:12px;padding:16px;box-shadow:inset 0 3px 10px #0005}
+html[data-skin=retro] #box:after{content:"";display:block;height:28px;margin-top:14px;border-radius:8px;background:radial-gradient(circle,#2b1a0c 36%,#0000 40%) 0 0/11px 11px,#c9a96a;box-shadow:inset 0 3px 7px #0008}
+html[data-skin=retro] .viz{border:7px solid #b9b3a6;border-radius:14px;box-shadow:inset 0 0 0 3px #555,inset 0 6px 14px #000a,0 2px 0 #fff9}
+html[data-skin=retro] .btn{background:linear-gradient(#f7ecd0,#d9c79b);color:#3b2210;border:2px solid #4f2f14;border-radius:10px;box-shadow:0 4px 0 #4f2f14}
+html[data-skin=retro] .btn.rd,html[data-skin=retro] .btn.pri{border-radius:12px}html[data-skin=retro] .btn.pri{background:linear-gradient(#d65a45,#a12f22);color:#fff3e0}
+html[data-skin=retro] .btn.o{background:linear-gradient(#e8b64f,#c58b1f)}html[data-skin=retro] .btn:active{box-shadow:0 1px 0 #4f2f14;transform:translateY(3px)}
+html[data-skin=retro] .modos button{background:#f4e7c8;border:3px solid #6b4423;border-radius:12px;color:#6b5338;box-shadow:0 4px 0 #4f2f14}
+html[data-skin=retro] #mL.on{background:#b23a2e;border-color:#4f2f14;color:#fff3e0}html[data-skin=retro] #mD.on{background:#3b2210;border-color:#d9a441;color:#f4e7c8}
+html[data-skin=retro] .skins button{background:#f4e7c8;border:2px solid #6b4423;border-radius:8px;box-shadow:0 3px 0 #4f2f14}html[data-skin=retro] .skins button.on{background:#7a4b22;color:#f4e7c8}
+html[data-skin=retro] .tag{background:#ecdcb4;color:#4f2f14;border-radius:6px}html[data-skin=retro] .live{border-radius:6px}
+html[data-skin=retro] .cinta{background:#3b2210}html[data-skin=retro] .cl{background:#d9a441}
+html[data-skin=retro] #sk{background:linear-gradient(90deg,#b23a2e var(--p),#c9b182 var(--p));border:2px solid #6b4423;height:12px}
+html[data-skin=retro] input[type=range]::-webkit-slider-thumb{background:#3b2210;border-color:#d9a441;border-radius:3px;width:12px;height:26px}
+html[data-skin=retro] .bb{border:2px solid #c9b182}html[data-skin=retro] li{border-bottom-color:#c9b182}
+/* ===== SKIN 3 · FUTURISTA ===== */
+html[data-skin=futuro]{--g:#19e3ff;--gd:#6fe9ff;--o:#ff2fb3;--r:#ff4d6d;--n:#d7f6ff;--ink:#e6f0ff;--bg:#070b1a;--mut:#9db4ff;--line:#1c3a7a;--panel:#0c1438;--bub:#13205a;--fh:Orbitron,Sora,sans-serif}
+html[data-skin=futuro] body{background:radial-gradient(1000px 520px at 50% -8%,#27409a77,#0000),linear-gradient(#060a18,#0b1233);background-attachment:fixed}
+html[data-skin=futuro] body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(#19e3ff12 1px,#0000 1px) 0 0/44px 44px,linear-gradient(90deg,#19e3ff12 1px,#0000 1px) 0 0/44px 44px}
+html[data-skin=futuro] :is(h1,h2,h3,.btn,.live,.tag,.modos button,.inf,.cl,.skins button,.skins span,.tms,li b){font-family:Orbitron,Sora,sans-serif}
+html[data-skin=futuro] .card{background:linear-gradient(160deg,#10194a,#0a1033);color:var(--ink);border:1px solid #19e3ff77;border-top:3px solid #19e3ff;box-shadow:0 0 22px #19e3ff2e,inset 0 0 24px #19e3ff12;border-radius:20px}
+html[data-skin=futuro] #box{border-top-color:#ff2fb3;box-shadow:0 0 30px #19e3ff44,0 0 60px #ff2fb322,inset 0 0 26px #19e3ff14}
+html[data-skin=futuro] .viz{border:2px solid #19e3ff;box-shadow:0 0 18px #19e3ff77,inset 0 0 18px #19e3ff44}
+html[data-skin=futuro] .btn{background:linear-gradient(#0f2f55,#0a1d3d);color:#7df3ff;border:1px solid #19e3ff;box-shadow:0 0 12px #19e3ff55,inset 0 0 10px #19e3ff22;text-shadow:0 0 8px #19e3ff}
+html[data-skin=futuro] .btn:hover{background:#12406f}html[data-skin=futuro] .btn.pri{background:linear-gradient(#ff2fb3,#a3147a);color:#fff;border-color:#ff8ad8;box-shadow:0 0 20px #ff2fb388;text-shadow:0 0 8px #fff}
+html[data-skin=futuro] .btn.o{background:linear-gradient(#ff2fb3,#a3147a);color:#fff;border-color:#ff8ad8}html[data-skin=futuro] .btn.w2{background:transparent;color:#7df3ff;border-color:#19e3ff}
+html[data-skin=futuro] .modos button{background:#0c1438;border:1px solid #1c3a7a;color:#9db4ff}
+html[data-skin=futuro] #mL.on{background:#4a1030;border-color:#ff4d6d;color:#fff;box-shadow:0 0 18px #ff4d6d77}html[data-skin=futuro] #mD.on{background:#0f2f55;border-color:#19e3ff;color:#7df3ff;box-shadow:0 0 18px #19e3ff77}
+html[data-skin=futuro] .skins button{background:#0c1438;border-color:#1c3a7a;color:#9db4ff}html[data-skin=futuro] .skins button.on{background:#0f2f55;border-color:#19e3ff;color:#7df3ff;box-shadow:0 0 14px #19e3ff88}
+html[data-skin=futuro] .tag{background:#0f2f55;color:#7df3ff}html[data-skin=futuro] .tag.pod{background:#4a1030;color:#ff8ad8}
+html[data-skin=futuro] .live.dj{background:#ff2fb3;color:#fff}html[data-skin=futuro] .cinta{background:#0a1033;border-block:1px solid #19e3ff55}html[data-skin=futuro] .cl{background:#ff2fb3;color:#fff}
+html[data-skin=futuro] #sk{background:linear-gradient(90deg,#19e3ff var(--p),#1c3a7a var(--p));box-shadow:0 0 10px #19e3ff66}
+html[data-skin=futuro] input[type=range]::-webkit-slider-thumb{background:#fff;border-color:#19e3ff;box-shadow:0 0 12px #19e3ff}
+html[data-skin=futuro] li{border-bottom-color:#19e3ff2a}html[data-skin=futuro] #ql li:hover{background:#13205a}html[data-skin=futuro] #ql li.cur{background:#4a1030}
+html[data-skin=futuro] .bb{border:1px solid #19e3ff44}html[data-skin=futuro] .apb img{border-color:#19e3ff}
+html[data-skin=futuro] dialog{background:#0c1438;border:1px solid #19e3ff}html[data-skin=futuro] .inf{background:#0c1438;color:#7df3ff;border-color:#19e3ff}
+html[data-skin=futuro] .back{background:#0c1438e6;color:#7df3ff}html[data-skin=futuro] .volver a{background:#0f2f55;color:#7df3ff;border:1px solid #19e3ff}html[data-skin=futuro] footer{color:var(--mut)}
+html[data-skin=futuro] .insh.show{background:#13205a;border-color:#19e3ff;color:#e6f0ff}
 </style></head><body>
 <header class="ban"><a class="back" href="https://gestionacademicacolbolivar-tech.github.io/ColBolivar2026/">← Volver a la portada</a><img class="bd" src="logo-banner.webp" alt="Todos somos ColBolívar" width="1800" height="441"><img class="bm" src="logo-banner-movil.webp" alt="Todos somos ColBolívar" width="1200" height="505"></header>
 <div class="cinta" id="cinta" hidden><span class="cl">📢 AVISOS</span><div class="cm"><div id="cmt"></div></div></div>
 <main class="w">
 <div class="tit"><h1>Col<b>Bolívar</b> Radio</h1><p>La emisora de la Institución Educativa Colegio Integrado Simón Bolívar · Cúcuta</p></div>
+<div class="skins" role="group" aria-label="Estilo de la radio"><span>🎨 Estilo:</span><button data-sk="clasica">🎛️ Profesional</button><button data-sk="retro">📻 Retro</button><button data-sk="futuro">🚀 Futurista</button></div>
 <div class="modos"><button id="mL" class="on">📡 EN VIVO<small>Todos escuchamos lo mismo, al mismo tiempo</small></button><button id="mD">🎧 Cabina DJ<small>Tú controlas qué suena</small></button></div>
 <section class="card lv" id="box"><div class="pl"><button class="viz" id="vz" aria-label="Cambiar visualización"><canvas id="cv"></canvas><span id="vn"></span></button><div>
 <span class="live" id="lv">EN VIVO</span><br><span class="tag" id="k">—</span>
 <h2 id="t">Pulsa «Escuchar» para sintonizar</h2><div id="a"></div><button class="inf" id="inf">ℹ️ Sobre esta canción</button>
 <input id="sk" type="range" min="0" max="1" step="1" value="0" aria-label="Barra de avance"><div class="tms"><span id="tc">0:00</span><span id="td">0:00</span></div>
 
-<div class="ctl"><button class="btn dj-only" id="pv" title="Anterior">⏮</button><button class="btn dj-only" id="b10" title="Atrasar 10 segundos">⏪ 10</button><button class="btn" id="go">▶ Escuchar</button><button class="btn dj-only" id="f10" title="Adelantar 10 segundos">10 ⏩</button><button class="btn dj-only" id="nx" title="Siguiente">⏭</button><label>🔊 <input id="vol" type="range" min="0" max="1" step=".05" value=".8"></label></div></div></div></section>
+<div class="ctl"><button class="btn rd dj-only" id="pv" title="Anterior">⏮</button><button class="btn rd dj-only" id="b10" title="Atrasar 10 segundos">⏪ 10</button><button class="btn pri" id="go">▶ Escuchar</button><button class="btn rd dj-only" id="f10" title="Adelantar 10 segundos">10 ⏩</button><button class="btn rd dj-only" id="nx" title="Siguiente">⏭</button><label>🔊 <input id="vol" type="range" min="0" max="1" step=".05" value=".8"></label></div></div></div></section>
 <section class="card" id="lst"><h3>CABINA DJ · ELIGE TU CANCIÓN</h3><ul id="ql"></ul></section>
 <div class="nx"><section class="card"><h3>A CONTINUACIÓN</h3><div id="nxt">—</div></section><section class="card"><h3>PROGRAMAS DE HOY</h3><ul id="hoy"><li>Cargando…</li></ul></section></div>
+<section class="card" id="cm" hidden><h3>💬 MURO DE COMENTARIOS</h3>
+<p class="cmn">Cuéntanos qué te parece la radio. Escribe con respeto y sin datos personales (teléfonos, direcciones o redes).</p>
+<div class="cmf"><input id="cn" maxlength="30" placeholder="Tu nombre o apodo" autocomplete="off"><textarea id="ct" maxlength="240" rows="3" placeholder="Escribe tu comentario…"></textarea>
+<input id="chp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px"><div class="cmr"><span id="cc">0/240</span><button class="btn pri" id="cs">Enviar 💬</button></div></div>
+<div id="cmsg" class="cmsg"></div><ul id="cml"></ul></section>
 <section class="card" id="app"><h3>📲 LLÉVATE LA RADIO</h3><div class="apb"><img src="qr-radio.png" alt="Código QR de ColBolívar Radio" width="150" height="150"><div><p>Instálala en tu celular como una app, o comparte el enlace con tu familia.</p><div class="ctl"><button class="btn" id="ins">📲 Instalar app</button><button class="btn o" id="shr">🔗 Compartir</button><a class="btn w2" href="cartel-qr.pdf" target="_blank">🖨️ Cartel QR</a></div><p class="insh" id="insh"></p></div></div></section>
 <div class="volver"><a href="https://gestionacademicacolbolivar-tech.github.io/ColBolivar2026/">← Volver a la portada</a></div>
 </main><footer>© 2026 ColBolívar Radio · Música libre de derechos · Cúcuta, Norte de Santander</footer>
@@ -79,7 +149,7 @@ function info(x,tipo,pos,dur){
   ci=x;$('inf').textContent=tipo==='pod'?'ℹ️ Sobre este podcast':'ℹ️ Sobre esta canción';
   $('t').textContent=x.t;$('a').textContent=x.a||'';$('k').textContent=tipo==='pod'?'🎙️ PODCAST':'🎵 MÚSICA';$('k').className='tag '+tipo;
   $('tc').textContent=fm(pos);$('td').textContent=fm(dur);
-  if(!drag){$('sk').max=Math.max(1,Math.floor(dur));$('sk').value=Math.floor(pos)}
+  if(!drag){$('sk').max=Math.max(1,Math.floor(dur));$('sk').value=Math.floor(pos);$('sk').style.setProperty('--p',(dur?Math.min(100,pos/dur*100):0)+'%')}
 }
 function live(){
   const n=now(),q=que(n);
@@ -110,7 +180,7 @@ $('pv').onclick=()=>{if(mode==='dj'&&Q.length){if(cur&&au.currentTime>3)au.curre
 $('b10').onclick=()=>{if(mode==='dj'&&cur)au.currentTime=Math.max(0,au.currentTime-10)};
 $('f10').onclick=()=>{if(mode==='dj'&&cur)au.currentTime=Math.min(au.duration||1e9,au.currentTime+10)};
 $('sk').onpointerdown=()=>drag=true;$('sk').onchange=()=>{drag=false};
-$('sk').oninput=e=>{if(mode!=='dj')return;$('tc').textContent=fm(+e.target.value);if(cur)au.currentTime=+e.target.value};
+$('sk').oninput=e=>{if(mode!=='dj')return;$('tc').textContent=fm(+e.target.value);e.target.style.setProperty('--p',(e.target.value/e.target.max*100)+'%');if(cur)au.currentTime=+e.target.value};
 au.ontimeupdate=()=>{if(mode==='dj')dj()};
 $('vol').oninput=e=>au.volume=e.target.value;au.volume=.8;
 au.onended=()=>{if(mode==='dj'){if(Q.length)playDJ(qi+1)}else{cur='';tick()}};
@@ -224,4 +294,33 @@ $('inf').onclick=()=>{const x=ci;if(!x)return;const r=(k,v)=>v?'<p><b>'+k+':</b>
   $('dc').innerHTML='<h3>'+esc(x.t)+'</h3>'+r('Autor / intérprete',esc(x.a))+r('Licencia',esc(x.lic))+r('Fuente',/^https?:\/\//i.test(fu)?'<a href="'+esc(fu)+'" target="_blank" rel="noopener">'+esc(fu)+'</a>':esc(fu))+((x.a||x.lic||x.fuente)?'':'<p>Esta pista aún no tiene créditos registrados.</p>');
   $('dlg').showModal()};
 $('dlg').onclick=e=>{if(e.target===$('dlg'))$('dlg').close()};
+
+/* ===== ESTILOS (SKINS) ===== */
+const SKD={clasica:0,retro:4,futuro:2};
+function setSkin(k,init){document.documentElement.dataset.skin=k;try{localStorage.setItem('cbRadioSkin',k)}catch(e){}
+  document.querySelectorAll('.skins button').forEach(b=>b.classList.toggle('on',b.dataset.sk===k));
+  document.querySelector('meta[name=theme-color]').content={clasica:'#12306e',retro:'#3b2210',futuro:'#070b1a'}[k]||'#12306e';
+  let st=null;try{st=localStorage.getItem('cbRadioViz2')}catch(e){}if(st===null){vs=SKD[k]||0;lab()}}
+document.querySelectorAll('.skins button').forEach(b=>b.onclick=()=>setSkin(b.dataset.sk));
+setSkin(document.documentElement.dataset.skin||'clasica',true);
+/* ===== COMENTARIOS ===== */
+const CU=(window.CB_CFG||{}).comentarios,AVC=['#2b7a3a','#d92d3a','#12306e','#ffa63d','#7a3fb0','#0a8ea0'];
+let cid;try{cid=localStorage.getItem('cbCid');if(!cid){cid=Math.random().toString(36).slice(2,12);localStorage.setItem('cbCid',cid)}}catch(e){cid=Math.random().toString(36).slice(2,12)}
+const ago=iso=>{const s=(Date.now()-new Date(iso))/1000;if(!(s>=0))return '';if(s<60)return 'ahora';if(s<3600)return 'hace '+Math.floor(s/60)+' min';if(s<86400)return 'hace '+Math.floor(s/3600)+' h';return 'hace '+Math.floor(s/86400)+' d'};
+function cmDraw(items){const ul=$('cml');ul.textContent='';
+  if(!items.length){const li=document.createElement('li');li.textContent='Sé la primera persona en comentar 🙌';ul.append(li);return}
+  items.forEach(x=>{const li=document.createElement('li'),av=document.createElement('div'),bb=document.createElement('div'),b=document.createElement('b'),sm=document.createElement('small'),p=document.createElement('p');
+    av.className='av';av.textContent=(x.n||'?').trim().charAt(0).toUpperCase();av.style.background=AVC[(x.n||'').length%AVC.length];bb.className='bb';
+    b.textContent=x.n;sm.textContent=ago(x.f);p.textContent=x.t;bb.append(b,sm,p);li.append(av,bb);ul.append(li)})}
+async function cmLoad(){try{const j=await (await fetch(CU)).json();if(j.ok)cmDraw(j.items)}catch(e){}}
+if(CU){$('cm').hidden=false;cmLoad();setInterval(cmLoad,90000);
+  $('ct').oninput=()=>{$('cc').textContent=$('ct').value.length+'/240'};
+  $('cs').onclick=async()=>{const m=$('cmsg');m.className='cmsg';
+    if($('ct').value.trim().length<2){m.textContent='Escribe tu comentario primero.';m.classList.add('er');return}
+    $('cs').disabled=true;m.textContent='Enviando…';
+    try{const j=await (await fetch(CU,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({a:'add',n:$('cn').value,t:$('ct').value,hp:$('chp').value,cid})})).json();
+      if(j.ok){m.textContent=j.estado==='pendiente'?'¡Gracias! Tu comentario se publicará cuando sea revisado.':'¡Gracias por comentar!';m.classList.add('ok');$('ct').value='';$('cc').textContent='0/240';if(j.estado!=='pendiente')cmLoad()}
+      else{m.textContent=j.error||'No se pudo enviar.';m.classList.add('er')}}
+    catch(e){m.textContent='No hay conexión. Intenta de nuevo.';m.classList.add('er')}
+    setTimeout(()=>{$('cs').disabled=false},2500)}}
 </script></body></html>

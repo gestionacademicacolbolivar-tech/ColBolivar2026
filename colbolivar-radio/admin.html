@@ -1,7 +1,7 @@
 <!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Panel · ColBolívar Radio</title><meta name="robots" content="noindex">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;800&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="radio.css">
+<script src="config.js"></script><link rel="stylesheet" href="radio.css">
 <style>
 .w{max-width:1100px}ol{padding-left:22px}ol li{margin:4px 0}
 .row{display:grid;grid-template-columns:2fr 1.2fr 1fr 1.9fr auto;gap:8px;align-items:center;padding:10px 0;border-bottom:1px dashed #cfdccf}
@@ -38,6 +38,10 @@
 <div id="sm" class="sm"></div></section>
 <section class="card" style="margin-top:16px;border-top-color:var(--o)"><h3>📢 Avisos institucionales (cinta)</h3>
 <p>Se muestran en una franja que corre bajo el banner. Cada aviso aparece entre su fecha de inicio y de fin, y se quita solo. Sin fecha de fin queda siempre visible.</p><div id="LA"></div><div class="acc"><button class="btn o" id="addA">＋ Agregar aviso</button></div></section>
+<section class="card" style="margin-top:16px;border-top-color:var(--r)"><h3>💬 Moderar comentarios</h3>
+<p>Entra con tu clave de administrador (la que pusiste en el script). Aquí apruebas o borras los comentarios del muro; el cambio es inmediato, sin subir archivos.</p>
+<div class="acc"><input id="mk" type="password" placeholder="Clave de administrador" autocomplete="off" style="flex:1;min-width:200px;font:inherit;padding:8px 10px;border:2px solid #cfdccf;border-radius:10px"><button class="btn" id="mg">Entrar y cargar</button><button class="btn w2" id="mr" hidden>↻ Actualizar</button></div>
+<div id="mm" class="sm"></div><div id="MC"></div></section>
 <section class="card" style="margin-top:16px;border-top-color:var(--g)"><div class="row hd"><span>TÍTULO / ARTISTA</span><span>TIPO</span><span>HORA · FECHA</span><span>DÍAS</span><span>ACCIONES</span></div><div id="L"><p>Aún no hay audios. Agrega algunos arriba.</p></div><p id="sum" style="margin-top:10px"></p></section></main>
 <footer>Este panel solo genera el archivo; no modifica nada por sí solo.</footer>
 <script>
@@ -121,4 +125,25 @@ $('bG').onclick=async()=>{if(!raw)return;$('bG').disabled=true;const t=($('rt').
     sm('✅ Descargado '+name+(r.ext==='wav'?' (WAV: pesa más; si pasa de 25 MB no podrás subirlo desde el navegador)':'')+'. Ya está en la lista de abajo: ponle hora y días, sube el archivo a la carpeta audio/ de GitHub y descarga el programacion.json.');
     $('bD').click();sm($('sm').textContent)}catch(e){sm('No se pudo convertir la grabación. Intenta grabar de nuevo.',1)}
   $('bG').disabled=false};
+
+/* ===== MODERACIÓN DE COMENTARIOS ===== */
+const CUa=(window.CB_CFG||{}).comentarios;let mkey='';
+const mm_=(t,e)=>{$('mm').textContent=t;$('mm').className='sm'+(e?' e':'')};
+const api=async o=>(await fetch(CUa,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({...o,key:mkey})})).json();
+async function mcLoad(){mm_('Cargando…');
+  try{const j=await api({a:'adm_list'});if(!j.ok){mm_(j.error||'Error',1);$('mr').hidden=true;$('MC').textContent='';return}
+    const L=j.items.sort((x,y)=>(x.e==='pendiente'?0:1)-(y.e==='pendiente'?0:1));$('mr').hidden=false;
+    mm_(L.length+' comentarios · '+L.filter(x=>x.e==='pendiente').length+' por revisar · '+(j.moderacion?'moderación previa ACTIVADA':'se publican de inmediato'));
+    const C=$('MC');C.textContent='';if(!L.length)C.textContent='Todavía no hay comentarios.';
+    L.forEach(x=>{const r=document.createElement('div');r.className='row'+(x.e==='pendiente'?' pod':'');r.style.gridTemplateColumns='1fr auto';
+      const d=document.createElement('div'),b=document.createElement('b'),s2=document.createElement('small'),p=document.createElement('p'),ac=document.createElement('div');
+      b.textContent=x.n;s2.textContent=' · '+new Date(x.f).toLocaleString('es-CO')+' · '+(x.e==='pendiente'?'⏳ PENDIENTE':'✅ publicado');p.textContent=x.t;d.append(b,s2,p);
+      if(x.e==='pendiente'){const o=document.createElement('button');o.className='mini';o.textContent='✔ Aprobar';o.onclick=()=>act('adm_ok',x.id);ac.append(o)}
+      const k=document.createElement('button');k.className='mini';k.textContent='🗑 Borrar';k.onclick=()=>{if(confirm('¿Borrar este comentario?\n\n'+x.t))act('adm_del',x.id)};ac.append(k);r.append(d,ac);C.append(r)})}
+  catch(e){mm_('No se pudo conectar con el servidor de comentarios.',1)}}
+async function act(a,id){try{const j=await api({a,id});if(!j.ok)mm_(j.error,1);else mcLoad()}catch(e){mm_('Error de conexión.',1)}}
+$('mg').onclick=()=>{if(!CUa)return mm_('Falta pegar la URL de Apps Script en config.js.',1);mkey=$('mk').value;try{sessionStorage.setItem('cbMk',mkey)}catch(e){}mcLoad()};
+$('mr').onclick=mcLoad;
+try{const k=sessionStorage.getItem('cbMk');if(k&&CUa){mkey=k;$('mk').value=k;mcLoad()}}catch(e){}
+if(!CUa)mm_('Los comentarios aún no están conectados: falta la URL en config.js.',1);
 </script></body></html>
