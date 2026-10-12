@@ -1,6 +1,7 @@
 <!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>ColBolívar Radio</title><meta name="theme-color" content="#12306e">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;800&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="ColBolívar Radio">
 <link rel="stylesheet" href="radio.css">
 <style>
 .modos{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
@@ -29,6 +30,10 @@ ul{list-style:none;padding:0}li{padding:5px 0;border-bottom:1px dashed #cfdccf}l
 .viz span{position:absolute;left:0;right:0;bottom:0;padding:14px 6px 6px;background:linear-gradient(transparent,#000a);font:800 .68rem Sora,sans-serif;color:#fff;opacity:0;transition:opacity .4s}
 .viz.hint span,.viz:hover span{opacity:1}
 @media(max-width:640px){.viz{width:min(260px,80vw);height:min(260px,80vw)}}
+#app{margin-top:14px;border-top-color:var(--g)}#app h3{font-size:.9rem;color:var(--gd);margin-bottom:10px}
+.apb{display:grid;grid-template-columns:150px 1fr;gap:18px;align-items:center}.apb img{width:150px;height:150px;border-radius:14px;border:3px solid var(--o);background:#fff}
+.insh{font-size:.9rem;color:var(--mut);margin-top:8px}.apb .btn{text-decoration:none;display:inline-block}
+@media(max-width:640px){.apb{grid-template-columns:1fr;text-align:center;justify-items:center}}
 </style></head><body>
 <header class="ban"><a class="back" href="https://gestionacademicacolbolivar-tech.github.io/ColBolivar2026/">← Volver a la portada</a><img class="bd" src="logo-banner.webp" alt="Todos somos ColBolívar" width="1800" height="441"><img class="bm" src="logo-banner-movil.webp" alt="Todos somos ColBolívar" width="1200" height="505"></header>
 <main class="w">
@@ -42,6 +47,7 @@ ul{list-style:none;padding:0}li{padding:5px 0;border-bottom:1px dashed #cfdccf}l
 <div class="ctl"><button class="btn dj-only" id="pv" title="Anterior">⏮</button><button class="btn dj-only" id="b10" title="Atrasar 10 segundos">⏪ 10</button><button class="btn" id="go">▶ Escuchar</button><button class="btn dj-only" id="f10" title="Adelantar 10 segundos">10 ⏩</button><button class="btn dj-only" id="nx" title="Siguiente">⏭</button><label>🔊 <input id="vol" type="range" min="0" max="1" step=".05" value=".8"></label></div></div></div></section>
 <section class="card" id="lst"><h3>CABINA DJ · ELIGE TU CANCIÓN</h3><ul id="ql"></ul></section>
 <div class="nx"><section class="card"><h3>A CONTINUACIÓN</h3><div id="nxt">—</div></section><section class="card"><h3>PROGRAMAS DE HOY</h3><ul id="hoy"><li>Cargando…</li></ul></section></div>
+<section class="card" id="app"><h3>📲 LLÉVATE LA RADIO</h3><div class="apb"><img src="qr-radio.png" alt="Código QR de ColBolívar Radio" width="150" height="150"><div><p>Instálala en tu celular como una app, o comparte el enlace con tu familia.</p><div class="ctl"><button class="btn" id="ins">📲 Instalar app</button><button class="btn o" id="shr">🔗 Compartir</button><a class="btn w2" href="cartel-qr.pdf" target="_blank">🖨️ Cartel QR</a></div><p class="insh" id="insh"></p></div></div></section>
 <div class="volver"><a href="https://gestionacademicacolbolivar-tech.github.io/ColBolivar2026/">← Volver a la portada</a></div>
 </main><footer>© 2026 ColBolívar Radio · Música libre de derechos · Cúcuta, Norte de Santander</footer>
 <audio id="au" preload="auto"></audio>
@@ -151,4 +157,13 @@ function draw(ts){requestAnimationFrame(draw);if(document.hidden||!W)return;
 function lab(){$('vn').textContent='👆 '+VN[vs]+' ('+(vs+1)+'/'+VN.length+') · toca para cambiar';$('vz').classList.add('hint');clearTimeout(lab.t);lab.t=setTimeout(()=>$('vz').classList.remove('hint'),2600)}
 $('vz').onclick=()=>{vs=(vs+1)%VN.length;try{localStorage.setItem('cbRadioViz',vs)}catch(e){}lab()};
 lab();requestAnimationFrame(draw);
+
+/* ===== APP INSTALABLE Y COMPARTIR ===== */
+if('serviceWorker' in navigator)addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
+let dp=null;if(matchMedia('(display-mode: standalone)').matches||navigator.standalone)$('ins').hidden=true;
+addEventListener('beforeinstallprompt',e=>{e.preventDefault();dp=e});addEventListener('appinstalled',()=>{$('ins').hidden=true});
+$('ins').onclick=async()=>{if(dp){dp.prompt();await dp.userChoice;dp=null;return}
+  $('insh').textContent=/iphone|ipad|ipod/i.test(navigator.userAgent)?'En iPhone o iPad: toca el botón Compartir de Safari y elige «Agregar a pantalla de inicio».':'Abre el menú del navegador (⋮) y elige «Instalar app» o «Agregar a la pantalla de inicio».'};
+$('shr').onclick=async()=>{const u=new URL('./',location.href).href;
+  try{if(navigator.share)await navigator.share({title:'ColBolívar Radio',text:'Escucha ColBolívar Radio 📻',url:u});else{await navigator.clipboard.writeText(u);$('insh').textContent='Enlace copiado ✅ '+u}}catch(e){}};
 </script></body></html>
