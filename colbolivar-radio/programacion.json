@@ -9,34 +9,52 @@
  ],
  "musica": [
   {
+   "t": "Algo Pendiente – Thiago Navarro Music",
+   "a": "",
+   "f": "audio/Algo Pendiente – Thiago Navarro Music.mp3",
+   "d": 222
+  },
+  {
+   "t": "Ámate Tanto ❤️   Thiago Navarro Music",
+   "a": "",
+   "f": "audio/Ámate Tanto ❤️ - Thiago Navarro Music.mp3",
+   "d": 191
+  },
+  {
    "t": "Bonito, Bonito   Thiago Navarro Music",
-   "a": " Thiago Navarro Music",
+   "a": "",
    "f": "audio/Bonito, Bonito - Thiago Navarro Music.mp3",
    "d": 206
   },
   {
    "t": "Haz Magia Hoy ✨ Thiago Navarro",
-   "a": " Thiago Navarro Music",
+   "a": "",
    "f": "audio/Haz Magia Hoy ✨ Thiago Navarro.mp3",
    "d": 231
   },
   {
-   "t": "Modelo pedagógico del Colegio Simón Bolívar",
-   "a": "Luis Avellaneda",
-   "f": "audio/Modelo_pedagógico_del_Colegio_Simón_Bolívar.mp3",
-   "d": 1329
+   "t": "Pasito a Pasito   Thiago Navarro Music",
+   "a": "",
+   "f": "audio/Pasito a Pasito - Thiago Navarro Music.mp3",
+   "d": 316
   },
   {
    "t": "Quédate con lo sencillo",
-   "a": " Thiago Navarro Music",
+   "a": "",
    "f": "audio/Quédate con lo sencillo.mp3",
    "d": 189
   },
   {
    "t": "Un Poquito  Thiago Navarro Music (Video Oficial) Canción de Amor 2026",
-   "a": " Thiago Navarro Music",
+   "a": "",
    "f": "audio/Un Poquito -Thiago Navarro Music (Video Oficial) Canción de Amor 2026.mp3",
    "d": 228
+  },
+  {
+   "t": "Modelo pedagógico del Colegio Simón Bolívar",
+   "a": "",
+   "f": "audio/Modelo_pedagógico_del_Colegio_Simón_Bolívar.mp3",
+   "d": 1329
   }
  ],
  "especiales": []
