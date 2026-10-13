@@ -49,13 +49,25 @@
    "a": "",
    "f": "audio/Un Poquito -Thiago Navarro Music (Video Oficial) Canción de Amor 2026.mp3",
    "d": 228
-  },
+  }
+ ],
+ "especiales": [
   {
    "t": "Modelo pedagógico del Colegio Simón Bolívar",
    "a": "",
    "f": "audio/Modelo_pedagógico_del_Colegio_Simón_Bolívar.mp3",
-   "d": 1329
+   "d": 1329,
+   "h": "07:00",
+   "dias": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    0
+   ],
+   "fecha": ""
   }
- ],
- "especiales": []
+ ]
 }
