@@ -67,10 +67,6 @@ html[data-skin=retro]{background:#d8c39a}html[data-skin=futuro]{background:#070b
 html[data-skin=retro] body{background:#d8c39a repeating-linear-gradient(90deg,#0000 0 46px,#5a3a1a12 46px 48px),radial-gradient(900px 500px at 50% 0,#fff5,#0000)}
 html[data-skin=retro] :is(h1,h2,h3,.btn,.live,.tag,.modos button,.inf,.cl,.skins button,.skins span,.tms,li b){font-family:'Special Elite',Georgia,serif}
 html[data-skin=retro] .card{background:#f4e7c8;border:3px solid #6b4423;border-radius:16px;box-shadow:0 6px 0 #4f2f14,0 12px 22px #0005}
-html[data-skin=retro] #box{background:linear-gradient(145deg,#9a6a35,#5a3517);border:0;padding:16px;box-shadow:inset 0 0 0 4px #3b2210,inset 0 0 0 7px #c9973f77,0 8px 0 #3b2210,0 16px 26px #0006}
-html[data-skin=retro] #box .pl{background:#f1e2bd;border-radius:12px;padding:16px;box-shadow:inset 0 3px 10px #0005}
-html[data-skin=retro] #box:after{content:"";display:block;height:28px;margin-top:14px;border-radius:8px;background:radial-gradient(circle,#2b1a0c 36%,#0000 40%) 0 0/11px 11px,#c9a96a;box-shadow:inset 0 3px 7px #0008}
-html[data-skin=retro] .viz{border:7px solid #b9b3a6;border-radius:14px;box-shadow:inset 0 0 0 3px #555,inset 0 6px 14px #000a,0 2px 0 #fff9}
 html[data-skin=retro] .btn{background:linear-gradient(#f7ecd0,#d9c79b);color:#3b2210;border:2px solid #4f2f14;border-radius:10px;box-shadow:0 4px 0 #4f2f14}
 html[data-skin=retro] .btn.rd,html[data-skin=retro] .btn.pri{border-radius:12px}html[data-skin=retro] .btn.pri{background:linear-gradient(#d65a45,#a12f22);color:#fff3e0}
 html[data-skin=retro] .btn.o{background:linear-gradient(#e8b64f,#c58b1f)}html[data-skin=retro] .btn:active{box-shadow:0 1px 0 #4f2f14;transform:translateY(3px)}
@@ -88,8 +84,6 @@ html[data-skin=futuro] body{background:radial-gradient(1000px 520px at 50% -8%,#
 html[data-skin=futuro] body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(#19e3ff12 1px,#0000 1px) 0 0/44px 44px,linear-gradient(90deg,#19e3ff12 1px,#0000 1px) 0 0/44px 44px}
 html[data-skin=futuro] :is(h1,h2,h3,.btn,.live,.tag,.modos button,.inf,.cl,.skins button,.skins span,.tms,li b){font-family:Orbitron,Sora,sans-serif}
 html[data-skin=futuro] .card{background:linear-gradient(160deg,#10194a,#0a1033);color:var(--ink);border:1px solid #19e3ff77;border-top:3px solid #19e3ff;box-shadow:0 0 22px #19e3ff2e,inset 0 0 24px #19e3ff12;border-radius:20px}
-html[data-skin=futuro] #box{border-top-color:#ff2fb3;box-shadow:0 0 30px #19e3ff44,0 0 60px #ff2fb322,inset 0 0 26px #19e3ff14}
-html[data-skin=futuro] .viz{border:2px solid #19e3ff;box-shadow:0 0 18px #19e3ff77,inset 0 0 18px #19e3ff44}
 html[data-skin=futuro] .btn{background:linear-gradient(#0f2f55,#0a1d3d);color:#7df3ff;border:1px solid #19e3ff;box-shadow:0 0 12px #19e3ff55,inset 0 0 10px #19e3ff22;text-shadow:0 0 8px #19e3ff}
 html[data-skin=futuro] .btn:hover{background:#12406f}html[data-skin=futuro] .btn.pri{background:linear-gradient(#ff2fb3,#a3147a);color:#fff;border-color:#ff8ad8;box-shadow:0 0 20px #ff2fb388;text-shadow:0 0 8px #fff}
 html[data-skin=futuro] .btn.o{background:linear-gradient(#ff2fb3,#a3147a);color:#fff;border-color:#ff8ad8}html[data-skin=futuro] .btn.w2{background:transparent;color:#7df3ff;border-color:#19e3ff}
@@ -105,19 +99,29 @@ html[data-skin=futuro] .bb{border:1px solid #19e3ff44}html[data-skin=futuro] .ap
 html[data-skin=futuro] dialog{background:#0c1438;border:1px solid #19e3ff}html[data-skin=futuro] .inf{background:#0c1438;color:#7df3ff;border-color:#19e3ff}
 html[data-skin=futuro] .back{background:#0c1438e6;color:#7df3ff}html[data-skin=futuro] .volver a{background:#0f2f55;color:#7df3ff;border:1px solid #19e3ff}html[data-skin=futuro] footer{color:var(--mut)}
 html[data-skin=futuro] .insh.show{background:#13205a;border-color:#19e3ff;color:#e6f0ff}
-</style></head><body>
+</style><link rel="stylesheet" href="skins.css"></head><body>
 <header class="ban"><a class="back" href="https://gestionacademicacolbolivar-tech.github.io/ColBolivar2026/">← Volver a la portada</a><img class="bd" src="logo-banner.webp" alt="Todos somos ColBolívar" width="1800" height="441"><img class="bm" src="logo-banner-movil.webp" alt="Todos somos ColBolívar" width="1200" height="505"></header>
 <div class="cinta" id="cinta" hidden><span class="cl">📢 AVISOS</span><div class="cm"><div id="cmt"></div></div></div>
 <main class="w">
 <div class="tit"><h1>Col<b>Bolívar</b> Radio</h1><p>La emisora de la Institución Educativa Colegio Integrado Simón Bolívar · Cúcuta</p></div>
 <div class="skins" role="group" aria-label="Estilo de la radio"><span>🎨 Estilo:</span><button data-sk="clasica">🎛️ Profesional</button><button data-sk="retro">📻 Retro</button><button data-sk="futuro">🚀 Futurista</button></div>
 <div class="modos"><button id="mL" class="on">📡 EN VIVO<small>Todos escuchamos lo mismo, al mismo tiempo</small></button><button id="mD">🎧 Cabina DJ<small>Tú controlas qué suena</small></button></div>
-<section class="card lv" id="box"><div class="pl"><button class="viz" id="vz" aria-label="Cambiar visualización"><canvas id="cv"></canvas><span id="vn"></span></button><div>
-<span class="live" id="lv">EN VIVO</span><br><span class="tag" id="k">—</span>
-<h2 id="t">Pulsa «Escuchar» para sintonizar</h2><div id="a"></div><button class="inf" id="inf">ℹ️ Sobre esta canción</button>
-<input id="sk" type="range" min="0" max="1" step="1" value="0" aria-label="Barra de avance"><div class="tms"><span id="tc">0:00</span><span id="td">0:00</span></div>
-
-<div class="ctl"><button class="btn rd dj-only" id="pv" title="Anterior">⏮</button><button class="btn rd dj-only" id="b10" title="Atrasar 10 segundos">⏪ 10</button><button class="btn pri" id="go">▶ Escuchar</button><button class="btn rd dj-only" id="f10" title="Adelantar 10 segundos">10 ⏩</button><button class="btn rd dj-only" id="nx" title="Siguiente">⏭</button><label>🔊 <input id="vol" type="range" min="0" max="1" step=".05" value=".8"></label></div></div></div></section>
+<section class="card lv" id="box"><div class="pl">
+<div class="rad">
+<button class="viz" id="vz" aria-label="Cambiar visualización"><canvas id="cv"></canvas><span id="vn"></span></button>
+<div class="zt"><h2 id="t">Pulsa «Escuchar» para sintonizar</h2><div id="a"></div></div>
+<div class="zp"><input id="sk" type="range" min="0" max="1" step="1" value="0" aria-label="Barra de avance"></div>
+<div class="zb"><button class="btn dj-only" id="pv" title="Anterior" aria-label="Anterior"></button><button class="btn dj-only" id="b10" title="Atrasar 10 segundos" aria-label="Atrasar 10 segundos"></button><button class="btn pri" id="go" title="Escuchar" aria-label="Escuchar"></button><button class="btn" id="pz" title="Pausar" aria-label="Pausar"></button><button class="btn dj-only" id="f10" title="Adelantar 10 segundos" aria-label="Adelantar 10 segundos"></button><button class="btn dj-only" id="nx" title="Siguiente" aria-label="Siguiente"></button></div>
+<div class="zk" id="kn" role="slider" tabindex="0" aria-label="Volumen" aria-valuemin="0" aria-valuemax="100" aria-valuenow="80" title="Volumen (gira la perilla)"></div>
+</div>
+<div class="grille" aria-hidden="true"></div>
+<div class="inf2">
+<div class="lt"><span class="live" id="lv">EN VIVO</span><span class="tag" id="k">—</span></div>
+<div class="zt2"><div id="t2"></div><div id="a2"></div></div>
+<button class="inf" id="inf">ℹ️ Sobre esta canción</button>
+<div class="tms"><span id="tc">0:00</span><span id="td">0:00</span></div>
+<div class="mrow"><button class="btn dj-only" data-f="pv" aria-label="Anterior"></button><button class="btn dj-only" data-f="b10" aria-label="Atrasar 10 segundos"></button><button class="btn" data-f="go" aria-label="Escuchar"></button><button class="btn" data-f="pz" aria-label="Pausar"></button><button class="btn dj-only" data-f="f10" aria-label="Adelantar 10 segundos"></button><button class="btn dj-only" data-f="nx" aria-label="Siguiente"></button><label class="vl">🔊 <input id="vol" type="range" min="0" max="1" step=".05" value=".8"></label></div>
+</div></div></section>
 <section class="card" id="lst"><h3>CABINA DJ · ELIGE TU CANCIÓN</h3><ul id="ql"></ul></section>
 <div class="nx"><section class="card"><h3>A CONTINUACIÓN</h3><div id="nxt">—</div></section><section class="card"><h3>PROGRAMAS DE HOY</h3><ul id="hoy"><li>Cargando…</li></ul></section></div>
 <section class="card" id="cm" hidden><h3>💬 MURO DE COMENTARIOS</h3>
@@ -149,7 +153,7 @@ function info(x,tipo,pos,dur){
   ci=x;$('inf').textContent=tipo==='pod'?'ℹ️ Sobre este podcast':'ℹ️ Sobre esta canción';
   $('t').textContent=x.t;$('a').textContent=x.a||'';$('k').textContent=tipo==='pod'?'🎙️ PODCAST':'🎵 MÚSICA';$('k').className='tag '+tipo;
   $('tc').textContent=fm(pos);$('td').textContent=fm(dur);
-  if(!drag){$('sk').max=Math.max(1,Math.floor(dur));$('sk').value=Math.floor(pos);$('sk').style.setProperty('--p',(dur?Math.min(100,pos/dur*100):0)+'%')}
+  if(!drag){$('sk').max=Math.max(1,Math.floor(dur));$('sk').value=Math.floor(pos);{const pv=(dur?Math.min(100,pos/dur*100):0)+'%';$('sk').style.setProperty('--p',pv);$('sk').parentNode.style.setProperty('--p',pv)}}
 }
 function live(){
   const n=now(),q=que(n);
@@ -180,7 +184,7 @@ $('pv').onclick=()=>{if(mode==='dj'&&Q.length){if(cur&&au.currentTime>3)au.curre
 $('b10').onclick=()=>{if(mode==='dj'&&cur)au.currentTime=Math.max(0,au.currentTime-10)};
 $('f10').onclick=()=>{if(mode==='dj'&&cur)au.currentTime=Math.min(au.duration||1e9,au.currentTime+10)};
 $('sk').onpointerdown=()=>drag=true;$('sk').onchange=()=>{drag=false};
-$('sk').oninput=e=>{if(mode!=='dj')return;$('tc').textContent=fm(+e.target.value);e.target.style.setProperty('--p',(e.target.value/e.target.max*100)+'%');if(cur)au.currentTime=+e.target.value};
+$('sk').oninput=e=>{if(mode!=='dj')return;$('tc').textContent=fm(+e.target.value);{const pv=(e.target.value/e.target.max*100)+'%';e.target.style.setProperty('--p',pv);e.target.parentNode.style.setProperty('--p',pv)}if(cur)au.currentTime=+e.target.value};
 au.ontimeupdate=()=>{if(mode==='dj')dj()};
 $('vol').oninput=e=>au.volume=e.target.value;au.volume=.8;
 au.onended=()=>{if(mode==='dj'){if(Q.length)playDJ(qi+1)}else{cur='';tick()}};
@@ -222,7 +226,7 @@ function data(t){const pl=on&&!au.paused;
     for(let i=0;i<N;i++){const u=i/N,v=pl?Math.max(0,(.22+.28*Math.sin(t*3+i*.35)+.22*Math.sin(t*5.3+i*.9)*Math.cos(t*1.7)+.45*beat*(1-u))*(1-u*.45)):.05+.04*Math.sin(t*1.5+i*.4);lev[i]+=(v-lev[i])*.3}
     for(let i=0;i<128;i++)wv[i]=pl?Math.sin(i*.25+t*8)*.4*Math.sin(i*.05+t):Math.sin(i*.12+t*2)*.05}}
 /*VIZ-START*/
-const VN=['Arcoíris','Anillo','Neón LED','Ondas espejo','Barras','Montañas'],BG=['#ffffff','#ffffff','#0b1f4a','#ffffff','#0b1f4a','#0b1f4a'];
+const VN=['Arcoíris','Anillo','Neón LED','Ondas espejo','Barras','Montañas'],BGS={retro:'#140a04',futuro:'#050a1e',clasica:'#0b1f4a'};
 const HP=[178,128,58,30,2,-35,-92],HQ=[186,32,4,-80,218],pk=new Array(24).fill(0);
 const col=(t,l=52,a=1,P=HP)=>{t=Math.max(0,Math.min(.999,t));const k=t*(P.length-1),i=k|0,h=P[i]+(P[i+1]-P[i])*(k-i);return 'hsla('+h.toFixed(0)+',88%,'+l+'%,'+a+')'};
 const at=u=>lev[Math.min(N-1,Math.floor(u*N*.9))];
@@ -235,17 +239,17 @@ function sArc(t,bass){const L=Math.min(230,Math.floor(W/2.5)),c=H/2,bw=W/L,g=cx.
     cx.strokeStyle=col(u,52,.9);cx.lineWidth=Math.max(.9,bw*(i%5===0?.35:.62));cx.beginPath();cx.moveTo(x,c-h);cx.lineTo(x,c+h);cx.stroke();
     if(i%4===0&&h>H*.09)for(let k=1;k<=3;k++){const d=h+4+k*8,r=2.7-k*.55;cx.fillStyle=col(u,50,.9-k*.22);cx.beginPath();cx.arc(x,c-d,r,0,7);cx.fill();cx.beginPath();cx.arc(x,c+d,r,0,7);cx.fill()}}}
 /* 2 · Anillo: barras hacia afuera y adentro, media vuelta arcoíris y media azul, con chispas */
-function sRing(t,bass){const m=Math.min(W,H),r0=m*.27,n=96,bw=Math.PI*2*r0/n*.7;
+function sRing(t,bass){const m=Math.min(W,H*1.6),r0=m*.27,n=96,bw=Math.PI*2*r0/n*.7;
   cx.save();cx.translate(W/2,H/2);cx.rotate(t*.12);
   for(let i=0;i<n;i++){const a=i/n*Math.PI*2,v=at(Math.abs(Math.sin(a/2))),j=.7+.3*Math.sin(t*7+i*2.3),lo=3+v*m*.2*j,li=2+v*m*.07,left=Math.cos(a)<0;
-    cx.strokeStyle=left?col((a-Math.PI/2)/Math.PI,50,.95):'hsla(225,45%,'+(10+v*50)+'%,.95)';cx.lineWidth=bw;
+    cx.strokeStyle=left?col((a-Math.PI/2)/Math.PI,50,.95):'hsla(215,45%,'+(55+v*40)+'%,.95)';cx.lineWidth=bw;
     cx.beginPath();cx.moveTo(Math.cos(a)*(r0-li),Math.sin(a)*(r0-li));cx.lineTo(Math.cos(a)*(r0+lo),Math.sin(a)*(r0+lo));cx.stroke()}
-  cx.lineWidth=1;for(let k=0;k<44;k++){const a=k*2.39996,v=at(Math.abs(Math.sin(a/2)));if(v>.4){const r=r0+8+v*m*.2,l=Math.max(0,Math.min(v*m*.12,m*.5-2-r));cx.strokeStyle='rgba(18,48,110,.55)';cx.beginPath();cx.moveTo(Math.cos(a)*r,Math.sin(a)*r);cx.lineTo(Math.cos(a)*(r+l),Math.sin(a)*(r+l));cx.stroke()}}
+  cx.lineWidth=1;for(let k=0;k<44;k++){const a=k*2.39996,v=at(Math.abs(Math.sin(a/2)));if(v>.4){const r=r0+8+v*m*.2,l=Math.max(0,Math.min(v*m*.12,m*.5-2-r));cx.strokeStyle='rgba(170,200,255,.55)';cx.beginPath();cx.moveTo(Math.cos(a)*r,Math.sin(a)*r);cx.lineTo(Math.cos(a)*(r+l),Math.sin(a)*(r+l));cx.stroke()}}
   cx.restore();cx.save();cx.translate(W/2,H/2);cx.fillStyle='#fff';cx.shadowColor='#0003';cx.shadowBlur=8;cx.beginPath();cx.arc(0,0,r0*.7*(1+bass*.05),0,7);cx.fill();cx.shadowBlur=0;
-  cx.fillStyle='#12306e';cx.textAlign='center';cx.font='800 '+Math.round(m*.062)+'px Sora,Nunito,sans-serif';cx.fillText('ColBolívar',0,m*.012);
-  cx.fillStyle='#d92d3a';cx.font='800 '+Math.round(m*.045)+'px Sora,Nunito,sans-serif';cx.fillText('RADIO',0,m*.075);cx.restore()}
+  if(m>110){cx.fillStyle='#12306e';cx.textAlign='center';cx.font='800 '+Math.round(m*.062)+'px Sora,Nunito,sans-serif';cx.fillText('ColBolívar',0,m*.012);
+  cx.fillStyle='#d92d3a';cx.font='800 '+Math.round(m*.045)+'px Sora,Nunito,sans-serif';cx.fillText('RADIO',0,m*.075)}cx.restore()}
 /* 3 · Neón LED: ecualizador de segmentos con reflejo y curvas luminosas */
-function sLed(t,bass){const cols=Math.min(24,Math.floor(W/22)),rows=10,cw=W/cols,base=H*.64,rh=(base-8)/rows;cx.globalCompositeOperation='lighter';
+function sLed(t,bass){const cols=Math.min(24,Math.floor(W/22)),rows=Math.max(4,Math.min(10,Math.floor(H/9))),cw=W/cols,base=H*.64,rh=(base-8)/rows;cx.globalCompositeOperation='lighter';
   for(let c=0;c<cols;c++){const on=Math.round(at(c/cols)*rows);
     for(let r=0;r<rows;r++){const lit=r<on;cx.fillStyle=col(c/cols,lit?55:30,lit?.95:.1);cx.fillRect(c*cw+2,base-(r+1)*rh+1.5,cw-4,rh-3);
       if(lit&&r<4){cx.fillStyle=col(c/cols,45,.18);cx.fillRect(c*cw+2,base+r*rh*.7+3,cw-4,rh*.7-2)}}}
@@ -266,7 +270,7 @@ function sBar(t,bass){const n=24,bw=W/n;for(let i=0;i<n;i++){const v=at(i/n),h=M
 function sMon(t,bass){const g=cx.createLinearGradient(0,0,W,0);g.addColorStop(0,'#2b7a3a');g.addColorStop(.5,'#35b34f');g.addColorStop(1,'#ffa63d');area(i=>10+lev[i]*H*.85,g);
   const g2=cx.createLinearGradient(0,0,W,0);g2.addColorStop(0,'#ffa63dd9');g2.addColorStop(.6,'#d92d3ad9');g2.addColorStop(1,'#ffffffd0');
   area(i=>8+(lev[i]+lev[Math.min(N-1,i+1)]+lev[Math.max(0,i-1)])/3*H*.55,g2);area(i=>6+(.35+.65*lev[i])*H*.22*(.7+.3*Math.sin(t*2+i*.3)),'#ffffff2e')}
-function drawStyle(s,t,bass){cx.fillStyle=BG[s];cx.fillRect(0,0,W,H);[sArc,sRing,sLed,sMir,sBar,sMon][s](t,bass)}
+function drawStyle(s,t,bass){cx.fillStyle=(typeof document!=='undefined'&&BGS[document.documentElement.dataset.skin])||'#0b1f4a';cx.fillRect(0,0,W,H);[sArc,sRing,sLed,sMir,sBar,sMon][s](t,bass)}
 /*VIZ-END*/
 function draw(ts){requestAnimationFrame(draw);if(document.hidden||!W)return;const t=ts/1000;data(t);drawStyle(vs,t,(lev[0]+lev[1]+lev[2]+lev[3]+lev[4])/5)}
 function lab(){$('vn').textContent='👆 '+VN[vs]+' ('+(vs+1)+'/'+VN.length+') · toca para cambiar';$('vz').classList.add('hint');clearTimeout(lab.t);lab.t=setTimeout(()=>$('vz').classList.remove('hint'),2600)}
@@ -323,4 +327,19 @@ if(CU){$('cm').hidden=false;cmLoad();setInterval(cmLoad,90000);
       else{m.textContent=j.error||'No se pudo enviar.';m.classList.add('er')}}
     catch(e){m.textContent='No hay conexión. Intenta de nuevo.';m.classList.add('er')}
     setTimeout(()=>{$('cs').disabled=false},2500)}}
+
+/* ===== SKINS CON IMÁGENES: espejo de texto, play/pausa, perilla ===== */
+['t','a'].forEach(i=>{const m=()=>{$(i+'2').textContent=$(i).textContent};new MutationObserver(m).observe($(i),{childList:true,characterData:true,subtree:true});m()});
+const goToggle=$('go').onclick;$('go').onclick=()=>{if(!on)goToggle()};$('pz').onclick=()=>{if(on)goToggle()};
+document.querySelectorAll('.mrow [data-f]').forEach(b=>b.onclick=()=>$(b.dataset.f).click());
+const kn=$('kn');let kLast=.8;
+function kRot(v){kn.style.setProperty('--rot',(-135+v*270)+'deg');kn.setAttribute('aria-valuenow',Math.round(v*100))}
+function kSet(v){v=Math.max(0,Math.min(1,v));kLast=v;$('vol').value=v;au.volume=v;kRot(v)}
+$('vol').addEventListener('input',()=>{kLast=+$('vol').value;kRot(kLast)});kRot(.8);
+function kMove(e){const r=kn.getBoundingClientRect(),a=Math.atan2(e.clientX-(r.left+r.width/2),-(e.clientY-(r.top+r.height/2)))*180/Math.PI;
+  const v=a>135?1:a<-135?0:(a+135)/270;if(Math.abs(v-kLast)<.6)kSet(v)}
+let kDown=false;kn.onpointerdown=e=>{kDown=true;kn.setPointerCapture(e.pointerId);kn.classList.add('grab');kMove(e)};
+kn.onpointermove=e=>{if(kDown)kMove(e)};kn.onpointerup=kn.onpointercancel=()=>{kDown=false;kn.classList.remove('grab')};
+kn.onwheel=e=>{e.preventDefault();kSet(kLast-Math.sign(e.deltaY)*.05)};
+kn.onkeydown=e=>{if(e.key==='ArrowUp'||e.key==='ArrowRight'){kSet(kLast+.05);e.preventDefault()}if(e.key==='ArrowDown'||e.key==='ArrowLeft'){kSet(kLast-.05);e.preventDefault()}};
 </script></body></html>
