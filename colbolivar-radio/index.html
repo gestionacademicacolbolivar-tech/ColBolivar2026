@@ -99,10 +99,15 @@ html[data-skin=futuro] .bb{border:1px solid #19e3ff44}html[data-skin=futuro] .ap
 html[data-skin=futuro] dialog{background:#0c1438;border:1px solid #19e3ff}html[data-skin=futuro] .inf{background:#0c1438;color:#7df3ff;border-color:#19e3ff}
 html[data-skin=futuro] .back{background:#0c1438e6;color:#7df3ff}html[data-skin=futuro] .volver a{background:#0f2f55;color:#7df3ff;border:1px solid #19e3ff}html[data-skin=futuro] footer{color:var(--mut)}
 html[data-skin=futuro] .insh.show{background:#13205a;border-color:#19e3ff;color:#e6f0ff}
+.onair{display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap;background:linear-gradient(90deg,#c1121f,#ff3b3b);color:#fff;border-radius:16px;padding:10px 16px;margin:0 0 12px;font:800 1rem Sora,sans-serif;box-shadow:0 6px 18px #c1121f66}.onair[hidden],.avv[hidden]{display:none}.oad{width:12px;height:12px;border-radius:50%;background:#fff;animation:p 1s infinite}
+.avv{display:flex;gap:10px;align-items:center;background:#fff8d6;color:#3b2a00;border:3px solid var(--o);border-radius:16px;padding:10px 14px;margin:0 0 12px;font-weight:800}.avv b{flex:1}.avv button{border:0;background:#0002;border-radius:50%;width:28px;height:28px;cursor:pointer}
+footer .cr{display:block;margin-top:4px;font-weight:800}
 </style><link rel="stylesheet" href="skins.css"></head><body>
 <header class="ban"><a class="back" href="https://gestionacademicacolbolivar-tech.github.io/ColBolivar2026/">← Volver a la portada</a><img class="bd" src="logo-banner.webp" alt="Todos somos ColBolívar" width="1800" height="441"><img class="bm" src="logo-banner-movil.webp" alt="Todos somos ColBolívar" width="1200" height="505"></header>
 <div class="cinta" id="cinta" hidden><span class="cl">📢 AVISOS</span><div class="cm"><div id="cmt"></div></div></div>
 <main class="w">
+<div id="onair" class="onair" hidden><span class="oad"></span><b>🎙️ ¡AL AIRE!</b><span id="oanm"></span><button class="btn o" id="oaby" hidden>🎧 Toca para escuchar</button></div>
+<div id="avv" class="avv" hidden><span>📣</span><b id="avt"></b><button id="avx" aria-label="Cerrar aviso">✕</button></div>
 <div class="tit"><h1>Col<b>Bolívar</b> Radio</h1><p>La emisora de la Institución Educativa Colegio Integrado Simón Bolívar · Cúcuta</p></div>
 <div class="skins" role="group" aria-label="Estilo de la radio"><span>🎨 Estilo:</span><button data-sk="clasica">🎛️ Profesional</button><button data-sk="retro">📻 Retro</button><button data-sk="futuro">🚀 Futurista</button></div>
 <div class="modos"><button id="mL" class="on">📡 EN VIVO<small>Todos escuchamos lo mismo, al mismo tiempo</small></button><button id="mD">🎧 Cabina DJ<small>Tú controlas qué suena</small></button></div>
@@ -131,11 +136,11 @@ html[data-skin=futuro] .insh.show{background:#13205a;border-color:#19e3ff;color:
 <div id="cmsg" class="cmsg"></div><ul id="cml"></ul></section>
 <section class="card" id="app"><h3>📲 LLÉVATE LA RADIO</h3><div class="apb"><img src="qr-radio.png" alt="Código QR de ColBolívar Radio" width="150" height="150"><div><p>Instálala en tu celular como una app, o comparte el enlace con tu familia.</p><div class="ctl"><button class="btn" id="ins">📲 Instalar app</button><button class="btn o" id="shr">🔗 Compartir</button><a class="btn w2" href="cartel-qr.pdf" target="_blank">🖨️ Cartel QR</a></div><p class="insh" id="insh"></p></div></div></section>
 <div class="volver"><a href="https://gestionacademicacolbolivar-tech.github.io/ColBolivar2026/">← Volver a la portada</a></div>
-</main><footer>© 2026 ColBolívar Radio · Música libre de derechos · Cúcuta, Norte de Santander</footer>
+</main><footer>© 2026 ColBolívar Radio · Música libre de derechos · Cúcuta, Norte de Santander<span class="cr">Creado por Luis Avellaneda</span></footer>
 <dialog id="dlg"><div id="dc"></div><form method="dialog"><button class="btn">Cerrar</button></form></dialog>
 <audio id="au" preload="auto"></audio>
 <script>
-const $=s=>document.getElementById(s),au=$('au'),Z=-5*3600;let ci=null,P=null,cur='',on=false,mode='live',Q=[],qi=0,drag=false,lq=-1;
+const $=s=>document.getElementById(s),au=$('au'),Z=-5*3600;let duckF=1,ci=null,P=null,cur='',on=false,mode='live',Q=[],qi=0,drag=false,lq=-1;
 const pad=n=>String(n).padStart(2,'0'),hm=s=>pad(Math.floor(s/3600))+':'+pad(Math.floor(s%3600/60)),fm=s=>isFinite(s)?Math.floor(s/60)+':'+pad(Math.floor(s%60)):'0:00';
 const now=()=>{const t=Date.now()/1000+Z,d=new Date(t*1000);return{s:t%86400,dia:d.getUTCDay(),f:d.toISOString().slice(0,10)}};
 const tm=h=>{const[a,b]=h.split(':');return a*3600+b*60};
@@ -156,7 +161,7 @@ function info(x,tipo,pos,dur){
   if(!drag){$('sk').max=Math.max(1,Math.floor(dur));$('sk').value=Math.floor(pos);{const pv=(dur?Math.min(100,pos/dur*100):0)+'%';$('sk').style.setProperty('--p',pv);$('sk').parentNode.style.setProperty('--p',pv)}}
 }
 function live(){
-  const n=now(),q=que(n);
+  const n=now(),q=queLive(n);
   if(!q){$('t').textContent='Aún no hay música cargada';$('a').textContent='';$('k').textContent='—';return}
   info(q.x,q.tipo,q.pos,q.x.d);
   if(q.tipo==='pod')$('nxt').textContent='🎵 Vuelve la música a las '+hm(q.fin);
@@ -172,7 +177,7 @@ function dj(){
   if(lq!==qi){lq=qi;[...$('ql').children].forEach((li,i)=>li.classList.toggle('cur',i===qi))}
 }
 function tick(){if(P)mode==='live'?live():dj()}
-function ui(){$('box').classList.toggle('on',on);$('go').textContent=on?'⏸ Pausar':'▶ Escuchar'}
+function ui(){$('box').classList.toggle('on',on);$('go').textContent=on?'⏸ Pausar':'▶ Escuchar';if(typeof vozSync==='function')vozSync()}
 function playDJ(i,pos=0){wake();qi=(i+Q.length)%Q.length;cur=encodeURI(Q[qi].f);au.src=cur;
   au.addEventListener('loadedmetadata',()=>{if(pos)au.currentTime=pos},{once:true});on=true;ui();au.play().catch(()=>{});dj()}
 $('go').onclick=()=>{wake();
@@ -186,12 +191,12 @@ $('f10').onclick=()=>{if(mode==='dj'&&cur)au.currentTime=Math.min(au.duration||1
 $('sk').onpointerdown=()=>drag=true;$('sk').onchange=()=>{drag=false};
 $('sk').oninput=e=>{if(mode!=='dj')return;$('tc').textContent=fm(+e.target.value);{const pv=(e.target.value/e.target.max*100)+'%';e.target.style.setProperty('--p',pv);e.target.parentNode.style.setProperty('--p',pv)}if(cur)au.currentTime=+e.target.value};
 au.ontimeupdate=()=>{if(mode==='dj')dj()};
-$('vol').oninput=e=>au.volume=e.target.value;au.volume=.8;
+$('vol').oninput=e=>{au.volume=e.target.value*duckF};au.volume=.8;
 au.onended=()=>{if(mode==='dj'){if(Q.length)playDJ(qi+1)}else{cur='';tick()}};
 au.onerror=()=>setTimeout(()=>{if(!on)return;if(mode==='dj')playDJ(qi+1);else{cur='';tick()}},3000);
 function setMode(m){
   if(m===mode||!P)return;
-  if(m==='dj'){const q=que(now());Q=[...(P.musica||[]),...(P.especiales||[])];
+  if(m==='dj'){const q=queLive(now());Q=[...(P.musica||[]),...(P.especiales||[])];
     let i=q?Q.findIndex(z=>z.f===q.x.f):0;if(i<0)i=0;
     $('ql').innerHTML=Q.map((z,j)=>'<li data-i="'+j+'">'+(z.h!==undefined?'🎙️':'🎵')+' '+z.t+'<small>'+fm(z.d)+'</small></li>').join('')||'<li>No hay audios cargados</li>';
     [...$('ql').children].forEach(li=>li.onclick=()=>{if(Q.length)playDJ(+li.dataset.i)});
@@ -301,7 +306,7 @@ $('dlg').onclick=e=>{if(e.target===$('dlg'))$('dlg').close()};
 
 /* ===== ESTILOS (SKINS) ===== */
 const SKD={clasica:0,retro:4,futuro:2};
-function setSkin(k,init){document.documentElement.dataset.skin=k;try{localStorage.setItem('cbRadioSkin',k)}catch(e){}
+function setSkin(k,init,ns){document.documentElement.dataset.skin=k;if(!ns)try{localStorage.setItem('cbRadioSkin',k)}catch(e){}
   document.querySelectorAll('.skins button').forEach(b=>b.classList.toggle('on',b.dataset.sk===k));
   document.querySelector('meta[name=theme-color]').content={clasica:'#12306e',retro:'#3b2210',futuro:'#070b1a'}[k]||'#12306e';
   let st=null;try{st=localStorage.getItem('cbRadioViz2')}catch(e){}if(st===null){vs=SKD[k]||0;lab()}}
@@ -334,7 +339,7 @@ const goToggle=$('go').onclick;$('go').onclick=()=>{if(!on)goToggle()};$('pz').o
 document.querySelectorAll('.mrow [data-f]').forEach(b=>b.onclick=()=>$(b.dataset.f).click());
 const kn=$('kn');let kLast=.8;
 function kRot(v){kn.style.setProperty('--rot',(-135+v*270)+'deg');kn.setAttribute('aria-valuenow',Math.round(v*100))}
-function kSet(v){v=Math.max(0,Math.min(1,v));kLast=v;$('vol').value=v;au.volume=v;kRot(v)}
+function kSet(v){v=Math.max(0,Math.min(1,v));kLast=v;$('vol').value=v;au.volume=v*duckF;kRot(v)}
 $('vol').addEventListener('input',()=>{kLast=+$('vol').value;kRot(kLast)});kRot(.8);
 function kMove(e){const r=kn.getBoundingClientRect(),a=Math.atan2(e.clientX-(r.left+r.width/2),-(e.clientY-(r.top+r.height/2)))*180/Math.PI;
   const v=a>135?1:a<-135?0:(a+135)/270;if(Math.abs(v-kLast)<.6)kSet(v)}
@@ -342,4 +347,35 @@ let kDown=false;kn.onpointerdown=e=>{kDown=true;kn.setPointerCapture(e.pointerId
 kn.onpointermove=e=>{if(kDown)kMove(e)};kn.onpointerup=kn.onpointercancel=()=>{kDown=false;kn.classList.remove('grab')};
 kn.onwheel=e=>{e.preventDefault();kSet(kLast-Math.sign(e.deltaY)*.05)};
 kn.onkeydown=e=>{if(e.key==='ArrowUp'||e.key==='ArrowRight'){kSet(kLast+.05);e.preventDefault()}if(e.key==='ArrowDown'||e.key==='ArrowLeft'){kSet(kLast-.05);e.preventDefault()}};
+
+/* ===== CONTROL EN VIVO: estado, voz del locutor, avisos y apariencia ===== */
+let ST=null,OFF=0,room=null,joining=false,avDis='',skForz=false;
+const snow=()=>Date.now()+OFF;
+function ovActivo(){const o=ST&&ST.ov;return o&&(snow()-o.start)/1000<o.d?o:null}
+function queLive(n){const o=ovActivo();if(o){const pos=(snow()-o.start)/1000;return{x:o,pos,fin:n.s+(o.d-pos),tipo:o.pod?'pod':'mus',prox:{t:'Programación normal'}}}return que(n)}
+const vozActiva=()=>!!(ST&&ST.voz&&ST.voz.on&&(snow()-ST.voz.hb)<45000);
+function aplicaDuck(h){const m=(ST&&ST.voz&&ST.voz.modo)||'bajar';duckF=h?(m==='pausar'?0:m==='seguir'?1:.18):1;au.volume=(+$('vol').value)*duckF}
+async function stPoll(){if(!CU)return;try{const j=await (await fetch(CU+'?a=estado&cid='+encodeURIComponent(cid))).json();if(!j.ok)return;OFF=j.now-Date.now();ST=j;stAplica()}catch(e){}}
+function stAplica(){
+  const a=ST.av&&snow()<ST.av.hasta?ST.av:null;if(a&&String(a.id)!==avDis){$('avt').textContent=a.t;$('avv').hidden=false}else $('avv').hidden=true;
+  const sel=document.querySelector('.skins');
+  if(ST.sk&&ST.sk.forzar){sel.style.display='none';skForz=true;if(document.documentElement.dataset.skin!==ST.sk.id)setSkin(ST.sk.id,true,true)}
+  else{sel.style.display='';if(skForz){skForz=false;let k='clasica';try{k=localStorage.getItem('cbRadioSkin')||'clasica'}catch(e){}setSkin(k,true,true)}}
+  $('cm').hidden=!(CU&&ST.cm!==false);
+  const v=vozActiva();$('onair').hidden=!v;if(v){$('oanm').textContent=ST.voz.nombre?'· '+ST.voz.nombre:'';$('oaby').hidden=!!on}
+  if(ovActivo())cur=cur;vozSync();if(mode==='live')tick()}
+function vozSync(){const want=vozActiva()&&on&&(window.CB_CFG||{}).livekit;if(want&&!room&&!joining)vozJoin();if(!want&&room)vozLeave()}
+const lkLoad=()=>window.LivekitClient?Promise.resolve():new Promise((ok,no)=>{const s=document.createElement('script');s.src='livekit-client.umd.js';s.onload=ok;s.onerror=no;document.head.append(s)});
+async function vozJoin(){joining=true;
+  try{await lkLoad();const r=await (await fetch(CU+'?a=token&cid='+encodeURIComponent(cid))).json();if(!r.ok||!vozActiva())return;
+    const R=new LivekitClient.Room();room=R;
+    R.on(LivekitClient.RoomEvent.TrackSubscribed,t=>{if(t.kind==='audio'){const e=t.attach();e.dataset.lk='1';document.body.append(e);R.startAudio().catch(()=>{});aplicaDuck(true);$('oaby').hidden=true}});
+    R.on(LivekitClient.RoomEvent.TrackUnsubscribed,t=>{t.detach().forEach(e=>e.remove());aplicaDuck(false)});
+    R.on(LivekitClient.RoomEvent.Disconnected,()=>{if(room===R){room=null;aplicaDuck(false)}});
+    await R.connect(window.CB_CFG.livekit,r.token)}
+  catch(e){room=null}joining=false}
+function vozLeave(){try{room&&room.disconnect()}catch(e){}room=null;document.querySelectorAll('audio[data-lk]').forEach(e=>e.remove());aplicaDuck(false)}
+$('avx').onclick=()=>{avDis=String(ST&&ST.av&&ST.av.id);$('avv').hidden=true};
+$('oaby').onclick=()=>{if(!on)$('go').click()};
+if(CU){stPoll();setInterval(stPoll,7000);document.addEventListener('visibilitychange',()=>{if(!document.hidden)stPoll()})}
 </script></body></html>
