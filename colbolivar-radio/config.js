@@ -1,7 +1,6 @@
 // ColBolívar Radio · configuración
-// 1) Entre las comillas de "comentarios" pega la dirección de tu Apps Script (termina en /exec).
-// 2) NO pongas aquí la clave ni el secreto de LiveKit: esos van solo en las propiedades de Apps Script.
+// La clave y el secreto de LiveKit NO van aquí: están solo en las propiedades de Apps Script.
 window.CB_CFG = {
-  comentarios: '',
+  comentarios: 'https://script.google.com/macros/s/AKfycbw-qyxN0uESrGyu-2M9bBO_Pcfc-SVB5Z-FwsbKjafSwUi_kn1757Gl-9wVOdrwq9ik/exec',
   livekit: 'wss://bolivar-radio-x8ukh1fi.livekit.cloud'
 };
