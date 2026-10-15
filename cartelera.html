@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cartelera institucional</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--fondo:#f4f6fa;--papel:#fff;--tinta:#1b2433;--suave:#596378;--linea:#d9dfeb;--azul:#14305e;--dorado:#e0a526;--hero:#14305e;--hero-tx:#fff;color-scheme:light}
+@media(prefers-color-scheme:dark){:root{--fondo:#0d1525;--papel:#152038;--tinta:#e8edf7;--suave:#9aa6bf;--linea:#26334f;--hero:#0a1730;color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--fondo);color:var(--tinta);font:400 1.05rem/1.55 "Source Sans 3",system-ui,sans-serif}
+h1,h2,h3,.num{font-family:"Bricolage Grotesque","Segoe UI",sans-serif}
+main{max-width:860px;margin:0 auto;padding:24px 16px 56px}
+header{padding:8px 0 20px}
+header h1{margin:0;font-size:clamp(1.6rem,4vw,2.2rem);font-weight:800}
+header p{margin:4px 0 0;color:var(--suave)}
+.aviso{background:var(--dorado);color:#2a2000;padding:10px 14px;border-radius:8px;margin-bottom:16px;font-size:.95rem}
+.hero{background:var(--hero);color:var(--hero-tx);border-radius:16px;padding:28px 24px;border-bottom:6px solid var(--dorado)}
+.hero h2{margin:0 0 4px;font-size:clamp(1.3rem,3.5vw,1.8rem);font-weight:700}
+.hero .meta{opacity:.85;margin:0 0 20px}
+.cuenta{display:flex;gap:clamp(14px,4vw,32px);flex-wrap:wrap}
+.cuenta div{min-width:64px}
+.num{display:block;font-size:clamp(2.4rem,9vw,4rem);font-weight:800;line-height:1;font-variant-numeric:tabular-nums}
+.cuenta small{opacity:.8}
+.filtros{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:28px 0 8px}
+.filtros button{font:inherit;font-weight:600;padding:6px 14px;border-radius:999px;border:1.5px solid var(--linea);background:var(--papel);color:var(--tinta);cursor:pointer}
+.filtros button[aria-pressed=true]{background:var(--azul);border-color:var(--azul);color:#fff}
+.filtros label{margin-left:auto;color:var(--suave);font-size:.95rem;cursor:pointer}
+button:focus-visible,input:focus-visible{outline:3px solid var(--dorado);outline-offset:2px}
+.mes{margin:28px 0 10px;font-size:1.25rem;font-weight:700;text-transform:capitalize}
+.evento{display:grid;grid-template-columns:64px 1fr;gap:16px;background:var(--papel);border:1px solid var(--linea);border-left:6px solid var(--c,#888);border-radius:10px;padding:14px 16px;margin-bottom:10px}
+.evento.pasado{opacity:.55}
+.dia{text-align:center;line-height:1.1}
+.dia b{display:block;font:800 1.9rem "Bricolage Grotesque",sans-serif}
+.dia span{color:var(--suave);font-size:.9rem}
+.evento h3{margin:0 0 2px;font-size:1.1rem}
+.evento p{margin:2px 0 0;color:var(--suave)}
+.tipo{display:inline-block;font-size:.85rem;font-weight:600;color:var(--c);margin-right:8px}
+.vacio,.error{padding:24px;text-align:center;background:var(--papel);border:1px dashed var(--linea);border-radius:10px;color:var(--suave)}
+@media(prefers-reduced-motion:no-preference){.hero{animation:entra .5s ease-out}@keyframes entra{from{opacity:0;transform:translateY(8px)}}}
+@media(max-width:480px){.evento{grid-template-columns:52px 1fr;gap:12px}.filtros label{margin-left:0;width:100%}}
+</style>
+</head>
+<body>
+<main>
+<header>
+  <h1>Cartelera institucional</h1>
+  <p id="colegio"></p>
+</header>
+<div id="aviso" class="aviso" hidden>Estás viendo eventos de ejemplo. Pega el enlace CSV de tu hoja de Google en <code>CONFIG.csv</code> para mostrar los eventos reales.</div>
+<section id="hero" aria-live="polite"></section>
+<div class="filtros" id="filtros"></div>
+<section id="lista"></section>
+</main>
+
+<script>
+/* ===== CONFIGURACIÓN: edita solo esto ===== */
+const CONFIG={
+  colegio:"Colegio Bolívar",
+  csv:"https://docs.google.com/spreadsheets/d/e/2PACX-1vTRUCveUxdhXNTPJ3rY7AJfmma-B2mVbm6425NRWL3JgBWQ2vR-7tvNCxRlPmfVfJ0QnIX0Ny5oR7vM/pub?gid=1981575096&single=true&output=csv",
+  refrescarMin:5     // cada cuántos minutos se recarga la hoja
+};
+const TIPOS={"reunión":"#2f6fdb","académico":"#1f9d6b","cultural":"#8a4fd1","citación":"#d6453d","festivo":"#c98a00"};
+/* ========================================= */
+
+let eventos=[],filtro="Todos",verPasados=false,proximo=null;
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const sinTilde=s=>s.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().trim();
+const colorDe=t=>TIPOS[(t||"").toLowerCase().trim()]||"#6b7280";
+
+function parseCSV(t){const r=[];let f="",row=[],q=false;
+  for(let i=0;i<t.length;i++){const c=t[i];
+    if(q){if(c=='"'){if(t[i+1]=='"'){f+='"';i++}else q=false}else f+=c}
+    else if(c=='"')q=true;
+    else if(c==','){row.push(f);f=""}
+    else if(c=='\n'||c=='\r'){if(c=='\r'&&t[i+1]=='\n')i++;row.push(f);r.push(row);row=[];f=""}
+    else f+=c}
+  if(f||row.length){row.push(f);r.push(row)}return r}
+
+function fechaDe(f,h){f=(f||"").trim();let y,m,d,a=f.match(/^(\d{4})-(\d{1,2})-(\d{1,2})/);
+  if(a){y=a[1];m=a[2];d=a[3]}else{a=f.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})/);if(!a)return null;d=a[1];m=a[2];y=a[3]}
+  let hh=0,mm=0;const t=(h||"").match(/(\d{1,2}):(\d{2})/);
+  if(t){hh=+t[1];mm=+t[2];if(/p\.?\s?m/i.test(h)&&hh<12)hh+=12}
+  return new Date(+y,m-1,+d,hh,mm)}
+
+function aEventos(filas){const cab=filas[0].map(sinTilde);const ix=n=>cab.indexOf(n);
+  return filas.slice(1).map(f=>{const fecha=fechaDe(f[ix("fecha")],f[ix("hora")]);
+    return fecha?{fecha,hora:(f[ix("hora")]||"").trim(),titulo:f[ix("titulo")]||"",tipo:(f[ix("tipo")]||"Otro").trim(),lugar:f[ix("lugar")]||"",desc:f[ix("descripcion")]||""}:null})
+    .filter(e=>e&&e.titulo).sort((a,b)=>a.fecha-b.fecha)}
+
+function demo(){const hoy=new Date();const en=(d,h,m)=>new Date(hoy.getFullYear(),hoy.getMonth(),hoy.getDate()+d,h,m);
+  return [
+    {fecha:en(2,7,0),hora:"7:00",titulo:"Izada de bandera",tipo:"Cultural",lugar:"Patio central",desc:"Participa el grado 5°."},
+    {fecha:en(5,14,0),hora:"14:00",titulo:"Reunión de padres de familia",tipo:"Reunión",lugar:"Aulas de cada grado",desc:"Entrega de informes del periodo."},
+    {fecha:en(9,8,0),hora:"8:00",titulo:"Jornada de pruebas del periodo",tipo:"Académico",lugar:"Salones",desc:"Matemáticas y lenguaje."},
+    {fecha:en(14,10,30),hora:"10:30",titulo:"Citación a acudientes",tipo:"Citación",lugar:"Coordinación",desc:"Según listado publicado."},
+    {fecha:en(21,0,0),hora:"",titulo:"Día festivo, no hay clases",tipo:"Festivo",lugar:"",desc:""}
+  ]}
+
+function render(){
+  const hoy0=new Date();hoy0.setHours(0,0,0,0);
+  const tipos=["Todos",...new Set(eventos.map(e=>e.tipo))];
+  $("filtros").innerHTML=tipos.map(t=>`<button type="button" aria-pressed="${t===filtro}" data-t="${esc(t)}">${esc(t)}</button>`).join("")+
+    `<label><input type="checkbox" id="pas" ${verPasados?"checked":""}> Ver eventos pasados</label>`;
+  $("filtros").querySelectorAll("button").forEach(b=>b.onclick=()=>{filtro=b.dataset.t;render()});
+  $("pas").onchange=e=>{verPasados=e.target.checked;render()};
+
+  const ahora=new Date();
+  proximo=eventos.find(e=>e.fecha>=ahora)||null;
+  const fm=new Intl.DateTimeFormat("es-CO",{weekday:"long",day:"numeric",month:"long"});
+  $("hero").innerHTML=proximo?`<div class="hero"><h2>${esc(proximo.titulo)}</h2>
+    <p class="meta">${esc(fm.format(proximo.fecha))}${proximo.hora?" · "+esc(proximo.hora):""}${proximo.lugar?" · "+esc(proximo.lugar):""}</p>
+    <div class="cuenta" id="cuenta"></div></div>`:`<div class="vacio">No hay eventos próximos. Vuelve pronto.</div>`;
+  tic();
+
+  const vis=eventos.filter(e=>(filtro==="Todos"||e.tipo===filtro)&&(verPasados||e.fecha>=hoy0));
+  if(!vis.length){$("lista").innerHTML=`<div class="vacio">No hay eventos para este filtro.</div>`;return}
+  const mf=new Intl.DateTimeFormat("es-CO",{month:"long",year:"numeric"}),df=new Intl.DateTimeFormat("es-CO",{month:"short"});
+  let mes="",html="";
+  vis.forEach(e=>{const m=mf.format(e.fecha);
+    if(m!==mes){mes=m;html+=`<h2 class="mes">${esc(m)}</h2>`}
+    html+=`<article class="evento${e.fecha<hoy0?" pasado":""}" style="--c:${colorDe(e.tipo)}">
+      <div class="dia"><b>${e.fecha.getDate()}</b><span>${esc(df.format(e.fecha).replace(".",""))}</span></div>
+      <div><h3>${esc(e.titulo)}</h3><p><span class="tipo">${esc(e.tipo)}</span>${e.hora?esc(e.hora):""}${e.lugar?" · "+esc(e.lugar):""}</p>${e.desc?`<p>${esc(e.desc)}</p>`:""}</div></article>`});
+  $("lista").innerHTML=html}
+
+function tic(){const c=$("cuenta");if(!c||!proximo)return;
+  let s=Math.max(0,Math.floor((proximo.fecha-new Date())/1000));
+  const d=Math.floor(s/86400);s%=86400;const h=Math.floor(s/3600);s%=3600;const m=Math.floor(s/60);s%=60;
+  c.innerHTML=[[d,"días"],[h,"horas"],[m,"minutos"],[s,"segundos"]].map(([n,l])=>`<div><span class="num">${String(n).padStart(2,"0")}</span><small>${l}</small></div>`).join("")}
+
+async function cargar(){
+  try{
+    if(!CONFIG.csv){$("aviso").hidden=false;eventos=demo()}
+    else{const r=await fetch(CONFIG.csv,{cache:"no-store"});if(!r.ok)throw new Error(r.status);eventos=aEventos(parseCSV(await r.text()))}
+    render()
+  }catch(e){
+    $("lista").innerHTML=`<div class="error">No se pudo cargar la cartelera. Revisa que la hoja esté publicada como CSV y que el enlace sea correcto.</div>`}}
+
+$("colegio").textContent=CONFIG.colegio;
+cargar();setInterval(tic,1000);setInterval(cargar,CONFIG.refrescarMin*60000);
+</script>
+</body>
+</html>
