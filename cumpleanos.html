@@ -4,10 +4,10 @@
 <meta name="theme-color" content="#1c4f27">
 <title>Cumpleaños ColBolívar</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Great+Vibes&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Great+Vibes&family=Lora:ital,wght@1,500&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0}
-:root{--az:#1c4f27;--az2:#123a1b;--oro:#ffa63d;--cr:#fff8e7;--ro:#d92d3a;--tx:#1d2a22;--f:'Nunito',system-ui,sans-serif;--h:'Sora','Nunito',system-ui,sans-serif;--s:'Great Vibes','Brush Script MT',cursive}
+:root{--az:#1c4f27;--az2:#123a1b;--oro:#ffa63d;--cr:#fff8e7;--ro:#d92d3a;--tx:#1d2a22;--f:'Nunito',system-ui,sans-serif;--h:'Sora','Nunito',system-ui,sans-serif;--s:'Great Vibes','Brush Script MT',cursive;--m:'Lora',Georgia,serif}
 [hidden]{display:none!important}
 body{font:16px/1.55 var(--f);color:var(--tx);background:#f2f7f1}
 :focus-visible{outline:3px solid var(--oro);outline-offset:2px}
@@ -59,7 +59,7 @@ h2{font:600 clamp(26px,5vw,36px)/1.15 var(--h);color:var(--az)}
 .z{position:absolute;display:flex;align-items:center;justify-content:center;text-align:center;color:#12306e}
 .zn{left:17.5%;top:29.6%;width:49%;height:8.7%;font:400 7.2cqw/1 var(--s)}
 .zd{left:66.4%;top:42.6%;width:22.3%;height:4.4%;font:800 3.1cqw/1 var(--f)}
-.zm{left:14%;top:51.8%;width:72%;height:13%;font:700 2.8cqw/1.35 var(--f);color:#1d2a22}
+.zm{left:0;top:0;width:100%;height:100%;display:block;pointer-events:none}.ln{position:absolute;text-align:center;white-space:nowrap;font:italic 500 1em/1 var(--m);color:#1f3d2b}
 .crw{position:absolute;top:-30px;left:50%;width:84px;transform:translateX(-50%) rotate(-8deg);filter:drop-shadow(0 4px 4px #0005)}
 .gf{height:30px;width:auto;vertical-align:middle;margin-right:8px}
 .sep{height:clamp(54px,11vw,118px);background:var(--ban) center/contain no-repeat;margin:22px auto 0;max-width:900px}.sep.hs{margin:-56px auto 0;position:relative;z-index:2}
@@ -108,13 +108,17 @@ const ic=k=>IMG[k]?`<img src="${IMG[k]}" alt="">`:EM[k];
 const $=s=>document.querySelector(s),q=new URLSearchParams(location.search).get('fecha');
 const ahora=()=>{const n=new Date();if(q){const[y,m,d]=q.split('-').map(Number);n.setFullYear(y,m-1,d)}return n};
 const cap=s=>s[0].toUpperCase()+s.slice(1),nrm=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
-const MSG=['{n}, hoy todo el Colegio Simón Bolívar te abraza. Gracias por sembrar saber, ser y hacer en cada estudiante. ¡Que Dios te bendiga con salud y alegría!','Hay personas que hacen del colegio un hogar, y tú eres una de ellas, {n}. Que este nuevo año de vida te traiga paz, sueños cumplidos y mil razones para sonreír.','Tu entrega, tu paciencia y tu ejemplo dejan huella en cada aula. En tu día, ColBolívar te dice: ¡gracias por tanto y felicidades, {n}!','Que la virtud, la ciencia y la cultura que compartes te regresen multiplicadas en bendiciones. ¡Disfruta tu día al máximo, {n}!','Un año más de vida es un regalo, y tenerte en nuestra comunidad también lo es. ¡Feliz cumpleaños, {n}! Que hoy te rodee mucho cariño.','Con honradez, amor, esfuerzo y fe construyes proyectos de vida. Hoy celebramos el tuyo, {n}. ¡Que Dios te llene de bendiciones!'];
+const MSG=['{n}, hoy todo el Colegio Simón Bolívar se viste de fiesta para celebrarte. Gracias por sembrar saber, ser y hacer en cada estudiante y por dar lo mejor de ti cada día. ¡Que Dios te bendiga con salud, paz y muchas alegrías!','Hay personas que hacen del colegio un hogar, y tú eres una de ellas, {n}. Gracias por tu entrega y tu cariño. Que este nuevo año de vida te traiga paz, sueños cumplidos y mil razones para sonreír.','Tu entrega, tu paciencia y tu ejemplo dejan huella en cada aula y en cada corazón. En tu día, la familia ColBolívar te dice: ¡gracias por tanto y felicidades, {n}! Que te rodee mucho cariño.','Que la virtud, la ciencia y la cultura que compartes con tanta generosidad te regresen multiplicadas en bendiciones. {n}, que Dios te acompañe siempre. ¡Disfruta tu día al máximo y feliz cumpleaños!','Un año más de vida es un regalo, y tenerte en nuestra comunidad también lo es. Gracias por aportar tu talento al colegio, {n}. ¡Feliz cumpleaños! Que hoy te rodeen tus seres queridos y mucha alegría.','Con honradez, amor, esfuerzo y fe construyes proyectos de vida, y hoy celebramos el tuyo, {n}. Gracias por ser parte de ColBolívar. ¡Que Dios te llene de bendiciones, salud y felicidad!'];
 const hs=s=>Math.abs([...s].reduce((a,c)=>a*31+c.charCodeAt(0)|0,7));
 const msg=p=>MSG[hs(p.n)%MSG.length].replace('{n}',p.n.split(' ')[0]);
 const SC={1:'#ffa63d',2:'#2b9a3c',3:'#d92d3a'},TN=['#2b7a3a','#a31e29','#8a4f00','#1c4f27'];
+const MCX=document.createElement('canvas').getContext('2d'),bd=y=>y<96?[12,86]:y<105?[26,78]:[26,68];
+const wd=(t,fs)=>MCX?(MCX.font=`italic 500 ${fs*10}px Lora,Georgia,serif`,MCX.measureText(t).width/10):t.length*fs*.52;
+function lay(tx){let R;for(const s of [1,.94,.88,.82,.76]){const fs=3.5*s,lh=fs*1.4;let y=79+lh/2,cur='';const L=[];for(const w of tx.split(' ')){const[a,b]=bd(y),t=cur?cur+' '+w:w;if(cur&&wd(t,fs)>b-a){L.push([cur,y]);y+=lh;cur=w}else cur=t}L.push([cur,y]);R={L,fs,lh};if(y+lh/2<=111)return R}return R}
+function pintaMsg(p){const{L,fs,lh}=lay(msg(p));$('#cm').innerHTML=L.map(([t,y])=>{const[a,b]=bd(y);return `<span class="ln" style="left:${a}cqw;width:${b-a}cqw;top:${(y-lh/2).toFixed(2)}cqw;font-size:${fs.toFixed(2)}cqw;line-height:${lh.toFixed(2)}cqw">${t}</span>`}).join('')}
 let t,h,prox,ord,prim,n0,iv,sel;
 function conf(){try{if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;const c=$('#cf'),x=c.getContext('2d'),C=['#ffa63d','#d92d3a','#3a7bd5','#2b9a3c','#fff'];c.width=innerWidth;c.height=innerHeight;const a=Array.from({length:150},()=>({x:Math.random()*c.width,y:-Math.random()*c.height*.6,r:5+Math.random()*7,vy:2+Math.random()*3,vx:-1+Math.random()*2,c:C[Math.random()*5|0],a:Math.random()*6}));let k=0;(function f(){x.clearRect(0,0,c.width,c.height);a.forEach(p=>{p.y+=p.vy;p.x+=p.vx+Math.sin(p.a+=.05);x.fillStyle=p.c;x.fillRect(p.x,p.y,p.r,p.r*.6)});if(++k<280)requestAnimationFrame(f);else x.clearRect(0,0,c.width,c.height)})()}catch(e){}}
-function mostrar(p,ir){sel=p;const f=prox(p),hoy=f-h===0;$('#cn').textContent=p.n;$('#cn').style.fontSize=fsn(p.n)+'cqw';$('#cf2').textContent=`${p.d} ${MC[p.m-1]} ${f.getFullYear()}`;$('#cm').textContent=msg(p);$('#card').classList.toggle('big',hoy);
+function mostrar(p,ir){sel=p;const f=prox(p),hoy=f-h===0;$('#cn').textContent=p.n;$('#cn').style.fontSize=fsn(p.n)+'cqw';$('#cf2').textContent=`${p.d} ${MC[p.m-1]} ${f.getFullYear()}`;pintaMsg(p);$('#card').classList.toggle('big',hoy);
 const tx=`🎂 ¡Feliz cumpleaños, ${p.n}!\n\n${msg(p)}\n\nTodos somos ColBolívar: ${location.origin}${location.pathname.replace(/[^/]*$/,'')}`;
 $('#bw').href='https://wa.me/?text='+encodeURIComponent(tx);$('#bk').onclick=e=>{try{navigator.clipboard.writeText(tx);e.target.textContent='¡Copiado!';setTimeout(()=>e.target.textContent='Copiar mensaje',1800)}catch(x){}};
 if(ir){$('#card').scrollIntoView({behavior:'smooth',block:'center'});if(hoy)conf()}}
@@ -136,9 +140,9 @@ const v=[['días',Math.floor(s/864e2)],['horas',Math.floor(s%864e2/3600)],['min'
 document.addEventListener('click',e=>{const b=e.target.closest('[data-i]');if(b)mostrar(P[b.dataset.i],true)});
 $('#bc').onclick=()=>{conf();$('#card').classList.add('big')};
 $('#bq').oninput=e=>{const v=nrm(e.target.value.trim());document.querySelectorAll('.mt').forEach(m=>{let a=0;m.querySelectorAll('li').forEach(l=>{const ok=!v||nrm(l.textContent).includes(v);l.hidden=!ok;a+=ok});m.hidden=!!v&&!a})};
-$('#bi').onclick=async()=>{try{await document.fonts.load('40px "Great Vibes"');await document.fonts.load('800 20px Nunito');const I=$('#card img'),W=I.naturalWidth,H=I.naturalHeight,c=document.createElement('canvas');c.width=W;c.height=H;const x=c.getContext('2d');x.drawImage(I,0,0);x.textAlign='center';x.textBaseline='middle';x.fillStyle='#12306e';
+$('#bi').onclick=async()=>{try{await document.fonts.load('40px "Great Vibes"');await document.fonts.load('800 20px Nunito');await document.fonts.load('italic 500 20px Lora');const I=$('#card img'),W=I.naturalWidth,H=I.naturalHeight,c=document.createElement('canvas');c.width=W;c.height=H;const x=c.getContext('2d');x.drawImage(I,0,0);x.textAlign='center';x.textBaseline='middle';x.fillStyle='#12306e';
 x.font=`${W*fsn(sel.n)/100}px "Great Vibes"`;x.fillText(sel.n,W*.42,H*.3395);const f=prox(sel);x.font=`800 ${W*.031}px Nunito`;x.fillText(`${sel.d} ${MC[sel.m-1]} ${f.getFullYear()}`,W*.7755,H*.448);
-x.fillStyle='#1d2a22';x.font=`700 ${W*.028}px Nunito`;const L=[];let l='';msg(sel).split(' ').forEach(w=>{if(x.measureText(l+' '+w).width>W*.70&&l){L.push(l);l=w}else l=l?l+' '+w:w});L.push(l);const lh=W*.028*1.35;L.forEach((s,k)=>x.fillText(s,W*.5,H*.583-L.length*lh/2+lh*(k+.5)));
+const Q=lay(msg(sel)),u=W/100;x.fillStyle='#1f3d2b';x.font=`italic 500 ${Q.fs*u}px Lora,Georgia,serif`;Q.L.forEach(([s,y])=>{const[a,b]=bd(y);x.fillText(s,(a+b)/2*u,y*u)});
 c.toBlob(async b=>{const F=new File([b],'tarjeta-cumpleanos.png',{type:'image/png'});if(navigator.canShare&&navigator.canShare({files:[F]})){try{await navigator.share({files:[F],title:'Feliz cumpleaños'})}catch(e){}}else{const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='tarjeta-'+nrm(sel.n).replace(/\s+/g,'-')+'.png';a.click()}})}catch(e){}};
-setup()})();
+setup();if(document.fonts)document.fonts.ready.then(()=>sel&&pintaMsg(sel))})();
 </script></body></html>
