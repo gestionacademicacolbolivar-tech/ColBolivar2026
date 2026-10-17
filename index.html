@@ -528,7 +528,7 @@ var d=Math.round((bf-h)/864e5),c=P.filter(function(p){return p.m===n.getMonth()+
 document.getElementById('cum-t').textContent=d===0?'¡Hoy hay fiesta!':d<=15?'Se acerca un cumpleaños':'En '+M[n.getMonth()]+': '+c+' cumpleaños';
 document.getElementById('cum-p').textContent=d===0?'Hoy cumple años '+b.n+'. ¡Mira su tarjeta!':d===1?'Mañana cumple años '+b.n+'.':'Próximo: '+b.n+', en '+d+' días.'}
 cumRun(window.CUMPLES||[]);
-(function(){var U='https://script.google.com/macros/s/AKfycbztETvg-iGe-xSEnAQs3DGXjhYucU5AiitrYkGg3VSqFVG-BoSVFRIAIWns5oBzm-zx/exec';if(!window.fetch)return;fetch(U).then(function(r){return r.json()}).then(function(d){if(Array.isArray(d)&&d.length&&d[0].n)cumRun(d)}).catch(function(){})})();
+(function(){var U='https://script.google.com/macros/s/AKfycbzhvB9cXR0ysRV4fUawqDDhj9fqk_H1G0-rSgoEFAYMi9peBI8wuO--8IL-3klXW-dayQ/exec';if(!window.fetch)return;fetch(U).then(function(r){return r.json()}).then(function(d){if(Array.isArray(d)&&d.length&&d[0].n)cumRun(d)}).catch(function(){})})();
 </script>
 </body>
 </html>
