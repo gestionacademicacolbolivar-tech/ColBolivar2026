@@ -522,11 +522,13 @@ $$('.rv').forEach((e,i)=>{e.style.transitionDelay=(i%4)*60+'ms';io.observe(e)});
 </script>
 <script src="cumpleanos-data.js"></script>
 <script>
-(function(){var P=window.CUMPLES||[];if(!P.length)return;var M=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'],n=new Date(),h=new Date(n.getFullYear(),n.getMonth(),n.getDate()),b=null,bf=null;
+function cumRun(P){if(!P.length)return;var M=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'],n=new Date(),h=new Date(n.getFullYear(),n.getMonth(),n.getDate()),b=null,bf=null;
 P.forEach(function(p){var f=new Date(h.getFullYear(),p.m-1,p.d);if(f<h)f.setFullYear(h.getFullYear()+1);if(!bf||f<bf){bf=f;b=p}});
 var d=Math.round((bf-h)/864e5),c=P.filter(function(p){return p.m===n.getMonth()+1}).length;
 document.getElementById('cum-t').textContent=d===0?'¡Hoy hay fiesta!':d<=15?'Se acerca un cumpleaños':'En '+M[n.getMonth()]+': '+c+' cumpleaños';
-document.getElementById('cum-p').textContent=d===0?'Hoy cumple años '+b.n+'. ¡Mira su tarjeta!':d===1?'Mañana cumple años '+b.n+'.':'Próximo: '+b.n+', en '+d+' días.'})();
+document.getElementById('cum-p').textContent=d===0?'Hoy cumple años '+b.n+'. ¡Mira su tarjeta!':d===1?'Mañana cumple años '+b.n+'.':'Próximo: '+b.n+', en '+d+' días.'}
+cumRun(window.CUMPLES||[]);
+(function(){var U='https://script.google.com/macros/s/AKfycbztETvg-iGe-xSEnAQs3DGXjhYucU5AiitrYkGg3VSqFVG-BoSVFRIAIWns5oBzm-zx/exec';if(!window.fetch)return;fetch(U).then(function(r){return r.json()}).then(function(d){if(Array.isArray(d)&&d.length&&d[0].n)cumRun(d)}).catch(function(){})})();
 </script>
 </body>
 </html>
