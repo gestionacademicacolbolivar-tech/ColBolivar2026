@@ -270,7 +270,17 @@ footer{padding-bottom:calc(14px + env(safe-area-inset-bottom))}
 .radio .rtx h2{color:#fff}
 .duo .rtx h2{font-size:clamp(1.25rem,2.5vw,1.9rem)}
 @media(max-width:1100px){.duo .req{display:none}}
-@media(max-width:760px){.duo{flex-direction:column;gap:0}.duo>.radio{margin:10px 0}}
+@media(max-width:760px){.duo{flex-direction:column;gap:14px;padding:0 4px}.duo>.radio{flex:none;width:100%;box-sizing:border-box;margin:0;min-height:0}}
+/* MÓVIL: tarjetas Radio + Cumpleaños completas y legibles */
+.m .duo{display:flex;flex-direction:column;gap:14px;padding:0 4px;margin:16px auto}
+.m .duo>.radio{flex:none;width:100%;box-sizing:border-box;height:auto;min-height:0;margin:0;flex-direction:row;text-align:left;align-items:center;gap:14px;padding:16px 14px;border-radius:22px}
+.m .duo .rdisc{width:68px;height:68px}.m .duo .rdisc i{width:22px;height:22px;box-shadow:inset 0 0 0 5px #12306e}
+.m .duo .cum .cimg{height:84px}
+.m .duo .rtx h2{font-size:1.3rem;margin:6px 0 4px}
+.m .duo .rtx p{font-size:.92rem;line-height:1.3;margin:0}
+.m .duo .rgo{display:block;text-align:center;margin-top:12px;padding:11px 14px;font-size:1rem}
+.m .duo .req{display:none}
+@media(max-width:380px){.m .duo>.radio{flex-direction:column;text-align:center}.m .duo .rtx{width:100%}}
 /* CUMPLEAÑOS */
 .cum{background:linear-gradient(120deg,#1c4f27,#2b7a3a 45%,#d92d3a);box-shadow:0 12px 32px #1c4f2755}.cum:hover{box-shadow:0 18px 40px #1c4f2777}
 .cum .cimg{flex:none;height:112px;width:auto;filter:drop-shadow(0 6px 8px #0006);animation:cbob 3s ease-in-out infinite;position:relative}
