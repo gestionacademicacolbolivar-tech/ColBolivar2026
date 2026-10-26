@@ -1,1 +1,28 @@
-
+name: Indexar documentos para ARIA
+on:
+  push:
+    paths-ignore: ["indice-docs.json"]
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: write
+jobs:
+  indexar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install pypdf beautifulsoup4 python-docx
+      - run: python scripts/indexar_docs.py
+      - name: Guardar índice y volver a publicar el sitio
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "aria-bot"; git config user.email "aria-bot@users.noreply.github.com"
+          git add indice-docs.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Actualizar índice de ARIA"
+            git push
+            gh workflow run static.yml || echo "Publica el sitio manualmente (static.yml sin workflow_dispatch)"
+          fi
