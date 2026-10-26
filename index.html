@@ -610,5 +610,10 @@ var fs=$('#fbs'),P=H.fbPosts||[];lazy(fs,function(){fs.innerHTML=P.length?P.map(
 if('serviceWorker' in navigator&&location.protocol==='https:')navigator.serviceWorker.register('sw.js').catch(function(){});
 })();
 </script>
+<iframe id="aria-if" src="aria-widget.html" title="ARIA, asistente virtual del colegio" allow="autoplay" loading="lazy" style="position:fixed;right:0;bottom:0;width:150px;height:250px;border:0;background:transparent;color-scheme:light;z-index:60"></iframe>
+<script>
+(function(){var f=document.getElementById('aria-if');addEventListener('message',function(e){if(e.source!==f.contentWindow||!e.data||!e.data.aria)return;
+var o=e.data.aria==='abierto';f.style.width=o?'min(370px,100vw)':'150px';f.style.height=o?'min(680px,100vh)':'250px'})})();
+</script>
 </body>
 </html>
