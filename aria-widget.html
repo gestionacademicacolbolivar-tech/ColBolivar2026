@@ -230,12 +230,7 @@ function responderQuizDemo(btn, esCorrecta){
 </script>
 
 <!-- ============================================================ -->
-<!-- ARIA AVATAR VISUAL v1.6 — pegar antes de <script src="aria-docs.js"></script>
-<script>
-(function(){var p=document.getElementById('aria-panel'),last=null;function t(){var o=p.classList.contains('aria-abierto');if(o!==last){last=o;parent.postMessage({aria:o?'abierto':'cerrado'},'*')}}
-new MutationObserver(t).observe(p,{attributes:true,attributeFilter:['class']});t()})();
-</script>
-</body>, una sola vez -->
+<!-- ARIA AVATAR VISUAL v1.6 — pegar antes de </body>, una sola vez -->
 <!-- ============================================================ -->
 <button id="aria-fab" type="button" aria-label="Hablar con ARIA">
   <img id="aria-fab-img" src="" alt="ARIA">
@@ -2958,5 +2953,10 @@ async function buscarEnWikipediaAria(pregunta){
 })();
 </script>
 
+<script src="aria-docs.js"></script>
+<script>
+(function(){var p=document.getElementById('aria-panel'),last=null;function t(){var o=p.classList.contains('aria-abierto');if(o!==last){last=o;parent.postMessage({aria:o?'abierto':'cerrado'},'*')}}
+new MutationObserver(t).observe(p,{attributes:true,attributeFilter:['class']});t()})();
+</script>
 </body>
 </html>
