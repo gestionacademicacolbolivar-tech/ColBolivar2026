@@ -303,6 +303,16 @@ footer{padding-bottom:calc(14px + env(safe-area-inset-bottom))}
 .yc iframe{width:100%;aspect-ratio:16/9;border:0;display:block}.yc p{margin:0;padding:8px 10px 10px;font-weight:700;font-size:.9rem;line-height:1.25;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .fbw{margin-top:16px;background:#fff;border-radius:18px;padding:10px;box-shadow:0 4px 14px #0002;text-align:center}.fbw iframe{border:0;width:100%;height:520px;max-width:500px}
 @media(min-width:861px){.yc{flex-basis:calc(25% - 10px)}}
+
+.cs{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 10px;-webkit-overflow-scrolling:touch;scrollbar-width:none}.cs::-webkit-scrollbar{display:none}
+.cc{flex:0 0 82%;max-width:340px;aspect-ratio:16/10;scroll-snap-align:center;position:relative;border-radius:20px;overflow:hidden;box-shadow:0 6px 18px #0003;color:#fff;text-decoration:none;background:linear-gradient(135deg,#1c4f27,#1d4fb8) center/cover;display:flex;align-items:flex-end;border:0;padding:0;font:inherit;text-align:left;cursor:pointer}
+.cc::before{content:"";position:absolute;inset:0;background:linear-gradient(transparent 40%,#000b)}
+.cc span{position:relative;padding:12px 14px;font:800 .98rem/1.2 Sora,sans-serif;display:block}.cc small{display:block;font:600 .78rem Nunito,sans-serif;opacity:.9}
+.cc em{position:absolute;top:10px;right:10px;font-style:normal;background:#0008;border-radius:99px;padding:3px 10px;font-size:.75rem;font-weight:800}
+.cc i{position:absolute;inset:0;display:grid;place-items:center;font-style:normal;font-size:2.4rem;text-shadow:0 2px 10px #000}
+.cc iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:2}
+.cdt{display:flex;justify-content:center;gap:6px}.cdt b{width:8px;height:8px;border-radius:9px;background:#b9cdb8;transition:all .3s}.cdt b.on{width:22px;background:var(--g)}
+@media(min-width:861px){.cc{flex-basis:calc(33.3% - 8px);max-width:none}}
 </style>
 <script>
 function fit(){var sw=screen.width,iw=innerWidth,ua=navigator.userAgent,ph=/Android.*Mobile|iPhone/i.test(ua),m=iw<=860,z=1;if(sw<=600&&iw>sw*1.25){z=iw/sw;m=true}else if(ph&&iw>=700){z=iw/420;m=true}document.documentElement.classList.toggle('m',m);if(document.body)document.body.style.zoom=z>1?z:''}
@@ -408,8 +418,8 @@ fit();addEventListener('resize',fit);addEventListener('DOMContentLoaded',fit);
 </section>
 <div class="sp" style="background-image:var(--sp_wave);aspect-ratio:800/45"></div>
 
-<section id="cart"><h2>🎬 Cartelera ColBolívar</h2><div class="ct" role="tablist"><button type="button" data-t="r" aria-selected="true">Recientes</button><button type="button" data-t="d" aria-selected="false" id="tdv" hidden>Destacados</button></div><div class="yt" id="yt"><p>Cargando videos…</p></div><p><a class="btn" href="https://www.youtube.com/@ColBolivar" target="_blank" rel="noopener">Ver canal completo ↗</a></p>
-<div class="fbw"><h3 style="margin:4px 0 8px">📘 Publicaciones en Facebook</h3><div id="fbf"></div><a class="btn" href="https://www.facebook.com/profile.php?id=61566338526972" target="_blank" rel="noopener">Abrir en Facebook ↗</a></div></section>
+<section id="cart"><h2>🎬 Cartelera ColBolívar</h2><div class="cs" id="cs"></div><div class="cdt" id="cdt"></div></section>
+
 <section id="redes">
 <h2 class="rb rbo rv">Mantente conectado</h2>
 <div class="mix">
@@ -573,16 +583,20 @@ if(H.aviso&&!/escribe aquí/.test(H.aviso)){$('#hav').hidden=false;$('#hav').tex
 hoy();
 document.querySelectorAll('#who button').forEach(function(b){b.addEventListener('click',function(){rol=b.dataset.a;try{localStorage.setItem('cbrol',rol)}catch(e){}hoy()})});
 if(rol&&R[rol]&&window.show){try{show(rol)}catch(e){}}
-var yt=$('#yt'),V={r:[],d:[]};
-function card(id,t){return '<div class="yc"><button class="th" type="button" data-v="'+id+'" aria-label="Reproducir '+t.replace(/"/g,'')+'" style="background-image:url(https://i.ytimg.com/vi/'+id+'/hqdefault.jpg)"></button><p>'+t+'</p></div>'}
-function draw(k){yt.innerHTML=V[k].length?V[k].map(function(v){return card(v[0],v[1])}).join(''):'<p>Aún no hay videos aquí.</p>'}
-yt.addEventListener('click',function(e){var b=e.target.closest('.th');if(b)b.outerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+b.dataset.v+'?autoplay=1" allow="autoplay;encrypted-media;picture-in-picture" allowfullscreen title="Video ColBolívar"></iframe>'});
-document.querySelectorAll('.ct button').forEach(function(b){b.onclick=function(){document.querySelectorAll('.ct button').forEach(function(x){x.setAttribute('aria-selected',x===b)});draw(b.dataset.t)}});
-V.d=(H.destacados||[]).map(function(i){return[i,'Video destacado']});if(V.d.length)$('#tdv').hidden=false;
+var cs=$('#cs'),dt=$('#cdt'),L=[];
+function vc(id,t){return {h:'<button class="cc" type="button" data-v="'+id+'" style="background-image:url(https://i.ytimg.com/vi/'+id+'/hqdefault.jpg)" aria-label="Reproducir"><i>▶</i><em>YouTube</em><span>'+t+'</span></button>'}}
+function pc(x){return {h:'<a class="cc" href="'+x.url+'" target="_blank" rel="noopener"'+(x.img?' style="background-image:url('+x.img+')"':'')+'><em>Facebook</em><span>'+x.t+'<small>Ver publicación ↗</small></span></a>'}}
+function fc(){return [{h:'<a class="cc" href="https://www.youtube.com/@ColBolivar" target="_blank" rel="noopener"><i>▶</i><em>YouTube</em><span>Canal ColBolívar<small>Eventos, proyectos y recursos ↗</small></span></a>'},{h:'<a class="cc" style="background-image:linear-gradient(135deg,#1d4fb8,#0b2a6b)" href="https://www.facebook.com/profile.php?id=61566338526972" target="_blank" rel="noopener"><i>📘</i><em>Facebook</em><span>IE ColBolívar · 630 seguidores<small>Noticias y fotos de la vida ColBolívar ↗</small></span></a>'}]}
+function draw(){var a=L.length?L:fc();cs.innerHTML=a.map(function(x){return x.h}).join('');dt.innerHTML=a.map(function(_,k){return '<b'+(k?'':' class="on"')+'></b>'}).join('')}
+cs.addEventListener('click',function(e){var b=e.target.closest('[data-v]');if(b){b.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+b.dataset.v+'?autoplay=1" allow="autoplay;encrypted-media;picture-in-picture" allowfullscreen title="Video ColBolívar"></iframe>';b.removeAttribute('data-v');b.classList.add('pl2');hold=1}});
+var hold=0;cs.addEventListener('scroll',function(){var k=Math.round(cs.scrollLeft/(cs.firstChild.offsetWidth+12));[].forEach.call(dt.children,function(d,x){d.className=x===k?'on':''})},{passive:true});
+['touchstart','mouseenter'].forEach(function(v){cs.addEventListener(v,function(){hold=1},{passive:true})});
+setInterval(function(){if(hold||document.hidden||!cs.firstChild)return;var w=cs.firstChild.offsetWidth+12;cs.scrollTo({left:cs.scrollLeft+w>cs.scrollWidth-cs.clientWidth+4?0:cs.scrollLeft+w,behavior:'smooth'})},4000);
+function build(live){L=(H.fb||[]).map(pc).concat((H.videos||[]).map(function(i){return vc(i[0]||i,i[1]||'Video ColBolívar')}),live.map(function(v){return vc(v[0],v[1])}));draw()}
+build([]);
 var F='https://www.youtube.com/feeds/videos.xml?channel_id=UCfBybHUk_JkgpjUGf_apXBA';
-fetch('https://api.rss2json.com/v1/api.json?rss_url='+encodeURIComponent(F)).then(function(r){return r.json()}).then(function(d){V.r=(d.items||[]).slice(0,8).map(function(i){return[i.link.split('v=')[1],i.title]});draw('r')}).catch(function(){yt.innerHTML='<p>No se pudieron cargar los videos. <a href="https://www.youtube.com/@ColBolivar" target="_blank" rel="noopener">Míralos en YouTube ↗</a></p>'});
-var fb=$('#fbf'),done=0;function loadFb(){if(done)return;done=1;var w=Math.min(500,Math.max(280,fb.clientWidth||340));fb.innerHTML='<iframe loading="lazy" title="Facebook ColBolívar" allow="encrypted-media" src="https://www.facebook.com/plugins/page.php?href='+encodeURIComponent('https://www.facebook.com/profile.php?id=61566338526972')+'&tabs=timeline&width='+w+'&height=520&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false"></iframe>'}
-if('IntersectionObserver' in window)new IntersectionObserver(function(e,o){if(e[0].isIntersecting){loadFb();o.disconnect()}},{rootMargin:'300px'}).observe(fb);else loadFb();
+function xml(t){var d=new DOMParser().parseFromString(t,'text/xml');return [].slice.call(d.getElementsByTagName('entry'),0,6).map(function(e){return[e.getElementsByTagName('yt:videoId')[0].textContent,e.getElementsByTagName('title')[0].textContent]})}
+fetch('https://api.allorigins.win/raw?url='+encodeURIComponent(F)).then(function(r){return r.text()}).then(function(t){var v=xml(t);if(v.length)build(v)}).catch(function(){fetch('https://api.rss2json.com/v1/api.json?rss_url='+encodeURIComponent(F)).then(function(r){return r.json()}).then(function(d){var v=(d.items||[]).slice(0,6).map(function(i){return[i.link.split('v=')[1],i.title]});if(v.length)build(v)}).catch(function(){})});
 if('serviceWorker' in navigator&&location.protocol==='https:')navigator.serviceWorker.register('sw.js').catch(function(){});
 })();
 </script>
