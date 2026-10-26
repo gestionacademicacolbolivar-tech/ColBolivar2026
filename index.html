@@ -313,6 +313,11 @@ footer{padding-bottom:calc(14px + env(safe-area-inset-bottom))}
 .cc iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:2}
 .cdt{display:flex;justify-content:center;gap:6px}.cdt b{width:8px;height:8px;border-radius:9px;background:#b9cdb8;transition:all .3s}.cdt b.on{width:22px;background:var(--g)}
 @media(min-width:861px){.cc{flex-basis:calc(33.3% - 8px);max-width:none}}
+
+.win{position:relative;aspect-ratio:16/9;max-width:760px;margin:0 auto;border-radius:20px;overflow:hidden;box-shadow:0 6px 18px #0004;background:#000}.win iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.wl{text-align:center;margin:8px 0 16px;font-weight:800}.wl a{color:#0b4fb3}.wh{font:800 1.15rem Sora,sans-serif;color:var(--gd);margin:14px 0 8px}
+.fbs{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;-webkit-overflow-scrolling:touch}
+.fbs iframe{flex:0 0 min(320px,86%);height:480px;border:0;border-radius:16px;background:#fff;box-shadow:0 4px 14px #0003;scroll-snap-align:center}
 </style>
 <script>
 function fit(){var sw=screen.width,iw=innerWidth,ua=navigator.userAgent,ph=/Android.*Mobile|iPhone/i.test(ua),m=iw<=860,z=1;if(sw<=600&&iw>sw*1.25){z=iw/sw;m=true}else if(ph&&iw>=700){z=iw/420;m=true}document.documentElement.classList.toggle('m',m);if(document.body)document.body.style.zoom=z>1?z:''}
@@ -418,7 +423,10 @@ fit();addEventListener('resize',fit);addEventListener('DOMContentLoaded',fit);
 </section>
 <div class="sp" style="background-image:var(--sp_wave);aspect-ratio:800/45"></div>
 
-<section id="cart"><h2>🎬 Cartelera ColBolívar</h2><div class="cs" id="cs"></div><div class="cdt" id="cdt"></div></section>
+<section id="cart"><h2>🎬 Cartelera ColBolívar</h2>
+<div class="win" id="ytw"></div><p class="wl"><a href="https://www.youtube.com/@ColBolivar" target="_blank" rel="noopener">Ver todo el canal en YouTube ↗</a></p>
+<h3 class="wh">📘 Desde nuestro Facebook</h3><div class="fbs" id="fbs"></div><p class="wl"><a href="https://www.facebook.com/profile.php?id=61566338526972" target="_blank" rel="noopener">Ver la página completa en Facebook ↗</a></p></section>
+
 
 <section id="redes">
 <h2 class="rb rbo rv">Mantente conectado</h2>
@@ -583,20 +591,9 @@ if(H.aviso&&!/escribe aquí/.test(H.aviso)){$('#hav').hidden=false;$('#hav').tex
 hoy();
 document.querySelectorAll('#who button').forEach(function(b){b.addEventListener('click',function(){rol=b.dataset.a;try{localStorage.setItem('cbrol',rol)}catch(e){}hoy()})});
 if(rol&&R[rol]&&window.show){try{show(rol)}catch(e){}}
-var cs=$('#cs'),dt=$('#cdt'),L=[];
-function vc(id,t){return {h:'<button class="cc" type="button" data-v="'+id+'" style="background-image:url(https://i.ytimg.com/vi/'+id+'/hqdefault.jpg)" aria-label="Reproducir"><i>▶</i><em>YouTube</em><span>'+t+'</span></button>'}}
-function pc(x){return {h:'<a class="cc" href="'+x.url+'" target="_blank" rel="noopener"'+(x.img?' style="background-image:url('+x.img+')"':'')+'><em>Facebook</em><span>'+x.t+'<small>Ver publicación ↗</small></span></a>'}}
-function fc(){return [{h:'<a class="cc" href="https://www.youtube.com/@ColBolivar" target="_blank" rel="noopener"><i>▶</i><em>YouTube</em><span>Canal ColBolívar<small>Eventos, proyectos y recursos ↗</small></span></a>'},{h:'<a class="cc" style="background-image:linear-gradient(135deg,#1d4fb8,#0b2a6b)" href="https://www.facebook.com/profile.php?id=61566338526972" target="_blank" rel="noopener"><i>📘</i><em>Facebook</em><span>IE ColBolívar · 630 seguidores<small>Noticias y fotos de la vida ColBolívar ↗</small></span></a>'}]}
-function draw(){var a=L.length?L:fc();cs.innerHTML=a.map(function(x){return x.h}).join('');dt.innerHTML=a.map(function(_,k){return '<b'+(k?'':' class="on"')+'></b>'}).join('')}
-cs.addEventListener('click',function(e){var b=e.target.closest('[data-v]');if(b){b.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+b.dataset.v+'?autoplay=1" allow="autoplay;encrypted-media;picture-in-picture" allowfullscreen title="Video ColBolívar"></iframe>';b.removeAttribute('data-v');b.classList.add('pl2');hold=1}});
-var hold=0;cs.addEventListener('scroll',function(){var k=Math.round(cs.scrollLeft/(cs.firstChild.offsetWidth+12));[].forEach.call(dt.children,function(d,x){d.className=x===k?'on':''})},{passive:true});
-['touchstart','mouseenter'].forEach(function(v){cs.addEventListener(v,function(){hold=1},{passive:true})});
-setInterval(function(){if(hold||document.hidden||!cs.firstChild)return;var w=cs.firstChild.offsetWidth+12;cs.scrollTo({left:cs.scrollLeft+w>cs.scrollWidth-cs.clientWidth+4?0:cs.scrollLeft+w,behavior:'smooth'})},4000);
-function build(live){L=(H.fb||[]).map(pc).concat((H.videos||[]).map(function(i){return vc(i[0]||i,i[1]||'Video ColBolívar')}),live.map(function(v){return vc(v[0],v[1])}));draw()}
-build([]);
-var F='https://www.youtube.com/feeds/videos.xml?channel_id=UCfBybHUk_JkgpjUGf_apXBA';
-function xml(t){var d=new DOMParser().parseFromString(t,'text/xml');return [].slice.call(d.getElementsByTagName('entry'),0,6).map(function(e){return[e.getElementsByTagName('yt:videoId')[0].textContent,e.getElementsByTagName('title')[0].textContent]})}
-fetch('https://api.allorigins.win/raw?url='+encodeURIComponent(F)).then(function(r){return r.text()}).then(function(t){var v=xml(t);if(v.length)build(v)}).catch(function(){fetch('https://api.rss2json.com/v1/api.json?rss_url='+encodeURIComponent(F)).then(function(r){return r.json()}).then(function(d){var v=(d.items||[]).slice(0,6).map(function(i){return[i.link.split('v=')[1],i.title]});if(v.length)build(v)}).catch(function(){})});
+function lazy(el,fn){if('IntersectionObserver' in window)new IntersectionObserver(function(e,o){if(e[0].isIntersecting){fn();o.disconnect()}},{rootMargin:'300px'}).observe(el);else fn()}
+var yw=$('#ytw');lazy(yw,function(){yw.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/videoseries?list='+(H.ytLista||'UUfBybHUk_JkgpjUGf_apXBA')+'" title="Videos de ColBolívar" allow="encrypted-media;picture-in-picture;fullscreen" allowfullscreen loading="lazy"></iframe>'});
+var fs=$('#fbs'),P=H.fbPosts||[];lazy(fs,function(){fs.innerHTML=P.length?P.map(function(u){return '<iframe loading="lazy" title="Publicación de Facebook" allow="encrypted-media" src="https://www.facebook.com/plugins/post.php?href='+encodeURIComponent(u)+'&width=320&show_text=true&height=480"></iframe>'}).join(''):'<iframe loading="lazy" title="Facebook ColBolívar" allow="encrypted-media" src="https://www.facebook.com/plugins/page.php?href='+encodeURIComponent('https://www.facebook.com/profile.php?id=61566338526972')+'&tabs=timeline&width=320&height=480&small_header=true&adapt_container_width=false&hide_cover=false&show_facepile=false"></iframe>'});
 if('serviceWorker' in navigator&&location.protocol==='https:')navigator.serviceWorker.register('sw.js').catch(function(){});
 })();
 </script>

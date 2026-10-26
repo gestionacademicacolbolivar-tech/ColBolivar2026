@@ -4,6 +4,5 @@ window.HOY={
  fechas:[ // f = AAAA-MM-DD  (ejemplos: cámbialos por las fechas reales)
   {t:"Cierre del Período 4",f:"2026-11-27"},
   {t:"Entrega de informes",f:"2026-12-04"}],
- videos:[], // videos destacados: ["ID_YOUTUBE", ...] o [["ID","Título"], ...] (ID = lo que va después de v= en el enlace)
- fb:[] // publicaciones: {img:"foto1.jpg", t:"Título", url:"https://facebook.com/..."} (sube la foto al repositorio)
+ fbPosts:[] // enlaces de publicaciones públicas de Facebook a mostrar (ventanas deslizables), ej: ["https://www.facebook.com/.../posts/123"]
 };
