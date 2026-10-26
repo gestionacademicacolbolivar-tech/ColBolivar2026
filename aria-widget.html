@@ -241,7 +241,7 @@ function responderQuizDemo(btn, esCorrecta){
     <img id="aria-avatar-img" src="" alt="ARIA">
     <div class="aria-panel-titulo">
       <strong>ARIA</strong>
-      <span>tu asistente de clase</span>
+      <span>asistente virtual del colegio</span>
     </div>
     <button id="aria-cerrar-btn" type="button" title="Cerrar conversación con ARIA">✖</button>
   </div>
@@ -617,8 +617,8 @@ function responderAria(pregunta){
   const desdeDiccionario = respuestaDiccionarioAmpliadoAria(pregunta);
   if (desdeDiccionario) return desdeDiccionario;
   return elegirAlAzar([
-    'Todavía no sé responder eso — ¡sigo aprendiendo cada día! 🌱 Se lo dejé anotado a tu profe para revisarlo.',
-    'Esa no la conozco aún, pero me la anoto para "aprenderla" pronto 📝 (ya quedó registrada para tu profe)'
+    'No encontré información sobre ese tema en los documentos del colegio. ¿Podría reformular la pregunta o indicarme el nombre del documento?',
+    'No dispongo de esa información en los documentos disponibles. Intente con otras palabras o con el nombre del documento.'
   ]);
 }
 </script>
@@ -1101,7 +1101,7 @@ Reglas que NUNCA rompes:
 - Nunca das la respuesta directa de una pregunta de quiz o evaluación, ni confirmas si una opción es
   correcta o incorrecta. Si detectas que te están pidiendo eso, explica el MÉTODO general para resolver
   ese tipo de problema, con un ejemplo de números distintos, y anima al estudiante a aplicarlo él mismo.
-- Usas lenguaje claro, cálido y respetuoso. Respuestas de máximo 3-4 oraciones.
+- Usas lenguaje claro, cálido y respetuoso. Responde de forma formal, breve y puntual (máximo 2-3 oraciones), solo a lo que se pregunta, sin información adicional.
 - Si te preguntan algo que no tiene nada que ver con la clase, con Aritmética o con Tecnología, redirige
   con amabilidad hacia la clase, sin sermonear.
 - Nunca generas contenido violento, sexual, romántico, ni participas en insultos o groserías.
@@ -2696,7 +2696,7 @@ async function buscarEnWikipediaAria(pregunta){
   const ARIA_PLACEHOLDERS = [
     'Escríbele a ARIA...',
     'Pregúntame algo de la clase...',
-    'Ej: ¿qué es un ángulo?',
+    'Ej: ¿Dónde está el manual de convivencia?',
     '¿En qué te ayudo hoy?'
   ];
 
