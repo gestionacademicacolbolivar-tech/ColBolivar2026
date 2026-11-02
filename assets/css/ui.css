@@ -45,3 +45,8 @@ body{padding-bottom:calc(92px + env(safe-area-inset-bottom))}
 @media(max-width:360px){.cbd button,.cbd a{min-width:54px}.cbd .uix{--s:34px}}
 @media print{.cbd,.cbm,.cbt{display:none!important}body{padding-bottom:0}}
 @media(prefers-reduced-motion:reduce){.cbd *,.cbs,.cbm,.cbt{transition:none!important;animation:none!important}}
+
+.cbp{position:fixed;top:0;left:0;right:0;height:4px;z-index:65;pointer-events:none;opacity:0;transition:opacity .25s}
+.cbp.on{opacity:1}
+.cbp i{display:block;height:100%;transform-origin:0 50%;transform:scaleX(var(--p,0));border-radius:0 4px 4px 0;background:linear-gradient(90deg,#ffd23f 0 34%,#1d4fb8 34% 67%,#d92d3a 67%)}
+html.intro .cbd,html.intro .cbp,html.intro .cbm{display:none!important}

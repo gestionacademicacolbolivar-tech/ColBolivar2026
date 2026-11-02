@@ -1,5 +1,5 @@
-const C='colbolivar-v2';
-const CORE=['./','./index.html','./hoy-data.js','./cumpleanos-data.js','./icon.svg','./assets/css/ui.css','./assets/js/nav.js','./assets/img/ui-nav.webp','./assets/img/ui-docs.webp','./assets/img/iconos-clasicos.webp'];
+const C='colbolivar-v3';
+const CORE=['./','./index.html','./hoy-data.js','./cumpleanos-data.js','./favicon.ico','./assets/img/escudo.webp','./assets/icons/icon-192.png','./assets/css/ui.css','./assets/js/nav.js','./assets/img/ui-nav.webp','./assets/img/ui-docs.webp','./assets/img/iconos-clasicos.webp'];
 const CACHEABLE=/\.(html|js|css|webp|png|jpe?g|svg|json|webmanifest)$|\/$/i;
 self.addEventListener('install',e=>{self.skipWaiting();e.waitUntil(caches.open(C).then(c=>c.addAll(CORE).catch(()=>{})))});
 self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(n=>n!==C).map(n=>caches.delete(n)))).then(()=>clients.claim())));

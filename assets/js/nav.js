@@ -50,3 +50,9 @@ document.body?mount():document.addEventListener('DOMContentLoaded',mount);
 /* En los enlaces "Volver a la portada" usa ruta relativa (sirve con cualquier dominio) */
 document.querySelectorAll('a.back').forEach(function(a){a.setAttribute('href','./')});
 })();
+
+/* Barra de progreso de lectura (tricolor) */
+(function(){var p=document.createElement('div');p.className='cbp';p.setAttribute('aria-hidden','true');p.innerHTML='<i></i>';var t=false;
+function u(){t=false;var h=document.documentElement,m=h.scrollHeight-innerHeight,v=m>0?Math.min(1,scrollY/m):0;p.style.setProperty('--p',v.toFixed(4));p.classList.toggle('on',scrollY>8&&m>200)}
+function r(){if(!t){t=true;requestAnimationFrame(u)}}
+addEventListener('scroll',r,{passive:true});addEventListener('resize',r);(document.body?function(f){f()}:function(f){document.addEventListener('DOMContentLoaded',f)})(function(){document.body.appendChild(p);u()})})();

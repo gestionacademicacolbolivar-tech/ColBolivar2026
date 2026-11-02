@@ -4,12 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#12306e">
+<script>(function(){try{var d=new Date().toDateString();if(localStorage.getItem("cbintro")!==d&&!/[#&?]sin-intro/.test(location.href)&&!matchMedia("(prefers-reduced-motion:reduce)").matches)document.documentElement.classList.add("intro")}catch(e){}})()</script>
 <title>ColBolívar · Institución Educativa Colegio Integrado Simón Bolívar, Cúcuta</title>
 <meta name="description" content="Portal oficial de la I.E. Colegio Integrado Simón Bolívar de Cúcuta: documentos institucionales, planes, cartelera, cumpleaños y ColBolívar Radio.">
 <meta property="og:title" content="ColBolívar · Todos somos ColBolívar"><meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon.svg">
+<link rel="manifest" href="manifest.webmanifest">
 <style>
 :root{--g:#2b7a3a;--gd:#1c4f27;--o:#ffa63d;--r:#d92d3a;--ink:#1d2a22;--bg:#f2f7f1;--mut:#44564a;
 --b_vn:url(assets/img/b51052a629.webp);
@@ -329,7 +330,7 @@ footer{padding-bottom:calc(14px + env(safe-area-inset-bottom))}
 .fbc{flex:1;min-height:260px;border-radius:20px;background:linear-gradient(135deg,#1d4fb8,#0b2a6b);color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:22px;gap:6px;box-shadow:0 6px 18px #0004}.fbc b{font:800 1.2rem Sora,sans-serif}.fbc i{font-style:normal;font-size:2.6rem}
 .fbc a{margin-top:8px;background:#fff;color:#0b4fb3;font-weight:800;padding:10px 20px;border-radius:99px;text-decoration:none}
 
-.fbw{box-sizing:border-box;padding:0!important;position:relative;max-width:520px;margin:0 auto;min-height:420px;border-radius:20px;overflow:hidden;box-shadow:0 6px 18px #0004;background:linear-gradient(135deg,#1d4fb8,#0b2a6b);display:flex;justify-content:center}
+.fbw{box-sizing:border-box;padding:0!important;position:relative;max-width:520px;margin:0 auto;min-height:380px;border-radius:20px;overflow:hidden;box-shadow:0 6px 18px #0004;background:linear-gradient(135deg,#1d4fb8,#0b2a6b);display:flex;justify-content:center}
 .fbw iframe{flex:none;position:relative;z-index:1;display:block;border:0;max-width:100%;background:transparent}
 .fbk{position:absolute;inset:0;z-index:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:8px;padding:22px;color:#fff}
 .fbk i{width:46px;height:46px;border-radius:50%;border:5px solid #ffffff55;border-top-color:#fff;animation:fbsp 1s linear infinite}
@@ -342,14 +343,55 @@ footer{padding-bottom:calc(14px + env(safe-area-inset-bottom))}
 .fbh{font-size:.85rem;font-weight:600;color:#44564a;max-width:520px;margin-left:auto;margin-right:auto}
 .fbs[hidden],.fbw[hidden],.ctl[hidden]{display:none!important}
 @media(prefers-reduced-motion:reduce){.fbk i{animation:none}}
+
+/* ===== INTRO ===== */
+#intro{display:none}
+html.intro,html.intro body{overflow:hidden}
+html.intro #intro{display:flex}
+#intro{position:fixed;inset:0;z-index:9999;align-items:center;justify-content:center;text-align:center;color:#fff;cursor:pointer;overflow:hidden;background:radial-gradient(90% 70% at 50% 38%,#1d4fb8 0%,#12306e 48%,#08183a 100%);transition:transform .65s cubic-bezier(.7,0,.3,1),opacity .65s}
+#intro.out{transform:translateY(-100%);opacity:.2;pointer-events:none}
+#intro .ig{position:absolute;left:50%;top:38%;width:min(130vw,900px);aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(closest-side,#ffd23f66,#ffd23f22 45%,#ffd23f00 72%);animation:iglow 3.4s ease-in-out infinite alternate;will-change:opacity}
+#intro .ib{position:absolute;left:0;right:0;bottom:0;height:12px;display:flex}
+#intro .ib i{flex:1}#intro .ib i:nth-child(1){background:#ffd23f;flex:2}#intro .ib i:nth-child(2){background:#1d4fb8}#intro .ib i:nth-child(3){background:#d92d3a}
+#intro .ic2{position:relative;display:flex;flex-direction:column;align-items:center;padding:20px;max-width:92vw}
+#intro .iesc{width:auto;height:min(40vh,300px);max-width:70vw;object-fit:contain;filter:drop-shadow(0 14px 28px #000b);animation:ipop 1s cubic-bezier(.2,1.5,.4,1) both,iflo 3.2s ease-in-out 1s infinite}
+#intro .ik{margin:18px 0 2px;font:700 .95rem/1 Nunito,system-ui,sans-serif;letter-spacing:.28em;text-transform:uppercase;color:#cfe0ff;animation:iup .7s .55s both}
+#intro .it{margin:0;font:800 clamp(1.25rem,4.6vw,2.1rem)/1.15 Sora,Nunito,sans-serif;animation:iup .7s .75s both}
+#intro .it b{color:#ffd23f}
+#intro .il{margin:12px 0 0;font:800 clamp(1.5rem,6vw,2.6rem)/1 Sora,Nunito,sans-serif;animation:iup .7s 1s both}
+#intro .il span{color:#ffd23f}#intro .il em{font-style:normal;color:#fff;text-shadow:0 3px 0 #d92d3a}
+#intro .ip{width:min(300px,70vw);height:8px;margin:26px 0 14px;border-radius:99px;background:#ffffff2e;overflow:hidden;animation:iup .5s 1.1s both}
+#intro .ip i{display:block;height:100%;width:100%;transform-origin:0 50%;transform:scaleX(0);border-radius:99px;background:linear-gradient(90deg,#ffd23f,#ffa63d);animation:ifill 2.7s cubic-bezier(.4,.1,.3,1) 1.1s forwards}
+#intro .is{all:unset;cursor:pointer;padding:10px 26px;border-radius:99px;font:800 .95rem Sora,Nunito,sans-serif;background:#fff;color:#12306e;box-shadow:0 4px 0 #9fb3d9;animation:iup .5s 1.5s both}
+#intro .is:focus-visible{outline:3px solid #ffa63d;outline-offset:3px}
+@keyframes iglow{from{opacity:.45}to{opacity:1}}
+@keyframes ipop{0%{opacity:0;transform:scale(.3) rotate(-8deg)}100%{opacity:1;transform:none}}
+@keyframes iflo{50%{transform:translateY(-8px)}}
+@keyframes iup{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes ifill{to{transform:scaleX(1)}}
+@media(prefers-reduced-motion:reduce){#intro,#intro *{animation:none!important;transition:none!important}}
+/* ===== FACEBOOK: destacadas ===== */
+.fbf{max-width:520px;margin:4px auto 10px}
+.fbf h4{margin:0 0 6px;font:800 1rem Sora,sans-serif;color:var(--gd)}
+.fbr{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 10px;-webkit-overflow-scrolling:touch}
+.fbcd{flex:0 0 158px;scroll-snap-align:start;display:flex;flex-direction:column;gap:6px;padding:0 0 10px;border-radius:16px;background:#fff;border:2px solid #cfe0ff;text-decoration:none;color:var(--ink);overflow:hidden;box-shadow:0 4px 12px #0b2a6b22;transition:transform .2s,box-shadow .2s}
+.fbcd:hover{transform:translateY(-3px);box-shadow:0 10px 18px #0b2a6b33}
+.fbcd .fbi{display:flex;align-items:center;justify-content:center;height:84px;font-size:2rem;color:#fff;background:linear-gradient(135deg,#1877f2,#0b2a6b)}
+.fbcd img.fbi{width:100%;object-fit:cover;display:block}
+.fbcd b{font:800 .9rem/1.2 Sora,Nunito,sans-serif;padding:0 10px}
+.fbcd small{padding:0 10px;font-weight:800;color:#0b4fb3}
+.fbf[hidden]{display:none!important}
 </style>
 <script>
 function fit(){var sw=screen.width,iw=innerWidth,ua=navigator.userAgent,ph=/Android.*Mobile|iPhone/i.test(ua),m=iw<=860,z=1;if(sw<=600&&iw>sw*1.25){z=iw/sw;m=true}else if(ph&&iw>=700){z=iw/420;m=true}document.documentElement.classList.toggle('m',m);if(document.body)document.body.style.zoom=z>1?z:''}
 fit();addEventListener('resize',fit);addEventListener('DOMContentLoaded',fit);
 </script>
+<link rel="icon" href="favicon.ico" sizes="48x48"><link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png"><link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
 <link rel="stylesheet" href="assets/css/ui.css">
 </head>
 <body>
+<div id="intro" role="dialog" aria-modal="true" aria-label="Bienvenida a ColBol&iacute;var"><div class="ig" aria-hidden="true"></div><div class="ic2"><img class="iesc" src="assets/img/escudo.webp" width="424" height="496" alt="Escudo del Colegio Integrado Sim&oacute;n Bol&iacute;var"><p class="ik">Instituci&oacute;n Educativa</p><p class="it">Colegio Integrado <b>Sim&oacute;n Bol&iacute;var</b></p><p class="il">Todos somos <span>Col</span><em>Bol&iacute;var</em></p><div class="ip" aria-hidden="true"><i></i></div><button class="is" type="button">Entrar &rsaquo;</button></div><div class="ib" aria-hidden="true"><i></i><i></i><i></i></div></div>
+<script>(function(){var h=document.documentElement,el=document.getElementById("intro");if(!el)return;if(!h.classList.contains("intro")){el.remove();return}var done=false;function end(){if(done)return;done=true;try{localStorage.setItem("cbintro",new Date().toDateString())}catch(e){}el.classList.add("out");setTimeout(function(){h.classList.remove("intro");el.remove()},680)}el.querySelector(".ip i").addEventListener("animationend",end);el.addEventListener("click",end);addEventListener("keydown",function(e){if(e.key==="Escape"||e.key==="Enter"||e.key===" ")end()});setTimeout(end,5200);try{el.querySelector(".is").focus({preventScroll:true})}catch(e){}})();</script>
 <header class="hero">
 <h1 class="sr">Todos somos ColBolívar · Institución Educativa Colegio Integrado Simón Bolívar, Cúcuta</h1>
 <div class="ban">
@@ -455,6 +497,7 @@ fit();addEventListener('resize',fit);addEventListener('DOMContentLoaded',fit);
 <div class="cf"><h3 class="wh">📘 Desde nuestro Facebook</h3><div class="fbw" id="fbw" aria-live="polite"></div>
 <div class="fbs" id="fbs" hidden></div>
 <div class="ctl" id="fctl"><button type="button" id="fr">&#8635; Actualizar</button><a id="fo" href="https://www.facebook.com/profile.php?id=61566338526972" target="_blank" rel="noopener">Abrir en Facebook &#8599;</a></div>
+<div class="fbf" id="fbf" hidden><h4>&#11088; Publicaciones destacadas</h4><div class="fbr" id="fbr"></div></div>
 <p class="wl fbh">Se actualiza solo con las &uacute;ltimas publicaciones. Si no las ves, tu navegador puede estar bloqueando Facebook: usa <b>Abrir en Facebook</b>.</p></div></div></section>
 
 
@@ -629,13 +672,14 @@ function yc(f){if(yi&&yi.contentWindow)yi.contentWindow.postMessage(JSON.stringi
 $('#yp').onclick=function(){yc('previousVideo')};$('#yn').onclick=function(){yc('nextVideo')};
 var fs=$('#fbs'),fw=$('#fbw'),FBU=H.fbPagina||'https://www.facebook.com/profile.php?id=61566338526972',P=H.fbPosts||[],fwid=0;
 function fbW(){return Math.max(180,Math.min(500,Math.floor(fw.clientWidth)||340))}
-function fbBuild(bust){var w=fbW(),h=Math.max(480,Math.min(720,Math.round(innerHeight*.78)));fwid=w;fw.classList.remove('ok');fw.style.height=h+'px';
+function fbBuild(bust){var w=fbW(),h=Math.max(420,Math.min(540,Math.round(innerHeight*.7)));fwid=w;fw.classList.remove('ok');fw.style.height=h+'px';
 fw.innerHTML='<div class="fbk"><i></i><b>IE ColBol\u00edvar</b><span class="l1">Cargando publicaciones\u2026</span><span class="l2">\u00bfNo ves las publicaciones? \u00c1brelas directamente:</span><a href="'+FBU+'" target="_blank" rel="noopener">Abrir en Facebook \u2197</a></div><iframe title="\u00daltimas publicaciones de Facebook de ColBol\u00edvar" width="'+w+'" height="'+h+'" style="width:'+w+'px;height:'+h+'px" allow="encrypted-media" loading="lazy" src="https://www.facebook.com/plugins/page.php?href='+encodeURIComponent(FBU)+'&tabs=timeline&width='+w+'&height='+h+'&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&locale=es_LA'+(bust?'&_='+Date.now():'')+'"></iframe>';
 fw.querySelector('iframe').addEventListener('load',function(){fw.classList.add('ok')})}
 if(H.fbModo==='manual'&&P.length){fw.hidden=true;$('#fctl').hidden=true;$('.fbh').hidden=true;fs.hidden=false;
 lazy(fs,function(){fs.innerHTML=P.map(function(u){return (/\/(r|reel|videos|watch)\b/.test(u)?'<iframe loading="lazy" title="Video de Facebook" allow="encrypted-media;autoplay;picture-in-picture" allowfullscreen src="https://www.facebook.com/plugins/video.php?href='+encodeURIComponent(u)+'&show_text=false&width=280&height=500"></iframe>':'<iframe loading="lazy" title="Publicaci\u00f3n de Facebook" allow="encrypted-media" src="https://www.facebook.com/plugins/post.php?href='+encodeURIComponent(u)+'&width=320&show_text=true&height=500"></iframe>')}).join('')})}
 else{lazy(fw,fbBuild);$('#fr').onclick=function(){fbBuild(true)};$('#fo').href=FBU;
 var ft;addEventListener('resize',function(){clearTimeout(ft);ft=setTimeout(function(){if(fwid&&Math.abs(fbW()-fwid)>20)fbBuild()},350)})}
+var FC=H.fbCards||[],fbr=$('#fbr');if(FC.length){$('#fbf').hidden=false;fbr.innerHTML=FC.map(function(c){var v=/\/(r|reel|videos|watch)\b/.test(c.u);return '<a class="fbcd" href="'+c.u+'" target="_blank" rel="noopener">'+(c.i?'<img class="fbi" loading="lazy" alt="" src="'+c.i+'">':'<span class="fbi" aria-hidden="true">'+(v?'\u25b6':'\ud83d\udcf0')+'</span>')+'<b>'+(c.t||'Publicaci\u00f3n')+'</b><small>Ver en Facebook \u2197</small></a>'}).join('')}
 if('serviceWorker' in navigator&&location.protocol==='https:')navigator.serviceWorker.register('sw.js').catch(function(){});
 })();
 </script>
