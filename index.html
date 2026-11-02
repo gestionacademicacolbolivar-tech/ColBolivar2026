@@ -328,6 +328,20 @@ footer{padding-bottom:calc(14px + env(safe-area-inset-bottom))}
 .cg .fbs iframe{flex:0 0 min(280px,80%);height:500px}
 .fbc{flex:1;min-height:260px;border-radius:20px;background:linear-gradient(135deg,#1d4fb8,#0b2a6b);color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:22px;gap:6px;box-shadow:0 6px 18px #0004}.fbc b{font:800 1.2rem Sora,sans-serif}.fbc i{font-style:normal;font-size:2.6rem}
 .fbc a{margin-top:8px;background:#fff;color:#0b4fb3;font-weight:800;padding:10px 20px;border-radius:99px;text-decoration:none}
+
+.fbw{box-sizing:border-box;padding:0!important;position:relative;max-width:520px;margin:0 auto;min-height:420px;border-radius:20px;overflow:hidden;box-shadow:0 6px 18px #0004;background:linear-gradient(135deg,#1d4fb8,#0b2a6b);display:flex;justify-content:center}
+.fbw iframe{flex:none;position:relative;z-index:1;display:block;border:0;max-width:100%;background:transparent}
+.fbk{position:absolute;inset:0;z-index:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:8px;padding:22px;color:#fff}
+.fbk i{width:46px;height:46px;border-radius:50%;border:5px solid #ffffff55;border-top-color:#fff;animation:fbsp 1s linear infinite}
+.fbk b{font:800 1.2rem Sora,sans-serif}.fbk span{max-width:26ch;line-height:1.35}
+.fbk a{margin-top:6px;background:#fff;color:#0b4fb3;font-weight:800;padding:10px 20px;border-radius:99px;text-decoration:none}
+.fbk .l2{display:none}.fbw.ok .fbk .l2{display:block}.fbw.ok .fbk .l1,.fbw.ok .fbk i{display:none}
+@keyframes fbsp{to{transform:rotate(360deg)}}
+.ctl a{flex:1;text-align:center;border-radius:14px;padding:11px 8px;font:800 .95rem Sora,sans-serif;background:#1877f2;color:#fff;text-decoration:none;box-shadow:0 3px 0 #0b4fb3}
+.ctl a:active{transform:translateY(2px);box-shadow:none}
+.fbh{font-size:.85rem;font-weight:600;color:#44564a;max-width:520px;margin-left:auto;margin-right:auto}
+.fbs[hidden],.fbw[hidden],.ctl[hidden]{display:none!important}
+@media(prefers-reduced-motion:reduce){.fbk i{animation:none}}
 </style>
 <script>
 function fit(){var sw=screen.width,iw=innerWidth,ua=navigator.userAgent,ph=/Android.*Mobile|iPhone/i.test(ua),m=iw<=860,z=1;if(sw<=600&&iw>sw*1.25){z=iw/sw;m=true}else if(ph&&iw>=700){z=iw/420;m=true}document.documentElement.classList.toggle('m',m);if(document.body)document.body.style.zoom=z>1?z:''}
@@ -438,8 +452,10 @@ fit();addEventListener('resize',fit);addEventListener('DOMContentLoaded',fit);
 <div class="cg"><div class="cy"><h3 class="wh">▶️ Videos del canal</h3><div class="win" id="ytw"></div>
 <div class="ctl"><button type="button" id="yp">⏮ Anterior</button><button type="button" id="yn">Siguiente ⏭</button></div>
 <p class="wl"><a href="https://www.youtube.com/@ColBolivar" target="_blank" rel="noopener">Ver todo el canal ↗</a></p></div>
-<div class="cf"><h3 class="wh">📘 Desde nuestro Facebook</h3><div class="fbs" id="fbs"></div>
-<p class="wl"><a href="https://www.facebook.com/profile.php?id=61566338526972" target="_blank" rel="noopener">Ver la página completa ↗</a></p></div></div></section>
+<div class="cf"><h3 class="wh">📘 Desde nuestro Facebook</h3><div class="fbw" id="fbw" aria-live="polite"></div>
+<div class="fbs" id="fbs" hidden></div>
+<div class="ctl" id="fctl"><button type="button" id="fr">&#8635; Actualizar</button><a id="fo" href="https://www.facebook.com/profile.php?id=61566338526972" target="_blank" rel="noopener">Abrir en Facebook &#8599;</a></div>
+<p class="wl fbh">Se actualiza solo con las &uacute;ltimas publicaciones. Si no las ves, tu navegador puede estar bloqueando Facebook: usa <b>Abrir en Facebook</b>.</p></div></div></section>
 
 
 
@@ -611,7 +627,15 @@ function lazy(el,fn){if('IntersectionObserver' in window)new IntersectionObserve
 var yw=$('#ytw'),yi;lazy(yw,function(){yw.innerHTML='<iframe id="yif" src="https://www.youtube-nocookie.com/embed/videoseries?enablejsapi=1&rel=0&list='+(H.ytLista||'UUfBybHUk_JkgpjUGf_apXBA')+'" title="Videos de ColBolívar" allow="encrypted-media;picture-in-picture;fullscreen" allowfullscreen loading="lazy"></iframe>';yi=$('#yif')});
 function yc(f){if(yi&&yi.contentWindow)yi.contentWindow.postMessage(JSON.stringify({event:'command',func:f,args:''}),'*')}
 $('#yp').onclick=function(){yc('previousVideo')};$('#yn').onclick=function(){yc('nextVideo')};
-var fs=$('#fbs'),P=H.fbPosts||[];lazy(fs,function(){fs.innerHTML=P.length?P.map(function(u){return (/\/(r|reel|videos|watch)\b/.test(u)?'<iframe loading="lazy" title="Video de Facebook" allow="encrypted-media;autoplay;picture-in-picture" allowfullscreen src="https://www.facebook.com/plugins/video.php?href='+encodeURIComponent(u)+'&show_text=false&width=280&height=500"></iframe>':'<iframe loading="lazy" title="Publicación de Facebook" allow="encrypted-media" src="https://www.facebook.com/plugins/post.php?href='+encodeURIComponent(u)+'&width=320&show_text=true&height=500"></iframe>')}).join(''):'<div class="fbc"><i>📘</i><b>IE ColBolívar</b><span>630 seguidores · Noticias, eventos y fotos</span><a href="https://www.facebook.com/profile.php?id=61566338526972" target="_blank" rel="noopener">Abrir en Facebook ↗</a></div>'});
+var fs=$('#fbs'),fw=$('#fbw'),FBU=H.fbPagina||'https://www.facebook.com/profile.php?id=61566338526972',P=H.fbPosts||[],fwid=0;
+function fbW(){return Math.max(180,Math.min(500,Math.floor(fw.clientWidth)||340))}
+function fbBuild(bust){var w=fbW(),h=Math.max(480,Math.min(720,Math.round(innerHeight*.78)));fwid=w;fw.classList.remove('ok');fw.style.height=h+'px';
+fw.innerHTML='<div class="fbk"><i></i><b>IE ColBol\u00edvar</b><span class="l1">Cargando publicaciones\u2026</span><span class="l2">\u00bfNo ves las publicaciones? \u00c1brelas directamente:</span><a href="'+FBU+'" target="_blank" rel="noopener">Abrir en Facebook \u2197</a></div><iframe title="\u00daltimas publicaciones de Facebook de ColBol\u00edvar" width="'+w+'" height="'+h+'" style="width:'+w+'px;height:'+h+'px" allow="encrypted-media" loading="lazy" src="https://www.facebook.com/plugins/page.php?href='+encodeURIComponent(FBU)+'&tabs=timeline&width='+w+'&height='+h+'&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&locale=es_LA'+(bust?'&_='+Date.now():'')+'"></iframe>';
+fw.querySelector('iframe').addEventListener('load',function(){fw.classList.add('ok')})}
+if(H.fbModo==='manual'&&P.length){fw.hidden=true;$('#fctl').hidden=true;$('.fbh').hidden=true;fs.hidden=false;
+lazy(fs,function(){fs.innerHTML=P.map(function(u){return (/\/(r|reel|videos|watch)\b/.test(u)?'<iframe loading="lazy" title="Video de Facebook" allow="encrypted-media;autoplay;picture-in-picture" allowfullscreen src="https://www.facebook.com/plugins/video.php?href='+encodeURIComponent(u)+'&show_text=false&width=280&height=500"></iframe>':'<iframe loading="lazy" title="Publicaci\u00f3n de Facebook" allow="encrypted-media" src="https://www.facebook.com/plugins/post.php?href='+encodeURIComponent(u)+'&width=320&show_text=true&height=500"></iframe>')}).join('')})}
+else{lazy(fw,fbBuild);$('#fr').onclick=function(){fbBuild(true)};$('#fo').href=FBU;
+var ft;addEventListener('resize',function(){clearTimeout(ft);ft=setTimeout(function(){if(fwid&&Math.abs(fbW()-fwid)>20)fbBuild()},350)})}
 if('serviceWorker' in navigator&&location.protocol==='https:')navigator.serviceWorker.register('sw.js').catch(function(){});
 })();
 </script>
