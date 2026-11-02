@@ -6,6 +6,7 @@ window.HOY={
   {t:"Entrega de informes",f:"2026-12-04"}],
  fbPagina:"https://www.facebook.com/profile.php?id=61566338526972", // página de Facebook cuyas últimas publicaciones se muestran solas en la portada
  fbModo:"pagina", // "pagina" = ventana automática (recomendado). "manual" = usa solo la lista fbPosts de abajo
+ whatsapp:"", // número de WhatsApp del colegio con indicativo y solo dígitos (ej. 573001234567). Vacío = el botón no se muestra
  fbCards:[ // tarjetas destacadas bajo la ventana de Facebook (t = título, u = enlace, i = imagen opcional: ruta o URL)
   {t:"Reel ColBolívar · 1",u:"https://www.facebook.com/share/r/1BoWv6F7C7/"},
   {t:"Reel ColBolívar · 2",u:"https://www.facebook.com/share/r/18m3tUwCx9/"},

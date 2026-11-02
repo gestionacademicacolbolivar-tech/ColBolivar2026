@@ -125,7 +125,7 @@ footer .cr{display:block;margin-top:4px;font-weight:800}
 <div class="zt2"><div id="t2"></div><div id="a2"></div></div>
 <button class="inf" id="inf">ℹ️ Sobre esta canción</button>
 <div class="tms"><span id="tc">0:00</span><span id="td">0:00</span></div>
-<div class="mrow"><button class="btn dj-only" data-f="pv" aria-label="Anterior"></button><button class="btn dj-only" data-f="b10" aria-label="Atrasar 10 segundos"></button><button class="btn" data-f="go" aria-label="Escuchar"></button><button class="btn" data-f="pz" aria-label="Pausar"></button><button class="btn dj-only" data-f="f10" aria-label="Adelantar 10 segundos"></button><button class="btn dj-only" data-f="nx" aria-label="Siguiente"></button><label class="vl">🔊 <input id="vol" type="range" min="0" max="1" step=".05" value=".8"></label></div>
+<div class="mrow"><button class="btn dj-only" data-f="pv" aria-label="Anterior"></button><button class="btn dj-only" data-f="b10" aria-label="Atrasar 10 segundos"></button><button class="btn" data-f="go" aria-label="Escuchar"></button><button class="btn" data-f="pz" aria-label="Pausar"></button><button class="btn dj-only" data-f="f10" aria-label="Adelantar 10 segundos"></button><button class="btn dj-only" data-f="nx" aria-label="Siguiente"></button><label class="vl"><i class="ri s" aria-hidden="true"></i> <input id="vol" type="range" min="0" max="1" step=".05" value=".8"></label></div>
 </div></div></section>
 <section class="card" id="lst"><h3>CABINA DJ · ELIGE TU CANCIÓN</h3><ul id="ql"></ul></section>
 <div class="nx"><section class="card"><h3>A CONTINUACIÓN</h3><div id="nxt">—</div></section><section class="card"><h3>PROGRAMAS DE HOY</h3><ul id="hoy"><li>Cargando…</li></ul></section></div>
@@ -177,7 +177,7 @@ function dj(){
   if(lq!==qi){lq=qi;[...$('ql').children].forEach((li,i)=>li.classList.toggle('cur',i===qi))}
 }
 function tick(){if(P)mode==='live'?live():dj()}
-function ui(){$('box').classList.toggle('on',on);$('go').textContent=on?'⏸ Pausar':'▶ Escuchar';if(typeof vozSync==='function')vozSync()}
+function ui(){$('box').classList.toggle('on',on);$('go').innerHTML=on?'⏸ Pausar':'<i class="ri" aria-hidden="true"></i> Escuchar';if(typeof vozSync==='function')vozSync()}
 function playDJ(i,pos=0){wake();qi=(i+Q.length)%Q.length;cur=encodeURI(Q[qi].f);au.src=cur;
   au.addEventListener('loadedmetadata',()=>{if(pos)au.currentTime=pos},{once:true});on=true;ui();au.play().catch(()=>{});dj()}
 $('go').onclick=()=>{wake();

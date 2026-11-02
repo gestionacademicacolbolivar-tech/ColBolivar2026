@@ -21,10 +21,10 @@ var items=[
  ['PROYECTOS_TRANSVERSALES.html','Proyectos transversales','Proyectos del año',ic(1,3,'d'),'PROYECTOS_TRANSVERSALES.html'],
  ['cartelera.html','Cartelera','Avisos y videos',ic(3,3,'d'),'cartelera.html'],
  ['cumpleanos.html','Cumpleaños','Celebramos contigo',ic(1,1,'o'),'cumpleanos.html'],
- ['colbolivar-radio/','ColBolívar Radio','Música y podcast',ic(0,2,'o'),'']];
+ ['colbolivar-radio/','ColBolívar Radio','Música y podcast','<i class="uix snd" aria-hidden="true"></i>','']];
 var sheet=el('<div class="cbm" id="cbm" hidden><div class="cbs" role="dialog" aria-modal="true" aria-labelledby="cbt"><div class="cbh"><b id="cbt">¿A dónde vamos?</b><button type="button" data-a="close" aria-label="Cerrar menú">'+ic(1,1)+'</button></div><div class="cbg">'+
  items.map(function(i){return '<a href="'+i[0]+'"'+(i[4]===path||(i[4]==='index.html'&&isHome)?' aria-current="page"':'')+'>'+i[3]+'<span>'+i[1]+'<small>'+i[2]+'</small></span></a>'}).join('')+
- '</div><div class="cbf"><button type="button" data-a="share">Compartir esta página</button></div></div></div>');
+ '</div><div class="cbf"><button type="button" data-a="share">Compartir</button><button type="button" class="wa" data-a="wa"><i class="uix wa" aria-hidden="true"></i>WhatsApp</button></div></div></div>');
 var lastFocus=null,toastT;
 function toast(t){var o=document.querySelector('.cbt');if(o)o.remove();var d=el('<div class="cbt" role="status">'+t+'</div>');document.body.appendChild(d);clearTimeout(toastT);toastT=setTimeout(function(){d.remove()},2200)}
 function open(){lastFocus=document.activeElement;sheet.hidden=false;requestAnimationFrame(function(){sheet.classList.add('on')});document.documentElement.style.overflow='hidden';var f=sheet.querySelector('a,button');f&&f.focus()}
@@ -37,6 +37,7 @@ function act(a){
  if(a==='top'||a==='up')scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'});
  else if(a==='back')history.back();
  else if(a==='q'){var q=document.getElementById('q');q.scrollIntoView({block:'center',behavior:'smooth'});setTimeout(function(){q.focus({preventScroll:true})},350)}
+ else if(a==='wa'){window.open('https://wa.me/?text='+encodeURIComponent(document.title+' '+location.href.split('#')[0]),'_blank','noopener')}
  else if(a==='menu')open();else if(a==='close')close();else if(a==='share')share()}
 document.addEventListener('click',function(e){var b=e.target.closest('[data-a]');if(b&&(dock.contains(b)||sheet.contains(b))){act(b.dataset.a);return}
  if(e.target===sheet)close();var l=e.target.closest('.cbg a');if(l&&l.getAttribute('aria-current')==='page'){e.preventDefault();close()}});
@@ -56,3 +57,8 @@ document.querySelectorAll('a.back').forEach(function(a){a.setAttribute('href','.
 function u(){t=false;var h=document.documentElement,m=h.scrollHeight-innerHeight,v=m>0?Math.min(1,scrollY/m):0;p.style.setProperty('--p',v.toFixed(4));p.classList.toggle('on',scrollY>8&&m>200)}
 function r(){if(!t){t=true;requestAnimationFrame(u)}}
 addEventListener('scroll',r,{passive:true});addEventListener('resize',r);(document.body?function(f){f()}:function(f){document.addEventListener('DOMContentLoaded',f)})(function(){document.body.appendChild(p);u()})})();
+
+/* Precarga de páginas internas al acercar el dedo/cursor (navegación casi instantánea) */
+(function(){if(navigator.connection&&navigator.connection.saveData)return;var done={};function pf(e){var a=e.target.closest&&e.target.closest('a[href]');if(!a||a.target==='_blank')return;var u;try{u=new URL(a.href,location.href)}catch(x){return}
+if(u.origin!==location.origin||u.pathname===location.pathname||done[u.pathname]||!/(\.html|\/)$/.test(u.pathname))return;done[u.pathname]=1;var l=document.createElement('link');l.rel='prefetch';l.href=u.pathname;document.head.appendChild(l)}
+addEventListener('pointerover',pf,{passive:true});addEventListener('touchstart',pf,{passive:true})})();
