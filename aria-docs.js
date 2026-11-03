@@ -21,6 +21,7 @@ var VERBO=/(dame|env[ií]a|p[aá]sa|mu[eé]stra|descarg|enlace|link|archivo|docu
 var TEMA=/(manual|plan|pei|sie[sn]?|reglamento|horario|circular|formato|gu[ií]a|calendario|cronograma|protocolo|resoluci[oó]n|acta|informe|cartilla|proyecto)/i;
 window.ARIA_DOCS={
  pideDoc:function(q){return VERBO.test(q)||TEMA.test(q)},
+ contexto:function(q){if(!D||!D.length)return'';var r=buscar(q).filter(function(x){return x.s>=1.5}).slice(0,3);return r.map(function(x){return'- ['+x.c.t+(x.c.p?', pág. '+x.c.p:'')+'] '+String(x.c.x).slice(0,900)}).join('\n')},
  responder:function(q){return cargar().then(function(){var doc=VERBO.test(q);
   if(!D.length)return doc?'El índice de documentos aún no está disponible. Por favor, intente de nuevo en unos minutos.':null;
   var qd=tok(q,1),T=porTitulo(qd),pregunta=/\b(que|cual|cuales|cuanto|cuantos|como|cuando|quien|por que)\b/.test(norm(q));

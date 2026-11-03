@@ -1152,7 +1152,7 @@ async function preguntarIAExternaAria(pregunta, contextoSlide){
   window.ARIA_EMOCION_IA = null;
 
   const cuerpo = {
-    system_instruction: { parts: [{ text: ARIA_INSTRUCCION_SISTEMA + ((window.ARIA_KB && ARIA_KB.contexto(pregunta)) ? `\n\nInformación oficial del colegio (úsala para responder; si la respuesta no está aquí, dilo con honestidad):\n${ARIA_KB.contexto(pregunta)}` : '') + (contextoSlide ? `\n\nTema de la diapositiva actual: "${contextoSlide}".` : '') }] },
+    system_instruction: { parts: [{ text: ARIA_INSTRUCCION_SISTEMA + ((window.ARIA_KB && ARIA_KB.contexto(pregunta)) ? `\n\nInformación oficial del colegio (úsala para responder; si la respuesta no está aquí, dilo con honestidad):\n${ARIA_KB.contexto(pregunta)}` : '') + ((window.ARIA_DOCS && ARIA_DOCS.contexto && ARIA_DOCS.contexto(pregunta)) ? `\n\nFragmentos de documentos institucionales relacionados (cita el documento y la página cuando los uses):\n${ARIA_DOCS.contexto(pregunta)}` : '') + (contextoSlide ? `\n\nTema de la diapositiva actual: "${contextoSlide}".` : '') }] },
     contents: [{ role: 'user', parts: [{ text: pregunta }] }],
     generationConfig: { maxOutputTokens: 1024, temperature: 0.6, thinkingConfig: { thinkingLevel: 'low' } }
   };

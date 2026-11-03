@@ -81,17 +81,23 @@
    "id": "rector",
    "tema": "Rector y directivos",
    "claves": [
-    "rector",
-    "quien es el rector",
-    "director",
-    "directivos",
-    "rectoria",
-    "jesus maldonado",
+    "coordinacion",
     "coordinador",
     "coordinadores",
-    "coordinacion"
+    "directivos",
+    "director",
+    "doctor",
+    "dr maldonado",
+    "jesus maldonado",
+    "jesus maldonado serrano",
+    "maldonado",
+    "quien dirige el colegio",
+    "quien es el rector",
+    "quien manda",
+    "rector",
+    "rectoria"
    ],
-   "respuesta": "El rector de la institución es el Mg. Jesús Maldonado Serrano, nombrado el 20 de mayo de 2008. La planta de directivos docentes es de 5 personas (rector y coordinadores).",
+   "respuesta": "El rector de la institución es el Dr. Jesús Maldonado Serrano, quien llegó al colegio en 2008 (nombrado el 20 de mayo de 2008). La planta de directivos docentes es de 5 personas (rector y coordinadores).",
    "enlaces": []
   },
   {
@@ -184,7 +190,7 @@
     "etnoeducacion",
     "propuesta intercultural"
    ],
-   "respuesta": "La sede San Martín desarrolla una propuesta especial de Educación Intercultural Yukpa.",
+   "respuesta": "La sede San Martín desarrolla la propuesta de Educación Intercultural Yukpa, «Construyendo puentes culturales», que inició en 2021.",
    "enlaces": [
     {
      "t": "Propuesta Intercultural Yukpa (PDF)",
@@ -825,6 +831,115 @@
     {
      "t": "ColBolívar Radio",
      "u": "colbolivar-radio/"
+    }
+   ]
+  },
+  {
+   "id": "historia",
+   "tema": "Historia del colegio",
+   "claves": [
+    "historia",
+    "historia del colegio",
+    "resena historica",
+    "como nacio",
+    "cuando empezo",
+    "quien fundo",
+    "linea de tiempo",
+    "trayectoria",
+    "1992",
+    "primera promocion",
+    "jornada unica",
+    "pandemia",
+    "portatiles",
+    "icfes",
+    "pruebas saber",
+    "nivel a",
+    "nivel alto"
+   ],
+   "respuesta": "Hitos: 1992, inicia labores el 18 de febrero en dos aulas con 23 estudiantes de sexto y 14 de séptimo. 1996–1997, primera promoción de bachilleres académicos y segunda de técnicos. 2002–2003, se constituye como institución educativa (decreto 00780) y se fusionan las sedes Hernando Acevedo y San Martín. 2008, llega el rector Dr. Jesús Maldonado Serrano. 2013, el ICFES clasifica al colegio en nivel Alto. 2015, inicia la Jornada Única en la sede San Martín. 2018, Nivel A en Pruebas Saber 11. 2020, clases virtuales; el MinTIC dona 356 portátiles y la Alcaldía 333 SIM cards. 2021, inicia la propuesta intercultural Yukpa. 2024, resignificación del PEI 2024–2027 e ingreso por mérito de 15 nuevos docentes.",
+   "enlaces": [
+    {
+     "t": "Gestión de calidad",
+     "u": "CALIDAD.html"
+    }
+   ]
+  },
+  {
+   "id": "calidad",
+   "tema": "Gestión de calidad y ejes institucionales",
+   "claves": [
+    "calidad",
+    "gestion de calidad",
+    "phva",
+    "planear hacer verificar",
+    "plan de mejoramiento",
+    "pmi",
+    "indicadores de gestion",
+    "ejes",
+    "inclusion educativa",
+    "sana convivencia",
+    "formacion integral",
+    "centros de interes",
+    "trabajo en equipo",
+    "liderazgo",
+    "tic y recursos"
+   ],
+   "respuesta": "El colegio trabaja con el ciclo Planear–Hacer–Verificar–Actuar: plan plurianual 2024–2027 y plan operativo anual construidos colectivamente, ejecución en cuatro campos de gestión, seguimiento con indicadores (eficiencia, pertinencia, cobertura y calidad) y Plan de Mejoramiento Institucional (PMI). Ejes: proyecto de vida, inclusión educativa, sana convivencia (educación ciudadana para la reconciliación, socioemocional y antirracista), formación integral, trabajo en equipo, liderazgo, TIC y recursos, y centros de interés.",
+   "enlaces": [
+    {
+     "t": "Gestión de calidad",
+     "u": "CALIDAD.html"
+    }
+   ]
+  },
+  {
+   "id": "protocolos-faltas",
+   "tema": "Protocolo ante cada tipo de falta",
+   "claves": [
+    "protocolo",
+    "que hago si",
+    "que se hace cuando",
+    "procedimiento",
+    "como se actua",
+    "como se maneja",
+    "acta de compromiso",
+    "suspension",
+    "citacion",
+    "matricula en observacion",
+    "observador",
+    "remision a orientacion"
+   ],
+   "respuesta": "Protocolo por tipo de falta. Leve (Art. 161): diálogo con el estudiante, acta de compromiso escrito y anotación en el observador con notificación al acudiente. Grave (Art. 162 / Art. 87 Ley 115): citación formal e inmediata al acudiente, suspensión de 1 a 3 días según la gravedad, acta de compromiso de convivencia, anotación en el observador, remisión a orientación escolar y posible matrícula en observación. Gravísima (Situación Tipo III, Ley 1620): activación inmediata de la Ruta de Atención Integral, aviso urgente al Comité de Convivencia, posible remisión a ICBF, Policía, Fiscalía o Comisaría de Familia, suspensión preventiva mientras se investiga y posible cancelación de matrícula.",
+   "enlaces": [
+    {
+     "t": "Manual de Convivencia (Documento Maestro)",
+     "u": "https://0fa5a971-652e-4607-a1b4-cf4b07b9f616.filesusr.com/ugd/8891de_0fab9ff361254a148a3a5d3a0eafea98.pdf"
+    },
+    {
+     "t": "Orientación escolar",
+     "u": "ORIENTACION_ESCOLAR.html"
+    }
+   ]
+  },
+  {
+   "id": "derechos-deberes-padres",
+   "tema": "Deberes de los padres y responsabilidad civil",
+   "claves": [
+    "deberes de los padres",
+    "deberes del acudiente",
+    "responsabilidad de los padres",
+    "responsabilidad civil",
+    "padres de familia",
+    "acudiente",
+    "indemnizacion",
+    "quien paga los danos",
+    "dano de un estudiante"
+   ],
+   "respuesta": "El Decreto 1075/2015 (Art. 2.3.4.3) fija los deberes de los padres de familia, y los Arts. 2346–2348 del Código Civil establecen su responsabilidad civil por los actos de sus hijos. El colegio, por su parte, responde por los daños que los estudiantes sufran en las instalaciones o en actividades externas (Art. 2347 del Código Civil).",
+   "enlaces": [
+    {
+     "t": "Manual de Convivencia (Documento Maestro)",
+     "u": "https://0fa5a971-652e-4607-a1b4-cf4b07b9f616.filesusr.com/ugd/8891de_0fab9ff361254a148a3a5d3a0eafea98.pdf"
     }
    ]
   }
