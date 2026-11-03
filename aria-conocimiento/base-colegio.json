@@ -1,0 +1,832 @@
+{
+ "version": 1,
+ "actualizado": "2026-11-03",
+ "fuente": "Compilado del PEI 2024-2027, Manual de Convivencia GD-D02 y datos institucionales públicos. NO incluye teléfonos personales, credenciales ni datos privados.",
+ "entradas": [
+  {
+   "id": "identidad",
+   "tema": "Datos de identificación",
+   "claves": [
+    "dane",
+    "nit",
+    "codigo dane",
+    "resolucion de aprobacion",
+    "fundacion",
+    "fundado",
+    "cuando se fundo",
+    "caracter oficial",
+    "publico o privado",
+    "comuna",
+    "zona",
+    "nombre completo del colegio"
+   ],
+   "respuesta": "La Institución Educativa Colegio Integrado Simón Bolívar (ColBolívar) es un colegio oficial (público) de zona urbana, en la Comuna 4 de Cúcuta. DANE 154001008266 · NIT 800.181.183-7. Fue legalizado el 30 de septiembre de 2002 (Decreto 00780) y opera desde el 18 de febrero de 1992. Resolución de aprobación vigente: 01879 del 25 de noviembre de 2021.",
+   "enlaces": []
+  },
+  {
+   "id": "sedes",
+   "tema": "Sedes y direcciones",
+   "claves": [
+    "sedes",
+    "sede",
+    "direccion",
+    "donde queda",
+    "donde esta",
+    "ubicacion",
+    "ubicados",
+    "como llegar",
+    "telefono",
+    "telefonos",
+    "contacto",
+    "numero del colegio",
+    "sede central",
+    "san martin",
+    "hernando acevedo",
+    "torcoroma",
+    "canofistolo"
+   ],
+   "respuesta": "El colegio tiene tres sedes. Sede Central Simón Bolívar: Calle 4 N.° 11A-26, Urb. San Martín, Cúcuta · Tel. 5943344 / 5848539. Sede San Martín (N.° 65): Calle 5N #7-20, barrio San Martín · Tel. 5846438. Sede Hernando Acevedo Ortega: Calle 0 N.° 13-06, Urb. Torcoroma II (barrio Cañofístolo) · Tel. 5769922.",
+   "enlaces": []
+  },
+  {
+   "id": "correo-web",
+   "tema": "Correo y canales oficiales",
+   "claves": [
+    "correo",
+    "email",
+    "e-mail",
+    "correo electronico",
+    "escribir al colegio",
+    "redes sociales",
+    "facebook",
+    "youtube",
+    "pagina web",
+    "sitio web",
+    "canal oficial",
+    "contactar"
+   ],
+   "respuesta": "Correo oficial: colintsimonbolivar@semcucuta.gov.co (alterno: colintsimonbolivar@yahoo.es). Página web institucional: www.institucioneducativasimonbolivar.edu.co. También estamos en Facebook y en el canal de YouTube @ColBolivar.",
+   "enlaces": [
+    {
+     "t": "Canal de YouTube",
+     "u": "https://www.youtube.com/@ColBolivar"
+    },
+    {
+     "t": "Facebook oficial",
+     "u": "https://www.facebook.com/profile.php?id=61566338526972"
+    }
+   ]
+  },
+  {
+   "id": "rector",
+   "tema": "Rector y directivos",
+   "claves": [
+    "rector",
+    "quien es el rector",
+    "director",
+    "directivos",
+    "rectoria",
+    "jesus maldonado",
+    "coordinador",
+    "coordinadores",
+    "coordinacion"
+   ],
+   "respuesta": "El rector de la institución es el Mg. Jesús Maldonado Serrano, nombrado el 20 de mayo de 2008. La planta de directivos docentes es de 5 personas (rector y coordinadores).",
+   "enlaces": []
+  },
+  {
+   "id": "lema-valores",
+   "tema": "Lema y valores",
+   "claves": [
+    "lema",
+    "valores",
+    "estrella colbolivar",
+    "la estrella",
+    "honestidad",
+    "amor",
+    "esfuerzo",
+    "fe",
+    "slogan",
+    "eslogan"
+   ],
+   "respuesta": "Lema: «Educamos para construir Proyectos de Vida con Éxito». Los valores de la Estrella ColBolívar son Honestidad, Amor, Esfuerzo y Fe.",
+   "enlaces": []
+  },
+  {
+   "id": "mision-vision",
+   "tema": "Misión y visión",
+   "claves": [
+    "mision",
+    "vision",
+    "horizonte institucional",
+    "filosofia",
+    "politica de calidad",
+    "principios institucionales",
+    "pilares",
+    "delors",
+    "aprender a conocer"
+   ],
+   "respuesta": "Misión: somos una institución oficial que ofrece educación de calidad, propendiendo por la formación integral desde el «saber ser», «saber hacer» y «saber saber». Visión (2025): ser reconocida a nivel regional y nacional por sus procesos de alta calidad, apoyada en las TIC, la inclusión escolar y la convivencia ciudadana. Política de calidad: transparencia, equidad, eficiencia, moralidad pública y buen gobierno. Principios: Libertad, Orden, Justicia, Calidad y Liderazgo, Ética. Pilares (Delors): aprender a conocer, a hacer, a ser y a convivir.",
+   "enlaces": [
+    {
+     "t": "Documentos institucionales",
+     "u": "DOCUMENTOS%20INSTITUCIONALES.html"
+    }
+   ]
+  },
+  {
+   "id": "cifras",
+   "tema": "Cifras del colegio",
+   "claves": [
+    "cuantos estudiantes",
+    "cuantos alumnos",
+    "numero de estudiantes",
+    "cuantos docentes",
+    "cuantos profesores",
+    "cuantas personas",
+    "cifras",
+    "poblacion",
+    "matricula total",
+    "personal administrativo"
+   ],
+   "respuesta": "Según el PEI 2024–2027: 2.133 estudiantes, 96 docentes, 5 directivos docentes y 10 personas de personal administrativo.",
+   "enlaces": []
+  },
+  {
+   "id": "niveles",
+   "tema": "Niveles educativos",
+   "claves": [
+    "niveles",
+    "que ofrece",
+    "que grados",
+    "grados",
+    "preescolar",
+    "jardin",
+    "transicion",
+    "primaria",
+    "secundaria",
+    "media academica",
+    "bachillerato",
+    "media tecnica",
+    "oferta educativa"
+   ],
+   "respuesta": "Ofrecemos Preescolar (Jardín y Transición), Básica Primaria (1.° a 5.°), Básica Secundaria (6.° a 9.°), Media Académica (10.° y 11.°) y Media Técnica con el SENA (Mantenimiento de Equipos de Cómputo y Asesoría Comercial).",
+   "enlaces": []
+  },
+  {
+   "id": "yukpa",
+   "tema": "Educación intercultural Yukpa",
+   "claves": [
+    "yukpa",
+    "intercultural",
+    "indigena",
+    "indigenas",
+    "etnoeducacion",
+    "propuesta intercultural"
+   ],
+   "respuesta": "La sede San Martín desarrolla una propuesta especial de Educación Intercultural Yukpa.",
+   "enlaces": [
+    {
+     "t": "Propuesta Intercultural Yukpa (PDF)",
+     "u": "https://0fa5a971-652e-4607-a1b4-cf4b07b9f616.filesusr.com/ugd/8891de_a29820f94ee5437abff3787c8f77a79b.pdf"
+    }
+   ]
+  },
+  {
+   "id": "jornadas",
+   "tema": "Jornadas y horarios",
+   "claves": [
+    "jornada",
+    "jornadas",
+    "horario",
+    "horarios",
+    "hora de entrada",
+    "hora de salida",
+    "a que hora",
+    "entrada",
+    "salida",
+    "manana",
+    "tarde",
+    "mañana"
+   ],
+   "respuesta": "Jornada de la mañana: primaria de 6:00 a.m. a 12:30 p.m. y secundaria de 6:00 a.m. a 1:00 p.m. Jornada de la tarde: de 12:15 p.m. a 6:15 p.m. (la jornada completa se extiende hasta las 7:15 p.m.).",
+   "enlaces": []
+  },
+  {
+   "id": "convenios",
+   "tema": "Convenios",
+   "claves": [
+    "convenios",
+    "convenio",
+    "sena",
+    "universidad de pamplona",
+    "ufps",
+    "comfaoriente",
+    "imrd",
+    "corponor",
+    "secretaria de cultura",
+    "alianzas"
+   ],
+   "respuesta": "El colegio tiene convenios con el SENA, la Universidad de Pamplona, la UFPS, COMFAORIENTE, el IMRD, la Secretaría de Cultura y CORPONOR.",
+   "enlaces": []
+  },
+  {
+   "id": "smart-place",
+   "tema": "Smart Place ColBolívar",
+   "claves": [
+    "smart place",
+    "smartplace",
+    "impresion 3d",
+    "robotica",
+    "arduino",
+    "ofimatica",
+    "laboratorio de tecnologia",
+    "taller de tecnologia"
+   ],
+   "respuesta": "Smart Place ColBolívar es el espacio de tecnología del colegio: impresión 3D, robótica, Arduino y ofimática. Atiende de lunes a viernes de 8:00 a.m. a 12:00 m. y de 2:00 p.m. a 6:00 p.m.",
+   "enlaces": []
+  },
+  {
+   "id": "gobierno-escolar",
+   "tema": "Gobierno escolar",
+   "claves": [
+    "gobierno escolar",
+    "consejo directivo",
+    "consejo academico",
+    "consejo estudiantil",
+    "consejo de padres",
+    "asamblea de padres",
+    "comite de convivencia",
+    "comision de evaluacion",
+    "personero",
+    "personero estudiantil",
+    "vocero",
+    "como se elige"
+   ],
+   "respuesta": "Gobierno escolar (Decreto 1860/1994): Consejo Directivo (rector, 2 docentes, 2 padres, 1 estudiante, 1 exalumno y 1 representante del sector productivo); Consejo Académico (liderazgo pedagógico); Comité de Convivencia Escolar (Ruta de Atención Integral, Ley 1620/2013); Consejo Estudiantil (un vocero por grado); Consejo de Padres (voceros por grado); Asamblea de Padres; y Comisión de Evaluación y Promoción. El Personero Estudiantil se elige entre estudiantes de grado 11 durante los primeros 30 días del calendario escolar.",
+   "enlaces": [
+    {
+     "t": "Documentos institucionales",
+     "u": "DOCUMENTOS%20INSTITUCIONALES.html"
+    }
+   ]
+  },
+  {
+   "id": "siee-escala",
+   "tema": "Escala de valoración y aprobación (SIEE)",
+   "claves": [
+    "escala",
+    "escala de valoracion",
+    "desempeno superior",
+    "desempeno alto",
+    "desempeno basico",
+    "desempeno bajo",
+    "nota minima",
+    "nota para pasar",
+    "con cuanto se aprueba",
+    "como se califica",
+    "calificacion",
+    "notas",
+    "aprobar una materia",
+    "que nota necesito"
+   ],
+   "respuesta": "Escala numérica de 1.0 a 5.0: Superior 4.6–5.0, Alto 4.0–4.5, Básico 3.0–3.9 y Bajo 1.0–2.9. La nota mínima para aprobar es 3.0 (Desempeño Básico).",
+   "enlaces": [
+    {
+     "t": "SIEE – Sistema de Evaluación (PDF)",
+     "u": "https://0fa5a971-652e-4607-a1b4-cf4b07b9f616.filesusr.com/ugd/8891de_f245afe526dd49d097d9417251ec1adc.pdf"
+    }
+   ]
+  },
+  {
+   "id": "siee-promocion",
+   "tema": "Pérdida del año, periodos y componentes (SIEE)",
+   "claves": [
+    "perder el ano",
+    "pierde el ano",
+    "pierdo el ano",
+    "reprobar",
+    "reprobado",
+    "repetir",
+    "repitente",
+    "cuantas materias para perder",
+    "cuantas areas",
+    "promocion",
+    "no promocion",
+    "promovido",
+    "periodos",
+    "cuantos periodos",
+    "componentes de evaluacion",
+    "ser saber hacer",
+    "autoevaluacion",
+    "coevaluacion",
+    "heteroevaluacion",
+    "nivelacion",
+    "recuperacion",
+    "superacion"
+   ],
+   "respuesta": "Se pierde el año con 3 o más áreas en Desempeño Bajo al finalizar el año. Hay 4 periodos académicos, cada uno con su comisión de evaluación y promoción. Se evalúa el Ser (actitudes y valores), el Saber (conceptos) y el Hacer (desempeño práctico), con autoevaluación, coevaluación y heteroevaluación. Las nivelaciones y actividades de superación se rigen por el Decreto 1290/2009.",
+   "enlaces": [
+    {
+     "t": "SIEE – Sistema de Evaluación (PDF)",
+     "u": "https://0fa5a971-652e-4607-a1b4-cf4b07b9f616.filesusr.com/ugd/8891de_f245afe526dd49d097d9417251ec1adc.pdf"
+    }
+   ]
+  },
+  {
+   "id": "faltas-leves",
+   "tema": "Faltas leves",
+   "claves": [
+    "falta leve",
+    "faltas leves",
+    "llegar tarde",
+    "tardanza",
+    "uniforme",
+    "sin uniforme",
+    "comer en clase",
+    "inasistencia",
+    "no entregar trabajos",
+    "tres faltas leves",
+    "que es una falta leve"
+   ],
+   "respuesta": "Faltas leves (Art. 161 del Manual): llegar tarde, salir del aula sin permiso, comer o beber en clase, no portar bien el uniforme, desaseo personal o del aula, inasistencia sin justificar y no entregar trabajos. Sanción: anotación en el observador, acta de compromiso y trabajo manuscrito de 2 páginas. Tres faltas leves acumuladas equivalen a una falta grave.",
+   "enlaces": [
+    {
+     "t": "Manual de Convivencia (Documento Maestro)",
+     "u": "https://0fa5a971-652e-4607-a1b4-cf4b07b9f616.filesusr.com/ugd/8891de_0fab9ff361254a148a3a5d3a0eafea98.pdf"
+    }
+   ]
+  },
+  {
+   "id": "faltas-graves",
+   "tema": "Faltas graves",
+   "claves": [
+    "falta grave",
+    "faltas graves",
+    "reincidencia",
+    "irrespeto",
+    "celular",
+    "audifonos",
+    "perturbar la clase",
+    "negocios en el colegio",
+    "que es una falta grave"
+   ],
+   "respuesta": "Faltas graves (Art. 87 Ley 115/1994 y Art. 162 del Manual): reincidencia en faltas leves, irrespeto a docentes o compañeros, porte inadecuado y constante del uniforme, perturbar las clases, usar celulares o audífonos en clase sin autorización, no comunicar citaciones a los padres y realizar negocios en el colegio. Consecuencias: citación inmediata a los padres, anotación en el observador y matrícula en observación si hay reincidencia.",
+   "enlaces": [
+    {
+     "t": "Manual de Convivencia (Documento Maestro)",
+     "u": "https://0fa5a971-652e-4607-a1b4-cf4b07b9f616.filesusr.com/ugd/8891de_0fab9ff361254a148a3a5d3a0eafea98.pdf"
+    }
+   ]
+  },
+  {
+   "id": "faltas-gravisimas",
+   "tema": "Faltas gravísimas",
+   "claves": [
+    "falta gravisima",
+    "faltas gravisimas",
+    "muy grave",
+    "armas",
+    "drogas",
+    "sustancias",
+    "vandalismo",
+    "agresion fisica",
+    "acoso sexual",
+    "robo",
+    "extorsion",
+    "que es una falta gravisima"
+   ],
+   "respuesta": "Faltas gravísimas (Ley 1620/2013, Situación Tipo III): porte de armas, consumo o tráfico de sustancias ilegales, vandalismo, agresión física grave, acoso sexual, violencia escolar con lesiones, acoso escolar reiterado, robo, intimidación, extorsión, material pornográfico y calumnia. Se activa la Ruta de Atención Integral y el Comité de Convivencia; puede haber cancelación de matrícula y remisión al ICBF, la Policía, la Fiscalía o la Comisaría de Familia.",
+   "enlaces": [
+    {
+     "t": "Manual de Convivencia (Documento Maestro)",
+     "u": "https://0fa5a971-652e-4607-a1b4-cf4b07b9f616.filesusr.com/ugd/8891de_0fab9ff361254a148a3a5d3a0eafea98.pdf"
+    }
+   ]
+  },
+  {
+   "id": "situaciones-tipo",
+   "tema": "Situaciones Tipo I, II y III",
+   "claves": [
+    "situacion tipo",
+    "tipo i",
+    "tipo ii",
+    "tipo iii",
+    "tipo 1",
+    "tipo 2",
+    "tipo 3",
+    "ruta de atencion",
+    "ruta de atencion integral",
+    "ley 1620",
+    "decreto 1965",
+    "convivencia escolar",
+    "bullying",
+    "acoso escolar",
+    "matoneo",
+    "ciberacoso"
+   ],
+   "respuesta": "Ley 1620/2013 y Decreto 1965/2013: Situación Tipo I (leve) son conflictos sin daño físico, se resuelven con el docente o la coordinación. Tipo II (grave) causa daño físico o psicológico sin ser delito y requiere al Comité Escolar de Convivencia. Tipo III (muy grave) puede constituir delito y exige activar la Ruta de Atención Integral y, si aplica, denunciar ante las autoridades. En bullying comprobado, los padres del agresor pueden ser condenados a indemnizar entre 1 y 100 SMLMV (Sentencia T-252/2023).",
+   "enlaces": [
+    {
+     "t": "Manual de Convivencia (Documento Maestro)",
+     "u": "https://0fa5a971-652e-4607-a1b4-cf4b07b9f616.filesusr.com/ugd/8891de_0fab9ff361254a148a3a5d3a0eafea98.pdf"
+    },
+    {
+     "t": "Orientación escolar",
+     "u": "ORIENTACION_ESCOLAR.html"
+    }
+   ]
+  },
+  {
+   "id": "debido-proceso",
+   "tema": "Debido proceso disciplinario",
+   "claves": [
+    "debido proceso",
+    "proceso disciplinario",
+    "descargos",
+    "recursos",
+    "apelacion",
+    "reposicion",
+    "in dubio pro educando",
+    "non bis in idem",
+    "sancion",
+    "derecho a la defensa",
+    "como se sanciona"
+   ],
+   "respuesta": "El debido proceso disciplinario (Manual GD-D02; T-004/2024, T-240/2018) tiene 7 pasos: 1) notificación formal de apertura, 2) formulación clara de cargos, 3) traslado de pruebas, 4) término para descargos y defensa, 5) decisión motivada, 6) sanción proporcional y 7) recursos (reposición, apelación y queja). Rigen el principio In Dubio Pro Educando (la duda favorece al estudiante) y Non Bis in Idem (nadie es sancionado dos veces por el mismo hecho).",
+   "enlaces": [
+    {
+     "t": "Manual de Convivencia (Documento Maestro)",
+     "u": "https://0fa5a971-652e-4607-a1b4-cf4b07b9f616.filesusr.com/ugd/8891de_0fab9ff361254a148a3a5d3a0eafea98.pdf"
+    }
+   ]
+  },
+  {
+   "id": "marco-juridico",
+   "tema": "Marco jurídico de la convivencia",
+   "claves": [
+    "marco juridico",
+    "marco legal",
+    "ley 115",
+    "ley 1098",
+    "codigo de infancia",
+    "decreto 1075",
+    "t-004",
+    "t-252",
+    "codigo civil",
+    "normas",
+    "leyes"
+   ],
+   "respuesta": "Marco jurídico: Ley 115/1994 (Art. 87, el Manual obliga y al firmar la matrícula se acepta), Ley 1098/2006 (Código de Infancia y Adolescencia), Ley 1620/2013 y Decreto 1965/2013 (convivencia escolar), Decreto 1075/2015 (deberes de los padres), sentencias T-004/2024, T-124/2024 y T-252/2023, y Arts. 2346–2348 del Código Civil.",
+   "enlaces": []
+  },
+  {
+   "id": "manual-convivencia",
+   "tema": "Manual de Convivencia",
+   "claves": [
+    "manual de convivencia",
+    "reglamento",
+    "manual",
+    "gd-d02",
+    "pacto de convivencia"
+   ],
+   "respuesta": "El Manual de Convivencia es el código GD-D02, versión 1.0, vigente desde el 22 de enero de 2024. Está incluido en el Documento Maestro Institucional (páginas 1–287).",
+   "enlaces": [
+    {
+     "t": "Documento Maestro Institucional (PDF)",
+     "u": "https://0fa5a971-652e-4607-a1b4-cf4b07b9f616.filesusr.com/ugd/8891de_0fab9ff361254a148a3a5d3a0eafea98.pdf"
+    },
+    {
+     "t": "Manual de convivencia (repositorio)",
+     "u": "Manual%20de%20convivencia.pdf"
+    }
+   ]
+  },
+  {
+   "id": "pei",
+   "tema": "PEI y documento maestro",
+   "claves": [
+    "pei",
+    "proyecto educativo",
+    "resignificacion",
+    "gd-d1",
+    "documento maestro",
+    "mapa de procesos",
+    "poa",
+    "plan operativo",
+    "manual de normatividad",
+    "compilado"
+   ],
+   "respuesta": "El PEI es el código GD-D1, versión 3.0 (plan plurianual 2024–2027). El Documento Maestro compila: Manual de Convivencia (págs. 1–287), Manual de Normatividad Académica (288–344), Mapa de Procesos (345–370), POA (371) y PEI (372–497).",
+   "enlaces": [
+    {
+     "t": "Documento Maestro Institucional (PDF)",
+     "u": "https://0fa5a971-652e-4607-a1b4-cf4b07b9f616.filesusr.com/ugd/8891de_0fab9ff361254a148a3a5d3a0eafea98.pdf"
+    },
+    {
+     "t": "Resignificación PEI 2024-2027",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf"
+    },
+    {
+     "t": "Documentos institucionales",
+     "u": "DOCUMENTOS%20INSTITUCIONALES.html"
+    }
+   ]
+  },
+  {
+   "id": "infraestructura",
+   "tema": "Procesos de infraestructura y riesgos",
+   "claves": [
+    "infraestructura",
+    "mantenimiento",
+    "planta fisica",
+    "gestion del riesgo",
+    "recursos tecnologicos",
+    "salas de informatica",
+    "gap2s1",
+    "gap2s2",
+    "gap2s4",
+    "danos"
+   ],
+   "respuesta": "Mapa de procesos 2024: GAP2S1 es el mantenimiento preventivo y correctivo de la infraestructura de las tres sedes; GAP2S2, la gestión de recursos tecnológicos (computadores, proyectores y salas de informática); y GAP2S4, la gestión de riesgos en la planta física.",
+   "enlaces": [
+    {
+     "t": "Manual Salas de Informática (PDF)",
+     "u": "https://0fa5a971-652e-4607-a1b4-cf4b07b9f616.filesusr.com/ugd/8891de_e6e7265c3d7c4132925b62267253521d.pdf"
+    }
+   ]
+  },
+  {
+   "id": "planes-area",
+   "tema": "Planes de área 2026",
+   "claves": [
+    "planes de area",
+    "plan de area",
+    "plan de area de matematicas",
+    "matematicas",
+    "humanidades",
+    "lengua castellana",
+    "ciencias naturales",
+    "malla curricular",
+    "plan de estudios",
+    "planeacion"
+   ],
+   "respuesta": "Los planes de área 2026 están en la página «Planes de área». Carpetas directas: Matemáticas, Humanidades y Ciencias Naturales.",
+   "enlaces": [
+    {
+     "t": "Planes de área 2026",
+     "u": "PLANES_DE_AREA.html"
+    },
+    {
+     "t": "Matemáticas",
+     "u": "https://drive.google.com/drive/folders/13tJeJAoIWfS3t1ieF1tHgSf0nqO5yBny"
+    },
+    {
+     "t": "Humanidades",
+     "u": "https://drive.google.com/drive/folders/1luMnzy2NcW5uIqHSWYUaQMuodppJ7sv"
+    },
+    {
+     "t": "Ciencias Naturales",
+     "u": "https://drive.google.com/drive/folders/1WH5qeW4g61gM99BWlL4nBFfqZGr03HFr"
+    }
+   ]
+  },
+  {
+   "id": "notas",
+   "tema": "Consulta de notas",
+   "claves": [
+    "notas",
+    "boletin",
+    "boletines",
+    "webcolegios",
+    "web colegios",
+    "plataforma de notas",
+    "ver notas",
+    "calificaciones",
+    "consultar notas",
+    "como veo las notas"
+   ],
+   "respuesta": "Las notas se consultan en la plataforma Web Colegios.",
+   "enlaces": [
+    {
+     "t": "Web Colegios – notas",
+     "u": "https://www.webcolegios.com/simon/"
+    }
+   ]
+  },
+  {
+   "id": "calendario",
+   "tema": "Calendario escolar",
+   "claves": [
+    "calendario",
+    "calendario escolar",
+    "fechas",
+    "cuando",
+    "vacaciones",
+    "receso",
+    "semana santa",
+    "dia civico",
+    "reunion de padres",
+    "clausura",
+    "graduacion",
+    "actividades",
+    "cronograma",
+    "evento",
+    "eventos",
+    "festivo"
+   ],
+   "respuesta": "El calendario escolar con los eventos y fechas de las tres sedes está en el calendario oficial. Para saber qué pasa hoy, revisa la sección «Hoy en Bolívar» de la portada y la cartelera.",
+   "enlaces": [
+    {
+     "t": "Calendario escolar",
+     "u": "https://calendar.google.com/calendar/u/0?cid=ZjRmZjY1MTk3YWU3MTJkZjZjZDI2YWIxOGRjODc4ZGM1ZWFjODI0OGMxNzhkYzdhNjdmODU1Y2I4OWIwZGVlYUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t"
+    },
+    {
+     "t": "Cartelera",
+     "u": "cartelera.html"
+    }
+   ]
+  },
+  {
+   "id": "matricula",
+   "tema": "Matrícula e inscripción",
+   "claves": [
+    "matricula",
+    "inscripcion",
+    "requisitos de ingreso",
+    "como matricular",
+    "admision",
+    "cupos",
+    "nuevo estudiante",
+    "traslado",
+    "paz y salvo",
+    "certificado",
+    "constancia"
+   ],
+   "respuesta": "El proceso de matrícula está descrito en el Manual de Matrícula. Al firmar la matrícula se acepta íntegramente el Manual de Convivencia.",
+   "enlaces": [
+    {
+     "t": "Manual de Matrícula (PDF)",
+     "u": "https://0fa5a971-652e-4607-a1b4-cf4b07b9f616.filesusr.com/ugd/8891de_122543af3a0e474eab079ec1038e7c63.pdf"
+    }
+   ]
+  },
+  {
+   "id": "manuales",
+   "tema": "Otros manuales institucionales",
+   "claves": [
+    "manual de funciones",
+    "funciones",
+    "contratacion",
+    "manual de contratacion",
+    "practicas empresariales",
+    "practicas de laboratorio",
+    "laboratorio",
+    "baterias sanitarias",
+    "sanitarios",
+    "banos",
+    "manuales"
+   ],
+   "respuesta": "Manuales disponibles: Funciones, Contratación, Prácticas Empresariales SENA, Prácticas de Laboratorio, Baterías Sanitarias, Salas de Informática y Matrícula.",
+   "enlaces": [
+    {
+     "t": "Manual de Funciones",
+     "u": "https://0fa5a971-652e-4607-a1b4-cf4b07b9f616.filesusr.com/ugd/8891de_711c1ffb30334ea9b10163d87aaed4ba.pdf"
+    },
+    {
+     "t": "Manual de Contratación",
+     "u": "https://0fa5a971-652e-4607-a1b4-cf4b07b9f616.filesusr.com/ugd/8891de_a9a9bececa6044d4a69978f81484735b.pdf"
+    },
+    {
+     "t": "Prácticas Empresariales SENA",
+     "u": "https://0fa5a971-652e-4607-a1b4-cf4b07b9f616.filesusr.com/ugd/8891de_7e73596b192e47f2bbd0b1ea0ad2c049.pdf"
+    },
+    {
+     "t": "Prácticas de Laboratorio",
+     "u": "https://0fa5a971-652e-4607-a1b4-cf4b07b9f616.filesusr.com/ugd/8891de_802a094d6ecd450891f62be4f10f7f01.pdf"
+    },
+    {
+     "t": "Baterías Sanitarias",
+     "u": "https://0fa5a971-652e-4607-a1b4-cf4b07b9f616.filesusr.com/ugd/8891de_f30bc178fce5422a847addebb144f696.pdf"
+    }
+   ]
+  },
+  {
+   "id": "media-tecnica",
+   "tema": "Media técnica SENA",
+   "claves": [
+    "media tecnica",
+    "sena",
+    "mantenimiento de computadores",
+    "asesoria comercial",
+    "tecnico",
+    "practicas",
+    "etapa productiva"
+   ],
+   "respuesta": "En grados 10.° y 11.° se ofrece Media Técnica con el SENA en dos modalidades: Mantenimiento de Equipos de Cómputo y Asesoría Comercial. Las prácticas se rigen por el Manual de Prácticas Empresariales SENA.",
+   "enlaces": [
+    {
+     "t": "Prácticas Empresariales SENA",
+     "u": "https://0fa5a971-652e-4607-a1b4-cf4b07b9f616.filesusr.com/ugd/8891de_7e73596b192e47f2bbd0b1ea0ad2c049.pdf"
+    }
+   ]
+  },
+  {
+   "id": "inclusion-vida",
+   "tema": "Inclusión, proyecto de vida y servicio social",
+   "claves": [
+    "inclusion",
+    "dua",
+    "piar",
+    "discapacidad",
+    "proyecto de vida",
+    "socio ocupacional",
+    "servicio social",
+    "servicio social estudiantil",
+    "pegrd",
+    "gestion del riesgo de desastres"
+   ],
+   "respuesta": "El colegio cuenta con documentos sobre Inclusión (DUA y PIAR), Proyecto de Vida y Socio Ocupacional 2026, Servicio Social Estudiantil Obligatorio y el Plan Escolar de Gestión del Riesgo (PEGRD).",
+   "enlaces": [
+    {
+     "t": "Inclusión, DUA y PIAR",
+     "u": "PROYECTO%20DE%20INCLUSION%20Y%20EVIDENCIA%20DE%20DUA%20Y%20PIAR.pdf"
+    },
+    {
+     "t": "Proyecto de Vida y Socio Ocupacional 2026",
+     "u": "PROYECTO%20DE%20VIDA%20Y%20SOCIO%20OCUPACIONAL%202026.pdf"
+    },
+    {
+     "t": "Servicio Social Estudiantil",
+     "u": "PROYECTO%20INSTITUCIONAL%20DE%20SERVICIO%20SOCIAL%20ESTUDIANTIL%20OBLIGATORIO.pdf"
+    },
+    {
+     "t": "PEGRD",
+     "u": "PEGRD%20COLEGIO%20SIM%C3%93N%20BOL%C3%8DVAR.pdf"
+    }
+   ]
+  },
+  {
+   "id": "secciones-sitio",
+   "tema": "Secciones de la página",
+   "claves": [
+    "pagina",
+    "secciones",
+    "donde encuentro",
+    "menu",
+    "paginas del sitio",
+    "que hay en la pagina",
+    "biblioteca",
+    "proyectos transversales",
+    "calidad",
+    "orientacion escolar",
+    "cartelera",
+    "cumpleanos",
+    "radio",
+    "colbolivar radio",
+    "docentes",
+    "planeacion docente",
+    "drive docente"
+   ],
+   "respuesta": "Secciones del sitio: Documentos institucionales, Calidad, Orientación escolar, Proyectos transversales, Planes de área, Planeación docente, Cartelera, Cumpleaños y ColBolívar Radio.",
+   "enlaces": [
+    {
+     "t": "Documentos institucionales",
+     "u": "DOCUMENTOS%20INSTITUCIONALES.html"
+    },
+    {
+     "t": "Calidad",
+     "u": "CALIDAD.html"
+    },
+    {
+     "t": "Orientación escolar",
+     "u": "ORIENTACION_ESCOLAR.html"
+    },
+    {
+     "t": "Proyectos transversales",
+     "u": "PROYECTOS_TRANSVERSALES.html"
+    },
+    {
+     "t": "Planes de área",
+     "u": "PLANES_DE_AREA.html"
+    },
+    {
+     "t": "Planeación docente",
+     "u": "DRIVE_PLANEACION_DOCENTE.html"
+    },
+    {
+     "t": "Cartelera",
+     "u": "cartelera.html"
+    },
+    {
+     "t": "Cumpleaños",
+     "u": "cumpleanos.html"
+    },
+    {
+     "t": "ColBolívar Radio",
+     "u": "colbolivar-radio/"
+    }
+   ]
+  }
+ ]
+}
