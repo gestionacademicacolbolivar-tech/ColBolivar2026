@@ -1152,7 +1152,7 @@ async function preguntarIAExternaAria(pregunta, contextoSlide){
   window.ARIA_EMOCION_IA = null;
 
   const cuerpo = {
-    system_instruction: { parts: [{ text: ARIA_INSTRUCCION_SISTEMA + (contextoSlide ? `\n\nTema de la diapositiva actual: "${contextoSlide}".` : '') }] },
+    system_instruction: { parts: [{ text: ARIA_INSTRUCCION_SISTEMA + ((window.ARIA_KB && ARIA_KB.contexto(pregunta)) ? `\n\nInformación oficial del colegio (úsala para responder; si la respuesta no está aquí, dilo con honestidad):\n${ARIA_KB.contexto(pregunta)}` : '') + (contextoSlide ? `\n\nTema de la diapositiva actual: "${contextoSlide}".` : '') }] },
     contents: [{ role: 'user', parts: [{ text: pregunta }] }],
     generationConfig: { maxOutputTokens: 1024, temperature: 0.6, thinkingConfig: { thinkingLevel: 'low' } }
   };
@@ -2840,7 +2840,11 @@ async function buscarEnWikipediaAria(pregunta){
     // Pequeña pausa simulando que "piensa" — se ve más viva y natural
     setTimeout(async () => {
       let desdeDocs = false, respuesta = null;
-      if (window.ARIA_DOCS && ARIA_DOCS.pideDoc(texto)){ respuesta = await ARIA_DOCS.responder(texto); desdeDocs = !!respuesta; }
+      // v2.9 — Base de conocimiento del colegio (aria-conocimiento/base-colegio.json): respuesta inmediata
+      const kb = window.ARIA_KB ? await ARIA_KB.consultar(texto).catch(() => null) : null;
+      if (kb && kb.fuerte){ respuesta = kb.html; desdeDocs = true; }
+      if (!respuesta && window.ARIA_DOCS && ARIA_DOCS.pideDoc(texto)){ respuesta = await ARIA_DOCS.responder(texto); desdeDocs = !!respuesta; }
+      if (kb && (!respuesta || /^(No encontr|El índice)/.test(String(respuesta).replace(/<[^>]+>/g, '')))){ respuesta = kb.html; desdeDocs = true; }
       if (!respuesta) respuesta = responderAria(texto);
       if (!desdeDocs && window.ARIA_DOCS && esRespuestaDeNoSeAria(respuesta)){ const d = await ARIA_DOCS.responder(texto); if (d){ respuesta = d; desdeDocs = true; } }
 
@@ -2954,6 +2958,7 @@ async function buscarEnWikipediaAria(pregunta){
 </script>
 
 <script src="aria-docs.js"></script>
+<script src="aria-kb.js"></script>
 <script>
 (function(){var p=document.getElementById('aria-panel'),last=null;function t(){var o=p.classList.contains('aria-abierto');if(o!==last){last=o;parent.postMessage({aria:o?'abierto':'cerrado'},'*')}}
 new MutationObserver(t).observe(p,{attributes:true,attributeFilter:['class']});t()})();

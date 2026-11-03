@@ -62,3 +62,19 @@ addEventListener('scroll',r,{passive:true});addEventListener('resize',r);(docume
 (function(){if(navigator.connection&&navigator.connection.saveData)return;var done={};function pf(e){var a=e.target.closest&&e.target.closest('a[href]');if(!a||a.target==='_blank')return;var u;try{u=new URL(a.href,location.href)}catch(x){return}
 if(u.origin!==location.origin||u.pathname===location.pathname||done[u.pathname]||!/(\.html|\/)$/.test(u.pathname))return;done[u.pathname]=1;var l=document.createElement('link');l.rel='prefetch';l.href=u.pathname;document.head.appendChild(l)}
 addEventListener('pointerover',pf,{passive:true});addEventListener('touchstart',pf,{passive:true})})();
+
+/* ARIA en todas las páginas: si la página no trae su propio iframe, se monta aquí (avatar abajo a la derecha; al tocarlo abre el chat) */
+(function(){
+if(document.getElementById('aria-if')||/(^|\/)aria-widget\.html$/.test(location.pathname))return;
+if(/[#&?]sin-aria/.test(location.href))return;
+function montar(){
+ if(document.getElementById('aria-if'))return;
+ var f=document.createElement('iframe');
+ f.id='aria-if';f.src='aria-widget.html';f.title='ARIA, asistente virtual del colegio';f.setAttribute('allow','autoplay');f.loading='lazy';
+ f.style.cssText='position:fixed;right:0;bottom:0;width:150px;height:250px;border:0;background:transparent;color-scheme:light;z-index:60';
+ document.body.appendChild(f);
+ addEventListener('message',function(e){if(e.source!==f.contentWindow||!e.data||!e.data.aria)return;
+  var o=e.data.aria==='abierto';f.style.width=o?'min(370px,100vw)':'150px';f.style.height=o?'min(680px,100vh)':'250px'});
+}
+document.body?montar():document.addEventListener('DOMContentLoaded',montar);
+})();
