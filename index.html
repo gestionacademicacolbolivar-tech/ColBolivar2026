@@ -393,7 +393,7 @@ fit();addEventListener('resize',fit);addEventListener('DOMContentLoaded',fit);
 <link rel="stylesheet" href="assets/css/ui.css">
 </head>
 <body>
-<div id="intro" role="dialog" aria-modal="true" aria-label="Bienvenida a ColBol&iacute;var"><div class="ig" aria-hidden="true"></div><div class="ic2"><img class="iesc" src="assets/img/escudo.webp" width="424" height="496" alt="Escudo del Colegio Integrado Sim&oacute;n Bol&iacute;var"><p class="ik">Instituci&oacute;n Educativa</p><p class="it">Colegio Integrado <b>Sim&oacute;n Bol&iacute;var</b></p><p class="il">Todos somos <span>Col</span><em>Bol&iacute;var</em></p><div class="ip" aria-hidden="true"><i></i></div><button class="is" type="button">Entrar &rsaquo;</button></div><div class="ib" aria-hidden="true"><i></i><i></i><i></i></div></div>
+<div id="intro" role="dialog" aria-modal="true" aria-label="Bienvenida a ColBol&iacute;var"><div class="ig" aria-hidden="true"></div><div class="ic2"><img class="iesc" src="assets/img/escudo.webp" width="600" height="726" alt="Escudo del Colegio Integrado Sim&oacute;n Bol&iacute;var"><p class="ik">Instituci&oacute;n Educativa</p><p class="it">Colegio Integrado <b>Sim&oacute;n Bol&iacute;var</b></p><p class="il">Todos somos <span>Col</span><em>Bol&iacute;var</em></p><div class="ip" aria-hidden="true"><i></i></div><button class="is" type="button">Entrar &rsaquo;</button></div><div class="ib" aria-hidden="true"><i></i><i></i><i></i></div></div>
 <script>(function(){var h=document.documentElement,el=document.getElementById("intro");if(!el)return;if(!h.classList.contains("intro")){el.remove();return}var done=false;function end(){if(done)return;done=true;try{localStorage.setItem("cbintro",new Date().toDateString())}catch(e){}el.classList.add("out");setTimeout(function(){h.classList.remove("intro");el.remove()},680)}el.querySelector(".ip i").addEventListener("animationend",end);el.addEventListener("click",end);addEventListener("keydown",function(e){if(e.key==="Escape"||e.key==="Enter"||e.key===" ")end()});setTimeout(end,5200);try{el.querySelector(".is").focus({preventScroll:true})}catch(e){}})();</script>
 <a class="skip" href="#main">Saltar al contenido</a>
 <header class="hero">
@@ -689,11 +689,7 @@ var WA=String(H.whatsapp||'').replace(/\D/g,''),wal=$('#wal');if(WA&&wal){wal.hr
 if('serviceWorker' in navigator&&location.protocol==='https:')navigator.serviceWorker.register('sw.js').catch(function(){});
 })();
 </script>
-<iframe id="aria-if" src="aria-widget.html" title="ARIA, asistente virtual del colegio" allow="autoplay" loading="lazy" style="position:fixed;right:0;bottom:0;width:150px;height:250px;border:0;background:transparent;color-scheme:light;z-index:60"></iframe>
-<script>
-(function(){var f=document.getElementById('aria-if');addEventListener('message',function(e){if(e.source!==f.contentWindow||!e.data||!e.data.aria)return;
-var o=e.data.aria==='abierto';f.style.width=o?'min(370px,100vw)':'150px';f.style.height=o?'min(680px,100vh)':'250px'})})();
-</script>
+<iframe id="aria-if" src="aria-widget.html" title="ARIA, asistente virtual del colegio" allow="autoplay" loading="lazy" style="position:fixed;right:0;bottom:0;width:150px;height:250px;border:0;background:transparent;color-scheme:light;z-index:61"></iframe>
 <script src="assets/js/nav.js" defer></script>
 </body>
 </html>

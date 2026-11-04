@@ -1,7 +1,7 @@
 /* ColBolívar · UI compartida: iconos sprite, dock de navegación, menú rápido */
 .uix{--s:40px;display:inline-block;flex:none;width:var(--s);height:var(--s);background:url(../img/ui-nav.webp) no-repeat;background-size:calc(var(--s)*4) calc(var(--s)*4);background-position:calc(var(--c,0)*var(--s)*-1) calc(var(--r,0)*var(--s)*-1);pointer-events:none}
 .uix.d{background-image:url(../img/ui-docs.webp)}
-.uix.o{background-image:url(../img/iconos-clasicos.webp)}
+.uix.o{background-image:url(../img/46b47eb28f.webp)}
 /* Botón "Volver a la portada" con icono */
 .back{display:inline-flex!important;align-items:center;gap:.4em}
 .back::before{content:"";width:1.7em;height:1.7em;margin:-.25em 0 -.25em -.5em;background:url(../img/ui-nav.webp) 0 0/400% 400% no-repeat;flex:none}
@@ -90,3 +90,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,.tile:focus-visible{out
 @media(prefers-reduced-motion:reduce){::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}body{animation:none!important}}
 
 .rgo .ico{width:1.8em;height:1.8em;margin:-.3em .45em -.3em -.5em;vertical-align:middle}
+
+/* ===== ARIA: convivencia con el dock ===== */
+#aria-if{z-index:61!important}
+@media(max-width:900px){#aria-if{bottom:calc(86px + env(safe-area-inset-bottom))!important}}
+html.aria-on #aria-if{bottom:0!important;z-index:9998!important}
+html.aria-on .cbd,html.aria-on .cbp{display:none!important}

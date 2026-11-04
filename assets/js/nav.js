@@ -63,18 +63,10 @@ addEventListener('scroll',r,{passive:true});addEventListener('resize',r);(docume
 if(u.origin!==location.origin||u.pathname===location.pathname||done[u.pathname]||!/(\.html|\/)$/.test(u.pathname))return;done[u.pathname]=1;var l=document.createElement('link');l.rel='prefetch';l.href=u.pathname;document.head.appendChild(l)}
 addEventListener('pointerover',pf,{passive:true});addEventListener('touchstart',pf,{passive:true})})();
 
-/* ARIA en todas las páginas: si la página no trae su propio iframe, se monta aquí (avatar abajo a la derecha; al tocarlo abre el chat) */
-(function(){
-if(document.getElementById('aria-if')||/(^|\/)aria-widget\.html$/.test(location.pathname))return;
-if(/[#&?]sin-aria/.test(location.href))return;
-function montar(){
- if(document.getElementById('aria-if'))return;
- var f=document.createElement('iframe');
- f.id='aria-if';f.src='aria-widget.html';f.title='ARIA, asistente virtual del colegio';f.setAttribute('allow','autoplay');f.loading='lazy';
- f.style.cssText='position:fixed;right:0;bottom:0;width:150px;height:250px;border:0;background:transparent;color-scheme:light;z-index:60';
- document.body.appendChild(f);
- addEventListener('message',function(e){if(e.source!==f.contentWindow||!e.data||!e.data.aria)return;
-  var o=e.data.aria==='abierto';f.style.width=o?'min(370px,100vw)':'150px';f.style.height=o?'min(680px,100vh)':'250px'});
-}
-document.body?montar():document.addEventListener('DOMContentLoaded',montar);
-})();
+/* ARIA: asistente en todas las páginas; oculta el dock mientras el chat está abierto */
+(function(){var f=document.getElementById('aria-if');
+function size(o){if(!f)return;f.style.width=o?'min(370px,100vw)':'150px';f.style.height=o?'min(680px,100vh)':'250px'}
+addEventListener('message',function(e){if(!f||e.source!==f.contentWindow||!e.data||!e.data.aria)return;var o=e.data.aria==='abierto';document.documentElement.classList.toggle('aria-on',o);size(o)});
+function inject(){if(f||document.getElementById('aria-if'))return;f=document.createElement('iframe');f.id='aria-if';f.src='aria-widget.html';f.title='ARIA, asistente virtual del colegio';f.allow='autoplay';f.setAttribute('loading','lazy');f.style.cssText='position:fixed;right:0;bottom:0;width:150px;height:250px;border:0;background:transparent;color-scheme:light;z-index:61';document.body.appendChild(f)}
+window.ariaPreguntar=function(q){inject();var go=function(){try{f.contentWindow.postMessage({ariaPregunta:q},'*')}catch(e){}};if(f.contentDocument&&f.contentDocument.readyState==='complete')go();else f.addEventListener('load',function(){setTimeout(go,300)},{once:true})};
+if(!f&&!/[#&?]sin-aria/.test(location.href)&&!/(^|\/)aria-widget\.html$/.test(location.pathname)){var run=function(){('requestIdleCallback' in window)?requestIdleCallback(inject,{timeout:2500}):setTimeout(inject,1500)};document.readyState==='complete'?run():addEventListener('load',run)}})();
