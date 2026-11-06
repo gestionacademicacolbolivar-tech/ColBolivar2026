@@ -247,6 +247,7 @@ function responderQuizDemo(btn, esCorrecta){
   </div>
 
   <div id="aria-chat"></div>
+  <div id="aria-sug" role="group" aria-label="Preguntas rápidas" hidden></div>
 
   <button id="aria-voz-btn" type="button" class="aria-voz-off">🔇 Activar voz</button>
   <button id="aria-sonido-btn" type="button" class="aria-voz-off">🔈 Sonidos: activados</button>
@@ -2964,6 +2965,31 @@ async function buscarEnWikipediaAria(pregunta){
 <script>
 (function(){var p=document.getElementById('aria-panel'),last=null;function t(){var o=p.classList.contains('aria-abierto');if(o!==last){last=o;parent.postMessage({aria:o?'abierto':'cerrado'},'*')}}
 new MutationObserver(t).observe(p,{attributes:true,attributeFilter:['class']});t()})();
+</script>
+
+<script>
+// v2.9 — Preguntas rápidas: ayudan a descubrir qué sabe responder ARIA (se ocultan al empezar a conversar)
+(function(){
+  var P=[['📍 ¿Dónde queda?','¿Dónde queda el colegio?'],['🕒 Horarios','¿Cuáles son las jornadas y horarios?'],
+         ['📊 Escala de notas','¿Con cuánto se aprueba una materia?'],['⚠️ Falta grave','¿Qué es una falta grave?'],
+         ['✉️ Correo','¿Cuál es el correo del colegio?'],['📚 Planes de área','¿Dónde están los planes de área?']];
+  function init(){
+    var box=document.getElementById('aria-sug'),inp=document.getElementById('aria-input'),btn=document.getElementById('aria-enviar-btn');
+    if(!box||!inp||!btn||!window.ARIA_KB)return;
+    var st=document.createElement('style');
+    st.textContent='#aria-sug{display:flex;gap:6px;overflow-x:auto;padding:6px 10px;scrollbar-width:none}#aria-sug[hidden]{display:none}#aria-sug::-webkit-scrollbar{display:none}'+
+      '#aria-sug button{flex:0 0 auto;font:600 12px/1.2 system-ui,sans-serif;padding:7px 11px;border-radius:999px;border:1px solid rgba(120,120,160,.35);background:rgba(255,255,255,.92);color:#2a2a4a;cursor:pointer;white-space:nowrap}'+
+      '#aria-sug button:hover,#aria-sug button:focus-visible{background:#eef;outline:2px solid #6c63ff;outline-offset:1px}';
+    document.head.appendChild(st);
+    P.forEach(function(q){var b=document.createElement('button');b.type='button';b.textContent=q[0];
+      b.addEventListener('click',function(){inp.value=q[1];ocultar();btn.click()});box.appendChild(b)});
+    function ocultar(){box.hidden=true}
+    box.hidden=false;
+    btn.addEventListener('click',ocultar);
+    inp.addEventListener('keydown',function(e){if(e.key==='Enter')ocultar()});
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
 </script>
 </body>
 </html>

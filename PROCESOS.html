@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#12306e">
+<title>Mapa de procesos | ColBolívar</title>
+<meta name="description" content="Las cuatro gestiones del Colegio Simón Bolívar con sus procesos y subprocesos, y la evidencia de cada uno en el PEI y los documentos institucionales.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/ui.css">
+<style>
+:root{--g:#2b7a3a;--gd:#1c4f27;--o:#ffa63d;--r:#d92d3a;--n:#12306e;--ink:#1d2a22;--bg:#f2f7f1;--mut:#44564a;--line:#d7e5d6;--W:1280px;
+ --GD:#2b7a3a;--GA:#d97a06;--GF:#12306e;--GC:#d92d3a}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:Nunito,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;font-size:17px;overflow-x:hidden}
+h1,h2,h3,h4{font-family:Sora,Nunito,sans-serif;line-height:1.18;color:var(--gd)}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--o);outline-offset:3px}
+.w{max-width:var(--W);margin:0 auto;padding:0 clamp(14px,2.4vw,36px)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---- iconos: emoji de respaldo que se cambian solos por el sprite cuando existe la imagen ---- */
+.ico{--s:44px;position:relative;display:inline-grid;place-items:center;flex:none;width:var(--s);height:var(--s)}
+.ico::before{content:attr(data-e);font-size:calc(var(--s)*.62);line-height:1}
+.ico.on::before{content:none}
+.ico .spr{position:absolute;inset:0;background-repeat:no-repeat;pointer-events:none}
+
+/* ---- portada de la sección ---- */
+.hero{position:relative;color:#fff;background:linear-gradient(135deg,#12306e 0%,#1c4f27 70%,#2b7a3a 100%);overflow:hidden;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;z-index:-2;background:var(--hero,none) center/cover no-repeat}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(circle at 12% 18%,#ffffff22 0 2px,transparent 3px) 0 0/34px 34px,radial-gradient(circle at 80% 90%,#ffa63d33,transparent 45%),linear-gradient(180deg,#0b1f4a55,#0b2a1699)}
+.hero.hero-img::after{background:linear-gradient(180deg,#0b1f4a66,#0b2a16cc)}
+.volver{display:inline-flex;align-items:center;gap:.4em;margin:14px 0 0;padding:6px 14px;border-radius:999px;background:#ffffff26;border:1px solid #ffffff55;font-weight:800;font-size:.9rem;color:#fff}
+.volver:hover{background:#ffffff40}
+.hero h1{color:#fff;font-size:clamp(2rem,5.4vw,3.6rem);margin:18px 0 8px;text-shadow:0 3px 14px #0006}
+.hero h1 span{color:var(--o)}
+.hero p.lead{max-width:760px;font-size:clamp(1rem,2.1vw,1.2rem);color:#eaf4ea;margin-bottom:22px}
+.stats{display:flex;flex-wrap:wrap;gap:10px;padding-bottom:30px}
+.st{min-width:120px;padding:10px 16px;border-radius:18px;background:#ffffff1f;border:1px solid #ffffff44;backdrop-filter:blur(4px)}
+.st b{display:block;font:800 1.9rem/1 Sora,sans-serif;color:var(--o)}
+.st span{font-size:.82rem;font-weight:700;color:#fff}
+
+/* ---- flor de las cuatro gestiones ---- */
+.mapa{padding:26px 0 8px}
+.mapa h2{text-align:center;font-size:clamp(1.4rem,3.4vw,2rem)}
+.mapa .s{text-align:center;color:var(--mut);margin:6px auto 18px;max-width:640px}
+.flor{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:760px;margin:0 auto}
+.pet{--c:var(--GD);position:relative;display:flex;flex-direction:column;justify-content:flex-end;gap:2px;min-height:170px;padding:18px 18px 16px;text-align:left;border:3px solid #fff;color:#fff;background:linear-gradient(150deg,color-mix(in srgb,var(--c) 82%,#fff),var(--c));box-shadow:0 10px 22px color-mix(in srgb,var(--c) 40%,transparent);transition:transform .25s cubic-bezier(.3,1.5,.5,1),box-shadow .25s;overflow:hidden}
+.pet::after{content:"";position:absolute;inset:0;background-image:var(--fondo,none);background-size:200% 200%;background-position:var(--fx,0%) var(--fy,0%);opacity:.4;mix-blend-mode:soft-light;pointer-events:none}
+.pet:hover{transform:translateY(-4px) scale(1.015)}
+.pet[aria-pressed=true]{outline:4px solid var(--o);outline-offset:2px;transform:translateY(-2px)}
+.pet .ico{--s:62px;position:absolute;top:14px;filter:drop-shadow(0 3px 4px #0004)}
+.pet b{font:800 clamp(1rem,2.6vw,1.3rem)/1.15 Sora,sans-serif;margin-top:70px}
+.pet small{font-size:.82rem;font-weight:700;opacity:.92}
+.pet i.k{position:absolute;top:12px;right:14px;font:800 .8rem/1 Sora,sans-serif;padding:5px 9px;border-radius:999px;background:#ffffff33;font-style:normal}
+.p-GD{--c:var(--GD);border-radius:110px 20px 20px 20px}.p-GD .ico{left:34px}
+.p-GA{--c:var(--GA);border-radius:20px 110px 20px 20px;align-items:flex-end;text-align:right}.p-GA .ico{right:34px}.p-GA i.k{right:auto;left:14px}
+.p-GF{--c:var(--GF);border-radius:20px 20px 20px 110px}.p-GF .ico{left:34px}
+.p-GC{--c:var(--GC);border-radius:20px 20px 110px 20px;align-items:flex-end;text-align:right}.p-GC .ico{right:34px}.p-GC i.k{right:auto;left:14px}
+.p-GD b,.p-GF b{margin-left:6px}.p-GA b,.p-GC b{margin-right:6px}
+.centro{position:absolute;left:50%;top:50%;z-index:3;width:clamp(96px,23%,150px);aspect-ratio:1;transform:translate(-50%,-50%);display:grid;place-items:center;text-align:center;border-radius:50%;background:#fff;border:5px solid var(--o);box-shadow:0 8px 24px #0b2a1655;padding:8px;pointer-events:none}
+.centro img{width:52%;height:auto;display:block;margin:0 auto 2px}
+.centro.sp img{width:100%;margin:0}
+.centro span{font:800 clamp(.52rem,1.5vw,.72rem)/1.12 Sora,sans-serif;color:var(--gd)}
+.centro.sp span{display:none}
+.hint{text-align:center;color:var(--mut);font-size:.92rem;margin-top:14px}
+
+/* ---- herramientas: buscador y filtros ---- */
+.tools{position:sticky;top:0;z-index:20;margin-top:22px;padding:10px 0;background:linear-gradient(var(--bg) 82%,transparent)}
+.tools .w{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.bus{flex:1 1 280px;position:relative}
+.bus input{width:100%;padding:12px 16px 12px 46px;border-radius:999px;border:2px solid var(--line);background:#fff;font:600 1rem Nunito,sans-serif;color:var(--ink)}
+.bus input:focus{border-color:var(--g);outline:none;box-shadow:0 0 0 4px #2b7a3a26}
+.bus .ico{--s:26px;position:absolute;left:14px;top:50%;transform:translateY(-50%)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{padding:8px 14px;border-radius:999px;border:2px solid var(--line);background:#fff;font-weight:800;font-size:.86rem;color:var(--gd)}
+.chip[aria-pressed=true]{background:var(--gd);border-color:var(--gd);color:#fff}
+.chip.ok[aria-pressed=true]{background:#1f8a3a;border-color:#1f8a3a}.chip.rel[aria-pressed=true]{background:#d97a06;border-color:#d97a06}.chip.pen[aria-pressed=true]{background:#8b5cf6;border-color:#8b5cf6}
+
+/* ---- panel de la gestión elegida ---- */
+.gh{--c:var(--GD);display:flex;gap:16px;align-items:center;margin:20px 0 14px;padding:16px 20px;border-radius:24px;color:#fff;background:linear-gradient(120deg,var(--c),color-mix(in srgb,var(--c) 70%,#000));box-shadow:0 8px 20px color-mix(in srgb,var(--c) 35%,transparent)}
+.gh .ico{--s:64px;filter:drop-shadow(0 3px 4px #0004)}
+.gh h2{color:#fff;font-size:clamp(1.2rem,3vw,1.8rem)}
+.gh p{color:#ffffffe6;font-size:.98rem}
+.gh .ex{margin-left:auto;padding:8px 14px;border-radius:999px;border:2px solid #ffffff88;background:#ffffff22;color:#fff;font-weight:800;font-size:.84rem;white-space:nowrap}
+.gh .ex:hover{background:#ffffff40}
+.proc{--c:var(--GD);margin:0 0 12px;border-radius:22px;background:#fff;border:2px solid var(--line);overflow:hidden}
+.proc[open]{border-color:color-mix(in srgb,var(--c) 55%,#fff);box-shadow:0 8px 22px #1d2a2214}
+.proc>summary{list-style:none;display:flex;gap:12px;align-items:center;padding:12px 16px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.proc>summary::-webkit-details-marker{display:none}
+.proc>summary:hover{background:color-mix(in srgb,var(--c) 7%,#fff)}
+.proc .num{flex:none;display:grid;place-items:center;width:46px;height:46px;border-radius:15px;background:var(--c);color:#fff;font:800 1rem Sora,sans-serif}
+.proc .ico{--s:46px}
+.proc .tt{flex:1;min-width:0}
+.proc .tt b{display:block;font:800 1.05rem/1.2 Sora,sans-serif;color:var(--gd)}
+.proc .tt small{color:var(--mut);font-weight:700;font-size:.82rem}
+.bar{display:flex;height:7px;border-radius:99px;overflow:hidden;background:#e6eee5;margin-top:6px;max-width:260px}
+.bar i{display:block;height:100%}.bar .a{background:#1f8a3a}.bar .b{background:#f0a020}.bar .c{background:#8b5cf6}
+.proc>summary::after{content:"▾";flex:none;font-size:1.3rem;color:var(--c);transition:transform .25s}
+.proc[open]>summary::after{transform:rotate(180deg)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:12px;padding:6px 16px 18px}
+.sub{--c:var(--GD);display:flex;flex-direction:column;gap:6px;padding:14px;border-radius:18px;background:color-mix(in srgb,var(--c) 5%,#fff);border:2px solid color-mix(in srgb,var(--c) 18%,#fff);border-top:6px solid var(--c);transition:transform .2s,box-shadow .2s}
+.sub:hover{transform:translateY(-3px);box-shadow:0 10px 20px #1d2a2218}
+.sub.flash{animation:fl 1.6s ease}
+@keyframes fl{0%,60%{box-shadow:0 0 0 5px var(--o)}100%{box-shadow:none}}
+.sh{display:flex;justify-content:space-between;gap:8px;align-items:center}
+.cod{font:800 .74rem/1 Sora,sans-serif;letter-spacing:.04em;color:#fff;background:var(--c);padding:5px 9px;border-radius:8px}
+.lv{font-size:.74rem;font-weight:800;padding:4px 9px;border-radius:999px;white-space:nowrap}
+.lv.ok{background:#dff3e3;color:#14692b}.lv.rel{background:#fdebd0;color:#8a4f00}.lv.pen{background:#ece4fd;color:#5b34b3}
+.sub h4{font-size:1rem;color:var(--ink)}
+.sub p{font-size:.88rem;color:var(--mut);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.sub .pr{font-size:.76rem;font-weight:800;color:var(--mut)}
+.evb{margin-top:auto;display:grid;grid-template-columns:24px 1fr;column-gap:8px;row-gap:0;align-items:center;padding:10px 12px;border-radius:14px;border:2px solid var(--c);background:#fff;font-weight:800;font-size:.9rem;color:var(--c);text-align:left}
+.evb:hover{background:var(--c);color:#fff}
+.evb .ico{--s:24px}
+.evb small{grid-column:2;font-weight:800;font-size:.74rem;opacity:.85;line-height:1.25}
+.sin{padding:30px;text-align:center;color:var(--mut)}
+.res-t{margin:18px 0 8px;font:800 1.1rem Sora,sans-serif;color:var(--gd)}
+.gt{display:inline-block;font-size:.72rem;font-weight:800;color:var(--c);margin-bottom:-2px}
+.leyenda{display:flex;flex-wrap:wrap;gap:8px 18px;margin:22px 0 40px;padding:14px 18px;border-radius:18px;background:#fff;border:2px dashed var(--line);font-size:.9rem;color:var(--mut)}
+.leyenda b{color:var(--ink)}
+
+/* ---- ventana de evidencia ---- */
+dialog{padding:0;border:0;border-radius:26px;width:min(1000px,calc(100vw - 20px));max-height:min(94dvh,960px);background:#fff;color:var(--ink);box-shadow:0 30px 80px #0b1f3a88;overflow:hidden}
+dialog[open]{display:flex;flex-direction:column;animation:pop .28s cubic-bezier(.3,1.4,.5,1)}
+dialog::backdrop{background:#0b2a16b8;backdrop-filter:blur(3px)}
+@keyframes pop{from{opacity:0;transform:translateY(24px) scale(.96)}}
+.mh{--c:var(--GD);display:flex;gap:12px;align-items:center;padding:14px 18px;color:#fff;background:linear-gradient(120deg,var(--c),color-mix(in srgb,var(--c) 68%,#000))}
+.mh .cod{background:#ffffff30}
+.mh h2{flex:1;color:#fff;font-size:clamp(1rem,2.6vw,1.3rem)}
+.mh .x{flex:none;width:42px;height:42px;border-radius:50%;border:0;background:#ffffff30;color:#fff;font-size:1.3rem;font-weight:800}
+.mh .x:hover{background:#ffffff55}
+.mb:focus{outline:none}
+.mb{overflow:auto;padding:16px 18px 6px;overscroll-behavior:contain}
+.mb .d{color:var(--mut);margin-bottom:12px}
+.aviso{display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border-radius:14px;margin-bottom:12px;font-size:.92rem;font-weight:700}
+.aviso.ok{background:#e6f6ea;color:#14692b}.aviso.rel{background:#fdf0dc;color:#7a4500}.aviso.pen{background:#efe9fd;color:#4f2ca3}
+.tabs{display:flex;gap:6px;overflow-x:auto;margin-bottom:10px;padding-bottom:4px}
+.tab{flex:none;max-width:260px;padding:8px 13px;border-radius:12px;border:2px solid var(--line);background:#fff;font-weight:800;font-size:.84rem;text-align:left;color:var(--gd);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tab[aria-selected=true]{background:var(--gd);border-color:var(--gd);color:#fff}
+.vis{margin:0 0 12px;border-radius:16px;border:2px solid var(--line);background:#fafafa;overflow:hidden}
+.vis .pan{max-height:52dvh;overflow:auto;cursor:zoom-in;background:#f1f1f1}
+.vis .pan.z{cursor:zoom-out}
+.vis img{display:block;width:100%;height:auto}
+.vis .pan.z img{width:170%;max-width:none}
+.vis figcaption{padding:10px 14px;font-size:.88rem;border-top:2px solid var(--line);background:#fff}
+.vis figcaption b{color:var(--gd)}
+.zh{font-size:.78rem;color:var(--mut);text-align:right;padding:4px 10px 0}
+.frag{margin-bottom:12px;padding:12px 16px;border-left:6px solid var(--c,var(--g));border-radius:6px 16px 16px 6px;background:#f6faf5}
+.frag h3{font-size:.95rem;margin-bottom:6px}
+.frag blockquote{white-space:pre-line;font-size:.95rem;color:#26352c;max-height:200px;overflow:auto}
+.frag small{display:block;margin-top:6px;color:var(--mut);font-size:.78rem}
+.acc{display:flex;flex-wrap:wrap;gap:8px;padding:12px 18px 16px;border-top:2px solid var(--line);background:#fff}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;border:2px solid var(--g);background:#fff;font-weight:800;font-size:.9rem;color:var(--gd)}
+.btn:hover{background:var(--g);color:#fff}
+.btn.pri{background:var(--g);color:#fff}.btn.pri:hover{background:var(--gd)}
+.btn .ico{--s:22px}
+.btn.nav{margin-left:auto}.btn.nav+.btn.nav{margin-left:0}
+.btn[disabled]{opacity:.4;pointer-events:none}
+.toast{position:fixed;left:50%;bottom:110px;transform:translateX(-50%);z-index:100;padding:10px 18px;border-radius:999px;background:#1d2a22;color:#fff;font-weight:800;font-size:.9rem;box-shadow:0 8px 24px #0006}
+
+@media(max-width:640px){
+ body{font-size:16px}
+ .pet{min-height:150px;padding:14px 12px 12px}
+ .pet .ico{--s:50px}.pet b{margin-top:56px}
+ .p-GD .ico,.p-GF .ico{left:20px}.p-GA .ico,.p-GC .ico{right:20px}
+ .p-GD,.p-GA,.p-GF,.p-GC{border-radius:20px}.p-GD{border-top-left-radius:70px}.p-GA{border-top-right-radius:70px}.p-GF{border-bottom-left-radius:70px}.p-GC{border-bottom-right-radius:70px}
+ .gh{flex-wrap:wrap}.gh .ex{margin-left:0}
+ .proc>summary{padding:10px 12px}.grid{padding:4px 10px 14px}
+ dialog{width:100vw;max-width:100vw;max-height:94dvh;border-radius:20px 20px 0 0;margin:auto 0 0}
+ .acc{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:10px 12px 14px}
+ .acc .pri{grid-column:1/-1}
+ .btn{padding:9px 10px;font-size:.84rem;justify-content:center}.btn.nav{margin-left:0}
+ .vis .pan{max-height:40dvh}.mb .d{font-size:.92rem}
+ .tools{position:static;margin-top:14px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style></head>
+<body>
+<header class="hero" id="hero">
+ <div class="w">
+  <a class="volver" href="./">← Volver a la portada</a>
+  <h1>Mapa de <span>procesos</span></h1>
+  <p class="lead">Así se organiza el colegio para cumplir su razón de ser: cuatro gestiones, sus procesos y subprocesos. Toca cualquier subproceso y verás <b>dónde está su evidencia</b> en el PEI y en los documentos institucionales, con la página exacta.</p>
+  <div class="stats" id="stats" aria-label="Resumen del mapa"></div>
+ </div>
+</header>
+
+<main class="w" id="main">
+ <section class="mapa" aria-labelledby="mt">
+  <h2 id="mt">Las cuatro gestiones</h2>
+  <p class="s">Cuatro pétalos que giran alrededor de un mismo propósito. Elige uno para ver sus procesos.</p>
+  <div class="flor" id="flor" role="group" aria-label="Las cuatro gestiones del colegio"></div>
+  <p class="hint">Fuente: Mapa de procesos (Excel, septiembre de 2024), reorganizado con el PEI 2024–2027 vigente.</p>
+ </section>
+
+ <div class="tools" id="tools"><div class="w">
+  <div class="bus"><span class="ico" data-e="🔎" id="ico-bus"></span><label class="sr" for="q">Buscar un proceso o subproceso</label><input id="q" type="search" placeholder="Busca: matrícula, convivencia, GDP3S1…" autocomplete="off"></div>
+  <div class="chips" role="group" aria-label="Filtrar por tipo de evidencia" id="chips"></div>
+ </div></div>
+
+ <div id="panel" aria-live="polite"></div>
+
+ <div class="leyenda" aria-label="Cómo leer las etiquetas">
+  <span><b>✔ Evidencia directa:</b> el PEI (o el documento citado) tiene una sección propia sobre el subproceso.</span>
+  <span><b>≈ Evidencia relacionada:</b> el tema se toca dentro de otra sección; es lo más cercano disponible.</span>
+  <span><b>⏳ Por documentar:</b> todavía no hay un apartado específico; se muestra lo más próximo.</span>
+ </div>
+ <noscript><p class="sin">Para ver el mapa de procesos interactivo activa JavaScript en tu navegador.</p></noscript>
+</main>
+
+<dialog id="mod" aria-labelledby="mtit">
+ <div class="mh" id="mh"><span class="cod" id="mcod"></span><h2 id="mtit"></h2><button class="x" type="button" id="mx" aria-label="Cerrar">✕</button></div>
+ <div class="mb" id="mb"></div>
+ <div class="acc" id="acc"></div>
+</dialog>
+
+<script>
+(()=>{
+'use strict';
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const IMG='assets/img/procesos/';
+const NIVEL={directa:{t:'Evidencia directa',i:'✔',c:'ok'},relacionada:{t:'Evidencia relacionada',i:'≈',c:'rel'},pendiente:{t:'Por documentar',i:'⏳',c:'pen'}};
+const CAP={1:'Capítulo 1 · Componente conceptual y gestión directiva',2:'Capítulo 2 · Componente pedagógico',3:'Capítulo 3 · Componente administrativo',4:'Capítulo 4 · Componente comunitario'};
+// Hojas de sprites que irás entregando: nombre → columnas × filas (cada celda es un icono). Si el archivo no existe se usa el emoji.
+const SPR={gestiones:[4,1],'procesos-gd':[6,1],'procesos-ga':[4,1],'procesos-gf':[5,1],'procesos-gc':[2,1],fondos:[2,2],'ui-iconos':[3,3],sellos:[3,1]};
+const GEST_I={GD:0,GA:1,GF:2,GC:3};
+const UI={lupa:[0,'🔎'],clip:[1,'📎'],pdf:[2,'📄'],cita:[3,'❝'],ok:[4,'✔'],enlace:[5,'🔗'],cerrar:[6,'✕'],copiar:[7,'📋'],compartir:[8,'↗']};
+const EMO={GDP1:'🧭',GDP2:'🎯',GDP3:'🏛️',GDP4:'💬',GDP5:'🌤️',GDP6:'🌐',GAP1:'📐',GAP2:'🧑‍🏫',GAP3:'🏫',GAP4:'📈',GFP1:'🗂️',GFP2:'🔧',GFP3:'🍎',GFP4:'👥',GFP5:'💰',GCP1:'♿',GCP2:'🌍'};
+const state={g:'GD',nivel:'todos',q:''};
+let D=null,flat=[],byCod={};
+
+/* ---------- sprites ---------- */
+const hojas={};
+function hoja(n){return hojas[n]||(hojas[n]=new Promise(ok=>{const i=new Image();i.onload=()=>ok(true);i.onerror=()=>ok(false);i.src=IMG+n+'.webp'}))}
+function ico(sheet,i,e,cls=''){return `<span class="ico ${cls}" data-e="${esc(e)}" data-sh="${sheet}" data-i="${i}" aria-hidden="true"></span>`}
+function sprites(root=document){
+ $$('.ico[data-sh]:not(.on):not([data-done])',root).forEach(async el=>{
+  const n=el.dataset.sh,[c,r]=SPR[n]||[1,1];el.dataset.done='1';
+  if(!(await hoja(n)))return;
+  const i=+el.dataset.i,x=c>1?(i%c)/(c-1)*100:0,y=r>1?Math.floor(i/c)/(r-1)*100:0;
+  const s=document.createElement('i');s.className='spr';
+  s.style.cssText=`background-image:url(${IMG}${n}.webp);background-size:${c*100}% ${r*100}%;background-position:${x}% ${y}%`;
+  el.appendChild(s);el.classList.add('on');
+ });
+}
+const ui=(k,cls)=>ico('ui-iconos',UI[k][0],UI[k][1],cls);
+function imagenOpcional(n,fn){const i=new Image();i.onload=()=>fn(IMG+n+'.webp');i.src=IMG+n+'.webp'}
+
+/* ---------- datos ---------- */
+const nProc=g=>g.procesos.length,nSub=g=>g.procesos.reduce((a,p)=>a+p.sub.length,0);
+const conteo=g=>{const c={directa:0,relacionada:0,pendiente:0};g.procesos.forEach(p=>p.sub.forEach(s=>c[s.nivel]++));return c};
+function citaCorta(s){const e=D.evidencias[s.ev[0]];if(!e)return'';const d=D.docs[e.doc].corto;return `${d} · ${e.pagina_fin&&e.pagina_fin!==e.pagina?'pp. '+e.pagina+'–'+e.pagina_fin:'p. '+e.pagina}`}
+function pag(e){return e.pagina_fin&&e.pagina_fin!==e.pagina?`pp. ${e.pagina}–${e.pagina_fin}`:`p. ${e.pagina}`}
+function cita(e){
+ const d=D.docs[e.doc];let s=d.nombre;
+ if(e.doc==='pei'&&e.seccion){const c=CAP[e.seccion[0]];s+=`, ${c?c.split(' · ')[0]:'capítulo'}, sección ${e.seccion} «${e.titulo}»`}else s+=`, «${e.titulo}»`;
+ return `${s}, ${pag(e)}.`;
+}
+
+/* ---------- encabezado y flor ---------- */
+function pintaStats(){
+ const g=D.gestiones,np=g.reduce((a,x)=>a+nProc(x),0),ns=g.reduce((a,x)=>a+nSub(x),0),ne=Object.keys(D.evidencias).length;
+ $('#stats').innerHTML=[[g.length,'gestiones'],[np,'procesos'],[ns,'subprocesos'],[ne,'evidencias con página']].map(([n,t])=>`<div class="st"><b data-n="${n}">0</b><span>${t}</span></div>`).join('');
+ $$('#stats [data-n]').forEach(c=>{const m=+c.dataset.n,t0=performance.now();(function f(t){const p=Math.min((t-t0)/1100,1);c.textContent=Math.round(m*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)})(t0)});
+}
+function pintaFlor(){
+ $('#flor').innerHTML=D.gestiones.map(g=>`<button type="button" class="pet p-${g.id}" data-g="${g.id}" aria-pressed="${g.id===state.g}" style="--c:${g.color}">
+   ${ico('gestiones',GEST_I[g.id],g.emoji)}<i class="k">${g.id}</i><b>${esc(g.nombre)}</b><small>${nProc(g)} procesos · ${nSub(g)} subprocesos</small></button>`).join('')+
+  `<div class="centro" id="centro" aria-hidden="true"><img src="assets/img/escudo.webp" alt="" width="80" height="80"><span>Proyecto de vida con éxito</span></div>`;
+ sprites($('#flor'));
+ imagenOpcional('fondos',u=>$$('.pet').forEach((b,i)=>{b.style.setProperty('--fondo',`url(${u})`);b.style.setProperty('--fx',(i%2)*100+'%');b.style.setProperty('--fy',Math.floor(i/2)*100+'%')}));
+}
+function pintaChips(){
+ const c=[['todos','Todos',''],['directa','✔ Directa','ok'],['relacionada','≈ Relacionada','rel'],['pendiente','⏳ Por documentar','pen']];
+ $('#chips').innerHTML=c.map(([k,t,cl])=>`<button type="button" class="chip ${cl}" data-n="${k}" aria-pressed="${state.nivel===k}">${t}</button>`).join('');
+}
+
+/* ---------- panel de procesos ---------- */
+function cardSub(s,g){
+ const n=NIVEL[s.nivel];
+ return `<article class="sub" id="s-${s.cod}" style="--c:${g.color}">
+  ${state.q||state.nivel!=='todos'?`<span class="gt">${esc(g.nombre)}</span>`:''}
+  <div class="sh"><span class="cod">${s.cod}</span><span class="lv ${n.c}" title="${n.t}">${n.i} ${n.t}</span></div>
+  <h4>${esc(s.nombre)}</h4><p>${esc(s.desc)}</p>
+  <button type="button" class="evb" data-cod="${s.cod}" aria-label="${s.nivel==='pendiente'?'Ver lo más cercano para':'Ver evidencia de'} ${esc(s.nombre)}">${ui('clip')}<span>${s.nivel==='pendiente'?'Ver lo más cercano':'Ver evidencia'}</span><small>${esc(citaCorta(s))}</small></button>
+ </article>`;
+}
+function coincide(s,g,p){
+ if(state.nivel!=='todos'&&s.nivel!==state.nivel)return false;
+ if(!state.q)return true;
+ const t=norm(`${s.cod} ${s.cod2024} ${s.nombre} ${s.desc} ${p.nombre} ${g.nombre}`);
+ return norm(state.q).split(/\s+/).filter(Boolean).every(w=>t.includes(w));
+}
+function norm(s){return String(s).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'')}
+function pintaPanel(){
+ const buscando=state.q||state.nivel!=='todos',P=$('#panel');
+ if(buscando){
+  let n=0,h='';
+  D.gestiones.forEach(g=>g.procesos.forEach(p=>{const m=p.sub.filter(s=>coincide(s,g,p));if(!m.length)return;n+=m.length;
+   h+=`<h3 class="res-t" style="color:${g.color}">${esc(g.nombre)} · P${p.n}. ${esc(p.nombre)}</h3><div class="grid" style="padding:0 0 10px">${m.map(s=>cardSub(s,g)).join('')}</div>`}));
+  P.innerHTML=`<p class="res-t">${n?`${n} subproceso${n===1?'':'s'} encontrado${n===1?'':'s'}`:''}</p>${h||'<p class="sin">No encontré subprocesos con esa búsqueda. Prueba con otra palabra o quita el filtro.</p>'}`;
+ }else{
+  const g=D.gestiones.find(x=>x.id===state.g),c=conteo(g);
+  P.innerHTML=`<div class="gh" style="--c:${g.color}">${ico('gestiones',GEST_I[g.id],g.emoji)}<div><h2>${esc(g.nombre)}</h2><p>${esc(g.lema)} · ${nProc(g)} procesos, ${nSub(g)} subprocesos</p></div><button type="button" class="ex" id="ex">Abrir todos</button></div>`+
+  g.procesos.map((p,i)=>{const t=p.sub.length,pc=k=>(c2(p,k)/t*100).toFixed(1);
+   return `<details class="proc" ${i===0?'open':''} style="--c:${g.color}" id="${p.id}"><summary>
+     <span class="num">P${p.n}</span>${ico('procesos-'+g.id.toLowerCase(),i,EMO[p.id]||'•')}
+     <span class="tt"><b>${esc(p.nombre)}</b><small>${t} subprocesos</small><div class="bar" title="Evidencia: ${c2(p,'directa')} directa · ${c2(p,'relacionada')} relacionada · ${c2(p,'pendiente')} por documentar"><i class="a" style="width:${pc('directa')}%"></i><i class="b" style="width:${pc('relacionada')}%"></i><i class="c" style="width:${pc('pendiente')}%"></i></div></span></summary>
+     <div class="grid">${p.sub.map(s=>cardSub(s,g)).join('')}</div></details>`}).join('');
+ }
+ sprites(P);
+}
+const c2=(p,k)=>p.sub.filter(s=>s.nivel===k).length;
+
+function elegir(id,desdeHash){
+ state.g=id;state.q='';state.nivel='todos';$('#q').value='';pintaChips();
+ $$('.pet').forEach(b=>b.setAttribute('aria-pressed',b.dataset.g===id));
+ pintaPanel();
+ if(!desdeHash){history.replaceState(null,'','#'+id);$('#tools').scrollIntoView({behavior:'smooth',block:'start'})}
+}
+
+/* ---------- ventana de evidencia ---------- */
+const mod=$('#mod');let curCod=null,curTab=0;
+function abrir(cod,tab=0,sinHash){
+ const s=byCod[cod];if(!s)return;curCod=cod;curTab=tab;
+ const g=s.g,p=s.p,n=NIVEL[s.nivel],evs=s.ev.map(k=>D.evidencias[k]).filter(Boolean),e=evs[tab];
+ mod.style.setProperty('--c',g.color);$('#mh').style.setProperty('--c',g.color);
+ $('#mcod').textContent=cod;$('#mtit').textContent=s.nombre;
+ const aviso={directa:'El documento tiene una sección dedicada a este subproceso.',
+  relacionada:'El PEI no tiene una sección exclusiva para este subproceso; esto es lo más cercano donde el tema aparece.',
+  pendiente:'Este subproceso todavía no tiene un apartado específico en los documentos. Se muestra lo más próximo mientras se documenta.'}[s.nivel];
+ const d=D.docs[e.doc];
+ $('#mb').innerHTML=`
+  <p class="d"><b>${esc(g.nombre)}</b> · P${p.n}. ${esc(p.nombre)}<br>${esc(s.desc)}</p>
+  <div class="aviso ${n.c}" role="note"><span aria-hidden="true">${n.i}</span><span><b>${n.t}.</b> ${aviso}</span></div>
+  ${evs.length>1?`<div class="tabs" role="tablist" aria-label="Evidencias de este subproceso">${evs.map((x,i)=>`<button type="button" role="tab" class="tab" data-t="${i}" aria-selected="${i===tab}" title="${esc(x.titulo)}">${esc(D.docs[x.doc].corto)} · ${pag(x)} · ${esc(x.titulo)}</button>`).join('')}</div>`:''}
+  <figure class="vis"><div class="zh">Toca la imagen para ampliarla</div><div class="pan" id="pan" tabindex="0" role="button" aria-label="Ampliar o reducir la captura"><img src="${esc(e.img)}" width="${e.w}" height="${e.h}" alt="Captura del documento ${esc(d.corto)}, ${pag(e)}: ${esc(e.titulo)}"></div>
+   <figcaption>📖 <b>${esc(cita(e))}</b></figcaption></figure>
+  <section class="frag" style="--c:${g.color}"><h3>${e.transcrito?'Lo que dice el documento (transcrito de la imagen)':'Fragmento del documento'}</h3><blockquote>${esc(e.texto||'Este apartado es una imagen del PDF; consúltala en la captura de arriba o abre el documento.')}</blockquote><small>${e.transcrito?'Transcripción de la imagen original del PEI.':'Texto extraído del PDF; puede variar levemente del original. La captura es la referencia.'}</small></section>`;
+ const i=flat.findIndex(x=>x.cod===cod);
+ $('#acc').innerHTML=`<a class="btn pri" href="${encodeURI(d.archivo)}#page=${e.pagina}" target="_blank" rel="noopener">${ui('pdf')}Abrir el PDF (${pag(e)})</a>
+  <button type="button" class="btn" id="b-cita">${ui('cita')}Copiar cita</button>
+  <button type="button" class="btn" id="b-link">${ui('enlace')}Copiar enlace</button>
+  <button type="button" class="btn nav" id="b-prev" ${i<=0?'disabled':''} aria-label="Subproceso anterior">← Anterior</button>
+  <button type="button" class="btn nav" id="b-next" ${i>=flat.length-1?'disabled':''} aria-label="Subproceso siguiente">Siguiente →</button>`;
+ sprites(mod);
+ if(!mod.open){mod.showModal?mod.showModal():mod.setAttribute('open','')}
+ const mb=$('#mb');mb.tabIndex=-1;mb.scrollTop=0;if(!sinHash||true)mb.focus({preventScroll:true});
+ if(!sinHash)history.replaceState(null,'','#'+cod);
+}
+function cerrar(){if(mod.close)mod.close();else mod.removeAttribute('open')}
+mod.addEventListener('close',()=>{history.replaceState(null,'','#'+state.g);const b=curCod&&$(`#s-${curCod} .evb`);b&&b.focus({preventScroll:true})});
+mod.addEventListener('click',ev=>{if(ev.target===mod)cerrar()});
+mod.addEventListener('keydown',ev=>{if(ev.key==='ArrowRight')vecino(1);else if(ev.key==='ArrowLeft')vecino(-1)});
+function vecino(d){const i=flat.findIndex(x=>x.cod===curCod)+d;if(i>=0&&i<flat.length)abrir(flat[i].cod)}
+function toast(t){$('.toast')?.remove();const d=document.createElement('div');d.className='toast';d.setAttribute('role','status');d.textContent=t;document.body.appendChild(d);setTimeout(()=>d.remove(),2200)}
+async function copiar(t,msg){try{await navigator.clipboard.writeText(t);toast(msg)}catch{const a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();try{document.execCommand('copy');toast(msg)}catch{toast('No se pudo copiar')}a.remove()}}
+
+/* ---------- eventos ---------- */
+document.addEventListener('click',ev=>{
+ const t=ev.target;
+ const pet=t.closest('.pet');if(pet){elegir(pet.dataset.g);return}
+ const evb=t.closest('.evb');if(evb){abrir(evb.dataset.cod);return}
+ const ch=t.closest('.chip');if(ch){state.nivel=ch.dataset.n;pintaChips();pintaPanel();return}
+ if(t.closest('#ex')){const ds=$$('.proc'),todos=ds.every(d=>d.open);ds.forEach(d=>d.open=!todos);t.closest('#ex').textContent=todos?'Abrir todos':'Cerrar todos';return}
+ if(t.closest('#mx')){cerrar();return}
+ const tab=t.closest('.tab');if(tab){abrir(curCod,+tab.dataset.t,true);return}
+ const pan=t.closest('#pan');if(pan){pan.classList.toggle('z');return}
+ if(t.closest('#b-cita')){const s=byCod[curCod],e=D.evidencias[s.ev[curTab]];copiar(`${s.nombre} (${s.cod}). ${cita(e)}`,'Cita copiada');return}
+ if(t.closest('#b-link')){copiar(location.href.replace(/#.*$/,'')+'#'+curCod,'Enlace copiado');return}
+ if(t.closest('#b-prev')){vecino(-1);return}
+ if(t.closest('#b-next')){vecino(1);return}
+});
+document.addEventListener('keydown',ev=>{if((ev.key==='Enter'||ev.key===' ')&&ev.target.id==='pan'){ev.preventDefault();ev.target.classList.toggle('z')}});
+let tq;$('#q').addEventListener('input',e=>{clearTimeout(tq);tq=setTimeout(()=>{state.q=e.target.value.trim();pintaPanel()},160)});
+
+function porHash(){
+ const h=decodeURIComponent(location.hash.slice(1)).toUpperCase();
+ if(/^G[A-Z]P\d+S\d+$/.test(h)&&byCod[h]){elegir(byCod[h].g.id,true);const s=$('#s-'+h);if(s){s.closest('details')?.setAttribute('open','');s.classList.add('flash');setTimeout(()=>s.scrollIntoView({block:'center'}),80)}abrir(h,0,true)}
+ else if(/^G[A-Z]P\d+$/.test(h)){const g=D.gestiones.find(x=>h.startsWith(x.id));if(g){elegir(g.id,true);const d=$('#'+h);if(d){d.open=true;setTimeout(()=>d.scrollIntoView({block:'start'}),80)}}}
+ else if(D.gestiones.some(g=>g.id===h)){elegir(h,true)}
+}
+addEventListener('hashchange',()=>{if(location.hash)porHash()});
+
+/* ---------- arranque ---------- */
+fetch('procesos/procesos.json').then(r=>{if(!r.ok)throw 0;return r.json()}).then(j=>{
+ D=j;
+ D.gestiones.forEach(g=>g.procesos.forEach(p=>p.sub.forEach(s=>{s.g=g;s.p=p;byCod[s.cod]=s;flat.push(s)})));
+ pintaStats();pintaFlor();pintaChips();pintaPanel();
+ imagenOpcional('hero',u=>{$('#hero').style.setProperty('--hero',`url(${u})`);$('#hero').classList.add('hero-img')});
+ imagenOpcional('centro',u=>{const c=$('#centro');c.classList.add('sp');c.innerHTML=`<img src="${u}" alt="">`});
+ $('#ico-bus').outerHTML=ui('lupa');sprites($('.bus'));
+ if(location.hash)porHash();
+}).catch(()=>{$('#panel').innerHTML='<p class="sin">No pude cargar el mapa de procesos. Revisa tu conexión e intenta de nuevo.</p>'});
+})();
+</script>
+<script src="assets/js/nav.js" defer></script>
+</body></html>

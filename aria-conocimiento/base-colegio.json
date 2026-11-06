@@ -1,6 +1,6 @@
 {
  "version": 1,
- "actualizado": "2026-11-03",
+ "actualizado": "2026-11-06",
  "fuente": "Compilado del PEI 2024-2027, Manual de Convivencia GD-D02 y datos institucionales públicos. NO incluye teléfonos personales, credenciales ni datos privados.",
  "entradas": [
   {
@@ -132,8 +132,12 @@
     "delors",
     "aprender a conocer"
    ],
-   "respuesta": "Misión: somos una institución oficial que ofrece educación de calidad, propendiendo por la formación integral desde el «saber ser», «saber hacer» y «saber saber». Visión (2025): ser reconocida a nivel regional y nacional por sus procesos de alta calidad, apoyada en las TIC, la inclusión escolar y la convivencia ciudadana. Política de calidad: transparencia, equidad, eficiencia, moralidad pública y buen gobierno. Principios: Libertad, Orden, Justicia, Calidad y Liderazgo, Ética. Pilares (Delors): aprender a conocer, a hacer, a ser y a convivir.",
+   "respuesta": "Visión: en el año 2027 el colegio será reconocido a nivel regional y nacional por desarrollar procesos académicos y administrativos de alta calidad, apoyado en las TIC, la inclusión escolar y la convivencia ciudadana post pandemia. Misión: somos una institución de carácter oficial que ofrece un servicio de calidad en Preescolar, Básica, Media Académica y Técnica, propendiendo por la formación integral desde el «saber ser», «saber hacer» y «saber saber», con proyectos de inclusión educativa, evaluación formativa y trabajo colaborativo que fortalecen la construcción de proyectos de vida con éxito. Política de calidad: ofrecer un servicio educativo de alta calidad que fortalezca el liderazgo, la comunicación y el trabajo en equipo, con recursos y talento humano competentes y mejoramiento continuo de la gestión escolar. Principios: Libertad, Orden, Justicia, Calidad y Liderazgo, Ética. Pilares (Delors): aprender a conocer, a hacer, a ser y a convivir.",
    "enlaces": [
+    {
+     "t": "Misión y visión en el PEI (p. 24)",
+     "u": "PROCESOS.html#GDP1S1"
+    },
     {
      "t": "Documentos institucionales",
      "u": "DOCUMENTOS%20INSTITUCIONALES.html"
@@ -543,22 +547,26 @@
    "id": "infraestructura",
    "tema": "Procesos de infraestructura y riesgos",
    "claves": [
-    "infraestructura",
-    "mantenimiento",
-    "planta fisica",
-    "gestion del riesgo",
-    "recursos tecnologicos",
-    "salas de informatica",
+    "danos",
     "gap2s1",
     "gap2s2",
     "gap2s4",
-    "danos"
+    "gestion del riesgo",
+    "infraestructura",
+    "mantenimiento",
+    "planta fisica",
+    "recursos tecnologicos",
+    "salas de informatica"
    ],
-   "respuesta": "Mapa de procesos 2024: GAP2S1 es el mantenimiento preventivo y correctivo de la infraestructura de las tres sedes; GAP2S2, la gestión de recursos tecnológicos (computadores, proyectores y salas de informática); y GAP2S4, la gestión de riesgos en la planta física.",
+   "respuesta": "En el mapa de procesos, la Gestión Administrativa y Financiera tiene el proceso «Administración de la planta física y los recursos» (GFP2): GFP2S1 mantenimiento de la infraestructura de las tres sedes, GFP2S2 recursos tecnológicos (computadores, proyectores y salas de informática), GFP2S3 distribución de recursos y GFP2S4 gestión de riesgos en la planta física.",
    "enlaces": [
     {
+     "t": "Ver el proceso y su evidencia",
+     "u": "PROCESOS.html#GFP2"
+    },
+    {
      "t": "Manual Salas de Informática (PDF)",
-     "u": "https://0fa5a971-652e-4607-a1b4-cf4b07b9f616.filesusr.com/ugd/8891de_e6e7265c3d7c4132925b62267253521d.pdf"
+     "u": "PROCESOS.html#GFP2"
     }
    ]
   },
@@ -940,6 +948,2476 @@
     {
      "t": "Manual de Convivencia (Documento Maestro)",
      "u": "https://0fa5a971-652e-4607-a1b4-cf4b07b9f616.filesusr.com/ugd/8891de_0fab9ff361254a148a3a5d3a0eafea98.pdf"
+    }
+   ]
+  },
+  {
+   "id": "procesos-mapa",
+   "tema": "Mapa de procesos del colegio",
+   "claves": [
+    "mapa de procesos",
+    "procesos del colegio",
+    "gestiones del colegio",
+    "cuantas gestiones",
+    "campos de gestion",
+    "cuantos procesos",
+    "cuantos subprocesos",
+    "procesos y subprocesos",
+    "pagina de procesos",
+    "subprocesos"
+   ],
+   "respuesta": "El colegio se organiza en 4 gestiones (Directiva, Académica, Administrativa y Financiera, de la Comunidad), con 17 procesos y 80 subprocesos. En la página «Procesos» puedes tocar cada subproceso para ver su evidencia con la página exacta del PEI y de los demás documentos institucionales.",
+   "enlaces": [
+    {
+     "t": "Mapa de procesos",
+     "u": "PROCESOS.html"
+    }
+   ]
+  },
+  {
+   "id": "proc-GD",
+   "tema": "Gestión Directiva (mapa de procesos)",
+   "claves": [
+    "gestión directiva",
+    "procesos de la gestión directiva",
+    "subprocesos de la gestión directiva",
+    "que procesos tiene la gestión directiva"
+   ],
+   "respuesta": "Gestión Directiva: Orienta el rumbo: horizonte, gobierno escolar, cultura y clima institucional. Tiene 6 procesos: P1 Direccionamiento estratégico y horizonte institucional; P2 Gestión estratégica; P3 Gobierno escolar; P4 Cultura institucional; P5 Clima escolar; P6 Relaciones con el entorno.",
+   "enlaces": [
+    {
+     "t": "Ver Gestión Directiva",
+     "u": "PROCESOS.html#GD"
+    }
+   ]
+  },
+  {
+   "id": "proc-GDP1",
+   "tema": "Proceso: Direccionamiento estratégico y horizonte institucional",
+   "claves": [
+    "proceso direccionamiento estratégico y horizonte institucional",
+    "proceso de direccionamiento estratégico y horizonte institucional",
+    "proceso del direccionamiento estratégico y horizonte institucional",
+    "proceso de la direccionamiento estratégico y horizonte institucional",
+    "subprocesos de direccionamiento estratégico y horizonte institucional",
+    "subprocesos del direccionamiento estratégico y horizonte institucional",
+    "subprocesos de la direccionamiento estratégico y horizonte institucional",
+    "subprocesos tiene el direccionamiento estratégico y horizonte institucional",
+    "subprocesos tiene la direccionamiento estratégico y horizonte institucional",
+    "subprocesos tiene direccionamiento estratégico y horizonte institucional",
+    "subprocesos hay en direccionamiento estratégico y horizonte institucional",
+    "subprocesos hay en el direccionamiento estratégico y horizonte institucional",
+    "subprocesos hay en la direccionamiento estratégico y horizonte institucional",
+    "gdp1"
+   ],
+   "respuesta": "«Direccionamiento estratégico y horizonte institucional» (GDP1) es el proceso P1 de la Gestión Directiva. Tiene 4 subprocesos: Misión, visión y principios en el marco de una institución integrada; Metas institucionales; Conocimiento y apropiación del direccionamiento; Política de inclusión de personas de diferentes grupos poblacionales o diversidad poblacional.",
+   "enlaces": [
+    {
+     "t": "Ver el proceso y sus evidencias",
+     "u": "PROCESOS.html#GDP1"
+    }
+   ]
+  },
+  {
+   "id": "proc-GDP1S1",
+   "tema": "Subproceso: Misión, visión y principios en el marco de una institución integrada",
+   "claves": [
+    "gdp1s1",
+    "subproceso misión visión y principios en el marco de una institución integrada",
+    "evidencia de misión visión y principios en el marco de una institución integrada",
+    "evidencia del misión visión y principios en el marco de una institución integrada",
+    "evidencia de la misión visión y principios en el marco de una institución integrada",
+    "referencia de misión visión y principios en el marco de una institución integrada",
+    "referencia del misión visión y principios en el marco de una institución integrada"
+   ],
+   "respuesta": "«Misión, visión y principios en el marco de una institución integrada» (GDP1S1) es un subproceso de «Direccionamiento estratégico y horizonte institucional», de la Gestión Directiva. Evidencia directa: PEI 2024–2027, sección 1.3.1 – 1.3.3, p. 24.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GDP1S1"
+    },
+    {
+     "t": "Abrir el PDF (p. 24)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=24"
+    }
+   ]
+  },
+  {
+   "id": "proc-GDP1S2",
+   "tema": "Subproceso: Metas institucionales",
+   "claves": [
+    "gdp1s2",
+    "subproceso metas institucionales",
+    "evidencia de metas institucionales",
+    "evidencia del metas institucionales",
+    "evidencia de la metas institucionales",
+    "referencia de metas institucionales",
+    "referencia del metas institucionales"
+   ],
+   "respuesta": "«Metas institucionales» (GDP1S2) es un subproceso de «Direccionamiento estratégico y horizonte institucional», de la Gestión Directiva. Evidencia directa: PEI 2024–2027, sección 1.3.6, p. 29.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GDP1S2"
+    },
+    {
+     "t": "Abrir el PDF (p. 29)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=29"
+    }
+   ]
+  },
+  {
+   "id": "proc-GDP1S3",
+   "tema": "Subproceso: Conocimiento y apropiación del direccionamiento",
+   "claves": [
+    "gdp1s3",
+    "subproceso conocimiento y apropiación del direccionamiento",
+    "evidencia de conocimiento y apropiación del direccionamiento",
+    "evidencia del conocimiento y apropiación del direccionamiento",
+    "evidencia de la conocimiento y apropiación del direccionamiento",
+    "referencia de conocimiento y apropiación del direccionamiento",
+    "referencia del conocimiento y apropiación del direccionamiento"
+   ],
+   "respuesta": "«Conocimiento y apropiación del direccionamiento» (GDP1S3) es un subproceso de «Direccionamiento estratégico y horizonte institucional», de la Gestión Directiva. Evidencia relacionada: PEI 2024–2027, sección 1.3.5, p. 28.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GDP1S3"
+    },
+    {
+     "t": "Abrir el PDF (p. 28)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=28"
+    }
+   ]
+  },
+  {
+   "id": "proc-GDP1S4",
+   "tema": "Subproceso: Política de inclusión de personas de diferentes grupos poblacionales o diversidad poblacional",
+   "claves": [
+    "gdp1s4",
+    "subproceso política de inclusión de personas de diferentes grupos poblacionales o diversidad poblacional",
+    "evidencia de política de inclusión de personas de diferentes grupos poblacionales o diversidad poblacional",
+    "evidencia del política de inclusión de personas de diferentes grupos poblacionales o diversidad poblacional",
+    "evidencia de la política de inclusión de personas de diferentes grupos poblacionales o diversidad poblacional",
+    "referencia de política de inclusión de personas de diferentes grupos poblacionales o diversidad poblacional",
+    "referencia del política de inclusión de personas de diferentes grupos poblacionales o diversidad poblacional"
+   ],
+   "respuesta": "«Política de inclusión de personas de diferentes grupos poblacionales o diversidad poblacional» (GDP1S4) es un subproceso de «Direccionamiento estratégico y horizonte institucional», de la Gestión Directiva. Evidencia directa: PEI 2024–2027, sección 4.1.1, pp. 111–112.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GDP1S4"
+    },
+    {
+     "t": "Abrir el PDF (pp. 111–112)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=111"
+    }
+   ]
+  },
+  {
+   "id": "proc-GDP2",
+   "tema": "Proceso: Gestión estratégica",
+   "claves": [
+    "proceso gestión estratégica",
+    "proceso de gestión estratégica",
+    "proceso del gestión estratégica",
+    "proceso de la gestión estratégica",
+    "subprocesos de gestión estratégica",
+    "subprocesos del gestión estratégica",
+    "subprocesos de la gestión estratégica",
+    "subprocesos tiene el gestión estratégica",
+    "subprocesos tiene la gestión estratégica",
+    "subprocesos tiene gestión estratégica",
+    "subprocesos hay en gestión estratégica",
+    "subprocesos hay en el gestión estratégica",
+    "subprocesos hay en la gestión estratégica",
+    "gdp2"
+   ],
+   "respuesta": "«Gestión estratégica» (GDP2) es el proceso P2 de la Gestión Directiva. Tiene 6 subprocesos: Liderazgo; Articulación de planes, proyectos y acciones; Estrategia pedagógica; Uso de información (interna y externa) para la toma de decisiones; Seguimiento y autoevaluación; Plan de mejoramiento.",
+   "enlaces": [
+    {
+     "t": "Ver el proceso y sus evidencias",
+     "u": "PROCESOS.html#GDP2"
+    }
+   ]
+  },
+  {
+   "id": "proc-GDP2S1",
+   "tema": "Subproceso: Liderazgo",
+   "claves": [
+    "gdp2s1",
+    "subproceso liderazgo",
+    "evidencia de liderazgo",
+    "evidencia del liderazgo",
+    "evidencia de la liderazgo",
+    "referencia de liderazgo",
+    "referencia del liderazgo"
+   ],
+   "respuesta": "«Liderazgo» (GDP2S1) es un subproceso de «Gestión estratégica», de la Gestión Directiva. Evidencia relacionada: PEI 2024–2027, sección 1.6.3, pp. 43–44.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GDP2S1"
+    },
+    {
+     "t": "Abrir el PDF (pp. 43–44)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=43"
+    }
+   ]
+  },
+  {
+   "id": "proc-GDP2S2",
+   "tema": "Subproceso: Articulación de planes, proyectos y acciones",
+   "claves": [
+    "gdp2s2",
+    "subproceso articulación de planes proyectos y acciones",
+    "evidencia de articulación de planes proyectos y acciones",
+    "evidencia del articulación de planes proyectos y acciones",
+    "evidencia de la articulación de planes proyectos y acciones",
+    "referencia de articulación de planes proyectos y acciones",
+    "referencia del articulación de planes proyectos y acciones"
+   ],
+   "respuesta": "«Articulación de planes, proyectos y acciones» (GDP2S2) es un subproceso de «Gestión estratégica», de la Gestión Directiva. Evidencia relacionada: PEI 2024–2027, sección 1.10.1, pp. 60–61.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GDP2S2"
+    },
+    {
+     "t": "Abrir el PDF (pp. 60–61)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=60"
+    }
+   ]
+  },
+  {
+   "id": "proc-GDP2S3",
+   "tema": "Subproceso: Estrategia pedagógica",
+   "claves": [
+    "gdp2s3",
+    "subproceso estrategia pedagógica",
+    "evidencia de estrategia pedagógica",
+    "evidencia del estrategia pedagógica",
+    "evidencia de la estrategia pedagógica",
+    "referencia de estrategia pedagógica",
+    "referencia del estrategia pedagógica"
+   ],
+   "respuesta": "«Estrategia pedagógica» (GDP2S3) es un subproceso de «Gestión estratégica», de la Gestión Directiva. Evidencia directa: PEI 2024–2027, sección 2.2, p. 72.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GDP2S3"
+    },
+    {
+     "t": "Abrir el PDF (p. 72)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=72"
+    }
+   ]
+  },
+  {
+   "id": "proc-GDP2S4",
+   "tema": "Subproceso: Uso de información (interna y externa) para la toma de decisiones",
+   "claves": [
+    "gdp2s4",
+    "subproceso uso de información interna y externa para la toma de decisiones",
+    "evidencia de uso de información interna y externa para la toma de decisiones",
+    "evidencia del uso de información interna y externa para la toma de decisiones",
+    "evidencia de la uso de información interna y externa para la toma de decisiones",
+    "referencia de uso de información interna y externa para la toma de decisiones",
+    "referencia del uso de información interna y externa para la toma de decisiones"
+   ],
+   "respuesta": "«Uso de información (interna y externa) para la toma de decisiones» (GDP2S4) es un subproceso de «Gestión estratégica», de la Gestión Directiva. Evidencia relacionada: PEI 2024–2027, sección 1.10.1, pp. 60–61.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GDP2S4"
+    },
+    {
+     "t": "Abrir el PDF (pp. 60–61)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=60"
+    }
+   ]
+  },
+  {
+   "id": "proc-GDP2S5",
+   "tema": "Subproceso: Seguimiento y autoevaluación",
+   "claves": [
+    "gdp2s5",
+    "subproceso seguimiento y autoevaluación",
+    "evidencia de seguimiento y autoevaluación",
+    "evidencia del seguimiento y autoevaluación",
+    "evidencia de la seguimiento y autoevaluación",
+    "referencia de seguimiento y autoevaluación",
+    "referencia del seguimiento y autoevaluación"
+   ],
+   "respuesta": "«Seguimiento y autoevaluación» (GDP2S5) es un subproceso de «Gestión estratégica», de la Gestión Directiva. Evidencia relacionada: PEI 2024–2027, sección 1.10.1, pp. 60–61.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GDP2S5"
+    },
+    {
+     "t": "Abrir el PDF (pp. 60–61)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=60"
+    }
+   ]
+  },
+  {
+   "id": "proc-GDP2S6",
+   "tema": "Subproceso: Plan de mejoramiento",
+   "claves": [
+    "gdp2s6",
+    "subproceso plan de mejoramiento",
+    "evidencia de plan de mejoramiento",
+    "evidencia del plan de mejoramiento",
+    "evidencia de la plan de mejoramiento",
+    "referencia de plan de mejoramiento",
+    "referencia del plan de mejoramiento"
+   ],
+   "respuesta": "«Plan de mejoramiento» (GDP2S6) es un subproceso de «Gestión estratégica», de la Gestión Directiva. Evidencia relacionada: PEI 2024–2027, sección 1.10.1, pp. 60–61.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GDP2S6"
+    },
+    {
+     "t": "Abrir el PDF (pp. 60–61)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=60"
+    }
+   ]
+  },
+  {
+   "id": "proc-GDP3",
+   "tema": "Proceso: Gobierno escolar",
+   "claves": [
+    "proceso gobierno escolar",
+    "proceso de gobierno escolar",
+    "proceso del gobierno escolar",
+    "proceso de la gobierno escolar",
+    "subprocesos de gobierno escolar",
+    "subprocesos del gobierno escolar",
+    "subprocesos de la gobierno escolar",
+    "subprocesos tiene el gobierno escolar",
+    "subprocesos tiene la gobierno escolar",
+    "subprocesos tiene gobierno escolar",
+    "subprocesos hay en gobierno escolar",
+    "subprocesos hay en el gobierno escolar",
+    "subprocesos hay en la gobierno escolar",
+    "gdp3"
+   ],
+   "respuesta": "«Gobierno escolar» (GDP3) es el proceso P3 de la Gestión Directiva. Tiene 8 subprocesos: Consejo directivo; Consejo académico; Comisión de evaluación y promoción; Comité de convivencia; Consejo estudiantil; Personero estudiantil; Asamblea de padres de familia; Consejo de padres de familia.",
+   "enlaces": [
+    {
+     "t": "Ver el proceso y sus evidencias",
+     "u": "PROCESOS.html#GDP3"
+    }
+   ]
+  },
+  {
+   "id": "proc-GDP3S1",
+   "tema": "Subproceso: Consejo directivo",
+   "claves": [
+    "gdp3s1",
+    "subproceso consejo directivo",
+    "evidencia de consejo directivo",
+    "evidencia del consejo directivo",
+    "evidencia de la consejo directivo",
+    "referencia de consejo directivo",
+    "referencia del consejo directivo"
+   ],
+   "respuesta": "«Consejo directivo» (GDP3S1) es un subproceso de «Gobierno escolar», de la Gestión Directiva. Evidencia directa: PEI 2024–2027, sección 1.7.1, pp. 47–48.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GDP3S1"
+    },
+    {
+     "t": "Abrir el PDF (pp. 47–48)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=47"
+    }
+   ]
+  },
+  {
+   "id": "proc-GDP3S2",
+   "tema": "Subproceso: Consejo académico",
+   "claves": [
+    "gdp3s2",
+    "subproceso consejo académico",
+    "evidencia de consejo académico",
+    "evidencia del consejo académico",
+    "evidencia de la consejo académico",
+    "referencia de consejo académico",
+    "referencia del consejo académico"
+   ],
+   "respuesta": "«Consejo académico» (GDP3S2) es un subproceso de «Gobierno escolar», de la Gestión Directiva. Evidencia directa: PEI 2024–2027, sección 1.7.2, p. 48.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GDP3S2"
+    },
+    {
+     "t": "Abrir el PDF (p. 48)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=48"
+    }
+   ]
+  },
+  {
+   "id": "proc-GDP3S3",
+   "tema": "Subproceso: Comisión de evaluación y promoción",
+   "claves": [
+    "gdp3s3",
+    "subproceso comisión de evaluación y promoción",
+    "evidencia de comisión de evaluación y promoción",
+    "evidencia del comisión de evaluación y promoción",
+    "evidencia de la comisión de evaluación y promoción",
+    "referencia de comisión de evaluación y promoción",
+    "referencia del comisión de evaluación y promoción"
+   ],
+   "respuesta": "«Comisión de evaluación y promoción» (GDP3S3) es un subproceso de «Gobierno escolar», de la Gestión Directiva. Evidencia directa: PEI 2024–2027, sección 1.7.3, p. 48.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GDP3S3"
+    },
+    {
+     "t": "Abrir el PDF (p. 48)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=48"
+    }
+   ]
+  },
+  {
+   "id": "proc-GDP3S4",
+   "tema": "Subproceso: Comité de convivencia",
+   "claves": [
+    "gdp3s4",
+    "subproceso comité de convivencia",
+    "evidencia de comité de convivencia",
+    "evidencia del comité de convivencia",
+    "evidencia de la comité de convivencia",
+    "referencia de comité de convivencia",
+    "referencia del comité de convivencia"
+   ],
+   "respuesta": "«Comité de convivencia» (GDP3S4) es un subproceso de «Gobierno escolar», de la Gestión Directiva. Evidencia directa: PEI 2024–2027, sección 4.3.2, p. 114.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GDP3S4"
+    },
+    {
+     "t": "Abrir el PDF (p. 114)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=114"
+    }
+   ]
+  },
+  {
+   "id": "proc-GDP3S5",
+   "tema": "Subproceso: Consejo estudiantil",
+   "claves": [
+    "gdp3s5",
+    "subproceso consejo estudiantil",
+    "evidencia de consejo estudiantil",
+    "evidencia del consejo estudiantil",
+    "evidencia de la consejo estudiantil",
+    "referencia de consejo estudiantil",
+    "referencia del consejo estudiantil"
+   ],
+   "respuesta": "«Consejo estudiantil» (GDP3S5) es un subproceso de «Gobierno escolar», de la Gestión Directiva. Evidencia directa: PEI 2024–2027, sección 1.7.5, p. 50.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GDP3S5"
+    },
+    {
+     "t": "Abrir el PDF (p. 50)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=50"
+    }
+   ]
+  },
+  {
+   "id": "proc-GDP3S6",
+   "tema": "Subproceso: Personero estudiantil",
+   "claves": [
+    "gdp3s6",
+    "subproceso personero estudiantil",
+    "evidencia de personero estudiantil",
+    "evidencia del personero estudiantil",
+    "evidencia de la personero estudiantil",
+    "referencia de personero estudiantil",
+    "referencia del personero estudiantil"
+   ],
+   "respuesta": "«Personero estudiantil» (GDP3S6) es un subproceso de «Gobierno escolar», de la Gestión Directiva. Evidencia directa: PEI 2024–2027, sección 1.7.4, p. 49.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GDP3S6"
+    },
+    {
+     "t": "Abrir el PDF (p. 49)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=49"
+    }
+   ]
+  },
+  {
+   "id": "proc-GDP3S7",
+   "tema": "Subproceso: Asamblea de padres de familia",
+   "claves": [
+    "gdp3s7",
+    "subproceso asamblea de padres de familia",
+    "evidencia de asamblea de padres de familia",
+    "evidencia del asamblea de padres de familia",
+    "evidencia de la asamblea de padres de familia",
+    "referencia de asamblea de padres de familia",
+    "referencia del asamblea de padres de familia"
+   ],
+   "respuesta": "«Asamblea de padres de familia» (GDP3S7) es un subproceso de «Gobierno escolar», de la Gestión Directiva. Evidencia directa: PEI 2024–2027, sección 4.3.1, pp. 113–114.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GDP3S7"
+    },
+    {
+     "t": "Abrir el PDF (pp. 113–114)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=113"
+    }
+   ]
+  },
+  {
+   "id": "proc-GDP3S8",
+   "tema": "Subproceso: Consejo de padres de familia",
+   "claves": [
+    "gdp3s8",
+    "subproceso consejo de padres de familia",
+    "evidencia de consejo de padres de familia",
+    "evidencia del consejo de padres de familia",
+    "evidencia de la consejo de padres de familia",
+    "referencia de consejo de padres de familia",
+    "referencia del consejo de padres de familia"
+   ],
+   "respuesta": "«Consejo de padres de familia» (GDP3S8) es un subproceso de «Gobierno escolar», de la Gestión Directiva. Evidencia directa: PEI 2024–2027, sección 1.7.6, pp. 50–51.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GDP3S8"
+    },
+    {
+     "t": "Abrir el PDF (pp. 50–51)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=50"
+    }
+   ]
+  },
+  {
+   "id": "proc-GDP4",
+   "tema": "Proceso: Cultura institucional",
+   "claves": [
+    "proceso cultura institucional",
+    "proceso de cultura institucional",
+    "proceso del cultura institucional",
+    "proceso de la cultura institucional",
+    "subprocesos de cultura institucional",
+    "subprocesos del cultura institucional",
+    "subprocesos de la cultura institucional",
+    "subprocesos tiene el cultura institucional",
+    "subprocesos tiene la cultura institucional",
+    "subprocesos tiene cultura institucional",
+    "subprocesos hay en cultura institucional",
+    "subprocesos hay en el cultura institucional",
+    "subprocesos hay en la cultura institucional",
+    "gdp4"
+   ],
+   "respuesta": "«Cultura institucional» (GDP4) es el proceso P4 de la Gestión Directiva. Tiene 4 subprocesos: Mecanismos de comunicación; Trabajo en equipo; Reconocimiento de logros; Identificación y divulgación de buenas prácticas.",
+   "enlaces": [
+    {
+     "t": "Ver el proceso y sus evidencias",
+     "u": "PROCESOS.html#GDP4"
+    }
+   ]
+  },
+  {
+   "id": "proc-GDP4S1",
+   "tema": "Subproceso: Mecanismos de comunicación",
+   "claves": [
+    "gdp4s1",
+    "subproceso mecanismos de comunicación",
+    "evidencia de mecanismos de comunicación",
+    "evidencia del mecanismos de comunicación",
+    "evidencia de la mecanismos de comunicación",
+    "referencia de mecanismos de comunicación",
+    "referencia del mecanismos de comunicación"
+   ],
+   "respuesta": "«Mecanismos de comunicación» (GDP4S1) es un subproceso de «Cultura institucional», de la Gestión Directiva. Evidencia directa: PEI 2024–2027, sección 1.8.1, p. 55.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GDP4S1"
+    },
+    {
+     "t": "Abrir el PDF (p. 55)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=55"
+    }
+   ]
+  },
+  {
+   "id": "proc-GDP4S2",
+   "tema": "Subproceso: Trabajo en equipo",
+   "claves": [
+    "gdp4s2",
+    "subproceso trabajo en equipo",
+    "evidencia de trabajo en equipo",
+    "evidencia del trabajo en equipo",
+    "evidencia de la trabajo en equipo",
+    "referencia de trabajo en equipo",
+    "referencia del trabajo en equipo"
+   ],
+   "respuesta": "«Trabajo en equipo» (GDP4S2) es un subproceso de «Cultura institucional», de la Gestión Directiva. Evidencia relacionada: PEI 2024–2027, sección 1.3.6, p. 29.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GDP4S2"
+    },
+    {
+     "t": "Abrir el PDF (p. 29)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=29"
+    }
+   ]
+  },
+  {
+   "id": "proc-GDP4S3",
+   "tema": "Subproceso: Reconocimiento de logros",
+   "claves": [
+    "gdp4s3",
+    "subproceso reconocimiento de logros",
+    "evidencia de reconocimiento de logros",
+    "evidencia del reconocimiento de logros",
+    "evidencia de la reconocimiento de logros",
+    "referencia de reconocimiento de logros",
+    "referencia del reconocimiento de logros"
+   ],
+   "respuesta": "«Reconocimiento de logros» (GDP4S3) es un subproceso de «Cultura institucional», de la Gestión Directiva. Evidencia relacionada: PEI 2024–2027, sección 1.3.5, p. 28.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GDP4S3"
+    },
+    {
+     "t": "Abrir el PDF (p. 28)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=28"
+    }
+   ]
+  },
+  {
+   "id": "proc-GDP4S4",
+   "tema": "Subproceso: Identificación y divulgación de buenas prácticas",
+   "claves": [
+    "gdp4s4",
+    "subproceso identificación y divulgación de buenas prácticas",
+    "evidencia de identificación y divulgación de buenas prácticas",
+    "evidencia del identificación y divulgación de buenas prácticas",
+    "evidencia de la identificación y divulgación de buenas prácticas",
+    "referencia de identificación y divulgación de buenas prácticas",
+    "referencia del identificación y divulgación de buenas prácticas"
+   ],
+   "respuesta": "«Identificación y divulgación de buenas prácticas» (GDP4S4) es un subproceso de «Cultura institucional», de la Gestión Directiva. Por documentar (lo más cercano): PEI 2024–2027, sección 1.8.2, pp. 57–58.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GDP4S4"
+    },
+    {
+     "t": "Abrir el PDF (pp. 57–58)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=57"
+    }
+   ]
+  },
+  {
+   "id": "proc-GDP5",
+   "tema": "Proceso: Clima escolar",
+   "claves": [
+    "proceso clima escolar",
+    "proceso de clima escolar",
+    "proceso del clima escolar",
+    "proceso de la clima escolar",
+    "subprocesos de clima escolar",
+    "subprocesos del clima escolar",
+    "subprocesos de la clima escolar",
+    "subprocesos tiene el clima escolar",
+    "subprocesos tiene la clima escolar",
+    "subprocesos tiene clima escolar",
+    "subprocesos hay en clima escolar",
+    "subprocesos hay en el clima escolar",
+    "subprocesos hay en la clima escolar",
+    "gdp5"
+   ],
+   "respuesta": "«Clima escolar» (GDP5) es el proceso P5 de la Gestión Directiva. Tiene 9 subprocesos: Pertenencia y participación; Ambiente físico; Inducción a los nuevos alumnos; Motivación hacia el aprendizaje; Manual de convivencia; Actividades extracurriculares; Bienestar del alumno; Manejo de conflictos; Manejo de casos difíciles.",
+   "enlaces": [
+    {
+     "t": "Ver el proceso y sus evidencias",
+     "u": "PROCESOS.html#GDP5"
+    }
+   ]
+  },
+  {
+   "id": "proc-GDP5S1",
+   "tema": "Subproceso: Pertenencia y participación",
+   "claves": [
+    "gdp5s1",
+    "subproceso pertenencia y participación",
+    "evidencia de pertenencia y participación",
+    "evidencia del pertenencia y participación",
+    "evidencia de la pertenencia y participación",
+    "referencia de pertenencia y participación",
+    "referencia del pertenencia y participación"
+   ],
+   "respuesta": "«Pertenencia y participación» (GDP5S1) es un subproceso de «Clima escolar», de la Gestión Directiva. Evidencia relacionada: PEI 2024–2027, sección 1.3.6, p. 29.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GDP5S1"
+    },
+    {
+     "t": "Abrir el PDF (p. 29)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=29"
+    }
+   ]
+  },
+  {
+   "id": "proc-GDP5S2",
+   "tema": "Subproceso: Ambiente físico",
+   "claves": [
+    "gdp5s2",
+    "subproceso ambiente físico",
+    "evidencia de ambiente físico",
+    "evidencia del ambiente físico",
+    "evidencia de la ambiente físico",
+    "referencia de ambiente físico",
+    "referencia del ambiente físico"
+   ],
+   "respuesta": "«Ambiente físico» (GDP5S2) es un subproceso de «Clima escolar», de la Gestión Directiva. Evidencia relacionada: PEI 2024–2027, sección 4.6, p. 121.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GDP5S2"
+    },
+    {
+     "t": "Abrir el PDF (p. 121)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=121"
+    }
+   ]
+  },
+  {
+   "id": "proc-GDP5S3",
+   "tema": "Subproceso: Inducción a los nuevos alumnos",
+   "claves": [
+    "gdp5s3",
+    "subproceso inducción a los nuevos alumnos",
+    "evidencia de inducción a los nuevos alumnos",
+    "evidencia del inducción a los nuevos alumnos",
+    "evidencia de la inducción a los nuevos alumnos",
+    "referencia de inducción a los nuevos alumnos",
+    "referencia del inducción a los nuevos alumnos"
+   ],
+   "respuesta": "«Inducción a los nuevos alumnos» (GDP5S3) es un subproceso de «Clima escolar», de la Gestión Directiva. Por documentar (lo más cercano): PEI 2024–2027, sección 3.1.1, p. 101.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GDP5S3"
+    },
+    {
+     "t": "Abrir el PDF (p. 101)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=101"
+    }
+   ]
+  },
+  {
+   "id": "proc-GDP5S4",
+   "tema": "Subproceso: Motivación hacia el aprendizaje",
+   "claves": [
+    "gdp5s4",
+    "subproceso motivación hacia el aprendizaje",
+    "evidencia de motivación hacia el aprendizaje",
+    "evidencia del motivación hacia el aprendizaje",
+    "evidencia de la motivación hacia el aprendizaje",
+    "referencia de motivación hacia el aprendizaje",
+    "referencia del motivación hacia el aprendizaje"
+   ],
+   "respuesta": "«Motivación hacia el aprendizaje» (GDP5S4) es un subproceso de «Clima escolar», de la Gestión Directiva. Evidencia relacionada: PEI 2024–2027, sección 2.5, p. 89.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GDP5S4"
+    },
+    {
+     "t": "Abrir el PDF (p. 89)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=89"
+    }
+   ]
+  },
+  {
+   "id": "proc-GDP5S5",
+   "tema": "Subproceso: Manual de convivencia",
+   "claves": [
+    "gdp5s5",
+    "subproceso manual de convivencia",
+    "evidencia de manual de convivencia",
+    "evidencia del manual de convivencia",
+    "evidencia de la manual de convivencia",
+    "referencia de manual de convivencia",
+    "referencia del manual de convivencia"
+   ],
+   "respuesta": "«Manual de convivencia» (GDP5S5) es un subproceso de «Clima escolar», de la Gestión Directiva. Evidencia directa: PEI 2024–2027, sección 4.3.3, p. 115.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GDP5S5"
+    },
+    {
+     "t": "Abrir el PDF (p. 115)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=115"
+    }
+   ]
+  },
+  {
+   "id": "proc-GDP5S6",
+   "tema": "Subproceso: Actividades extracurriculares",
+   "claves": [
+    "gdp5s6",
+    "subproceso actividades extracurriculares",
+    "evidencia de actividades extracurriculares",
+    "evidencia del actividades extracurriculares",
+    "evidencia de la actividades extracurriculares",
+    "referencia de actividades extracurriculares",
+    "referencia del actividades extracurriculares"
+   ],
+   "respuesta": "«Actividades extracurriculares» (GDP5S6) es un subproceso de «Clima escolar», de la Gestión Directiva. Evidencia directa: PEI 2024–2027, sección 2.5, p. 89.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GDP5S6"
+    },
+    {
+     "t": "Abrir el PDF (p. 89)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=89"
+    }
+   ]
+  },
+  {
+   "id": "proc-GDP5S7",
+   "tema": "Subproceso: Bienestar del alumno",
+   "claves": [
+    "gdp5s7",
+    "subproceso bienestar del alumno",
+    "evidencia de bienestar del alumno",
+    "evidencia del bienestar del alumno",
+    "evidencia de la bienestar del alumno",
+    "referencia de bienestar del alumno",
+    "referencia del bienestar del alumno"
+   ],
+   "respuesta": "«Bienestar del alumno» (GDP5S7) es un subproceso de «Clima escolar», de la Gestión Directiva. Evidencia relacionada: PEI 2024–2027, sección 1.6.1, p. 39.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GDP5S7"
+    },
+    {
+     "t": "Abrir el PDF (p. 39)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=39"
+    }
+   ]
+  },
+  {
+   "id": "proc-GDP5S8",
+   "tema": "Subproceso: Manejo de conflictos",
+   "claves": [
+    "gdp5s8",
+    "subproceso manejo de conflictos",
+    "evidencia de manejo de conflictos",
+    "evidencia del manejo de conflictos",
+    "evidencia de la manejo de conflictos",
+    "referencia de manejo de conflictos",
+    "referencia del manejo de conflictos"
+   ],
+   "respuesta": "«Manejo de conflictos» (GDP5S8) es un subproceso de «Clima escolar», de la Gestión Directiva. Evidencia directa: PEI 2024–2027, sección 4.3.3, p. 115.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GDP5S8"
+    },
+    {
+     "t": "Abrir el PDF (p. 115)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=115"
+    }
+   ]
+  },
+  {
+   "id": "proc-GDP5S9",
+   "tema": "Subproceso: Manejo de casos difíciles",
+   "claves": [
+    "gdp5s9",
+    "subproceso manejo de casos difíciles",
+    "evidencia de manejo de casos difíciles",
+    "evidencia del manejo de casos difíciles",
+    "evidencia de la manejo de casos difíciles",
+    "referencia de manejo de casos difíciles",
+    "referencia del manejo de casos difíciles"
+   ],
+   "respuesta": "«Manejo de casos difíciles» (GDP5S9) es un subproceso de «Clima escolar», de la Gestión Directiva. Por documentar (lo más cercano): PEI 2024–2027, sección 4.3.3, p. 115.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GDP5S9"
+    },
+    {
+     "t": "Abrir el PDF (p. 115)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=115"
+    }
+   ]
+  },
+  {
+   "id": "proc-GDP6",
+   "tema": "Proceso: Relaciones con el entorno",
+   "claves": [
+    "proceso relaciones con el entorno",
+    "proceso de relaciones con el entorno",
+    "proceso del relaciones con el entorno",
+    "proceso de la relaciones con el entorno",
+    "subprocesos de relaciones con el entorno",
+    "subprocesos del relaciones con el entorno",
+    "subprocesos de la relaciones con el entorno",
+    "subprocesos tiene el relaciones con el entorno",
+    "subprocesos tiene la relaciones con el entorno",
+    "subprocesos tiene relaciones con el entorno",
+    "subprocesos hay en relaciones con el entorno",
+    "subprocesos hay en el relaciones con el entorno",
+    "subprocesos hay en la relaciones con el entorno",
+    "gdp6"
+   ],
+   "respuesta": "«Relaciones con el entorno» (GDP6) es el proceso P6 de la Gestión Directiva. Tiene 4 subprocesos: Familias o acudientes; Autoridades educativas; Otras instituciones; Sector productivo.",
+   "enlaces": [
+    {
+     "t": "Ver el proceso y sus evidencias",
+     "u": "PROCESOS.html#GDP6"
+    }
+   ]
+  },
+  {
+   "id": "proc-GDP6S1",
+   "tema": "Subproceso: Familias o acudientes",
+   "claves": [
+    "gdp6s1",
+    "subproceso familias o acudientes",
+    "evidencia de familias o acudientes",
+    "evidencia del familias o acudientes",
+    "evidencia de la familias o acudientes",
+    "referencia de familias o acudientes",
+    "referencia del familias o acudientes"
+   ],
+   "respuesta": "«Familias o acudientes» (GDP6S1) es un subproceso de «Relaciones con el entorno», de la Gestión Directiva. Evidencia relacionada: PEI 2024–2027, sección 1.7.6, pp. 50–51.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GDP6S1"
+    },
+    {
+     "t": "Abrir el PDF (pp. 50–51)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=50"
+    }
+   ]
+  },
+  {
+   "id": "proc-GDP6S2",
+   "tema": "Subproceso: Autoridades educativas",
+   "claves": [
+    "gdp6s2",
+    "subproceso autoridades educativas",
+    "evidencia de autoridades educativas",
+    "evidencia del autoridades educativas",
+    "evidencia de la autoridades educativas",
+    "referencia de autoridades educativas",
+    "referencia del autoridades educativas"
+   ],
+   "respuesta": "«Autoridades educativas» (GDP6S2) es un subproceso de «Relaciones con el entorno», de la Gestión Directiva. Evidencia relacionada: PEI 2024–2027, sección 1.9, p. 58.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GDP6S2"
+    },
+    {
+     "t": "Abrir el PDF (p. 58)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=58"
+    }
+   ]
+  },
+  {
+   "id": "proc-GDP6S3",
+   "tema": "Subproceso: Otras instituciones",
+   "claves": [
+    "gdp6s3",
+    "subproceso otras instituciones",
+    "evidencia de otras instituciones",
+    "evidencia del otras instituciones",
+    "evidencia de la otras instituciones",
+    "referencia de otras instituciones",
+    "referencia del otras instituciones"
+   ],
+   "respuesta": "«Otras instituciones» (GDP6S3) es un subproceso de «Relaciones con el entorno», de la Gestión Directiva. Evidencia directa: PEI 2024–2027, sección 1.9, p. 58.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GDP6S3"
+    },
+    {
+     "t": "Abrir el PDF (p. 58)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=58"
+    }
+   ]
+  },
+  {
+   "id": "proc-GDP6S4",
+   "tema": "Subproceso: Sector productivo",
+   "claves": [
+    "gdp6s4",
+    "subproceso sector productivo",
+    "evidencia de sector productivo",
+    "evidencia del sector productivo",
+    "evidencia de la sector productivo",
+    "referencia de sector productivo",
+    "referencia del sector productivo"
+   ],
+   "respuesta": "«Sector productivo» (GDP6S4) es un subproceso de «Relaciones con el entorno», de la Gestión Directiva. Evidencia directa: PEI 2024–2027, sección 1.9, p. 58.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GDP6S4"
+    },
+    {
+     "t": "Abrir el PDF (p. 58)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=58"
+    }
+   ]
+  },
+  {
+   "id": "proc-GA",
+   "tema": "Gestión Académica (mapa de procesos)",
+   "claves": [
+    "gestión académica",
+    "procesos de la gestión académica",
+    "subprocesos de la gestión académica",
+    "que procesos tiene la gestión académica"
+   ],
+   "respuesta": "Gestión Académica: Hace posible el aprendizaje: currículo, prácticas de aula, evaluación y seguimiento. Tiene 4 procesos: P1 Diseño pedagógico (curricular); P2 Prácticas pedagógicas; P3 Gestión de aula; P4 Seguimiento académico.",
+   "enlaces": [
+    {
+     "t": "Ver Gestión Académica",
+     "u": "PROCESOS.html#GA"
+    }
+   ]
+  },
+  {
+   "id": "proc-GAP1",
+   "tema": "Proceso: Diseño pedagógico (curricular)",
+   "claves": [
+    "proceso diseño pedagógico curricular",
+    "proceso de diseño pedagógico curricular",
+    "proceso del diseño pedagógico curricular",
+    "proceso de la diseño pedagógico curricular",
+    "subprocesos de diseño pedagógico curricular",
+    "subprocesos del diseño pedagógico curricular",
+    "subprocesos de la diseño pedagógico curricular",
+    "subprocesos tiene el diseño pedagógico curricular",
+    "subprocesos tiene la diseño pedagógico curricular",
+    "subprocesos tiene diseño pedagógico curricular",
+    "subprocesos hay en diseño pedagógico curricular",
+    "subprocesos hay en el diseño pedagógico curricular",
+    "subprocesos hay en la diseño pedagógico curricular",
+    "gap1"
+   ],
+   "respuesta": "«Diseño pedagógico (curricular)» (GAP1) es el proceso P1 de la Gestión Académica. Tiene 5 subprocesos: Plan de estudios; Enfoque metodológico; Recursos para el aprendizaje; Jornada escolar; Evaluación.",
+   "enlaces": [
+    {
+     "t": "Ver el proceso y sus evidencias",
+     "u": "PROCESOS.html#GAP1"
+    }
+   ]
+  },
+  {
+   "id": "proc-GAP1S1",
+   "tema": "Subproceso: Plan de estudios",
+   "claves": [
+    "gap1s1",
+    "subproceso plan de estudios",
+    "evidencia de plan de estudios",
+    "evidencia del plan de estudios",
+    "evidencia de la plan de estudios",
+    "referencia de plan de estudios",
+    "referencia del plan de estudios"
+   ],
+   "respuesta": "«Plan de estudios» (GAP1S1) es un subproceso de «Diseño pedagógico (curricular)», de la Gestión Académica. Evidencia directa: PEI 2024–2027, sección 2.3, pp. 78–79.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GAP1S1"
+    },
+    {
+     "t": "Abrir el PDF (pp. 78–79)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=78"
+    }
+   ]
+  },
+  {
+   "id": "proc-GAP1S2",
+   "tema": "Subproceso: Enfoque metodológico",
+   "claves": [
+    "gap1s2",
+    "subproceso enfoque metodológico",
+    "evidencia de enfoque metodológico",
+    "evidencia del enfoque metodológico",
+    "evidencia de la enfoque metodológico",
+    "referencia de enfoque metodológico",
+    "referencia del enfoque metodológico"
+   ],
+   "respuesta": "«Enfoque metodológico» (GAP1S2) es un subproceso de «Diseño pedagógico (curricular)», de la Gestión Académica. Evidencia directa: PEI 2024–2027, sección 2.2, p. 72.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GAP1S2"
+    },
+    {
+     "t": "Abrir el PDF (p. 72)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=72"
+    }
+   ]
+  },
+  {
+   "id": "proc-GAP1S3",
+   "tema": "Subproceso: Recursos para el aprendizaje",
+   "claves": [
+    "gap1s3",
+    "subproceso recursos para el aprendizaje",
+    "evidencia de recursos para el aprendizaje",
+    "evidencia del recursos para el aprendizaje",
+    "evidencia de la recursos para el aprendizaje",
+    "referencia de recursos para el aprendizaje",
+    "referencia del recursos para el aprendizaje"
+   ],
+   "respuesta": "«Recursos para el aprendizaje» (GAP1S3) es un subproceso de «Diseño pedagógico (curricular)», de la Gestión Académica. Evidencia directa: PEI 2024–2027, sección 2.5, p. 89.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GAP1S3"
+    },
+    {
+     "t": "Abrir el PDF (p. 89)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=89"
+    }
+   ]
+  },
+  {
+   "id": "proc-GAP1S4",
+   "tema": "Subproceso: Jornada escolar",
+   "claves": [
+    "gap1s4",
+    "subproceso jornada escolar",
+    "evidencia de jornada escolar",
+    "evidencia del jornada escolar",
+    "evidencia de la jornada escolar",
+    "referencia de jornada escolar",
+    "referencia del jornada escolar"
+   ],
+   "respuesta": "«Jornada escolar» (GAP1S4) es un subproceso de «Diseño pedagógico (curricular)», de la Gestión Académica. Evidencia relacionada: PEI 2024–2027, sección 2.4, p. 83.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GAP1S4"
+    },
+    {
+     "t": "Abrir el PDF (p. 83)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=83"
+    }
+   ]
+  },
+  {
+   "id": "proc-GAP1S5",
+   "tema": "Subproceso: Evaluación",
+   "claves": [
+    "gap1s5",
+    "subproceso evaluación",
+    "evidencia de evaluación",
+    "evidencia del evaluación",
+    "evidencia de la evaluación",
+    "referencia de evaluación",
+    "referencia del evaluación"
+   ],
+   "respuesta": "«Evaluación» (GAP1S5) es un subproceso de «Diseño pedagógico (curricular)», de la Gestión Académica. Evidencia directa: PEI 2024–2027, sección 2.6, pp. 93–94.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GAP1S5"
+    },
+    {
+     "t": "Abrir el PDF (pp. 93–94)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=93"
+    }
+   ]
+  },
+  {
+   "id": "proc-GAP2",
+   "tema": "Proceso: Prácticas pedagógicas",
+   "claves": [
+    "proceso prácticas pedagógicas",
+    "proceso de prácticas pedagógicas",
+    "proceso del prácticas pedagógicas",
+    "proceso de la prácticas pedagógicas",
+    "subprocesos de prácticas pedagógicas",
+    "subprocesos del prácticas pedagógicas",
+    "subprocesos de la prácticas pedagógicas",
+    "subprocesos tiene el prácticas pedagógicas",
+    "subprocesos tiene la prácticas pedagógicas",
+    "subprocesos tiene prácticas pedagógicas",
+    "subprocesos hay en prácticas pedagógicas",
+    "subprocesos hay en el prácticas pedagógicas",
+    "subprocesos hay en la prácticas pedagógicas",
+    "gap2"
+   ],
+   "respuesta": "«Prácticas pedagógicas» (GAP2) es el proceso P2 de la Gestión Académica. Tiene 4 subprocesos: Opciones didácticas para las áreas asignaturas y proyectos transversales; Estrategias para las tareas escolares; Uso articulado de los recursos para el aprendizaje; Uso de los tiempos para el aprendizaje.",
+   "enlaces": [
+    {
+     "t": "Ver el proceso y sus evidencias",
+     "u": "PROCESOS.html#GAP2"
+    }
+   ]
+  },
+  {
+   "id": "proc-GAP2S1",
+   "tema": "Subproceso: Opciones didácticas para las áreas asignaturas y proyectos transversales",
+   "claves": [
+    "gap2s1",
+    "subproceso opciones didácticas para las áreas asignaturas y proyectos transversales",
+    "evidencia de opciones didácticas para las áreas asignaturas y proyectos transversales",
+    "evidencia del opciones didácticas para las áreas asignaturas y proyectos transversales",
+    "evidencia de la opciones didácticas para las áreas asignaturas y proyectos transversales",
+    "referencia de opciones didácticas para las áreas asignaturas y proyectos transversales",
+    "referencia del opciones didácticas para las áreas asignaturas y proyectos transversales"
+   ],
+   "respuesta": "«Opciones didácticas para las áreas asignaturas y proyectos transversales» (GAP2S1) es un subproceso de «Prácticas pedagógicas», de la Gestión Académica. Evidencia directa: PEI 2024–2027, sección 2.2, p. 72.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GAP2S1"
+    },
+    {
+     "t": "Abrir el PDF (p. 72)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=72"
+    }
+   ]
+  },
+  {
+   "id": "proc-GAP2S2",
+   "tema": "Subproceso: Estrategias para las tareas escolares",
+   "claves": [
+    "gap2s2",
+    "subproceso estrategias para las tareas escolares",
+    "evidencia de estrategias para las tareas escolares",
+    "evidencia del estrategias para las tareas escolares",
+    "evidencia de la estrategias para las tareas escolares",
+    "referencia de estrategias para las tareas escolares",
+    "referencia del estrategias para las tareas escolares"
+   ],
+   "respuesta": "«Estrategias para las tareas escolares» (GAP2S2) es un subproceso de «Prácticas pedagógicas», de la Gestión Académica. Evidencia relacionada: PEI 2024–2027, sección 2.4, p. 83.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GAP2S2"
+    },
+    {
+     "t": "Abrir el PDF (p. 83)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=83"
+    }
+   ]
+  },
+  {
+   "id": "proc-GAP2S3",
+   "tema": "Subproceso: Uso articulado de los recursos para el aprendizaje",
+   "claves": [
+    "gap2s3",
+    "subproceso uso articulado de los recursos para el aprendizaje",
+    "evidencia de uso articulado de los recursos para el aprendizaje",
+    "evidencia del uso articulado de los recursos para el aprendizaje",
+    "evidencia de la uso articulado de los recursos para el aprendizaje",
+    "referencia de uso articulado de los recursos para el aprendizaje",
+    "referencia del uso articulado de los recursos para el aprendizaje"
+   ],
+   "respuesta": "«Uso articulado de los recursos para el aprendizaje» (GAP2S3) es un subproceso de «Prácticas pedagógicas», de la Gestión Académica. Evidencia relacionada: PEI 2024–2027, sección 2.5, p. 89.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GAP2S3"
+    },
+    {
+     "t": "Abrir el PDF (p. 89)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=89"
+    }
+   ]
+  },
+  {
+   "id": "proc-GAP2S4",
+   "tema": "Subproceso: Uso de los tiempos para el aprendizaje",
+   "claves": [
+    "gap2s4",
+    "subproceso uso de los tiempos para el aprendizaje",
+    "evidencia de uso de los tiempos para el aprendizaje",
+    "evidencia del uso de los tiempos para el aprendizaje",
+    "evidencia de la uso de los tiempos para el aprendizaje",
+    "referencia de uso de los tiempos para el aprendizaje",
+    "referencia del uso de los tiempos para el aprendizaje"
+   ],
+   "respuesta": "«Uso de los tiempos para el aprendizaje» (GAP2S4) es un subproceso de «Prácticas pedagógicas», de la Gestión Académica. Evidencia relacionada: PEI 2024–2027, sección 2.4, p. 83.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GAP2S4"
+    },
+    {
+     "t": "Abrir el PDF (p. 83)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=83"
+    }
+   ]
+  },
+  {
+   "id": "proc-GAP3",
+   "tema": "Proceso: Gestión de aula",
+   "claves": [
+    "proceso gestión de aula",
+    "proceso de gestión de aula",
+    "proceso del gestión de aula",
+    "proceso de la gestión de aula",
+    "subprocesos de gestión de aula",
+    "subprocesos del gestión de aula",
+    "subprocesos de la gestión de aula",
+    "subprocesos tiene el gestión de aula",
+    "subprocesos tiene la gestión de aula",
+    "subprocesos tiene gestión de aula",
+    "subprocesos hay en gestión de aula",
+    "subprocesos hay en el gestión de aula",
+    "subprocesos hay en la gestión de aula",
+    "gap3"
+   ],
+   "respuesta": "«Gestión de aula» (GAP3) es el proceso P3 de la Gestión Académica. Tiene 4 subprocesos: Ambiente de aprendizaje; Uso del tiempo; Interacción en el aula; Manejo de la disciplina.",
+   "enlaces": [
+    {
+     "t": "Ver el proceso y sus evidencias",
+     "u": "PROCESOS.html#GAP3"
+    }
+   ]
+  },
+  {
+   "id": "proc-GAP3S1",
+   "tema": "Subproceso: Ambiente de aprendizaje",
+   "claves": [
+    "gap3s1",
+    "subproceso ambiente de aprendizaje",
+    "evidencia de ambiente de aprendizaje",
+    "evidencia del ambiente de aprendizaje",
+    "evidencia de la ambiente de aprendizaje",
+    "referencia de ambiente de aprendizaje",
+    "referencia del ambiente de aprendizaje"
+   ],
+   "respuesta": "«Ambiente de aprendizaje» (GAP3S1) es un subproceso de «Gestión de aula», de la Gestión Académica. Evidencia relacionada: PEI 2024–2027, sección 2.2, p. 72.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GAP3S1"
+    },
+    {
+     "t": "Abrir el PDF (p. 72)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=72"
+    }
+   ]
+  },
+  {
+   "id": "proc-GAP3S2",
+   "tema": "Subproceso: Uso del tiempo",
+   "claves": [
+    "gap3s2",
+    "subproceso uso del tiempo",
+    "evidencia de uso del tiempo",
+    "evidencia del uso del tiempo",
+    "evidencia de la uso del tiempo",
+    "referencia de uso del tiempo",
+    "referencia del uso del tiempo"
+   ],
+   "respuesta": "«Uso del tiempo» (GAP3S2) es un subproceso de «Gestión de aula», de la Gestión Académica. Evidencia relacionada: PEI 2024–2027, sección 2.4, p. 83.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GAP3S2"
+    },
+    {
+     "t": "Abrir el PDF (p. 83)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=83"
+    }
+   ]
+  },
+  {
+   "id": "proc-GAP3S3",
+   "tema": "Subproceso: Interacción en el aula",
+   "claves": [
+    "gap3s3",
+    "subproceso interacción en el aula",
+    "evidencia de interacción en el aula",
+    "evidencia del interacción en el aula",
+    "evidencia de la interacción en el aula",
+    "referencia de interacción en el aula",
+    "referencia del interacción en el aula"
+   ],
+   "respuesta": "«Interacción en el aula» (GAP3S3) es un subproceso de «Gestión de aula», de la Gestión Académica. Evidencia relacionada: PEI 2024–2027, sección 2.2, p. 72.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GAP3S3"
+    },
+    {
+     "t": "Abrir el PDF (p. 72)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=72"
+    }
+   ]
+  },
+  {
+   "id": "proc-GAP3S4",
+   "tema": "Subproceso: Manejo de la disciplina",
+   "claves": [
+    "gap3s4",
+    "subproceso manejo de la disciplina",
+    "evidencia de manejo de la disciplina",
+    "evidencia del manejo de la disciplina",
+    "evidencia de la manejo de la disciplina",
+    "referencia de manejo de la disciplina",
+    "referencia del manejo de la disciplina"
+   ],
+   "respuesta": "«Manejo de la disciplina» (GAP3S4) es un subproceso de «Gestión de aula», de la Gestión Académica. Evidencia relacionada: PEI 2024–2027, sección 4.3.3, p. 115.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GAP3S4"
+    },
+    {
+     "t": "Abrir el PDF (p. 115)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=115"
+    }
+   ]
+  },
+  {
+   "id": "proc-GAP4",
+   "tema": "Proceso: Seguimiento académico",
+   "claves": [
+    "proceso seguimiento académico",
+    "proceso de seguimiento académico",
+    "proceso del seguimiento académico",
+    "proceso de la seguimiento académico",
+    "subprocesos de seguimiento académico",
+    "subprocesos del seguimiento académico",
+    "subprocesos de la seguimiento académico",
+    "subprocesos tiene el seguimiento académico",
+    "subprocesos tiene la seguimiento académico",
+    "subprocesos tiene seguimiento académico",
+    "subprocesos hay en seguimiento académico",
+    "subprocesos hay en el seguimiento académico",
+    "subprocesos hay en la seguimiento académico",
+    "gap4"
+   ],
+   "respuesta": "«Seguimiento académico» (GAP4) es el proceso P4 de la Gestión Académica. Tiene 4 subprocesos: Seguimiento al aprendizaje; Sistema de evaluación; Informes a padres de familia; Acciones correctivas.",
+   "enlaces": [
+    {
+     "t": "Ver el proceso y sus evidencias",
+     "u": "PROCESOS.html#GAP4"
+    }
+   ]
+  },
+  {
+   "id": "proc-GAP4S1",
+   "tema": "Subproceso: Seguimiento al aprendizaje",
+   "claves": [
+    "gap4s1",
+    "subproceso seguimiento al aprendizaje",
+    "evidencia de seguimiento al aprendizaje",
+    "evidencia del seguimiento al aprendizaje",
+    "evidencia de la seguimiento al aprendizaje",
+    "referencia de seguimiento al aprendizaje",
+    "referencia del seguimiento al aprendizaje"
+   ],
+   "respuesta": "«Seguimiento al aprendizaje» (GAP4S1) es un subproceso de «Seguimiento académico», de la Gestión Académica. Evidencia directa: PEI 2024–2027, sección 2.6, pp. 93–94.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GAP4S1"
+    },
+    {
+     "t": "Abrir el PDF (pp. 93–94)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=93"
+    }
+   ]
+  },
+  {
+   "id": "proc-GAP4S2",
+   "tema": "Subproceso: Sistema de evaluación",
+   "claves": [
+    "gap4s2",
+    "subproceso sistema de evaluación",
+    "evidencia de sistema de evaluación",
+    "evidencia del sistema de evaluación",
+    "evidencia de la sistema de evaluación",
+    "referencia de sistema de evaluación",
+    "referencia del sistema de evaluación"
+   ],
+   "respuesta": "«Sistema de evaluación» (GAP4S2) es un subproceso de «Seguimiento académico», de la Gestión Académica. Evidencia directa: PEI 2024–2027, sección 2.6.1, p. 96.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GAP4S2"
+    },
+    {
+     "t": "Abrir el PDF (p. 96)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=96"
+    }
+   ]
+  },
+  {
+   "id": "proc-GAP4S3",
+   "tema": "Subproceso: Informes a padres de familia",
+   "claves": [
+    "gap4s3",
+    "subproceso informes a padres de familia",
+    "evidencia de informes a padres de familia",
+    "evidencia del informes a padres de familia",
+    "evidencia de la informes a padres de familia",
+    "referencia de informes a padres de familia",
+    "referencia del informes a padres de familia"
+   ],
+   "respuesta": "«Informes a padres de familia» (GAP4S3) es un subproceso de «Seguimiento académico», de la Gestión Académica. Evidencia relacionada: PEI 2024–2027, sección 2.6, pp. 93–94.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GAP4S3"
+    },
+    {
+     "t": "Abrir el PDF (pp. 93–94)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=93"
+    }
+   ]
+  },
+  {
+   "id": "proc-GAP4S4",
+   "tema": "Subproceso: Acciones correctivas",
+   "claves": [
+    "gap4s4",
+    "subproceso acciones correctivas",
+    "evidencia de acciones correctivas",
+    "evidencia del acciones correctivas",
+    "evidencia de la acciones correctivas",
+    "referencia de acciones correctivas",
+    "referencia del acciones correctivas"
+   ],
+   "respuesta": "«Acciones correctivas» (GAP4S4) es un subproceso de «Seguimiento académico», de la Gestión Académica. Evidencia relacionada: PEI 2024–2027, sección 2.6, pp. 93–94.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GAP4S4"
+    },
+    {
+     "t": "Abrir el PDF (pp. 93–94)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=93"
+    }
+   ]
+  },
+  {
+   "id": "proc-GF",
+   "tema": "Gestión Administrativa y Financiera (mapa de procesos)",
+   "claves": [
+    "gestión administrativa y financiera",
+    "procesos de la gestión administrativa y financiera",
+    "subprocesos de la gestión administrativa y financiera",
+    "que procesos tiene la gestión administrativa y financiera"
+   ],
+   "respuesta": "Gestión Administrativa y Financiera: Sostiene la vida del colegio: matrícula, planta física, servicios, talento humano y presupuesto. Tiene 5 procesos: P1 Apoyo a la gestión académica; P2 Administración de la planta física y los recursos; P3 Administración de servicios complementarios; P4 Talento humano; P5 Apoyo financiero y contable.",
+   "enlaces": [
+    {
+     "t": "Ver Gestión Administrativa y Financiera",
+     "u": "PROCESOS.html#GF"
+    }
+   ]
+  },
+  {
+   "id": "proc-GFP1",
+   "tema": "Proceso: Apoyo a la gestión académica",
+   "claves": [
+    "proceso apoyo a la gestión académica",
+    "proceso de apoyo a la gestión académica",
+    "proceso del apoyo a la gestión académica",
+    "proceso de la apoyo a la gestión académica",
+    "subprocesos de apoyo a la gestión académica",
+    "subprocesos del apoyo a la gestión académica",
+    "subprocesos de la apoyo a la gestión académica",
+    "subprocesos tiene el apoyo a la gestión académica",
+    "subprocesos tiene la apoyo a la gestión académica",
+    "subprocesos tiene apoyo a la gestión académica",
+    "subprocesos hay en apoyo a la gestión académica",
+    "subprocesos hay en el apoyo a la gestión académica",
+    "subprocesos hay en la apoyo a la gestión académica",
+    "gfp1"
+   ],
+   "respuesta": "«Apoyo a la gestión académica» (GFP1) es el proceso P1 de la Gestión Administrativa y Financiera. Tiene 4 subprocesos: Matrícula; Archivo académico; Administración de recursos académicos; Servicios complementarios.",
+   "enlaces": [
+    {
+     "t": "Ver el proceso y sus evidencias",
+     "u": "PROCESOS.html#GFP1"
+    }
+   ]
+  },
+  {
+   "id": "proc-GFP1S1",
+   "tema": "Subproceso: Matrícula",
+   "claves": [
+    "gfp1s1",
+    "subproceso matrícula",
+    "evidencia de matrícula",
+    "evidencia del matrícula",
+    "evidencia de la matrícula",
+    "referencia de matrícula",
+    "referencia del matrícula"
+   ],
+   "respuesta": "«Matrícula» (GFP1S1) es un subproceso de «Apoyo a la gestión académica», de la Gestión Administrativa y Financiera. Evidencia directa: PEI 2024–2027, sección 3.1.1, p. 101.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GFP1S1"
+    },
+    {
+     "t": "Abrir el PDF (p. 101)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=101"
+    }
+   ]
+  },
+  {
+   "id": "proc-GFP1S2",
+   "tema": "Subproceso: Archivo académico",
+   "claves": [
+    "gfp1s2",
+    "subproceso archivo académico",
+    "evidencia de archivo académico",
+    "evidencia del archivo académico",
+    "evidencia de la archivo académico",
+    "referencia de archivo académico",
+    "referencia del archivo académico"
+   ],
+   "respuesta": "«Archivo académico» (GFP1S2) es un subproceso de «Apoyo a la gestión académica», de la Gestión Administrativa y Financiera. Evidencia directa: PEI 2024–2027, sección 3.1.2, p. 103.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GFP1S2"
+    },
+    {
+     "t": "Abrir el PDF (p. 103)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=103"
+    }
+   ]
+  },
+  {
+   "id": "proc-GFP1S3",
+   "tema": "Subproceso: Administración de recursos académicos",
+   "claves": [
+    "gfp1s3",
+    "subproceso administración de recursos académicos",
+    "evidencia de administración de recursos académicos",
+    "evidencia del administración de recursos académicos",
+    "evidencia de la administración de recursos académicos",
+    "referencia de administración de recursos académicos",
+    "referencia del administración de recursos académicos"
+   ],
+   "respuesta": "«Administración de recursos académicos» (GFP1S3) es un subproceso de «Apoyo a la gestión académica», de la Gestión Administrativa y Financiera. Evidencia directa: PEI 2024–2027, sección 3.2, p. 104.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GFP1S3"
+    },
+    {
+     "t": "Abrir el PDF (p. 104)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=104"
+    }
+   ]
+  },
+  {
+   "id": "proc-GFP1S4",
+   "tema": "Subproceso: Servicios complementarios",
+   "claves": [
+    "gfp1s4",
+    "subproceso servicios complementarios",
+    "evidencia de servicios complementarios",
+    "evidencia del servicios complementarios",
+    "evidencia de la servicios complementarios",
+    "referencia de servicios complementarios",
+    "referencia del servicios complementarios"
+   ],
+   "respuesta": "«Servicios complementarios» (GFP1S4) es un subproceso de «Apoyo a la gestión académica», de la Gestión Administrativa y Financiera. Evidencia directa: PEI 2024–2027, sección 3.3.1, p. 105.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GFP1S4"
+    },
+    {
+     "t": "Abrir el PDF (p. 105)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=105"
+    }
+   ]
+  },
+  {
+   "id": "proc-GFP2",
+   "tema": "Proceso: Administración de la planta física y los recursos",
+   "claves": [
+    "proceso administración de la planta física y los recursos",
+    "proceso de administración de la planta física y los recursos",
+    "proceso del administración de la planta física y los recursos",
+    "proceso de la administración de la planta física y los recursos",
+    "subprocesos de administración de la planta física y los recursos",
+    "subprocesos del administración de la planta física y los recursos",
+    "subprocesos de la administración de la planta física y los recursos",
+    "subprocesos tiene el administración de la planta física y los recursos",
+    "subprocesos tiene la administración de la planta física y los recursos",
+    "subprocesos tiene administración de la planta física y los recursos",
+    "subprocesos hay en administración de la planta física y los recursos",
+    "subprocesos hay en el administración de la planta física y los recursos",
+    "subprocesos hay en la administración de la planta física y los recursos",
+    "gfp2"
+   ],
+   "respuesta": "«Administración de la planta física y los recursos» (GFP2) es el proceso P2 de la Gestión Administrativa y Financiera. Tiene 4 subprocesos: Mantenimiento de la infraestructura; Recursos tecnológicos; Distribución de recursos; Gestión de riesgos.",
+   "enlaces": [
+    {
+     "t": "Ver el proceso y sus evidencias",
+     "u": "PROCESOS.html#GFP2"
+    }
+   ]
+  },
+  {
+   "id": "proc-GFP2S1",
+   "tema": "Subproceso: Mantenimiento de la infraestructura",
+   "claves": [
+    "gfp2s1",
+    "subproceso mantenimiento de la infraestructura",
+    "evidencia de mantenimiento de la infraestructura",
+    "evidencia del mantenimiento de la infraestructura",
+    "evidencia de la mantenimiento de la infraestructura",
+    "referencia de mantenimiento de la infraestructura",
+    "referencia del mantenimiento de la infraestructura"
+   ],
+   "respuesta": "«Mantenimiento de la infraestructura» (GFP2S1) es un subproceso de «Administración de la planta física y los recursos», de la Gestión Administrativa y Financiera. Evidencia directa: PEI 2024–2027, sección 3.2, p. 104.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GFP2S1"
+    },
+    {
+     "t": "Abrir el PDF (p. 104)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=104"
+    }
+   ]
+  },
+  {
+   "id": "proc-GFP2S2",
+   "tema": "Subproceso: Recursos tecnológicos",
+   "claves": [
+    "gfp2s2",
+    "subproceso recursos tecnológicos",
+    "evidencia de recursos tecnológicos",
+    "evidencia del recursos tecnológicos",
+    "evidencia de la recursos tecnológicos",
+    "referencia de recursos tecnológicos",
+    "referencia del recursos tecnológicos"
+   ],
+   "respuesta": "«Recursos tecnológicos» (GFP2S2) es un subproceso de «Administración de la planta física y los recursos», de la Gestión Administrativa y Financiera. Evidencia directa: PEI 2024–2027, sección 3.2, p. 104.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GFP2S2"
+    },
+    {
+     "t": "Abrir el PDF (p. 104)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=104"
+    }
+   ]
+  },
+  {
+   "id": "proc-GFP2S3",
+   "tema": "Subproceso: Distribución de recursos",
+   "claves": [
+    "gfp2s3",
+    "subproceso distribución de recursos",
+    "evidencia de distribución de recursos",
+    "evidencia del distribución de recursos",
+    "evidencia de la distribución de recursos",
+    "referencia de distribución de recursos",
+    "referencia del distribución de recursos"
+   ],
+   "respuesta": "«Distribución de recursos» (GFP2S3) es un subproceso de «Administración de la planta física y los recursos», de la Gestión Administrativa y Financiera. Evidencia directa: PEI 2024–2027, sección 3.2, p. 104.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GFP2S3"
+    },
+    {
+     "t": "Abrir el PDF (p. 104)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=104"
+    }
+   ]
+  },
+  {
+   "id": "proc-GFP2S4",
+   "tema": "Subproceso: Gestión de riesgos",
+   "claves": [
+    "gfp2s4",
+    "subproceso gestión de riesgos",
+    "evidencia de gestión de riesgos",
+    "evidencia del gestión de riesgos",
+    "evidencia de la gestión de riesgos",
+    "referencia de gestión de riesgos",
+    "referencia del gestión de riesgos"
+   ],
+   "respuesta": "«Gestión de riesgos» (GFP2S4) es un subproceso de «Administración de la planta física y los recursos», de la Gestión Administrativa y Financiera. Evidencia directa: PEI 2024–2027, sección 3.2, p. 104.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GFP2S4"
+    },
+    {
+     "t": "Abrir el PDF (p. 104)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=104"
+    }
+   ]
+  },
+  {
+   "id": "proc-GFP3",
+   "tema": "Proceso: Administración de servicios complementarios",
+   "claves": [
+    "proceso administración de servicios complementarios",
+    "proceso de administración de servicios complementarios",
+    "proceso del administración de servicios complementarios",
+    "proceso de la administración de servicios complementarios",
+    "subprocesos de administración de servicios complementarios",
+    "subprocesos del administración de servicios complementarios",
+    "subprocesos de la administración de servicios complementarios",
+    "subprocesos tiene el administración de servicios complementarios",
+    "subprocesos tiene la administración de servicios complementarios",
+    "subprocesos tiene administración de servicios complementarios",
+    "subprocesos hay en administración de servicios complementarios",
+    "subprocesos hay en el administración de servicios complementarios",
+    "subprocesos hay en la administración de servicios complementarios",
+    "gfp3"
+   ],
+   "respuesta": "«Administración de servicios complementarios» (GFP3) es el proceso P3 de la Gestión Administrativa y Financiera. Tiene 4 subprocesos: Servicio de transporte; Servicio de alimentación; Programas de bienestar; Programas de asistencia social.",
+   "enlaces": [
+    {
+     "t": "Ver el proceso y sus evidencias",
+     "u": "PROCESOS.html#GFP3"
+    }
+   ]
+  },
+  {
+   "id": "proc-GFP3S1",
+   "tema": "Subproceso: Servicio de transporte",
+   "claves": [
+    "gfp3s1",
+    "subproceso servicio de transporte",
+    "evidencia de servicio de transporte",
+    "evidencia del servicio de transporte",
+    "evidencia de la servicio de transporte",
+    "referencia de servicio de transporte",
+    "referencia del servicio de transporte"
+   ],
+   "respuesta": "«Servicio de transporte» (GFP3S1) es un subproceso de «Administración de servicios complementarios», de la Gestión Administrativa y Financiera. Evidencia directa: PEI 2024–2027, sección 3.3.1, p. 105.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GFP3S1"
+    },
+    {
+     "t": "Abrir el PDF (p. 105)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=105"
+    }
+   ]
+  },
+  {
+   "id": "proc-GFP3S2",
+   "tema": "Subproceso: Servicio de alimentación",
+   "claves": [
+    "gfp3s2",
+    "subproceso servicio de alimentación",
+    "evidencia de servicio de alimentación",
+    "evidencia del servicio de alimentación",
+    "evidencia de la servicio de alimentación",
+    "referencia de servicio de alimentación",
+    "referencia del servicio de alimentación"
+   ],
+   "respuesta": "«Servicio de alimentación» (GFP3S2) es un subproceso de «Administración de servicios complementarios», de la Gestión Administrativa y Financiera. Evidencia directa: PEI 2024–2027, sección 3.3.2, pp. 105–106.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GFP3S2"
+    },
+    {
+     "t": "Abrir el PDF (pp. 105–106)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=105"
+    }
+   ]
+  },
+  {
+   "id": "proc-GFP3S3",
+   "tema": "Subproceso: Programas de bienestar",
+   "claves": [
+    "gfp3s3",
+    "subproceso programas de bienestar",
+    "evidencia de programas de bienestar",
+    "evidencia del programas de bienestar",
+    "evidencia de la programas de bienestar",
+    "referencia de programas de bienestar",
+    "referencia del programas de bienestar"
+   ],
+   "respuesta": "«Programas de bienestar» (GFP3S3) es un subproceso de «Administración de servicios complementarios», de la Gestión Administrativa y Financiera. Evidencia relacionada: PEI 2024–2027, sección 3.4, p. 106.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GFP3S3"
+    },
+    {
+     "t": "Abrir el PDF (p. 106)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=106"
+    }
+   ]
+  },
+  {
+   "id": "proc-GFP3S4",
+   "tema": "Subproceso: Programas de asistencia social",
+   "claves": [
+    "gfp3s4",
+    "subproceso programas de asistencia social",
+    "evidencia de programas de asistencia social",
+    "evidencia del programas de asistencia social",
+    "evidencia de la programas de asistencia social",
+    "referencia de programas de asistencia social",
+    "referencia del programas de asistencia social"
+   ],
+   "respuesta": "«Programas de asistencia social» (GFP3S4) es un subproceso de «Administración de servicios complementarios», de la Gestión Administrativa y Financiera. Evidencia relacionada: PEI 2024–2027, sección 3.5, pp. 107–108.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GFP3S4"
+    },
+    {
+     "t": "Abrir el PDF (pp. 107–108)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=107"
+    }
+   ]
+  },
+  {
+   "id": "proc-GFP4",
+   "tema": "Proceso: Talento humano",
+   "claves": [
+    "proceso talento humano",
+    "proceso de talento humano",
+    "proceso del talento humano",
+    "proceso de la talento humano",
+    "subprocesos de talento humano",
+    "subprocesos del talento humano",
+    "subprocesos de la talento humano",
+    "subprocesos tiene el talento humano",
+    "subprocesos tiene la talento humano",
+    "subprocesos tiene talento humano",
+    "subprocesos hay en talento humano",
+    "subprocesos hay en el talento humano",
+    "subprocesos hay en la talento humano",
+    "gfp4"
+   ],
+   "respuesta": "«Talento humano» (GFP4) es el proceso P4 de la Gestión Administrativa y Financiera. Tiene 4 subprocesos: Vinculación; Bienestar laboral; Formación y capacitación; Evaluación de desempeño.",
+   "enlaces": [
+    {
+     "t": "Ver el proceso y sus evidencias",
+     "u": "PROCESOS.html#GFP4"
+    }
+   ]
+  },
+  {
+   "id": "proc-GFP4S1",
+   "tema": "Subproceso: Vinculación",
+   "claves": [
+    "gfp4s1",
+    "subproceso vinculación",
+    "evidencia de vinculación",
+    "evidencia del vinculación",
+    "evidencia de la vinculación",
+    "referencia de vinculación",
+    "referencia del vinculación"
+   ],
+   "respuesta": "«Vinculación» (GFP4S1) es un subproceso de «Talento humano», de la Gestión Administrativa y Financiera. Evidencia directa: PEI 2024–2027, sección 3.4, p. 106.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GFP4S1"
+    },
+    {
+     "t": "Abrir el PDF (p. 106)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=106"
+    }
+   ]
+  },
+  {
+   "id": "proc-GFP4S2",
+   "tema": "Subproceso: Bienestar laboral",
+   "claves": [
+    "gfp4s2",
+    "subproceso bienestar laboral",
+    "evidencia de bienestar laboral",
+    "evidencia del bienestar laboral",
+    "evidencia de la bienestar laboral",
+    "referencia de bienestar laboral",
+    "referencia del bienestar laboral"
+   ],
+   "respuesta": "«Bienestar laboral» (GFP4S2) es un subproceso de «Talento humano», de la Gestión Administrativa y Financiera. Evidencia directa: PEI 2024–2027, sección 3.4, p. 106.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GFP4S2"
+    },
+    {
+     "t": "Abrir el PDF (p. 106)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=106"
+    }
+   ]
+  },
+  {
+   "id": "proc-GFP4S3",
+   "tema": "Subproceso: Formación y capacitación",
+   "claves": [
+    "gfp4s3",
+    "subproceso formación y capacitación",
+    "evidencia de formación y capacitación",
+    "evidencia del formación y capacitación",
+    "evidencia de la formación y capacitación",
+    "referencia de formación y capacitación",
+    "referencia del formación y capacitación"
+   ],
+   "respuesta": "«Formación y capacitación» (GFP4S3) es un subproceso de «Talento humano», de la Gestión Administrativa y Financiera. Evidencia directa: PEI 2024–2027, sección 3.4, p. 106.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GFP4S3"
+    },
+    {
+     "t": "Abrir el PDF (p. 106)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=106"
+    }
+   ]
+  },
+  {
+   "id": "proc-GFP4S4",
+   "tema": "Subproceso: Evaluación de desempeño",
+   "claves": [
+    "gfp4s4",
+    "subproceso evaluación de desempeño",
+    "evidencia de evaluación de desempeño",
+    "evidencia del evaluación de desempeño",
+    "evidencia de la evaluación de desempeño",
+    "referencia de evaluación de desempeño",
+    "referencia del evaluación de desempeño"
+   ],
+   "respuesta": "«Evaluación de desempeño» (GFP4S4) es un subproceso de «Talento humano», de la Gestión Administrativa y Financiera. Evidencia directa: PEI 2024–2027, sección 3.4, p. 106.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GFP4S4"
+    },
+    {
+     "t": "Abrir el PDF (p. 106)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=106"
+    }
+   ]
+  },
+  {
+   "id": "proc-GFP5",
+   "tema": "Proceso: Apoyo financiero y contable",
+   "claves": [
+    "proceso apoyo financiero y contable",
+    "proceso de apoyo financiero y contable",
+    "proceso del apoyo financiero y contable",
+    "proceso de la apoyo financiero y contable",
+    "subprocesos de apoyo financiero y contable",
+    "subprocesos del apoyo financiero y contable",
+    "subprocesos de la apoyo financiero y contable",
+    "subprocesos tiene el apoyo financiero y contable",
+    "subprocesos tiene la apoyo financiero y contable",
+    "subprocesos tiene apoyo financiero y contable",
+    "subprocesos hay en apoyo financiero y contable",
+    "subprocesos hay en el apoyo financiero y contable",
+    "subprocesos hay en la apoyo financiero y contable",
+    "gfp5"
+   ],
+   "respuesta": "«Apoyo financiero y contable» (GFP5) es el proceso P5 de la Gestión Administrativa y Financiera. Tiene 4 subprocesos: Presupuesto; Contabilidad; Informes financieros; Gestión de recursos externos.",
+   "enlaces": [
+    {
+     "t": "Ver el proceso y sus evidencias",
+     "u": "PROCESOS.html#GFP5"
+    }
+   ]
+  },
+  {
+   "id": "proc-GFP5S1",
+   "tema": "Subproceso: Presupuesto",
+   "claves": [
+    "gfp5s1",
+    "subproceso presupuesto",
+    "evidencia de presupuesto",
+    "evidencia del presupuesto",
+    "evidencia de la presupuesto",
+    "referencia de presupuesto",
+    "referencia del presupuesto"
+   ],
+   "respuesta": "«Presupuesto» (GFP5S1) es un subproceso de «Apoyo financiero y contable», de la Gestión Administrativa y Financiera. Evidencia directa: PEI 2024–2027, sección 3.5, pp. 107–108.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GFP5S1"
+    },
+    {
+     "t": "Abrir el PDF (pp. 107–108)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=107"
+    }
+   ]
+  },
+  {
+   "id": "proc-GFP5S2",
+   "tema": "Subproceso: Contabilidad",
+   "claves": [
+    "gfp5s2",
+    "subproceso contabilidad",
+    "evidencia de contabilidad",
+    "evidencia del contabilidad",
+    "evidencia de la contabilidad",
+    "referencia de contabilidad",
+    "referencia del contabilidad"
+   ],
+   "respuesta": "«Contabilidad» (GFP5S2) es un subproceso de «Apoyo financiero y contable», de la Gestión Administrativa y Financiera. Evidencia relacionada: PEI 2024–2027, sección 3.5, pp. 107–108.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GFP5S2"
+    },
+    {
+     "t": "Abrir el PDF (pp. 107–108)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=107"
+    }
+   ]
+  },
+  {
+   "id": "proc-GFP5S3",
+   "tema": "Subproceso: Informes financieros",
+   "claves": [
+    "gfp5s3",
+    "subproceso informes financieros",
+    "evidencia de informes financieros",
+    "evidencia del informes financieros",
+    "evidencia de la informes financieros",
+    "referencia de informes financieros",
+    "referencia del informes financieros"
+   ],
+   "respuesta": "«Informes financieros» (GFP5S3) es un subproceso de «Apoyo financiero y contable», de la Gestión Administrativa y Financiera. Por documentar (lo más cercano): PEI 2024–2027, sección 3.5, pp. 107–108.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GFP5S3"
+    },
+    {
+     "t": "Abrir el PDF (pp. 107–108)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=107"
+    }
+   ]
+  },
+  {
+   "id": "proc-GFP5S4",
+   "tema": "Subproceso: Gestión de recursos externos",
+   "claves": [
+    "gfp5s4",
+    "subproceso gestión de recursos externos",
+    "evidencia de gestión de recursos externos",
+    "evidencia del gestión de recursos externos",
+    "evidencia de la gestión de recursos externos",
+    "referencia de gestión de recursos externos",
+    "referencia del gestión de recursos externos"
+   ],
+   "respuesta": "«Gestión de recursos externos» (GFP5S4) es un subproceso de «Apoyo financiero y contable», de la Gestión Administrativa y Financiera. Evidencia relacionada: PEI 2024–2027, sección 3.5, pp. 107–108.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GFP5S4"
+    },
+    {
+     "t": "Abrir el PDF (pp. 107–108)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=107"
+    }
+   ]
+  },
+  {
+   "id": "proc-GC",
+   "tema": "Gestión de la Comunidad (mapa de procesos)",
+   "claves": [
+    "gestión de la comunidad",
+    "procesos de la gestión de la comunidad",
+    "subprocesos de la gestión de la comunidad",
+    "que procesos tiene la gestión de la comunidad"
+   ],
+   "respuesta": "Gestión de la Comunidad: Abre el colegio al entorno: accesibilidad, inclusión, convenios y proyección social. Tiene 2 procesos: P1 Accesibilidad; P2 Proyección a la comunidad.",
+   "enlaces": [
+    {
+     "t": "Ver Gestión de la Comunidad",
+     "u": "PROCESOS.html#GC"
+    }
+   ]
+  },
+  {
+   "id": "proc-GCP1",
+   "tema": "Proceso: Accesibilidad",
+   "claves": [
+    "proceso accesibilidad",
+    "proceso de accesibilidad",
+    "proceso del accesibilidad",
+    "proceso de la accesibilidad",
+    "subprocesos de accesibilidad",
+    "subprocesos del accesibilidad",
+    "subprocesos de la accesibilidad",
+    "subprocesos tiene el accesibilidad",
+    "subprocesos tiene la accesibilidad",
+    "subprocesos tiene accesibilidad",
+    "subprocesos hay en accesibilidad",
+    "subprocesos hay en el accesibilidad",
+    "subprocesos hay en la accesibilidad",
+    "gcp1"
+   ],
+   "respuesta": "«Accesibilidad» (GCP1) es el proceso P1 de la Gestión de la Comunidad. Tiene 4 subprocesos: Acceso a la información; Acceso físico a la institución; Acceso a los recursos tecnológicos; Inclusión educativa.",
+   "enlaces": [
+    {
+     "t": "Ver el proceso y sus evidencias",
+     "u": "PROCESOS.html#GCP1"
+    }
+   ]
+  },
+  {
+   "id": "proc-GCP1S1",
+   "tema": "Subproceso: Acceso a la información",
+   "claves": [
+    "gcp1s1",
+    "subproceso acceso a la información",
+    "evidencia de acceso a la información",
+    "evidencia del acceso a la información",
+    "evidencia de la acceso a la información",
+    "referencia de acceso a la información",
+    "referencia del acceso a la información"
+   ],
+   "respuesta": "«Acceso a la información» (GCP1S1) es un subproceso de «Accesibilidad», de la Gestión de la Comunidad. Evidencia directa: PEI 2024–2027, sección 1.8.1, p. 55.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GCP1S1"
+    },
+    {
+     "t": "Abrir el PDF (p. 55)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=55"
+    }
+   ]
+  },
+  {
+   "id": "proc-GCP1S2",
+   "tema": "Subproceso: Acceso físico a la institución",
+   "claves": [
+    "gcp1s2",
+    "subproceso acceso físico a la institución",
+    "evidencia de acceso físico a la institución",
+    "evidencia del acceso físico a la institución",
+    "evidencia de la acceso físico a la institución",
+    "referencia de acceso físico a la institución",
+    "referencia del acceso físico a la institución"
+   ],
+   "respuesta": "«Acceso físico a la institución» (GCP1S2) es un subproceso de «Accesibilidad», de la Gestión de la Comunidad. Evidencia relacionada: PEI 2024–2027, sección 4.1, pp. 110–111.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GCP1S2"
+    },
+    {
+     "t": "Abrir el PDF (pp. 110–111)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=110"
+    }
+   ]
+  },
+  {
+   "id": "proc-GCP1S3",
+   "tema": "Subproceso: Acceso a los recursos tecnológicos",
+   "claves": [
+    "gcp1s3",
+    "subproceso acceso a los recursos tecnológicos",
+    "evidencia de acceso a los recursos tecnológicos",
+    "evidencia del acceso a los recursos tecnológicos",
+    "evidencia de la acceso a los recursos tecnológicos",
+    "referencia de acceso a los recursos tecnológicos",
+    "referencia del acceso a los recursos tecnológicos"
+   ],
+   "respuesta": "«Acceso a los recursos tecnológicos» (GCP1S3) es un subproceso de «Accesibilidad», de la Gestión de la Comunidad. Evidencia relacionada: PEI 2024–2027, sección 3.2, p. 104.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GCP1S3"
+    },
+    {
+     "t": "Abrir el PDF (p. 104)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=104"
+    }
+   ]
+  },
+  {
+   "id": "proc-GCP1S4",
+   "tema": "Subproceso: Inclusión educativa",
+   "claves": [
+    "gcp1s4",
+    "subproceso inclusión educativa",
+    "evidencia de inclusión educativa",
+    "evidencia del inclusión educativa",
+    "evidencia de la inclusión educativa",
+    "referencia de inclusión educativa",
+    "referencia del inclusión educativa"
+   ],
+   "respuesta": "«Inclusión educativa» (GCP1S4) es un subproceso de «Accesibilidad», de la Gestión de la Comunidad. Evidencia directa: PEI 2024–2027, sección 4.1.1, pp. 111–112.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GCP1S4"
+    },
+    {
+     "t": "Abrir el PDF (pp. 111–112)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=111"
+    }
+   ]
+  },
+  {
+   "id": "proc-GCP2",
+   "tema": "Proceso: Proyección a la comunidad",
+   "claves": [
+    "proceso proyección a la comunidad",
+    "proceso de proyección a la comunidad",
+    "proceso del proyección a la comunidad",
+    "proceso de la proyección a la comunidad",
+    "subprocesos de proyección a la comunidad",
+    "subprocesos del proyección a la comunidad",
+    "subprocesos de la proyección a la comunidad",
+    "subprocesos tiene el proyección a la comunidad",
+    "subprocesos tiene la proyección a la comunidad",
+    "subprocesos tiene proyección a la comunidad",
+    "subprocesos hay en proyección a la comunidad",
+    "subprocesos hay en el proyección a la comunidad",
+    "subprocesos hay en la proyección a la comunidad",
+    "gcp2"
+   ],
+   "respuesta": "«Proyección a la comunidad» (GCP2) es el proceso P2 de la Gestión de la Comunidad. Tiene 4 subprocesos: Proyectos sociales; Convenios y alianzas; Actividades comunitarias; Programa de voluntariado.",
+   "enlaces": [
+    {
+     "t": "Ver el proceso y sus evidencias",
+     "u": "PROCESOS.html#GCP2"
+    }
+   ]
+  },
+  {
+   "id": "proc-GCP2S1",
+   "tema": "Subproceso: Proyectos sociales",
+   "claves": [
+    "gcp2s1",
+    "subproceso proyectos sociales",
+    "evidencia de proyectos sociales",
+    "evidencia del proyectos sociales",
+    "evidencia de la proyectos sociales",
+    "referencia de proyectos sociales",
+    "referencia del proyectos sociales"
+   ],
+   "respuesta": "«Proyectos sociales» (GCP2S1) es un subproceso de «Proyección a la comunidad», de la Gestión de la Comunidad. Evidencia directa: PEI 2024–2027, sección 4.2, p. 112.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GCP2S1"
+    },
+    {
+     "t": "Abrir el PDF (p. 112)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=112"
+    }
+   ]
+  },
+  {
+   "id": "proc-GCP2S2",
+   "tema": "Subproceso: Convenios y alianzas",
+   "claves": [
+    "gcp2s2",
+    "subproceso convenios y alianzas",
+    "evidencia de convenios y alianzas",
+    "evidencia del convenios y alianzas",
+    "evidencia de la convenios y alianzas",
+    "referencia de convenios y alianzas",
+    "referencia del convenios y alianzas"
+   ],
+   "respuesta": "«Convenios y alianzas» (GCP2S2) es un subproceso de «Proyección a la comunidad», de la Gestión de la Comunidad. Evidencia directa: PEI 2024–2027, sección 1.9, p. 58.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GCP2S2"
+    },
+    {
+     "t": "Abrir el PDF (p. 58)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=58"
+    }
+   ]
+  },
+  {
+   "id": "proc-GCP2S3",
+   "tema": "Subproceso: Actividades comunitarias",
+   "claves": [
+    "gcp2s3",
+    "subproceso actividades comunitarias",
+    "evidencia de actividades comunitarias",
+    "evidencia del actividades comunitarias",
+    "evidencia de la actividades comunitarias",
+    "referencia de actividades comunitarias",
+    "referencia del actividades comunitarias"
+   ],
+   "respuesta": "«Actividades comunitarias» (GCP2S3) es un subproceso de «Proyección a la comunidad», de la Gestión de la Comunidad. Evidencia directa: PEI 2024–2027, sección 4.5, pp. 119–120.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GCP2S3"
+    },
+    {
+     "t": "Abrir el PDF (pp. 119–120)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=119"
+    }
+   ]
+  },
+  {
+   "id": "proc-GCP2S4",
+   "tema": "Subproceso: Programa de voluntariado",
+   "claves": [
+    "gcp2s4",
+    "subproceso programa de voluntariado",
+    "evidencia de programa de voluntariado",
+    "evidencia del programa de voluntariado",
+    "evidencia de la programa de voluntariado",
+    "referencia de programa de voluntariado",
+    "referencia del programa de voluntariado"
+   ],
+   "respuesta": "«Programa de voluntariado» (GCP2S4) es un subproceso de «Proyección a la comunidad», de la Gestión de la Comunidad. Evidencia relacionada: PEI 2024–2027, sección 4.4, p. 118.",
+   "enlaces": [
+    {
+     "t": "Ver la evidencia",
+     "u": "PROCESOS.html#GCP2S4"
+    },
+    {
+     "t": "Abrir el PDF (p. 118)",
+     "u": "RESIGNIFICACION%20PEI%202024-2027%20COLEGIO%20SIMON%20BOLIVAR.pdf#page=118"
     }
    ]
   }
