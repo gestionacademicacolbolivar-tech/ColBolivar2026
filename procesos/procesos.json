@@ -1,0 +1,1707 @@
+{
+ "version": 1,
+ "generado": "2026-11-06",
+ "docs": {
+  "pei": {
+   "nombre": "Resignificación del PEI 2024–2027 (GD-D1, v3.0)",
+   "corto": "PEI 2024–2027",
+   "archivo": "RESIGNIFICACION PEI 2024-2027 COLEGIO SIMON BOLIVAR.pdf"
+  },
+  "siee": {
+   "nombre": "Manual SIEE – Sistema Institucional de Evaluación (GA-D1)",
+   "corto": "SIEE",
+   "archivo": "GA-D1_MANUAL_SIEE_2024_REORGANIZADO 2026.pdf"
+  },
+  "conv": {
+   "nombre": "Manual de Convivencia (GD-D02)",
+   "corto": "Manual de Convivencia",
+   "archivo": "Manual de convivencia.pdf"
+  },
+  "modelo": {
+   "nombre": "Modelo Pedagógico Institucional ColBolívar 2026",
+   "corto": "Modelo Pedagógico",
+   "archivo": "Modelo_Pedagogico_Institucional_ColBolivar 2026.pdf"
+  },
+  "servicio": {
+   "nombre": "Proyecto Institucional de Servicio Social Estudiantil Obligatorio",
+   "corto": "Servicio Social",
+   "archivo": "PROYECTO INSTITUCIONAL DE SERVICIO SOCIAL ESTUDIANTIL OBLIGATORIO.pdf"
+  }
+ },
+ "gestiones": [
+  {
+   "id": "GD",
+   "nombre": "Gestión Directiva",
+   "color": "#2b7a3a",
+   "emoji": "🧭",
+   "lema": "Orienta el rumbo: horizonte, gobierno escolar, cultura y clima institucional.",
+   "procesos": [
+    {
+     "id": "GDP1",
+     "n": 1,
+     "nombre": "Direccionamiento estratégico y horizonte institucional",
+     "sub": [
+      {
+       "cod": "GDP1S1",
+       "cod2024": "GDP1S1",
+       "nombre": "Misión, visión y principios en el marco de una institución integrada",
+       "desc": "Misión, visión, política de calidad y principios que orientan al colegio como institución integrada. Su redacción vigente está en el PEI.",
+       "nivel": "directa",
+       "ev": [
+        "mision-vision",
+        "principios"
+       ],
+       "ref2024": "Capítulo 1, Sección 1.3.1, Misión y Visión. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GDP1S2",
+       "cod2024": "GDP1S2",
+       "nombre": "Metas institucionales",
+       "desc": "Desarrollar una educación integral, fomentar la inclusión educativa, fortalecer la convivencia escolar y promover el liderazgo de los estudiantes y docentes.",
+       "nivel": "directa",
+       "ev": [
+        "objetivos"
+       ],
+       "ref2024": "Capítulo 1, Sección 1.3.6, Objetivos Generales del Proyecto. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GDP1S3",
+       "cod2024": "GDP1S3",
+       "nombre": "Conocimiento y apropiación del direccionamiento",
+       "desc": "Asegurar que la comunidad educativa participe activamente en el direccionamiento estratégico, mediante la implementación de proyectos participativos y colaborativos.",
+       "nivel": "relacionada",
+       "ev": [
+        "valores",
+        "comunicacion"
+       ],
+       "ref2024": "Capítulo 1, Sección 1.3.5, Valores Institucionales. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GDP1S4",
+       "cod2024": "GDP1S4",
+       "nombre": "Política de inclusión de personas de diferentes grupos poblacionales o diversidad poblacional",
+       "desc": "Garantizar la inclusión de todos los grupos poblacionales, respetando las características sociales, culturales, étnicas y económicas, asegurando acceso a una educación de calidad.",
+       "nivel": "directa",
+       "ev": [
+        "politica-inclusion",
+        "principios"
+       ],
+       "ref2024": "Capítulo 1, Sección 1.3.4, Principios y Valores. (Resignificación PEI, 2024)"
+      }
+     ]
+    },
+    {
+     "id": "GDP2",
+     "n": 2,
+     "nombre": "Gestión estratégica",
+     "sub": [
+      {
+       "cod": "GDP2S1",
+       "cod2024": "GDP2S1",
+       "nombre": "Liderazgo",
+       "desc": "Promover un liderazgo participativo y transformador en la comunidad educativa, enfocado en decisiones responsables y en la promoción de una cultura institucional sólida.",
+       "nivel": "relacionada",
+       "ev": [
+        "perfil-directivo"
+       ],
+       "ref2024": "Capítulo 1, Sección 1.3.5, Valores Institucionales. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GDP2S2",
+       "cod2024": "GDP2S2",
+       "nombre": "Articulación de planes, proyectos y acciones",
+       "desc": "Integrar planes, proyectos y acciones educativas que promuevan el desarrollo institucional, alineados con los objetivos estratégicos y las necesidades de la comunidad educativa.",
+       "nivel": "relacionada",
+       "ev": [
+        "gestion-objetivos",
+        "proyectos-transversales"
+       ],
+       "ref2024": "Capítulo 2, Sección 2.4, Pensum Académico. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GDP2S3",
+       "cod2024": "GDP2S3",
+       "nombre": "Estrategia pedagógica",
+       "desc": "Implementar modelos pedagógicos innovadores y flexibles que respondan a las necesidades de los estudiantes y promuevan un aprendizaje contextualizado.",
+       "nivel": "directa",
+       "ev": [
+        "modelo-educativo",
+        "modelo-pedagogico"
+       ],
+       "ref2024": "Capítulo 2, Sección 2.2, Modelo Educativo. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GDP2S4",
+       "cod2024": "GDP2S4",
+       "nombre": "Uso de información (interna y externa) para la toma de decisiones",
+       "desc": "Promover el uso sistemático de información para tomar decisiones basadas en datos, mejorando la gestión institucional.",
+       "nivel": "relacionada",
+       "ev": [
+        "gestion-objetivos",
+        "comunicacion"
+       ],
+       "ref2024": "Capítulo 1, Sección 1.8.1, Mecanismos de Comunicación. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GDP2S5",
+       "cod2024": "GDP2S5",
+       "nombre": "Seguimiento y autoevaluación",
+       "desc": "Realizar seguimiento constante y autoevaluación para garantizar la mejora continua.",
+       "nivel": "relacionada",
+       "ev": [
+        "gestion-objetivos",
+        "gestion-proceso"
+       ],
+       "ref2024": "Capítulo 1, Sección 1.3.6, Objetivos Generales del Proyecto. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GDP2S6",
+       "cod2024": "GDP2S6",
+       "nombre": "Plan de mejoramiento",
+       "desc": "Desarrollar planes basados en los resultados de las evaluaciones y seguimiento institucional.",
+       "nivel": "relacionada",
+       "ev": [
+        "gestion-objetivos",
+        "presupuesto"
+       ],
+       "ref2024": "Capítulo 1, Sección 1.3.6, Objetivos Generales del Proyecto. (Resignificación PEI, 2024)"
+      }
+     ]
+    },
+    {
+     "id": "GDP3",
+     "n": 3,
+     "nombre": "Gobierno escolar",
+     "sub": [
+      {
+       "cod": "GDP3S1",
+       "cod2024": "GDP3S1",
+       "nombre": "Consejo directivo",
+       "desc": "Compuesto por el rector, dos representantes del personal docente, dos representantes de los padres de familia, un representante de los estudiantes, un representante de los exalumnos y un representante del sector productivo, según el Decreto 1860 de 1994.",
+       "nivel": "directa",
+       "ev": [
+        "consejo-directivo"
+       ],
+       "ref2024": "Capítulo 1, Sección 1.7.1, Consejo Directivo. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GDP3S2",
+       "cod2024": "GDP3S2",
+       "nombre": "Consejo académico",
+       "desc": "Asume el liderazgo pedagógico y la investigación curricular, alineado con los principios, fines y objetivos del PEI.",
+       "nivel": "directa",
+       "ev": [
+        "consejo-academico"
+       ],
+       "ref2024": "Capítulo 1, Sección 1.7.2, Consejo Académico. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GDP3S3",
+       "cod2024": "GDP3S3",
+       "nombre": "Comisión de evaluación y promoción",
+       "desc": "Responsable de realizar el seguimiento de los procesos de evaluación y promoción de los estudiantes, de acuerdo con el Decreto 1290 de 2009.",
+       "nivel": "directa",
+       "ev": [
+        "comision-evaluacion"
+       ],
+       "ref2024": "Capítulo 1, Sección 1.7.3, Comisión de Evaluación y Promoción. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GDP3S4",
+       "cod2024": "GDP3S4",
+       "nombre": "Comité de convivencia",
+       "desc": "Promueve la sana convivencia en la institución, resolviendo conflictos y fomentando un ambiente de respeto y tolerancia.",
+       "nivel": "directa",
+       "ev": [
+        "comite-convivencia"
+       ],
+       "ref2024": "Capítulo 1, Sección 1.7.6, Consejo de Padres de Familia. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GDP3S5",
+       "cod2024": "GDP3S5",
+       "nombre": "Consejo estudiantil",
+       "desc": "Máximo órgano de participación estudiantil, integrado por un vocero de cada grado y elegido por los estudiantes según el artículo 29 del Decreto 1860 de 1994.",
+       "nivel": "directa",
+       "ev": [
+        "consejo-estudiantil"
+       ],
+       "ref2024": "Capítulo 1, Sección 1.7.5, Consejo Estudiantil. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GDP3S6",
+       "cod2024": "GDP3S6",
+       "nombre": "Personero estudiantil",
+       "desc": "Elegido por los estudiantes del último grado, encargado de promover los derechos y deberes de los estudiantes en la institución.",
+       "nivel": "directa",
+       "ev": [
+        "personero"
+       ],
+       "ref2024": "Capítulo 1, Sección 1.7.4, Personero Estudiantil. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GDP3S7",
+       "cod2024": "GDP3S7",
+       "nombre": "Asamblea de padres de familia",
+       "desc": "Órgano que asegura la participación de los padres de familia en el proceso pedagógico del establecimiento.",
+       "nivel": "directa",
+       "ev": [
+        "asamblea"
+       ],
+       "ref2024": "Capítulo 1, Sección 1.7.6, Consejo de Padres de Familia. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GDP3S8",
+       "cod2024": "GDP3S8",
+       "nombre": "Consejo de padres de familia",
+       "desc": "Integrado por los voceros de los padres de los estudiantes de cada grado, fomentando la participación continua en el proceso educativo.",
+       "nivel": "directa",
+       "ev": [
+        "consejo-padres"
+       ],
+       "ref2024": "Capítulo 1, Sección 1.7.6, Consejo de Padres de Familia. (Resignificación PEI, 2024)"
+      }
+     ]
+    },
+    {
+     "id": "GDP4",
+     "n": 4,
+     "nombre": "Cultura institucional",
+     "sub": [
+      {
+       "cod": "GDP4S1",
+       "cod2024": "GDP4S1",
+       "nombre": "Mecanismos de comunicación",
+       "desc": "Desarrollar una comunicación interna y externa eficiente, basada en la claridad, transparencia y retroalimentación, utilizando medios escritos y electrónicos para mantener informada a toda la comunidad educativa.",
+       "nivel": "directa",
+       "ev": [
+        "comunicacion",
+        "politica-comunicacion"
+       ],
+       "ref2024": "Capítulo 1, Sección 1.8.1, Mecanismos de Comunicación. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GDP4S2",
+       "cod2024": "GDP4S2",
+       "nombre": "Trabajo en equipo",
+       "desc": "Fomentar la colaboración y el trabajo en equipo entre docentes, estudiantes y padres de familia, con el fin de lograr objetivos comunes y fortalecer el sentido de pertenencia institucional.",
+       "nivel": "relacionada",
+       "ev": [
+        "objetivos",
+        "equipo-dinamizador"
+       ],
+       "ref2024": "Capítulo 1, Sección 1.3.6, Objetivos Generales del Proyecto. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GDP4S3",
+       "cod2024": "GDP4S3",
+       "nombre": "Reconocimiento de logros",
+       "desc": "Promover el reconocimiento de los logros académicos y personales de los estudiantes y docentes, fortaleciendo su motivación y compromiso con la institución.",
+       "nivel": "relacionada",
+       "ev": [
+        "valores"
+       ],
+       "ref2024": "Capítulo 1, Sección 1.3.5, Valores Institucionales. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GDP4S4",
+       "cod2024": "GDP4S4",
+       "nombre": "Identificación y divulgación de buenas prácticas",
+       "desc": "Identificar y compartir las buenas prácticas pedagógicas y administrativas, fomentando una cultura de mejora continua y excelencia educativa.",
+       "nivel": "pendiente",
+       "ev": [
+        "politica-comunicacion"
+       ],
+       "ref2024": "Capítulo 1, Sección 1.8.1, Mecanismos de Comunicación. (Resignificación PEI, 2024)"
+      }
+     ]
+    },
+    {
+     "id": "GDP5",
+     "n": 5,
+     "nombre": "Clima escolar",
+     "sub": [
+      {
+       "cod": "GDP5S1",
+       "cod2024": "GDP5S1",
+       "nombre": "Pertenencia y participación",
+       "desc": "Fomentar el sentido de pertenencia y la participación activa de todos los miembros de la comunidad educativa, garantizando un ambiente inclusivo y colaborativo.",
+       "nivel": "relacionada",
+       "ev": [
+        "objetivos"
+       ],
+       "ref2024": "Capítulo 1, Sección 1.3.6, Objetivos Generales del Proyecto. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GDP5S2",
+       "cod2024": "GDP5S2",
+       "nombre": "Ambiente físico",
+       "desc": "Mantener un ambiente escolar seguro, ordenado y agradable, que facilite el aprendizaje y promueva la convivencia armónica.",
+       "nivel": "relacionada",
+       "ev": [
+        "escuela-segura",
+        "planta-fisica"
+       ],
+       "ref2024": "Capítulo 1, Sección 1.5.1, Situación Socioeconómica. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GDP5S3",
+       "cod2024": "GDP5S3",
+       "nombre": "Inducción a los nuevos alumnos",
+       "desc": "Implementar programas de inducción para facilitar la integración de los nuevos estudiantes, brindándoles orientación y apoyo en su adaptación al ambiente escolar.",
+       "nivel": "pendiente",
+       "ev": [
+        "matricula"
+       ],
+       "ref2024": "Capítulo 1, Sección 1.3.6, Objetivos Generales del Proyecto. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GDP5S4",
+       "cod2024": "GDP5S4",
+       "nombre": "Motivación hacia el aprendizaje",
+       "desc": "Fomentar un ambiente que motive a los estudiantes a aprender, promoviendo el interés y la curiosidad por el conocimiento.",
+       "nivel": "relacionada",
+       "ev": [
+        "centros-interes"
+       ],
+       "ref2024": "Capítulo 1, Sección 1.3.4, Principios y Valores. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GDP5S5",
+       "cod2024": "GDP5S5",
+       "nombre": "Manual de convivencia",
+       "desc": "Establecer un marco claro de normas y conductas para asegurar la convivencia armónica dentro de la institución, basado en el respeto y la tolerancia.",
+       "nivel": "directa",
+       "ev": [
+        "ruta-atencion",
+        "comite-convivencia",
+        "manual-convivencia"
+       ],
+       "ref2024": "Capítulo 1, Sección 1.7.6, Consejo de Padres de Familia. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GDP5S6",
+       "cod2024": "GDP5S6",
+       "nombre": "Actividades extracurriculares",
+       "desc": "Ofrecer actividades extracurriculares que complementen la formación académica y promuevan el desarrollo integral de los estudiantes.",
+       "nivel": "directa",
+       "ev": [
+        "centros-interes",
+        "smart-place"
+       ],
+       "ref2024": "Capítulo 1, Sección 1.3.6, Objetivos Generales del Proyecto. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GDP5S7",
+       "cod2024": "GDP5S7",
+       "nombre": "Bienestar del alumno",
+       "desc": "Garantizar el bienestar físico y emocional de los estudiantes, brindando atención integral en áreas como la salud, la alimentación y el soporte psicológico.",
+       "nivel": "relacionada",
+       "ev": [
+        "perfil-educando",
+        "ruta-atencion"
+       ],
+       "ref2024": "Capítulo 1, Sección 1.5.2, Composición Familiar. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GDP5S8",
+       "cod2024": "GDP5S8",
+       "nombre": "Manejo de conflictos",
+       "desc": "Establecer estrategias para el manejo y resolución de conflictos dentro del entorno escolar, promoviendo la convivencia pacífica y el respeto mutuo.",
+       "nivel": "directa",
+       "ev": [
+        "ruta-atencion"
+       ],
+       "ref2024": "Capítulo 1, Sección 1.7.3, Comisión de Evaluación y Promoción. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GDP5S9",
+       "cod2024": "GDP5S9",
+       "nombre": "Manejo de casos difíciles",
+       "desc": "Implementar protocolos para la atención de situaciones difíciles que involucren a los estudiantes, brindando apoyo especializado y seguimiento adecuado.",
+       "nivel": "pendiente",
+       "ev": [
+        "ruta-atencion"
+       ],
+       "ref2024": "Capítulo 1, Sección 1.5.2, Composición Familiar. (Resignificación PEI, 2024)"
+      }
+     ]
+    },
+    {
+     "id": "GDP6",
+     "n": 6,
+     "nombre": "Relaciones con el entorno",
+     "sub": [
+      {
+       "cod": "GDP6S1",
+       "cod2024": "GDP6S1",
+       "nombre": "Familias o acudientes",
+       "desc": "Fomentar la participación activa de las familias en el proceso educativo, promoviendo una comunicación constante y efectiva entre padres, docentes y estudiantes para el apoyo integral del alumno.",
+       "nivel": "relacionada",
+       "ev": [
+        "consejo-padres",
+        "perfil-padres"
+       ],
+       "ref2024": "Capítulo 1, Sección 1.7.6, Consejo de Padres de Familia. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GDP6S2",
+       "cod2024": "GDP6S2",
+       "nombre": "Autoridades educativas",
+       "desc": "Mantener una relación colaborativa y alineada con las autoridades educativas locales y nacionales, garantizando el cumplimiento de normativas y el acceso a recursos que fortalezcan la institución.",
+       "nivel": "relacionada",
+       "ev": [
+        "convenios"
+       ],
+       "ref2024": "Capítulo 1, Sección 1.9, Convenios y Alianzas. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GDP6S3",
+       "cod2024": "GDP6S3",
+       "nombre": "Otras instituciones",
+       "desc": "Establecer alianzas estratégicas con otras instituciones educativas y organizaciones, promoviendo intercambios de conocimientos y recursos para mejorar la calidad educativa.",
+       "nivel": "directa",
+       "ev": [
+        "convenios"
+       ],
+       "ref2024": "Capítulo 1, Sección 1.9, Convenios y Alianzas. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GDP6S4",
+       "cod2024": "GDP6S4",
+       "nombre": "Sector productivo",
+       "desc": "Crear vínculos con el sector productivo local para promover la inserción laboral de los estudiantes y ofrecer oportunidades de prácticas y formación complementaria.",
+       "nivel": "directa",
+       "ev": [
+        "convenios"
+       ],
+       "ref2024": "Capítulo 1, Sección 1.9, Convenios y Alianzas. (Resignificación PEI, 2024)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "GA",
+   "nombre": "Gestión Académica",
+   "color": "#e38a10",
+   "emoji": "📚",
+   "lema": "Hace posible el aprendizaje: currículo, prácticas de aula, evaluación y seguimiento.",
+   "procesos": [
+    {
+     "id": "GAP1",
+     "n": 1,
+     "nombre": "Diseño pedagógico (curricular)",
+     "sub": [
+      {
+       "cod": "GAP1S1",
+       "cod2024": "GAP1S1",
+       "nombre": "Plan de estudios",
+       "desc": "Desarrollar y actualizar el plan de estudios con base en las necesidades de los estudiantes y el contexto, integrando áreas fundamentales y proyectos transversales para asegurar una formación integral.",
+       "nivel": "directa",
+       "ev": [
+        "enfoque-curricular",
+        "pensum"
+       ],
+       "ref2024": "Capítulo 2, Sección 2.3, Enfoque Curricular. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GAP1S2",
+       "cod2024": "GAP1S2",
+       "nombre": "Enfoque metodológico",
+       "desc": "Implementar un enfoque metodológico flexible y contextualizado, que permita a los estudiantes desarrollar competencias cognitivas, socioemocionales y éticas.",
+       "nivel": "directa",
+       "ev": [
+        "modelo-educativo",
+        "modelo-pedagogico"
+       ],
+       "ref2024": "Capítulo 2, Sección 2.2, Modelo Educativo. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GAP1S3",
+       "cod2024": "GAP1S3",
+       "nombre": "Recursos para el aprendizaje",
+       "desc": "Garantizar la disponibilidad de recursos didácticos, tecnológicos y pedagógicos que apoyen el proceso de enseñanza-aprendizaje y permitan a los estudiantes acceder a una educación de calidad.",
+       "nivel": "directa",
+       "ev": [
+        "centros-interes"
+       ],
+       "ref2024": "Capítulo 2, Sección 2.5, Centros de Interés. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GAP1S4",
+       "cod2024": "GAP1S4",
+       "nombre": "Jornada escolar",
+       "desc": "Asegurar que la jornada escolar se organice de manera eficiente, permitiendo a los estudiantes el desarrollo de actividades académicas y extracurriculares en un ambiente adecuado.",
+       "nivel": "relacionada",
+       "ev": [
+        "pensum"
+       ],
+       "ref2024": "Capítulo 1, Sección 1.5.3, Población Escolar. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GAP1S5",
+       "cod2024": "GAP1S5",
+       "nombre": "Evaluación",
+       "desc": "Implementar sistemas de evaluación continua y formativa que promuevan el desarrollo integral de los estudiantes, respetando sus ritmos de aprendizaje y fomentando la reflexión crítica.",
+       "nivel": "directa",
+       "ev": [
+        "evaluacion",
+        "siee"
+       ],
+       "ref2024": "Capítulo 2, Sección 2.4, Pensum Académico. (Resignificación PEI, 2024)"
+      }
+     ]
+    },
+    {
+     "id": "GAP2",
+     "n": 2,
+     "nombre": "Prácticas pedagógicas",
+     "sub": [
+      {
+       "cod": "GAP2S1",
+       "cod2024": "GAP2S1",
+       "nombre": "Opciones didácticas para las áreas asignaturas y proyectos transversales",
+       "desc": "Desarrollar estrategias didácticas innovadoras para las áreas fundamentales y proyectos transversales, adaptadas al contexto y las necesidades de los estudiantes.",
+       "nivel": "directa",
+       "ev": [
+        "modelo-educativo"
+       ],
+       "ref2024": "Capítulo 2, Sección 2.2, Modelo Educativo. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GAP2S2",
+       "cod2024": "GAP2S2",
+       "nombre": "Estrategias para las tareas escolares",
+       "desc": "Implementar estrategias pedagógicas que promuevan el aprendizaje autónomo y significativo a través de tareas escolares que refuercen los contenidos académicos.",
+       "nivel": "relacionada",
+       "ev": [
+        "pensum"
+       ],
+       "ref2024": "Capítulo 2, Sección 2.4, Pensum Académico. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GAP2S3",
+       "cod2024": "GAP2S3",
+       "nombre": "Uso articulado de los recursos para el aprendizaje",
+       "desc": "Integrar de manera articulada los recursos pedagógicos y tecnológicos disponibles para enriquecer el proceso de enseñanza-aprendizaje, optimizando su impacto en el aula.",
+       "nivel": "relacionada",
+       "ev": [
+        "centros-interes"
+       ],
+       "ref2024": "Capítulo 2, Sección 2.5, Centros de Interés. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GAP2S4",
+       "cod2024": "GAP2S4",
+       "nombre": "Uso de los tiempos para el aprendizaje",
+       "desc": "Asegurar una planificación adecuada del tiempo pedagógico, garantizando que se destine al desarrollo de competencias y aprendizajes clave en cada área.",
+       "nivel": "relacionada",
+       "ev": [
+        "pensum"
+       ],
+       "ref2024": "Capítulo 2, Sección 2.2, Modelo Educativo. (Resignificación PEI, 2024)"
+      }
+     ]
+    },
+    {
+     "id": "GAP3",
+     "n": 3,
+     "nombre": "Gestión de aula",
+     "sub": [
+      {
+       "cod": "GAP3S1",
+       "cod2024": "GAP3S1",
+       "nombre": "Ambiente de aprendizaje",
+       "desc": "Crear un ambiente de aula que favorezca el aprendizaje activo y participativo, fomentando la motivación, el respeto y la colaboración entre estudiantes.",
+       "nivel": "relacionada",
+       "ev": [
+        "modelo-educativo"
+       ],
+       "ref2024": "Capítulo 2, Sección 2.2, Modelo Educativo. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GAP3S2",
+       "cod2024": "GAP3S2",
+       "nombre": "Uso del tiempo",
+       "desc": "Planificar y utilizar el tiempo en el aula de manera efectiva para maximizar el aprendizaje y la atención de los estudiantes, ajustándose a los ritmos de aprendizaje.",
+       "nivel": "relacionada",
+       "ev": [
+        "pensum"
+       ],
+       "ref2024": "Capítulo 2, Sección 2.4, Pensum Académico. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GAP3S3",
+       "cod2024": "GAP3S3",
+       "nombre": "Interacción en el aula",
+       "desc": "Fomentar una interacción positiva y constante entre docentes y estudiantes, promoviendo el diálogo, la participación activa y la resolución de conflictos.",
+       "nivel": "relacionada",
+       "ev": [
+        "modelo-educativo"
+       ],
+       "ref2024": "Capítulo 2, Sección 2.5, Centros de Interés. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GAP3S4",
+       "cod2024": "GAP3S4",
+       "nombre": "Manejo de la disciplina",
+       "desc": "Implementar estrategias de manejo de la disciplina en el aula que promuevan el respeto, la responsabilidad y el cumplimiento de las normas de convivencia.",
+       "nivel": "relacionada",
+       "ev": [
+        "ruta-atencion",
+        "manual-convivencia"
+       ],
+       "ref2024": "Capítulo 1, Sección 1.7.6, Consejo de Padres de Familia. (Resignificación PEI, 2024)"
+      }
+     ]
+    },
+    {
+     "id": "GAP4",
+     "n": 4,
+     "nombre": "Seguimiento académico",
+     "sub": [
+      {
+       "cod": "GAP4S1",
+       "cod2024": "GAP4S1",
+       "nombre": "Seguimiento al aprendizaje",
+       "desc": "Realizar un seguimiento continuo del progreso de los estudiantes para identificar dificultades y realizar ajustes pedagógicos que optimicen el proceso de aprendizaje.",
+       "nivel": "directa",
+       "ev": [
+        "evaluacion"
+       ],
+       "ref2024": "Capítulo 2, Sección 2.4, Pensum Académico. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GAP4S2",
+       "cod2024": "GAP4S2",
+       "nombre": "Sistema de evaluación",
+       "desc": "Implementar un sistema de evaluación formativa que refleje el progreso y las competencias adquiridas por los estudiantes, ajustado a sus ritmos y estilos de aprendizaje.",
+       "nivel": "directa",
+       "ev": [
+        "caracteristicas-evaluacion",
+        "siee"
+       ],
+       "ref2024": "Capítulo 2, Sección 2.4, Pensum Académico. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GAP4S3",
+       "cod2024": "GAP4S3",
+       "nombre": "Informes a padres de familia",
+       "desc": "Mantener una comunicación constante con los padres de familia sobre el rendimiento académico de los estudiantes, ofreciendo retroalimentación clara y oportuna.",
+       "nivel": "relacionada",
+       "ev": [
+        "evaluacion"
+       ],
+       "ref2024": "Capítulo 1, Sección 1.7.6, Consejo de Padres de Familia. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GAP4S4",
+       "cod2024": "GAP4S4",
+       "nombre": "Acciones correctivas",
+       "desc": "Establecer planes de mejora personalizados para aquellos estudiantes que presenten dificultades académicas, brindándoles el apoyo necesario para superar sus desafíos.",
+       "nivel": "relacionada",
+       "ev": [
+        "evaluacion"
+       ],
+       "ref2024": "Capítulo 2, Sección 2.3, Enfoque Curricular. (Resignificación PEI, 2024)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "GF",
+   "nombre": "Gestión Administrativa y Financiera",
+   "color": "#12306e",
+   "emoji": "🏛️",
+   "lema": "Sostiene la vida del colegio: matrícula, planta física, servicios, talento humano y presupuesto.",
+   "procesos": [
+    {
+     "id": "GFP1",
+     "n": 1,
+     "nombre": "Apoyo a la gestión académica",
+     "sub": [
+      {
+       "cod": "GFP1S1",
+       "cod2024": "GAP1S1",
+       "nombre": "Matrícula",
+       "desc": "Gestionar el proceso de matrícula de manera eficiente y transparente, asegurando la correcta inscripción de los estudiantes y facilitando su ingreso a la institución.",
+       "nivel": "directa",
+       "ev": [
+        "matricula"
+       ],
+       "ref2024": "Capítulo 3, Sección 3.1.1, Matrícula. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GFP1S2",
+       "cod2024": "GAP1S2",
+       "nombre": "Archivo académico",
+       "desc": "Mantener un archivo académico organizado y actualizado, que permita la consulta rápida y eficiente de la información escolar de los estudiantes.",
+       "nivel": "directa",
+       "ev": [
+        "archivo"
+       ],
+       "ref2024": "Capítulo 3, Sección 3.1.2, Archivo Académico. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GFP1S3",
+       "cod2024": "GAP1S3",
+       "nombre": "Administración de recursos académicos",
+       "desc": "Gestionar los recursos físicos y tecnológicos destinados al apoyo académico, garantizando su disponibilidad y uso eficiente.",
+       "nivel": "directa",
+       "ev": [
+        "planta-fisica"
+       ],
+       "ref2024": "Capítulo 3, Sección 3.2, Administración de la Planta Física y de los Recursos. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GFP1S4",
+       "cod2024": "GAP1S4",
+       "nombre": "Servicios complementarios",
+       "desc": "Coordinar servicios como el transporte y la alimentación escolar, asegurando que los estudiantes cuenten con las facilidades necesarias para su bienestar.",
+       "nivel": "directa",
+       "ev": [
+        "transporte",
+        "restaurante"
+       ],
+       "ref2024": "Capítulo 3, Sección 3.3.1 y 3.3.2, Servicios de Transporte y Restaurante. (Resignificación PEI, 2024)"
+      }
+     ]
+    },
+    {
+     "id": "GFP2",
+     "n": 2,
+     "nombre": "Administración de la planta física y los recursos",
+     "sub": [
+      {
+       "cod": "GFP2S1",
+       "cod2024": "GAP2S1",
+       "nombre": "Mantenimiento de la infraestructura",
+       "desc": "Garantizar el mantenimiento preventivo y correctivo de la infraestructura escolar, asegurando condiciones óptimas para el desarrollo de las actividades académicas y administrativas.",
+       "nivel": "directa",
+       "ev": [
+        "planta-fisica"
+       ],
+       "ref2024": "Capítulo 3, Sección 3.2, Administración de la Planta Física y de los Recursos. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GFP2S2",
+       "cod2024": "GAP2S2",
+       "nombre": "Recursos tecnológicos",
+       "desc": "Gestionar la adquisición y el mantenimiento de los recursos tecnológicos, asegurando que las herramientas digitales y equipos estén disponibles para apoyar el proceso educativo.",
+       "nivel": "directa",
+       "ev": [
+        "planta-fisica"
+       ],
+       "ref2024": "Capítulo 3, Sección 3.2, Administración de la Planta Física y de los Recursos. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GFP2S3",
+       "cod2024": "GAP2S3",
+       "nombre": "Distribución de recursos",
+       "desc": "Asegurar una distribución equitativa y eficiente de los recursos materiales y financieros, maximizando su uso para el beneficio de la comunidad educativa.",
+       "nivel": "directa",
+       "ev": [
+        "planta-fisica"
+       ],
+       "ref2024": "Capítulo 3, Sección 3.2, Administración de la Planta Física y de los Recursos. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GFP2S4",
+       "cod2024": "GAP2S4",
+       "nombre": "Gestión de riesgos",
+       "desc": "Implementar estrategias de prevención y manejo de riesgos en la planta física, para garantizar la seguridad de estudiantes, docentes y personal administrativo.",
+       "nivel": "directa",
+       "ev": [
+        "planta-fisica",
+        "escuela-segura"
+       ],
+       "ref2024": "Capítulo 3, Sección 3.2, Administración de la Planta Física y de los Recursos. (Resignificación PEI, 2024)"
+      }
+     ]
+    },
+    {
+     "id": "GFP3",
+     "n": 3,
+     "nombre": "Administración de servicios complementarios",
+     "sub": [
+      {
+       "cod": "GFP3S1",
+       "cod2024": "GAP3S1",
+       "nombre": "Servicio de transporte",
+       "desc": "Coordinar y gestionar el servicio de transporte escolar, asegurando que los estudiantes lleguen y salgan del centro educativo de manera segura y eficiente.",
+       "nivel": "directa",
+       "ev": [
+        "transporte"
+       ],
+       "ref2024": "Capítulo 3, Sección 3.3.1, Servicios de Transporte Humanitario. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GFP3S2",
+       "cod2024": "GAP3S2",
+       "nombre": "Servicio de alimentación",
+       "desc": "Gestionar el servicio de restaurante escolar, asegurando que los estudiantes reciban una alimentación balanceada y adecuada a sus necesidades nutricionales.",
+       "nivel": "directa",
+       "ev": [
+        "restaurante"
+       ],
+       "ref2024": "Capítulo 3, Sección 3.3.2, Servicio de Restaurante. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GFP3S3",
+       "cod2024": "GAP3S3",
+       "nombre": "Programas de bienestar",
+       "desc": "Implementar programas de bienestar que brinden apoyo emocional, psicológico y social a los estudiantes, garantizando su bienestar integral.",
+       "nivel": "relacionada",
+       "ev": [
+        "talento-humano"
+       ],
+       "ref2024": "Capítulo 3, Sección 3.4, Talento Humano. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GFP3S4",
+       "cod2024": "GAP3S4",
+       "nombre": "Programas de asistencia social",
+       "desc": "Coordinar programas de asistencia social que apoyen a los estudiantes de bajos recursos o en situaciones vulnerables, garantizando su permanencia y éxito en el sistema educativo.",
+       "nivel": "relacionada",
+       "ev": [
+        "presupuesto"
+       ],
+       "ref2024": "Capítulo 3, Sección 3.5, Presupuesto Anual del Fondo de Servicios Educativos. (Resignificación PEI, 2024)"
+      }
+     ]
+    },
+    {
+     "id": "GFP4",
+     "n": 4,
+     "nombre": "Talento humano",
+     "sub": [
+      {
+       "cod": "GFP4S1",
+       "cod2024": "GAP4S1",
+       "nombre": "Vinculación",
+       "desc": "Gestionar el proceso de contratación y vinculación del personal docente y administrativo, asegurando que cumplan con los perfiles adecuados y las normativas vigentes.",
+       "nivel": "directa",
+       "ev": [
+        "talento-humano"
+       ],
+       "ref2024": "Capítulo 3, Sección 3.4.1, Proceso de Vinculación. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GFP4S2",
+       "cod2024": "GAP4S2",
+       "nombre": "Bienestar laboral",
+       "desc": "Implementar programas de bienestar para el personal docente y administrativo, promoviendo un ambiente de trabajo saludable y motivador.",
+       "nivel": "directa",
+       "ev": [
+        "talento-humano"
+       ],
+       "ref2024": "Capítulo 3, Sección 3.4.2, Programa de Bienestar Laboral. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GFP4S3",
+       "cod2024": "GAP4S3",
+       "nombre": "Formación y capacitación",
+       "desc": "Desarrollar programas de formación y capacitación continua para el personal, fortaleciendo sus competencias pedagógicas y administrativas.",
+       "nivel": "directa",
+       "ev": [
+        "talento-humano"
+       ],
+       "ref2024": "Capítulo 3, Sección 3.4.3, Capacitación Docente y Administrativa. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GFP4S4",
+       "cod2024": "GAP4S4",
+       "nombre": "Evaluación de desempeño",
+       "desc": "Implementar un sistema de evaluación de desempeño para el personal, con el fin de promover la mejora continua y reconocer el mérito laboral.",
+       "nivel": "directa",
+       "ev": [
+        "talento-humano"
+       ],
+       "ref2024": "Capítulo 3, Sección 3.4.4, Evaluación del Desempeño. (Resignificación PEI, 2024)"
+      }
+     ]
+    },
+    {
+     "id": "GFP5",
+     "n": 5,
+     "nombre": "Apoyo financiero y contable",
+     "sub": [
+      {
+       "cod": "GFP5S1",
+       "cod2024": "GAP5S1",
+       "nombre": "Presupuesto",
+       "desc": "Elaborar y gestionar el presupuesto anual del Fondo de Servicios Educativos, asegurando la asignación eficiente de los recursos financieros de la institución.",
+       "nivel": "directa",
+       "ev": [
+        "presupuesto"
+       ],
+       "ref2024": "Capítulo 3, Sección 3.5, Presupuesto Anual del Fondo de Servicios Educativos. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GFP5S2",
+       "cod2024": "GAP5S2",
+       "nombre": "Contabilidad",
+       "desc": "Mantener actualizados los registros contables de la institución, asegurando la transparencia en el manejo de los recursos y el cumplimiento de las normativas legales.",
+       "nivel": "relacionada",
+       "ev": [
+        "presupuesto"
+       ],
+       "ref2024": "Capítulo 3, Sección 3.5, Presupuesto Anual del Fondo de Servicios Educativos. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GFP5S3",
+       "cod2024": "GAP5S3",
+       "nombre": "Informes financieros",
+       "desc": "Presentar informes financieros periódicos sobre el uso de los recursos institucionales, garantizando la transparencia y la rendición de cuentas ante la comunidad educativa y las autoridades competentes.",
+       "nivel": "pendiente",
+       "ev": [
+        "presupuesto"
+       ],
+       "ref2024": "Capítulo 3, Sección 3.5, Presupuesto Anual del Fondo de Servicios Educativos. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GFP5S4",
+       "cod2024": "GAP5S4",
+       "nombre": "Gestión de recursos externos",
+       "desc": "Buscar y gestionar recursos externos a través de convenios, alianzas o donaciones que contribuyan al desarrollo y mejora de la institución.",
+       "nivel": "relacionada",
+       "ev": [
+        "presupuesto",
+        "convenios"
+       ],
+       "ref2024": "Capítulo 3, Sección 3.5, Presupuesto Anual del Fondo de Servicios Educativos. (Resignificación PEI, 2024)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "GC",
+   "nombre": "Gestión de la Comunidad",
+   "color": "#d92d3a",
+   "emoji": "🤝",
+   "lema": "Abre el colegio al entorno: accesibilidad, inclusión, convenios y proyección social.",
+   "procesos": [
+    {
+     "id": "GCP1",
+     "n": 1,
+     "nombre": "Accesibilidad",
+     "sub": [
+      {
+       "cod": "GCP1S1",
+       "cod2024": "GAP1S1",
+       "nombre": "Acceso a la información",
+       "desc": "Asegurar que toda la comunidad educativa tenga acceso a la información relevante de manera oportuna y clara, utilizando canales adecuados y herramientas digitales.",
+       "nivel": "directa",
+       "ev": [
+        "comunicacion"
+       ],
+       "ref2024": "Capítulo 1, Sección 1.8.1, Mecanismos de Comunicación. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GCP1S2",
+       "cod2024": "GAP1S2",
+       "nombre": "Acceso físico a la institución",
+       "desc": "Garantizar que las instalaciones de la institución sean accesibles para todos los miembros de la comunidad educativa, incluyendo personas con discapacidades físicas.",
+       "nivel": "relacionada",
+       "ev": [
+        "accesibilidad",
+        "planta-fisica"
+       ],
+       "ref2024": "Capítulo 3, Sección 3.2, Administración de la Planta Física y de los Recursos. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GCP1S3",
+       "cod2024": "GAP1S3",
+       "nombre": "Acceso a los recursos tecnológicos",
+       "desc": "Promover el acceso equitativo a los recursos tecnológicos para todos los estudiantes, facilitando su uso para mejorar los procesos de aprendizaje.",
+       "nivel": "relacionada",
+       "ev": [
+        "planta-fisica"
+       ],
+       "ref2024": "Capítulo 3, Sección 3.2, Administración de la Planta Física y de los Recursos. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GCP1S4",
+       "cod2024": "GAP1S4",
+       "nombre": "Inclusión educativa",
+       "desc": "Garantizar la inclusión educativa de estudiantes con necesidades educativas especiales, brindando los apoyos y adaptaciones necesarios para su éxito académico.",
+       "nivel": "directa",
+       "ev": [
+        "politica-inclusion"
+       ],
+       "ref2024": "Capítulo 1, Sección 1.3.4, Principios y Valores. (Resignificación PEI, 2024)"
+      }
+     ]
+    },
+    {
+     "id": "GCP2",
+     "n": 2,
+     "nombre": "Proyección a la comunidad",
+     "sub": [
+      {
+       "cod": "GCP2S1",
+       "cod2024": "GAP2S1",
+       "nombre": "Proyectos sociales",
+       "desc": "Desarrollar e implementar proyectos sociales que contribuyan al bienestar de la comunidad local, promoviendo la integración entre la institución educativa y su entorno.",
+       "nivel": "directa",
+       "ev": [
+        "proyeccion"
+       ],
+       "ref2024": "Capítulo 1, Sección 1.9, Convenios y Alianzas. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GCP2S2",
+       "cod2024": "GAP2S2",
+       "nombre": "Convenios y alianzas",
+       "desc": "Establecer convenios y alianzas con organizaciones locales, regionales y nacionales para fortalecer el impacto educativo y social de la institución.",
+       "nivel": "directa",
+       "ev": [
+        "convenios"
+       ],
+       "ref2024": "Capítulo 1, Sección 1.9, Convenios y Alianzas. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GCP2S3",
+       "cod2024": "GAP2S3",
+       "nombre": "Actividades comunitarias",
+       "desc": "Organizar y participar en actividades comunitarias que promuevan la colaboración y el compromiso social entre estudiantes, docentes y la comunidad en general.",
+       "nivel": "directa",
+       "ev": [
+        "escuela-comunidad"
+       ],
+       "ref2024": "Capítulo 1, Sección 1.9, Convenios y Alianzas. (Resignificación PEI, 2024)"
+      },
+      {
+       "cod": "GCP2S4",
+       "cod2024": "GAP2S4",
+       "nombre": "Programa de voluntariado",
+       "desc": "Implementar programas de voluntariado que incentiven la participación activa de los estudiantes y docentes en proyectos sociales y comunitarios.",
+       "nivel": "relacionada",
+       "ev": [
+        "servicio-social",
+        "servicio-doc"
+       ],
+       "ref2024": "Capítulo 1, Sección 1.9, Convenios y Alianzas. (Resignificación PEI, 2024)"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "evidencias": {
+  "accesibilidad": {
+   "doc": "pei",
+   "pagina": 110,
+   "seccion": "4.1",
+   "titulo": "Proceso: accesibilidad e inclusión",
+   "transcrito": false,
+   "img": "assets/img/procesos/evidencias/pei-p110-accesibilidad.webp",
+   "w": 1114,
+   "h": 675,
+   "texto": "4.1 PROCESO: ACCESIBILIDAD E INCLUSIÓN \n \n \n \n \n“EDUCAMOS PARA CONSTRUIR PROYECTO DE VIDA CON ÉXITO” \n \n \n15-03-2024 \n \n \nEstablece tanto las políticas y programas tendientes a favorecer la equidad de  oportunidades para poblaciones vulnerables en riesgo o con necesidades  especiales o talentos excepcionales, como las políticas y programas orientados a  promover el sentido de identidad con la institución misma y su PEI y el sentimiento  de pertenencia a la comunidad educativa, de tal manera que se favorezca la  retención de los estudiantes dentro del sistema escolar buscando que todos los  estudiantes independientemente de su situación personal, social y cultural reciban  una atención apropiada y pertinente que responda a sus expectativas",
+   "localizado": true,
+   "pagina_fin": 111
+  },
+  "archivo": {
+   "doc": "pei",
+   "pagina": 103,
+   "seccion": "3.1.2",
+   "titulo": "Archivo académico",
+   "transcrito": false,
+   "img": "assets/img/procesos/evidencias/pei-p103-archivo.webp",
+   "w": 1114,
+   "h": 661,
+   "texto": "3.1.2 Archivo Académico \n \nLa institución recopila información académica desde 1992. En libros foliados y  empastados o encuadernados, brindándoles un lugar con seguridad. Actualmente  se controlan mediante carpetas y hojas de matrícula y además son sistematizadas  para tener mejor control del personal existente en la institución. De otra parte, se  confronta con los sistemas SIMAT y Web colegios plataforma institucional mediante  el cual se informa a los padres de familia el avance de sus hijos en el proceso  formativo y académico del colegio. El número total de boletines es de cuatro, uno  por período académico y al finalizar el año se entrega un boletín final en físico con  el resultado definitivo por áreas y en el cual se consigna la promoción del año  escolar. \nEl procesamiento de las notas se hace por plataforma web colegios por parte de  los docentes. El directivo docente es quien verifica el proceso de ingreso y registro  de notas.",
+   "localizado": true,
+   "pagina_fin": 103
+  },
+  "asamblea": {
+   "doc": "pei",
+   "pagina": 113,
+   "seccion": "4.3.1",
+   "titulo": "Asamblea de padres",
+   "transcrito": false,
+   "img": "assets/img/procesos/evidencias/pei-p113-asamblea.webp",
+   "w": 1114,
+   "h": 675,
+   "texto": "4.3.1 Asamblea de padres \n \nLa institución educativa tiene constituido la asamblea de padres de familia la cual  la componen todos los padres, madres y/o acudientes de los estudiantes  matriculados quienes son los responsables del ejercicio de sus deberes y derechos \n \n \n \n“EDUCAMOS PARA CONSTRUIR PROYECTO DE VIDA CON ÉXITO” \n \n \n15-03-2024  en relación con el proceso educativo de sus hijos. Así mismo existe el consejo de  padres el cual está integrado por 2 padres de familia de cada grado los cuales sacan  el representante de la comisión de evaluación y a los representantes de los padres  ante el consejo directivo, velan por el mejoramiento de la calidad. Otra instancia de  participación y formación es la escuela de padres la cual busca intercambiar  experiencias y alternativas de solución a la problemática que se presente en la",
+   "localizado": true,
+   "pagina_fin": 114
+  },
+  "caracteristicas-evaluacion": {
+   "doc": "pei",
+   "pagina": 96,
+   "seccion": "2.6.1",
+   "titulo": "Características de la evaluación",
+   "transcrito": false,
+   "img": "assets/img/procesos/evidencias/pei-p096-caracteristicas-evaluacion.webp",
+   "w": 1114,
+   "h": 841,
+   "texto": "2.6.1 Características De La Evaluación \n \n1. Continua y procesual: Se realiza de manera permanente con base en un  seguimiento que permita apreciar el progreso que pueda generarse en la  formación del educando. \n2. Integral: Tiene en cuenta las dimensiones del desarrollo del estudiante y los  diversos componentes del aprendizaje: Cognitivo (saber), procedimental (saber  hacer), actitudinal (saber ser), psicoafectivo (Aprender a vivir con los demás),  volitivo y psicomotor. \n3. Sistemática: Organizada con base en principios pedagógicos, que guarden  relación con los fines de la Educación, los objetivos para cada uno de los grados  o niveles, los lineamientos curriculares, los estándares básicos de competencia,  los derechos básicos de aprendizaje, las mallas curriculares y las estrategias  didácticas propias de cada disciplina. \n4. Flexible: En cuanto que considera ritmos, historia personal, intereses,  capacidades, limitaciones. \n5. Interpretativa: Comprende los procesos y los resultados de la formación del  educando. \n6. Participativa: Involucra a todos los actores de la educación,…",
+   "localizado": true,
+   "pagina_fin": 96
+  },
+  "centros-interes": {
+   "doc": "pei",
+   "pagina": 89,
+   "seccion": "2.5",
+   "titulo": "Los centros de interés en el ColBolívar",
+   "transcrito": false,
+   "img": "assets/img/procesos/evidencias/pei-p089-centros-interes.webp",
+   "w": 1114,
+   "h": 801,
+   "texto": "2.5 LOS CENTROS DE INTERÉS EN EL COLBOLIVAR \n \nLa institución educativa Simón Bolívar cuenta con el acompañamiento del  programa de tutorías para el aprendizaje y la formación integral PTA FI 3.0 el cual \nTiene como propósito aumentar y desarrollar las oportunidades de aprendizaje de  las niñas, niños, adolescentes y jóvenes (NNAJ), por medio de una transformación  curricular y de un fortalecimiento pedagógico que incorpore el arte, la cultura, el  deporte, la actividad física, la ciencia, el pensamiento histórico, la tecnología, la  innovación y la estrategia de educación CRESE (educación ciudadana para la  reconciliación, antirracista, socioemocional y para el cambio climático) en las  prácticas pedagógicas a través de los centros de interés. \nLos centros de interés son escenarios alternativos para el aprendizaje y el  desarrollo integral de nuestros estudiantes. Se conectan con las motivaciones,  necesidades e intereses de cada uno de ellos, posibilitan, la exploración, la  investigación, el goce y el disfrute, la conexión del colegio con el territorio y la  integración e…",
+   "localizado": true,
+   "pagina_fin": 89
+  },
+  "comision-evaluacion": {
+   "doc": "pei",
+   "pagina": 48,
+   "seccion": "1.7.3",
+   "titulo": "Comisión de Evaluación y Promoción",
+   "transcrito": false,
+   "img": "assets/img/procesos/evidencias/pei-p048-comision-evaluacion.webp",
+   "w": 1114,
+   "h": 661,
+   "texto": "1.7.3 Comisión De Evaluación Y Promoción \n \nEl decreto 1290 de 2009, en el artículo 11, numerales 3, 4 y 5 establece como  responsabilidad de las instituciones educativas la de crear comisiones u otras  instancias para realizar el seguimiento de los procesos de evaluación y promoción  de los estudiantes. \n \nLas comisiones de evaluación y promoción, de acuerdo con el numeral 5 del artículo \n11 del decreto 1290 de 2009. Pueden ser creadas para cada uno de los ciclos o  para cada uno de los grados, con la composición que el consejo establezca, dando  participación a docentes, estudiantes y padres de familia. Los actores centrales son  los docentes, dado su conocimiento sobre el plan de estudios y del sistema de  evaluación. Es necesario establecer con claridad cual es el coordinador de cada  comisión y quien asume la secretaria para llevar las actas y toda la información  relacionada con los procesos que realiza.",
+   "localizado": true,
+   "pagina_fin": 48
+  },
+  "comite-convivencia": {
+   "doc": "pei",
+   "pagina": 114,
+   "seccion": "4.3.2",
+   "titulo": "El Comité Institucional de Convivencia",
+   "transcrito": false,
+   "img": "assets/img/procesos/evidencias/pei-p114-comite-convivencia.webp",
+   "w": 1114,
+   "h": 801,
+   "texto": "4.3.2 El Comité Institucional De Convivencia \nEl Comité Institucional de Convivencia, propende por el desarrollo de habilidades,  oportunidades y actitudes que contribuyen a la construcción de una cultura escolar  respetuosa de la dignidad de la persona, es promotora de la colaboración y  solidaridad, además de la aceptación e inclusión de toda la comunidad educativa  como componente de un todo, con deberes y derechos los cuales deben cumplir  para el buen funcionamiento de la institución educativa. Donde nuestros niños,  niñas, adolescentes y jóvenes aprendan a convivir y desarrollan capacidades para  convertirse en ciudadanos que defiendan y promueven la no violencia, el respeto  mutuo y la cooperación, contribuyendo de esta manera a construir un mundo mejor  a través de la comunicación, la aceptación a la diferencia y el consenso colectivo. \nEl Comité Institucional de Convivencia está sustentado y regido por lo establecido  en la ley 1620 del 2013; tiene como misión apoyar la gestión del aprendizaje y de la  convivencia escolar.",
+   "localizado": true,
+   "pagina_fin": 114
+  },
+  "comunicacion": {
+   "doc": "pei",
+   "pagina": 55,
+   "seccion": "1.8.1",
+   "titulo": "Mecanismos de comunicación",
+   "transcrito": false,
+   "img": "assets/img/procesos/evidencias/pei-p055-comunicacion.webp",
+   "w": 1114,
+   "h": 761,
+   "texto": "1.8.1 Mecanismos De Comunicación \n \nLa comunicación es el conjunto de los procesos físicos, psíquicos y sociales  mediante los cuales, se efectúa la operación de interrelacionar toda la comunidad  educativa, buscando alcanzar los objetivos mediante una respuesta eficaz, a través  de diferentes medios. \nEn la comunicación, se debe tener en cuenta para quien va dirigida la información  ya que es uno de los aspectos más importantes, la comprensión y la actitud que  tomarán, lo repercutirá en la respuesta al mensaje y la forma de retroalimentación  que generará. \nLa comunicación eficiente se basa en dos escenarios fundamentales: \nIdentificar los puntos de partida reconocidos por las líneas de autoridad, el  establecimiento de estándares de calidad en la proyección y una coordinación para  integrar toda la comunicación que se proyecta. \nEl desarrollo de la estrategia comunicacional, los planes de implantación y el cálculo  de la efectividad del programa de comunicación Institucional. \n \nLa Comunicación Interna",
+   "localizado": true,
+   "pagina_fin": 55
+  },
+  "consejo-academico": {
+   "doc": "pei",
+   "pagina": 48,
+   "seccion": "1.7.2",
+   "titulo": "Consejo Académico",
+   "transcrito": false,
+   "img": "assets/img/procesos/evidencias/pei-p048-consejo-academico.webp",
+   "w": 1114,
+   "h": 301,
+   "texto": "1.7.2 Consejo Académico \n \nEl consejo académico es el que asume el liderazgo en cuanto a lo pedagógico y la  investigación pedagógica es decir el diseño curricular que corresponde a los  principios, fines y objetivos fundamentales propuestos en el proyecto Educativo \nInstitucional.",
+   "localizado": true,
+   "pagina_fin": 48
+  },
+  "consejo-directivo": {
+   "doc": "pei",
+   "pagina": 47,
+   "seccion": "1.7.1",
+   "titulo": "Consejo Directivo",
+   "transcrito": false,
+   "img": "assets/img/procesos/evidencias/pei-p047-consejo-directivo.webp",
+   "w": 1114,
+   "h": 622,
+   "texto": "1.7.1 Consejo Directivo \n \nEl consejo directivo de la institución está conformado por los integrantes señalados  en el artículo 21 del decreto 1860 de 1994, a saber: el rector, dos representantes  del personal docente, dos representantes de los padres de familia, un representante \n \n \n \n“EDUCAMOS PARA CONSTRUIR PROYECTO DE VIDA CON ÉXITO” \n \n \n15-03-2024  de los estudiantes, un representante de los ex alumnos o egresados y un  representante del sector productivo.",
+   "localizado": true,
+   "pagina_fin": 48
+  },
+  "consejo-estudiantil": {
+   "doc": "pei",
+   "pagina": 50,
+   "seccion": "1.7.5",
+   "titulo": "Consejo Estudiantil",
+   "transcrito": false,
+   "img": "assets/img/procesos/evidencias/pei-p050-consejo-estudiantil.webp",
+   "w": 1114,
+   "h": 401,
+   "texto": "1.7.5 Consejo Estudiantil \n \nEs el máximo órgano que asegura y garantiza el continuo ejercicio de la  participación por parte de los educados. \n \nEstará integrado por un vocero de cada uno de los grados ofrecidos por  establecimiento… según él artículo 29 de 1860 \n \nEl Consejo Directivo convocará dentro de las cuatro primeras semanas del  calendario académico asambleas integradas por los est diantes seleccionados por",
+   "localizado": true,
+   "pagina_fin": 50
+  },
+  "consejo-padres": {
+   "doc": "pei",
+   "pagina": 50,
+   "seccion": "1.7.6",
+   "titulo": "Consejo de Padres de Familia",
+   "transcrito": false,
+   "img": "assets/img/procesos/evidencias/pei-p050-consejo-padres.webp",
+   "w": 1114,
+   "h": 735,
+   "texto": "1.7.6 Consejo De Padres De Familia \n \nEl Consejo de Padres de Familia, como órgano de la asociación de Padres de \nFamilia, es un medio para asegurar la continua participación de los padres y  acudientes en el proceso pedagógico del establecimiento. \n \nSu conformación atenderá lo indicado en el artículo 31 del decreto1860/94. \n \n \n \n \n“EDUCAMOS PARA CONSTRUIR PROYECTO DE VIDA CON ÉXITO” \n \n \n15-03-2024 \n \n \nEstá integrado por los voceros de los padres de los educados que cursan cada uno  de los diferentes grados que ofrece la institución. \n \n1.8 PRIMERA INFANCIA Y EDUCACIÓN INICIAL",
+   "localizado": true,
+   "pagina_fin": 51
+  },
+  "convenios": {
+   "doc": "pei",
+   "pagina": 58,
+   "seccion": "1.9",
+   "titulo": "Convenios y alianzas",
+   "transcrito": false,
+   "img": "assets/img/procesos/evidencias/pei-p058-convenios.webp",
+   "w": 1114,
+   "h": 813,
+   "texto": "1.9 CONVENIOS Y ALIANZAS \n \nLos convenios y alianzas en nuestra institución educativa Simón Bolívar son  fundamentales para enriquecer la experiencia educativa, fortalecer la calidad  académica, promover el mejoramiento académico y facilitar el desarrollo tanto de  estudiantes como del personal docente y administrativo. \nEn el contexto educativo, los aliados estratégicos son entidades que colaboran  con instituciones educativas para alcanzar objetivos mutuos, enriqueciendo la oferta  educativa y fomentar la formación integral con innovación. \nLo que los convierte en estratégicos no es sólo su capacidad para aportar  recursos o conocimientos, sino también su alineación con la visión, los valores y los  objetivos a largo plazo.",
+   "localizado": true,
+   "pagina_fin": 58
+  },
+  "enfoque-curricular": {
+   "doc": "pei",
+   "pagina": 78,
+   "seccion": "2.3",
+   "titulo": "Enfoque curricular",
+   "transcrito": false,
+   "img": "assets/img/procesos/evidencias/pei-p078-enfoque-curricular.webp",
+   "w": 1114,
+   "h": 855,
+   "texto": "2.3 ENFOQUE CURRICULAR \nSobre el Currículo se podría decir, según el artículo 76 de la Ley General de \nEducación que es “el conjunto de criterios, planes de estudio, programas,  metodologías, y procesos que contribuyen a la formación integral y a la construcción  de la identidad cultural nacional, regional y local, incluyendo también los recursos  humanos, académicos y físicos para poner en práctica las políticas y llevar a cabo  el Proyecto Educativo Institucional”. \nEn la actualidad el currículo no se concibe exclusivamente como un programa  sino como todo un proceso global que produce una institución y que influye sobre  todos sus alumnos (Vasco, 1983; Mora, 2002). El currículo en este sentido debe ser  un proceso global, que se vive, se incorpora y se dinamiza cada día en cada aula y  en cada institución. \n \n \n \n \n“EDUCAMOS PARA CONSTRUIR PROYECTO DE VIDA CON ÉXITO” \n \n \n15-03-2024 \n \n \nDe otro lado, el currículo se puede clasificar en: \n \nCurrículo Ideal: Qué es lo que una institución, dentro de una utopía posible, debería",
+   "localizado": true,
+   "pagina_fin": 79
+  },
+  "equipo-dinamizador": {
+   "doc": "pei",
+   "pagina": 91,
+   "seccion": "2.5.2",
+   "titulo": "Funciones del equipo dinamizador",
+   "transcrito": false,
+   "img": "assets/img/procesos/evidencias/pei-p091-equipo-dinamizador.webp",
+   "w": 1114,
+   "h": 775,
+   "texto": "2.5.2 Funciones Equipo Dinamizador \n \nEl Programa Tutorías para el Aprendizaje y la Formación Integral (PTAFI) 3.0 es  un programa diseñado para brindar apoyo integral a los estudiantes, promoviendo  su desarrollo académico, personal y profesional a través de diversas estrategias y  acciones. En este contexto, un equipo dinamizador dentro del PTAFI 3.0 se refiere  a un grupo de personas encargadas de coordinar, implementar y supervisar las  actividades del programa en una institución educativa específica. \nA continuación, se detallan algunas funciones y responsabilidades que podrían  tener los miembros de un equipo dinamizador: \n \n \n \n“EDUCAMOS PARA CONSTRUIR PROYECTO DE VIDA CON ÉXITO” \n \n \n15-03-2024 \n \n \n1. Coordinación del programa: Organizar y planificar las actividades del programa,  bl i d i d bilid d d l",
+   "localizado": true,
+   "pagina_fin": 92
+  },
+  "escuela-comunidad": {
+   "doc": "pei",
+   "pagina": 119,
+   "seccion": "4.5",
+   "titulo": "Relación escuela–comunidad",
+   "transcrito": false,
+   "img": "assets/img/procesos/evidencias/pei-p119-escuela-comunidad.webp",
+   "w": 1114,
+   "h": 735,
+   "texto": "4.5 RELACIÓN ESCUELA. COMUNIDAD \n \nLa institución educativa ofrece espacios de interacción y desarrollo integral a los  estudiantes que favorecen el desarrollo de los diferentes talentos y capacidades  que permiten estar atentos a participar como protagonistas en los diferentes  escenarios de la comunidad a través de las actividades artísticas, culturales ,  deportivas, sociales que vienen desarrollando los estudiantes a través de los centros  de interés, el cual cuenta con el apoyo de los aliados externos que permiten el  aprovechamiento del tiempo libre y la resignación del tiempo escolar. \n \n \n \n“EDUCAMOS PARA CONSTRUIR PROYECTO DE VIDA CON ÉXITO” \n \n \n15-03-2024 \n \n \nSon los aliados externos una oportunidad de interacción y proyección a la  comunidad y la sociedad de nuestra institución educativa donde se brindan los",
+   "localizado": true,
+   "pagina_fin": 120
+  },
+  "escuela-segura": {
+   "doc": "pei",
+   "pagina": 121,
+   "seccion": "4.6",
+   "titulo": "Proyecto Escuela Segura",
+   "transcrito": false,
+   "img": "assets/img/procesos/evidencias/pei-p121-escuela-segura.webp",
+   "w": 1114,
+   "h": 841,
+   "texto": "4.6 PROYECTO ESCUELA SEGURA \n \n4.6.1 Diagnóstico \n \nSe realizó una identificación de las principales amenazas y peligros a los que se  puede exponer la comunidad educativa COLBOLIVAR, entre estos están los  sismos, incendios, robos, violencia escolar, violencia social, accidentes viales. \nSe debe hacer una mejora de la infraestructura actual del COLBOLIVAR en términos  de seguridad, lo cual debe incluir la revisión de sistemas de alarma, luces de  emergencias, así como la señalización de las rutas de evacuación y puntos de  encuentro. \nAdemás, identificar posibles puntos de vulnerabilidad en la seguridad de la  institución, como zonas oscuras y accesos no controlados. \nSe debe hacer una actualización de los procedimientos y protocolos de seguridad  existentes en la institución, revisando su eficacia y actualización. \nEs necesario brindar formación al personal educativo en materia de seguridad y  primeros auxilios. \nSe requiere evaluar las capacidades y recursos disponibles para la implementación  del proyecto de escuela segura, tomando en cuenta el presupuesto, personal  requerido,…",
+   "localizado": true,
+   "pagina_fin": 121
+  },
+  "evaluacion": {
+   "doc": "pei",
+   "pagina": 93,
+   "seccion": "2.6",
+   "titulo": "Evaluación",
+   "transcrito": false,
+   "img": "assets/img/procesos/evidencias/pei-p093-evaluacion.webp",
+   "w": 1114,
+   "h": 855,
+   "texto": "2.6 EVALUACION \n \nPara el Colegio Simón Bolívar, y siguiendo el concepto de evaluación de Santos \nG, (2017), esta se concibe y utiliza como un fenómeno destinado al aprendizaje y  no solo a la comprobación de la adquisición del conocimiento. No es el momento  final de un proceso y, aun cuando así lo sea, porque a través de ella se promociona  a los estudiantes, esta puede convertirse en el comienzo de un nuevo proceso más  rico y fundamentado, cuando el Maestro, en su reflexión pedagógica, establece  planes de mejoramiento si así lo requiere. En la evaluación, el estudiante como  sujeto principal del aprendizaje, demuestra en qué nivel de dominio se encuentra en  cada una de las disciplinas objetos de verificación. En el colegio Simón Bolívar se  evalúa para mejorar, nunca para excluir. La evaluación tiene como característica  que es un proceso incluyente, permanente, sistemático, cualitativo, cuantitativo, \n \n \n \n“EDUCAMOS PARA CONSTRUIR PROYECTO DE VIDA CON ÉXITO” \n \n \n15-03-2024  integral, pero sobre todo que aplica el principio formativo en el que todo se convierte  en una…",
+   "localizado": true,
+   "pagina_fin": 94
+  },
+  "gestion-objetivos": {
+   "doc": "pei",
+   "pagina": 60,
+   "seccion": "1.10.1",
+   "titulo": "Objetivos de la gestión escolar",
+   "transcrito": false,
+   "img": "assets/img/procesos/evidencias/pei-p060-gestion-objetivos.webp",
+   "w": 1114,
+   "h": 855,
+   "texto": "1.10.1 Objetivos de la Gestión Escolar \n Establecer para todos los agentes miembros de la comunidad educativa unos  recursos (humanos, físicos y financieros), un espacio(escenarios) y un  tiempo, que permitan la realización de sus funciones. \n Alcanzar mejores resultados en la organización corporativa y en los de las  pruebas externas e internas, con base en indicadores de gestión \n \n \n \n“EDUCAMOS PARA CONSTRUIR PROYECTO DE VIDA CON ÉXITO” \n \n \n15-03-2024 \n \n \n Identificar las necesidades de los diferentes miembros de la comunidad  educativa. \n Determinar con plan de mejora periódico el nivel de satisfacción de las  necesidades de los estudiantes, padres de familia y demás miembros de la  comunidad. \n Aplicar el sistema de gestión a los MACROPROCESOS del Establecimiento \nEducativo. \n Proporcionar el ambiente de enseñanza y aprendizaje que permite la  formación integral de todas las competencias de los estudiantes, de los  docentes y del personal Administrativo",
+   "localizado": true,
+   "pagina_fin": 61
+  },
+  "gestion-proceso": {
+   "doc": "pei",
+   "pagina": 61,
+   "seccion": "1.10.2",
+   "titulo": "Proceso administrativo de la gestión escolar",
+   "transcrito": false,
+   "img": "assets/img/procesos/evidencias/pei-p061-gestion-proceso.webp",
+   "w": 1114,
+   "h": 1135,
+   "texto": "1.10.2 Proceso Administrativo De La Gestión Escolar \n \n \n \n \n \n“EDUCAMOS PARA CONSTRUIR PROYECTO DE VIDA CON ÉXITO” \n \n \n15-03-2024 \n \n \n \n1.10.3 Mapa de Procesos",
+   "localizado": true,
+   "pagina_fin": 62
+  },
+  "manual-convivencia": {
+   "doc": "conv",
+   "pagina": 274,
+   "seccion": "",
+   "titulo": "Ruta de Atención Integral para la Convivencia Escolar ColBolívar",
+   "transcrito": false,
+   "img": "assets/img/procesos/evidencias/conv-p274-manual-convivencia.webp",
+   "w": 1114,
+   "h": 975,
+   "texto": "RUTA DE ATENCIÓN INTEGRAL PARA LA CONVIVENCIA ESCOLAR COLBOLÍVAR \nACCIONES PARA LA PROMOCIÓN \nSegún el artículo 36 de la Ley 1620 de 2013, la promoción es el componente de la ruta de atención integral para la convivencia es\n \n \nCOLEGIO INTEGRADO SIMÓN BOLÍVAR \n“Educamos para construir Proyecto de Vida con Éxito” \nGESTIÓN DIRECTIVA \nMANUAL DE CONVIVENCIA \nGD-D02 \nVersión 1.0 \n17-02-2014  que enfatiza en acciones centradas en el desarrollo de competencias y el ejercicio de los derechos humanos, sexuales y reproduc que cualifica la convivencia y el clima escolar y que son parte de los procesos de educación para la vida de los y las estudiantes. A miembro de la comunidad educativa le corresponde, según su rol, unas acciones específicas de la siguiente manera: \n \n \n \n \n \n \n \n \n \n \nFACTORES CLAVES PARA LA PROMOCIÓN \n \n \n \n \n \n \n \n \n \n \n \n \n \n \nACCIONES INSTITUCIONALES PARA LA PROMOCIÓN \nParticipar activamente en las actividades propuestas de promoción y prevención.\nCrear propuestas que movilicen a sus compañeros(as).\nReflexionar criticamente e interiorizar las recomendaciones fortalecer…",
+   "localizado": true,
+   "pagina_fin": 275
+  },
+  "matricula": {
+   "doc": "pei",
+   "pagina": 101,
+   "seccion": "3.1.1",
+   "titulo": "Matrícula",
+   "transcrito": false,
+   "img": "assets/img/procesos/evidencias/pei-p101-matricula.webp",
+   "w": 1114,
+   "h": 841,
+   "texto": "3.1.1 Matricula \n \nEl proceso de matrícula tiene el seguimiento del equipo auditor institucional y del  área de cobertura del SEM: Para la definición y el control de cupos de estudiantes  nuevos y antiguos el rector debe: \n• Recibir el instructivo y la programación de cobertura elaborada por la  dirección de planeación de la Secretaría de Educación municipal el para el  año siguiente. \n• Elaborar proyección de cupos para el año siguiente y lo envía para  planeación y cobertura de la Secretaría de Educación. \n• Recibir de la Secretaría de educación el concepto y elaborar el formato de  reserva de cupos por estudiantes antiguos. \n \nINSCRIPCIÓN Y MATRICULAS \n \nACTIVIDAD \nFECHA \nRESULTADO \nReunión SEM matriculas \nÚltima sema JULIO \nInformación \nProyección de Cupos \nPrimera semana  agosto \nProyección registrada  en SIMAT- realizada \nProceso Inscripciones-requisitos \nSeptiembre octubre \nRecepción de",
+   "localizado": true,
+   "pagina_fin": 101
+  },
+  "mision-vision": {
+   "doc": "pei",
+   "pagina": 24,
+   "seccion": "1.3.1 – 1.3.3",
+   "titulo": "Misión, visión y política de calidad",
+   "transcrito": true,
+   "img": "assets/img/procesos/evidencias/pei-p024-mision-vision.webp",
+   "w": 1114,
+   "h": 1106,
+   "texto": "Visión: La Institución Educativa Colegio Simón Bolívar en el año 2027 será reconocida a nivel regional y nacional por desarrollar procesos académicos y administrativos de alta calidad apoyada en el manejo de las TIC, la inclusión escolar y la convivencia ciudadana post pandemia.\nMisión: El Colegio Simón Bolívar es una Institución de carácter oficial que ofrece un servicio de calidad en los niveles de Preescolar, Básica, Media Académica y Técnica propendiendo por la formación integral del estudiante desde el «saber ser», «saber hacer» y «saber saber». Con el desarrollo de proyectos en el marco de inclusión educativa, la evaluación formativa y el trabajo colaborativo que fortalecen la construcción de proyectos de vida con éxito.\nPolítica de calidad: Ofrecer un servicio educativo de alta calidad, que fortalezca en su comunidad el liderazgo, la comunicación y el trabajo en equipo, contando para ello con recursos físicos, financieros y tecnológicos apropiados y con un talento humano competente, que contribuya con el mejoramiento continuo de los procesos de la gestión escolar, para responder a las necesidades y expectativas de los actores educativos y su entorno.",
+   "localizado": true,
+   "pagina_fin": 24
+  },
+  "modelo-educativo": {
+   "doc": "pei",
+   "pagina": 72,
+   "seccion": "2.2",
+   "titulo": "Modelo educativo",
+   "transcrito": false,
+   "img": "assets/img/procesos/evidencias/pei-p072-modelo-educativo.webp",
+   "w": 1114,
+   "h": 759,
+   "texto": "2.2 MODELO EDUCATIVO \n \nEntendemos por Modelo Educativo el conjunto de actitudes, lineamientos y  conductas que guían el proceso educativo para suscitar el tipo de hombre descrito  en nuestro ideario. Es también el elemento operativo tanto de nuestra Misión \nEducativa como el mismo ideario. Al ponerlo en práctica, nos permite también, a \nDocentes y estudiante construirnos a nosotros mismos de acuerdo con la \nPedagogía Activa. El modelo adquiere vigencia solo con el compromiso de ser vivido  por todos los miembros de la Comunidad Educativa. De igual manera, puede ser  también “un conjunto de factores de interacción dialéctica para ser consideradas  como idea para el hombre”. Incluye los conceptos de formación social y sistema  político y económico, filosofía, proyecto de hombre y de país, y unas bases  epistemológicas. También se entiende como un esquema teórico del sistema  educativo que elabora cada Institución Educativa para facilitar su comprensión,  visualizar la postura filosófica, epistemológica, psicológica y pedagógica y poner  marcha el propio sistema con la finalidad de…",
+   "localizado": true,
+   "pagina_fin": 72
+  },
+  "modelo-pedagogico": {
+   "doc": "modelo",
+   "pagina": 3,
+   "seccion": "",
+   "titulo": "Enfoque del Modelo Pedagógico 2026",
+   "transcrito": false,
+   "img": "assets/img/procesos/evidencias/modelo-p003-modelo-pedagogico.webp",
+   "w": 1114,
+   "h": 921,
+   "texto": "Enfoque pedagógico \nPedagogía Activa \nEnfoque del aprendizaje \nAprendizaje activo y experiencial \nConcepción del estudiante \nSujeto activo, autónomo, participativo y constructor de  conocimiento \nRol del docente \nMediador, orientador y facilitador del aprendizaje \nMetodología \nAprendizaje basado en problemas, proyectos, experiencias y  situaciones del contexto \nEstrategias \nExperimentación, investigación, trabajo cooperativo, juegos,  proyectos y resolución de problemas \nEvaluación \nFormativa, integral, participativa y centrada en el proceso \nContexto \nAprendizaje relacionado con la realidad y las experiencias del  estudiante \n3. ¿Qué se entiende por Modelo Pedagógico Activo? \nEl Modelo Pedagógico Activo entiende el aprendizaje como un proceso dinámico en el cual el  estudiante participa directamente en la construcción del conocimiento mediante la experiencia, la  interacción, la exploración, la reflexión, la investigación y la resolución de situaciones  problemáticas. \nEl modelo supera una concepción exclusivamente transmisiva de la enseñanza y propone que los  contenidos escolares…",
+   "localizado": true,
+   "pagina_fin": 3
+  },
+  "objetivos": {
+   "doc": "pei",
+   "pagina": 29,
+   "seccion": "1.3.6",
+   "titulo": "Objetivos generales del proyecto",
+   "transcrito": false,
+   "img": "assets/img/procesos/evidencias/pei-p029-objetivos.webp",
+   "w": 1114,
+   "h": 841,
+   "texto": "1.3.6 Objetivos generales del proyecto \nPromover el desarrollo integral de los estudiantes a través del fortalecimiento de  su proyecto de vida, potenciando sus capacidades, intereses, habilidades y talentos  para alcanzar sus metas personales y profesionales. \nFomentar la inclusión educativa, garantizando que todos los estudiantes tengan  acceso a una educación de calidad, sin importar su condición socioeconómica,  cultural, étnica o de género. \nPromover una sana convivencia escolar centrada en educación ciudadana para  la reconciliación, socioemocional, antirracista, basada en el respeto, la tolerancia y  la cooperación, fomentando un entorno seguro, un ambiente de paz y armonía en  la comunidad educativa. \nBrindar una formación integral a los estudiantes, que no solo se centre en el  aspecto académico, sino también en el desarrollo de sus habilidades sociales,  culturales, deportivas, artísticas, emocionales, éticas y ambientales. \nFomentar el trabajo en equipo entre docentes, estudiantes, padres de familia y  comunidad educativa, promoviendo la colaboración y el intercambio de…",
+   "localizado": true,
+   "pagina_fin": 29
+  },
+  "pensum": {
+   "doc": "pei",
+   "pagina": 83,
+   "seccion": "2.4",
+   "titulo": "Pensum académico",
+   "transcrito": false,
+   "img": "assets/img/procesos/evidencias/pei-p083-pensum.webp",
+   "w": 1114,
+   "h": 841,
+   "texto": "2.4 PENSUM ACADEMICO \n \nPRIMERA INFANCIA Y EDUCACION INICIAL \n \n \n \nPRIMERO A QUINTO",
+   "localizado": true,
+   "pagina_fin": 83
+  },
+  "perfil-directivo": {
+   "doc": "pei",
+   "pagina": 43,
+   "seccion": "1.6.3",
+   "titulo": "Perfil del directivo docente",
+   "transcrito": false,
+   "img": "assets/img/procesos/evidencias/pei-p043-perfil-directivo.webp",
+   "w": 1114,
+   "h": 775,
+   "texto": "1.6.3 Perfil Del Directivo Docente \n \n \n \n \n“EDUCAMOS PARA CONSTRUIR PROYECTO DE VIDA CON ÉXITO” \n \n \n15-03-2024 \n \n \nEl perfil del DIRECTIVO DOCENTE en la institución educativa combina  competencias administrativas, pedagógicas y de liderazgo, con un enfoque en la  mejora continua y el compromiso con la excelencia educativa. \nLas características claves del directivo docente incluyen: \n• Formación académica sólida \n• Liderazgo y habilidades de gestión: Deben poseer habilidades de liderazgo  sólidas para motivar y guiar al personal docente y administrativo. La  capacidad para tomar decisiones estratégicas y gestionar eficazmente los  recursos es fundamental",
+   "localizado": true,
+   "pagina_fin": 44
+  },
+  "perfil-educando": {
+   "doc": "pei",
+   "pagina": 39,
+   "seccion": "1.6.1",
+   "titulo": "Perfil del educando",
+   "transcrito": false,
+   "img": "assets/img/procesos/evidencias/pei-p039-perfil-educando.webp",
+   "w": 1114,
+   "h": 661,
+   "texto": "1.6.1 Perfil Del Educando \n \nEl estudiante de la Institución Educativa Colegio Simón Bolívar, al terminar sus años  de formación será una persona: \nCapaz de aplicar los conocimientos contables, empresariales, técnicos, científicos  y tecnológicos en su proyección social, mejorando la calidad de vida de su  comunidad. \nCapaz de tomar decisiones libres, responsables y autónomas. \nCapaz de un compromiso cristiano-social en su opción de vida: intelectualmente  competente. \nCapaz de expresar el amor en sus relaciones interpersonales. \nCapaz de compromiso solidario comunitario y deportivos. \nAbierto al cambio en búsqueda de una sociedad más justa.",
+   "localizado": true,
+   "pagina_fin": 39
+  },
+  "perfil-padres": {
+   "doc": "pei",
+   "pagina": 45,
+   "seccion": "1.6.4",
+   "titulo": "Perfil del padre de familia, cuidador o acudiente",
+   "transcrito": false,
+   "img": "assets/img/procesos/evidencias/pei-p045-perfil-padres.webp",
+   "w": 1114,
+   "h": 675,
+   "texto": "1.6.4 Perfil Del Padre De Familia, Cuidador O Acudiente \nEl padre de familia o acudiente Colbolívar se caracteriza por: \n \n \n \n“EDUCAMOS PARA CONSTRUIR PROYECTO DE VIDA CON ÉXITO” \n \n \n15-03-2024 \n \n \n• Interés y participación activa: participan activamente en la educación de sus  hijos, asistiendo a reuniones, eventos escolares y colaborando con los  docentes y directivos para apoyar el proceso educativo. \n• Apoyo emocional y motivacional: Proporcionan un ambiente familiar que  fomenta el aprendizaje, brindando apoyo emocional y motivando a sus hijos  a alcanzar sus metas académicas y personales. \n• Comunicación efectiva: Mantienen una comunicación abierta y efectiva con  los docentes y directivos de la institución educativa para estar al tanto del",
+   "localizado": true,
+   "pagina_fin": 46
+  },
+  "personero": {
+   "doc": "pei",
+   "pagina": 49,
+   "seccion": "1.7.4",
+   "titulo": "Personero estudiantil",
+   "transcrito": false,
+   "img": "assets/img/procesos/evidencias/pei-p049-personero.webp",
+   "w": 1114,
+   "h": 661,
+   "texto": "1.7.4 Personero Estudiantil \n \nLos estudiantes elegirán a un alumno del grado 11 para que actúe como  personero de los estudiantes y promotor de sus derechos y deberes. \nQuien aspire ser electo personero de los estudiantes debe cumplir los siguientes  requisitos.  a. Tener matricula vigente en el momento de la inscripción como aspirante.  b. Pertenecer al último grado de enseñanza que ofrezca la institución.  c. No desempeñar otros cargos de responsabilidad en el colegio.  d. No aparecer como aspirante a otros cargos de elección.  e. Diligenciar el formulario de inscripción y presentar el Plan de Gobierno.  f. Inscribirse dentro de la fecha establecida por el consejo electoral.  g. Cumplir con la reglamentación y los acuerdos emanados del proceso electoral.  h. No estar repitiendo el año escolar ni presentar anomalías en su rendimiento  escolar y comportamiento.",
+   "localizado": true,
+   "pagina_fin": 49
+  },
+  "planta-fisica": {
+   "doc": "pei",
+   "pagina": 104,
+   "seccion": "3.2",
+   "titulo": "Administración de la planta física y de los recursos",
+   "transcrito": false,
+   "img": "assets/img/procesos/evidencias/pei-p104-planta-fisica.webp",
+   "w": 1114,
+   "h": 533,
+   "texto": "3.2 ADMINISTRACIÓN DE LA PLANTA FÍSICA Y DE LOS RECURSOS \nSe orienta a asegurar los requerimientos de la planta física de la institución que  corresponden a garantizar la existencia y disponibilidad de recursos físicos \n(laboratorios, aulas, talleres y salas de informática, entre otros) y otros suministros  que sirvan de herramientas para el aprendizaje escolar generando buenas  condiciones de infraestructura y dotación para una adecuada prestación de los  servicios. \nMantenimiento La Institución Educativa posee unas instalaciones con  infraestructura de espacios amplios, zona verde y canchas, que le brindan a la  comunidad escolar un ambiente muy agradable. Para el mantenimiento de estos  espacios se destinan recursos encaminados a esta labor y se gestionan recursos",
+   "localizado": true,
+   "pagina_fin": 104
+  },
+  "politica-comunicacion": {
+   "doc": "pei",
+   "pagina": 57,
+   "seccion": "1.8.2",
+   "titulo": "Política de comunicación ColBolívar",
+   "transcrito": false,
+   "img": "assets/img/procesos/evidencias/pei-p057-politica-comunicacion.webp",
+   "w": 1114,
+   "h": 675,
+   "texto": "1.8.2 Política De Comunicación Colbolívar \n \nEn nuestra institución Colegio Simón Bolívar nos comprometemos a mantener  una comunicación clara, coherente, oportuna y basada en los principios de \n \n \n \n“EDUCAMOS PARA CONSTRUIR PROYECTO DE VIDA CON ÉXITO” \n \n \n15-03-2024  transparencia y veracidad. Para lograrlo se han definido canales de comunicación  efectivos que permiten la difusión de información de manera ágil y comprensible. \nAdemás, se fomenta una cultura de comunicación abierta y colaborativa, donde  se valora la retroalimentación y se promueve el diálogo constructivo. \nEsta política de comunicación institucional es revisada periódicamente para",
+   "localizado": true,
+   "pagina_fin": 58
+  },
+  "politica-inclusion": {
+   "doc": "pei",
+   "pagina": 111,
+   "seccion": "4.1.1",
+   "titulo": "Política de inclusión",
+   "transcrito": false,
+   "img": "assets/img/procesos/evidencias/pei-p111-politica-inclusion.webp",
+   "w": 1114,
+   "h": 658,
+   "texto": "4.1.1. Política De Inclusión \nLa política de inclusión educativa del Colegio Simón Bolívar es un proceso  permanente que reconoce, valora y responde de manera pertinente a la diversidad  de características, intereses, posibilidades y expectativas de niñas, niños,  adolescentes y jóvenes. Su objetivo es promover su desarrollo, aprendizaje y  participación junto a sus pares de la misma edad en un ambiente de aprendizaje \n \n \n \n“EDUCAMOS PARA CONSTRUIR PROYECTO DE VIDA CON ÉXITO” \n \n \n15-03-2024  común, sin discriminación o exclusión alguna. Esta política garantiza, en el marco  de los derechos humanos, los apoyos y los ajustes razonables requeridos en su  proceso educativo, a través de prácticas, políticas y culturas que eliminan las  barreras existentes en el entorno educativo.",
+   "localizado": true,
+   "pagina_fin": 112
+  },
+  "presupuesto": {
+   "doc": "pei",
+   "pagina": 107,
+   "seccion": "3.5",
+   "titulo": "Presupuesto anual del Fondo de Servicios Educativos",
+   "transcrito": false,
+   "img": "assets/img/procesos/evidencias/pei-p107-presupuesto.webp",
+   "w": 1114,
+   "h": 775,
+   "texto": "3.5 PRESUPUESTO ANUAL DEL FONDO DE SERVICIOS EDUCATIVOS \n \nPara la elaboración del presupuesto anual se tienen en cuenta las necesidades  y expectativas planteadas en el PEI y el PMI, además de observar las fuentes de  recursos si van a ser propios o externos, se mira el comportamiento histórico de los  últimos 3 0 4 años, se verifica un equilibrio entre ingresos y egresos, se hacen \n \n \n \n“EDUCAMOS PARA CONSTRUIR PROYECTO DE VIDA CON ÉXITO” \n \n \n15-03-2024  proyecciones sobre los escenarios, se define por el más adecuado y se presenta al \nConsejo Directivo. La Institución Educativa realiza el análisis financiero y las  proyecciones presupuestales evaluando periódicamente los procedimientos y  coordina que las necesidades de las distintas sedes con sus requerimientos sean  atendidas. \nAdemás, el plan de ingresos y egresos está relacionado con los flujos de caja",
+   "localizado": true,
+   "pagina_fin": 108
+  },
+  "principios": {
+   "doc": "pei",
+   "pagina": 25,
+   "seccion": "1.3.4",
+   "titulo": "Principios y valores ColBolívar",
+   "transcrito": false,
+   "img": "assets/img/procesos/evidencias/pei-p025-principios.webp",
+   "w": 1114,
+   "h": 841,
+   "texto": "1.3.4 Principios y valores Colbolívar \n \nPRINCIPIOS ANTROPOLÓGICOS. La comunidad del Colegio Integrado Simón \nBolívar, Cúcuta está integrada por personas únicas e irrepetibles con capacidad de  acción y respeto a la dignidad de sí misma, a los derechos humanos, a los principios  democráticos de convivencia, pluralismo, solidaridad y justicia, así como en el  ejercicio de la tolerancia y de la paz. \nEs fundamental desarrollar en cada educando en la comunidad la capacidad de  observación, conceptualización, comprensión, análisis, síntesis, generalización,  valores y criticidad. \nLa investigación es elemento fundamental en la formación y en la capacidad  permanente. \nEl conocimiento lo construye cada persona. \nEl conocimiento es un proceso activo e inacabado. \nPRINCIPIOS PSICOLÓGICOS. El reconocimiento de las características de cada  una de las etapas del desarrollo humano. \nEl aprendizaje es un proceso acorde con el desarrollo de cada individuo",
+   "localizado": true,
+   "pagina_fin": 25
+  },
+  "proyeccion": {
+   "doc": "pei",
+   "pagina": 112,
+   "seccion": "4.2",
+   "titulo": "Proceso: proyección a la comunidad",
+   "transcrito": false,
+   "img": "assets/img/procesos/evidencias/pei-p112-proyeccion.webp",
+   "w": 1114,
+   "h": 841,
+   "texto": "4.2 PROCESO: PROYECCIÓN A LA COMUNIDAD: \nComprende los planes, programas y servicios que la institución pone a  disposición de la comunidad para mejorar sus condiciones de vida, hacerla partícipe  de la vida institucional, de sus procesos y decisiones y estimular el apoyo de la  familia en relación con el aprendizaje de los estudiantes para poner a disposición  de la comunidad educativa un conjunto de servicios para apoyar su bienestar. \nComponentes: Escuela de padres \nLa escuela de padres es un encuentro familiar, de carácter obligatorio, en  cumplimiento a los artículos 18, 42 numeral 5 de la ley 1098 de Infancia y \nAdolescencia y acatando las sentencias de la corte constitucional que determinan  la educación como un derecho – deber, para desarrollar procesos de capacitación,  formación, orientación y acompañamiento a la labor pedagógica y formativa de los  padres de familia. \nEn la institución educativa se desarrolla a través del Proyecto Escuela de familia  liderada por la orientadora escolar y acompañada por docentes titulares y  coordinación \nBienestar estudiantil",
+   "localizado": true,
+   "pagina_fin": 112
+  },
+  "proyectos-transversales": {
+   "doc": "pei",
+   "pagina": 97,
+   "seccion": "2.7",
+   "titulo": "Proyectos transversales ColBolívar",
+   "transcrito": false,
+   "img": "assets/img/procesos/evidencias/pei-p097-proyectos-transversales.webp",
+   "w": 1114,
+   "h": 855,
+   "texto": "2.7 PROYECTOS TRANSVERSALES COLBOLIVAR \n \nLos proyectos transversales, son estrategias pedagógicas que permiten planear,  desarrollar y evaluar el currículo, posibilitando con ello, mejorar la calidad del  proceso de enseñanza y el desarrollo integral del estudiante; Están fundamentados  en el artículo 36 del decreto 1860 de 1994 como una actividad dentro del plan de  estudios con el propósito de conllevar al estudiante a la solución de problemas  propios de su entorno, seleccionados mediante un diagnóstico previo que atiende a  las necesidades sociales, científicas, culturales y tecnológicas del estudiante. \nEl propósito fundamental de los Proyectos transversales, es garantizar la  implementación de las estrategias pedagógicas dentro del PEI (Proyecto Educativo \n \n \n \n“EDUCAMOS PARA CONSTRUIR PROYECTO DE VIDA CON ÉXITO” \n \n \n15-03-2024 \n \n \nInstitucional), que contribuyan a la globalización del conocimiento y la integralidad  de las disciplinas, de manera que la formación del estudiante no sea solamente de  conocimiento intelectual, sino que trascienda a los valores y…",
+   "localizado": true,
+   "pagina_fin": 98
+  },
+  "restaurante": {
+   "doc": "pei",
+   "pagina": 105,
+   "seccion": "3.3.2",
+   "titulo": "Servicio de restaurante",
+   "transcrito": false,
+   "img": "assets/img/procesos/evidencias/pei-p105-restaurante.webp",
+   "w": 1114,
+   "h": 562,
+   "texto": "3.3.2 Servicio de restaurante \nFunciona el servicio de alimentación escolar para los niños, niñas y jóvenes de  las sedes, los cuales son financiados por los recursos proporcionados por la Alcaldía  como parte del proyecto PAE. El servicio se presta proporcionándoles refrigerios y  almuerzos. Para la prestación del servicio, existe un operador, la comunidad  educativa es veedora de la calidad y cumplimiento del servicio de acuerdo con \nPrograma de Alimentación Escolar PAE del municipio. \n \n \n \n“EDUCAMOS PARA CONSTRUIR PROYECTO DE VIDA CON ÉXITO” \n \n \n15-03-2024",
+   "localizado": true,
+   "pagina_fin": 106
+  },
+  "ruta-atencion": {
+   "doc": "pei",
+   "pagina": 115,
+   "seccion": "4.3.3",
+   "titulo": "Ruta de Atención Integral para la Convivencia Escolar",
+   "transcrito": false,
+   "img": "assets/img/procesos/evidencias/pei-p115-ruta-atencion.webp",
+   "w": 1114,
+   "h": 841,
+   "texto": "4.3.3 Ruta De Atención Integral Para La Convivencia Escolar Colbolívar \nAcciones Institucionales Para La Promoción \nPor medio de las cuales se busca impulsar, fomentar y dinamizar el desarrollo de  las competencias ciudadanas y el ejercicio de los derechos humanos, sexuales y  reproductivos ejecutándose a través de un proceso continuo de formación para el  desarrollo integral de los estudiantes, que determinen la calidad del clima escolar y  la sana convivencia escolar institucional. Según el artículo 36 de la Ley 1620 de \n2013, se consideran acciones de promoción las políticas institucionales que se  concentran en el fomento de la convivencia y en el mejoramiento del clima escolar,  con el fin de generar un entorno favorable para el ejercicio real y efectivo de los \nDerechos Humanos, sexuales y reproductivos en el ámbito escolar.",
+   "localizado": true,
+   "pagina_fin": 115
+  },
+  "servicio-doc": {
+   "doc": "servicio",
+   "pagina": 9,
+   "seccion": "",
+   "titulo": "Líneas de acción y subproyectos del servicio social",
+   "transcrito": false,
+   "img": "assets/img/procesos/evidencias/servicio-p009-servicio-doc.webp",
+   "w": 1114,
+   "h": 921,
+   "texto": "Syecto \nDescripción de Actividades Impacto en el Proyecto de \nVida (Marco ATEM)ubpro \nAmbiente \nEscolar \n(PRAE) \nCuidado de zonas verdes,  gestión  ambiental  y  mantenimiento. \nDesarrollo  de  conciencia  territorial y ética del cuidado  del bien común. \nAyuda Administrativa Auxiliares de coordinación, y  comedor estudiantil. \nFomento de la responsabilidad  ciudadana,  gestión  de  procesos y cultura del servicio. \nMonitorías \nAcadémicas \nApoyo en Primaria (Español, \nMatemáticas, \nInglés, \nEducación \nFísica, \nInformática). \nRefuerzo  de  aprendizajes  esenciales y desarrollo de  habilidades  de  liderazgo  pedagógico. \nLúdicos y Culturales \nCentros de Interés. \nDisciplina, expresión artística,  agencia  juvenil  y  trabajo  colaborativo sistémico. \nConectividad \n(Redvolución) \nConvenio \nMinTIC:  alfabetización digital y cierre  de brechas en la comunidad. \nTransferencia  de  conocimiento  técnico  y  desarrollo de competencias  digitales sociales. \nAcompañamiento PTA \nElaboración  de  material  didáctico  para  básica  primaria. \nCreatividad, apoyo a la mejora  de la calidad…",
+   "localizado": false,
+   "pagina_fin": 9
+  },
+  "servicio-social": {
+   "doc": "pei",
+   "pagina": 118,
+   "seccion": "4.4",
+   "titulo": "Servicio social obligatorio",
+   "transcrito": false,
+   "img": "assets/img/procesos/evidencias/pei-p118-servicio-social.webp",
+   "w": 1114,
+   "h": 661,
+   "texto": "4.4 SERVICIO SOCIAL OBLIGATORIO \n \nSe entiende por Servicio Social, la práctica con la comunidad, que deben realizar  los Estudiantes de Educación Básica Secundaria y Media, como aplicación de los  conocimientos adquiridos a lo largo del proceso Educativo y en procura del  desarrollo personal y comunitario acorde con los principios y fines de la Institución \nEducativa Colegio Simón Bolívar, con el fin de crear conciencia social y afianzar el  sentido de pertenecía en los estudiantes. \n4.4.1 Filosofía Del Servicio Social \n \nEl servicio social estudiantil es la actividad de carácter temporal, que debe  desempeñar el estudiante durante un tiempo fijado en la legislación, en ochenta  horas, como requisito indispensable para obtener el título de Bachiller; es una  oportunidad para identificarse con la sociedad por los beneficios, competencias y  capacidades obtenidos a través de su formación y educación, colocándolas en",
+   "localizado": true,
+   "pagina_fin": 118
+  },
+  "siee": {
+   "doc": "siee",
+   "pagina": 26,
+   "seccion": "",
+   "titulo": "Escala de valoración institucional",
+   "transcrito": false,
+   "img": "assets/img/procesos/evidencias/siee-p026-siee.webp",
+   "w": 1085,
+   "h": 841,
+   "texto": "El artículo 5.º del Decreto 1290 de 2009 (art. 2.3.3.3.3.5 del Decreto 1075 de 2015) exige que cada  institución defina su propia escala de valoración y la exprese en equivalencia con la escala nacional,  para facilitar la movilidad de los estudiantes entre establecimientos. Esta es la escala del Colegio \nSimón Bolívar; la comunidad Yukpa tiene una escala propia, presentada en el Anexo (Sección 10). \nPara valorar los procesos al final del período o del año escolar, se tiene en cuenta el artículo \n2.3.3.3.3.5 del Decreto 1075, que establece: «Cada establecimiento educativo definirá y adoptará  su escala de valoración de los desempeños de los estudiantes en su sistema de evaluación. Y para  facilitar la movilidad de los estudiantes entre establecimientos educativos, cada escala deberá  expresar su equivalencia con la escala de valoración nacional». Para el Colegio Simón Bolívar, la  escala de valoración se expresa así: \nTabla 10. Escala de valoración institucional y su equivalencia con la escala nacional \nEscala nacional \nValoración  institucional \nIndicador \nDesempeño \nSuperior \n4.5…",
+   "localizado": true,
+   "pagina_fin": 26
+  },
+  "smart-place": {
+   "doc": "pei",
+   "pagina": 120,
+   "seccion": "4.5.1",
+   "titulo": "Los Smart Place",
+   "transcrito": false,
+   "img": "assets/img/procesos/evidencias/pei-p120-smart-place.webp",
+   "w": 1114,
+   "h": 661,
+   "texto": "4.5.1 Los Smart Place claves en las relaciones con la comunidad. \n \nAl Smart Place Colbolivar pueden acceder a los servicios de lunes a viernes de \n8:00 am a 12 del mediodía y de 2:00 a 6:00 de la tarde. El Smart Place es un espacio  apadrinados y renovados por la administración municipal, dotados con equipos de  última tecnología, como computadores, cámaras, impresoras 3D, sala de  producción de audio y video, en los que cientos de ciudadanos han accedido a la  oferta educativa gratuita en temas de informática básica, redes sociales, ofimática,  programación de electrónica básica con Arduino y desarrollo de videojuegos en 2D. \nLos cursos ofrecidos para la comunidad educativa son: \n1. Modelo impresión 3D \n2. Robótica y programación \n3. Electrónica y programación con Arduino \n4. Ofimática y plata forma de Google",
+   "localizado": true,
+   "pagina_fin": 120
+  },
+  "talento-humano": {
+   "doc": "pei",
+   "pagina": 106,
+   "seccion": "3.4",
+   "titulo": "Talento humano",
+   "transcrito": false,
+   "img": "assets/img/procesos/evidencias/pei-p106-talento-humano.webp",
+   "w": 1114,
+   "h": 841,
+   "texto": "3.4 TALENTO HUMANO \nLa Institución Educativa, es privilegiada porque los perfiles del recurso humano  se encuentran bien definidos y son coherentes con el PEI y con la normatividad  vigente. Considerados como agentes educativos todas aquellas personas que  contribuyen en la educación y orientación del ser humano. El Proyecto Educativo \nInstitucional, exige de los agentes educativos asumir responsablemente su tarea,  mediante actitudes positivas que generen cambios. \nLos docentes de acuerdo a su perfil son organizados de acuerdo a la siguiente  distribución: \nTitulatura \nCampo de gestión \nComité",
+   "localizado": true,
+   "pagina_fin": 106
+  },
+  "transporte": {
+   "doc": "pei",
+   "pagina": 105,
+   "seccion": "3.3.1",
+   "titulo": "Servicio de transporte humanitario",
+   "transcrito": false,
+   "img": "assets/img/procesos/evidencias/pei-p105-transporte.webp",
+   "w": 1114,
+   "h": 285,
+   "texto": "3.3.1 Servicios de transporte Humanitario. \nCon el objetivo de brindar bienestar a los educandos radicados en Ureña se  establece la focalización de los estudiantes residentes en Ureña para mediante  acuerdo realizado con la Alcaldía de Cúcuta se cuente con ruta para desplazar la  población estudiantil de los diferentes barrios de Ureña hacia la Institución educativa  y viceversa.",
+   "localizado": true,
+   "pagina_fin": 105
+  },
+  "valores": {
+   "doc": "pei",
+   "pagina": 28,
+   "seccion": "1.3.5",
+   "titulo": "Valores institucionales",
+   "transcrito": false,
+   "img": "assets/img/procesos/evidencias/pei-p028-valores.webp",
+   "w": 1114,
+   "h": 661,
+   "texto": "1.3.5 Valores institucionales \nSe encuentran enmarcados dentro de la estrella Colbolivar. \n• La honestidad, ya que permite desarrollar el valor de la ética, la verdad y de  la puntualidad y previene las acciones de robar y de plagiar. \n• El amor, porque promueve los valores de la paz, la amistad, el respeto, la  fraternidad, la comunicación y suscita el compartir y la sana convivencia. \n• El esfuerzo, que fortalece los hábitos de estudio, la responsabilidad, la  autodidáctica la planeación y el trabajo en equipo. \n• La fe, que potencializa la espiritualidad, la autoestima, el autoconcepto, el  autocontrol y el reconocimiento de las capacidades propias.",
+   "localizado": true,
+   "pagina_fin": 28
+  }
+ }
+}

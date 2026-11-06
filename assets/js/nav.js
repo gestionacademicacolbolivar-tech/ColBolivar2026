@@ -17,6 +17,7 @@ var items=[
  ['./','Portada','Todas las secciones',ic(0,0),'index.html'],
  ['DOCUMENTOS%20INSTITUCIONALES.html','Documentos institucionales','PEI, SIEE, convivencia…',ic(1,2,'d'),'DOCUMENTOS INSTITUCIONALES.html'],
  ['CALIDAD.html','Calidad','Gestión de calidad',ic(3,2,'d'),'CALIDAD.html'],
+ ['PROCESOS.html','Procesos','Gestiones y evidencias',ic(1,1,'d'),'PROCESOS.html'],
  ['ORIENTACION_ESCOLAR.html','Orientación escolar','Apoyo psicosocial',ic(0,3,'d'),'ORIENTACION_ESCOLAR.html'],
  ['PROYECTOS_TRANSVERSALES.html','Proyectos transversales','Proyectos del año',ic(1,3,'d'),'PROYECTOS_TRANSVERSALES.html'],
  ['cartelera.html','Cartelera','Avisos y videos',ic(3,3,'d'),'cartelera.html'],
