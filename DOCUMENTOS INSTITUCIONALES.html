@@ -415,6 +415,6 @@ function buscar(v){fp.hidden=false;fp.innerHTML='<h2>🔎 Dentro de los document
 fp.addEventListener('click',e=>{const b=e.target.closest('button[data-q]');if(b&&window.ariaPreguntar)ariaPreguntar(b.dataset.q)});
 })();
 </script>
-<script src="aria-docs.js"></script>
+<script>window.ARIA_DOCS_NOAUTO=1</script><script src="aria-docs.js"></script>
 <script src="assets/js/nav.js" defer></script>
 </body></html>
