@@ -1,0 +1,10 @@
+# Archivos que ARIA no debe leer ni citar. Una línea por archivo (basta un fragmento del nombre). Las líneas con # son comentarios.
+# Esto solo afecta a ARIA: el archivo sigue en el repositorio y en la página; para retirarlo de verdad hay que borrarlo o reemplazarlo.
+
+# Contiene fichas PIAR con datos personales y de salud de estudiantes. Quitar esta línea cuando se reemplace por una versión anonimizada.
+PROYECTO DE INCLUSION Y EVIDENCIA DE DUA Y PIAR.pdf
+
+# Documentos internos de trabajo (instrucciones para generar imágenes y para regenerar la sección Procesos)
+PEDIDO-DE-IMAGENES.md
+procesos/LEEME.md
+aria-conocimiento/README.md

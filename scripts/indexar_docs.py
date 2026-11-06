@@ -6,6 +6,13 @@ OWNER, _, REPO = os.environ.get("GITHUB_REPOSITORY", "gestionacademicacolbolivar
 BASE = os.environ.get("SITE_BASE", f"https://{OWNER}.github.io/{REPO}/")
 SKIP = {".git", ".github", "node_modules", "scripts", "__pycache__"}
 B64 = re.compile(r"[A-Za-z0-9+/=_-]{120,}")
+# Archivos que ARIA NO debe leer ni citar (por ejemplo, PDF con datos de estudiantes). Se editan en aria-conocimiento/excluir-del-indice.lst
+EXCL = set()
+try:
+    for l in open("aria-conocimiento/excluir-del-indice.lst", encoding="utf-8"):
+        l = l.split("#")[0].strip()
+        if l: EXCL.add(l)
+except FileNotFoundError: pass
 out = []
 def limpiar(t): return re.sub(r"\s+", " ", B64.sub(" ", t)).strip()
 def trozos(t, n=900):
@@ -23,6 +30,7 @@ for raiz, dirs, files in os.walk("."):
     dirs[:] = [d for d in dirs if d not in SKIP]
     for f in files:
         ruta = os.path.join(raiz, f); rel = os.path.relpath(ruta).replace(os.sep, "/")
+        if any(e in rel for e in EXCL): print("excluido del índice:", rel); continue
         url = BASE + urllib.parse.quote(rel); ext = f.lower().rsplit(".", 1)[-1] if "." in f else ""
         titulo = f.rsplit(".", 1)[0].replace("_", " ").replace("-", " ")
         try:
