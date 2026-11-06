@@ -26,11 +26,11 @@ var ERR='',MAXP={};
 function limpiarCabeceras(a){var po={};a.forEach(function(c){var b=baseDe(c.u);(po[b]=po[b]||[]).push(c)});
  Object.keys(po).forEach(function(b){if(!esPdf(b))return;var cs=po[b],seen={},pr=[];cs.forEach(function(c){var k=c.p||0;if(!seen[k]){seen[k]=1;pr.push(c)}});if(pr.length<4)return;
   var norm_=function(c){return String(c.x||'').trim().split(/\s+/).slice(0,40).map(function(w){return w.replace(/\d+/g,'#')})},W=pr.map(norm_),best=0,P='';
-  for(var k=3;k<=40;k++){var cnt={},mx=0,ms='';W.forEach(function(w){if(w.length>=k){var t=w.slice(0,k).join(' ');cnt[t]=(cnt[t]||0)+1;if(cnt[t]>mx){mx=cnt[t];ms=t}}});if(mx>=W.length*.5){best=k;P=ms}else break}
+  for(var k=3;k<=40;k++){var cnt={},mx=0,ms='';W.forEach(function(w){if(w.length>=k){var t=w.slice(0,k).join(' ');cnt[t]=(cnt[t]||0)+1;if(cnt[t]>mx){mx=cnt[t];ms=t}}});if(mx>=W.length*.35){best=k;P=ms}else break}
   if(!best)return;pr.forEach(function(c){var ws=String(c.x||'').trim().split(/\s+/);if(ws.slice(0,best).map(function(w){return w.replace(/\d+/g,'#')}).join(' ')===P)c.x=ws.slice(best).join(' ')})})}
 function procesar(a){DOCS=[];df={};limpiarCabeceras(a);var seen={},maxp={},dd=[];
  a.forEach(function(c){if(!visible(c.u))return;var tf={},t=tok(c.x+' '+c.t);t.forEach(function(w){tf[w]=(tf[w]||0)+1});Object.keys(tf).forEach(function(w){df[w]=(df[w]||0)+1});
-  c._tf=tf;c._t=tok(c.t);c._s=' '+t.join(' ')+' ';c._b=baseDe(c.u);c._pdf=esPdf(c._b);c._toc=/\.{6,}|(\. ){6,}/.test(c.x);c._anx=/yukpa|diferencial/.test(norm(c.x));c._def=/\b(es un|es una|son los|son las|se entiende|se define|consiste|corresponde|hace referencia|se denomina|significa)\b/.test(norm(c.x));
+  c._tf=tf;c._t=tok(c.t);c._s=' '+t.join(' ')+' ';c._b=baseDe(c.u);c._pdf=esPdf(c._b);c._toc=/\.{6,}|(\. ){6,}/.test(c.x);c._anx=/yukpa|diferencial/.test(norm(c.x));c._frm=/plan individual de ajustes razonables - piar|licencia de funcionamiento/.test(norm(c.x));c._def=/\b(es un|es una|son los|son las|se entiende|se define|consiste|corresponde|hace referencia|se denomina|significa)\b/.test(norm(c.x));
   if(c.p)maxp[c._b]=Math.max(maxp[c._b]||0,c.p);if(!seen[c._b]){seen[c._b]=1;DOCS.push({u:c._b,t:titulo(c.t),tt:c._t,pdf:esPdf(c._b),pag:0})}dd.push(c)});
  DOCS.forEach(function(d){d.pag=maxp[d.u]||0});MAXP=maxp;VOC=Object.keys(df);D=dd}
 function bajar(n){var u=URL_+(n?(URL_.indexOf('?')<0?'?':'&')+'r='+Date.now():'');return fetch(u,n?{cache:'reload'}:undefined).then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.json()}).then(function(a){if(!Array.isArray(a)||!a.length)throw new Error('índice vacío');return a})}
@@ -44,7 +44,7 @@ function buscar(q,o){o=o||{};var qt=tok(q,1);if(!qt.length||!D||!D.length)return
  qt.forEach(function(w,i){if((df[w]||0)/N<.4)rare.push(i)});if(!rare.length)rare=qt.map(function(_,i){return i});var need=Math.max(1,Math.ceil(rare.length*.6));
  D.forEach(function(c){if(o.doc&&c._b!==o.doc)return;if(o.pdfOnly&&!c._pdf)return;var s=0,m=0,mr=0;
   X.forEach(function(vs,i){var f=0,d=0;vs.forEach(function(v){if(c._tf[v]){f+=c._tf[v];d=Math.max(d,df[v]||1)}});if(f){m++;if(rare.indexOf(i)>=0)mr++;s+=Math.pow(Math.log(1+N/d),1.6)*(1+Math.log(f))*(!c._pdf&&vs.some(function(v){return c._t.indexOf(v)>=0})?1.8:1)}});
-  if(mr<need)return;if(o.maxPage&&c.p>o.maxPage)return;s*=m/qt.length;if(c._pdf&&c.p&&MAXP[c._b])s*=1+.12*(1-c.p/MAXP[c._b]);if(c._toc)s*=.2;if(c._anx&&!o.anexo)s*=.55;if(c._pdf)s*=1.2;if(o.def&&c._def)s*=1.5;if(o.early&&c.p){if(c.p<=2)s*=1.8;else if(c.p<=4)s*=1.3}
+  if(mr<need)return;if(o.maxPage&&c.p>o.maxPage)return;s*=m/qt.length;if(c._pdf&&c.p&&MAXP[c._b])s*=1+.12*(1-c.p/MAXP[c._b]);if(c._toc)s*=.2;if(c._anx&&!o.anexo)s*=.55;if(c._frm)s*=.5;if(c._pdf)s*=1.2;if(o.def&&c._def)s*=1.5;if(o.early&&c.p){if(c.p<=2)s*=1.8;else if(c.p<=4)s*=1.3}
   if(qt.length>1){if(c._s.indexOf(ph)>=0)s*=1.8;else for(var i=0;i<qt.length-1;i++)if(c._s.indexOf(' '+qt[i]+' '+qt[i+1]+' ')>=0)s*=1.15}
   var k=o.per==='doc'?c._b:c.u;if(!best[k]||best[k].s<s)best[k]={c:c,s:s}});
  return Object.keys(best).map(function(k){return best[k]}).sort(function(a,b){return b.s-a.s}).slice(0,o.n||3)}
