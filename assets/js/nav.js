@@ -16,6 +16,7 @@ var dock=el('<nav class="cbd" aria-label="Navegación rápida">'+
 var items=[
  ['./','Portada','Todas las secciones',ic(0,0),'index.html'],
  ['DOCUMENTOS%20INSTITUCIONALES.html','Documentos institucionales','PEI, SIEE, convivencia…',ic(1,2,'d'),'DOCUMENTOS INSTITUCIONALES.html'],
+ ['estudio.html','Modo estudio','Practica jugando',ic(2,0,'d'),'estudio.html'],
  ['CALIDAD.html','Calidad','Gestión de calidad',ic(3,2,'d'),'CALIDAD.html'],
  ['PROCESOS.html','Procesos','Gestiones y evidencias',ic(1,1,'d'),'PROCESOS.html'],
  ['ORIENTACION_ESCOLAR.html','Orientación escolar','Apoyo psicosocial',ic(0,3,'d'),'ORIENTACION_ESCOLAR.html'],
