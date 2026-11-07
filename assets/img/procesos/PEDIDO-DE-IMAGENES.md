@@ -1,4 +1,22 @@
-# Imágenes para la sección PROCESOS (10 archivos)
+# Imágenes de la sección PROCESOS — ESTADO
+
+**Ya integradas** (generadas con `procesos/herramientas/empaquetar_sprites.py` a partir de las imágenes de `procesos/herramientas/fuente/`):
+
+| Archivo | Contenido | Estado |
+|---------|-----------|--------|
+| `gestiones.webp` | 4 íconos de las gestiones | ✔ definitivo |
+| `procesos-gd/ga/gf/gc.webp` | 6 + 4 + 5 + 2 íconos de procesos | ✔ definitivo |
+| `centro.webp` · `hero.webp` | emblema del centro y portada | ✔ definitivo |
+| `fondo-gd/ga/gf/gc.webp` | texturas de los pétalos | ✔ definitivo |
+| `ui-iconos.webp` | 9 íconos de interfaz | ◐ lupa, clip, carpeta (documento), escudo (verificado), enlace y compartir son del set nuevo; **comillas, cerrar y copiar** vienen de la primera hoja (menor resolución y otro estilo) |
+| `sellos.webp` | 3 sellos de nivel de evidencia | ◐ de la primera hoja (menor resolución) |
+
+**Pendiente (opcional):** rehacer en alta resolución y en el mismo estilo de insignia azul 3D: comillas de cita, X de cerrar, dos hojas de copiar, y los 3 sellos (evidencia directa / relacionada / por documentar).
+Para volver a generar los sprites: copia las imágenes nuevas a `procesos/herramientas/fuente/` y ejecuta el empaquetador.
+
+---
+# Pedido original de imágenes (referencia de estilo y prompts)
+
 
 La página `PROCESOS.html` ya funciona con emojis de respaldo. Cada archivo que se coloque en esta carpeta
 con el nombre exacto de abajo **reemplaza solo** al emoji correspondiente, sin tocar código.
