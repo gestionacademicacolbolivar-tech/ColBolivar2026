@@ -4,7 +4,8 @@
 - `procesos/procesos.json` — datos: 4 gestiones › procesos › subprocesos, cada uno con su evidencia (documento, página, cita, captura y fragmento).
 - `assets/img/procesos/evidencias/` — capturas recortadas del PDF, con el título de la sección resaltado.
 - `assets/img/procesos/` — sprites e imágenes de la sección (ver `PEDIDO-DE-IMAGENES.md`).
-- `procesos/herramientas/generar_evidencias.py` — regenera todo lo anterior (y las entradas de ARIA) desde el Excel y los PDF.
+- `procesos/herramientas/generar_evidencias.py` — regenera las capturas, los datos y las entradas de ARIA desde el Excel y los PDF.
+- `procesos/herramientas/empaquetar_sprites.py` — recorta y arma los sprites (íconos, sellos, texturas, portada) desde `procesos/herramientas/fuente/`.
 
 ## Cuando cambie el PEI (o cualquier documento)
 ```
@@ -16,3 +17,6 @@ Si una sección cambió de página, se corrige en la tabla `EV` del script (núm
 ## Niveles de evidencia
 `directa` (sección propia) · `relacionada` (el tema aparece dentro de otra sección) · `pendiente` (aún no hay apartado específico).
 Se cambian en la tabla `MAPA` del script.
+
+## Cuando cambien las ilustraciones
+Pon las imágenes nuevas en `procesos/herramientas/fuente/` (mismos nombres) y ejecuta `python procesos/herramientas/empaquetar_sprites.py` (requiere `pillow numpy scipy`).

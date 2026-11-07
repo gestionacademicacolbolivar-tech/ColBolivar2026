@@ -196,8 +196,11 @@ def render(key, ev):
         if not corta_por_titulo and (y1-y0) < ev['H']*0.8 and ev['p'] < doc.page_count:
             p2 = doc[ev['p']]; resto = ev['H'] - (y1-y0)
             lim = [q.y0 for k2, e2 in EV.items() if e2['doc']==ev['doc'] and e2['p']==ev['p']+1 for q in p2.search_for(e2['h']) if q.y0 > top_min]
-            ye = min(top_min+resto, (min(lim)-6) if lim else tope, tope)
-            if ye-top_min > 40: cont = pymupdf.Rect(x0, top_min, x1, ye)
+            # la página siguiente empieza con el encabezado institucional: se salta para que no aparezca a mitad de la captura
+            enc = [q.y1 for txt in ('NIT 800181183', 'Página') for q in p2.search_for(txt) if q.y1 < 200]
+            ys0 = max(top_min, max(enc) + 8) if enc else top_min
+            ye = min(ys0+resto, (min(lim)-6) if lim else tope, tope)
+            if ye-ys0 > 40: cont = pymupdf.Rect(x0, ys0, x1, ye)
         marca = pymupdf.Rect(max(lr.x0-4,x0), lr.y0-2, min(lr.x1+6,x1), lr.y1+2)
         page.draw_rect(marca, color=None, fill=(1,0.85,0.1), fill_opacity=0.45, overlay=True)
         page.draw_rect(pymupdf.Rect(x0-2, lr.y0-2, x0+3, lr.y1+2), color=None, fill=(0.85,0.18,0.23), overlay=True)
