@@ -25,7 +25,7 @@ os.makedirs(IMG_DIR, exist_ok=True)
 for _f in glob.glob(os.path.join(IMG_DIR, '*.webp')): os.remove(_f)      # no dejar capturas huérfanas de corridas anteriores
 
 def pdf(prefijo):
-    r = [x for x in glob.glob('*.pdf') if x.upper().startswith(prefijo.upper())]
+    r = [x for x in glob.glob('documentos/**/*.pdf', recursive=True) + glob.glob('*.pdf') if os.path.basename(x).upper().startswith(prefijo.upper())]
     if not r: raise SystemExit(f'No encuentro el PDF que empieza por «{prefijo}» en la raíz del repo')
     return r[0]
 

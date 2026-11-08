@@ -56,7 +56,7 @@ function frase(x,qt,num){var fr=x.replace(/([.;:!?])\s+/g,'$1|').split('|'),b=0,
 // ---- documentos ----
 function docPorBase(u){for(var i=0;i<DOCS.length;i++)if(DOCS[i].u===u)return DOCS[i];return null}
 function porTitulo(qt){if(!qt.length)return[];return DOCS.map(function(d){var m=0;qt.forEach(function(w){if(d.tt.indexOf(w)>=0)m++});var cov=m/qt.length;return{d:d,cov:cov,s:cov*10-d.tt.length*.05+(d.pdf?.5:0)}}).filter(function(x){return x.cov>=.67}).sort(function(a,b){return b.s-a.s}).slice(0,3)}
-function detectarDoc(nq){for(var i=0;i<ALIAS.length;i++){var a=ALIAS[i];if(a[0].test(nq)){var k=a[1].toLowerCase();for(var j=0;j<DOCS.length;j++)if(DOCS[j].pdf&&norm(dec(DOCS[j].u)).indexOf(norm(k))>=0)return{d:DOCS[j],fuerte:!DOCSTRICT[a[1]]||/manual/.test(nq)}}}return null}
+function detectarDoc(nq){for(var i=0;i<ALIAS.length;i++){var a=ALIAS[i];if(a[0].test(nq)){var k=a[1].toLowerCase();for(var j=0;j<DOCS.length;j++)if(DOCS[j].pdf&&norm(dec(DOCS[j].u).split('/').pop()).indexOf(norm(k))>=0)return{d:DOCS[j],fuerte:!DOCSTRICT[a[1]]||/manual/.test(nq)}}}return null}
 function relPath(u){var b=baseDe(u),root='';try{root=new URL('.',location.href).href}catch(e){}if(root&&b.indexOf(root)===0)return dec(b.slice(root.length));var m=b.match(/\/ColBolivar2026\/(.+)$/);return dec(m?m[1]:b.split('/').pop())}
 function visorUrl(u,p,t,q){var a={f:relPath(u),t:t||''};if(p)a.p=p;if(q)a.q=q;return 'visor.html?'+new URLSearchParams(a).toString()}
 function lk(u,t,m){m=m||{};var h=esPdf(u)?visorUrl(u,m.p,m.t,m.q):u;return '<a href="'+esc(h)+'" target="_blank" rel="noopener">'+t+' ↗</a>'}
@@ -100,7 +100,7 @@ function respuesta(q){var nq=norm(q),qd=tok(q,1);
  if(doc&&!pidePag&&(dq||pt.length)&&!(pregunta&&qd.length>3)){var d3=dq||pt[0].d;var otros=pt.filter(function(x){return x.d!==d3&&x.s>=(pt[0]?pt[0].s*.6:0)});return respDoc(d3,otros)}
  if(!doc&&!pregunta&&!pidePag&&tema&&qd.length<=3&&!extra.length&&(dq||pt.length)){var d4=dq||pt[0].d;return respDoc(d4,[])}
  var ambito=dq?dq.u:(!qd.length&&CTX.doc?CTX.doc.u:null);
- var acr=(nq.match(/\b(piar|dua|pegrd|siee|pei)\b/)||[])[1],qB=q;if(dq){if(extra.length)qB=extra.join(' ');else if(acr)qB=acr}
+ var acr=(nq.match(/\b(piar|dua|pegrd|siee|pei)\b/)||[])[1],qB=q;if(dq&&acr){var sinSigla=q.replace(/\b(piar|dua|pegrd|siee|pei)\b/ig,' ');qB=tok(sinSigla,1).length?sinSigla:acr}
  var op={per:'pag',n:4,doc:ambito,def:def,early:def&&!!ambito&&!acr,pdfOnly:pidePag,maxPage:(def&&dq&&!extra.length&&!acr)?5:0,anexo:/yukpa|diferencial|anexo/.test(nq)},r=buscar(qB,op);if(!r.length&&pidePag){op.pdfOnly=false;r=buscar(qB,op)}if(!r.length&&ambito){op.doc=null;op.maxPage=0;r=buscar(q,op)}
  if(!r.length||r[0].s<1.5)return (doc||pidePag)?'No encontré eso en los documentos. Prueba con otras palabras, dime el nombre del documento o escribe «qué documentos hay».':null;
  return respContenido(r,tok(qB).length?tok(qB):(qd.length?qd:tok(q)),extra.length?extra:null)}

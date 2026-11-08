@@ -89,7 +89,7 @@ function best(id){return LS.get('cbq:best:'+id,null)}
 function stars(p){return p>=90?3:p>=75?2:p>=50?1:0}
 function uix(ic,s){return '<i class="uix d" style="--s:'+(s||64)+'px;--c:'+(ic%4)+';--r:'+Math.floor(ic/4)+'" aria-hidden="true"></i>'}
 // ---------- datos ----------
-function cargar(n){return fetch('estudio-preguntas.json'+(n?'?r='+Date.now():'')).then(function(r){if(!r.ok)throw 0;return r.json()}).catch(function(e){if(n>=2)throw e;return new Promise(function(ok){setTimeout(ok,1200)}).then(function(){return cargar(n+1)})})}
+function cargar(n){return fetch('datos/estudio-preguntas.json'+(n?'?r='+Date.now():'')).then(function(r){if(!r.ok)throw 0;return r.json()}).catch(function(e){if(n>=2)throw e;return new Promise(function(ok){setTimeout(ok,1200)}).then(function(){return cargar(n+1)})})}
 cargar(0).then(function(d){DB=d;var q=new URLSearchParams(location.search).get('d');var doc=q&&(q==='all'?'all':DB.docs.filter(function(x){return x.id===q})[0]);if(doc){S.doc=doc==='all'?'all':doc;S.v='setup'}go()}).catch(function(){app.innerHTML='<div class="card"><h2>No se pudieron cargar las preguntas</h2><p class="sub">Revisa tu conexión e inténtalo de nuevo.</p><button class="cta" data-a="reload">Reintentar</button></div>'});
 function pool(){var all=S.doc==='all';return all?DB.docs.reduce(function(a,d){return a.concat(d.qs.map(function(q){return Object.assign({d:d},q)}))},[]):S.doc.qs.map(function(q){return Object.assign({d:S.doc},q)})}
 function filtrar(){var P=pool(),c=S.cfg;if(c.t!=='mix')P=P.filter(function(q){return q.t===c.t});return P}
