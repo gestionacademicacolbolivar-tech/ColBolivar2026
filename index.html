@@ -14,69 +14,193 @@
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link rel="manifest" href="manifest.webmanifest">
 <style>
-:root{--g:#2b7a3a;--gd:#1c4f27;--o:#ffa63d;--r:#d92d3a;--ink:#1d2a22;--bg:#f2f7f1;--mut:#44564a;
---b_vn:url(assets/img/b51052a629.webp);
---b_rn:url(assets/img/aa454d2866.webp);
---b_on:url(assets/img/229da3ba5a.webp);
---b_vh:url(assets/img/dd03cccb75.webp);
---b_rh:url(assets/img/f39a8c74ac.webp);
---b_oh:url(assets/img/aa5599b320.webp);
---b_va:url(assets/img/e786006090.webp);
---b_ra:url(assets/img/69e482531a.webp);
---b_oa:url(assets/img/8ec75bab19.webp);
---sp_wave:url(assets/img/c721f84423.webp);
---sp_stripe:url(assets/img/43527f73e6.webp);
---sp_dots:url(assets/img/415481f22a.webp);
---sp_zig:url(assets/img/d7a92ce6a7.webp);
---iconos:url(assets/img/46b47eb28f.webp);
---tj_n:url(assets/img/7e5d72aaa7.webp);
---tj_h:url(assets/img/74e57e1c94.webp);
---ci_v:url(assets/img/e92a274089.webp);
---ci_r:url(assets/img/4ea9a350e0.webp);
---ci_o:url(assets/img/72dfeb121f.webp);
---mc_v:url(assets/img/565020c62b.webp);
---mc_r:url(assets/img/f28befa083.webp);
---mc_o:url(assets/img/5cfb0c107d.webp);
---lupa:url(assets/img/7cd757174b.webp);
---pl_n:url(assets/img/d8acdeb008.webp);
---pl_s:url(assets/img/ae4e81fee4.webp)}
+:root{--g:#2b7a3a;--gd:#1c4f27;--o:#ffa63d;--r:#d92d3a;--n:#12306e;--ink:#1d2a22;--bg:#f2f7f1;--mut:#44564a;--line:#d7e5d6;--W:1240px;--P:assets/img/portada}
 *{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth}
-body{font-family:Nunito,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;font-size:18px;overflow-x:hidden}
-h1,h2,h3{font-family:Sora,Nunito,sans-serif;line-height:1.15;color:var(--gd)}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{font-family:Nunito,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;font-size:17px;overflow-x:hidden}
+h1,h2,h3,h4{font-family:Sora,Nunito,sans-serif;line-height:1.15;color:var(--gd)}
 a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;cursor:pointer}
 a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--o);outline-offset:3px}
-:root{--W:1680px}
-.w{max-width:var(--W);margin:0 auto;padding:0 clamp(14px,2.2vw,40px)}
-main.w{container-type:inline-size;width:100%}
-html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
-section{padding:14px 0}
-.s{color:var(--mut);margin:0 0 12px;font-size:1.1rem;text-align:center}
-.sp{width:60%;margin:6px auto;background-size:100% 100%;background-repeat:no-repeat}
-/* CINTAS DE TÍTULO */
-.rb{display:flex;align-items:center;justify-content:center;text-align:center;width:min(100%,780px);margin:0 auto 12px;aspect-ratio:700/104;padding:0 min(15%,171px) min(3.5%,40px);font-size:clamp(1rem,2.7vw,1.7rem);font-weight:800;background-size:100% 100%;background-repeat:no-repeat;color:#fff;text-shadow:0 2px 2px #0005}
-.rbv{background-image:var(--ci_v)}.rbr{background-image:var(--ci_r)}.rbo{background-image:var(--ci_o);color:#3b2400;text-shadow:0 1px 0 #fff6}
-/* PORTADA (imagen + botones sobre los óvalos) */
+.w{max-width:var(--W);margin:0 auto;padding:0 clamp(14px,2.2vw,32px)}
+main.w{width:100%}
+section{padding:10px 0}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.hero{background:#fff}
-.ban{position:relative;container-type:inline-size;max-width:var(--W);margin:0 auto;line-height:0}
-.ban>img{width:100%;height:auto;display:block}
-.ban .bm{display:none}
-.who{position:absolute;inset:0;pointer-events:none;line-height:1}
-.pl{position:absolute;top:77.66%;height:11.6%;width:14.35%;pointer-events:auto;cursor:pointer;border:0;border-radius:999px;background:transparent;
-display:flex;align-items:center;justify-content:center;text-align:center;padding:0 .6% 0 3.5%;
-font:800 1.25vw/1.1 Nunito,system-ui,sans-serif;font-size:1.25cqw;color:var(--t);
-transition:background .25s,color .25s,transform .25s cubic-bezier(.3,1.6,.5,1),box-shadow .25s}
-.pl.pg{left:13.9%;--c:#2b9a3c;--cd:#1c6b2c;--t:#1c6b2c;--th:#fff;--rgb:43,154,60}
-.pl.pr{left:29.5%;--c:#d92d3a;--cd:#a31e29;--t:#b4202c;--th:#fff;--rgb:217,45,58}
-.pl.po{left:45.0%;--c:#ffa63d;--cd:#c97a12;--t:#8a4f00;--th:#3b2400;--rgb:255,166,61}
-.pl i{position:absolute;left:4.5%;top:50%;width:18.6%;aspect-ratio:1;transform:translateY(-50%);border-radius:50%;pointer-events:none;animation:ring 2.8s ease-out infinite}
-.pl.pr i{animation-delay:.9s}.pl.po i{animation-delay:1.8s}
-@keyframes ring{0%{box-shadow:0 0 0 0 rgba(var(--rgb),.55)}70%,100%{box-shadow:0 0 0 1.1vw rgba(var(--rgb),0);box-shadow:0 0 0 1.1cqw rgba(var(--rgb),0)}}
-.pl img{display:none}
-.pl:hover,.pl:focus-visible{background:var(--c);color:var(--th);transform:translateY(-4px) scale(1.05);box-shadow:0 12px 26px -8px rgba(var(--rgb),.9)}
-.pl:active{transform:translateY(0) scale(.98)}
-.pl:focus-visible{outline:3px solid #12306e;outline-offset:3px}
+.skip{position:absolute;left:-999px;top:0;background:#fff;padding:8px 14px;z-index:999;border-radius:0 0 10px 0;font-weight:800}.skip:focus{left:0}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}.rv.in{opacity:1;transform:none}
+img{max-width:100%}
+
+/* ================= PORTADA (escena compacta) ================= */
+.hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#6fc3ff 0%,#aee0ff 46%,#fff2c2 100%)}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:46px;background:linear-gradient(#63c04d,#3f9a35);z-index:1}
+.esc{position:relative;max-width:1500px;margin:0 auto;height:clamp(330px,31vw,450px);container-type:inline-size}
+.o{position:absolute;display:block;height:auto;pointer-events:none;user-select:none}
+.o-sol{left:6cqw;top:-3cqw;width:16cqw;z-index:1;animation:giro 90s linear infinite}
+.o-n1{left:30cqw;top:8%;width:14cqw;z-index:1;animation:der 70s linear infinite alternate}
+.o-n2{right:25cqw;top:24%;width:10cqw;z-index:1;animation:izq 55s linear infinite alternate}
+.o-n3{right:5cqw;top:5%;width:8cqw;z-index:1;animation:der 90s linear infinite alternate}
+.o-b1{left:0;top:-.5cqw;width:24cqw;z-index:3;transform-origin:top left;animation:sway 5s ease-in-out infinite alternate}
+.o-b2{right:0;top:-.5cqw;width:38cqw;z-index:3;transform-origin:top right;animation:sway 6s ease-in-out -2s infinite alternate-reverse}
+.o-ai{left:-2cqw;bottom:34px;width:12cqw;z-index:2}
+.o-ad{right:-2cqw;bottom:34px;width:11cqw;z-index:2;transform:scaleX(-1)}
+.o-col{right:3cqw;bottom:34px;width:29cqw;z-index:2}
+.o-ban{right:31cqw;bottom:34px;width:6cqw;z-index:3;transform-origin:left center;animation:ondea 3.2s ease-in-out infinite alternate}
+.o-est{left:50cqw;bottom:30px;width:12cqw;z-index:6}
+.o-s1{left:-1cqw;bottom:14px;width:15cqw;z-index:5}.o-s2{left:41cqw;bottom:10px;width:14cqw;z-index:5}.o-s3{right:-1cqw;bottom:14px;width:15cqw;z-index:5}
+.bri{position:absolute;z-index:6;pointer-events:none;height:auto;animation:tw 2.8s ease-in-out infinite}
+.b1{left:47cqw;top:15%;width:24px}.b2{left:2cqw;top:50%;width:17px;animation-delay:.7s}.b3{right:33cqw;top:12%;width:28px;animation-delay:1.3s}.b4{right:5cqw;top:42%;width:19px;animation-delay:.4s}.b5{left:27cqw;top:5%;width:15px;animation-delay:2s}
+@keyframes giro{to{transform:rotate(1turn)}}@keyframes der{from{transform:translateX(-3cqw)}to{transform:translateX(5cqw)}}@keyframes izq{from{transform:translateX(3cqw)}to{transform:translateX(-5cqw)}}
+@keyframes sway{from{transform:rotate(-1.4deg)}to{transform:rotate(1.4deg)}}@keyframes ondea{from{transform:skewY(-2deg) scaleX(1)}to{transform:skewY(2deg) scaleX(.96)}}
+@keyframes tw{0%,100%{transform:scale(.5) rotate(0);opacity:.25}50%{transform:scale(1.15) rotate(18deg);opacity:1}}
+.placa{position:absolute;z-index:7;left:3cqw;top:50%;transform:translateY(-47%);width:43cqw;min-width:430px;border:solid transparent;border-width:22px 27px 22px 27px;border-image-source:url(assets/img/portada/marcos/panel-madera.webp);border-image-slice:44 55 44 57 fill;border-image-repeat:stretch;padding:4px 6px 6px;display:grid;grid-template-columns:auto 1fr;gap:6px 18px;align-items:center;filter:drop-shadow(0 10px 14px #0003)}
+.placa .esc2{width:clamp(70px,8.4cqw,112px);height:auto;filter:drop-shadow(0 4px 6px #0003)}
+.placa .k{font:800 .74rem Sora,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--g)}
+.placa h1{font-size:clamp(1.45rem,3.3cqw,2.5rem);color:var(--n);text-shadow:0 2px 0 #fff}
+.placa h1 b{color:var(--g)}
+.placa .lm{font:800 clamp(.95rem,1.6cqw,1.2rem) Sora,sans-serif;color:#6a4a00;margin-top:2px}.placa .lm span{color:var(--g)}.placa .lm em{color:var(--r);font-style:normal}
+.cts{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.cta{display:inline-grid;place-items:center;min-width:132px;height:44px;padding:0 20px 3px;background:var(--bt) center/100% 100% no-repeat;font:800 .9rem Sora,sans-serif;color:#fff;text-shadow:0 2px 0 #0006;transition:transform .2s}
+.cta:hover{transform:translateY(-3px) scale(1.03)}.cta:active{transform:scale(.97)}
+.cta.v{--bt:url(assets/img/portada/botones/boton-verde.webp)}.cta.n{--bt:url(assets/img/portada/botones/boton-naranja.webp);color:#3b2400;text-shadow:0 1px 0 #fff7}
+.stripe{height:5px;background:linear-gradient(90deg,#ffd23f 0 50%,#12306e 50% 75%,#d92d3a 75%)}
+
+/* ================= HOY EN BOLÍVAR (pizarra) ================= */
+.tablero{max-width:1120px;margin:16px auto 4px}
+.pz{border:solid transparent;border-width:26px 28px 26px 26px;border-image-source:url(assets/img/portada/marcos/pizarra.webp);border-image-slice:26 29 26 26 fill;border-image-repeat:stretch;padding:0 6px 4px;color:#fff7e3;filter:drop-shadow(0 12px 16px #0003)}
+.tb-h{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;margin:6px 4px 8px}
+.tb-h h2{font-size:clamp(1.25rem,2.6vw,1.7rem);color:#ffd23f;text-shadow:0 2px 0 #0004}
+.tb-h .f{font:700 .95rem Nunito,sans-serif;color:#fff7e3;opacity:.9}
+.tb-g{display:grid;grid-template-columns:1fr 1.15fr 1.35fr;gap:10px}
+.tb-c{display:flex;align-items:center;gap:12px;padding:10px 12px;background:rgba(255,255,255,.07);border:2px dashed rgba(255,247,227,.42);border-radius:16px;min-width:0}
+.tb-c img.ic{width:62px;height:62px;object-fit:contain;flex:none;filter:drop-shadow(0 3px 3px #0004)}
+.tb-c b.t{display:block;font:800 1.1rem/1.2 Sora,sans-serif;color:#ffd23f}
+.tb-c small,.tb-c p{display:block;font-size:.88rem;line-height:1.3;color:#fff7e3}
+.tb-c a.mas{display:inline-block;margin-top:3px;font-weight:800;font-size:.85rem;color:#fff;border-bottom:2px solid #ffa63d}
+.cumple{position:relative;overflow:hidden}.cumple .ic{animation:bob 3s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-5px) rotate(-3deg)}}
+.cumple .cf{position:absolute;top:-20px;width:14px;height:auto;opacity:0;pointer-events:none}
+.cumple.fiesta .cf{animation:cae 3.6s linear infinite}
+@keyframes cae{0%{transform:translateY(-10px) rotate(0);opacity:0}10%{opacity:1}100%{transform:translateY(110px) rotate(360deg);opacity:0}}
+.cuentas{display:flex;gap:10px;flex-wrap:wrap}
+.cnt{display:flex;align-items:center;gap:8px;flex:1 1 140px;min-width:0}
+.cnt .an{flex:none;width:68px;height:68px;display:grid;place-items:center;background:var(--an) center/contain no-repeat;font:800 1.45rem Sora,sans-serif;color:#fff}
+.cnt .an.hoy{font-size:.8rem;text-align:center;line-height:1}
+.cnt span.l{font-size:.84rem;line-height:1.25;color:#fff7e3}.cnt span.l img{width:22px;height:22px;object-fit:contain;vertical-align:-5px;margin-right:4px}
+.nota{display:flex;align-items:center;gap:10px;margin:10px auto 2px;max-width:640px;padding:16px 18px 14px 38px;background:url(assets/img/portada/marcos/hoja-cuaderno.webp) center/100% 100% no-repeat;color:#2a2a2a;font-weight:800;position:relative}
+.nota img{width:40px;height:40px;object-fit:contain;flex:none}.nota[hidden]{display:none}
+.nota::before{content:"";position:absolute;top:-8px;left:50%;width:92px;height:28px;margin-left:-46px;background:url(assets/img/portada/botones/cinta-adhesiva.webp) center/contain no-repeat}
+
+/* ================= SERVICIOS ================= */
+#servicios{padding-top:22px}
+.sv-top{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;justify-content:space-between;margin-bottom:6px}
+.sv-top h2{font-size:clamp(1.3rem,3vw,1.85rem)}
+.sv-top h2 small{display:block;font:600 .95rem Nunito,sans-serif;color:var(--mut);margin-top:2px}
+.srch{flex:0 1 380px;position:relative}
+.srch input{width:100%;padding:11px 16px 11px 46px;border-radius:999px;border:2px solid var(--line);background:#fff;font:600 1rem Nunito,sans-serif;color:var(--ink)}
+.srch input:focus{border-color:var(--g);outline:none;box-shadow:0 0 0 4px #2b7a3a26}
+.srch::before{content:"🔎";position:absolute;left:16px;top:50%;transform:translateY(-52%);font-size:1.1rem;z-index:1}
+.cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,500px),1fr));gap:14px 26px;margin-top:8px}
+.cat{--cin:url(assets/img/portada/componentes/cinta-verde.webp)}
+.cat.c-naranja{--cin:url(assets/img/portada/componentes/cinta-naranja.webp)}.cat.c-azul{--cin:url(assets/img/portada/componentes/cinta-azul.webp)}.cat.c-roja{--cin:url(assets/img/portada/componentes/cinta-roja.webp)}
+.cat-h{display:flex;align-items:center;margin-bottom:4px;position:relative}
+.cat-h .med{width:68px;height:68px;object-fit:contain;position:relative;z-index:2;margin-right:-22px;filter:drop-shadow(0 4px 5px #0003)}
+.cat-h .cinta{position:relative;width:min(100%,300px);aspect-ratio:3.45/1;display:grid;place-items:center;background:var(--cin) center/100% 100% no-repeat;padding:0 40px 14px 36px}
+.cat-h .cinta h3{font:800 clamp(.9rem,2.4vw,1.1rem) Sora,sans-serif;color:#fff;text-shadow:0 2px 0 #0006;text-align:center;line-height:1.1}
+.c-naranja .cinta h3{color:#3b2400;text-shadow:0 1px 0 #fff8}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(212px,1fr));gap:12px;margin-top:2px}
+.svc{position:relative;display:grid;grid-template-columns:62px 1fr;gap:10px;align-items:center;min-height:98px;border:solid transparent;border-width:22px 8px 8px 8px;border-image-slice:60 21 21 21 fill;border-image-repeat:stretch;border-image-source:url(assets/img/portada/marcos/tarjeta-verde.webp);padding:2px 6px 0 2px;transition:transform .25s cubic-bezier(.3,1.5,.5,1),filter .25s}
+.svc.naranja{border-image-source:url(assets/img/portada/marcos/tarjeta-naranja.webp)}.svc.azul{border-image-source:url(assets/img/portada/marcos/tarjeta-azul.webp)}.svc.roja{border-image-source:url(assets/img/portada/marcos/tarjeta-roja.webp)}
+.svc:hover{transform:translateY(-4px) rotate(-.6deg);filter:drop-shadow(0 8px 8px #1d2a2230)}.svc:active{transform:scale(.97)}
+.svc img.ic{width:62px;height:62px;object-fit:contain;transition:transform .3s}.svc:hover img.ic{transform:scale(1.12) rotate(-4deg)}
+.svc b{display:block;font:800 .98rem/1.18 Sora,sans-serif;color:var(--ink)}.svc small{display:block;font-size:.8rem;line-height:1.25;color:var(--mut);margin-top:2px}
+.svc .lkb{position:absolute;top:-19px;left:10px;font:800 .66rem Sora,sans-serif;letter-spacing:.03em;color:#fff;text-shadow:0 1px 0 #0006}
+.none{display:none;text-align:center;color:var(--mut);padding:18px}
+
+/* ================= CONOCE EL COLEGIO ================= */
+.tit{display:flex;justify-content:center;margin:6px 0 10px}
+.tit .cinta{width:min(100%,360px);aspect-ratio:3.45/1;display:grid;place-items:center;background:var(--cin) center/100% 100% no-repeat;padding:0 46px 16px}
+.tit .cinta h2{font:800 clamp(1.05rem,3vw,1.35rem) Sora,sans-serif;color:#fff;text-shadow:0 2px 0 #0006;text-align:center}
+.tit.az{--cin:url(assets/img/portada/componentes/cinta-azul.webp)}.tit.na{--cin:url(assets/img/portada/componentes/cinta-naranja.webp)}.tit.na h2{color:#3b2400;text-shadow:0 1px 0 #fff8}
+.cifras{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:10px}
+.cf4{display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:18px;background:#fff;border:2px solid var(--line);box-shadow:0 4px 10px #1d2a2210;min-width:0}
+.cf4 img{width:46px;height:46px;object-fit:contain;flex:none}.cf4 b{display:block;font:800 1.55rem/1 Sora,sans-serif;color:var(--n)}.cf4 span{display:block;font-size:.78rem;line-height:1.2;color:var(--mut);font-weight:700}
+.sedes{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.sd{border:solid transparent;border-width:22px 8px 8px 8px;border-image-slice:60 21 21 21 fill;border-image-repeat:stretch;padding:0 6px;min-width:0}
+.sd.v{border-image-source:url(assets/img/portada/marcos/tarjeta-verde.webp)}.sd.n{border-image-source:url(assets/img/portada/marcos/tarjeta-naranja.webp)}.sd.a{border-image-source:url(assets/img/portada/marcos/tarjeta-azul.webp)}
+.sd h3{position:relative;top:-19px;height:0;font:800 .8rem Sora,sans-serif;color:#fff;text-shadow:0 1px 0 #0006;margin-left:2px}
+.sd.n h3{color:#3b2400;text-shadow:0 1px 0 #fff8}
+.sd p{font-size:.88rem;line-height:1.3;padding:2px 4px}.sd a{font-weight:800;color:var(--n)}
+.info{display:grid;grid-template-columns:1.25fr 1fr;gap:14px;margin-top:14px;align-items:start}
+.perg{border:solid transparent;border-width:14px 38px 14px 38px;border-image-source:url(assets/img/portada/marcos/pergamino.webp);border-image-slice:23 74 25 76 fill;border-image-repeat:stretch;padding:10px 8px 8px;filter:drop-shadow(0 6px 8px #1d2a2222)}
+.perg .tb{display:flex;gap:4px;margin:0 0 6px;flex-wrap:wrap}
+.perg .tb button{min-width:104px;height:44px;padding:0 14px 8px;border:0;background:url(assets/img/portada/botones/pestana-inactiva.webp) center/100% 100% no-repeat;font:800 .88rem Sora,sans-serif;color:#6a4a00}
+.perg .tb button[aria-selected=true]{background-image:url(assets/img/portada/botones/pestana-activa.webp);color:#0d3a16;text-shadow:0 1px 0 #fffa}
+.perg .tx{font-size:.95rem;line-height:1.5;color:#3a2f12;min-height:112px}
+.hoja{background:url(assets/img/portada/marcos/hoja-cuaderno.webp) center/100% 100% no-repeat;padding:46px 24px 22px 42px;position:relative}
+.hoja h3{font-size:1.02rem;margin-bottom:4px}.hoja p{font-size:.9rem;line-height:1.35;color:#2a2a2a}
+.esc-v{display:flex;flex-wrap:wrap;gap:5px;margin:6px 0 4px}
+.esc-v span{font:800 .76rem Nunito,sans-serif;padding:3px 10px;border-radius:999px;color:#fff}
+.esc-v .s{background:var(--g)}.esc-v .a{background:#38813d}.esc-v .b{background:#b86a00}.esc-v .j{background:var(--r)}
+details.prom{margin-top:6px;font-size:.88rem}details.prom summary{cursor:pointer;font-weight:800;color:var(--n)}details.prom ul{margin:4px 0 0 18px}details.prom li{margin:2px 0}
+.contacto{display:flex;align-items:center;gap:6px;margin-top:14px;justify-content:center}
+.contacto .doc{width:96px;height:auto;flex:none;filter:drop-shadow(0 4px 4px #0003)}
+.globo{flex:0 1 640px;border:solid transparent;border-width:12px 14px 12px 14px;border-image-source:url(assets/img/portada/marcos/panel-madera.webp);border-image-slice:44 55 44 57 fill;border-image-repeat:stretch;padding:4px 12px;font-size:.9rem;line-height:1.4;color:var(--ink)}
+.globo b{color:var(--n)}
+
+/* ================= NOVEDADES ================= */
+#cart{padding-top:18px}
+.tvf{border:solid transparent;border-width:15px 15px 40px 16px;border-image-source:url(assets/img/portada/marcos/tv.webp);border-image-slice:24 25 68 26 fill;border-image-repeat:stretch}
+.tvf .win{border-radius:6px;box-shadow:none}
+.cg .wh{font:800 1.05rem Sora,sans-serif;display:flex;align-items:center;gap:8px;margin:0 0 8px}
+.cg .wh .ico{width:24px;height:24px}
+.ctl button,.ctl a{border:0;border-radius:999px;font:800 .9rem Sora,sans-serif}
+
+/* ================= PIE ================= */
+.redes{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:16px 0 4px}
+.rbt{display:inline-flex;align-items:center;gap:8px;min-width:150px;height:46px;padding:0 22px 3px;justify-content:center;background:var(--bt) center/100% 100% no-repeat;font:800 .9rem Sora,sans-serif;color:#fff;text-shadow:0 2px 0 #0006;border:0;transition:transform .2s}
+.rbt:hover{transform:translateY(-3px)}.rbt[hidden]{display:none}
+.rbt.a{--bt:url(assets/img/portada/botones/boton-azul.webp)}.rbt.r{--bt:url(assets/img/portada/botones/boton-roja.webp)}.rbt.v{--bt:url(assets/img/portada/botones/boton-verde.webp)}.rbt.n{--bt:url(assets/img/portada/botones/boton-naranja.webp);color:#3b2400;text-shadow:0 1px 0 #fff7}
+.rbt svg{width:18px;height:18px;fill:currentColor}
+.fbn{text-align:center;font-size:.85rem;color:var(--mut);min-height:1.2em}
+.lk{display:flex;flex-wrap:wrap;gap:6px 16px;justify-content:center;font-weight:800;font-size:.9rem;margin:6px 0}.lk a{color:var(--n)}
+footer.pie{padding:16px 14px 26px;text-align:center;color:var(--mut);font-size:.85rem;border-top:2px dashed var(--line);margin-top:10px}
+
+/* ================= MÓVIL ================= */
+@media(max-width:900px){
+ .tb-g{grid-template-columns:1fr 1fr}.tb-g .cuentas-c{grid-column:1/-1}
+ .info{grid-template-columns:1fr}.cifras{grid-template-columns:repeat(2,1fr)}.sedes{grid-template-columns:1fr}
+}
+@media(max-width:760px){
+ body{font-size:16px}
+ .esc{height:auto;container-type:inline-size;padding:118px 10px 92px}
+ .o-sol{left:2cqw;top:-4cqw;width:20cqw}.o-n1{left:26cqw;top:14px;width:20cqw}.o-n2{right:30cqw;top:44px;width:16cqw}.o-n3{right:3cqw;top:6px;width:14cqw}
+ .o-b1{width:50cqw}.o-b2{width:50cqw}
+ .o-ai{left:-6cqw;bottom:auto;top:46px;width:22cqw}.o-ad{display:none}
+ .o-col{right:2cqw;bottom:auto;top:30px;width:40cqw}.o-ban{right:42cqw;bottom:auto;top:52px;width:8cqw}
+ .o-est{left:8cqw;bottom:32px;width:28cqw}.o-s1{width:30cqw}.o-s2{left:33cqw;width:30cqw}.o-s3{width:30cqw}
+ .tb-c{padding:7px 10px;gap:10px}.tb-c img.ic{width:50px;height:50px}.tb-c b.t{font-size:1rem}.tb-h h2{font-size:1.2rem}.cnt .an{width:58px;height:58px;font-size:1.2rem}
+ .perg .tb button{min-width:0;flex:1;padding:0 4px 8px;font-size:.76rem}
+ .placa{position:relative;left:auto;top:auto;transform:none;width:100%;min-width:0;margin:0 auto;max-width:560px;border-width:14px 17px 14px 17px;grid-template-columns:auto 1fr;gap:4px 10px;padding:0 2px}
+ .placa .esc2{width:60px}.placa h1{font-size:1.35rem}.placa .lm{font-size:.92rem}.cta{min-width:116px;height:40px;font-size:.82rem}.cts{grid-column:1/-1;justify-content:center;margin-top:4px}
+ .tb-g{grid-template-columns:1fr}.pz{border-width:18px 20px 18px 18px}
+ .cards{grid-template-columns:1fr 1fr;gap:10px}.svc{grid-template-columns:1fr;justify-items:center;text-align:center;gap:0;padding-bottom:4px;min-height:132px}.svc .lkb{font-size:.6rem}
+ .svc img.ic{width:52px;height:52px}.svc b{font-size:.9rem}.svc small{font-size:.74rem}
+ .cat-h .med{width:58px;height:58px}.cat-h .cinta{width:min(100%,260px)}
+ .contacto{flex-direction:column;gap:0}.contacto .doc{width:70px}.globo{flex:none;width:100%}
+ .sv-top{flex-direction:column;align-items:stretch}.srch{flex:1 1 auto}
+ .tvf{border-width:10px 10px 28px 11px}
+}
+@media(max-width:380px){.cards{grid-template-columns:1fr}.svc{grid-template-columns:62px 1fr;justify-items:stretch;text-align:left}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}.rv{opacity:1;transform:none}}
+
+.stage{margin:0;border-radius:0;max-width:none}
+
+.pil{display:flex;flex-wrap:wrap;gap:5px;margin-top:4px}.pil span{background:#e8f3e8;border-radius:10px;padding:3px 10px;font-weight:700;font-size:.8rem;color:var(--gd)}
+.rad{padding:8px 0}.rad .radio{max-width:1120px;margin:8px auto}
+.mb{border-radius:22px}.mbt{display:flex;gap:10px;margin-top:8px}.mbt .cta{flex:1}
+.ctl{display:flex;gap:10px;margin-top:10px}.ctl button,.ctl a{flex:1;text-align:center;padding:11px 8px;background:var(--n);color:#fff;text-decoration:none}
+.ctl button:hover,.ctl a:hover{background:#1d4fb8}
+
 /* LEMAS: franja delgada animada */
 .stage{position:relative;overflow:hidden;isolation:isolate;container-type:inline-size;color:#fff;max-width:var(--W);margin:0 auto;
 background:radial-gradient(700px 160px at var(--mx,50%) 40%,#2f5bc0 0,transparent 70%),linear-gradient(160deg,#0b1a44,#12306e 55%,#0d2a5c);
@@ -117,137 +241,11 @@ display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:.05em 
 .dots b{display:block;width:100%;height:100%;background:#ffd23f;transform:scaleX(0);transform-origin:left}
 .dots button[aria-current=true] i{width:30px}
 .dots button:focus-visible{outline:3px solid #ffd23f;outline-offset:-3px;border-radius:12px}
-/* MÁS BRILLOS Y MOVIMIENTO EN LA PÁGINA */
-.st{position:relative;overflow:hidden}
-.st:after{content:"";position:absolute;top:0;bottom:0;left:-60%;width:40%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.3),transparent);transform:skewX(-18deg);animation:cardshine 6s ease-in-out infinite}
-.st:nth-child(2):after{animation-delay:.8s}.st:nth-child(3):after{animation-delay:1.6s}.st:nth-child(4):after{animation-delay:2.4s}
-@keyframes cardshine{0%,55%{left:-60%}100%{left:130%}}
-.rb{animation:rglow 4.5s ease-in-out infinite}
-@keyframes rglow{0%,100%{filter:none}50%{filter:brightness(1.1) saturate(1.12) drop-shadow(0 0 9px rgba(255,190,50,.6))}}
-.lemas span{background:linear-gradient(100deg,#fff 30%,#fff0bd 50%,#fff 70%) 0 0/250% 100%;animation:shine 4s linear infinite}
-.lemas span:nth-child(2){animation-delay:.7s}.lemas span:nth-child(3){animation-delay:1.4s}
-.tile .ic{animation:bob2 3.6s ease-in-out infinite}
-.tile:nth-child(3n) .ic{animation-delay:.6s}.tile:nth-child(3n+1) .ic{animation-delay:1.3s}
-@keyframes bob2{50%{transform:translateY(-4px) rotate(-3deg)}}
-.tile:hover .ic{animation:wig .6s ease-in-out}
-@keyframes wig{25%{transform:rotate(-12deg) scale(1.12)}75%{transform:rotate(10deg) scale(1.12)}}
-.sp{animation:bob2 5s ease-in-out infinite;max-width:760px}
-/* CIFRAS */
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}
-.st{background:var(--g);color:#fff;border-radius:16px;padding:12px;text-align:center}
-.st:nth-child(2){background:var(--r)}.st:nth-child(3){background:var(--o);color:#3b2400}.st:nth-child(4){background:var(--gd)}
-.st b{font-family:Sora;font-size:2.2rem;display:block;line-height:1}
-.st span{font-weight:700;font-size:1rem}
-/* BUSCADOR + PESTAÑAS */
-.srch input{width:100%;padding:14px 18px 14px 62px;border-radius:999px;border:3px solid #38813d;font:inherit;font-size:1.1rem;background:#fff var(--lupa) 16px center/34px no-repeat;margin-bottom:8px}
-.srch input:focus{border-color:var(--o)}
-.tabs{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-bottom:8px}
-.tabs button{border:0;min-width:130px;padding:15px 22px;font:800 1.05rem Nunito,sans-serif;color:var(--gd);cursor:pointer;background:var(--pl_n) center/100% 100% no-repeat}
-.tabs button:hover{filter:brightness(1.06)}
-.tabs button[aria-selected=true]{background-image:var(--pl_s);color:#fff}
-/* TARJETAS DE ACCESO */
-.tiles{display:grid;gap:8px;grid-template-columns:repeat(auto-fill,minmax(min(290px,100%),1fr))}
-.tile{display:flex;gap:10px;align-items:center;border:18px solid transparent;border-image:var(--tj_n) 50 fill/18px stretch;padding:0 2px;min-height:96px;transition:transform .2s}
-.tile:hover{border-image-source:var(--tj_h)}
-.tile .ic{flex:none;width:60px;height:60px;background:var(--iconos) no-repeat;background-size:240px 240px}
-.tile b{font-family:Sora;font-size:1.08rem;color:var(--gd);display:block;line-height:1.2}
-.tile small{color:var(--mut);font-size:.98rem;line-height:1.25;display:block}
-.none{display:none;padding:12px;color:var(--mut)}
-/* MARCOS MISIÓN / VISIÓN / POLÍTICA */
-.three{display:grid;gap:8px;grid-template-columns:repeat(3,1fr)}
-.cn{position:relative;width:100%;max-width:480px;margin:0 auto;border:solid transparent;border-width:90px 24px 28px 24px;border-image-slice:142 49 61 321 fill;border-image-width:87px 30px 37px 198px;border-image-repeat:stretch;padding:0 8px 2px;font-size:1.08rem;color:var(--ink)}
-.cn.v{border-image-source:var(--mc_v)}.cn.r{border-image-source:var(--mc_r)}.cn.o{border-image-source:var(--mc_o)}
-.cn h3{position:absolute;left:88px;top:-40px;width:150px;transform:translate(-50%,-50%) rotate(-7deg);text-align:center;color:#fff;font-size:1.25rem;text-shadow:0 2px 2px #0006;white-space:nowrap}
-.cn.pc h3{font-size:.86rem}
-.lemas{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:10px}
-.lemas span{background:#fff;border:2px solid var(--o);border-radius:999px;padding:6px 16px;font-weight:800;color:var(--gd)}
-/* EVALUACIÓN, SEDES */
-.two{display:grid;gap:10px;grid-template-columns:1fr 1fr}
-.card{background:#fff;border-radius:18px;padding:16px 20px;border:2px solid #d4e5d4}
-.card h3{font-size:1.4rem;margin-bottom:8px}
-.bar{display:flex;align-items:center;gap:10px;margin:7px 0;font-weight:700}
-.bar em{font-style:normal;flex:none;width:92px}
-.bar div{flex:1;background:#e6efe6;border-radius:99px;height:26px;overflow:hidden}
-.bar div i{height:100%;width:0;border-radius:99px;transition:width 1.1s cubic-bezier(.2,.8,.2,1);display:flex;align-items:center;padding-left:10px;font-style:normal;color:#fff;font-size:.95rem;white-space:nowrap}
-.card ul{padding-left:20px}.card li{margin:5px 0}
-.pil{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
-.pil span{background:#e8f3e8;border-radius:10px;padding:5px 12px;font-weight:700;font-size:1rem;color:var(--gd)}
-.sedes{display:grid;gap:10px;grid-template-columns:repeat(3,1fr)}
-.sd{background:#fff;border-radius:18px;padding:14px 18px;border:2px solid #d4e5d4;border-top:6px solid var(--g)}
-.sd:nth-child(2){border-top-color:var(--r)}.sd:nth-child(3){border-top-color:var(--o)}
-.sd h3{font-size:1.3rem;margin-bottom:4px}.sd p{font-size:1.05rem;margin:3px 0}
-/* REDES */
-.mix{display:grid;gap:10px;grid-template-columns:1.1fr .9fr}
-.vid{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:16/9;background:linear-gradient(135deg,var(--gd),var(--g));display:grid;place-items:center;color:#fff;cursor:pointer;border:0;width:100%}
-.vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.play{width:74px;height:74px;border-radius:50%;background:#fff;display:grid;place-items:center}
-.play:after{content:"";border-left:23px solid var(--r);border-top:14px solid transparent;border-bottom:14px solid transparent;margin-left:6px}
-.vid span{position:absolute;left:16px;bottom:12px;font-weight:800;font-size:1.15rem}
-.fb{background:linear-gradient(120deg,#1565d8,#0b4fb3);color:#fff;border-radius:18px;padding:20px;display:flex;flex-direction:column;justify-content:center;gap:10px}
-.fb h3{color:#fff;font-size:1.6rem}
-.btn{display:inline-block;background:#fff;color:#0b4fb3;font-weight:800;padding:12px 20px;border-radius:12px;align-self:flex-start;transition:transform .2s}
-.btn:hover{transform:translateY(-3px)}
-.lk{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;justify-content:center}
-.lk a{background:var(--gd);color:#fff;border-radius:12px;padding:10px 18px;font-weight:800;transition:background .2s}
-.lk a:hover{background:var(--r)}
-footer{text-align:center;padding:14px;color:var(--mut);font-size:.95rem}
-.rv{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}
-.rv.in{opacity:1;transform:none}
-.m .two,.m .mix,.m .three,.m .sedes{grid-template-columns:1fr}
-.m .stats{grid-template-columns:1fr 1fr}.m .st b{font-size:1.9rem}
-.m .rb{font-size:clamp(.9rem,4.4cqw,1.2rem);line-height:1.1;padding:0 11% 3%}
-.m .sp{width:90%}
-.m .tabs button{min-width:0;padding:13px 16px;font-size:.95rem}
-.lkb{display:inline-block!important;background:var(--o);color:#3b2400!important;border-radius:8px;padding:0 8px;font-size:.85rem!important;font-weight:800;margin-top:3px}
 .md{position:fixed;inset:0;background:#0b2a16aa;display:grid;place-items:center;z-index:50;padding:16px}.md[hidden]{display:none}
 .mb{background:#fff;border-radius:20px;padding:22px;max-width:420px;width:100%;border:4px solid var(--o)}
 .mb input{width:100%;padding:13px 16px;border-radius:12px;border:3px solid #38813d;font:inherit;font-size:1.1rem;margin:8px 0 2px}
 .er{color:var(--r);font-weight:800;min-height:1.5em}
 .mbt{display:flex;gap:10px;margin-top:6px}.mbt .bt{height:56px}
-
-/* MÓVIL: botones debajo de la portada */
-.m .ban .bd{display:none}.m .ban .bm{display:block}
-.m .who{position:static;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding:14px 12px 16px;background:#fff}
-.m .pl{position:static;width:auto;height:auto;left:auto;top:auto;flex-direction:column;gap:6px;padding:10px 4px 12px;border-radius:18px;background:var(--c);color:var(--th);font:800 .98rem/1.15 Nunito,system-ui,sans-serif;box-shadow:0 5px 0 var(--cd);min-height:104px;overflow-wrap:anywhere}
-.m .pl img{display:block;width:54px;height:54px;object-fit:contain}
-.m .pl i{display:none}
-.m .pl:hover,.m .pl:focus-visible{transform:none;box-shadow:0 5px 0 var(--cd)}
-.m .pl:active{transform:translateY(4px);box-shadow:0 1px 0 var(--cd)}
-.m .stage{padding:10px 10px 32px}
-.m .lema{min-height:2.4em}
-.m .tabs button{flex:1 1 40%}
-.m .tile{min-height:92px}
-.m .stats{gap:8px}
-.m .st span{font-size:.92rem}
-.sd a{font-weight:800;color:var(--gd);text-decoration:underline}
-.fbb{display:flex;gap:10px;flex-wrap:wrap}
-.btn{border:0;cursor:pointer;font:inherit;font-weight:800;line-height:1.2}
-.btn svg{width:1.15em;height:1.15em;vertical-align:-.2em;margin-right:.45em;fill:currentColor}
-.btn.gh{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.7);padding:10px 18px}
-.fbn{min-height:1.4em;font-weight:700;font-size:.95rem}
-footer{padding-bottom:calc(14px + env(safe-area-inset-bottom))}
-@media(max-width:860px){
-.two,.mix,.three,.sedes{grid-template-columns:1fr}
-.stats{grid-template-columns:1fr 1fr}.st b{font-size:1.9rem}
-.rb{font-size:clamp(.9rem,4.4cqw,1.2rem);line-height:1.1;padding:0 11% 3%}
-.sp{width:90%}
-.tabs button{min-width:0;padding:13px 16px;font-size:.95rem}
-.ban .bd{display:none}.ban .bm{display:block}
-.who{position:static;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding:14px 12px 16px;background:#fff}
-.pl{position:static;width:auto;height:auto;left:auto;top:auto;flex-direction:column;gap:6px;padding:10px 4px 12px;border-radius:18px;background:var(--c);color:var(--th);font:800 .98rem/1.15 Nunito,system-ui,sans-serif;box-shadow:0 5px 0 var(--cd);min-height:104px;overflow-wrap:anywhere}
-.pl img{display:block;width:54px;height:54px;object-fit:contain}
-.pl i{display:none}
-.pl:hover,.pl:focus-visible{transform:none;box-shadow:0 5px 0 var(--cd)}
-.pl:active{transform:translateY(4px);box-shadow:0 1px 0 var(--cd)}
-.stage{padding:10px 10px 32px}
-.lema{min-height:2.4em}
-.tabs button{flex:1 1 40%}
-.tile{min-height:92px}
-.stats{gap:8px}
-.st span{font-size:.92rem}
-}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
-
 /* ===== BOTÓN COLBOLÍVAR RADIO ===== */
 .radio{display:flex;align-items:center;gap:22px;max-width:880px;margin:20px auto;padding:20px 28px;border-radius:26px;background:linear-gradient(120deg,#12306e,#1c4f27 62%,#2b7a3a);color:#fff;border:3px solid var(--o);box-shadow:0 12px 32px #12306e55;position:relative;overflow:hidden;text-decoration:none;transition:transform .25s,box-shadow .25s}
 .radio:hover{transform:translateY(-4px) scale(1.012);box-shadow:0 18px 40px #12306e77}
@@ -270,56 +268,6 @@ footer{padding-bottom:calc(14px + env(safe-area-inset-bottom))}
 @keyframes req{50%{height:60px}}
 @media(max-width:640px){.radio{flex-direction:column;text-align:center;padding:20px 16px}.req{height:44px}@keyframes req{50%{height:42px}}}
 @media(prefers-reduced-motion:reduce){.radio:before,.rdisc,.req i{animation:none}}
-
-/* RADIO + CUMPLEAÑOS lado a lado */
-.duo{display:flex;gap:20px;max-width:1180px;margin:20px auto;align-items:stretch}
-.duo>.radio{flex:1 1 0;min-width:0;margin:0;max-width:none}
-.radio .rtx h2{color:#fff}
-.duo .rtx h2{font-size:clamp(1.25rem,2.5vw,1.9rem)}
-@media(max-width:1100px){.duo .req{display:none}}
-@media(max-width:760px){.duo{flex-direction:column;gap:14px;padding:0 4px}.duo>.radio{flex:none;width:100%;box-sizing:border-box;margin:0;min-height:0}}
-/* MÓVIL: tarjetas Radio + Cumpleaños completas y legibles */
-.m .duo{display:flex;flex-direction:column;gap:14px;padding:0 4px;margin:16px auto}
-.m .duo>.radio{flex:none;width:100%;box-sizing:border-box;height:auto;min-height:0;margin:0;flex-direction:row;text-align:left;align-items:center;gap:14px;padding:16px 14px;border-radius:22px}
-.m .duo .rdisc{width:68px;height:68px}.m .duo .rdisc i{width:22px;height:22px;box-shadow:inset 0 0 0 5px #12306e}
-.m .duo .cum .cimg{height:84px}
-.m .duo .rtx h2{font-size:1.3rem;margin:6px 0 4px}
-.m .duo .rtx p{font-size:.92rem;line-height:1.3;margin:0}
-.m .duo .rgo{display:block;text-align:center;margin-top:12px;padding:11px 14px;font-size:1rem}
-.m .duo .req{display:none}
-@media(max-width:380px){.m .duo>.radio{flex-direction:column;text-align:center}.m .duo .rtx{width:100%}}
-/* CUMPLEAÑOS */
-.cum{background:linear-gradient(120deg,#1c4f27,#2b7a3a 45%,#d92d3a);box-shadow:0 12px 32px #1c4f2755}.cum:hover{box-shadow:0 18px 40px #1c4f2777}
-.cum .cimg{flex:none;height:112px;width:auto;filter:drop-shadow(0 6px 8px #0006);animation:cbob 3s ease-in-out infinite;position:relative}
-@keyframes cbob{50%{transform:translateY(-6px) rotate(-2deg)}}
-.cum .rlv{background:#ffa63d;color:#3b2400}.cum .rlv:before{background:#3b2400}
-@media(prefers-reduced-motion:reduce){.cum .cimg{animation:none}}
-
-/* HOY + CARTELERA */
-#hoy{margin:16px 0;background:linear-gradient(135deg,#1c4f27,#1d4fb8);color:#fff;border-radius:22px;padding:16px;box-shadow:0 8px 24px #0003}
-#hoy h2{font:800 1.25rem Sora,sans-serif;margin:0 0 4px}#hoy .sal{opacity:.9;margin:0 0 10px;font-size:.95rem}
-#hoy .hg{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
-#hoy .hc{background:#ffffff22;border-radius:14px;padding:10px 12px;font-size:.95rem;line-height:1.3}#hoy .hc b{display:block;font:800 1.5rem Sora,sans-serif;color:#ffd23f}
-#hoy .av{margin-top:10px;background:#ffd23f;color:#3b2400;border-radius:12px;padding:10px 12px;font-weight:800}
-#cart{margin:26px 0}#cart h2{font:800 1.4rem Sora,sans-serif;color:var(--gd);margin:0 0 10px}
-.ct{display:flex;gap:8px;margin-bottom:10px}.ct button{border:0;border-radius:99px;padding:8px 16px;font:800 .95rem Sora,sans-serif;background:#e3eee2;color:var(--gd)}.ct button[aria-selected=true]{background:var(--g);color:#fff}
-.yt{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px;-webkit-overflow-scrolling:touch}
-.yc{flex:0 0 78%;max-width:300px;scroll-snap-align:start;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 14px #0002;text-decoration:none;color:var(--ink)}
-.yc .th{position:relative;aspect-ratio:16/9;background:#000 center/cover;border:0;width:100%;display:block;cursor:pointer}.yc .th::after{content:"";position:absolute;inset:0;background:url(assets/img/ico-play.webp) center/clamp(52px,15%,86px) no-repeat;filter:drop-shadow(0 4px 10px #000a);transition:transform .25s}.yc .th:hover::after{transform:scale(1.12)}
-.yc iframe{width:100%;aspect-ratio:16/9;border:0;display:block}.yc p{margin:0;padding:8px 10px 10px;font-weight:700;font-size:.9rem;line-height:1.25;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.fbw{margin-top:16px;background:#fff;border-radius:18px;padding:10px;box-shadow:0 4px 14px #0002;text-align:center}.fbw iframe{border:0;width:100%;height:520px;max-width:500px}
-@media(min-width:861px){.yc{flex-basis:calc(25% - 10px)}}
-
-.cs{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 10px;-webkit-overflow-scrolling:touch;scrollbar-width:none}.cs::-webkit-scrollbar{display:none}
-.cc{flex:0 0 82%;max-width:340px;aspect-ratio:16/10;scroll-snap-align:center;position:relative;border-radius:20px;overflow:hidden;box-shadow:0 6px 18px #0003;color:#fff;text-decoration:none;background:linear-gradient(135deg,#1c4f27,#1d4fb8) center/cover;display:flex;align-items:flex-end;border:0;padding:0;font:inherit;text-align:left;cursor:pointer}
-.cc::before{content:"";position:absolute;inset:0;background:linear-gradient(transparent 40%,#000b)}
-.cc span{position:relative;padding:12px 14px;font:800 .98rem/1.2 Sora,sans-serif;display:block}.cc small{display:block;font:600 .78rem Nunito,sans-serif;opacity:.9}
-.cc em{position:absolute;top:10px;right:10px;font-style:normal;background:#0008;border-radius:99px;padding:3px 10px;font-size:.75rem;font-weight:800}
-.cc i{position:absolute;inset:0;display:grid;place-items:center;font-style:normal;font-size:2.4rem;text-shadow:0 2px 10px #000}
-.cc iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:2}
-.cdt{display:flex;justify-content:center;gap:6px}.cdt b{width:8px;height:8px;border-radius:9px;background:#b9cdb8;transition:all .3s}.cdt b.on{width:22px;background:var(--g)}
-@media(min-width:861px){.cc{flex-basis:calc(33.3% - 8px);max-width:none}}
-
 .win{position:relative;aspect-ratio:16/9;max-width:760px;margin:0 auto;border-radius:20px;overflow:hidden;box-shadow:0 6px 18px #0004;background:#000}.win iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .wl{text-align:center;margin:8px 0 16px;font-weight:800}.wl a{color:#0b4fb3}.wh{font:800 1.15rem Sora,sans-serif;color:var(--gd);margin:14px 0 8px}
 .fbs{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;-webkit-overflow-scrolling:touch}
@@ -345,7 +293,6 @@ footer{padding-bottom:calc(14px + env(safe-area-inset-bottom))}
 .fbh{font-size:.85rem;font-weight:600;color:#44564a;max-width:520px;margin-left:auto;margin-right:auto}
 .fbs[hidden],.fbw[hidden],.ctl[hidden]{display:none!important}
 @media(prefers-reduced-motion:reduce){.fbk i{animation:none}}
-
 /* ===== INTRO ===== */
 #intro{display:none}
 html.intro,html.intro body{overflow:hidden}
@@ -384,6 +331,11 @@ html.intro #intro{display:flex}
 .fbcd b{font:800 .9rem/1.2 Sora,Nunito,sans-serif;padding:0 10px}
 .fbcd small{padding:0 10px;font-weight:800;color:#0b4fb3}
 .fbf[hidden]{display:none!important}
+
+.stage{margin:0!important;border-radius:0!important;max-width:none!important}
+.rtx h2{color:#fff}.rtx h2 b{color:#ffd23f}
+@media(max-width:760px){.rad .radio{flex-direction:row;text-align:left;gap:12px;padding:12px 14px}.rad .rdisc{width:64px;height:64px}.rad .rdisc i{width:22px;height:22px}.rad .req{display:none}.rad .rtx h2{font-size:1.2rem;margin:4px 0 0}.rad .rtx p{display:none}.rad .rgo{margin-top:6px;padding:6px 14px;font-size:.85rem}}
+
 </style>
 <script>
 function fit(){var sw=screen.width,iw=innerWidth,ua=navigator.userAgent,ph=/Android.*Mobile|iPhone/i.test(ua),m=iw<=860,z=1;if(sw<=600&&iw>sw*1.25){z=iw/sw;m=true}else if(ph&&iw>=700){z=iw/420;m=true}document.documentElement.classList.toggle('m',m);if(document.body)document.body.style.zoom=z>1?z:''}
@@ -397,14 +349,16 @@ fit();addEventListener('resize',fit);addEventListener('DOMContentLoaded',fit);
 <script>(function(){var h=document.documentElement,el=document.getElementById("intro");if(!el)return;if(!h.classList.contains("intro")){el.remove();return}var done=false;function end(){if(done)return;done=true;try{localStorage.setItem("cbintro",new Date().toDateString())}catch(e){}el.classList.add("out");setTimeout(function(){h.classList.remove("intro");el.remove()},680)}el.querySelector(".ip i").addEventListener("animationend",end);el.addEventListener("click",end);addEventListener("keydown",function(e){if(e.key==="Escape"||e.key==="Enter"||e.key===" ")end()});setTimeout(end,5200);try{el.querySelector(".is").focus({preventScroll:true})}catch(e){}})();</script>
 <a class="skip" href="#main">Saltar al contenido</a>
 <header class="hero">
-<h1 class="sr">Todos somos ColBolívar · Institución Educativa Colegio Integrado Simón Bolívar, Cúcuta</h1>
-<div class="ban">
-<img class="bd" fetchpriority="high" decoding="async" src="assets/img/e433b6042c.webp" width="1800" height="601" alt="Todos somos ColBolívar. Institución Educativa Colegio Integrado Simón Bolívar, Cúcuta. Educamos para construir proyectos de vida con éxito.">
-<img class="bm" loading="lazy" decoding="async" src="assets/img/5c667116bd.webp" width="1200" height="505" alt="Todos somos ColBolívar. Institución Educativa Colegio Integrado Simón Bolívar, Cúcuta.">
-<div class="who" id="who">
-<button class="pl pg" type="button" data-a="e" aria-label="Soy estudiante"><i></i><img loading="lazy" decoding="async" src="assets/img/5344ae4d07.webp" alt="" aria-hidden="true"><span>Estudiante</span></button>
-<button class="pl pr" type="button" data-a="p" aria-label="Soy padre de familia"><i></i><img loading="lazy" decoding="async" src="assets/img/36f4cf4104.webp" alt="" aria-hidden="true"><span>Padre de familia</span></button>
-<button class="pl po" type="button" data-a="d" aria-label="Soy docente"><i></i><img loading="lazy" decoding="async" src="assets/img/65bbc71842.webp" alt="" aria-hidden="true"><span>Docente</span></button>
+<div class="esc">
+<img class="o o-sol" src="assets/img/portada/escena/sol.webp" width="286" height="270" alt="" aria-hidden="true" decoding="async"><img class="o o-n1" src="assets/img/portada/escena/nube-1.webp" width="365" height="243" alt="" aria-hidden="true" decoding="async"><img class="o o-n2" src="assets/img/portada/escena/nube-2.webp" width="316" height="200" alt="" aria-hidden="true" decoding="async"><img class="o o-n3" src="assets/img/portada/escena/nube-3.webp" width="284" height="171" alt="" aria-hidden="true" decoding="async">
+<img class="o o-b1" src="assets/img/portada/escena/banderines-1.webp" width="336" height="152" alt="" aria-hidden="true" decoding="async"><img class="o o-b2" src="assets/img/portada/escena/banderines-2.webp" width="324" height="144" alt="" aria-hidden="true" decoding="async">
+<img class="o o-ai" src="assets/img/portada/escena/arbol.webp" width="288" height="281" alt="" aria-hidden="true" decoding="async"><img class="o o-ad" src="assets/img/portada/escena/arbol.webp" width="288" height="281" alt="" aria-hidden="true" decoding="async"><img class="o o-col" src="assets/img/portada/escena/colegio.webp" width="353" height="201" alt="" aria-hidden="true" decoding="async"><img class="o o-ban" src="assets/img/portada/escena/bandera.webp" width="243" height="226" alt="" aria-hidden="true" decoding="async">
+<img class="o o-est" src="assets/img/portada/escena/estudiantes.webp" width="346" height="252" alt="" aria-hidden="true" decoding="async"><img class="o o-s1" src="assets/img/portada/escena/seto.webp" width="345" height="143" alt="" aria-hidden="true" decoding="async"><img class="o o-s2" src="assets/img/portada/escena/seto.webp" width="345" height="143" alt="" aria-hidden="true" decoding="async"><img class="o o-s3" src="assets/img/portada/escena/seto.webp" width="345" height="143" alt="" aria-hidden="true" decoding="async">
+<img class="bri b1" src="assets/img/portada/escena/brillo-01.webp" width="94" height="100" alt="" aria-hidden="true" decoding="async"><img class="bri b2" src="assets/img/portada/escena/brillo-02.webp" width="98" height="103" alt="" aria-hidden="true" decoding="async"><img class="bri b3" src="assets/img/portada/escena/brillo-03.webp" width="92" height="99" alt="" aria-hidden="true" decoding="async"><img class="bri b4" src="assets/img/portada/escena/brillo-04.webp" width="98" height="104" alt="" aria-hidden="true" decoding="async"><img class="bri b5" src="assets/img/portada/escena/brillo-05.webp" width="94" height="103" alt="" aria-hidden="true" decoding="async">
+<div class="placa">
+<img class="esc2" src="assets/img/escudo.webp" width="600" height="726" alt="Escudo del Colegio Integrado Simón Bolívar" fetchpriority="high">
+<div><p class="k">Institución Educativa</p><h1>Colegio Integrado <b>Simón Bolívar</b></h1><p class="lm">Todos somos <span>Col</span><em>Bolívar</em> · Cúcuta</p></div>
+<div class="cts"><a class="cta v" href="#servicios">Ver servicios</a><a class="cta n" href="colbolivar-radio/">Radio ColBolívar</a></div>
 </div>
 </div>
 </header>
@@ -417,86 +371,53 @@ fit();addEventListener('resize',fit);addEventListener('DOMContentLoaded',fit);
 </div>
 
 <main class="w" id="main" tabindex="-1">
-<section id="hoy" aria-live="polite"><h2>☀️ Hoy en Bolívar</h2><p class="sal" id="hsal"></p><div class="hg" id="hg"></div><div class="av" id="hav" hidden></div></section>
-
-<div class="stats" id="stats">
-<div class="st rv"><b data-n="3">0</b><span>sedes en Cúcuta</span></div>
-<div class="st rv"><b data-n="2">0</b><span>jornadas: mañana y tarde</span></div>
-<div class="st rv"><b data-n="4">0</b><span>niveles: preescolar, primaria, secundaria y media</span></div>
-<div class="st rv"><b data-n="2027">0</b><span>Carta de navegación 2024-2027</span></div>
+<section id="hoy" class="tablero rv" aria-live="polite" aria-label="Hoy en Bolívar">
+<div class="pz">
+<div class="tb-h"><h2>Hoy en Bolívar</h2><span class="f" id="hfecha"></span></div>
+<div class="tb-g">
+<div class="tb-c"><img class="ic" id="hsol" src="assets/img/portada/hoy/sol-manana.webp" width="401" height="298" alt=""><div><b class="t" id="hsal">Buen día</b><small>Comunidad ColBolívar</small></div></div>
+<div class="tb-c cumple" id="hcum"><img class="cf" src="assets/img/portada/escena/confeti-01.webp" width="28" height="28" alt="" aria-hidden="true" loading=lazy decoding="async" style="left:12%;animation-delay:0.00s"><img class="cf" src="assets/img/portada/escena/confeti-04.webp" width="28" height="29" alt="" aria-hidden="true" loading=lazy decoding="async" style="left:27%;animation-delay:0.55s"><img class="cf" src="assets/img/portada/escena/confeti-07.webp" width="92" height="95" alt="" aria-hidden="true" loading=lazy decoding="async" style="left:42%;animation-delay:1.10s"><img class="cf" src="assets/img/portada/escena/confeti-10.webp" width="47" height="38" alt="" aria-hidden="true" loading=lazy decoding="async" style="left:57%;animation-delay:1.65s"><img class="cf" src="assets/img/portada/escena/confeti-13.webp" width="34" height="35" alt="" aria-hidden="true" loading=lazy decoding="async" style="left:72%;animation-delay:2.20s"><img class="cf" src="assets/img/portada/escena/confeti-16.webp" width="80" height="92" alt="" aria-hidden="true" loading=lazy decoding="async" style="left:87%;animation-delay:2.75s"><img class="ic" src="assets/img/portada/hoy/torta.webp" width="312" height="332" alt="" aria-hidden="true" loading=lazy decoding="async"><div><b class="t" id="cum-t">Cumpleaños</b><small id="cum-p">Felicita a nuestra comunidad.</small><a class="mas" href="cumpleanos.html">Ver cumpleaños →</a></div></div>
+<div class="tb-c cuentas-c"><div class="cuentas" id="hcnt"></div></div>
 </div>
-<div class="sp" style="background-image:var(--sp_dots);aspect-ratio:800/53"></div>
-
-<div class="duo">
-<a class="radio rv" href="colbolivar-radio/" aria-label="Escuchar ColBolívar Radio">
+<div class="nota" id="hav" hidden><img class="" src="assets/img/portada/hoy/campana.webp" width="383" height="284" alt="" aria-hidden="true" loading=lazy decoding="async"><span id="hav-t"></span></div>
+</div>
+</section>
+<section id="servicios" aria-labelledby="svt">
+<div class="sv-top"><h2 id="svt">Encuentra rápido lo que necesitas<small>Todos los servicios del colegio, en un solo lugar.</small></h2><div class="srch"><input id="q" type="search" placeholder="Buscar: planes, biblioteca, circulares, notas…" aria-label="Buscar un servicio"></div></div>
+<div class="cats" id="cats"></div>
+<p class="none" id="none">No encontramos esa sección. Prueba con otra palabra.</p>
+</section>
+<section class="rad"><a class="radio rv" href="colbolivar-radio/" aria-label="Escuchar ColBolívar Radio">
 <div class="rdisc" aria-hidden="true"><i></i></div>
 <div class="rtx"><span class="rlv">EN VIVO</span><h2>Col<b>Bolívar</b> Radio</h2><p>Música y podcast de nuestra comunidad, todo el día.</p><span class="rgo"><i class="ico i-play" aria-hidden="true"></i>Escuchar ahora</span></div>
 <div class="req" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-</a>
-<a class="radio cum rv" href="cumpleanos.html" aria-label="Ver los cumpleaños de nuestra comunidad">
-<img loading="lazy" decoding="async" class="cimg" src="assets/img/006e072272.webp" alt="" aria-hidden="true">
-<div class="rtx"><span class="rlv" id="cum-t">Celebramos contigo</span><h2>Cumpleaños <b>ColBolívar</b></h2><p id="cum-p">Docentes, directivos y administrativos: felicítalos y descubre quién cumple años hoy.</p><span class="rgo">🎂 Ver cumpleaños</span></div>
-</a>
+</a></section>
+<section id="conocenos" aria-labelledby="cnt">
+<div class="tit az rv"><div class="cinta"><h2 id="cnt">Conoce el colegio</h2></div></div>
+<div class="cifras rv">
+<div class="cf4"><img class="" src="assets/img/portada/servicios/sede-san-martin.webp" width="324" height="233" alt="" aria-hidden="true" loading=lazy decoding="async"><div><b data-n="3">0</b><span>sedes en Cúcuta</span></div></div>
+<div class="cf4"><img class="" src="assets/img/portada/hoy/reloj-arena.webp" width="254" height="325" alt="" aria-hidden="true" loading=lazy decoding="async"><div><b data-n="2">0</b><span>jornadas: mañana y tarde</span></div></div>
+<div class="cf4"><img class="" src="assets/img/portada/servicios/biblioteca.webp" width="320" height="243" alt="" aria-hidden="true" loading=lazy decoding="async"><div><b data-n="4">0</b><span>niveles: preescolar a media</span></div></div>
+<div class="cf4"><img class="" src="assets/img/portada/servicios/calidad.webp" width="210" height="268" alt="" aria-hidden="true" loading=lazy decoding="async"><div><b>2027</b><span>Carta de navegación 2024-2027</span></div></div>
 </div>
-<section id="hub">
-<h2 class="rb rbv rv">Encuentra rápido lo que necesitas</h2>
-<div class="srch rv"><input id="q" type="search" placeholder="Escribe: planes, biblioteca, circulares, notas..." aria-label="Buscar"></div>
-<div class="tabs rv" id="tabs" role="tablist"></div>
-<div class="tiles" id="tiles"></div>
-<p class="none" id="none">No encontramos esa sección. Prueba con otra palabra.</p>
-</section>
-<div class="sp" style="background-image:var(--sp_wave);aspect-ratio:800/45"></div>
-
-<section id="carta">
-<h2 class="rb rbo rv">Carta de navegación 2024-2027</h2>
-<div class="three">
-<div class="cn v rv"><h3>Misión</h3>El Colegio Simón Bolívar es una institución de carácter oficial que ofrece un servicio de calidad en los niveles de Preescolar, Básica, Media Académica y Técnica, propendiendo por la formación integral del estudiante desde el «saber ser», «saber hacer» y «saber saber». Con el desarrollo de proyectos en el marco de la inclusión educativa, la evaluación formativa y el trabajo colaborativo que fortalecen la construcción de proyectos de vida con éxito.</div>
-<div class="cn r rv"><h3>Visión</h3>La Institución Educativa Colegio Simón Bolívar en el año 2027 será reconocida a nivel regional y nacional por desarrollar procesos académicos y administrativos de alta calidad, apoyada en el manejo de las TIC, la inclusión escolar y la convivencia ciudadana post pandemia.</div>
-<div class="cn o pc rv"><h3>Política de calidad</h3>Ofrecer un servicio educativo de alta calidad, que fortalezca en su comunidad el liderazgo, la comunicación y el trabajo en equipo, contando para ello con recursos físicos, financieros y tecnológicos apropiados y con un talento humano competente, que contribuya con el mejoramiento continuo de los procesos de la gestión escolar, para responder a las necesidades y expectativas de los actores educativos y su entorno.</div>
-</div>
-<div class="lemas rv"><span>Educamos para construir proyectos de vida con éxito</span><span>Virtud · Ciencia · Cultura</span><span>Honradez · Amor · Esfuerzo · Fe</span></div>
-</section>
-<div class="sp" style="background-image:var(--sp_stripe);aspect-ratio:800/40;width:50%"></div>
-
-<section id="eval">
-<h2 class="rb rbr rv">Así se evalúa y se promueve</h2>
-<p class="s rv">Resumen del Sistema Institucional de Evaluación (SIEE) para familias y estudiantes.</p>
-<div class="two">
-<div class="card rv"><h3>Escala de valoración</h3>
-<div class="bar"><em>Superior</em><div><i data-w="100" style="background:var(--g)">4.5 a 5.0</i></div></div>
-<div class="bar"><em>Alto</em><div><i data-w="80" style="background:#38813d">3.7 a 4.4</i></div></div>
-<div class="bar"><em>Básico</em><div><i data-w="62" style="background:#a85a00">3.0 a 3.6</i></div></div>
-<div class="bar"><em>Bajo</em><div><i data-w="45" style="background:var(--r)">1.0 a 2.9</i></div></div>
-<p style="margin-top:8px;font-weight:700">Cada período se valora en cuatro componentes:</p>
-<div class="pil"><span>Saber-Saber</span><span>Saber-Hacer</span><span>Saber Ser y Convivir</span><span>Prueba de comprensión (30 %)</span></div></div>
-<div class="card rv"><h3>Promoción de grado</h3>
-<ul>
-<li><b>Preescolar:</b> promoción automática.</li>
-<li><b>1.º y 2.º:</b> se promueve con hasta 2 áreas no aprobadas, siempre que ninguna sea Matemáticas ni Lengua Castellana.</li>
-<li><b>3.º a 11.º:</b> se promueve aprobando todas las áreas del plan de estudios.</li>
-<li><b>Asistencia:</b> faltar sin justificación el 25 % o más de las actividades es causal de no promoción.</li>
-</ul></div>
-</div>
-</section>
-<div class="sp" style="background-image:var(--sp_zig);aspect-ratio:800/52"></div>
-
-<section id="sedes">
-<h2 class="rb rbv rv">Sedes, jornadas y niveles</h2>
 <div class="sedes">
-<div class="sd rv"><h3>Sede 1</h3><p>Calle 4 N.º 11A-26, Urbanización San Martín</p><p>Tel. <a href="tel:+576075848539">5 848539</a> · <a href="tel:+576075943344">5 943344</a></p></div>
-<div class="sd rv"><h3>Sede 2</h3><p>Calle 5N N.º 7-20, Barrio San Martín</p><p>Tel. <a href="tel:+576075846438">5 846438</a></p></div>
-<div class="sd rv"><h3>Sede 3</h3><p>Calle 0 N.º 13-06, Hernando Acevedo Ortega, Urbanización Torcoroma II</p><p>Tel. <a href="tel:+576075769922">5 769922</a></p></div>
+<div class="sd v rv"><h3>Sede 1</h3><p>Calle 4 N.º 11A-26, Urbanización San Martín</p><p>Tel. <a href="tel:+576075848539">5 848539</a> · <a href="tel:+576075943344">5 943344</a></p></div>
+<div class="sd n rv"><h3>Sede 2</h3><p>Calle 5N N.º 7-20, Barrio San Martín</p><p>Tel. <a href="tel:+576075846438">5 846438</a></p></div>
+<div class="sd a rv"><h3>Sede 3</h3><p>Calle 0 N.º 13-06, Hernando Acevedo Ortega, Urbanización Torcoroma II</p><p>Tel. <a href="tel:+576075769922">5 769922</a></p></div>
 </div>
-<p class="s" style="margin-top:12px">✉️ <a href="mailto:colintsimonbolivar@semcucuta.gov.co">colintsimonbolivar@semcucuta.gov.co</a> · Rector: Dr. Jesús Maldonado Serrano · DANE 154001008266</p>
-<div class="two" style="margin-top:10px">
-<div class="card rv"><h3>Jornadas</h3><p><b>Mañana:</b> primaria 6:00 a.m. a 12:30 p.m. · secundaria 6:00 a.m. a 1:00 p.m.</p><p><b>Tarde:</b> 12:15 p.m. a 6:15 p.m. (completa hasta las 7:15 p.m.)</p></div>
-<div class="card rv"><h3>Qué ofrecemos</h3><div class="pil"><span>Preescolar</span><span>Básica primaria</span><span>Básica secundaria</span><span>Media académica</span><span>Media técnica con el SENA: mantenimiento de computadores</span><span>Asesoría comercial</span><span>Propuesta educativa Yukpa</span></div></div>
-</div>
+<div class="info">
+<div class="perg rv"><div class="tb" role="tablist" aria-label="Carta de navegación 2024-2027" id="ctabs"></div><p class="tx" id="ctx" role="tabpanel"></p></div>
+<div>
+<div class="hoja rv"><h3>Jornadas y niveles</h3><p><b>Mañana:</b> primaria 6:00 a.m. a 12:30 p.m. · secundaria 6:00 a.m. a 1:00 p.m.</p><p><b>Tarde:</b> 12:15 p.m. a 6:15 p.m. (completa hasta las 7:15 p.m.)</p>
+<div class="pil"><span>Preescolar</span><span>Básica primaria</span><span>Básica secundaria</span><span>Media académica</span><span>Media técnica SENA</span><span>Propuesta Yukpa</span></div></div>
+<div class="hoja rv" style="margin-top:10px"><h3>Así se evalúa</h3><div class="esc-v"><span class="s">Superior 4.5–5.0</span><span class="a">Alto 3.7–4.4</span><span class="b">Básico 3.0–3.6</span><span class="j">Bajo 1.0–2.9</span></div>
+<p>Cada período: Saber-Saber, Saber-Hacer, Saber Ser y Convivir y prueba de comprensión (30 %).</p>
+<details class="prom"><summary>¿Cómo se promueve de grado?</summary><ul><li><b>Preescolar:</b> promoción automática.</li><li><b>1.º y 2.º:</b> hasta 2 áreas no aprobadas, si ninguna es Matemáticas ni Lengua Castellana.</li><li><b>3.º a 11.º:</b> aprobando todas las áreas.</li><li><b>Asistencia:</b> faltar sin justificación el 25 % o más es causal de no promoción.</li></ul></details></div>
+</div></div>
+<div class="contacto rv"><img class="doc" src="assets/img/portada/escena/docente.webp" width="227" height="282" alt="" aria-hidden="true" loading=lazy decoding="async"><div class="globo">✉️ <a href="mailto:colintsimonbolivar@semcucuta.gov.co"><b>colintsimonbolivar@semcucuta.gov.co</b></a><br>Rector: Dr. Jesús Maldonado Serrano · DANE 154001008266</div></div>
 </section>
-<div class="sp" style="background-image:var(--sp_wave);aspect-ratio:800/45"></div>
-
-<section id="cart"><h2>🎬 Cartelera ColBolívar</h2>
-<div class="cg"><div class="cy"><h3 class="wh"><i class="ico i-yt" aria-hidden="true"></i>Videos del canal</h3><div class="win" id="ytw"></div>
+<section id="cart"><div class="tit na rv"><div class="cinta"><h2>Novedades ColBolívar</h2></div></div>
+<div class="cg"><div class="cy"><h3 class="wh"><i class="ico i-yt" aria-hidden="true"></i>Videos del canal</h3><div class="tvf"><div class="win" id="ytw"></div></div>
 <div class="ctl"><button type="button" id="yp">⏮ Anterior</button><button type="button" id="yn">Siguiente ⏭</button></div>
 <p class="wl"><a href="https://www.youtube.com/@ColBolivar" target="_blank" rel="noopener"><i class="ico i-yt" aria-hidden="true"></i>Ver todo el canal &#8599;</a></p></div>
 <div class="cf"><h3 class="wh">📘 Desde nuestro Facebook</h3><div class="fbw" id="fbw" aria-live="polite"></div>
@@ -504,27 +425,20 @@ fit();addEventListener('resize',fit);addEventListener('DOMContentLoaded',fit);
 <div class="ctl" id="fctl"><button type="button" id="fr">&#8635; Actualizar</button><a id="fo" href="https://www.facebook.com/profile.php?id=61566338526972" target="_blank" rel="noopener">Abrir en Facebook &#8599;</a></div>
 <div class="fbf" id="fbf" hidden><h4>&#11088; Publicaciones destacadas</h4><div class="fbr" id="fbr"></div></div>
 <p class="wl fbh">Se actualiza solo con las &uacute;ltimas publicaciones. Si no las ves, tu navegador puede estar bloqueando Facebook: usa <b>Abrir en Facebook</b>.</p></div></div></section>
-
-
-
-<section id="redes">
-<h2 class="rb rbo rv">Mantente conectado</h2>
-<div class="mix">
-<div class="rv" id="vbox"></div>
-<div class="fb rv"><h3>Síguenos en Facebook</h3><p>Noticias, eventos y fotos de la vida ColBolívar.</p>
-<div class="fbb"><a class="btn" id="fbl" href="https://www.facebook.com/profile.php?id=61566338526972" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8.2h2.8l.5-3.3h-3.3V8.4c0-.9.4-1.7 1.8-1.7h1.6V3.9c-.3 0-1.3-.2-2.4-.2-2.5 0-4.1 1.5-4.1 4.2v2.6H7.6v3.3h2.8V22h3.1z"/></svg>Ir a nuestra página</a><button class="btn gh" id="fbc" type="button">Copiar enlace</button><a class="btn" href="https://www.youtube.com/@ColBolivar" target="_blank" rel="noopener"><i class="ico i-yt" aria-hidden="true"></i>YouTube</a><a class="btn" id="wal" href="#" target="_blank" rel="noopener" hidden><i class="ico i-wa" aria-hidden="true"></i>WhatsApp</a></div>
-<p class="fbn" id="fbn" role="status"></p></div>
-</div>
+<div class="redes">
+<a class="rbt a" id="fbl" href="https://www.facebook.com/profile.php?id=61566338526972" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8.2h2.8l.5-3.3h-3.3V8.4c0-.9.4-1.7 1.8-1.7h1.6V3.9c-.3 0-1.3-.2-2.4-.2-2.5 0-4.1 1.5-4.1 4.2v2.6H7.6v3.3h2.8V22h3.1z"/></svg>Facebook</a>
+<a class="rbt r" href="https://www.youtube.com/@ColBolivar" target="_blank" rel="noopener">▶ YouTube</a>
+<a class="rbt v" id="wal" href="#" target="_blank" rel="noopener" hidden>WhatsApp</a>
+<button class="rbt n" id="fbc" type="button">Copiar enlace</button></div>
+<p class="fbn" id="fbn" role="status"></p>
 <div class="lk" id="lk"></div>
-</section>
 </main>
 <div class="md" id="md" hidden role="dialog" aria-modal="true" aria-labelledby="mdt"><div class="mb">
 <h3 id="mdt">🔒 Acceso para docentes</h3><p>Escribe la contraseña para entrar a <b id="mdn"></b>.</p>
 <input id="mdp" type="password" autocomplete="off" placeholder="Contraseña" aria-label="Contraseña">
 <p class="er" id="mde" role="alert"></p>
-<div class="mbt"><button class="bt bv" id="mdok" type="button">Entrar</button><button class="bt bo" id="mdno" type="button">Cancelar</button></div></div></div>
-<footer>© 2026 Institución Educativa Colegio Integrado Simón Bolívar · Cúcuta, Norte de Santander</footer>
-
+<div class="mbt"><button class="cta v" id="mdok" type="button">Entrar</button><button class="cta n" id="mdno" type="button">Cancelar</button></div></div></div>
+<footer class="pie">© 2026 Institución Educativa Colegio Integrado Simón Bolívar · Cúcuta, Norte de Santander</footer>
 <script>
 /* ====== CONFIGURACIÓN: edita solo este bloque ====== */
 const B='https://gestionacademicaco.wixsite.com/colbolivar1/';
@@ -532,31 +446,32 @@ const G=location.href.replace(/[#?].*$/,'').replace(/[^\/]*$/,'');
 const C={
  // *palabra* = resaltada en dorado · | separa palabras en los efectos 'stamp' y 'flip' · efectos: rise, stamp, flip
  lemas:[['Educamos para construir *proyectos de vida* con *éxito*','rise'],['Virtud|Ciencia|Cultura','stamp'],['Honradez|Amor|Esfuerzo|Fe','flip']],
- videoId:'',   // ID del video del Himno en YouTube (lo que va después de v=). Vacío = no se muestra.
  facebook:'https://www.facebook.com/profile.php?id=61566338526972', // sin "web." ni "locale": esos parámetros daban el error
  enlaces:[['WebColegios','https://www.webcolegios.com/simon/'],['Alcaldía de San José de Cúcuta','#'],['YouTube','#'],['Instagram','#'],['X','#'],['LinkedIn','#'],['TikTok','#']]
 };
-// [título, descripción, enlace, para quién: e=estudiantes p=padres d=docentes]  (el orden coincide con la hoja de íconos)
-// [título, descripción, enlace, para quién: e=estudiantes p=padres d=docentes, n.º de ícono en la hoja de íconos]
-const T=[
-['Biblioteca','Libros y lecturas',B+'biblioteca','e p','d7'],
-['ICFES','Preparación pruebas Saber',B+'icfes2024','e','d2'],
-['Orientación escolar','Apoyo psicosocial',G+'ORIENTACION_ESCOLAR.html','e p','d12'],
-['Notas y planillas','Plataforma WebColegios','https://www.webcolegios.com/simon/','e p d','d1'],
-['Circulares','Comunicados oficiales',B+'circulares','p d','n14'],
-['Cartelera','Eventos y fechas del colegio',G+'cartelera.html','e p d','d15'],
-['Modo estudio','Practica con preguntas de los documentos',G+'estudio.html','d','d2'],
-['Documentos institucionales','Manuales y formatos',G+'DOCUMENTOS%20INSTITUCIONALES.html','d','d9'],
-['Sede San Martín 2026','Información de la sede',B+'sanmart%C3%ADn','p','o11'],
-['Planes de área 2026','Planes por área',G+'PLANES_DE_AREA.html','d','d14'],
-['Documentos docentes','Planeación docente en Drive',G+'DRIVE_PLANEACION_DOCENTE.html','d','d10'],
-['Proyectos transversales','Proyectos del año',G+'PROYECTOS_TRANSVERSALES.html','d e','d13'],
-['Calidad','Gestión de calidad',G+'CALIDAD.html','p d','d11'],
-['Procesos','Gestiones y evidencias',G+'PROCESOS.html','p d','d5']];
+const IMG='assets/img/portada/';
+// [título, descripción, enlace, ícono]  — agrupados en 4 categorías (color de cinta y de tarjeta)
+const CATS=[
+ {id:'aprender',t:'Estudiar y aprender',c:'verde',med:'medallon-aprender',it:[
+  ['Biblioteca','Libros y lecturas',B+'biblioteca','biblioteca'],
+  ['ICFES','Preparación pruebas Saber',B+'icfes2024','icfes'],
+  ['Modo estudio','Practica con preguntas de los documentos',G+'estudio.html','modo-estudio'],
+  ['Proyectos transversales','Proyectos del año',G+'PROYECTOS_TRANSVERSALES.html','proyectos-transversales']]},
+ {id:'vida',t:'Vida escolar',c:'naranja',med:'medallon-vida',it:[
+  ['Orientación escolar','Apoyo psicosocial',G+'ORIENTACION_ESCOLAR.html','orientacion'],
+  ['Circulares','Comunicados oficiales',B+'circulares','circulares'],
+  ['Cartelera','Eventos y fechas del colegio',G+'cartelera.html','cartelera'],
+  ['Notas y planillas','Plataforma WebColegios','https://www.webcolegios.com/simon/','notas'],
+  ['Sede San Martín 2026','Información de la sede',B+'sanmart%C3%ADn','sede-san-martin']]},
+ {id:'docs',t:'Documentos y planeación',c:'azul',med:'medallon-documentos',it:[
+  ['Documentos institucionales','Manuales y formatos',G+'DOCUMENTOS%20INSTITUCIONALES.html','documentos'],
+  ['Planes de área 2026','Planes por área',G+'PLANES_DE_AREA.html','planes-area'],
+  ['Documentos docentes','Planeación docente en Drive',G+'DRIVE_PLANEACION_DOCENTE.html','documentos-docentes']]},
+ {id:'gestion',t:'Gestión y calidad',c:'roja',med:'medallon-gestion',it:[
+  ['Calidad','Gestión de calidad',G+'CALIDAD.html','calidad'],
+  ['Procesos','Gestiones y evidencias',G+'PROCESOS.html','procesos']]}];
 const LOCK=['Planes de área 2026','Documentos docentes']; // secciones con contraseña
 const HASH='ef44b50b12b77a8a38936199d3edc55c7370ceff204c89580c2b144981b3c17f'; // huella SHA-256 de la contraseña (no se guarda en texto claro)
-const A=[['t','Todo'],['e','Estudiantes'],['p','Padres de familia'],['d','Docentes']];
-/* ====== FIN CONFIGURACIÓN ====== */
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 
 /* ====== LEMAS ANIMADOS + PARTÍCULAS ====== */
@@ -625,18 +540,18 @@ function frame(now){
  requestAnimationFrame(frame)
 }
 size();new ResizeObserver(size).observe(stage);requestAnimationFrame(frame);
-const SH={n:'background-image:url(assets/img/ui-nav.webp);',d:'background-image:url(assets/img/ui-docs.webp);',o:''};
-const TL=$('#tiles'),TB=$('#tabs');let cur='t';
-TL.innerHTML=T.map(t=>'<a class="tile rv'+(LOCK.includes(t[0])?' lock':'')+'" '+(t[2].startsWith(G)?'':'target="_blank" rel="noopener" ')+'href="'+t[2]+'" data-a="'+t[3]+'" data-k="'+(t[0]+' '+t[1]).toLowerCase()+'"><i class="ic" aria-hidden="true" style="'+SH[t[4][0]]+'background-position:-'+(t[4].slice(1)%4)*60+'px -'+Math.floor(t[4].slice(1)/4)*60+'px"></i><span><b>'+t[0]+'</b><small>'+t[1]+'</small>'+(LOCK.includes(t[0])?'<small class="lkb">🔒 Solo docentes</small>':'')+'</span></a>').join('');
-A.forEach(a=>{const b=document.createElement('button');b.textContent=a[1];b.dataset.a=a[0];b.setAttribute('role','tab');b.onclick=()=>{$('#q').value='';show(a[0])};TB.append(b)});
-function show(a){cur=a;[...TB.children].forEach(b=>b.setAttribute('aria-selected',b.dataset.a===a));let n=0;$$('.tile').forEach(t=>{const ok=a==='t'||t.dataset.a.split(' ').includes(a);t.style.display=ok?'':'none';if(ok)n++});$('#none').style.display=n?'none':'block'}
-show('t');
-$('#q').addEventListener('input',e=>{const v=e.target.value.toLowerCase().trim();if(!v){show(cur);return}let n=0;$$('.tile').forEach(t=>{const ok=t.dataset.k.includes(v);t.style.display=ok?'':'none';if(ok)n++});$('#none').style.display=n?'none':'block'});
-$$('#who button').forEach(b=>b.onclick=()=>{$('#q').value='';show(b.dataset.a);$('#hub').scrollIntoView({behavior:'smooth'})});
-$$('.tile').forEach(a=>{a.addEventListener('mousemove',e=>{const r=a.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;a.style.transform='perspective(700px) rotateX('+(-y*6)+'deg) rotateY('+(x*6)+'deg) translateY(-3px)'});a.addEventListener('mouseleave',()=>a.style.transform='')});
-const vb=$('#vbox');
-if(C.videoId){vb.innerHTML='<button class="vid" aria-label="Reproducir el Himno ColBolívar"><div class="play"></div><span>Himno ColBolívar</span></button>';vb.firstChild.onclick=function(){this.innerHTML='<iframe src="https://www.youtube.com/embed/'+C.videoId+'?autoplay=1" allow="autoplay;encrypted-media;fullscreen" title="Himno ColBolívar"></iframe>'}}
-else{vb.innerHTML='<div class="card" style="height:100%"><h3>Sentimos orgullo ColBolívar</h3><p>Educamos para construir proyectos de vida con éxito. Conoce nuestras sedes, nuestros proyectos y la vida diaria del colegio.</p><div class="lemas" style="justify-content:flex-start"><span>Virtud</span><span>Ciencia</span><span>Cultura</span></div></div>'}
+
+/* ====== SERVICIOS ====== */
+const CA=$('#cats');
+CA.innerHTML=CATS.map(c=>'<article class="cat c-'+c.c+' rv" data-cat="'+c.id+'"><header class="cat-h"><img class="med" src="'+IMG+'componentes/'+c.med+'.webp" alt="" aria-hidden="true" loading="lazy" decoding="async"><div class="cinta"><h3>'+c.t+'</h3></div></header><div class="cards">'+c.it.map(t=>{const lk=LOCK.includes(t[0]);return '<a class="svc '+c.c+(lk?' lock':'')+'" '+(t[2].startsWith(G)?'':'target="_blank" rel="noopener" ')+'href="'+t[2]+'" data-k="'+(t[0]+' '+t[1]).toLowerCase()+'">'+(lk?'<span class="lkb">🔒 Solo docentes</span>':'')+'<img class="ic" src="'+IMG+'servicios/'+t[3]+'.webp" alt="" aria-hidden="true" loading="lazy" decoding="async"><span><b>'+t[0]+'</b><small>'+t[1]+'</small></span></a>'}).join('')+'</div></article>').join('');
+$('#q').addEventListener('input',e=>{const v=e.target.value.toLowerCase().trim();let n=0;$$('.svc').forEach(a=>{const ok=!v||a.dataset.k.includes(v);a.style.display=ok?'':'none';if(ok)n++});$$('.cat').forEach(c=>{c.style.display=[...c.querySelectorAll('.svc')].some(a=>a.style.display!=='none')?'':'none'});$('#none').style.display=n?'none':'block'});
+
+/* ====== CARTA DE NAVEGACIÓN (pestañas) ====== */
+const CARTA=[['Misión','El Colegio Simón Bolívar es una institución de carácter oficial que ofrece un servicio de calidad en los niveles de Preescolar, Básica, Media Académica y Técnica, propendiendo por la formación integral del estudiante desde el «saber ser», «saber hacer» y «saber saber». Con el desarrollo de proyectos en el marco de la inclusión educativa, la evaluación formativa y el trabajo colaborativo que fortalecen la construcción de proyectos de vida con éxito.'],['Visión','La Institución Educativa Colegio Simón Bolívar en el año 2027 será reconocida a nivel regional y nacional por desarrollar procesos académicos y administrativos de alta calidad, apoyada en el manejo de las TIC, la inclusión escolar y la convivencia ciudadana post pandemia.'],['Política de calidad','Ofrecer un servicio educativo de alta calidad, que fortalezca en su comunidad el liderazgo, la comunicación y el trabajo en equipo, contando para ello con recursos físicos, financieros y tecnológicos apropiados y con un talento humano competente, que contribuya con el mejoramiento continuo de los procesos de la gestión escolar, para responder a las necesidades y expectativas de los actores educativos y su entorno.']];
+const CT=$('#ctabs'),CX=$('#ctx');
+CARTA.forEach((c,i)=>{const b=document.createElement('button');b.type='button';b.textContent=c[0];b.setAttribute('role','tab');b.onclick=()=>{[...CT.children].forEach((x,j)=>x.setAttribute('aria-selected',j===i));CX.textContent=c[1]};CT.append(b)});
+CT.firstChild.click();
+
 $('#fbl').href=C.facebook;
 $('#fbc').onclick=async()=>{const n=$('#fbn');try{await navigator.clipboard.writeText(C.facebook)}catch(e){const x=document.createElement('textarea');x.value=C.facebook;document.body.append(x);x.select();try{document.execCommand('copy')}catch(_){}x.remove()}n.textContent='Enlace copiado. Pégalo en tu navegador.';setTimeout(()=>n.textContent='',4000)};
 $('#lk').innerHTML=C.enlaces.filter(l=>l[1]&&l[1]!=='#').map(l=>'<a target="_blank" rel="noopener" href="'+l[1]+'">'+l[0]+' ↗</a>').join('');
@@ -645,41 +560,42 @@ const MD=$('#md'),MP=$('#mdp'),ME=$('#mde');let go=null;
 async function sha(s){if(!(window.crypto&&crypto.subtle))return btoa(unescape(encodeURIComponent(s)));const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}
 async function chk(){const h=await sha(MP.value.trim());const ref=(window.crypto&&crypto.subtle)?HASH:'Qm9saXZhcg==';if(h===ref){okp=true;try{sessionStorage.setItem('cbk','1')}catch(e){}MD.hidden=true;if(go.startsWith(G)){location.href=go}else{window.open(go,'_blank','noopener')}}else{ME.textContent='Contraseña incorrecta. Inténtalo de nuevo.';MP.select()}}
 function closeMd(){MD.hidden=true}
-$$('.tile.lock').forEach(a=>a.addEventListener('click',e=>{if(okp)return;e.preventDefault();go=a.href;$('#mdn').textContent=a.querySelector('b').textContent;MP.value='';ME.textContent='';MD.hidden=false;MP.focus()}));
+$$('.svc.lock').forEach(a=>a.addEventListener('click',e=>{if(okp)return;e.preventDefault();go=a.href;$('#mdn').textContent=a.querySelector('b').textContent;MP.value='';ME.textContent='';MD.hidden=false;MP.focus()}));
 $('#mdok').onclick=chk;$('#mdno').onclick=closeMd;MP.addEventListener('keydown',e=>{if(e.key==='Enter')chk();if(e.key==='Escape')closeMd()});MD.addEventListener('click',e=>{if(e.target===MD)closeMd()});
 const io=new IntersectionObserver(es=>es.forEach(x=>{if(!x.isIntersecting)return;const e=x.target;e.classList.add('in');e.querySelectorAll('[data-w]').forEach(i=>i.style.width=i.dataset.w+'%');e.querySelectorAll('[data-n]').forEach(c=>{const m=+c.dataset.n,s=performance.now();(function f(t){const p=Math.min((t-s)/1200,1);c.textContent=Math.round(m*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)})(s)});io.unobserve(e)}),{threshold:.15});
 $$('.rv').forEach((e,i)=>{e.style.transitionDelay=(i%4)*60+'ms';io.observe(e)});
 </script>
 <script src="datos/cumpleanos-data.js"></script>
 <script>
-function cumRun(P){if(!P.length)return;var M=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'],n=new Date(),h=new Date(n.getFullYear(),n.getMonth(),n.getDate()),b=null,bf=null;
+function cumRun(P){if(!P||!P.length)return;var M=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'],n=new Date(),h=new Date(n.getFullYear(),n.getMonth(),n.getDate()),b=null,bf=null;
 P.forEach(function(p){var f=new Date(h.getFullYear(),p.m-1,p.d);if(f<h)f.setFullYear(h.getFullYear()+1);if(!bf||f<bf){bf=f;b=p}});
-var d=Math.round((bf-h)/864e5),c=P.filter(function(p){return p.m===n.getMonth()+1}).length;
+var d=Math.round((bf-h)/864e5),c=P.filter(function(p){return p.m===n.getMonth()+1}).length,hoyL=P.filter(function(p){return p.m===n.getMonth()+1&&p.d===n.getDate()});
 document.getElementById('cum-t').textContent=d===0?'¡Hoy hay fiesta!':d<=15?'Se acerca un cumpleaños':'En '+M[n.getMonth()]+': '+c+' cumpleaños';
-document.getElementById('cum-p').textContent=d===0?'Hoy cumple años '+b.n+'. ¡Mira su tarjeta!':d===1?'Mañana cumple años '+b.n+'.':'Próximo: '+b.n+', en '+d+' días.'}
+document.getElementById('cum-p').textContent=d===0?'Hoy cumple: '+hoyL.slice(0,3).map(function(p){return p.n}).join(', ')+(hoyL.length>3?' y '+(hoyL.length-3)+' más':'')+'.':d===1?'Mañana cumple años '+b.n+'.':'Próximo: '+b.n+', en '+d+' días.';
+var cm=document.getElementById('hcum');if(cm)cm.classList.toggle('fiesta',d===0)}
 cumRun(window.CUMPLES||[]);
 (function(){var U='https://script.google.com/macros/s/AKfycbzhvB9cXR0ysRV4fUawqDDhj9fqk_H1G0-rSgoEFAYMi9peBI8wuO--8IL-3klXW-dayQ/exec';if(!window.fetch)return;fetch(U).then(function(r){return r.json()}).then(function(d){if(Array.isArray(d)&&d.length&&d[0].n)cumRun(d)}).catch(function(){})})();
 </script>
 <script src="datos/hoy-data.js"></script>
 <script>
 (function(){var H=window.HOY||{},$=function(q){return document.querySelector(q)},n=new Date(),h=new Date(n.getFullYear(),n.getMonth(),n.getDate());
-var R={e:'estudiante',p:'familia',d:'docente'},rol=null;try{rol=localStorage.getItem('cbrol')}catch(e){}
-function hoy(){var hr=n.getHours(),g=hr<12?'Buenos días':hr<19?'Buenas tardes':'Buenas noches';$('#hsal').textContent=g+(rol&&R[rol]?', '+R[rol]+' ColBolívar 👋':', comunidad ColBolívar 👋');
-var c=[],hc=(window.CUMPLES||[]).filter(function(p){return p.m===n.getMonth()+1&&p.d===n.getDate()});
-if(hc.length)c.push('<div class="hc"><b>🎂 '+hc.length+'</b>cumple'+(hc.length>1?'n':'')+' hoy: '+hc.slice(0,3).map(function(p){return p.n}).join(', ')+'</div>');
-(H.fechas||[]).forEach(function(x){var d=Math.round((new Date(x.f+'T00:00')-h)/864e5);if(d>=0)c.push('<div class="hc"><b>'+(d?d:'¡Hoy!')+'</b>'+(d?(d===1?'día':'días')+' para: ':'')+x.t+'</div>')});
-$('#hg').innerHTML=c.slice(0,4).join('')||'<div class="hc">Que tengas un excelente día 💚</div>';
-if(H.aviso&&!/escribe aquí/.test(H.aviso)){$('#hav').hidden=false;$('#hav').textContent=H.aviso}}
+function hoy(){var hr=n.getHours(),g=hr<5||hr>=19?'Buenas noches':hr<12?'Buenos días':'Buenas tardes';
+$('#hsal').textContent=g;$('#hsol').src='assets/img/portada/hoy/'+(hr<5||hr>=19?'luna':hr<12?'sol-manana':'sol-tarde')+'.webp';
+var fd=n.toLocaleDateString('es-CO',{weekday:'long',day:'numeric',month:'long'});$('#hfecha').textContent=fd.charAt(0).toUpperCase()+fd.slice(1);
+var AN=['verde','naranja','azul'],c=[];
+(H.fechas||[]).forEach(function(x){var d=Math.round((new Date(x.f+'T00:00')-h)/864e5);if(d>=0)c.push({d:d,t:x.t})});
+c=c.slice(0,3);
+$('#hcnt').innerHTML=c.map(function(x,i){var ic=/informe|bolet|nota/i.test(x.t)?'boletin':/cierre|per[ií]odo|vacaci|semana/i.test(x.t)?'calendario':'reloj-arena';
+return '<div class="cnt"><span class="an'+(x.d?'':' hoy')+'" style="--an:url(assets/img/portada/componentes/anillo-'+AN[i%3]+'.webp)">'+(x.d?x.d:'¡Hoy!')+'</span><span class="l"><img src="assets/img/portada/hoy/'+ic+'.webp" alt="">'+(x.d?(x.d===1?'día':'días')+' para: ':'')+x.t+'</span></div>'}).join('')||'<span class="l">Que tengas un excelente día 💚</span>';
+if(H.aviso&&!/escribe aquí/.test(H.aviso)){$('#hav').hidden=false;$('#hav-t').textContent=H.aviso}}
 hoy();
-document.querySelectorAll('#who button').forEach(function(b){b.addEventListener('click',function(){rol=b.dataset.a;try{localStorage.setItem('cbrol',rol)}catch(e){}hoy()})});
-if(rol&&R[rol]&&window.show){try{show(rol)}catch(e){}}
 function lazy(el,fn){if('IntersectionObserver' in window)new IntersectionObserver(function(e,o){if(e[0].isIntersecting){fn();o.disconnect()}},{rootMargin:'300px'}).observe(el);else fn()}
 var yw=$('#ytw'),yi;lazy(yw,function(){yw.innerHTML='<iframe id="yif" src="https://www.youtube-nocookie.com/embed/videoseries?enablejsapi=1&rel=0&list='+(H.ytLista||'UUfBybHUk_JkgpjUGf_apXBA')+'" title="Videos de ColBolívar" allow="encrypted-media;picture-in-picture;fullscreen" allowfullscreen loading="lazy"></iframe>';yi=$('#yif')});
 function yc(f){if(yi&&yi.contentWindow)yi.contentWindow.postMessage(JSON.stringify({event:'command',func:f,args:''}),'*')}
 $('#yp').onclick=function(){yc('previousVideo')};$('#yn').onclick=function(){yc('nextVideo')};
 var fs=$('#fbs'),fw=$('#fbw'),FBU=H.fbPagina||'https://www.facebook.com/profile.php?id=61566338526972',P=H.fbPosts||[],fwid=0;
 function fbW(){return Math.max(180,Math.min(500,Math.floor(fw.clientWidth)||340))}
-function fbBuild(bust){var w=fbW(),h=Math.max(420,Math.min(540,Math.round(innerHeight*.7)));fwid=w;fw.classList.remove('ok');fw.style.height=h+'px';
+function fbBuild(bust){var w=fbW(),h=Math.max(340,Math.min(430,Math.round(innerHeight*.52)));fwid=w;fw.classList.remove('ok');fw.style.height=h+'px';
 fw.innerHTML='<div class="fbk"><i></i><b>IE ColBol\u00edvar</b><span class="l1">Cargando publicaciones\u2026</span><span class="l2">\u00bfNo ves las publicaciones? \u00c1brelas directamente:</span><a href="'+FBU+'" target="_blank" rel="noopener">Abrir en Facebook \u2197</a></div><iframe title="\u00daltimas publicaciones de Facebook de ColBol\u00edvar" width="'+w+'" height="'+h+'" style="width:'+w+'px;height:'+h+'px" allow="encrypted-media" loading="lazy" src="https://www.facebook.com/plugins/page.php?href='+encodeURIComponent(FBU)+'&tabs=timeline&width='+w+'&height='+h+'&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&locale=es_LA'+(bust?'&_='+Date.now():'')+'"></iframe>';
 fw.querySelector('iframe').addEventListener('load',function(){fw.classList.add('ok')})}
 if(H.fbModo==='manual'&&P.length){fw.hidden=true;$('#fctl').hidden=true;$('.fbh').hidden=true;fs.hidden=false;
