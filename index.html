@@ -11,21 +11,23 @@
 <meta property="og:description" content="Documentos, planes, cartelera, cumpleaños y ColBolívar Radio de la I.E. Colegio Integrado Simón Bolívar, Cúcuta."><meta property="og:image" content="https://gestionacademicacolbolivar-tech.github.io/ColBolivar2026/assets/img/og-colbolivar.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "EducationalOrganization", "name": "Institución Educativa Colegio Integrado Simón Bolívar", "alternateName": "ColBolívar", "url": "https://gestionacademicacolbolivar-tech.github.io/ColBolivar2026/", "logo": "https://gestionacademicacolbolivar-tech.github.io/ColBolivar2026/assets/img/escudo.webp", "email": "colintsimonbolivar@semcucuta.gov.co", "telephone": "+576075943344", "foundingDate": "1992-02-18", "address": {"@type": "PostalAddress", "streetAddress": "Calle 4 N.º 11A-26, Urbanización San Martín", "addressLocality": "Cúcuta", "addressRegion": "Norte de Santander", "addressCountry": "CO"}, "sameAs": ["https://www.facebook.com/profile.php?id=61566338526972", "https://www.youtube.com/@ColBolivar"]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Sora:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link rel="manifest" href="manifest.webmanifest">
 <style>
-:root{--g:#14652D;--gd:#1C4F27;--o:#F58220;--r:#B3261E;--n:#14294D;--ink:#14231A;--bg:#F2F5F3;--mut:#4C5F54;--line:#DCE4DF;--W:1240px;--P:assets/img/portada;
---esm:#14652D;--bos:#1C4F27;--noche:#0C2A18;--nar:#F58220;--oro:#D9A441;--mar:#14294D;--r1:10px;--r2:14px;--fs:"IBM Plex Sans",system-ui,sans-serif;--fd:Sora,"IBM Plex Sans",sans-serif}
+:root{--g:#14652D;--gd:#1C4F27;--o:#F58220;--r:#B3261E;--n:#14294D;--ink:#14231A;--bg:#EDF3EE;--mut:#42564A;--line:#CFDDD3;--W:1240px;--P:assets/img/portada;--N:assets/img/portada/nuevo;
+--esm:#14652D;--bos:#1C4F27;--noche:#0C2A18;--nar:#F58220;--oro:#D9A441;--mar:#14294D;--fs:"IBM Plex Sans",system-ui,sans-serif;--fd:Sora,"IBM Plex Sans",sans-serif;--fz:clamp(17px,.42vw + 15.3px,21.5px)}
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
-body{font-family:var(--fs);background:var(--bg);color:var(--ink);line-height:1.55;font-size:16.5px;overflow-x:hidden}
+body{font-family:var(--fs);background:var(--bg) url(assets/img/portada/nuevo/fondo-claro.webp) center top/cover fixed;color:var(--ink);line-height:1.55;font-size:16.5px;overflow-x:hidden}
+@media(hover:none),(max-width:900px){body{background-attachment:scroll}}
 h1,h2,h3,h4{font-family:var(--fd);line-height:1.15;color:var(--noche)}
 a{color:inherit;text-decoration:none}
 button{font:inherit;color:inherit;cursor:pointer}
 a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--o);outline-offset:3px}
 .w{max-width:var(--W);margin:0 auto;padding:0 clamp(14px,2.2vw,32px)}
-main.w{width:100%;padding-bottom:8px}
-main section{padding:0;margin-top:52px}
+main.w,footer.pie,.md{font-size:var(--fz)}
+main.w{width:100%;padding-bottom:.5em}
+main section{padding:0;margin-top:2.6em}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .skip{position:absolute;left:-999px;top:0;background:#fff;padding:8px 14px;z-index:999;border-radius:0 0 10px 0;font-weight:700}.skip:focus{left:0}
 .rv{opacity:0;transform:translateY(10px);transition:opacity .55s,transform .55s}.rv.in{opacity:1;transform:none}
@@ -86,229 +88,240 @@ img{max-width:100%}
 @media(prefers-reduced-motion:reduce){.hero *{animation:none!important}.hero .nb{left:0;animation:viento calc(var(--s)*1.8) linear var(--dl) infinite!important}}
 .stripe{height:5px;background:linear-gradient(90deg,#ffd23f 0 50%,#12306e 50% 75%,#d92d3a 75%)}
 
-/* ================= SISTEMA VISUAL INSTITUCIONAL (debajo del encabezado) ================= */
-.i{width:1.25em;height:1.25em;flex:none;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
-.sec-h{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px 24px;padding-bottom:14px;border-bottom:1px solid var(--line)}
-.sec-h h2{font-size:clamp(1.35rem,2.6vw,1.75rem);font-weight:700;letter-spacing:-.01em}
-.sec-h p{margin-top:4px;color:var(--mut);font-size:.98rem;max-width:56ch}
-.cta{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:120px;height:46px;padding:0 20px;border-radius:10px;border:1px solid transparent;font:600 .95rem var(--fd);transition:background .15s,transform .15s}
-.cta.v{background:var(--esm);color:#fff}.cta.v:hover{background:var(--bos)}
-.cta.n{background:#fff;color:var(--ink);border-color:#b9c7be}.cta.n:hover{background:#f0f4f1}
-.cta:active{transform:scale(.98)}
+/* ================= PORTADA INSTITUCIONAL (marcos, encabezados y fondos de los sprites) ================= */
+.ii{display:block;width:100%;height:auto;object-fit:contain}
+.dv{height:clamp(16px,2.4vw,30px);max-width:1000px;margin:2.4em auto 0;background:url(assets/img/portada/nuevo/marco-divisor.webp) center/100% 100% no-repeat}
+/* banners de título (enc-*) */
+.tit{container-type:inline-size;display:flex;align-items:flex-start;width:min(100%,560px);aspect-ratio:var(--ar);background:var(--bn) center/100% 100% no-repeat;filter:drop-shadow(0 6px 8px rgba(12,42,24,.28))}
+.tit h2,.tit h3{width:100%;height:72%;display:flex;align-items:center;padding:0 7% 0 12%;font:700 clamp(1.05em,4.4cqw,1.9em)/1.12 var(--fd);color:#fff;text-shadow:0 2px 0 rgba(0,0,0,.35)}
+.tit.esm{--bn:url(assets/img/portada/nuevo/enc-esmeralda.webp);--ar:733/154}
+.tit.mar{--bn:url(assets/img/portada/nuevo/enc-marino.webp);--ar:734/144}
+.tit.nar{--bn:url(assets/img/portada/nuevo/enc-naranja.webp);--ar:726/116}.tit.nar h2,.tit.nar h3{height:100%;color:#2E1700;text-shadow:0 1px 0 rgba(255,255,255,.6);padding-left:6%}
+.tit.bl{--bn:url(assets/img/portada/nuevo/enc-blanco.webp);--ar:729/137}.tit.bl h2,.tit.bl h3{height:100%;color:#14652D;text-shadow:0 1px 0 #fff;padding-left:6%}
+.sec-p{margin:.7em 0 0;max-width:60ch;font-size:1.02em;color:var(--mut)}
+.cta{display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-width:7.5em;height:2.9em;padding:0 1.3em;border-radius:.7em;border:2px solid var(--oro);font:700 .95em var(--fd);color:#fff;transition:filter .15s,transform .15s}
+.cta.v{background:linear-gradient(#1C8A3F,#14652D)}
+.cta.n{background:linear-gradient(#FFA23A,#F07A10);color:#2E1700}
+.cta:hover{filter:brightness(1.1);transform:translateY(-2px)}
 
-/* ---- Hoy en Bolívar: panel de estado ---- */
-.hoy{position:relative;isolation:isolate;overflow:hidden;margin-top:32px;border-radius:var(--r2);border-top:3px solid var(--oro);background:var(--noche);color:#fff;box-shadow:0 18px 40px -22px rgba(12,42,24,.7)}
-.hoy:before{content:"";position:absolute;inset:0;z-index:-2;background:url(assets/img/portada/nuevo/fondo-esmeralda.webp) center/cover;opacity:.6}
-.hoy:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px) 0 0/34px 34px,linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px) 0 0/34px 34px,linear-gradient(100deg,rgba(7,28,16,.9),rgba(10,38,22,.5))}
-.hoy-h{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 16px;padding:20px 24px 14px}
-.hoy-h h2{font-size:clamp(1.2rem,2.4vw,1.5rem);font-weight:700;color:#fff}
-.hoy-h .f{font-size:.95rem;color:#CFE3D6}
-.hoy-g{display:grid;grid-template-columns:1fr 1.2fr 1.6fr;gap:1px;background:rgba(217,164,65,.28);border-top:1px solid rgba(217,164,65,.28)}
-.hc1{display:flex;align-items:center;gap:14px;padding:18px 24px;min-width:0;background:rgba(7,28,16,.62);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
-.hi{flex:none;display:grid;place-items:center;width:46px;height:46px;border-radius:12px;color:var(--oro);background:rgba(217,164,65,.13);border:1px solid rgba(217,164,65,.4)}
-.hi .i{width:23px;height:23px}
-.hc1 b.t{display:block;font:600 1.05rem/1.25 var(--fd);color:#fff}
-.hc1 small,.hc1 p{display:block;font-size:.9rem;line-height:1.4;color:#CFE3D6}
-.hc1 a.mas{display:inline-flex;align-items:center;gap:4px;margin-top:4px;font-weight:600;font-size:.88rem;color:var(--oro);border-bottom:1px solid rgba(217,164,65,.55)}
-.cumple.fiesta .hi{animation:ring 2.2s ease-out infinite}
-@keyframes ring{0%{box-shadow:0 0 0 0 rgba(217,164,65,.55)}100%{box-shadow:0 0 0 16px rgba(217,164,65,0)}}
-.cuentas{display:flex;flex-wrap:wrap;gap:12px 26px;width:100%}
-.cnt{display:flex;align-items:center;gap:12px;flex:1 1 150px;min-width:0}
-.cnt .n{flex:none;min-width:2ch;font:700 2.1rem/1 var(--fd);font-variant-numeric:tabular-nums;color:var(--oro)}
-.cnt.hoy .n{font-size:1.2rem;padding:5px 12px;border-radius:8px;color:#1b1405;background:var(--oro)}
-.cnt .l{font-size:.86rem;line-height:1.3;color:#E4F0E8}
-.cnt .l .i{width:15px;height:15px;vertical-align:-2px;margin-right:5px;color:var(--oro)}
-.nota{display:flex;align-items:center;gap:12px;padding:13px 24px;background:rgba(245,130,32,.18);border-top:1px solid rgba(245,130,32,.45);font-weight:600;color:#fff}
-.nota .i{color:#FFB066;width:20px;height:20px}.nota[hidden]{display:none}
+/* ---- Hoy en Bolívar ---- */
+.hoy{margin-top:2em;border:12px solid transparent;border-image:url(assets/img/portada/nuevo/marco-borde.webp) 28 fill/12px stretch;filter:drop-shadow(0 12px 14px rgba(12,42,24,.25));padding:.3em .6em .8em}
+.hoy-t{display:flex;flex-wrap:wrap;align-items:center;gap:.4em 1em;margin:.2em 0 .9em}
+.pill{display:inline-flex;align-items:center;width:clamp(16em,34%,22em);aspect-ratio:491/70;padding:0 18% 0 7%;background:url(assets/img/portada/nuevo/marco-titulo.webp) center/100% 100% no-repeat;font:800 1.1em var(--fd);white-space:nowrap;color:#fff;text-shadow:0 2px 0 rgba(0,0,0,.35)}
+.hoy-t .f{font:600 1.05em var(--fs);color:#0C2A18}
+.hoy-g{display:grid;grid-template-columns:1fr 1.25fr 1.5fr;gap:.8em}
+.hc1{display:flex;align-items:center;gap:.8em;padding:.8em 1em;min-width:0;border-radius:.9em;border:1px solid var(--cb,#BFDCC7);background:linear-gradient(135deg,var(--ct,#EAF6EC),#fff)}
+.hc1:nth-child(2){--ct:#FFF1E0;--cb:#F5CF9E}.hc1.cuentas-c{--ct:#FFF8E3;--cb:#EBD39A}
+.hc1 .ii{flex:none;width:3.3em}
+.hc1 b.t{display:block;font:700 1.12em/1.2 var(--fd);color:var(--noche)}
+.hc1 small,.hc1 p{display:block;font-size:.95em;line-height:1.4;color:#33473B}
+.hc1 a.mas{display:inline-block;margin-top:.3em;font-weight:700;color:#B85A06;background:linear-gradient(currentColor,currentColor) left bottom/0 2px no-repeat;transition:background-size .3s}
+.hc1 a.mas:hover{background-size:100% 2px}
+.cumple.fiesta .ii{animation:bob 1.6s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-.25em) rotate(-4deg)}}
+.cuentas{display:flex;flex-wrap:wrap;gap:.7em 1.5em;width:100%}
+.cnt{display:flex;align-items:center;gap:.7em;flex:1 1 12em;min-width:0}
+.cnt .n{flex:none;min-width:1.6ch;text-align:center;font:800 2.5em/1 var(--fd);font-variant-numeric:tabular-nums;color:var(--nar);text-shadow:0 2px 0 rgba(20,40,20,.12)}
+.cnt.hoy .n{font-size:1.4em;padding:.25em .6em;border-radius:.5em;color:#fff;background:linear-gradient(#FFA23A,#E56D0C);text-shadow:none}
+.cnt .l{display:flex;align-items:center;gap:.5em;font-size:.95em;line-height:1.3;color:#1B2F23}
+.cnt .l .ii{width:2.4em;flex:none}
+.nota{display:flex;align-items:center;gap:.8em;margin:.9em auto 0;max-width:42em;aspect-ratio:431/148;padding:5% 5% 2% 24%;background:url(assets/img/portada/nuevo/marco-aviso.webp) center/100% 100% no-repeat;position:relative;font-weight:600;color:#14231A}
+.nota .ii{position:absolute;left:3.6%;top:22%;width:14%}
+.nota[hidden]{display:none}
 
 /* ---- Servicios ---- */
-#servicios{margin-top:48px}
-.srch{flex:0 1 430px;position:relative;width:100%}
-.srch>.i{position:absolute;left:15px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--mut);pointer-events:none}
-.srch input{width:100%;height:46px;padding:0 56px 0 44px;border-radius:12px;border:1px solid #b9c7be;background:#fff;font:500 .98rem var(--fs);color:var(--ink)}
-.srch input:focus{border-color:var(--esm);outline:3px solid rgba(20,101,45,.22);outline-offset:0}
-.srch kbd{position:absolute;right:12px;top:50%;transform:translateY(-50%);font:600 .75rem var(--fs);color:var(--mut);background:#F2F5F3;border:1px solid var(--line);border-bottom-width:2px;border-radius:6px;padding:1px 8px}
+#servicios{margin-top:2.4em}
+.srch{position:relative;max-width:34em;margin-top:1.2em}
+.srch input{width:100%;height:3.2em;padding:0 3.6em 0 1.2em;border-radius:.9em;border:2px solid #7FA98B;background:#fff;font:500 1em var(--fs);color:var(--ink);box-shadow:0 4px 10px rgba(12,42,24,.1)}
+.srch input:focus{border-color:var(--nar);outline:3px solid rgba(245,130,32,.3);outline-offset:0}
+.srch kbd{position:absolute;right:.8em;top:50%;transform:translateY(-50%);font:700 .8em var(--fs);color:#fff;background:var(--esm);border-radius:.4em;padding:.15em .6em}
 @media(hover:none){.srch kbd{display:none}}
-.cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,520px),1fr));gap:22px;margin-top:22px;align-items:start}
-.cat{--ac:#14652D;--act:#E7F1EA;--acb:#C2DAC9;background:#fff;border:1px solid var(--line);border-radius:var(--r2);overflow:hidden;box-shadow:0 1px 2px rgba(12,42,24,.05)}
-.cat.c-naranja{--ac:#B85A06;--act:#FDEFE0;--acb:#F3CFA6}
-.cat.c-azul{--ac:#14294D;--act:#E6EAF2;--acb:#BDC8DC}
-.cat.c-oro{--ac:#8A6310;--act:#F8F0DC;--acb:#E6D19B}
-.cat-h{position:relative;display:flex;align-items:flex-end;min-height:108px;padding:16px 20px;background:var(--ph) center/cover,var(--noche);isolation:isolate}
-.cat-h:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(8,30,17,.15),rgba(8,30,17,.86))}
-.cat-h:after{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:#5DBB85}
-.cat.c-naranja .cat-h:after{background:#F58220}.cat.c-oro .cat-h:after{background:#D9A441}.cat.c-azul .cat-h:after{background:#7F93BC}
-.cat-h h3{font:700 1.2rem/1.2 var(--fd);color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.4)}
-.cards{display:grid;grid-template-columns:1fr}
-.svc{position:relative;display:grid;grid-template-columns:46px 1fr 20px;gap:14px;align-items:center;padding:14px 20px;border-top:1px solid var(--line);transition:background .15s}
-.cards .svc:first-child{border-top:0}
-.svc:hover{background:#F5F8F6}
-.svc .ic{display:grid;place-items:center;width:46px;height:46px;border-radius:12px;color:var(--ac);background:var(--act);border:1px solid var(--acb)}
-.svc .ic .i{width:23px;height:23px}
-.svc b{display:block;font:600 .98rem/1.25 var(--fd);color:var(--ink)}
-.svc small{display:block;margin-top:2px;font-size:.86rem;line-height:1.35;color:var(--mut)}
-.svc .go{color:var(--mut);opacity:0;transform:translate(-4px,4px);transition:opacity .2s,transform .2s}
-.svc .go .i{width:18px;height:18px}
-.svc:hover .go,.svc:focus-visible .go{opacity:1;transform:none;color:var(--ac)}
-@media(hover:none){.svc .go{opacity:.5;transform:none}}
-.svc .lkb{display:inline-flex;align-items:center;gap:5px;margin-top:5px;padding:2px 9px;border-radius:999px;font:600 .74rem var(--fs);color:#6B4B05;background:#FBF1DA;border:1px solid #E6D19B}
-.svc .lkb .i{width:12px;height:12px}
-.qres{margin:0 0 20px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 14px 14px;box-shadow:0 10px 26px rgba(0,0,0,.09)}
-.qres h3{margin:12px 0 4px;font:700 .78rem var(--fs);text-transform:uppercase;letter-spacing:.07em;color:var(--mut)}
+.cats{display:grid;gap:2.2em;margin-top:1.6em}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,17.5em),1fr));gap:1.2em 1.2em;margin-top:1.3em}
+.svc{position:relative;isolation:isolate;display:grid;grid-template-columns:4.6em 1fr;gap:.9em;align-items:center;min-height:6.4em;padding:.5em .9em .5em .6em;border:12px solid transparent;border-image:url(assets/img/portada/nuevo/marco-borde.webp) 28 fill/12px stretch;filter:drop-shadow(0 4px 5px rgba(12,42,24,.22));transition:transform .25s,filter .25s;transform-style:preserve-3d;will-change:transform}
+.svc:hover,.svc:focus-visible{filter:drop-shadow(0 0 10px rgba(245,130,32,.8)) drop-shadow(0 10px 12px rgba(12,42,24,.3))}
+.svc .ic{width:4.6em;transition:transform .3s}
+.svc:hover .ic,.svc:focus-visible .ic{transform:scale(1.15) rotate(-5deg)}
+.svc b{display:block;font:700 1.02em/1.2 var(--fd);color:var(--noche)}
+.svc small{display:block;margin-top:.2em;font-size:.93em;line-height:1.35;color:#33473B}
+.svc .go{position:absolute;z-index:3;top:-1.45em;right:-.3em;padding:.2em .9em .25em;border-radius:999px;font:700 .82em var(--fd);color:#2E1700;background:linear-gradient(#FFB655,#F58220);border:2px solid #fff;box-shadow:0 4px 8px rgba(0,0,0,.3);opacity:0;transform:translateY(.5em) scale(.9);transition:opacity .2s,transform .25s;pointer-events:none}
+.svc:hover .go,.svc:focus-visible .go{opacity:1;transform:none}
+@media(hover:none){.svc .go{opacity:1;transform:none;top:-1.2em}}
+.svc .lkb{display:inline-block;margin-top:.35em;padding:.1em .7em;border-radius:999px;font:700 .8em var(--fs);color:#5A3E00;background:#FBE7B0;border:1px solid #D9A441}
+.qres{margin:1.2em 0 0;padding:.8em 1em 1em;border:12px solid transparent;border-image:url(assets/img/portada/nuevo/marco-borde.webp) 28 fill/12px stretch;filter:drop-shadow(0 8px 12px rgba(12,42,24,.25))}
+.qres h3{margin:12px 0 4px;font:700 .85em var(--fs);text-transform:uppercase;letter-spacing:.07em;color:var(--mut)}
 .qres h3:first-child{margin-top:2px}
-.qres .it{display:block;padding:9px 10px;border-radius:10px;color:var(--ink);text-decoration:none;transition:background .15s}
-.qres .it:hover,.qres .it:focus-visible{background:#eaf5ed;outline:none}
+.qres .it{display:block;padding:.6em .7em;border-radius:10px;color:var(--ink);text-decoration:none;transition:background .15s}
+.qres .it:hover,.qres .it:focus-visible{background:#FFF1DE;box-shadow:inset .3em 0 0 #F58220;outline:none}
 .qres .it b{display:block;font-weight:700}.qres .it small{display:block;color:var(--mut);margin-top:2px;line-height:1.35}
-.qres .it p{margin:3px 0 0;font-size:.9rem;color:#33443a;line-height:1.4}.qres mark{background:#ffe48a;color:inherit;border-radius:3px;padding:0 1px}
+.qres .it p{margin:3px 0 0;font-size:.95em;color:#33443a;line-height:1.4}.qres mark{background:#ffe48a;color:inherit;border-radius:3px;padding:0 1px}
 .qres .ar{margin:4px 0 10px;padding:12px 14px;border-radius:12px;background:#f0f8f2;border-left:4px solid #1b8a35}
 .qres .ar>b{display:block;font-size:.82rem;text-transform:uppercase;letter-spacing:.06em;color:#0d5a1e;margin-bottom:4px}
 .qres .ar p{margin:0;line-height:1.5}.qres .ar .lk{margin-top:6px;font-size:.92rem}.qres .ar a{color:#0d5a1e;font-weight:600}
 .qres details{margin:6px 0;padding:8px 12px;border:1px solid var(--line);border-radius:10px}.qres summary{cursor:pointer;font-weight:600}.qres details p{margin:6px 0 0;line-height:1.5}
-.qres .ab,.qres .chip{font:600 .9rem var(--fs);cursor:pointer;border:1px solid #1b8a35;background:#fff;color:#0d5a1e;border-radius:999px;padding:7px 14px;margin:4px 6px 0 0;transition:background .15s,transform .15s}
+.qres .ab,.qres .chip{font:700 .95em var(--fs);cursor:pointer;border:1px solid #1b8a35;background:#fff;color:#0d5a1e;border-radius:999px;padding:7px 14px;margin:4px 6px 0 0;transition:background .15s,transform .15s}
 .qres .ab{background:#1b8a35;color:#fff}.qres .ab:hover,.qres .chip:hover{transform:translateY(-1px);box-shadow:0 0 10px rgba(255,205,70,.8)}.qres .chip:hover{background:#eaf5ed}
-.qres .nt{margin:6px 2px;color:var(--mut);font-size:.92rem}
-.none{display:none;text-align:center;color:var(--mut);padding:22px}
+.qres .nt{margin:6px 2px;color:var(--mut);font-size:.95em}
+.none{display:none;text-align:center;color:var(--mut);padding:1.4em}
+
+/* efecto de foco que sigue al mouse + onda al hacer clic (JS) */
+.fx{position:relative;overflow:visible}
+.fxs{position:absolute;inset:0;z-index:-1;border-radius:.8em;pointer-events:none;opacity:0;transition:opacity .25s;background:radial-gradient(14em circle at var(--mx,50%) var(--my,50%),rgba(255,176,70,.5),rgba(255,176,70,0) 70%)}
+.fx:hover>.fxs{opacity:1}
+.rip{position:absolute;z-index:4;border-radius:50%;pointer-events:none;background:rgba(245,130,32,.45);transform:scale(0);animation:rip .6s ease-out forwards}
+@keyframes rip{to{transform:scale(1);opacity:0}}
+.lkc{position:fixed;z-index:9000;left:0;top:0;pointer-events:none;padding:.3em .9em;border-radius:999px;font:700 14px var(--fd);color:#2E1700;background:linear-gradient(#FFC070,#F58220);border:2px solid #fff;box-shadow:0 6px 14px rgba(0,0,0,.35);opacity:0;transform:translate(-999px,-999px);transition:opacity .15s;white-space:nowrap}
+.lkc.on{opacity:1}
 
 /* ---- ColBolívar Radio ---- */
-.radio{position:relative;isolation:isolate;overflow:hidden;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:28px;padding:30px 36px;border-radius:var(--r2);border-top:3px solid var(--oro);color:#fff;background:var(--noche);box-shadow:0 18px 40px -22px rgba(12,42,24,.7);transition:transform .25s}
-.radio:before{content:"";position:absolute;inset:0;z-index:-2;background:url(assets/img/portada/nuevo/foto-radio.webp) center/cover;opacity:.55}
-.radio:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(95deg,rgba(7,28,16,.95) 25%,rgba(7,28,16,.5))}
-.radio:hover{transform:translateY(-3px)}
-.rdisc{position:relative;display:grid;place-items:center;width:84px;height:84px;border-radius:50%;color:var(--oro);background:rgba(217,164,65,.12);border:1px solid rgba(217,164,65,.55)}
-.rdisc .i{width:36px;height:36px}
-.rdisc:after{content:"";position:absolute;inset:-1px;border-radius:50%;border:1px solid var(--oro);animation:rpulse 2.6s ease-out infinite}
-@keyframes rpulse{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.5);opacity:0}}
+.radio{position:relative;isolation:isolate;overflow:hidden;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:1.6em;padding:1.8em 2.2em;border-radius:1.1em;border:3px solid var(--oro);color:#fff;background:var(--noche);box-shadow:0 18px 40px -20px rgba(12,42,24,.8);transition:transform .25s}
+.radio:before{content:"";position:absolute;inset:0;z-index:-2;background:url(assets/img/portada/nuevo/foto-radio.webp) center/cover;opacity:.6}
+.radio:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(95deg,rgba(7,28,16,.94) 22%,rgba(20,101,45,.45))}
+.radio:hover{transform:translateY(-4px) scale(1.01)}
+.rdisc{display:grid;place-items:center;width:5.6em;height:5.6em;border-radius:50%;background:#fff;border:3px solid var(--oro);box-shadow:0 0 0 6px rgba(217,164,65,.3);animation:rpulse 2.4s ease-out infinite}
+.rdisc .ii{width:3.4em}
+@keyframes rpulse{70%{box-shadow:0 0 0 18px rgba(217,164,65,0)}}
 .rtx{min-width:0}
-.rlv{display:inline-flex;align-items:center;gap:7px;padding:3px 11px;border-radius:999px;font:600 .78rem var(--fs);letter-spacing:.02em;color:#FFD9B3;background:rgba(245,130,32,.2);border:1px solid rgba(245,130,32,.6)}
-.rlv:before{content:"";width:7px;height:7px;border-radius:50%;background:#F58220;animation:rpl 1.4s infinite}
+.rlv{display:inline-flex;align-items:center;gap:.5em;padding:.15em .8em;border-radius:999px;font:700 .85em var(--fs);color:#fff;background:#E5681A;border:1px solid #FFB066}
+.rlv:before{content:"";width:.55em;height:.55em;border-radius:50%;background:#fff;animation:rpl 1.3s infinite}
 @keyframes rpl{50%{opacity:.25}}
-.rtx h2{margin:8px 0 4px;font:700 clamp(1.6rem,4vw,2.3rem)/1.1 var(--fd);color:#fff}.rtx h2 b{color:var(--oro)}
-.rtx p{font-size:1.02rem;color:#DCEBE1;max-width:46ch}
-.rgo{display:inline-flex;align-items:center;gap:8px;margin-top:14px;padding:11px 20px;border-radius:10px;font:600 .98rem var(--fd);color:#1b1405;background:var(--oro);transition:transform .2s}
-.rgo .i{width:18px;height:18px;fill:currentColor}
-.radio:hover .rgo{transform:translateX(4px)}
-.req{display:flex;gap:5px;align-items:flex-end;height:64px}
-.req i{width:5px;height:10px;border-radius:3px;background:var(--oro);animation:req 1.1s ease-in-out infinite}
+.rtx h2{margin:.35em 0 .15em;font:800 clamp(1.7em,3.6vw,2.5em)/1.1 var(--fd);color:#fff}.rtx h2 b{color:#FFC259}
+.rtx p{font-size:1.08em;color:#E4F1E8;max-width:46ch}
+.rgo{display:inline-flex;align-items:center;gap:.5em;margin-top:.9em;padding:.65em 1.4em;border-radius:.8em;font:700 1.02em var(--fd);color:#2E1700;background:linear-gradient(#FFC662,#F5A01F);border:2px solid #fff;box-shadow:0 5px 0 #B86D12;transition:transform .2s}
+.radio:hover .rgo{transform:translateX(.35em)}
+.req{display:flex;gap:.35em;align-items:flex-end;height:4.2em}
+.req i{width:.4em;height:.7em;border-radius:3px;background:#FFC259;animation:req 1.1s ease-in-out infinite}
 .req i:nth-child(2n){background:#fff;animation-delay:.2s}.req i:nth-child(3n){animation-delay:.45s}.req i:nth-child(4n){animation-delay:.1s}
-@keyframes req{50%{height:58px}}
+@keyframes req{50%{height:4em}}
 
 /* ---- Conoce el colegio ---- */
-.cifras{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:20px;background:var(--line);border:1px solid var(--line);border-radius:var(--r2);overflow:hidden}
-.cf4{display:grid;gap:3px;padding:20px 22px;background:#fff;min-width:0}
-.cf4 .i{width:22px;height:22px;color:var(--oro);margin-bottom:6px}
-.cf4 b{font:700 2.3rem/1 var(--fd);font-variant-numeric:tabular-nums;color:var(--esm)}
-.cf4 span{font-size:.88rem;line-height:1.3;color:var(--mut)}
-.sedes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:20px}
-.sd{--ac:#14652D;min-width:0;padding:18px 20px;background:#fff;border:1px solid var(--line);border-top:3px solid var(--ac);border-radius:var(--r2)}
-.sd.n{--ac:#F58220}.sd.a{--ac:#14294D}
-.sd h3{display:flex;align-items:center;gap:8px;margin-bottom:6px;font:700 1.05rem var(--fd)}
-.sd h3 .i{color:var(--ac);width:20px;height:20px}
-.sd p{font-size:.92rem;line-height:1.45;color:var(--mut)}
-.sd p+p{margin-top:6px}
-.sd a{font-weight:600;color:var(--n);border-bottom:1px solid #b9c7d8}
-.info{display:grid;grid-template-columns:1.25fr 1fr;gap:20px;margin-top:20px;align-items:start}
-.carta,.hoja{background:#fff;border:1px solid var(--line);border-radius:var(--r2);overflow:hidden}
-.carta>h3,.hoja h3{display:flex;align-items:center;gap:9px;font:700 1.05rem var(--fd)}
-.carta>h3{padding:18px 22px 0}
-.carta>h3 .i,.hoja h3 .i{color:var(--oro);width:20px;height:20px}
-.carta .tb{display:flex;margin-top:10px;padding:0 12px;border-bottom:1px solid var(--line);overflow-x:auto}
-.carta .tb button{flex:none;padding:12px 14px;border:0;border-bottom:3px solid transparent;margin-bottom:-1px;background:none;font:600 .92rem var(--fd);color:var(--mut)}
-.carta .tb button:hover{color:var(--ink)}
-.carta .tb button[aria-selected=true]{color:var(--esm);border-bottom-color:var(--esm)}
-.carta .tx{padding:20px 22px 24px;min-height:150px;font-size:1rem;line-height:1.7;color:var(--ink)}
-.hoja{padding:20px 22px}
-.hoja+.hoja{margin-top:20px}
-.hoja p{margin-top:8px;font-size:.93rem;line-height:1.5;color:var(--ink)}
-.pil{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
-.pil span{padding:4px 11px;border-radius:8px;font-weight:500;font-size:.82rem;color:var(--gd);background:#F2F7F3;border:1px solid #D3E2D8}
-.esc-v{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 4px}
-.esc-v span{display:inline-flex;align-items:center;gap:7px;padding:4px 11px;border-radius:8px;font:600 .8rem var(--fs);color:var(--ink);background:#fff;border:1px solid var(--line)}
-.esc-v span:before{content:"";width:9px;height:9px;border-radius:50%;background:var(--k)}
-.esc-v .s{--k:#14652D}.esc-v .a{--k:#7FB069}.esc-v .b{--k:#D9A441}.esc-v .j{--k:#B3261E}
-details.prom{margin-top:10px;font-size:.92rem}details.prom summary{cursor:pointer;font-weight:600;color:var(--n)}details.prom ul{margin:6px 0 0 18px}details.prom li{margin:3px 0}
-.contacto{display:flex;align-items:center;gap:16px;margin-top:20px;padding:18px 22px;background:#fff;border:1px solid var(--line);border-radius:var(--r2)}
-.contacto .hi{color:var(--esm);background:#E7F1EA;border-color:#C2DAC9}
-.contacto a b{color:var(--n)}
-.contacto p{font-size:.92rem;line-height:1.5;color:var(--mut)}
+.cifras{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1em;margin-top:1.6em;padding:1.3em;border-radius:1.1em;border-top:3px solid var(--oro);background:linear-gradient(rgba(6,36,18,.25),rgba(6,36,18,.1)),url(assets/img/portada/nuevo/fondo-esmeralda.webp) center/cover}
+.cf4{--cc:#14652D;display:grid;justify-items:center;text-align:center;gap:.1em;padding:.5em .6em .8em;min-width:0;border:12px solid transparent;border-image:url(assets/img/portada/nuevo/marco-borde.webp) 28 fill/12px stretch;filter:drop-shadow(0 6px 8px rgba(0,0,0,.35))}
+.cf4:nth-child(2){--cc:#E5681A}.cf4:nth-child(3){--cc:#14294D}.cf4:nth-child(4){--cc:#B07A10}
+.cf4 .ii{width:3.6em}
+.cf4 b{font:800 2.5em/1.05 var(--fd);font-variant-numeric:tabular-nums;color:var(--cc)}
+.cf4 span{font-size:.95em;line-height:1.3;color:#2A3E32;font-weight:500}
+.sedes{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4em;margin-top:1.6em}
+.sd{position:relative;aspect-ratio:357/300;min-width:0;background:url(assets/img/portada/nuevo/marco-tarjeta.webp) center/100% 100% no-repeat;filter:drop-shadow(0 6px 8px rgba(12,42,24,.25));container-type:inline-size}
+.sd h3{position:absolute;left:8%;top:3%;height:12%;display:flex;align-items:center;font:800 clamp(1em,6.2cqw,1.35em) var(--fd);color:#fff;text-shadow:0 2px 0 rgba(0,0,0,.35)}
+.sd .bd{position:absolute;left:9%;right:9%;top:30%;bottom:14%;display:flex;flex-direction:column;justify-content:center;gap:.4em;font-size:clamp(.92em,4.4cqw,1.05em);line-height:1.4;color:#1B2F23}
+.sd .ii{position:absolute;right:8%;top:31%;width:17%}
+.sd .bd p{padding-right:18%}
+.sd .bd p+p{padding-right:0}
+.sd a{font-weight:700;color:#14294D;background:linear-gradient(#E5681A,#E5681A) left bottom/100% 2px no-repeat;transition:background-size .25s,color .2s}
+.sd a:hover{background-size:100% 100%;color:#fff}
+.info{display:grid;grid-template-columns:1.25fr 1fr;gap:1.6em;margin-top:1.6em;align-items:start}
+.carta{padding:.5em .9em 1.1em;border:12px solid transparent;border-image:url(assets/img/portada/nuevo/marco-borde.webp) 28 fill/12px stretch;filter:drop-shadow(0 8px 10px rgba(12,42,24,.22))}
+.carta .tit{width:100%;margin:.2em 0 .9em}
+.carta .tb{display:grid;grid-template-columns:repeat(3,1fr);gap:.7em}
+.carta .tb button{--tc:#14652D;position:relative;isolation:isolate;display:grid;justify-items:center;align-content:center;gap:.2em;padding:.7em .4em .6em;border:2px solid var(--tc);border-radius:.9em;background:#fff;color:var(--tc);font:700 .98em/1.15 var(--fd);text-align:center;transition:transform .2s,box-shadow .2s,background .2s,color .2s}
+.carta .tb button:nth-child(2){--tc:#E5681A}.carta .tb button:nth-child(3){--tc:#14294D}
+.carta .tb button .ii{width:3.4em;transition:transform .25s}
+.carta .tb button:hover{transform:translateY(-4px);box-shadow:0 10px 16px -6px var(--tc)}
+.carta .tb button:hover .ii{transform:scale(1.12) rotate(-4deg)}
+.carta .tb button[aria-selected=true]{color:#fff;background:linear-gradient(160deg,var(--tc),color-mix(in srgb,var(--tc) 60%,#000));border-color:var(--oro);box-shadow:0 0 0 3px rgba(217,164,65,.5),0 10px 16px -6px var(--tc)}
+.carta .tb button[aria-selected=true] .ii{filter:drop-shadow(0 0 0 #fff) drop-shadow(0 0 6px #fff)}
+.cp{--tc:#14652D;margin-top:1em;padding:1.1em 1.3em 1.3em;border-radius:.9em;border-left:.5em solid var(--tc);background:linear-gradient(rgba(255,255,255,.86),rgba(255,255,255,.9)),url(assets/img/portada/nuevo/fondo-botanico.webp) center/cover;box-shadow:inset 0 0 0 1px rgba(20,101,45,.15)}
+.cp h4{display:inline-block;margin-bottom:.5em;padding:.15em .9em;border-radius:999px;font:800 1.15em var(--fd);color:#fff;background:var(--tc)}
+.cp .tx{font-size:1.06em;line-height:1.7;color:#14231A;min-height:7em}
+.hoja{position:relative;margin-top:1.7em;padding:2.3em 1.1em 1em;border:12px solid transparent;border-image:url(assets/img/portada/nuevo/marco-borde.webp) 28 fill/12px stretch;filter:drop-shadow(0 6px 8px rgba(12,42,24,.2))}
+.info>div:last-child .hoja:first-child{margin-top:.7em}
+.hoja+.hoja{margin-top:2.4em}
+.hoja h3{position:absolute;left:-.6em;top:-1.3em;display:flex;align-items:center;width:min(78%,19em);aspect-ratio:491/70;padding:0 14% 0 7%;background:url(assets/img/portada/nuevo/marco-titulo.webp) center/100% 100% no-repeat;font:700 1em var(--fd);color:#fff;text-shadow:0 2px 0 rgba(0,0,0,.35);white-space:nowrap}
+.hoja p{margin-top:.5em;font-size:1em;line-height:1.5;color:#14231A}
+.pil{display:flex;flex-wrap:wrap;gap:.45em;margin-top:.8em}
+.pil span{padding:.2em .8em;border-radius:999px;font-weight:600;font-size:.9em;color:#fff;background:linear-gradient(#1C8A3F,#14652D);border:1px solid var(--oro)}
+.pil span:nth-child(3n+2){background:linear-gradient(#FFA23A,#E5681A);color:#2E1700}.pil span:nth-child(3n){background:linear-gradient(#2A4A86,#14294D)}
+.esc-v{display:flex;flex-wrap:wrap;gap:.45em;margin:.8em 0 .3em}
+.esc-v span{padding:.25em .85em;border-radius:.6em;font:700 .92em var(--fs);border:1px solid rgba(0,0,0,.15)}
+.esc-v .s{background:#14652D;color:#fff}.esc-v .a{background:#A5D56B;color:#11330F}.esc-v .b{background:#F2B632;color:#3B2400}.esc-v .j{background:#C62828;color:#fff}
+details.prom{margin-top:.7em;font-size:.97em}details.prom summary{cursor:pointer;font-weight:700;color:#14294D}details.prom summary:hover{color:#E5681A}details.prom ul{margin:.4em 0 0 1.2em}details.prom li{margin:.25em 0}
+.contacto{display:flex;align-items:center;gap:1em;margin-top:1.6em;padding:.4em 1.2em;min-height:5.5em;border:12px solid transparent;border-image:url(assets/img/portada/nuevo/marco-borde.webp) 28 fill/12px stretch;filter:drop-shadow(0 6px 8px rgba(12,42,24,.2))}
+.contacto .ii{width:3.8em;flex:none}
+.contacto>div{min-width:0}.contacto a b,.contacto p{overflow-wrap:anywhere}
+.contacto a b{color:#14294D;font-size:1.05em;background:linear-gradient(#E5681A,#E5681A) left bottom/0 2px no-repeat;transition:background-size .3s}.contacto a:hover b{background-size:100% 2px}
+.contacto p{font-size:.97em;line-height:1.5;color:#33473B}
 
 /* ---- Novedades ---- */
-.cg{display:grid;grid-template-columns:1fr;gap:22px;margin-top:22px}
+.cg{display:grid;grid-template-columns:1fr;gap:1.6em;margin-top:1.6em}
 @media(min-width:861px){.cg{grid-template-columns:1.25fr 1fr;align-items:start}}
 .cy,.cf,.cg>*{min-width:0}
-.pn{padding:20px;background:#fff;border:1px solid var(--line);border-radius:var(--r2)}
-.wh{display:flex;align-items:center;gap:10px;margin:0 0 14px;font:700 1.05rem var(--fd);color:var(--noche)}
-.wh .i{color:var(--esm);width:22px;height:22px}
-.win{position:relative;aspect-ratio:16/9;margin:0;border-radius:10px;overflow:hidden;background:#000;border:1px solid var(--line)}
+.pn{padding:.5em .9em 1em;border:12px solid transparent;border-image:url(assets/img/portada/nuevo/marco-borde.webp) 28 fill/12px stretch;filter:drop-shadow(0 6px 8px rgba(12,42,24,.2))}
+.wh{display:flex;align-items:center;gap:.6em;margin:.3em 0 .8em;font:800 1.12em var(--fd);color:var(--noche)}
+.wh .ii{width:2.6em;flex:none}
+.win{position:relative;aspect-ratio:16/9;margin:0;border-radius:.7em;overflow:hidden;background:#000;border:3px solid var(--esm)}
 .win iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.wl{margin:12px 0 0;font-weight:600;font-size:.92rem}.wl a{display:inline-flex;align-items:center;gap:6px;color:var(--n);border-bottom:1px solid #b9c7d8}.wl a .i{width:15px;height:15px}
-.ctl{display:flex;gap:10px;margin-top:12px}
-.ctl button,.ctl a{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:8px;height:42px;padding:0 10px;border:1px solid #b9c7be;border-radius:10px;background:#fff;color:var(--ink);font:600 .9rem var(--fd);text-decoration:none;transition:background .15s,color .15s,border-color .15s}
-.ctl button:hover,.ctl a:hover{background:var(--esm);color:#fff;border-color:var(--esm)}
-.ctl .i{width:17px;height:17px}
-.fbh{font-size:.86rem;font-weight:500;color:var(--mut);max-width:520px;margin:12px auto 0}
-.fbw{box-sizing:border-box;padding:0!important;position:relative;max-width:520px;min-height:380px;margin:0 auto;border-radius:10px;overflow:hidden;border:1px solid var(--line);background:linear-gradient(135deg,var(--bos),var(--noche));display:flex;justify-content:center}
+.wl{margin:.8em 0 0;font-weight:600;font-size:.98em}.wl a{color:#14294D;background:linear-gradient(#E5681A,#E5681A) left bottom/100% 2px no-repeat;transition:background-size .25s,color .2s}.wl a:hover{background-size:100% 100%;color:#fff}
+.ctl{display:flex;gap:.7em;margin-top:.8em}
+.ctl button,.ctl a{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:.5em;height:2.8em;padding:0 .8em;border:2px solid var(--oro);border-radius:.7em;background:linear-gradient(#1C8A3F,#14652D);color:#fff;font:700 .95em var(--fd);transition:filter .15s,transform .15s}
+.ctl a{background:linear-gradient(#FFA23A,#F07A10);color:#2E1700}
+.ctl button:hover,.ctl a:hover{filter:brightness(1.1);transform:translateY(-2px)}
+.fbh{font-size:.92em;font-weight:500;color:var(--mut);max-width:520px;margin:.8em auto 0}
+.fbw{box-sizing:border-box;padding:0!important;position:relative;max-width:520px;min-height:380px;margin:0 auto;border-radius:.7em;overflow:hidden;border:3px solid var(--esm);background:linear-gradient(135deg,var(--bos),var(--noche));display:flex;justify-content:center}
 .fbw iframe{flex:none;position:relative;z-index:1;display:block;border:0;max-width:100%;background:transparent}
 .fbk{position:absolute;inset:0;z-index:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:8px;padding:22px;color:#fff}
 .fbk i{width:42px;height:42px;border-radius:50%;border:4px solid rgba(255,255,255,.25);border-top-color:var(--oro);animation:fbsp 1s linear infinite}
-.fbk b{font:700 1.15rem var(--fd)}.fbk span{max-width:26ch;line-height:1.4}
-.fbk a{margin-top:6px;padding:10px 18px;border-radius:10px;font-weight:600;color:#1b1405;background:var(--oro)}
+.fbk b{font:700 1.15em var(--fd)}.fbk span{max-width:26ch;line-height:1.4}
+.fbk a{margin-top:6px;padding:10px 18px;border-radius:10px;font-weight:700;color:#2E1700;background:linear-gradient(#FFC662,#F5A01F)}
 .fbk .l2{display:none}.fbw.ok .fbk .l2{display:block}.fbw.ok .fbk .l1,.fbw.ok .fbk i{display:none}
 @keyframes fbsp{to{transform:rotate(360deg)}}
 .fbs{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;-webkit-overflow-scrolling:touch}
-.fbs iframe{flex:0 0 min(280px,80%);height:500px;border:0;border-radius:10px;background:#fff;border:1px solid var(--line);scroll-snap-align:center}
+.fbs iframe{flex:0 0 min(280px,80%);height:500px;border-radius:10px;background:#fff;border:3px solid var(--esm);scroll-snap-align:center}
 .fbs[hidden],.fbw[hidden],.ctl[hidden],.fbf[hidden]{display:none!important}
-.fbf{max-width:520px;min-width:0;margin:14px auto 4px}
-.fbf h4{margin:0 0 8px;font:700 .98rem var(--fd);color:var(--noche)}
-.fbr{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 10px;-webkit-overflow-scrolling:touch}
-.fbcd{flex:0 0 160px;scroll-snap-align:start;display:flex;flex-direction:column;gap:6px;padding:0 0 12px;border-radius:12px;background:#fff;border:1px solid var(--line);overflow:hidden;transition:transform .2s,box-shadow .2s}
-.fbcd:hover{transform:translateY(-2px);box-shadow:0 10px 18px -10px rgba(12,42,24,.4)}
-.fbcd .fbi{display:grid;place-items:center;height:84px;color:#fff;background:linear-gradient(135deg,var(--esm),var(--noche))}
-.fbcd .fbi .i{width:30px;height:30px}
-.fbcd img.fbi{width:100%;object-fit:cover}
-.fbcd b{padding:0 12px;font:600 .9rem/1.25 var(--fd)}
-.fbcd small{padding:0 12px;font-weight:600;color:var(--n)}
-.redes{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:26px 0 4px}
-.rbt{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:150px;height:46px;padding:0 20px;border-radius:10px;border:1px solid transparent;font:600 .92rem var(--fd);transition:transform .15s,background .15s}
-.rbt:hover{transform:translateY(-2px)}.rbt[hidden]{display:none}
-.rbt .i{width:18px;height:18px}
-.rbt.a{background:var(--mar);color:#fff}.rbt.r{background:#fff;color:var(--ink);border-color:#b9c7be}.rbt.v{background:var(--esm);color:#fff}.rbt.n{background:#fff;color:var(--ink);border-color:var(--oro)}
-.fbn{text-align:center;font-size:.88rem;color:var(--mut);min-height:1.3em}
-.lk{display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:center;margin:8px 0 0;font-weight:600;font-size:.92rem}.lk a{color:var(--n);border-bottom:1px solid #b9c7d8}
+.fbf{max-width:520px;min-width:0;margin:1em auto .3em}
+.fbf h4{margin:0 0 .5em;font:800 1.02em var(--fd);color:var(--noche)}
+.fbr{display:flex;gap:.7em;overflow-x:auto;scroll-snap-type:x mandatory;padding:.4em .2em 1em;-webkit-overflow-scrolling:touch}
+.fbcd{position:relative;isolation:isolate;flex:0 0 9.5em;scroll-snap-align:start;display:flex;flex-direction:column;gap:.35em;padding:0 0 .8em;border-radius:.8em;background:#fff;border:2px solid var(--esm);overflow:hidden;transition:transform .2s,box-shadow .2s}
+.fbcd:hover{transform:translateY(-4px);box-shadow:0 0 12px rgba(245,130,32,.8),0 10px 16px -8px rgba(12,42,24,.5);border-color:var(--nar)}
+.fbcd .fbi{display:grid;place-items:center;height:5.6em;background:linear-gradient(135deg,var(--esm),var(--noche))}
+.fbcd .fbi .ii{width:3.4em}
+.fbcd img.fbi{width:100%;object-fit:cover;display:block}
+.fbcd b{padding:0 .7em;font:700 .95em/1.25 var(--fd)}
+.fbcd small{padding:0 .7em;font-weight:700;color:#B85A06;font-size:.9em}
+.redes{display:flex;flex-wrap:wrap;gap:.8em;justify-content:center;margin:2em 0 .3em}
+.rbt{position:relative;isolation:isolate;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-width:10em;height:3em;padding:0 1.4em;border-radius:.8em;border:2px solid var(--oro);font:700 1em var(--fd);color:#fff;transition:transform .15s,filter .15s}
+.rbt:hover{transform:translateY(-3px);filter:brightness(1.1)}.rbt[hidden]{display:none}
+.rbt.a{background:linear-gradient(#2A4A86,#14294D)}.rbt.r{background:linear-gradient(#E0402E,#B3261E)}.rbt.v{background:linear-gradient(#1C8A3F,#14652D)}.rbt.n{background:linear-gradient(#FFA23A,#F07A10);color:#2E1700}
+.fbn{text-align:center;font-size:.95em;color:var(--mut);min-height:1.3em}
+.lk{display:flex;flex-wrap:wrap;gap:.4em 1.3em;justify-content:center;margin:.6em 0 0;font-weight:700;font-size:1em}.lk a{color:#14294D;background:linear-gradient(#E5681A,#E5681A) left bottom/100% 2px no-repeat;transition:background-size .25s,color .2s}.lk a:hover{background-size:100% 100%;color:#fff}
 
-/* ---- Acceso docentes (ventana) ---- */
+/* ---- Acceso docentes ---- */
 .md{position:fixed;inset:0;z-index:50;display:grid;place-items:center;padding:16px;background:rgba(8,26,15,.72);backdrop-filter:blur(4px)}.md[hidden]{display:none}
-.mb{width:100%;max-width:420px;padding:26px;border-radius:var(--r2);border-top:4px solid var(--oro);background:#fff;box-shadow:0 28px 60px rgba(0,0,0,.4)}
-.mb h3{display:flex;align-items:center;gap:9px;margin-bottom:6px;font-size:1.15rem}.mb h3 .i{color:var(--oro)}
-.mb p{color:var(--mut);font-size:.96rem}
-.mb input{width:100%;height:48px;margin:12px 0 2px;padding:0 14px;border-radius:10px;border:1px solid #9fb3a6;font:inherit;font-size:1.05rem}
-.mb input:focus{border-color:var(--esm);outline:3px solid rgba(20,101,45,.22)}
-.er{min-height:1.5em;font-weight:600;color:var(--r)}
-.mbt{display:flex;gap:10px;margin-top:8px}.mbt .cta{flex:1}
+.mb{width:100%;max-width:26em;padding:1.4em 1.5em;border:12px solid transparent;border-image:url(assets/img/portada/nuevo/marco-borde.webp) 28 fill/12px stretch;filter:drop-shadow(0 20px 40px rgba(0,0,0,.5))}
+.mb h3{display:flex;align-items:center;gap:.5em;margin-bottom:.3em;font-size:1.2em}
+.mb p{color:var(--mut)}
+.mb input{width:100%;height:3em;margin:.8em 0 .2em;padding:0 1em;border-radius:.7em;border:2px solid #7FA98B;font:inherit}
+.mb input:focus{border-color:var(--nar);outline:3px solid rgba(245,130,32,.3)}
+.er{min-height:1.5em;font-weight:700;color:var(--r)}
+.mbt{display:flex;gap:.7em;margin-top:.6em}.mbt .cta{flex:1}
 
 /* ---- Pie ---- */
-footer.pie{margin-top:56px;padding:34px 0 40px;border-top:3px solid var(--oro);background:var(--noche);color:#CFE3D6;font-size:.92rem}
-.pie .w{display:flex;flex-wrap:wrap;align-items:center;gap:18px 24px}
-.pie img{height:64px;width:auto;flex:none}
-.pie b{display:block;color:#fff;font:600 1rem var(--fd)}
-.pie a{color:var(--oro);border-bottom:1px solid rgba(217,164,65,.5)}
+footer.pie{position:relative;isolation:isolate;margin-top:3.4em;padding:2.8em 0 2.4em;color:#E4F1E8;font-size:var(--fz)}
+footer.pie:before{content:"";position:absolute;inset:0;z-index:-2;background:url(assets/img/portada/nuevo/fondo-oro.webp) center/cover}
+footer.pie:after{content:"";position:absolute;inset:0;z-index:-1;background:rgba(6,30,16,.55)}
+.pie .dvf{position:absolute;left:0;right:0;top:0;height:clamp(14px,1.8vw,24px);background:url(assets/img/portada/nuevo/marco-divisor.webp) center/100% 100% no-repeat}
+.pie .w{display:flex;flex-wrap:wrap;align-items:center;gap:1.2em 1.6em}
+.pie img{height:4.4em;width:auto;flex:none;filter:drop-shadow(0 4px 6px rgba(0,0,0,.5))}
+.pie b{display:block;color:#fff;font:700 1.08em var(--fd)}
+.pie a{color:#FFC259;font-weight:600;background:linear-gradient(#FFC259,#FFC259) left bottom/100% 2px no-repeat;transition:background-size .25s,color .2s}.pie a:hover{background-size:100% 100%;color:#2E1700}
 .pie .mail{margin-left:auto}
 
 /* ---- Responsive ---- */
 @media(max-width:900px){
  .hoy-g{grid-template-columns:1fr 1fr}.hoy-g .cuentas-c{grid-column:1/-1}
- .info{grid-template-columns:1fr}.hoja+.hoja{margin-top:20px}
- .cifras{grid-template-columns:repeat(2,1fr)}.sedes{grid-template-columns:1fr}
+ .info{grid-template-columns:1fr}
+ .cifras{grid-template-columns:repeat(2,1fr)}.sedes{grid-template-columns:1fr;max-width:26em;margin-left:auto;margin-right:auto}
  .radio{grid-template-columns:auto 1fr}.req{display:none}
 }
 @media(max-width:640px){
- body{font-size:16px}
- main section{margin-top:40px}
- .hoy-g{grid-template-columns:1fr}.hc1{padding:14px 18px}.hoy-h{padding:18px 18px 12px}
- .radio{grid-template-columns:1fr;padding:24px 20px;gap:16px}.rdisc{width:64px;height:64px}.rdisc .i{width:28px;height:28px}
- .cat-h{min-height:92px;padding:14px 16px}.svc{padding:13px 16px;gap:12px}
- .pn{padding:16px}.carta .tx{padding:16px 18px 20px}
- .cf4{padding:16px}.cf4 b{font-size:1.9rem}
+ main section{margin-top:2.1em}
+ .hoy-g{grid-template-columns:1fr}.pill{width:100%;max-width:19em}
+ .radio{grid-template-columns:1fr;padding:1.5em 1.2em;gap:1em;justify-items:start}.rdisc{width:4.6em;height:4.6em}.rdisc .ii{width:2.8em}
+ .carta .tb button{font-size:.88em;padding:.6em .2em .5em}.carta .tb button .ii{width:2.8em}
+ .cp{padding:1em 1em 1.1em}
+ .svc{grid-template-columns:4em 1fr}.svc .ic{width:4em}
  .pie .mail{margin-left:0}
+ .tit h2,.tit h3{font-size:clamp(1.1em,5.4cqw,1.6em)}
 }
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}.rv{opacity:1;transform:none}}
 
@@ -415,120 +428,81 @@ fit();addEventListener('resize',fit);addEventListener('DOMContentLoaded',fit);
 </div>
 </div>
 
-<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
-<symbol id="i-library" viewBox="0 0 24 24"><path d="m16 6 4 14" /> <path d="M12 6v14" /> <path d="M8 8v12" /> <path d="M4 4v16" /></symbol>
-<symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /> <circle cx="12" cy="12" r="6" /> <circle cx="12" cy="12" r="2" /></symbol>
-<symbol id="i-brain-circuit" viewBox="0 0 24 24"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z" /> <path d="M9 13a4.5 4.5 0 0 0 3-4" /> <path d="M6.003 5.125A3 3 0 0 0 6.401 6.5" /> <path d="M3.477 10.896a4 4 0 0 1 .585-.396" /> <path d="M6 18a4 4 0 0 1-1.967-.516" /> <path d="M12 13h4" /> <path d="M12 18h6a2 2 0 0 1 2 2v1" /> <path d="M12 8h8" /> <path d="M16 8V5a2 2 0 0 1 2-2" /> <circle cx="16" cy="13" r=".5" /> <circle cx="18" cy="3" r=".5" /> <circle cx="20" cy="21" r=".5" /> <circle cx="20" cy="8" r=".5" /></symbol>
-<symbol id="i-layers" viewBox="0 0 24 24"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z" /> <path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12" /> <path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17" /></symbol>
-<symbol id="i-heart-handshake" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" /> <path d="M12 5 9.04 7.96a2.17 2.17 0 0 0 0 3.08c.82.82 2.13.85 3 .07l2.07-1.9a2.82 2.82 0 0 1 3.79 0l2.96 2.66" /> <path d="m18 15-2-2" /> <path d="m15 18-2-2" /></symbol>
-<symbol id="i-megaphone" viewBox="0 0 24 24"><path d="m3 11 18-5v12L3 14v-3z" /> <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6" /></symbol>
-<symbol id="i-calendar-days" viewBox="0 0 24 24"><path d="M8 2v4" /> <path d="M16 2v4" /> <rect width="18" height="18" x="3" y="4" rx="2" /> <path d="M3 10h18" /> <path d="M8 14h.01" /> <path d="M12 14h.01" /> <path d="M16 14h.01" /> <path d="M8 18h.01" /> <path d="M12 18h.01" /> <path d="M16 18h.01" /></symbol>
-<symbol id="i-clipboard-list" viewBox="0 0 24 24"><rect width="8" height="4" x="8" y="2" rx="1" ry="1" /> <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" /> <path d="M12 11h4" /> <path d="M12 16h4" /> <path d="M8 11h.01" /> <path d="M8 16h.01" /></symbol>
-<symbol id="i-map-pin" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" /> <circle cx="12" cy="10" r="3" /></symbol>
-<symbol id="i-folder-open" viewBox="0 0 24 24"><path d="m6 14 1.5-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.54 6a2 2 0 0 1-1.95 1.5H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H18a2 2 0 0 1 2 2v2" /></symbol>
-<symbol id="i-notebook-tabs" viewBox="0 0 24 24"><path d="M2 6h4" /> <path d="M2 10h4" /> <path d="M2 14h4" /> <path d="M2 18h4" /> <rect width="16" height="20" x="4" y="2" rx="2" /> <path d="M15 2v20" /> <path d="M15 7h5" /> <path d="M15 12h5" /> <path d="M15 17h5" /></symbol>
-<symbol id="i-briefcase" viewBox="0 0 24 24"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" /> <rect width="20" height="14" x="2" y="6" rx="2" /></symbol>
-<symbol id="i-badge-check" viewBox="0 0 24 24"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" /> <path d="m9 12 2 2 4-4" /></symbol>
-<symbol id="i-workflow" viewBox="0 0 24 24"><rect width="8" height="8" x="3" y="3" rx="2" /> <path d="M7 11v4a2 2 0 0 0 2 2h4" /> <rect width="8" height="8" x="13" y="13" rx="2" /></symbol>
-<symbol id="i-radio" viewBox="0 0 24 24"><path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9" /> <path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5" /> <circle cx="12" cy="12" r="2" /> <path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5" /> <path d="M19.1 4.9C23 8.8 23 15.1 19.1 19" /></symbol>
-<symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" /> <path d="M12 2v2" /> <path d="M12 20v2" /> <path d="m4.93 4.93 1.41 1.41" /> <path d="m17.66 17.66 1.41 1.41" /> <path d="M2 12h2" /> <path d="M20 12h2" /> <path d="m6.34 17.66-1.41 1.41" /> <path d="m19.07 4.93-1.41 1.41" /></symbol>
-<symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" /></symbol>
-<symbol id="i-sunrise" viewBox="0 0 24 24"><path d="M12 2v8" /> <path d="m4.93 10.93 1.41 1.41" /> <path d="M2 18h2" /> <path d="M20 18h2" /> <path d="m19.07 10.93-1.41 1.41" /> <path d="M22 22H2" /> <path d="m8 6 4-4 4 4" /> <path d="M16 18a4 4 0 0 0-8 0" /></symbol>
-<symbol id="i-cake" viewBox="0 0 24 24"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8" /> <path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1" /> <path d="M2 21h20" /> <path d="M7 8v3" /> <path d="M12 8v3" /> <path d="M17 8v3" /> <path d="M7 4h.01" /> <path d="M12 4h.01" /> <path d="M17 4h.01" /></symbol>
-<symbol id="i-bell" viewBox="0 0 24 24"><path d="M10.268 21a2 2 0 0 0 3.464 0" /> <path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326" /></symbol>
-<symbol id="i-hourglass" viewBox="0 0 24 24"><path d="M5 22h14" /> <path d="M5 2h14" /> <path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22" /> <path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2" /></symbol>
-<symbol id="i-calendar-clock" viewBox="0 0 24 24"><path d="M21 7.5V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h3.5" /> <path d="M16 2v4" /> <path d="M8 2v4" /> <path d="M3 10h5" /> <path d="M17.5 17.5 16 16.3V14" /> <circle cx="16" cy="16" r="6" /></symbol>
-<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /> <polyline points="12 6 12 12 16 14" /></symbol>
-<symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2" /> <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></symbol>
-<symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></symbol>
-<symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" /> <path d="m21 21-4.3-4.3" /></symbol>
-<symbol id="i-lock" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2" ry="2" /> <path d="M7 11V7a5 5 0 0 1 10 0v4" /></symbol>
-<symbol id="i-play" viewBox="0 0 24 24"><polygon points="6 3 20 12 6 21 6 3" /></symbol>
-<symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 7h10v10" /> <path d="M7 17 17 7" /></symbol>
-<symbol id="i-school" viewBox="0 0 24 24"><path d="M14 22v-4a2 2 0 1 0-4 0v4" /> <path d="m18 10 3.447 1.724a1 1 0 0 1 .553.894V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-7.382a1 1 0 0 1 .553-.894L6 10" /> <path d="M18 5v17" /> <path d="m4 6 7.106-3.553a2 2 0 0 1 1.788 0L20 6" /> <path d="M6 5v17" /> <circle cx="12" cy="9" r="2" /></symbol>
-<symbol id="i-graduation-cap" viewBox="0 0 24 24"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z" /> <path d="M22 10v6" /> <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" /></symbol>
-<symbol id="i-building-2" viewBox="0 0 24 24"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z" /> <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2" /> <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2" /> <path d="M10 6h4" /> <path d="M10 10h4" /> <path d="M10 14h4" /> <path d="M10 18h4" /></symbol>
-<symbol id="i-scroll-text" viewBox="0 0 24 24"><path d="M15 12h-5" /> <path d="M15 8h-5" /> <path d="M19 17V5a2 2 0 0 0-2-2H4" /> <path d="M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3" /></symbol>
-<symbol id="i-award" viewBox="0 0 24 24"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526" /> <circle cx="12" cy="8" r="6" /></symbol>
-<symbol id="i-youtube" viewBox="0 0 24 24"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" /> <path d="m10 15 5-3-5-3z" /></symbol>
-<symbol id="i-facebook" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></symbol>
-<symbol id="i-file-text" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" /> <path d="M14 2v4a2 2 0 0 0 2 2h4" /> <path d="M10 9H8" /> <path d="M16 13H8" /> <path d="M16 17H8" /></symbol>
-<symbol id="i-rotate-cw" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8" /> <path d="M21 3v5h-5" /></symbol>
-<symbol id="i-copy" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2" ry="2" /> <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" /></symbol>
-<symbol id="i-skip-back" viewBox="0 0 24 24"><polygon points="19 20 9 12 19 4 19 20" /> <line x1="5" x2="5" y1="19" y2="5" /></symbol>
-<symbol id="i-skip-forward" viewBox="0 0 24 24"><polygon points="5 4 15 12 5 20 5 4" /> <line x1="19" x2="19" y1="5" y2="19" /></symbol>
-<symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /> <circle cx="9" cy="7" r="4" /> <path d="M22 21v-2a4 4 0 0 0-3-3.87" /> <path d="M16 3.13a4 4 0 0 1 0 7.75" /></symbol>
-<symbol id="i-shield-check" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /> <path d="m9 12 2 2 4-4" /></symbol>
-</svg>
 <main class="w" id="main" tabindex="-1">
 <section id="hoy" class="hoy rv" aria-live="polite" aria-label="Hoy en Bolívar">
-<div class="hoy-h"><h2>Hoy en Bolívar</h2><span class="f" id="hfecha"></span></div>
+<div class="hoy-t"><span class="pill">Hoy en Bolívar</span><span class="f" id="hfecha"></span></div>
 <div class="hoy-g">
-<div class="hc1"><span class="hi" id="hsol" aria-hidden="true"><svg class="i"><use href="#i-sun"/></svg></span><div><b class="t" id="hsal">Buen día</b><small>Comunidad ColBolívar</small></div></div>
-<div class="hc1 cumple" id="hcum"><span class="hi" aria-hidden="true"><svg class="i"><use href="#i-cake"/></svg></span><div><b class="t" id="cum-t">Cumpleaños</b><small id="cum-p">Felicita a nuestra comunidad.</small><a class="mas" href="cumpleanos.html">Ver cumpleaños<svg class="i" aria-hidden="true" style="width:14px;height:14px"><use href="#i-arrow-up-right"/></svg></a></div></div>
+<div class="hc1"><img class="ii" id="hsol" src="assets/img/portada/nuevo/ic-02.webp" alt="" aria-hidden="true"><div><b class="t" id="hsal">Buen día</b><small>Comunidad ColBolívar</small></div></div>
+<div class="hc1 cumple" id="hcum"><img class="ii" src="assets/img/portada/nuevo/ic-06.webp" alt="" aria-hidden="true"><div><b class="t" id="cum-t">Cumpleaños</b><small id="cum-p">Felicita a nuestra comunidad.</small><a class="mas" href="cumpleanos.html">Ver cumpleaños ›</a></div></div>
 <div class="hc1 cuentas-c"><div class="cuentas" id="hcnt"></div></div>
 </div>
-<div class="nota" id="hav" hidden><svg class="i" aria-hidden="true"><use href="#i-bell"/></svg><span id="hav-t"></span></div>
+<div class="nota" id="hav" hidden><img class="ii" src="assets/img/portada/nuevo/ic-06.webp" alt="" aria-hidden="true"><span id="hav-t"></span></div>
 </section>
 <section id="servicios" aria-labelledby="svt">
-<div class="sec-h"><div><h2 id="svt">Encuentra rápido lo que necesitas</h2><p>Servicios, documentos y páginas del colegio, en un solo lugar.</p></div><div class="srch"><svg class="i" aria-hidden="true"><use href="#i-search"/></svg><input id="q" type="search" placeholder="Buscar: PEI, SIEE, manual de convivencia, circulares, notas…" aria-label="Buscar servicios, documentos y páginas del colegio" autocomplete="off"><kbd aria-hidden="true">/</kbd></div></div>
+<div class="tit esm"><h2 id="svt">Encuentra rápido lo que necesitas</h2></div>
+<p class="sec-p">Servicios, documentos y páginas del colegio, en un solo lugar.</p>
+<div class="srch"><input id="q" type="search" placeholder="Buscar: PEI, SIEE, manual de convivencia, circulares, notas…" aria-label="Buscar servicios, documentos y páginas del colegio" autocomplete="off"><kbd aria-hidden="true">/</kbd></div>
 <div class="qres" id="qres" hidden aria-live="polite"></div>
 <div class="cats" id="cats"></div>
 <p class="none" id="none">No encontramos esa sección. Prueba con otra palabra.</p>
 </section>
-<section class="rad"><a class="radio rv" href="colbolivar-radio/" aria-label="Escuchar ColBolívar Radio">
-<div class="rdisc" aria-hidden="true"><svg class="i"><use href="#i-radio"/></svg></div>
-<div class="rtx"><span class="rlv">EN VIVO</span><h2>Col<b>Bolívar</b> Radio</h2><p>Música y podcast de nuestra comunidad, todo el día.</p><span class="rgo"><svg class="i" aria-hidden="true"><use href="#i-play"/></svg>Escuchar ahora</span></div>
-<div class="req" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="dv" aria-hidden="true"></div>
+<section class="rad"><a class="radio rv fx" href="colbolivar-radio/" aria-label="Escuchar ColBolívar Radio">
+<div class="rdisc" aria-hidden="true"><img class="ii" src="assets/img/portada/nuevo/ic-13.webp" alt=""></div>
+<div class="rtx"><span class="rlv">EN VIVO</span><h2>Col<b>Bolívar</b> Radio</h2><p>Música y podcast de nuestra comunidad, todo el día.</p><span class="rgo">▶ Escuchar ahora</span></div>
+<div class="req" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><i class="fxs"></i>
 </a></section>
 <section id="conocenos" aria-labelledby="cnt">
-<div class="sec-h"><div><h2 id="cnt">Conoce el colegio</h2><p>Sedes, jornadas y la carta de navegación que orienta nuestro trabajo.</p></div></div>
+<div class="tit mar"><h2 id="cnt">Conoce el colegio</h2></div>
+<p class="sec-p">Sedes, jornadas y la carta de navegación que orienta nuestro trabajo.</p>
 <div class="cifras rv">
-<div class="cf4"><svg class="i" aria-hidden="true"><use href="#i-building-2"/></svg><b data-n="3">0</b><span>sedes en Cúcuta</span></div>
-<div class="cf4"><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg><b data-n="2">0</b><span>jornadas: mañana y tarde</span></div>
-<div class="cf4"><svg class="i" aria-hidden="true"><use href="#i-graduation-cap"/></svg><b data-n="4">0</b><span>niveles: preescolar a media</span></div>
-<div class="cf4"><svg class="i" aria-hidden="true"><use href="#i-scroll-text"/></svg><b>2027</b><span>Carta de navegación 2024-2027</span></div>
+<div class="cf4"><img class="ii" src="assets/img/portada/nuevo/ic-16.webp" alt=""><b data-n="3">0</b><span>sedes en Cúcuta</span></div>
+<div class="cf4"><img class="ii" src="assets/img/portada/nuevo/ic-05.webp" alt=""><b data-n="2">0</b><span>jornadas: mañana y tarde</span></div>
+<div class="cf4"><img class="ii" src="assets/img/portada/nuevo/ic-12.webp" alt=""><b data-n="4">0</b><span>niveles: preescolar a media</span></div>
+<div class="cf4"><img class="ii" src="assets/img/portada/nuevo/ic-01.webp" alt=""><b>2027</b><span>Carta de navegación 2024-2027</span></div>
 </div>
 <div class="sedes">
-<div class="sd v rv"><h3><svg class="i" aria-hidden="true"><use href="#i-map-pin"/></svg>Sede 1</h3><p>Calle 4 N.º 11A-26, Urbanización San Martín</p><p>Tel. <a href="tel:+576075848539">5 848539</a> · <a href="tel:+576075943344">5 943344</a></p></div>
-<div class="sd n rv"><h3><svg class="i" aria-hidden="true"><use href="#i-map-pin"/></svg>Sede 2</h3><p>Calle 5N N.º 7-20, Barrio San Martín</p><p>Tel. <a href="tel:+576075846438">5 846438</a></p></div>
-<div class="sd a rv"><h3><svg class="i" aria-hidden="true"><use href="#i-map-pin"/></svg>Sede 3</h3><p>Calle 0 N.º 13-06, Hernando Acevedo Ortega, Urbanización Torcoroma II</p><p>Tel. <a href="tel:+576075769922">5 769922</a></p></div>
+<div class="sd rv"><h3>Sede 1</h3><img class="ii" src="assets/img/portada/nuevo/ic-16.webp" alt=""><div class="bd"><p>Calle 4 N.º 11A-26, Urbanización San Martín</p><p>Tel. <a href="tel:+576075848539">5 848539</a> · <a href="tel:+576075943344">5 943344</a></p></div></div>
+<div class="sd rv"><h3>Sede 2</h3><img class="ii" src="assets/img/portada/nuevo/ic-16.webp" alt=""><div class="bd"><p>Calle 5N N.º 7-20, Barrio San Martín</p><p>Tel. <a href="tel:+576075846438">5 846438</a></p></div></div>
+<div class="sd rv"><h3>Sede 3</h3><img class="ii" src="assets/img/portada/nuevo/ic-16.webp" alt=""><div class="bd"><p>Calle 0 N.º 13-06, Hernando Acevedo Ortega, Urbanización Torcoroma II</p><p>Tel. <a href="tel:+576075769922">5 769922</a></p></div></div>
 </div>
 <div class="info">
-<div class="carta rv"><h3><svg class="i" aria-hidden="true"><use href="#i-scroll-text"/></svg>Carta de navegación 2024-2027</h3><div class="tb" role="tablist" aria-label="Carta de navegación 2024-2027" id="ctabs"></div><p class="tx" id="ctx" role="tabpanel"></p></div>
+<div class="carta rv"><div class="tit esm"><h3>Carta de navegación 2024-2027</h3></div><div class="tb" role="tablist" aria-label="Carta de navegación 2024-2027" id="ctabs"></div><div class="cp" id="cp"><h4 id="ctt"></h4><p class="tx" id="ctx" role="tabpanel"></p></div></div>
 <div>
-<div class="hoja rv"><h3><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg>Jornadas y niveles</h3><p><b>Mañana:</b> primaria 6:00 a.m. a 12:30 p.m. · secundaria 6:00 a.m. a 1:00 p.m.</p><p><b>Tarde:</b> 12:15 p.m. a 6:15 p.m. (completa hasta las 7:15 p.m.)</p>
+<div class="hoja rv"><h3>Jornadas y niveles</h3><p><b>Mañana:</b> primaria 6:00 a.m. a 12:30 p.m. · secundaria 6:00 a.m. a 1:00 p.m.</p><p><b>Tarde:</b> 12:15 p.m. a 6:15 p.m. (completa hasta las 7:15 p.m.)</p>
 <div class="pil"><span>Preescolar</span><span>Básica primaria</span><span>Básica secundaria</span><span>Media académica</span><span>Media técnica SENA</span><span>Propuesta Yukpa</span></div></div>
-<div class="hoja rv"><h3><svg class="i" aria-hidden="true"><use href="#i-award"/></svg>Así se evalúa</h3><div class="esc-v"><span class="s">Superior 4.5–5.0</span><span class="a">Alto 3.7–4.4</span><span class="b">Básico 3.0–3.6</span><span class="j">Bajo 1.0–2.9</span></div>
+<div class="hoja rv"><h3>Así se evalúa</h3><div class="esc-v"><span class="s">Superior 4.5–5.0</span><span class="a">Alto 3.7–4.4</span><span class="b">Básico 3.0–3.6</span><span class="j">Bajo 1.0–2.9</span></div>
 <p>Cada período: Saber-Saber, Saber-Hacer, Saber Ser y Convivir y prueba de comprensión (30 %).</p>
 <details class="prom"><summary>¿Cómo se promueve de grado?</summary><ul><li><b>Preescolar:</b> promoción automática.</li><li><b>1.º y 2.º:</b> hasta 2 áreas no aprobadas, si ninguna es Matemáticas ni Lengua Castellana.</li><li><b>3.º a 11.º:</b> aprobando todas las áreas.</li><li><b>Asistencia:</b> faltar sin justificación el 25 % o más es causal de no promoción.</li></ul></details></div>
 </div></div>
-<div class="contacto rv"><span class="hi" aria-hidden="true"><svg class="i"><use href="#i-mail"/></svg></span><div><a href="mailto:colintsimonbolivar@semcucuta.gov.co"><b>colintsimonbolivar@semcucuta.gov.co</b></a><p>Rector: Dr. Jesús Maldonado Serrano · DANE 154001008266</p></div></div>
+<div class="contacto rv"><img class="ii" src="assets/img/portada/nuevo/ic-14.webp" alt=""><div><a href="mailto:colintsimonbolivar@semcucuta.gov.co"><b>colintsimonbolivar@semcucuta.gov.co</b></a><p>Rector: Dr. Jesús Maldonado Serrano · DANE 154001008266</p></div></div>
 </section>
+<div class="dv" aria-hidden="true"></div>
 <section id="cart">
-<div class="sec-h"><div><h2>Novedades ColBolívar</h2><p>Videos del canal y las últimas publicaciones del colegio.</p></div></div>
-<div class="cg"><div class="cy pn"><h3 class="wh"><svg class="i" aria-hidden="true"><use href="#i-youtube"/></svg>Videos del canal</h3><div class="win" id="ytw"></div>
-<div class="ctl"><button type="button" id="yp"><svg class="i" aria-hidden="true"><use href="#i-skip-back"/></svg>Anterior</button><button type="button" id="yn">Siguiente<svg class="i" aria-hidden="true"><use href="#i-skip-forward"/></svg></button></div>
-<p class="wl"><a href="https://www.youtube.com/@ColBolivar" target="_blank" rel="noopener">Ver todo el canal<svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></p></div>
-<div class="cf pn"><h3 class="wh"><svg class="i" aria-hidden="true"><use href="#i-facebook"/></svg>Desde nuestro Facebook</h3><div class="fbw" id="fbw" aria-live="polite"></div>
+<div class="tit nar"><h2>Novedades ColBolívar</h2></div>
+<p class="sec-p">Videos del canal y las últimas publicaciones del colegio.</p>
+<div class="cg"><div class="cy pn"><h3 class="wh"><img class="ii" src="assets/img/portada/nuevo/ic-12.webp" alt="">Videos del canal</h3><div class="win" id="ytw"></div>
+<div class="ctl"><button type="button" id="yp">‹ Anterior</button><button type="button" id="yn">Siguiente ›</button></div>
+<p class="wl"><a href="https://www.youtube.com/@ColBolivar" target="_blank" rel="noopener">Ver todo el canal ↗</a></p></div>
+<div class="cf pn"><h3 class="wh"><img class="ii" src="assets/img/portada/nuevo/ic-06.webp" alt="">Desde nuestro Facebook</h3><div class="fbw" id="fbw" aria-live="polite"></div>
 <div class="fbs" id="fbs" hidden></div>
-<div class="ctl" id="fctl"><button type="button" id="fr"><svg class="i" aria-hidden="true"><use href="#i-rotate-cw"/></svg>Actualizar</button><a id="fo" href="https://www.facebook.com/profile.php?id=61566338526972" target="_blank" rel="noopener">Abrir en Facebook<svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></div>
+<div class="ctl" id="fctl"><button type="button" id="fr">↻ Actualizar</button><a id="fo" href="https://www.facebook.com/profile.php?id=61566338526972" target="_blank" rel="noopener">Abrir en Facebook ↗</a></div>
 <div class="fbf" id="fbf" hidden><h4>Publicaciones destacadas</h4><div class="fbr" id="fbr"></div></div>
 <p class="wl fbh">Se actualiza solo con las &uacute;ltimas publicaciones. Si no las ves, tu navegador puede estar bloqueando Facebook: usa <b>Abrir en Facebook</b>.</p></div></div></section>
 <div class="redes">
-<a class="rbt a" id="fbl" href="https://www.facebook.com/profile.php?id=61566338526972" target="_blank" rel="noopener noreferrer"><svg class="i" aria-hidden="true"><use href="#i-facebook"/></svg>Facebook</a>
-<a class="rbt r" href="https://www.youtube.com/@ColBolivar" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-youtube"/></svg>YouTube</a>
-<a class="rbt v" id="wal" href="#" target="_blank" rel="noopener" hidden>WhatsApp</a>
-<button class="rbt n" id="fbc" type="button"><svg class="i" aria-hidden="true"><use href="#i-copy"/></svg>Copiar enlace</button></div>
+<a class="rbt a fx" id="fbl" href="https://www.facebook.com/profile.php?id=61566338526972" target="_blank" rel="noopener noreferrer">Facebook ↗<i class="fxs"></i></a>
+<a class="rbt r fx" href="https://www.youtube.com/@ColBolivar" target="_blank" rel="noopener">YouTube ↗<i class="fxs"></i></a>
+<a class="rbt v fx" id="wal" href="#" target="_blank" rel="noopener" hidden>WhatsApp ↗<i class="fxs"></i></a>
+<button class="rbt n fx" id="fbc" type="button">Copiar enlace<i class="fxs"></i></button></div>
 <p class="fbn" id="fbn" role="status"></p>
 <div class="lk" id="lk"></div>
 </main>
 <div class="md" id="md" hidden role="dialog" aria-modal="true" aria-labelledby="mdt"><div class="mb">
-<h3 id="mdt"><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg>Acceso para docentes</h3><p>Escribe la contraseña para entrar a <b id="mdn"></b>.</p>
+<h3 id="mdt">Acceso para docentes</h3><p>Escribe la contraseña para entrar a <b id="mdn"></b>.</p>
 <input id="mdp" type="password" autocomplete="off" placeholder="Contraseña" aria-label="Contraseña">
 <p class="er" id="mde" role="alert"></p>
 <div class="mbt"><button class="cta v" id="mdok" type="button">Entrar</button><button class="cta n" id="mdno" type="button">Cancelar</button></div></div></div>
-<footer class="pie"><div class="w"><img src="assets/img/escudo.webp" width="54" height="65" alt="Escudo del colegio"><div><b>© 2026 Institución Educativa Colegio Integrado Simón Bolívar</b>Cúcuta, Norte de Santander</div><a class="mail" href="mailto:colintsimonbolivar@semcucuta.gov.co">colintsimonbolivar@semcucuta.gov.co</a></div></footer>
+<footer class="pie"><div class="dvf" aria-hidden="true"></div><div class="w"><img src="assets/img/escudo.webp" width="54" height="65" alt="Escudo del colegio"><div><b>© 2026 Institución Educativa Colegio Integrado Simón Bolívar</b>Cúcuta, Norte de Santander</div><a class="mail" href="mailto:colintsimonbolivar@semcucuta.gov.co">colintsimonbolivar@semcucuta.gov.co</a></div></footer>
 <script>
 /* ====== CONFIGURACIÓN: edita solo este bloque ====== */
 const B='https://gestionacademicaco.wixsite.com/colbolivar1/';
@@ -542,24 +516,24 @@ const C={
 const IMG='assets/img/portada/';
 // [título, descripción, enlace, ícono]  — agrupados en 4 categorías (color de cinta y de tarjeta)
 const CATS=[
- {id:'aprender',t:'Estudiar y aprender',c:'verde',ph:'foto-biblioteca',it:[
-  ['Biblioteca','Libros y lecturas',B+'biblioteca','library'],
-  ['ICFES','Preparación pruebas Saber',B+'icfes2024','target'],
-  ['Modo estudio','Practica con preguntas de los documentos',G+'estudio.html','brain-circuit'],
-  ['Proyectos transversales','Proyectos del año',G+'PROYECTOS_TRANSVERSALES.html','layers']]},
- {id:'vida',t:'Vida escolar',c:'naranja',ph:'foto-aula',it:[
-  ['Orientación escolar','Apoyo psicosocial',G+'ORIENTACION_ESCOLAR.html','heart-handshake'],
-  ['Circulares','Comunicados oficiales',B+'circulares','megaphone'],
-  ['Cartelera','Eventos y fechas del colegio',G+'cartelera.html','calendar-days'],
-  ['Notas y planillas','Plataforma WebColegios','https://www.webcolegios.com/simon/','clipboard-list'],
-  ['Sede San Martín 2026','Información de la sede',B+'sanmart%C3%ADn','map-pin']]},
- {id:'docs',t:'Documentos y planeación',c:'azul',ph:'foto-docentes',it:[
-  ['Documentos institucionales','Manuales y formatos',G+'DOCUMENTOS%20INSTITUCIONALES.html','folder-open'],
-  ['Planes de área 2026','Planes por área',G+'PLANES_DE_AREA.html','notebook-tabs'],
-  ['Documentos docentes','Planeación docente en Drive',G+'DRIVE_PLANEACION_DOCENTE.html','briefcase']]},
- {id:'gestion',t:'Gestión y calidad',c:'oro',ph:'foto-fachada',it:[
-  ['Calidad','Gestión de calidad',G+'CALIDAD.html','badge-check'],
-  ['Procesos','Gestiones y evidencias',G+'PROCESOS.html','workflow']]}];
+ {id:'aprender',t:'Estudiar y aprender',c:'esm',it:[
+  ['Biblioteca','Libros y lecturas',B+'biblioteca','ic-10'],
+  ['ICFES','Preparación pruebas Saber',B+'icfes2024','ic-15'],
+  ['Modo estudio','Practica con preguntas de los documentos',G+'estudio.html','ic-12'],
+  ['Proyectos transversales','Proyectos del año',G+'PROYECTOS_TRANSVERSALES.html','ic-08']]},
+ {id:'vida',t:'Vida escolar',c:'nar',it:[
+  ['Orientación escolar','Apoyo psicosocial',G+'ORIENTACION_ESCOLAR.html','ic-09'],
+  ['Circulares','Comunicados oficiales',B+'circulares','ic-06'],
+  ['Cartelera','Eventos y fechas del colegio',G+'cartelera.html','ic-05'],
+  ['Notas y planillas','Plataforma WebColegios','https://www.webcolegios.com/simon/','ic-04'],
+  ['Sede San Martín 2026','Información de la sede',B+'sanmart%C3%ADn','ic-16']]},
+ {id:'docs',t:'Documentos y planeación',c:'mar',it:[
+  ['Documentos institucionales','Manuales y formatos',G+'DOCUMENTOS%20INSTITUCIONALES.html','ic-03'],
+  ['Planes de área 2026','Planes por área',G+'PLANES_DE_AREA.html','ic-01'],
+  ['Documentos docentes','Planeación docente en Drive',G+'DRIVE_PLANEACION_DOCENTE.html','ic-02']]},
+ {id:'gestion',t:'Gestión y calidad',c:'bl',it:[
+  ['Calidad','Gestión de calidad',G+'CALIDAD.html','ic-11'],
+  ['Procesos','Gestiones y evidencias',G+'PROCESOS.html','ic-07']]}];
 const LOCK=['Planes de área 2026','Documentos docentes']; // secciones con contraseña
 const HASH='ef44b50b12b77a8a38936199d3edc55c7370ceff204c89580c2b144981b3c17f'; // huella SHA-256 de la contraseña (no se guarda en texto claro)
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
@@ -633,8 +607,8 @@ size();new ResizeObserver(size).observe(stage);requestAnimationFrame(frame);
 
 /* ====== SERVICIOS ====== */
 const CA=$('#cats');
-const ICN=n=>'<svg class="i" aria-hidden="true"><use href="#i-'+n+'"/></svg>';
-CA.innerHTML=CATS.map(c=>'<article class="cat c-'+c.c+' rv" data-cat="'+c.id+'"><header class="cat-h" style="--ph:url('+IMG+'nuevo/'+c.ph+'.webp)"><h3>'+c.t+'</h3></header><div class="cards">'+c.it.map(t=>{const lk=LOCK.includes(t[0]);return '<a class="svc '+c.c+(lk?' lock':'')+'" '+(t[2].startsWith(G)?'':'target="_blank" rel="noopener" ')+'href="'+t[2]+'" data-k="'+(t[0]+' '+t[1]).toLowerCase()+'"><span class="ic">'+ICN(t[3])+'</span><span class="tx"><b>'+t[0]+'</b><small>'+t[1]+'</small>'+(lk?'<span class="lkb">'+ICN('lock')+'Solo docentes</span>':'')+'</span><span class="go">'+ICN('arrow-up-right')+'</span></a>'}).join('')+'</div></article>').join('');
+const ICN=n=>'<img class="ii" src="'+IMG+'nuevo/'+n+'.webp" alt="" loading="lazy" decoding="async">';
+CA.innerHTML=CATS.map(c=>'<article class="cat rv" data-cat="'+c.id+'"><div class="tit '+c.c+'"><h3>'+c.t+'</h3></div><div class="cards">'+c.it.map(t=>{const lk=LOCK.includes(t[0]);return '<a class="svc fx'+(lk?' lock':'')+'" '+(t[2].startsWith(G)?'':'target="_blank" rel="noopener" ')+'href="'+t[2]+'" data-k="'+(t[0]+' '+t[1]).toLowerCase()+'">'+ICN(t[3]).replace('class="ii"','class="ic ii"')+'<span class="tx"><b>'+t[0]+'</b><small>'+t[1]+'</small>'+(lk?'<span class="lkb">Solo docentes</span>':'')+'</span><span class="go" aria-hidden="true">Abrir ›</span><i class="fxs"></i></a>'}).join('')+'</div></article>').join('');
 addEventListener('keydown',e=>{if(e.key==='/'&&!/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)&&MD.hidden){e.preventDefault();$('#q').focus()}});
 (()=>{const q=$('#q'),R=$('#qres');let tm,hasSvc=0;
 const E=t=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -684,7 +658,8 @@ function todo(raw){R.classList.remove('sug');const A=window.ARIA_DOCS;
 /* ====== CARTA DE NAVEGACIÓN (pestañas) ====== */
 const CARTA=[['Misión','El Colegio Simón Bolívar es una institución de carácter oficial que ofrece un servicio de calidad en los niveles de Preescolar, Básica, Media Académica y Técnica, propendiendo por la formación integral del estudiante desde el «saber ser», «saber hacer» y «saber saber». Con el desarrollo de proyectos en el marco de la inclusión educativa, la evaluación formativa y el trabajo colaborativo que fortalecen la construcción de proyectos de vida con éxito.'],['Visión','La Institución Educativa Colegio Simón Bolívar en el año 2027 será reconocida a nivel regional y nacional por desarrollar procesos académicos y administrativos de alta calidad, apoyada en el manejo de las TIC, la inclusión escolar y la convivencia ciudadana post pandemia.'],['Política de calidad','Ofrecer un servicio educativo de alta calidad, que fortalezca en su comunidad el liderazgo, la comunicación y el trabajo en equipo, contando para ello con recursos físicos, financieros y tecnológicos apropiados y con un talento humano competente, que contribuya con el mejoramiento continuo de los procesos de la gestión escolar, para responder a las necesidades y expectativas de los actores educativos y su entorno.']];
 const CT=$('#ctabs'),CX=$('#ctx');
-CARTA.forEach((c,i)=>{const b=document.createElement('button');b.type='button';b.textContent=c[0];b.setAttribute('role','tab');b.onclick=()=>{[...CT.children].forEach((x,j)=>x.setAttribute('aria-selected',j===i));CX.textContent=c[1]};CT.append(b)});
+const CI=['ic-09','ic-08','ic-11'],CC=['#14652D','#E5681A','#14294D'];
+CARTA.forEach((c,i)=>{const b=document.createElement('button');b.type='button';b.innerHTML=ICN(CI[i%3])+'<span>'+c[0]+'</span>';b.setAttribute('role','tab');b.onclick=()=>{[...CT.children].forEach((x,j)=>x.setAttribute('aria-selected',j===i));$('#ctt').textContent=c[0];CX.textContent=c[1];$('#cp').style.setProperty('--tc',CC[i%3])};CT.append(b)});
 CT.firstChild.click();
 
 $('#fbl').href=C.facebook;
@@ -715,13 +690,13 @@ cumRun(window.CUMPLES||[]);
 <script>
 (function(){var H=window.HOY||{},$=function(q){return document.querySelector(q)},n=new Date(),h=new Date(n.getFullYear(),n.getMonth(),n.getDate());
 function hoy(){var hr=n.getHours(),g=hr<5||hr>=19?'Buenas noches':hr<12?'Buenos días':'Buenas tardes';
-$('#hsal').textContent=g;$('#hsol').innerHTML=ICN(hr<5||hr>=19?'moon':hr<12?'sunrise':'sun');
+$('#hsal').textContent=g;
 var fd=n.toLocaleDateString('es-CO',{weekday:'long',day:'numeric',month:'long'});$('#hfecha').textContent=fd.charAt(0).toUpperCase()+fd.slice(1);
 var AN=['verde','naranja','azul'],c=[];
 (H.fechas||[]).forEach(function(x){var d=Math.round((new Date(x.f+'T00:00')-h)/864e5);if(d>=0)c.push({d:d,t:x.t})});
 c=c.slice(0,3);
-$('#hcnt').innerHTML=c.map(function(x){var ic=/informe|bolet|nota/i.test(x.t)?'file-text':/cierre|per[ií]odo|vacaci|semana/i.test(x.t)?'calendar-clock':'hourglass';
-return '<div class="cnt'+(x.d?'':' hoy')+'"><span class="n">'+(x.d?x.d:'Hoy')+'</span><span class="l">'+ICN(ic)+(x.d?(x.d===1?'día':'días')+' para: ':'')+x.t+'</span></div>'}).join('')||'<span class="l">Que tengas un excelente día.</span>';
+$('#hcnt').innerHTML=c.map(function(x){var ic=/informe|bolet|nota/i.test(x.t)?'ic-04':/cierre|per[ií]odo|vacaci|semana/i.test(x.t)?'ic-05':'ic-03';
+return '<div class="cnt'+(x.d?'':' hoy')+'"><span class="n">'+(x.d?x.d:'Hoy')+'</span><span class="l">'+ICN(ic)+'<span>'+(x.d?(x.d===1?'día':'días')+' para: ':'')+x.t+'</span></span></div>'}).join('')||'<span class="l">Que tengas un excelente día.</span>';
 if(H.aviso&&!/escribe aquí/.test(H.aviso)){$('#hav').hidden=false;$('#hav-t').textContent=H.aviso}}
 hoy();
 function lazy(el,fn){if('IntersectionObserver' in window)new IntersectionObserver(function(e,o){if(e[0].isIntersecting){fn();o.disconnect()}},{rootMargin:'300px'}).observe(el);else fn()}
@@ -737,7 +712,7 @@ if(H.fbModo==='manual'&&P.length){fw.hidden=true;$('#fctl').hidden=true;$('.fbh'
 lazy(fs,function(){fs.innerHTML=P.map(function(u){return (/\/(r|reel|videos|watch)\b/.test(u)?'<iframe loading="lazy" title="Video de Facebook" allow="encrypted-media;autoplay;picture-in-picture" allowfullscreen src="https://www.facebook.com/plugins/video.php?href='+encodeURIComponent(u)+'&show_text=false&width=280&height=500"></iframe>':'<iframe loading="lazy" title="Publicaci\u00f3n de Facebook" allow="encrypted-media" src="https://www.facebook.com/plugins/post.php?href='+encodeURIComponent(u)+'&width=320&show_text=true&height=500"></iframe>')}).join('')})}
 else{lazy(fw,fbBuild);$('#fr').onclick=function(){fbBuild(true)};$('#fo').href=FBU;
 var ft;addEventListener('resize',function(){clearTimeout(ft);ft=setTimeout(function(){if(fwid&&Math.abs(fbW()-fwid)>20)fbBuild()},350)})}
-var FC=H.fbCards||[],fbr=$('#fbr');if(FC.length){$('#fbf').hidden=false;fbr.innerHTML=FC.map(function(c){var v=/\/(r|reel|videos|watch)\b/.test(c.u);return '<a class="fbcd" href="'+c.u+'" target="_blank" rel="noopener">'+(c.i?'<img class="fbi" loading="lazy" alt="" src="'+c.i+'">':'<span class="fbi" aria-hidden="true">'+ICN(v?'play':'file-text')+'</span>')+'<b>'+(c.t||'Publicaci\u00f3n')+'</b><small>Ver en Facebook \u2197</small></a>'}).join('')}
+var FC=H.fbCards||[],fbr=$('#fbr');if(FC.length){$('#fbf').hidden=false;fbr.innerHTML=FC.map(function(c){var v=/\/(r|reel|videos|watch)\b/.test(c.u);return '<a class="fbcd" href="'+c.u+'" target="_blank" rel="noopener">'+(c.i?'<img class="fbi" loading="lazy" alt="" src="'+c.i+'">':'<span class="fbi" aria-hidden="true">'+ICN(v?'ic-12':'ic-04')+'</span>')+'<b>'+(c.t||'Publicaci\u00f3n')+'</b><small>Ver en Facebook \u2197</small></a>'}).join('')}
 var WA=String(H.whatsapp||'').replace(/\D/g,''),wal=$('#wal');if(WA&&wal){wal.href='https://wa.me/'+WA+'?text='+encodeURIComponent('Hola, quisiera información sobre el Colegio Integrado Simón Bolívar');wal.hidden=false}
 if('serviceWorker' in navigator&&location.protocol==='https:')navigator.serviceWorker.register('sw.js').catch(function(){});
 })();
@@ -746,5 +721,30 @@ if('serviceWorker' in navigator&&location.protocol==='https:')navigator.serviceW
 <script>window.ARIA_DOCS_NOAUTO=1</script><script src="aria-docs.js" defer></script>
 <script src="assets/js/nav.js" defer></script>
 <script src="assets/js/encabezado.js" defer></script>
+<script>
+/* ====== EFECTOS AL PASAR EL MOUSE: foco de luz, inclinación, onda y aviso "Abrir" ====== */
+(function(){
+var fine=matchMedia('(hover:hover) and (pointer:fine)').matches,calm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+var SEL='.svc,.radio,.rbt,.fbcd,.ctl button,.ctl a,.carta .tb button,.cta';
+var chip=document.createElement('div');chip.className='lkc';chip.setAttribute('aria-hidden','true');document.body.appendChild(chip);
+function lab(el){if(el.classList.contains('lock'))return 'Solo docentes';if(el.matches('button'))return 'Pulsa';var h=el.getAttribute('href')||'';return /^(https?:)?\/\//.test(h)&&el.target==='_blank'?'Abrir ↗':'Abrir ›'}
+document.addEventListener('pointermove',function(e){
+ var el=e.target.closest&&e.target.closest(SEL);
+ if(!el||!fine){chip.classList.remove('on');return}
+ var r=el.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;
+ el.style.setProperty('--mx',x+'px');el.style.setProperty('--my',y+'px');
+ if(el.classList.contains('svc')&&!calm){el.style.transform='perspective(700px) rotateX('+(((y/r.height)-.5)*-6).toFixed(2)+'deg) rotateY('+(((x/r.width)-.5)*8).toFixed(2)+'deg) translateY(-4px) scale(1.02)'}
+ chip.textContent=lab(el);chip.style.transform='translate('+(e.clientX+16)+'px,'+(e.clientY+18)+'px)';chip.classList.add('on')
+},{passive:true});
+document.addEventListener('pointerout',function(e){var el=e.target.closest&&e.target.closest('.svc');if(el&&!el.contains(e.relatedTarget))el.style.transform='';if(!e.relatedTarget)chip.classList.remove('on')});
+document.addEventListener('pointerdown',function(e){
+ var el=e.target.closest&&e.target.closest(SEL);if(!el||calm)return;
+ var r=el.getBoundingClientRect(),d=Math.max(r.width,r.height)*1.6,s=document.createElement('span');s.className='rip';
+ s.style.cssText='width:'+d+'px;height:'+d+'px;left:'+(e.clientX-r.left-d/2)+'px;top:'+(e.clientY-r.top-d/2)+'px';
+ if(getComputedStyle(el).position==='static')el.style.position='relative';
+ el.appendChild(s);setTimeout(function(){s.remove()},650)
+});
+})();
+</script>
 </body>
 </html>
