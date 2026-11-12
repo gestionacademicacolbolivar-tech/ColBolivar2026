@@ -31,37 +31,57 @@ section{padding:10px 0}
 img{max-width:100%}
 
 /* ================= PORTADA (escena compacta) ================= */
-.hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#6fc3ff 0%,#aee0ff 46%,#fff2c2 100%)}
-.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:46px;background:linear-gradient(#63c04d,#3f9a35);z-index:1}
-.esc{position:relative;max-width:1500px;margin:0 auto;height:clamp(330px,31vw,450px);container-type:inline-size}
-.o{position:absolute;display:block;height:auto;pointer-events:none;user-select:none}
-.o-sol{left:6cqw;top:-3cqw;width:16cqw;z-index:1;animation:giro 90s linear infinite}
-.o-n1{left:30cqw;top:8%;width:14cqw;z-index:1;animation:der 70s linear infinite alternate}
-.o-n2{right:25cqw;top:24%;width:10cqw;z-index:1;animation:izq 55s linear infinite alternate}
-.o-n3{right:5cqw;top:5%;width:8cqw;z-index:1;animation:der 90s linear infinite alternate}
-.o-b1{left:0;top:-.5cqw;width:24cqw;z-index:3;transform-origin:top left;animation:sway 5s ease-in-out infinite alternate}
-.o-b2{right:0;top:-.5cqw;width:38cqw;z-index:3;transform-origin:top right;animation:sway 6s ease-in-out -2s infinite alternate-reverse}
-.o-ai{left:-2cqw;bottom:34px;width:12cqw;z-index:2}
-.o-ad{right:-2cqw;bottom:34px;width:11cqw;z-index:2;transform:scaleX(-1)}
-.o-col{right:3cqw;bottom:34px;width:29cqw;z-index:2}
-.o-ban{right:31cqw;bottom:34px;width:6cqw;z-index:3;transform-origin:left center;animation:ondea 3.2s ease-in-out infinite alternate}
-.o-est{left:50cqw;bottom:30px;width:12cqw;z-index:6}
-.o-s1{left:-1cqw;bottom:14px;width:15cqw;z-index:5}.o-s2{left:41cqw;bottom:10px;width:14cqw;z-index:5}.o-s3{right:-1cqw;bottom:14px;width:15cqw;z-index:5}
-.bri{position:absolute;z-index:6;pointer-events:none;height:auto;animation:tw 2.8s ease-in-out infinite}
-.b1{left:47cqw;top:15%;width:24px}.b2{left:2cqw;top:50%;width:17px;animation-delay:.7s}.b3{right:33cqw;top:12%;width:28px;animation-delay:1.3s}.b4{right:5cqw;top:42%;width:19px;animation-delay:.4s}.b5{left:27cqw;top:5%;width:15px;animation-delay:2s}
-@keyframes giro{to{transform:rotate(1turn)}}@keyframes der{from{transform:translateX(-3cqw)}to{transform:translateX(5cqw)}}@keyframes izq{from{transform:translateX(3cqw)}to{transform:translateX(-5cqw)}}
-@keyframes sway{from{transform:rotate(-1.4deg)}to{transform:rotate(1.4deg)}}@keyframes ondea{from{transform:skewY(-2deg) scaleX(1)}to{transform:skewY(2deg) scaleX(.96)}}
-@keyframes tw{0%,100%{transform:scale(.5) rotate(0);opacity:.25}50%{transform:scale(1.15) rotate(18deg);opacity:1}}
-.placa{position:absolute;z-index:7;left:3cqw;top:50%;transform:translateY(-47%);width:43cqw;min-width:430px;border:solid transparent;border-width:22px 27px 22px 27px;border-image-source:url(assets/img/portada/marcos/panel-madera.webp);border-image-slice:44 55 44 57 fill;border-image-repeat:stretch;padding:4px 6px 6px;display:grid;grid-template-columns:auto 1fr;gap:6px 18px;align-items:center;filter:drop-shadow(0 10px 14px #0003)}
-.placa .esc2{width:clamp(70px,8.4cqw,112px);height:auto;filter:drop-shadow(0 4px 6px #0003)}
-.placa .k{font:800 .74rem Sora,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--g)}
-.placa h1{font-size:clamp(1.45rem,3.3cqw,2.5rem);color:var(--n);text-shadow:0 2px 0 #fff}
-.placa h1 b{color:var(--g)}
-.placa .lm{font:800 clamp(.95rem,1.6cqw,1.2rem) Sora,sans-serif;color:#6a4a00;margin-top:2px}.placa .lm span{color:var(--g)}.placa .lm em{color:var(--r);font-style:normal}
-.cts{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
 .cta{display:inline-grid;place-items:center;min-width:132px;height:44px;padding:0 20px 3px;background:var(--bt) center/100% 100% no-repeat;font:800 .9rem Sora,sans-serif;color:#fff;text-shadow:0 2px 0 #0006;transition:transform .2s}
 .cta:hover{transform:translateY(-3px) scale(1.03)}.cta:active{transform:scale(.97)}
 .cta.v{--bt:url(assets/img/portada/botones/boton-verde.webp)}.cta.n{--bt:url(assets/img/portada/botones/boton-naranja.webp);color:#3b2400;text-shadow:0 1px 0 #fff7}
+/* ================= ENCABEZADO (capas independientes, compacto) ================= */
+.hero{--H:clamp(250px,19vw,290px);position:relative;height:var(--H);overflow:hidden;container-type:size;isolation:isolate;background:#4aa3ee}
+.hero .L{position:absolute;display:block;height:auto;pointer-events:none;user-select:none;will-change:translate}
+.hero img.cielo{inset:0;width:100%;height:100%;object-fit:cover}
+.hero .hz{left:0;bottom:9cqh;width:100%;height:46cqh;object-fit:cover;-webkit-mask-image:linear-gradient(transparent,#000 40%);mask-image:linear-gradient(transparent,#000 40%)}
+.hero .sol{left:-4%;top:-26cqh;width:44cqh;mix-blend-mode:screen;animation:pulso 6s ease-in-out infinite}
+@keyframes pulso{50%{opacity:.6;transform:scale(1.07)}}
+/* nubes: viajan de lado a lado con el viento; lejanas = más lentas, pequeñas y tenues */
+.nb{position:absolute;left:0;top:var(--t);width:var(--w);z-index:2;pointer-events:none;opacity:var(--o);animation:viento var(--s) linear var(--dl) infinite}
+.nb img{display:block;width:100%;height:auto;transform:scaleX(var(--f,1));animation:forma var(--m,22s) ease-in-out infinite alternate;filter:blur(var(--b,0px)) drop-shadow(0 5px 6px rgba(20,60,120,.18))}
+@keyframes viento{0%{transform:translateX(-45vw)}100%{transform:translateX(112vw)}}
+@keyframes forma{from{translate:0 0;scale:1 1}to{translate:0 -7px;scale:1.07 .96}}
+.hero .esc{position:relative;height:100%;max-width:1500px;margin:0 auto;z-index:3}
+.hero .E{position:absolute;display:block;pointer-events:none;user-select:none;will-change:translate}
+.E.t1{left:-1%;bottom:14cqh;height:58cqh;z-index:2}.E.t2{right:-1%;bottom:14cqh;height:52cqh;z-index:2}
+.E.fach{right:4%;bottom:11cqh;height:64cqh;z-index:3;filter:drop-shadow(0 12px 12px rgba(0,0,0,.35))}
+.E.escu{left:1.2%;top:7cqh;height:86cqh;z-index:5;filter:drop-shadow(0 8px 10px rgba(0,0,0,.45))}
+.pan{position:absolute;left:18%;top:11cqh;height:38cqh;aspect-ratio:1080/215;z-index:5;filter:drop-shadow(0 10px 10px rgba(0,0,0,.4))}
+.pan>img{width:100%;height:100%;display:block}
+.pan .tx{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2% 9% 0;color:#fff;white-space:nowrap}
+.pan small{font:700 clamp(7px,3.8cqh,11px)/1 Sora,sans-serif;letter-spacing:.3em;text-transform:uppercase;color:#f3d98b}
+.pan h1{margin:.2em 0 0;font:700 clamp(15px,9.2cqh,32px)/1.05 Georgia,"Times New Roman",serif;color:#fff;text-shadow:0 2px 5px rgba(0,0,0,.55)}.pan h1 b{color:#f6c945}
+.pan:after{content:"";position:absolute;inset:7% 4%;border-radius:40px;mix-blend-mode:overlay;background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.5) 50%,transparent 60%) 150% 0/250% 100% no-repeat;animation:brillo 7s ease-in-out infinite}
+@keyframes brillo{55%,100%{background-position:-60% 0}}
+.chis{position:absolute;width:7px;height:7px;border-radius:50%;background:#fff6c8;box-shadow:0 0 10px 3px #ffd24a;animation:chis 1.3s ease-out forwards;pointer-events:none}
+@keyframes chis{0%{transform:scale(0);opacity:0}30%{transform:scale(1);opacity:1}100%{transform:scale(.2);opacity:0}}
+.lema-p{position:absolute;left:24%;top:52cqh;height:14cqh;aspect-ratio:879/109;z-index:5;filter:drop-shadow(0 6px 6px rgba(0,0,0,.3))}
+.lema-p img{width:100%;height:100%;display:block}.lema-p span{position:absolute;inset:0;display:grid;place-items:center;font:800 clamp(9px,5.4cqh,15px) Sora,sans-serif;letter-spacing:.06em;color:#3b1d00}
+.hc{position:absolute;left:19%;top:71cqh;z-index:6;display:flex;gap:10px}
+.hc a{position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:.5em;height:clamp(28px,12cqh,36px);padding:0 18px;border-radius:999px;font:800 clamp(11px,4.6cqh,14px) Sora,sans-serif;text-decoration:none;color:#fff;background:linear-gradient(#1b8a35,#0d5a1e);border:2px solid #e6b422;box-shadow:0 6px 10px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.35);transition:transform .2s,box-shadow .2s}
+.hc a.n{background:linear-gradient(#ffb02e,#f07a10);color:#3b1d00}
+.hc a:after{content:"→";transition:transform .2s}
+.hc a:before{content:"";position:absolute;top:0;left:-70%;width:50%;height:100%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.65),transparent);transform:skewX(-20deg);transition:left .55s}
+.hc a:hover,.hc a:focus-visible{transform:translateY(-3px) scale(1.05);box-shadow:0 0 16px 3px rgba(255,205,70,.9),0 8px 12px rgba(0,0,0,.3);outline:none}
+.hc a:hover:before{left:130%}.hc a:hover:after{transform:translateX(5px)}
+.E.acad{z-index:5;filter:drop-shadow(0 8px 6px rgba(0,0,0,.4))}
+.E.libros{left:53%;bottom:10cqh;height:24cqh}.E.birr{left:54.2%;bottom:30cqh;height:17cqh;rotate:-7deg}.E.dipl{left:60%;bottom:9cqh;height:15cqh}
+.E.glb{right:.5%;bottom:10cqh;height:40cqh}
+.hero .tierra{left:0;right:0;bottom:0;height:13cqh;z-index:4;background:linear-gradient(#ffb21a 0 3px,#fff 3px 5px,#1c7a30 5px,#0d4a1b);box-shadow:0 -6px 12px rgba(0,0,0,.25)}
+.E.cn{left:-3%;bottom:1cqh;width:32%;z-index:6;filter:drop-shadow(0 5px 5px rgba(0,0,0,.4))}.E.cb{right:-3%;bottom:0;width:30%;z-index:6;transform:scaleX(-1)}
+.E.fol{left:11%;bottom:-3cqh;height:24cqh;z-index:6}.E.arb{right:12%;bottom:-3cqh;height:20cqh;z-index:6}
+.hero .tierra,.E.cn,.E.cb{opacity:1}
+@media(max-width:760px){.hero{--H:410px}
+ .E.escu{left:3%;top:3cqh;height:36cqh}.E.fach{right:-18%;top:5cqh;bottom:auto;height:34cqh}.E.t1,.E.t2,.E.libros,.E.birr,.E.dipl,.E.glb,.E.cn,.E.cb,.hero .sol{display:none}
+ .pan{left:3%;top:42cqh;width:94%;height:auto}.pan h1{font-size:clamp(15px,5.4vw,24px)}.pan small{font-size:clamp(6px,2.1vw,9px)}
+ .lema-p{left:12%;top:63cqh;width:76%;height:auto}.lema-p span{font-size:clamp(9px,3.2vw,13px)}
+ .hc{left:0;right:0;top:76cqh;justify-content:center}.hc a{height:34px;padding:0 14px;font-size:12px}.E.fol{left:2%;height:12cqh}.E.arb{right:2%;height:10cqh}}
+@media(prefers-reduced-motion:reduce){.hero *{animation:none!important}.nb{left:20%}}
 .stripe{height:5px;background:linear-gradient(90deg,#ffd23f 0 50%,#12306e 50% 75%,#d92d3a 75%)}
 
 /* ================= HOY EN BOLÍVAR (pizarra) ================= */
@@ -172,16 +192,8 @@ footer.pie{padding:16px 14px 26px;text-align:center;color:var(--mut);font-size:.
 }
 @media(max-width:760px){
  body{font-size:16px}
- .esc{height:auto;container-type:inline-size;padding:118px 10px 92px}
- .o-sol{left:2cqw;top:-4cqw;width:20cqw}.o-n1{left:26cqw;top:14px;width:20cqw}.o-n2{right:30cqw;top:44px;width:16cqw}.o-n3{right:3cqw;top:6px;width:14cqw}
- .o-b1{width:50cqw}.o-b2{width:50cqw}
- .o-ai{left:-6cqw;bottom:auto;top:46px;width:22cqw}.o-ad{display:none}
- .o-col{right:2cqw;bottom:auto;top:30px;width:40cqw}.o-ban{right:42cqw;bottom:auto;top:52px;width:8cqw}
- .o-est{left:8cqw;bottom:32px;width:28cqw}.o-s1{width:30cqw}.o-s2{left:33cqw;width:30cqw}.o-s3{width:30cqw}
  .tb-c{padding:7px 10px;gap:10px}.tb-c img.ic{width:50px;height:50px}.tb-c b.t{font-size:1rem}.tb-h h2{font-size:1.2rem}.cnt .an{width:58px;height:58px;font-size:1.2rem}
  .perg .tb button{min-width:0;flex:1;padding:0 4px 8px;font-size:.76rem}
- .placa{position:relative;left:auto;top:auto;transform:none;width:100%;min-width:0;margin:0 auto;max-width:560px;border-width:14px 17px 14px 17px;grid-template-columns:auto 1fr;gap:4px 10px;padding:0 2px}
- .placa .esc2{width:60px}.placa h1{font-size:1.35rem}.placa .lm{font-size:.92rem}.cta{min-width:116px;height:40px;font-size:.82rem}.cts{grid-column:1/-1;justify-content:center;margin-top:4px}
  .tb-g{grid-template-columns:1fr}.pz{border-width:18px 20px 18px 18px}
  .cards{grid-template-columns:1fr 1fr;gap:10px}.svc{grid-template-columns:1fr;justify-items:center;text-align:center;gap:0;padding-bottom:4px;min-height:132px}.svc .lkb{font-size:.6rem}
  .svc img.ic{width:52px;height:52px}.svc b{font-size:.9rem}.svc small{font-size:.74rem}
@@ -348,18 +360,19 @@ fit();addEventListener('resize',fit);addEventListener('DOMContentLoaded',fit);
 <div id="intro" role="dialog" aria-modal="true" aria-label="Bienvenida a ColBol&iacute;var"><div class="ig" aria-hidden="true"></div><div class="ic2"><img class="iesc" src="assets/img/escudo.webp" width="600" height="726" alt="Escudo del Colegio Integrado Sim&oacute;n Bol&iacute;var"><p class="ik">Instituci&oacute;n Educativa</p><p class="it">Colegio Integrado <b>Sim&oacute;n Bol&iacute;var</b></p><p class="il">Todos somos <span>Col</span><em>Bol&iacute;var</em></p><div class="ip" aria-hidden="true"><i></i></div><button class="is" type="button">Entrar &rsaquo;</button></div><div class="ib" aria-hidden="true"><i></i><i></i><i></i></div></div>
 <script>(function(){var h=document.documentElement,el=document.getElementById("intro");if(!el)return;if(!h.classList.contains("intro")){el.remove();return}var done=false;function end(){if(done)return;done=true;try{localStorage.setItem("cbintro",new Date().toDateString())}catch(e){}el.classList.add("out");setTimeout(function(){h.classList.remove("intro");el.remove()},680)}el.querySelector(".ip i").addEventListener("animationend",end);el.addEventListener("click",end);addEventListener("keydown",function(e){if(e.key==="Escape"||e.key==="Enter"||e.key===" ")end()});setTimeout(end,5200);try{el.querySelector(".is").focus({preventScroll:true})}catch(e){}})();</script>
 <a class="skip" href="#main">Saltar al contenido</a>
-<header class="hero">
+<header class="hero" id="hero">
+<img class="L cielo" src="assets/img/portada/encabezado/cielo.webp" alt="" aria-hidden="true" decoding="async"><img class="L sol" src="assets/img/portada/encabezado/sol.webp" alt="" aria-hidden="true" decoding="async"><img class="L hz" src="assets/img/portada/encabezado/paisaje.webp" alt="" aria-hidden="true" decoding="async">
+<div class="nb" style="--t:-8cqh;--w:46cqh;--o:.95;--s:170s;--dl:-40s;--b:0;--m:26s;--f:1"><img src="assets/img/portada/encabezado/nube-1.webp" alt="" aria-hidden="true" decoding="async"></div><div class="nb" style="--t:22cqh;--w:38cqh;--o:.7;--s:230s;--dl:-150s;--b:.6px;--m:32s;--f:-1"><img src="assets/img/portada/encabezado/nube-3.webp" alt="" aria-hidden="true" decoding="async"></div><div class="nb" style="--t:4cqh;--w:30cqh;--o:.8;--s:140s;--dl:-95s;--b:0;--m:20s;--f:-1"><img src="assets/img/portada/encabezado/nube-2.webp" alt="" aria-hidden="true" decoding="async"></div><div class="nb" style="--t:44cqh;--w:26cqh;--o:.55;--s:260s;--dl:-20s;--b:1px;--m:36s;--f:1"><img src="assets/img/portada/encabezado/nube-3.webp" alt="" aria-hidden="true" decoding="async"></div><div class="nb" style="--t:30cqh;--w:34cqh;--o:.85;--s:190s;--dl:-120s;--b:0;--m:24s;--f:-1"><img src="assets/img/portada/encabezado/nube-1.webp" alt="" aria-hidden="true" decoding="async"></div>
 <div class="esc">
-<img class="o o-sol" src="assets/img/portada/escena/sol.webp" width="286" height="270" alt="" aria-hidden="true" decoding="async"><img class="o o-n1" src="assets/img/portada/escena/nube-1.webp" width="365" height="243" alt="" aria-hidden="true" decoding="async"><img class="o o-n2" src="assets/img/portada/escena/nube-2.webp" width="316" height="200" alt="" aria-hidden="true" decoding="async"><img class="o o-n3" src="assets/img/portada/escena/nube-3.webp" width="284" height="171" alt="" aria-hidden="true" decoding="async">
-<img class="o o-b1" src="assets/img/portada/escena/banderines-1.webp" width="336" height="152" alt="" aria-hidden="true" decoding="async"><img class="o o-b2" src="assets/img/portada/escena/banderines-2.webp" width="324" height="144" alt="" aria-hidden="true" decoding="async">
-<img class="o o-ai" src="assets/img/portada/escena/arbol.webp" width="288" height="281" alt="" aria-hidden="true" decoding="async"><img class="o o-ad" src="assets/img/portada/escena/arbol.webp" width="288" height="281" alt="" aria-hidden="true" decoding="async"><img class="o o-col" src="assets/img/portada/escena/colegio.webp" width="353" height="201" alt="" aria-hidden="true" decoding="async"><img class="o o-ban" src="assets/img/portada/escena/bandera.webp" width="243" height="226" alt="" aria-hidden="true" decoding="async">
-<img class="o o-est" src="assets/img/portada/escena/estudiantes.webp" width="346" height="252" alt="" aria-hidden="true" decoding="async"><img class="o o-s1" src="assets/img/portada/escena/seto.webp" width="345" height="143" alt="" aria-hidden="true" decoding="async"><img class="o o-s2" src="assets/img/portada/escena/seto.webp" width="345" height="143" alt="" aria-hidden="true" decoding="async"><img class="o o-s3" src="assets/img/portada/escena/seto.webp" width="345" height="143" alt="" aria-hidden="true" decoding="async">
-<img class="bri b1" src="assets/img/portada/escena/brillo-01.webp" width="94" height="100" alt="" aria-hidden="true" decoding="async"><img class="bri b2" src="assets/img/portada/escena/brillo-02.webp" width="98" height="103" alt="" aria-hidden="true" decoding="async"><img class="bri b3" src="assets/img/portada/escena/brillo-03.webp" width="92" height="99" alt="" aria-hidden="true" decoding="async"><img class="bri b4" src="assets/img/portada/escena/brillo-04.webp" width="98" height="104" alt="" aria-hidden="true" decoding="async"><img class="bri b5" src="assets/img/portada/escena/brillo-05.webp" width="94" height="103" alt="" aria-hidden="true" decoding="async">
-<div class="placa">
-<img class="esc2" src="assets/img/escudo.webp" width="600" height="726" alt="Escudo del Colegio Integrado Simón Bolívar" fetchpriority="high">
-<div><p class="k">Institución Educativa</p><h1>Colegio Integrado <b>Simón Bolívar</b></h1><p class="lm">Todos somos <span>Col</span><em>Bolívar</em> · Cúcuta</p></div>
-<div class="cts"><a class="cta v" href="#servicios">Ver servicios</a><a class="cta n" href="colbolivar-radio/">Radio ColBolívar</a></div>
-</div>
+<img class="E t1" src="assets/img/portada/encabezado/arbol-1.webp" alt="" aria-hidden="true" decoding="async" data-d="14"><img class="E t2" src="assets/img/portada/encabezado/arbol-2.webp" alt="" aria-hidden="true" decoding="async" data-d="14">
+<img class="E fach" data-d="20" src="assets/img/portada/encabezado/fachada.webp" alt="Fachada del Colegio Integrado Simón Bolívar" decoding="async">
+<img class="E escu" data-d="24" src="assets/img/escudo.webp" alt="Escudo del Colegio Integrado Simón Bolívar" fetchpriority="high">
+<div class="pan" data-d="28"><img src="assets/img/portada/encabezado/panel-titulo.webp" alt="" aria-hidden="true"><div class="tx"><small>Institución Educativa · Cúcuta</small><h1>Colegio Integrado <b>Simón Bolívar</b></h1></div></div>
+<div class="lema-p" data-d="30"><img src="assets/img/portada/encabezado/pildora.webp" alt="" aria-hidden="true"><span>Todos somos ColBolívar</span></div>
+<nav class="hc" aria-label="Accesos principales"><a class="v" href="#servicios">Ver servicios</a><a class="n" href="colbolivar-radio/">Radio ColBolívar</a></nav>
+<img class="E acad libros" src="assets/img/portada/encabezado/libros.webp" alt="" aria-hidden="true" decoding="async" data-d="34"><img class="E acad birr" src="assets/img/portada/encabezado/birrete.webp" alt="" aria-hidden="true" decoding="async" data-d="40"><img class="E acad dipl" src="assets/img/portada/encabezado/diploma.webp" alt="" aria-hidden="true" decoding="async" data-d="36"><img class="E acad glb" src="assets/img/portada/encabezado/globo.webp" alt="" aria-hidden="true" decoding="async" data-d="34">
+<div class="L tierra"></div>
+<img class="E cn" src="assets/img/portada/encabezado/cinta-naranja.webp" alt="" aria-hidden="true" decoding="async" data-d="26"><img class="E cb" src="assets/img/portada/encabezado/cinta-blanca.webp" alt="" aria-hidden="true" decoding="async" data-d="26"><img class="E fol" src="assets/img/portada/encabezado/follaje.webp" alt="" aria-hidden="true" decoding="async" data-d="46"><img class="E arb" src="assets/img/portada/encabezado/arbusto.webp" alt="" aria-hidden="true" decoding="async" data-d="46">
 </div>
 </header>
 <div class="stage" id="stage" role="region" aria-label="Lemas institucionales">
@@ -609,5 +622,6 @@ if('serviceWorker' in navigator&&location.protocol==='https:')navigator.serviceW
 </script>
 <iframe id="aria-if" src="aria-widget.html" title="ARIA, asistente virtual del colegio" allow="autoplay" loading="lazy" style="position:fixed;right:0;bottom:0;width:150px;height:250px;border:0;background:transparent;color-scheme:light;z-index:61"></iframe>
 <script src="assets/js/nav.js" defer></script>
+<script src="assets/js/encabezado.js" defer></script>
 </body>
 </html>
