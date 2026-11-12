@@ -153,6 +153,14 @@ img{max-width:100%}
 @media(hover:none){.svc .go{opacity:.5;transform:none}}
 .svc .lkb{display:inline-flex;align-items:center;gap:5px;margin-top:5px;padding:2px 9px;border-radius:999px;font:600 .74rem var(--fs);color:#6B4B05;background:#FBF1DA;border:1px solid #E6D19B}
 .svc .lkb .i{width:12px;height:12px}
+.qres{margin:0 0 20px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 14px 14px;box-shadow:0 10px 26px rgba(0,0,0,.09)}
+.qres h3{margin:12px 0 4px;font:700 .78rem var(--fs);text-transform:uppercase;letter-spacing:.07em;color:var(--mut)}
+.qres h3:first-child{margin-top:2px}
+.qres .it{display:block;padding:9px 10px;border-radius:10px;color:var(--ink);text-decoration:none;transition:background .15s}
+.qres .it:hover,.qres .it:focus-visible{background:#eaf5ed;outline:none}
+.qres .it b{display:block;font-weight:700}.qres .it small{display:block;color:var(--mut);margin-top:2px;line-height:1.35}
+.qres .it p{margin:3px 0 0;font-size:.9rem;color:#33443a;line-height:1.4}.qres mark{background:#ffe48a;color:inherit;border-radius:3px;padding:0 1px}
+.qres .nt{margin:6px 2px;color:var(--mut);font-size:.92rem}
 .none{display:none;text-align:center;color:var(--mut);padding:22px}
 
 /* ---- ColBolívar Radio ---- */
@@ -457,7 +465,8 @@ fit();addEventListener('resize',fit);addEventListener('DOMContentLoaded',fit);
 <div class="nota" id="hav" hidden><svg class="i" aria-hidden="true"><use href="#i-bell"/></svg><span id="hav-t"></span></div>
 </section>
 <section id="servicios" aria-labelledby="svt">
-<div class="sec-h"><div><h2 id="svt">Encuentra rápido lo que necesitas</h2><p>Todos los servicios del colegio, en un solo lugar.</p></div><div class="srch"><svg class="i" aria-hidden="true"><use href="#i-search"/></svg><input id="q" type="search" placeholder="Buscar: planes, biblioteca, circulares, notas…" aria-label="Buscar un servicio"><kbd aria-hidden="true">/</kbd></div></div>
+<div class="sec-h"><div><h2 id="svt">Encuentra rápido lo que necesitas</h2><p>Servicios, documentos y páginas del colegio, en un solo lugar.</p></div><div class="srch"><svg class="i" aria-hidden="true"><use href="#i-search"/></svg><input id="q" type="search" placeholder="Buscar: PEI, SIEE, manual de convivencia, circulares, notas…" aria-label="Buscar servicios, documentos y páginas del colegio" autocomplete="off"><kbd aria-hidden="true">/</kbd></div></div>
+<div class="qres" id="qres" hidden aria-live="polite"></div>
 <div class="cats" id="cats"></div>
 <p class="none" id="none">No encontramos esa sección. Prueba con otra palabra.</p>
 </section>
@@ -621,7 +630,32 @@ const CA=$('#cats');
 const ICN=n=>'<svg class="i" aria-hidden="true"><use href="#i-'+n+'"/></svg>';
 CA.innerHTML=CATS.map(c=>'<article class="cat c-'+c.c+' rv" data-cat="'+c.id+'"><header class="cat-h" style="--ph:url('+IMG+'nuevo/'+c.ph+'.webp)"><h3>'+c.t+'</h3></header><div class="cards">'+c.it.map(t=>{const lk=LOCK.includes(t[0]);return '<a class="svc '+c.c+(lk?' lock':'')+'" '+(t[2].startsWith(G)?'':'target="_blank" rel="noopener" ')+'href="'+t[2]+'" data-k="'+(t[0]+' '+t[1]).toLowerCase()+'"><span class="ic">'+ICN(t[3])+'</span><span class="tx"><b>'+t[0]+'</b><small>'+t[1]+'</small>'+(lk?'<span class="lkb">'+ICN('lock')+'Solo docentes</span>':'')+'</span><span class="go">'+ICN('arrow-up-right')+'</span></a>'}).join('')+'</div></article>').join('');
 addEventListener('keydown',e=>{if(e.key==='/'&&!/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)&&MD.hidden){e.preventDefault();$('#q').focus()}});
-$('#q').addEventListener('input',e=>{const v=e.target.value.toLowerCase().trim();let n=0;$$('.svc').forEach(a=>{const ok=!v||a.dataset.k.includes(v);a.style.display=ok?'':'none';if(ok)n++});$$('.cat').forEach(c=>{c.style.display=[...c.querySelectorAll('.svc')].some(a=>a.style.display!=='none')?'':'none'});$('#none').style.display=n?'none':'block'});
+(()=>{const q=$('#q'),R=$('#qres');let tm,hasSvc=0;
+const E=t=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const N=t=>String(t||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+const SIN={pei:['pei','resignificacion'],siee:['siee','evaluacion'],piar:['piar'],pegrd:['pegrd','riesgo'],dua:['dua'],manual:['manual']};
+const rel=u=>{const m=String(u).split('#')[0].match(/\/ColBolivar2026\/(.+)$/);try{return decodeURIComponent(m?m[1]:u)}catch(e){return m?m[1]:u}};
+const vlink=(r,t,p,v)=>'visor.html?'+new URLSearchParams(Object.assign({f:r,t:t||''},p?{p:p}:{},v?{q:v}:{})).toString();
+const isPdf=u=>/\.pdf$/i.test(String(u).split('#')[0]);
+function filtrar(v){let n=0;$$('.svc').forEach(a=>{const ok=!v||a.dataset.k.includes(v);a.style.display=ok?'':'none';if(ok)n++});$$('.cat').forEach(c=>{c.style.display=[...c.querySelectorAll('.svc')].some(a=>a.style.display!=='none')?'':'none'});return n}
+q.addEventListener('focus',()=>{if(window.ARIA_DOCS)ARIA_DOCS.ready().catch(()=>{})});
+q.addEventListener('input',()=>{const raw=q.value.trim(),v=raw.toLowerCase();hasSvc=filtrar(v);$('#none').style.display='none';clearTimeout(tm);
+ if(raw.length<2){R.hidden=true;R.innerHTML='';if(!hasSvc&&raw)$('#none').style.display='block';return}
+ R.hidden=false;if(!R.innerHTML)R.innerHTML='<p class="nt">Buscando en servicios, documentos y páginas…</p>';tm=setTimeout(()=>todo(raw),280)});
+q.addEventListener('keydown',e=>{if(e.key==='Escape'){q.value='';q.dispatchEvent(new Event('input'))}});
+function todo(raw){const A=window.ARIA_DOCS;if(!A){R.innerHTML='<p class="nt">El buscador de documentos no está disponible ahora. Aún puedes usar los servicios de abajo.</p>';return}
+ Promise.all([A.catalogo(),A.buscarFragmentos(raw,{n:14})]).then(([cat,fr])=>{if(q.value.trim()!==raw)return;
+  const toks=N(raw).split(/[^a-z0-9]+/).filter(w=>w.length>1);
+  const ok=d=>{const h=N(d.t+' '+rel(d.u));return toks.length&&toks.every(w=>h.includes(w)||(SIN[w]||[]).some(x=>h.includes(x)))};
+  const docs=cat.filter(d=>!/(^|\/)index\.html$/i.test(d.u)&&ok(d)).slice(0,6);
+  const seen=new Set(),frs=fr.filter(x=>{const k=x.base+'|'+x.p;if(seen.has(k))return false;seen.add(k);return true}).slice(0,6);
+  let h='';
+  if(hasSvc)h+='<p class="nt">✔ '+hasSvc+' servicio'+(hasSvc>1?'s coinciden':' coincide')+' más abajo.</p>';
+  if(docs.length)h+='<h3>Documentos y páginas</h3>'+docs.map(d=>{const pdf=isPdf(d.u);return '<a class="it" href="'+E(pdf?vlink(rel(d.u),d.t,0,raw):d.u)+'" target="_blank" rel="noopener"><b>'+(pdf?'📄 ':'🌐 ')+E(d.t)+' ↗</b><small>'+(pdf?'Documento PDF'+(d.pag?' · '+d.pag+' páginas':''):'Página del sitio')+'</small></a>'}).join('');
+  if(frs.length)h+='<h3>Dentro de los documentos</h3>'+frs.map(x=>'<a class="it" href="'+E(x.pdf?vlink(x.rel,x.t,x.p,raw):x.u)+'" target="_blank" rel="noopener"><b>'+(x.pdf?'📄 ':'🌐 ')+E(x.t)+(x.p?' · pág. '+x.p:'')+' ↗</b><p>«'+x.html+'»</p></a>').join('');
+  if(!docs.length&&!frs.length){h+=hasSvc?'':'<p class="nt">No encontré «'+E(raw)+'» en servicios, documentos ni páginas. Prueba con otra palabra, una sigla (PEI, SIEE, PIAR) o pregúntale a ARIA.</p>'}
+  R.innerHTML=h||'<p class="nt">Sin resultados.</p>'}).catch(()=>{R.innerHTML='<p class="nt">No se pudo cargar el buscador de documentos. Revisa tu conexión.</p>'})}
+})();
 
 /* ====== CARTA DE NAVEGACIÓN (pestañas) ====== */
 const CARTA=[['Misión','El Colegio Simón Bolívar es una institución de carácter oficial que ofrece un servicio de calidad en los niveles de Preescolar, Básica, Media Académica y Técnica, propendiendo por la formación integral del estudiante desde el «saber ser», «saber hacer» y «saber saber». Con el desarrollo de proyectos en el marco de la inclusión educativa, la evaluación formativa y el trabajo colaborativo que fortalecen la construcción de proyectos de vida con éxito.'],['Visión','La Institución Educativa Colegio Simón Bolívar en el año 2027 será reconocida a nivel regional y nacional por desarrollar procesos académicos y administrativos de alta calidad, apoyada en el manejo de las TIC, la inclusión escolar y la convivencia ciudadana post pandemia.'],['Política de calidad','Ofrecer un servicio educativo de alta calidad, que fortalezca en su comunidad el liderazgo, la comunicación y el trabajo en equipo, contando para ello con recursos físicos, financieros y tecnológicos apropiados y con un talento humano competente, que contribuya con el mejoramiento continuo de los procesos de la gestión escolar, para responder a las necesidades y expectativas de los actores educativos y su entorno.']];
@@ -685,6 +719,7 @@ if('serviceWorker' in navigator&&location.protocol==='https:')navigator.serviceW
 })();
 </script>
 <iframe id="aria-if" src="aria-widget.html" title="ARIA, asistente virtual del colegio" allow="autoplay" loading="lazy" style="position:fixed;right:0;bottom:0;width:150px;height:250px;border:0;background:transparent;color-scheme:light;z-index:61"></iframe>
+<script>window.ARIA_DOCS_NOAUTO=1</script><script src="aria-docs.js" defer></script>
 <script src="assets/js/nav.js" defer></script>
 <script src="assets/js/encabezado.js" defer></script>
 </body>
