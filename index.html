@@ -160,6 +160,12 @@ img{max-width:100%}
 .qres .it:hover,.qres .it:focus-visible{background:#eaf5ed;outline:none}
 .qres .it b{display:block;font-weight:700}.qres .it small{display:block;color:var(--mut);margin-top:2px;line-height:1.35}
 .qres .it p{margin:3px 0 0;font-size:.9rem;color:#33443a;line-height:1.4}.qres mark{background:#ffe48a;color:inherit;border-radius:3px;padding:0 1px}
+.qres .ar{margin:4px 0 10px;padding:12px 14px;border-radius:12px;background:#f0f8f2;border-left:4px solid #1b8a35}
+.qres .ar>b{display:block;font-size:.82rem;text-transform:uppercase;letter-spacing:.06em;color:#0d5a1e;margin-bottom:4px}
+.qres .ar p{margin:0;line-height:1.5}.qres .ar .lk{margin-top:6px;font-size:.92rem}.qres .ar a{color:#0d5a1e;font-weight:600}
+.qres details{margin:6px 0;padding:8px 12px;border:1px solid var(--line);border-radius:10px}.qres summary{cursor:pointer;font-weight:600}.qres details p{margin:6px 0 0;line-height:1.5}
+.qres .ab,.qres .chip{font:600 .9rem var(--fs);cursor:pointer;border:1px solid #1b8a35;background:#fff;color:#0d5a1e;border-radius:999px;padding:7px 14px;margin:4px 6px 0 0;transition:background .15s,transform .15s}
+.qres .ab{background:#1b8a35;color:#fff}.qres .ab:hover,.qres .chip:hover{transform:translateY(-1px);box-shadow:0 0 10px rgba(255,205,70,.8)}.qres .chip:hover{background:#eaf5ed}
 .qres .nt{margin:6px 2px;color:var(--mut);font-size:.92rem}
 .none{display:none;text-align:center;color:var(--mut);padding:22px}
 
@@ -643,18 +649,36 @@ q.addEventListener('input',()=>{const raw=q.value.trim(),v=raw.toLowerCase();has
  if(raw.length<2){R.hidden=true;R.innerHTML='';if(!hasSvc&&raw)$('#none').style.display='block';return}
  R.hidden=false;if(!R.innerHTML)R.innerHTML='<p class="nt">Buscando en servicios, documentos y páginas…</p>';tm=setTimeout(()=>todo(raw),280)});
 q.addEventListener('keydown',e=>{if(e.key==='Escape'){q.value='';q.dispatchEvent(new Event('input'))}});
-function todo(raw){const A=window.ARIA_DOCS;if(!A){R.innerHTML='<p class="nt">El buscador de documentos no está disponible ahora. Aún puedes usar los servicios de abajo.</p>';return}
- Promise.all([A.catalogo(),A.buscarFragmentos(raw,{n:14})]).then(([cat,fr])=>{if(q.value.trim()!==raw)return;
+const SW=new Set('de la las los el un una unos unas y o a en que se por con para es al del lo como mas pero sus le ya mi tu su si no hay cual cuales quien esta este esto son ser fue sobre entre me te nos hola aria dime quiero necesito favor puedes dice dicen saber quisiera podria porfa gracias buenas buenos dias tardes noches colegio institucion'.split(' '));
+const st=w=>w.length>3?w.replace(/(es|s)$/,''):w,tk=t=>N(t).split(/[^a-z0-9]+/).filter(w=>w&&!SW.has(w)).map(st);
+let KB=null,kbP=null;
+const kbLoad=()=>kbP||(kbP=fetch('aria-conocimiento/base-colegio.json').then(r=>r.json()).then(j=>(KB=(j.entradas||[]).map(e=>{const k=new Set(),t=new Set(),r=new Set();(e.claves||[]).forEach(c=>tk(c).forEach(w=>k.add(w)));tk(e.tema).forEach(w=>t.add(w));tk(e.respuesta).forEach(w=>r.add(w));e._f=(e.claves||[]).map(c=>' '+tk(c).join(' ')+' ').filter(f=>f.trim());e._k=k;e._t=t;e._r=r;return e}))).catch(()=>(KB=[])));
+function kbBuscar(raw){const qt=tk(raw),pad=' '+qt.join(' ')+' ';if(!qt.length||!KB)return[];
+ const r=KB.map(e=>{let s=0;e._f.forEach(f=>{if(pad.includes(f))s+=3+f.trim().split(' ').length});qt.forEach(w=>{if(e._k.has(w))s+=2;else if(e._t.has(w))s+=1.5;else if(e._r.has(w))s+=.5});return{e,s}}).filter(x=>x.s>=2.5).sort((a,b)=>b.s-a.s);
+ return r.length?r.filter((x,i)=>i<3&&x.s>=r[0].s*.5):[]}
+const enl=e=>(e.enlaces&&e.enlaces.length)?'<div class="lk">'+e.enlaces.map(l=>'<a href="'+E(l.u)+'" target="_blank" rel="noopener">'+E(l.t)+' ↗</a>').join(' · ')+'</div>':'';
+function sugerir(){if(q.value.trim())return;kbLoad().then(kb=>{if(q.value.trim()||!kb.length)return;const pick=kb.filter(e=>e.tema).slice(0,8);R.hidden=false;R.classList.add('sug');R.innerHTML='<p class="nt">Escribe o toca una pregunta frecuente:</p>'+pick.map(e=>'<button type="button" class="chip" data-t="'+E(e.tema)+'">'+E(e.tema)+'</button>').join('')})}
+q.addEventListener('focus',()=>{kbLoad();sugerir()});
+R.addEventListener('click',e=>{const c=e.target.closest('.chip');if(c){q.value=c.dataset.t;R.classList.remove('sug');q.dispatchEvent(new Event('input'));return}const b=e.target.closest('.ab');if(b&&window.ariaPreguntar)ariaPreguntar(b.dataset.q)});
+document.addEventListener('click',e=>{if(R.classList.contains('sug')&&!e.target.closest('#qres,#q')){R.hidden=true;R.classList.remove('sug')}});
+function todo(raw){R.classList.remove('sug');const A=window.ARIA_DOCS;
+ Promise.all([kbLoad(),A?A.catalogo():[],A?A.buscarFragmentos(raw,{n:14}):[],A?A.responder(raw).catch(()=>null):null]).then(([kb,cat,fr,ra])=>{if(q.value.trim()!==raw)return;
   const toks=N(raw).split(/[^a-z0-9]+/).filter(w=>w.length>1);
   const ok=d=>{const h=N(d.t+' '+rel(d.u));return toks.length&&toks.every(w=>h.includes(w)||(SIN[w]||[]).some(x=>h.includes(x)))};
   const docs=cat.filter(d=>!/(^|\/)index\.html$/i.test(d.u)&&ok(d)).slice(0,6);
   const seen=new Set(),frs=fr.filter(x=>{const k=x.base+'|'+x.p;if(seen.has(k))return false;seen.add(k);return true}).slice(0,6);
+  const kr=kbBuscar(raw),conTexto=!kr.length&&ra&&/«|📚|Así empieza|tiene <b>/.test(ra);
   let h='';
+  if(kr.length){const x=kr[0].e;h+='<div class="ar"><b>🤖 ARIA responde · '+E(x.tema||'')+'</b><p>'+E(x.respuesta)+'</p>'+enl(x)+'</div>';
+   kr.slice(1).forEach(y=>{h+='<details><summary>También te puede servir: '+E(y.e.tema||'')+'</summary><p>'+E(y.e.respuesta)+'</p>'+enl(y.e)+'</details>'})}
+  if(conTexto)h+='<div class="ar"><b>📄 ARIA encontró en los documentos</b><p>'+ra+'</p></div>';
   if(hasSvc)h+='<p class="nt">✔ '+hasSvc+' servicio'+(hasSvc>1?'s coinciden':' coincide')+' más abajo.</p>';
   if(docs.length)h+='<h3>Documentos y páginas</h3>'+docs.map(d=>{const pdf=isPdf(d.u);return '<a class="it" href="'+E(pdf?vlink(rel(d.u),d.t,0,raw):d.u)+'" target="_blank" rel="noopener"><b>'+(pdf?'📄 ':'🌐 ')+E(d.t)+' ↗</b><small>'+(pdf?'Documento PDF'+(d.pag?' · '+d.pag+' páginas':''):'Página del sitio')+'</small></a>'}).join('');
-  if(frs.length)h+='<h3>Dentro de los documentos</h3>'+frs.map(x=>'<a class="it" href="'+E(x.pdf?vlink(x.rel,x.t,x.p,raw):x.u)+'" target="_blank" rel="noopener"><b>'+(x.pdf?'📄 ':'🌐 ')+E(x.t)+(x.p?' · pág. '+x.p:'')+' ↗</b><p>«'+x.html+'»</p></a>').join('');
-  if(!docs.length&&!frs.length){h+=hasSvc?'':'<p class="nt">No encontré «'+E(raw)+'» en servicios, documentos ni páginas. Prueba con otra palabra, una sigla (PEI, SIEE, PIAR) o pregúntale a ARIA.</p>'}
-  R.innerHTML=h||'<p class="nt">Sin resultados.</p>'}).catch(()=>{R.innerHTML='<p class="nt">No se pudo cargar el buscador de documentos. Revisa tu conexión.</p>'})}
+  if(frs.length&&!conTexto&&!kr.length)h+='<h3>Dentro de los documentos</h3>'+frs.map(x=>'<a class="it" href="'+E(x.pdf?vlink(x.rel,x.t,x.p,raw):x.u)+'" target="_blank" rel="noopener"><b>'+(x.pdf?'📄 ':'🌐 ')+E(x.t)+(x.p?' · pág. '+x.p:'')+' ↗</b><p>«'+x.html+'»</p></a>').join('');
+  else if(frs.length&&!kr.length)h+='<h3>Más coincidencias en los documentos</h3>'+frs.slice(0,3).map(x=>'<a class="it" href="'+E(x.pdf?vlink(x.rel,x.t,x.p,raw):x.u)+'" target="_blank" rel="noopener"><b>'+(x.pdf?'📄 ':'🌐 ')+E(x.t)+(x.p?' · pág. '+x.p:'')+' ↗</b></a>').join('');
+  if(!kr.length&&!conTexto&&!docs.length&&!frs.length&&!hasSvc)h+='<p class="nt">No encontré «'+E(raw)+'» en servicios, documentos ni páginas.</p>';
+  h+='<button type="button" class="ab" data-q="'+E(raw)+'">💬 Preguntarle a ARIA: «'+E(raw.length>40?raw.slice(0,40)+'…':raw)+'»</button>';
+  R.innerHTML=h}).catch(()=>{R.innerHTML='<p class="nt">No se pudo cargar el buscador. Revisa tu conexión.</p>'})}
 })();
 
 /* ====== CARTA DE NAVEGACIÓN (pestañas) ====== */
