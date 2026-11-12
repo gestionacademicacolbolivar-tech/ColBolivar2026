@@ -1,4 +1,4 @@
-const C='colbolivar-v9';
+const C='colbolivar-v13';
 const CORE=['./','./index.html','./datos/hoy-data.js','./datos/cumpleanos-data.js','./favicon.ico','./assets/img/escudo.webp','./assets/icons/icon-192.png','./assets/css/ui.css','./assets/js/nav.js','./PROCESOS.html','./procesos/procesos.json','./aria-kb.js','./aria-conocimiento/base-colegio.json','./assets/img/ui-nav.webp','./assets/img/ui-docs.webp','./assets/img/46b47eb28f.webp'];
 const CACHEABLE=/\.(html|js|css|webp|png|jpe?g|svg|json|webmanifest)$|\/$/i;
 self.addEventListener('install',e=>{self.skipWaiting();e.waitUntil(caches.open(C).then(c=>c.addAll(CORE).catch(()=>{})))});

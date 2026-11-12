@@ -42,24 +42,28 @@ img{max-width:100%}
 /* nubes: viajan de lado a lado con el viento; lejanas = más lentas, pequeñas y tenues */
 .nb{position:absolute;left:0;top:var(--t);width:var(--w);z-index:2;pointer-events:none;opacity:var(--o);animation:viento var(--s) linear var(--dl) infinite}
 .nb img{display:block;width:100%;height:auto;transform:scaleX(var(--f,1));animation:forma var(--m,22s) ease-in-out infinite alternate;filter:blur(var(--b,0px)) drop-shadow(0 5px 6px rgba(20,60,120,.18))}
-@keyframes viento{0%{transform:translateX(-45vw)}100%{transform:translateX(112vw)}}
+@keyframes viento{0%{transform:translateX(112vw)}100%{transform:translateX(-45vw)}}
 @keyframes forma{from{translate:0 0;scale:1 1}to{translate:0 -7px;scale:1.07 .96}}
 .hero .esc{position:relative;height:100%;max-width:1500px;margin:0 auto;z-index:3}
 .hero .E{position:absolute;display:block;pointer-events:none;user-select:none;will-change:translate}
 .E.t1{left:-1%;bottom:14cqh;height:58cqh;z-index:2}.E.t2{right:-1%;bottom:14cqh;height:52cqh;z-index:2}
 .E.fach{right:4%;bottom:11cqh;height:64cqh;z-index:3;filter:drop-shadow(0 12px 12px rgba(0,0,0,.35))}
-.E.escu{left:1.2%;top:7cqh;height:86cqh;z-index:5;filter:drop-shadow(0 8px 10px rgba(0,0,0,.45))}
-.pan{position:absolute;left:18%;top:11cqh;height:38cqh;aspect-ratio:1080/215;z-index:5;filter:drop-shadow(0 10px 10px rgba(0,0,0,.4))}
-.pan>img{width:100%;height:100%;display:block}
-.pan .tx{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2% 9% 0;color:#fff;white-space:nowrap}
-.pan small{font:700 clamp(7px,3.8cqh,11px)/1 Sora,sans-serif;letter-spacing:.3em;text-transform:uppercase;color:#f3d98b}
-.pan h1{margin:.2em 0 0;font:700 clamp(15px,9.2cqh,32px)/1.05 Georgia,"Times New Roman",serif;color:#fff;text-shadow:0 2px 5px rgba(0,0,0,.55)}.pan h1 b{color:#f6c945}
-.pan:after{content:"";position:absolute;inset:7% 4%;border-radius:40px;mix-blend-mode:overlay;background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.5) 50%,transparent 60%) 150% 0/250% 100% no-repeat;animation:brillo 7s ease-in-out infinite}
-@keyframes brillo{55%,100%{background-position:-60% 0}}
-.chis{position:absolute;width:7px;height:7px;border-radius:50%;background:#fff6c8;box-shadow:0 0 10px 3px #ffd24a;animation:chis 1.3s ease-out forwards;pointer-events:none}
-@keyframes chis{0%{transform:scale(0);opacity:0}30%{transform:scale(1);opacity:1}100%{transform:scale(.2);opacity:0}}
-.lema-p{position:absolute;left:24%;top:52cqh;height:14cqh;aspect-ratio:879/109;z-index:5;filter:drop-shadow(0 6px 6px rgba(0,0,0,.3))}
-.lema-p img{width:100%;height:100%;display:block}.lema-p span{position:absolute;inset:0;display:grid;place-items:center;font:800 clamp(9px,5.4cqh,15px) Sora,sans-serif;letter-spacing:.06em;color:#3b1d00}
+/* escudo: halo, flotación y brillo que recorre su silueta */
+.E.escw{left:1.2%;top:7cqh;height:86cqh;aspect-ratio:600/726;z-index:5}
+.escw .halo{position:absolute;inset:-14%;z-index:-1;background:radial-gradient(circle,rgba(255,226,120,.6),rgba(255,200,60,.18) 45%,transparent 68%);animation:halo 4.5s ease-in-out infinite}
+.escw img{position:relative;width:100%;height:100%;display:block;filter:drop-shadow(0 8px 10px rgba(0,0,0,.45));animation:flota 6s ease-in-out infinite}
+.escw .br,.logo .br{position:absolute;inset:0;pointer-events:none;-webkit-mask-size:100% 100%;mask-size:100% 100%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;background:linear-gradient(105deg,transparent 42%,rgba(255,255,255,.9) 50%,transparent 58%) 170% 0/260% 100% no-repeat;animation:barrido 6.5s ease-in-out infinite}
+.escw .br{-webkit-mask-image:url(assets/img/escudo.webp);mask-image:url(assets/img/escudo.webp);animation-delay:2.4s}
+@keyframes halo{50%{opacity:.55;transform:scale(1.08)}}@keyframes flota{50%{transform:translateY(-3px)}}@keyframes barrido{55%,100%{background-position:-70% 0}}
+/* logo "Todos somos ColBolívar": aura dorada, rayos de luz, barrido de brillo y estrellas */
+.logo{position:absolute;left:19%;top:9cqh;height:60cqh;aspect-ratio:900/302;z-index:5}
+.logo img{position:relative;width:100%;height:100%;display:block;filter:drop-shadow(0 6px 8px rgba(0,0,0,.45)) drop-shadow(0 0 10px rgba(255,214,90,.55));animation:aura 3.8s ease-in-out infinite}
+@keyframes aura{50%{filter:drop-shadow(0 6px 8px rgba(0,0,0,.45)) drop-shadow(0 0 22px rgba(255,232,130,.95))}}
+.logo .br{-webkit-mask-image:url(assets/img/portada/encabezado/lema-logo.webp);mask-image:url(assets/img/portada/encabezado/lema-logo.webp)}
+.logo .ry{position:absolute;left:50%;top:50%;width:140%;aspect-ratio:1;translate:-50% -50%;z-index:-1;mix-blend-mode:screen;background:repeating-conic-gradient(rgba(255,244,180,.4) 0 5deg,transparent 5deg 18deg);-webkit-mask-image:radial-gradient(circle,#000,transparent 62%);mask-image:radial-gradient(circle,#000,transparent 62%);animation:giro 45s linear infinite}
+@keyframes giro{to{rotate:1turn}}
+.est{position:absolute;width:18px;height:18px;pointer-events:none;background:#fff8d2;clip-path:polygon(50% 0,60% 40%,100% 50%,60% 60%,50% 100%,40% 60%,0 50%,40% 40%);filter:drop-shadow(0 0 4px #ffd24a);animation:est 1.5s ease-out forwards;z-index:3}
+@keyframes est{0%{transform:scale(0) rotate(0);opacity:0}35%{transform:scale(1) rotate(45deg);opacity:1}100%{transform:scale(.1) rotate(120deg);opacity:0}}
 .hc{position:absolute;left:19%;top:71cqh;z-index:6;display:flex;gap:10px}
 .hc a{position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:.5em;height:clamp(28px,12cqh,36px);padding:0 18px;border-radius:999px;font:800 clamp(11px,4.6cqh,14px) Sora,sans-serif;text-decoration:none;color:#fff;background:linear-gradient(#1b8a35,#0d5a1e);border:2px solid #e6b422;box-shadow:0 6px 10px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.35);transition:transform .2s,box-shadow .2s}
 .hc a.n{background:linear-gradient(#ffb02e,#f07a10);color:#3b1d00}
@@ -68,18 +72,20 @@ img{max-width:100%}
 .hc a:hover,.hc a:focus-visible{transform:translateY(-3px) scale(1.05);box-shadow:0 0 16px 3px rgba(255,205,70,.9),0 8px 12px rgba(0,0,0,.3);outline:none}
 .hc a:hover:before{left:130%}.hc a:hover:after{transform:translateX(5px)}
 .E.acad{z-index:5;filter:drop-shadow(0 8px 6px rgba(0,0,0,.4))}
-.E.libros{left:53%;bottom:10cqh;height:24cqh}.E.birr{left:54.2%;bottom:30cqh;height:17cqh;rotate:-7deg}.E.dipl{left:60%;bottom:9cqh;height:15cqh}
-.E.glb{right:.5%;bottom:10cqh;height:40cqh}
+.E.libros{left:51%;bottom:10cqh;height:34cqh}.E.birr{left:52.4%;bottom:38cqh;height:22cqh;rotate:-7deg}.E.dipl{left:60%;bottom:8cqh;height:23cqh}
+.E.glb{right:.5%;bottom:10cqh;height:62cqh;filter:drop-shadow(0 10px 8px rgba(0,0,0,.45))}
 .hero .tierra{left:0;right:0;bottom:0;height:13cqh;z-index:4;background:linear-gradient(#ffb21a 0 3px,#fff 3px 5px,#1c7a30 5px,#0d4a1b);box-shadow:0 -6px 12px rgba(0,0,0,.25)}
 .E.cn{left:-3%;bottom:1cqh;width:32%;z-index:6;filter:drop-shadow(0 5px 5px rgba(0,0,0,.4))}.E.cb{right:-3%;bottom:0;width:30%;z-index:6;transform:scaleX(-1)}
 .E.fol{left:11%;bottom:-3cqh;height:24cqh;z-index:6}.E.arb{right:12%;bottom:-3cqh;height:20cqh;z-index:6}
 .hero .tierra,.E.cn,.E.cb{opacity:1}
-@media(max-width:760px){.hero{--H:410px}
- .E.escu{left:3%;top:3cqh;height:36cqh}.E.fach{right:-18%;top:5cqh;bottom:auto;height:34cqh}.E.t1,.E.t2,.E.libros,.E.birr,.E.dipl,.E.glb,.E.cn,.E.cb,.hero .sol{display:none}
- .pan{left:3%;top:42cqh;width:94%;height:auto}.pan h1{font-size:clamp(15px,5.4vw,24px)}.pan small{font-size:clamp(6px,2.1vw,9px)}
- .lema-p{left:12%;top:63cqh;width:76%;height:auto}.lema-p span{font-size:clamp(9px,3.2vw,13px)}
- .hc{left:0;right:0;top:76cqh;justify-content:center}.hc a{height:34px;padding:0 14px;font-size:12px}.E.fol{left:2%;height:12cqh}.E.arb{right:2%;height:10cqh}}
-@media(prefers-reduced-motion:reduce){.hero *{animation:none!important}.nb{left:20%}}
+@media(max-width:760px){.hero{--H:235px}
+ .E.escw{left:3%;top:12cqh;height:52cqh}
+ .E.fach{left:auto;right:-8%;top:3cqh;bottom:auto;height:68cqh;opacity:.42;filter:saturate(.9)}
+ .E.t1,.E.t2,.E.libros,.E.birr,.E.dipl,.E.glb,.E.cn,.E.cb,.hero .sol{display:none}
+ .logo{left:calc(3% + 43cqh + 12px);top:19cqh;height:auto;width:min(66%,118cqh)}
+ .hc{left:0;right:0;top:67cqh;justify-content:center;gap:8px}.hc a{height:32px;padding:0 13px;font-size:12px}
+ .E.fol{left:2%;height:11cqh}.E.arb{right:2%;height:9cqh}}
+@media(prefers-reduced-motion:reduce){.hero *{animation:none!important}.hero .nb{left:0;animation:viento calc(var(--s)*1.8) linear var(--dl) infinite!important}}
 .stripe{height:5px;background:linear-gradient(90deg,#ffd23f 0 50%,#12306e 50% 75%,#d92d3a 75%)}
 
 /* ================= PORTADA INSTITUCIONAL (marcos, encabezados y fondos de los sprites) ================= */
@@ -142,6 +148,20 @@ img{max-width:100%}
 .svc:hover .go,.svc:focus-visible .go{opacity:1;transform:none}
 @media(hover:none){.svc .go{opacity:1;transform:none;top:-1.2em}}
 .svc .lkb{display:inline-block;margin-top:.35em;padding:.1em .7em;border-radius:999px;font:700 .8em var(--fs);color:#5A3E00;background:#FBE7B0;border:1px solid #D9A441}
+.qres{margin:1.2em 0 0;padding:.8em 1em 1em;border:12px solid transparent;border-image:url(assets/img/portada/nuevo/marco-borde.webp) 28 fill/12px stretch;filter:drop-shadow(0 8px 12px rgba(12,42,24,.25))}
+.qres h3{margin:12px 0 4px;font:700 .85em var(--fs);text-transform:uppercase;letter-spacing:.07em;color:var(--mut)}
+.qres h3:first-child{margin-top:2px}
+.qres .it{display:block;padding:.6em .7em;border-radius:10px;color:var(--ink);text-decoration:none;transition:background .15s}
+.qres .it:hover,.qres .it:focus-visible{background:#FFF1DE;box-shadow:inset .3em 0 0 #F58220;outline:none}
+.qres .it b{display:block;font-weight:700}.qres .it small{display:block;color:var(--mut);margin-top:2px;line-height:1.35}
+.qres .it p{margin:3px 0 0;font-size:.95em;color:#33443a;line-height:1.4}.qres mark{background:#ffe48a;color:inherit;border-radius:3px;padding:0 1px}
+.qres .ar{margin:4px 0 10px;padding:12px 14px;border-radius:12px;background:#f0f8f2;border-left:4px solid #1b8a35}
+.qres .ar>b{display:block;font-size:.82rem;text-transform:uppercase;letter-spacing:.06em;color:#0d5a1e;margin-bottom:4px}
+.qres .ar p{margin:0;line-height:1.5}.qres .ar .lk{margin-top:6px;font-size:.92rem}.qres .ar a{color:#0d5a1e;font-weight:600}
+.qres details{margin:6px 0;padding:8px 12px;border:1px solid var(--line);border-radius:10px}.qres summary{cursor:pointer;font-weight:600}.qres details p{margin:6px 0 0;line-height:1.5}
+.qres .ab,.qres .chip{font:700 .95em var(--fs);cursor:pointer;border:1px solid #1b8a35;background:#fff;color:#0d5a1e;border-radius:999px;padding:7px 14px;margin:4px 6px 0 0;transition:background .15s,transform .15s}
+.qres .ab{background:#1b8a35;color:#fff}.qres .ab:hover,.qres .chip:hover{transform:translateY(-1px);box-shadow:0 0 10px rgba(255,205,70,.8)}.qres .chip:hover{background:#eaf5ed}
+.qres .nt{margin:6px 2px;color:var(--mut);font-size:.95em}
 .none{display:none;text-align:center;color:var(--mut);padding:1.4em}
 
 /* efecto de foco que sigue al mouse + onda al hacer clic (JS) */
@@ -387,15 +407,15 @@ fit();addEventListener('resize',fit);addEventListener('DOMContentLoaded',fit);
 <a class="skip" href="#main">Saltar al contenido</a>
 <header class="hero" id="hero">
 <img class="L cielo" src="assets/img/portada/encabezado/cielo.webp" alt="" aria-hidden="true" decoding="async"><img class="L sol" src="assets/img/portada/encabezado/sol.webp" alt="" aria-hidden="true" decoding="async"><img class="L hz" src="assets/img/portada/encabezado/paisaje.webp" alt="" aria-hidden="true" decoding="async">
-<div class="nb" style="--t:-8cqh;--w:46cqh;--o:.95;--s:170s;--dl:-40s;--b:0;--m:26s;--f:1"><img src="assets/img/portada/encabezado/nube-1.webp" alt="" aria-hidden="true" decoding="async"></div><div class="nb" style="--t:22cqh;--w:38cqh;--o:.7;--s:230s;--dl:-150s;--b:.6px;--m:32s;--f:-1"><img src="assets/img/portada/encabezado/nube-3.webp" alt="" aria-hidden="true" decoding="async"></div><div class="nb" style="--t:4cqh;--w:30cqh;--o:.8;--s:140s;--dl:-95s;--b:0;--m:20s;--f:-1"><img src="assets/img/portada/encabezado/nube-2.webp" alt="" aria-hidden="true" decoding="async"></div><div class="nb" style="--t:44cqh;--w:26cqh;--o:.55;--s:260s;--dl:-20s;--b:1px;--m:36s;--f:1"><img src="assets/img/portada/encabezado/nube-3.webp" alt="" aria-hidden="true" decoding="async"></div><div class="nb" style="--t:30cqh;--w:34cqh;--o:.85;--s:190s;--dl:-120s;--b:0;--m:24s;--f:-1"><img src="assets/img/portada/encabezado/nube-1.webp" alt="" aria-hidden="true" decoding="async"></div>
+<div class="nb" style="--t:-6cqh;--w:64cqh;--o:0.95;--s:115s;--dl:-71s;--b:0px;--m:26s;--f:1"><img src="assets/img/portada/encabezado/nb2.webp" alt="" aria-hidden="true" decoding="async"></div><div class="nb" style="--t:10cqh;--w:84cqh;--o:0.92;--s:145s;--dl:-58s;--b:0px;--m:30s;--f:-1"><img src="assets/img/portada/encabezado/nb1.webp" alt="" aria-hidden="true" decoding="async"></div><div class="nb" style="--t:0cqh;--w:72cqh;--o:0.6;--s:85s;--dl:-66s;--b:0.4px;--m:18s;--f:1"><img src="assets/img/portada/encabezado/nb5.webp" alt="" aria-hidden="true" decoding="async"></div><div class="nb" style="--t:28cqh;--w:46cqh;--o:0.8;--s:180s;--dl:-63s;--b:0.8px;--m:24s;--f:1"><img src="assets/img/portada/encabezado/nb6.webp" alt="" aria-hidden="true" decoding="async"></div><div class="nb" style="--t:20cqh;--w:66cqh;--o:0.75;--s:160s;--dl:-88s;--b:0.6px;--m:28s;--f:-1"><img src="assets/img/portada/encabezado/nb3.webp" alt="" aria-hidden="true" decoding="async"></div><div class="nb" style="--t:-3cqh;--w:54cqh;--o:0.9;--s:195s;--dl:-176s;--b:0px;--m:34s;--f:1"><img src="assets/img/portada/encabezado/nb9.webp" alt="" aria-hidden="true" decoding="async"></div><div class="nb" style="--t:38cqh;--w:60cqh;--o:0.5;--s:100s;--dl:-47s;--b:1.0px;--m:16s;--f:1"><img src="assets/img/portada/encabezado/nb4.webp" alt="" aria-hidden="true" decoding="async"></div><div class="nb" style="--t:34cqh;--w:58cqh;--o:0.6;--s:210s;--dl:-147s;--b:1.2px;--m:32s;--f:1"><img src="assets/img/portada/encabezado/nb8.webp" alt="" aria-hidden="true" decoding="async"></div><div class="nb" style="--t:6cqh;--w:50cqh;--o:0.85;--s:130s;--dl:-110s;--b:0px;--m:22s;--f:-1"><img src="assets/img/portada/encabezado/nb7.webp" alt="" aria-hidden="true" decoding="async"></div><div class="nb" style="--t:44cqh;--w:40cqh;--o:0.4;--s:225s;--dl:-130s;--b:1.4px;--m:26s;--f:1"><img src="assets/img/portada/encabezado/nb10.webp" alt="" aria-hidden="true" decoding="async"></div><div class="nb" style="--t:24cqh;--w:30cqh;--o:0.55;--s:260s;--dl:-52s;--b:1.6px;--m:34s;--f:1"><img src="assets/img/portada/encabezado/nb1.webp" alt="" aria-hidden="true" decoding="async"></div><div class="nb" style="--t:12cqh;--w:26cqh;--o:0.5;--s:300s;--dl:-279s;--b:1.8px;--m:30s;--f:-1"><img src="assets/img/portada/encabezado/nb3.webp" alt="" aria-hidden="true" decoding="async"></div><div class="nb" style="--t:40cqh;--w:28cqh;--o:0.45;--s:280s;--dl:-188s;--b:2.0px;--m:36s;--f:1"><img src="assets/img/portada/encabezado/nb7.webp" alt="" aria-hidden="true" decoding="async"></div><div class="nb" style="--t:30cqh;--w:24cqh;--o:0.5;--s:320s;--dl:-160s;--b:2.0px;--m:30s;--f:-1"><img src="assets/img/portada/encabezado/nb2.webp" alt="" aria-hidden="true" decoding="async"></div>
 <div class="esc">
 <img class="E t1" src="assets/img/portada/encabezado/arbol-1.webp" alt="" aria-hidden="true" decoding="async" data-d="14"><img class="E t2" src="assets/img/portada/encabezado/arbol-2.webp" alt="" aria-hidden="true" decoding="async" data-d="14">
 <img class="E fach" data-d="20" src="assets/img/portada/encabezado/fachada.webp" alt="Fachada del Colegio Integrado Simón Bolívar" decoding="async">
-<img class="E escu" data-d="24" src="assets/img/escudo.webp" alt="Escudo del Colegio Integrado Simón Bolívar" fetchpriority="high">
-<div class="pan" data-d="28"><img src="assets/img/portada/encabezado/panel-titulo.webp" alt="" aria-hidden="true"><div class="tx"><small>Institución Educativa · Cúcuta</small><h1>Colegio Integrado <b>Simón Bolívar</b></h1></div></div>
-<div class="lema-p" data-d="30"><img src="assets/img/portada/encabezado/pildora.webp" alt="" aria-hidden="true"><span>Todos somos ColBolívar</span></div>
+<div class="E escw" data-d="24"><i class="halo"></i><img src="assets/img/escudo.webp" alt="Escudo del Colegio Integrado Simón Bolívar" fetchpriority="high"><span class="br"></span></div>
+<h1 class="sr">Colegio Integrado Simón Bolívar, Cúcuta</h1>
+<div class="logo" data-d="30"><i class="ry"></i><img src="assets/img/portada/encabezado/lema-logo.webp" alt="Todos somos ColBolívar"><span class="br"></span></div>
 <nav class="hc" aria-label="Accesos principales"><a class="v" href="#servicios">Ver servicios</a><a class="n" href="colbolivar-radio/">Radio ColBolívar</a></nav>
-<img class="E acad libros" src="assets/img/portada/encabezado/libros.webp" alt="" aria-hidden="true" decoding="async" data-d="34"><img class="E acad birr" src="assets/img/portada/encabezado/birrete.webp" alt="" aria-hidden="true" decoding="async" data-d="40"><img class="E acad dipl" src="assets/img/portada/encabezado/diploma.webp" alt="" aria-hidden="true" decoding="async" data-d="36"><img class="E acad glb" src="assets/img/portada/encabezado/globo.webp" alt="" aria-hidden="true" decoding="async" data-d="34">
+<img class="E acad libros" src="assets/img/portada/encabezado/libros.webp" alt="" aria-hidden="true" decoding="async" data-d="34"><img class="E acad birr" src="assets/img/portada/encabezado/birrete.webp" alt="" aria-hidden="true" decoding="async" data-d="40"><img class="E acad dipl" src="assets/img/portada/encabezado/diploma.webp" alt="" aria-hidden="true" decoding="async" data-d="36"><img class="E acad glb" src="assets/img/portada/encabezado/globo-gira.webp" alt="" aria-hidden="true" decoding="async" data-d="34">
 <div class="L tierra"></div>
 <img class="E cn" src="assets/img/portada/encabezado/cinta-naranja.webp" alt="" aria-hidden="true" decoding="async" data-d="26"><img class="E cb" src="assets/img/portada/encabezado/cinta-blanca.webp" alt="" aria-hidden="true" decoding="async" data-d="26"><img class="E fol" src="assets/img/portada/encabezado/follaje.webp" alt="" aria-hidden="true" decoding="async" data-d="46"><img class="E arb" src="assets/img/portada/encabezado/arbusto.webp" alt="" aria-hidden="true" decoding="async" data-d="46">
 </div>
@@ -420,8 +440,9 @@ fit();addEventListener('resize',fit);addEventListener('DOMContentLoaded',fit);
 </section>
 <section id="servicios" aria-labelledby="svt">
 <div class="tit esm"><h2 id="svt">Encuentra rápido lo que necesitas</h2></div>
-<p class="sec-p">Todos los servicios del colegio, en un solo lugar.</p>
-<div class="srch"><input id="q" type="search" placeholder="Buscar: planes, biblioteca, circulares, notas…" aria-label="Buscar un servicio"><kbd aria-hidden="true">/</kbd></div>
+<p class="sec-p">Servicios, documentos y páginas del colegio, en un solo lugar.</p>
+<div class="srch"><input id="q" type="search" placeholder="Buscar: PEI, SIEE, manual de convivencia, circulares, notas…" aria-label="Buscar servicios, documentos y páginas del colegio" autocomplete="off"><kbd aria-hidden="true">/</kbd></div>
+<div class="qres" id="qres" hidden aria-live="polite"></div>
 <div class="cats" id="cats"></div>
 <p class="none" id="none">No encontramos esa sección. Prueba con otra palabra.</p>
 </section>
@@ -589,7 +610,50 @@ const CA=$('#cats');
 const ICN=n=>'<img class="ii" src="'+IMG+'nuevo/'+n+'.webp" alt="" loading="lazy" decoding="async">';
 CA.innerHTML=CATS.map(c=>'<article class="cat rv" data-cat="'+c.id+'"><div class="tit '+c.c+'"><h3>'+c.t+'</h3></div><div class="cards">'+c.it.map(t=>{const lk=LOCK.includes(t[0]);return '<a class="svc fx'+(lk?' lock':'')+'" '+(t[2].startsWith(G)?'':'target="_blank" rel="noopener" ')+'href="'+t[2]+'" data-k="'+(t[0]+' '+t[1]).toLowerCase()+'">'+ICN(t[3]).replace('class="ii"','class="ic ii"')+'<span class="tx"><b>'+t[0]+'</b><small>'+t[1]+'</small>'+(lk?'<span class="lkb">Solo docentes</span>':'')+'</span><span class="go" aria-hidden="true">Abrir ›</span><i class="fxs"></i></a>'}).join('')+'</div></article>').join('');
 addEventListener('keydown',e=>{if(e.key==='/'&&!/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)&&MD.hidden){e.preventDefault();$('#q').focus()}});
-$('#q').addEventListener('input',e=>{const v=e.target.value.toLowerCase().trim();let n=0;$$('.svc').forEach(a=>{const ok=!v||a.dataset.k.includes(v);a.style.display=ok?'':'none';if(ok)n++});$$('.cat').forEach(c=>{c.style.display=[...c.querySelectorAll('.svc')].some(a=>a.style.display!=='none')?'':'none'});$('#none').style.display=n?'none':'block'});
+(()=>{const q=$('#q'),R=$('#qres');let tm,hasSvc=0;
+const E=t=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const N=t=>String(t||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+const SIN={pei:['pei','resignificacion'],siee:['siee','evaluacion'],piar:['piar'],pegrd:['pegrd','riesgo'],dua:['dua'],manual:['manual']};
+const rel=u=>{const m=String(u).split('#')[0].match(/\/ColBolivar2026\/(.+)$/);try{return decodeURIComponent(m?m[1]:u)}catch(e){return m?m[1]:u}};
+const vlink=(r,t,p,v)=>'visor.html?'+new URLSearchParams(Object.assign({f:r,t:t||''},p?{p:p}:{},v?{q:v}:{})).toString();
+const isPdf=u=>/\.pdf$/i.test(String(u).split('#')[0]);
+function filtrar(v){let n=0;$$('.svc').forEach(a=>{const ok=!v||a.dataset.k.includes(v);a.style.display=ok?'':'none';if(ok)n++});$$('.cat').forEach(c=>{c.style.display=[...c.querySelectorAll('.svc')].some(a=>a.style.display!=='none')?'':'none'});return n}
+q.addEventListener('focus',()=>{if(window.ARIA_DOCS)ARIA_DOCS.ready().catch(()=>{})});
+q.addEventListener('input',()=>{const raw=q.value.trim(),v=raw.toLowerCase();hasSvc=filtrar(v);$('#none').style.display='none';clearTimeout(tm);
+ if(raw.length<2){R.hidden=true;R.innerHTML='';if(!hasSvc&&raw)$('#none').style.display='block';return}
+ R.hidden=false;if(!R.innerHTML)R.innerHTML='<p class="nt">Buscando en servicios, documentos y páginas…</p>';tm=setTimeout(()=>todo(raw),280)});
+q.addEventListener('keydown',e=>{if(e.key==='Escape'){q.value='';q.dispatchEvent(new Event('input'))}});
+const SW=new Set('de la las los el un una unos unas y o a en que se por con para es al del lo como mas pero sus le ya mi tu su si no hay cual cuales quien esta este esto son ser fue sobre entre me te nos hola aria dime quiero necesito favor puedes dice dicen saber quisiera podria porfa gracias buenas buenos dias tardes noches colegio institucion'.split(' '));
+const st=w=>w.length>3?w.replace(/(es|s)$/,''):w,tk=t=>N(t).split(/[^a-z0-9]+/).filter(w=>w&&!SW.has(w)).map(st);
+let KB=null,kbP=null;
+const kbLoad=()=>kbP||(kbP=fetch('aria-conocimiento/base-colegio.json').then(r=>r.json()).then(j=>(KB=(j.entradas||[]).map(e=>{const k=new Set(),t=new Set(),r=new Set();(e.claves||[]).forEach(c=>tk(c).forEach(w=>k.add(w)));tk(e.tema).forEach(w=>t.add(w));tk(e.respuesta).forEach(w=>r.add(w));e._f=(e.claves||[]).map(c=>' '+tk(c).join(' ')+' ').filter(f=>f.trim());e._k=k;e._t=t;e._r=r;return e}))).catch(()=>(KB=[])));
+function kbBuscar(raw){const qt=tk(raw),pad=' '+qt.join(' ')+' ';if(!qt.length||!KB)return[];
+ const r=KB.map(e=>{let s=0;e._f.forEach(f=>{if(pad.includes(f))s+=3+f.trim().split(' ').length});qt.forEach(w=>{if(e._k.has(w))s+=2;else if(e._t.has(w))s+=1.5;else if(e._r.has(w))s+=.5});return{e,s}}).filter(x=>x.s>=2.5).sort((a,b)=>b.s-a.s);
+ return r.length?r.filter((x,i)=>i<3&&x.s>=r[0].s*.5):[]}
+const enl=e=>(e.enlaces&&e.enlaces.length)?'<div class="lk">'+e.enlaces.map(l=>'<a href="'+E(l.u)+'" target="_blank" rel="noopener">'+E(l.t)+' ↗</a>').join(' · ')+'</div>':'';
+function sugerir(){if(q.value.trim())return;kbLoad().then(kb=>{if(q.value.trim()||!kb.length)return;const pick=kb.filter(e=>e.tema).slice(0,8);R.hidden=false;R.classList.add('sug');R.innerHTML='<p class="nt">Escribe o toca una pregunta frecuente:</p>'+pick.map(e=>'<button type="button" class="chip" data-t="'+E(e.tema)+'">'+E(e.tema)+'</button>').join('')})}
+q.addEventListener('focus',()=>{kbLoad();sugerir()});
+R.addEventListener('click',e=>{const c=e.target.closest('.chip');if(c){q.value=c.dataset.t;R.classList.remove('sug');q.dispatchEvent(new Event('input'));return}const b=e.target.closest('.ab');if(b&&window.ariaPreguntar)ariaPreguntar(b.dataset.q)});
+document.addEventListener('click',e=>{if(R.classList.contains('sug')&&!e.target.closest('#qres,#q')){R.hidden=true;R.classList.remove('sug')}});
+function todo(raw){R.classList.remove('sug');const A=window.ARIA_DOCS;
+ Promise.all([kbLoad(),A?A.catalogo():[],A?A.buscarFragmentos(raw,{n:14}):[],A?A.responder(raw).catch(()=>null):null]).then(([kb,cat,fr,ra])=>{if(q.value.trim()!==raw)return;
+  const toks=N(raw).split(/[^a-z0-9]+/).filter(w=>w.length>1);
+  const ok=d=>{const h=N(d.t+' '+rel(d.u));return toks.length&&toks.every(w=>h.includes(w)||(SIN[w]||[]).some(x=>h.includes(x)))};
+  const docs=cat.filter(d=>!/(^|\/)index\.html$/i.test(d.u)&&ok(d)).slice(0,6);
+  const seen=new Set(),frs=fr.filter(x=>{const k=x.base+'|'+x.p;if(seen.has(k))return false;seen.add(k);return true}).slice(0,6);
+  const kr=kbBuscar(raw),conTexto=!kr.length&&ra&&/«|📚|Así empieza|tiene <b>/.test(ra);
+  let h='';
+  if(kr.length){const x=kr[0].e;h+='<div class="ar"><b>🤖 ARIA responde · '+E(x.tema||'')+'</b><p>'+E(x.respuesta)+'</p>'+enl(x)+'</div>';
+   kr.slice(1).forEach(y=>{h+='<details><summary>También te puede servir: '+E(y.e.tema||'')+'</summary><p>'+E(y.e.respuesta)+'</p>'+enl(y.e)+'</details>'})}
+  if(conTexto)h+='<div class="ar"><b>📄 ARIA encontró en los documentos</b><p>'+ra+'</p></div>';
+  if(hasSvc)h+='<p class="nt">✔ '+hasSvc+' servicio'+(hasSvc>1?'s coinciden':' coincide')+' más abajo.</p>';
+  if(docs.length)h+='<h3>Documentos y páginas</h3>'+docs.map(d=>{const pdf=isPdf(d.u);return '<a class="it" href="'+E(pdf?vlink(rel(d.u),d.t,0,raw):d.u)+'" target="_blank" rel="noopener"><b>'+(pdf?'📄 ':'🌐 ')+E(d.t)+' ↗</b><small>'+(pdf?'Documento PDF'+(d.pag?' · '+d.pag+' páginas':''):'Página del sitio')+'</small></a>'}).join('');
+  if(frs.length&&!conTexto&&!kr.length)h+='<h3>Dentro de los documentos</h3>'+frs.map(x=>'<a class="it" href="'+E(x.pdf?vlink(x.rel,x.t,x.p,raw):x.u)+'" target="_blank" rel="noopener"><b>'+(x.pdf?'📄 ':'🌐 ')+E(x.t)+(x.p?' · pág. '+x.p:'')+' ↗</b><p>«'+x.html+'»</p></a>').join('');
+  else if(frs.length&&!kr.length)h+='<h3>Más coincidencias en los documentos</h3>'+frs.slice(0,3).map(x=>'<a class="it" href="'+E(x.pdf?vlink(x.rel,x.t,x.p,raw):x.u)+'" target="_blank" rel="noopener"><b>'+(x.pdf?'📄 ':'🌐 ')+E(x.t)+(x.p?' · pág. '+x.p:'')+' ↗</b></a>').join('');
+  if(!kr.length&&!conTexto&&!docs.length&&!frs.length&&!hasSvc)h+='<p class="nt">No encontré «'+E(raw)+'» en servicios, documentos ni páginas.</p>';
+  h+='<button type="button" class="ab" data-q="'+E(raw)+'">💬 Preguntarle a ARIA: «'+E(raw.length>40?raw.slice(0,40)+'…':raw)+'»</button>';
+  R.innerHTML=h}).catch(()=>{R.innerHTML='<p class="nt">No se pudo cargar el buscador. Revisa tu conexión.</p>'})}
+})();
 
 /* ====== CARTA DE NAVEGACIÓN (pestañas) ====== */
 const CARTA=[['Misión','El Colegio Simón Bolívar es una institución de carácter oficial que ofrece un servicio de calidad en los niveles de Preescolar, Básica, Media Académica y Técnica, propendiendo por la formación integral del estudiante desde el «saber ser», «saber hacer» y «saber saber». Con el desarrollo de proyectos en el marco de la inclusión educativa, la evaluación formativa y el trabajo colaborativo que fortalecen la construcción de proyectos de vida con éxito.'],['Visión','La Institución Educativa Colegio Simón Bolívar en el año 2027 será reconocida a nivel regional y nacional por desarrollar procesos académicos y administrativos de alta calidad, apoyada en el manejo de las TIC, la inclusión escolar y la convivencia ciudadana post pandemia.'],['Política de calidad','Ofrecer un servicio educativo de alta calidad, que fortalezca en su comunidad el liderazgo, la comunicación y el trabajo en equipo, contando para ello con recursos físicos, financieros y tecnológicos apropiados y con un talento humano competente, que contribuya con el mejoramiento continuo de los procesos de la gestión escolar, para responder a las necesidades y expectativas de los actores educativos y su entorno.']];
@@ -654,6 +718,7 @@ if('serviceWorker' in navigator&&location.protocol==='https:')navigator.serviceW
 })();
 </script>
 <iframe id="aria-if" src="aria-widget.html" title="ARIA, asistente virtual del colegio" allow="autoplay" loading="lazy" style="position:fixed;right:0;bottom:0;width:150px;height:250px;border:0;background:transparent;color-scheme:light;z-index:61"></iframe>
+<script>window.ARIA_DOCS_NOAUTO=1</script><script src="aria-docs.js" defer></script>
 <script src="assets/js/nav.js" defer></script>
 <script src="assets/js/encabezado.js" defer></script>
 <script>
