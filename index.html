@@ -46,18 +46,22 @@ img{max-width:100%}
 .hero .E{position:absolute;display:block;pointer-events:none;user-select:none;will-change:translate}
 .E.t1{left:-1%;bottom:14cqh;height:58cqh;z-index:2}.E.t2{right:-1%;bottom:14cqh;height:52cqh;z-index:2}
 .E.fach{right:4%;bottom:11cqh;height:64cqh;z-index:3;filter:drop-shadow(0 12px 12px rgba(0,0,0,.35))}
-.E.escu{left:1.2%;top:7cqh;height:86cqh;z-index:5;filter:drop-shadow(0 8px 10px rgba(0,0,0,.45))}
-.pan{position:absolute;left:18%;top:11cqh;height:38cqh;aspect-ratio:1080/215;z-index:5;filter:drop-shadow(0 10px 10px rgba(0,0,0,.4))}
-.pan>img{width:100%;height:100%;display:block}
-.pan .tx{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2% 9% 0;color:#fff;white-space:nowrap}
-.pan small{font:700 clamp(7px,3.8cqh,11px)/1 Sora,sans-serif;letter-spacing:.3em;text-transform:uppercase;color:#f3d98b}
-.pan h1{margin:.2em 0 0;font:700 clamp(15px,9.2cqh,32px)/1.05 Georgia,"Times New Roman",serif;color:#fff;text-shadow:0 2px 5px rgba(0,0,0,.55)}.pan h1 b{color:#f6c945}
-.pan:after{content:"";position:absolute;inset:7% 4%;border-radius:40px;mix-blend-mode:overlay;background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.5) 50%,transparent 60%) 150% 0/250% 100% no-repeat;animation:brillo 7s ease-in-out infinite}
-@keyframes brillo{55%,100%{background-position:-60% 0}}
-.chis{position:absolute;width:7px;height:7px;border-radius:50%;background:#fff6c8;box-shadow:0 0 10px 3px #ffd24a;animation:chis 1.3s ease-out forwards;pointer-events:none}
-@keyframes chis{0%{transform:scale(0);opacity:0}30%{transform:scale(1);opacity:1}100%{transform:scale(.2);opacity:0}}
-.lema-p{position:absolute;left:24%;top:52cqh;height:14cqh;aspect-ratio:879/109;z-index:5;filter:drop-shadow(0 6px 6px rgba(0,0,0,.3))}
-.lema-p img{width:100%;height:100%;display:block}.lema-p span{position:absolute;inset:0;display:grid;place-items:center;font:800 clamp(9px,5.4cqh,15px) Sora,sans-serif;letter-spacing:.06em;color:#3b1d00}
+/* escudo: halo, flotación y brillo que recorre su silueta */
+.E.escw{left:1.2%;top:7cqh;height:86cqh;aspect-ratio:600/726;z-index:5}
+.escw .halo{position:absolute;inset:-14%;z-index:-1;background:radial-gradient(circle,rgba(255,226,120,.6),rgba(255,200,60,.18) 45%,transparent 68%);animation:halo 4.5s ease-in-out infinite}
+.escw img{position:relative;width:100%;height:100%;display:block;filter:drop-shadow(0 8px 10px rgba(0,0,0,.45));animation:flota 6s ease-in-out infinite}
+.escw .br,.logo .br{position:absolute;inset:0;pointer-events:none;-webkit-mask-size:100% 100%;mask-size:100% 100%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;background:linear-gradient(105deg,transparent 42%,rgba(255,255,255,.9) 50%,transparent 58%) 170% 0/260% 100% no-repeat;animation:barrido 6.5s ease-in-out infinite}
+.escw .br{-webkit-mask-image:url(assets/img/escudo.webp);mask-image:url(assets/img/escudo.webp);animation-delay:2.4s}
+@keyframes halo{50%{opacity:.55;transform:scale(1.08)}}@keyframes flota{50%{transform:translateY(-3px)}}@keyframes barrido{55%,100%{background-position:-70% 0}}
+/* logo "Todos somos ColBolívar": aura dorada, rayos de luz, barrido de brillo y estrellas */
+.logo{position:absolute;left:19%;top:9cqh;height:60cqh;aspect-ratio:900/302;z-index:5}
+.logo img{position:relative;width:100%;height:100%;display:block;filter:drop-shadow(0 6px 8px rgba(0,0,0,.45)) drop-shadow(0 0 10px rgba(255,214,90,.55));animation:aura 3.8s ease-in-out infinite}
+@keyframes aura{50%{filter:drop-shadow(0 6px 8px rgba(0,0,0,.45)) drop-shadow(0 0 22px rgba(255,232,130,.95))}}
+.logo .br{-webkit-mask-image:url(assets/img/portada/encabezado/lema-logo.webp);mask-image:url(assets/img/portada/encabezado/lema-logo.webp)}
+.logo .ry{position:absolute;left:50%;top:50%;width:140%;aspect-ratio:1;translate:-50% -50%;z-index:-1;mix-blend-mode:screen;background:repeating-conic-gradient(rgba(255,244,180,.4) 0 5deg,transparent 5deg 18deg);-webkit-mask-image:radial-gradient(circle,#000,transparent 62%);mask-image:radial-gradient(circle,#000,transparent 62%);animation:giro 45s linear infinite}
+@keyframes giro{to{rotate:1turn}}
+.est{position:absolute;width:18px;height:18px;pointer-events:none;background:#fff8d2;clip-path:polygon(50% 0,60% 40%,100% 50%,60% 60%,50% 100%,40% 60%,0 50%,40% 40%);filter:drop-shadow(0 0 4px #ffd24a);animation:est 1.5s ease-out forwards;z-index:3}
+@keyframes est{0%{transform:scale(0) rotate(0);opacity:0}35%{transform:scale(1) rotate(45deg);opacity:1}100%{transform:scale(.1) rotate(120deg);opacity:0}}
 .hc{position:absolute;left:19%;top:71cqh;z-index:6;display:flex;gap:10px}
 .hc a{position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:.5em;height:clamp(28px,12cqh,36px);padding:0 18px;border-radius:999px;font:800 clamp(11px,4.6cqh,14px) Sora,sans-serif;text-decoration:none;color:#fff;background:linear-gradient(#1b8a35,#0d5a1e);border:2px solid #e6b422;box-shadow:0 6px 10px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.35);transition:transform .2s,box-shadow .2s}
 .hc a.n{background:linear-gradient(#ffb02e,#f07a10);color:#3b1d00}
@@ -73,11 +77,10 @@ img{max-width:100%}
 .E.fol{left:11%;bottom:-3cqh;height:24cqh;z-index:6}.E.arb{right:12%;bottom:-3cqh;height:20cqh;z-index:6}
 .hero .tierra,.E.cn,.E.cb{opacity:1}
 @media(max-width:760px){.hero{--H:410px}
- .E.escu{left:3%;top:3cqh;height:36cqh}.E.fach{right:-18%;top:5cqh;bottom:auto;height:34cqh}.E.t1,.E.t2,.E.libros,.E.birr,.E.dipl,.E.glb,.E.cn,.E.cb,.hero .sol{display:none}
- .pan{left:3%;top:42cqh;width:94%;height:auto}.pan h1{font-size:clamp(15px,5.4vw,24px)}.pan small{font-size:clamp(6px,2.1vw,9px)}
- .lema-p{left:12%;top:63cqh;width:76%;height:auto}.lema-p span{font-size:clamp(9px,3.2vw,13px)}
+ .E.escw{left:3%;top:3cqh;height:36cqh}.E.fach{right:-18%;top:5cqh;bottom:auto;height:34cqh}.E.t1,.E.t2,.E.libros,.E.birr,.E.dipl,.E.glb,.E.cn,.E.cb,.hero .sol{display:none}
+ .logo{left:7%;top:41cqh;height:auto;width:86%}
  .hc{left:0;right:0;top:76cqh;justify-content:center}.hc a{height:34px;padding:0 14px;font-size:12px}.E.fol{left:2%;height:12cqh}.E.arb{right:2%;height:10cqh}}
-@media(prefers-reduced-motion:reduce){.hero *{animation:none!important}.nb{left:20%}}
+@media(prefers-reduced-motion:reduce){.hero *{animation:none!important}.hero .nb{left:0;animation:viento calc(var(--s)*1.8) linear var(--dl) infinite!important}}
 .stripe{height:5px;background:linear-gradient(90deg,#ffd23f 0 50%,#12306e 50% 75%,#d92d3a 75%)}
 
 /* ================= SISTEMA VISUAL INSTITUCIONAL (debajo del encabezado) ================= */
@@ -378,9 +381,9 @@ fit();addEventListener('resize',fit);addEventListener('DOMContentLoaded',fit);
 <div class="esc">
 <img class="E t1" src="assets/img/portada/encabezado/arbol-1.webp" alt="" aria-hidden="true" decoding="async" data-d="14"><img class="E t2" src="assets/img/portada/encabezado/arbol-2.webp" alt="" aria-hidden="true" decoding="async" data-d="14">
 <img class="E fach" data-d="20" src="assets/img/portada/encabezado/fachada.webp" alt="Fachada del Colegio Integrado Simón Bolívar" decoding="async">
-<img class="E escu" data-d="24" src="assets/img/escudo.webp" alt="Escudo del Colegio Integrado Simón Bolívar" fetchpriority="high">
-<div class="pan" data-d="28"><img src="assets/img/portada/encabezado/panel-titulo.webp" alt="" aria-hidden="true"><div class="tx"><small>Institución Educativa · Cúcuta</small><h1>Colegio Integrado <b>Simón Bolívar</b></h1></div></div>
-<div class="lema-p" data-d="30"><img src="assets/img/portada/encabezado/pildora.webp" alt="" aria-hidden="true"><span>Todos somos ColBolívar</span></div>
+<div class="E escw" data-d="24"><i class="halo"></i><img src="assets/img/escudo.webp" alt="Escudo del Colegio Integrado Simón Bolívar" fetchpriority="high"><span class="br"></span></div>
+<h1 class="sr">Colegio Integrado Simón Bolívar, Cúcuta</h1>
+<div class="logo" data-d="30"><i class="ry"></i><img src="assets/img/portada/encabezado/lema-logo.webp" alt="Todos somos ColBolívar"><span class="br"></span></div>
 <nav class="hc" aria-label="Accesos principales"><a class="v" href="#servicios">Ver servicios</a><a class="n" href="colbolivar-radio/">Radio ColBolívar</a></nav>
 <img class="E acad libros" src="assets/img/portada/encabezado/libros.webp" alt="" aria-hidden="true" decoding="async" data-d="34"><img class="E acad birr" src="assets/img/portada/encabezado/birrete.webp" alt="" aria-hidden="true" decoding="async" data-d="40"><img class="E acad dipl" src="assets/img/portada/encabezado/diploma.webp" alt="" aria-hidden="true" decoding="async" data-d="36"><img class="E acad glb" src="assets/img/portada/encabezado/globo-gira.webp" alt="" aria-hidden="true" decoding="async" data-d="34">
 <div class="L tierra"></div>
