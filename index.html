@@ -85,7 +85,14 @@ img{max-width:100%}
  .logo{left:calc(3% + 43cqh + 12px);top:19cqh;height:auto;width:min(66%,118cqh)}
  .hc{left:0;right:0;top:67cqh;justify-content:center;gap:8px}.hc a{height:32px;padding:0 13px;font-size:12px}
  .E.fol{left:2%;height:11cqh}.E.arb{right:2%;height:9cqh}}
-@media(prefers-reduced-motion:reduce){.hero *{animation:none!important}.hero .nb{left:0;animation:viento calc(var(--s)*1.8) linear var(--dl) infinite!important}}
+/* Con "reducir animaciones" activo se mantienen solo los efectos suaves y decorativos del encabezado (sin parallax) */
+@media(prefers-reduced-motion:reduce){.hero *{animation:none!important}.hero .nb{left:0;animation:viento calc(var(--s)*1.8) linear var(--dl) infinite!important}
+.hero .nb img{animation:forma var(--m,22s) ease-in-out infinite alternate!important}
+.hero .sol{animation:pulso 6s ease-in-out infinite!important}
+.hero .escw .halo{animation:halo 4.5s ease-in-out infinite!important}.hero .escw img{animation:flota 6s ease-in-out infinite!important}
+.hero .escw .br{animation:barrido 6.5s ease-in-out 2.4s infinite!important}
+.hero .logo img{animation:aura 3.8s ease-in-out infinite!important}.hero .logo .br{animation:barrido 6.5s ease-in-out infinite!important}
+.hero .logo .ry{animation:giro 45s linear infinite!important}.hero .est{animation:est 1.5s ease-out forwards!important}}
 .stripe{height:5px;background:linear-gradient(90deg,#ffd23f 0 50%,#12306e 50% 75%,#d92d3a 75%)}
 
 /* ================= PORTADA INSTITUCIONAL (marcos, encabezados y fondos de los sprites) ================= */
@@ -393,6 +400,16 @@ html.intro #intro{display:flex}
 @keyframes ifill{to{transform:scaleX(1)}}
 @media(prefers-reduced-motion:reduce){#intro,#intro *{animation:none!important;transition:none!important}}
 .stage{margin:0!important;border-radius:0!important;max-width:none!important}
+/* ===== Compacto: menos aire entre secciones y tarjetas ===== */
+main section{margin-top:1.9em}.sec-p{margin-top:.4em}
+.cats{gap:1.25em;margin-top:1em}
+.cards{grid-template-columns:repeat(auto-fill,minmax(min(100%,13.6em),1fr));gap:.6em .7em;margin-top:.7em}
+.svc{grid-template-columns:3.5em 1fr;gap:.6em;min-height:4.4em;padding:.15em .6em .15em .3em;border-width:9px;border-image-width:9px}
+.svc .ic{width:3.5em}.svc b{font-size:.98em}.svc small{font-size:.88em;margin-top:.1em}
+.cat .tit{width:min(100%,340px)}
+@media(max-width:640px){main section{margin-top:1.5em}.cats{gap:1em}.cards{grid-template-columns:1fr 1fr;gap:.45em}
+ .svc{grid-template-columns:2.6em 1fr;gap:.4em;min-height:3.8em;padding:.1em .35em .1em .15em;border-width:8px;border-image-width:8px}
+ .svc .ic{width:2.6em}.svc b{font-size:.86em}.svc small{font-size:.74em;line-height:1.25}.cat .tit{width:min(100%,260px)}}
 </style>
 <script>
 function fit(){var sw=screen.width,iw=innerWidth,ua=navigator.userAgent,ph=/Android.*Mobile|iPhone/i.test(ua),m=iw<=860,z=1;if(sw<=600&&iw>sw*1.25){z=iw/sw;m=true}else if(ph&&iw>=700){z=iw/420;m=true}document.documentElement.classList.toggle('m',m);if(document.body)document.body.style.zoom=z>1?z:''}
