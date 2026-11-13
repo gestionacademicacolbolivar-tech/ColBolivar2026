@@ -1,0 +1,41 @@
+name: Tablero diario (Hoy en Bolívar y Colegio en cifras)
+on:
+  schedule:
+    - cron: "0 10 * * *"        # 5:00 a.m. hora de Colombia, todos los días
+  push:
+    branches: ["main"]
+    paths: ["documentos/**", "datos/hoy-data.js", "datos/cumpleanos-data.js", "datos/novedades-manual.json", "datos/novedades-config.json", "datos/cifras-manual.json", "procesos/procesos.json", "scripts/generar_tablero.py"]
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: write
+concurrency:
+  group: tablero
+  cancel-in-progress: false
+jobs:
+  tablero:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 0}
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: Generar datos del tablero y de las cifras
+        run: python scripts/generar_tablero.py
+      - name: Enviar avisos push (solo si OneSignal está configurado)
+        env:
+          ONESIGNAL_APP_ID: ${{ secrets.ONESIGNAL_APP_ID }}
+          ONESIGNAL_API_KEY: ${{ secrets.ONESIGNAL_API_KEY }}
+        run: python scripts/enviar_avisos.py
+      - name: Guardar y volver a publicar el sitio
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "aria-bot"; git config user.email "aria-bot@users.noreply.github.com"
+          git add datos/hoy-auto.json datos/cifras-auto.json datos/avisos-enviados.json 2>/dev/null || true
+          if ! git diff --cached --quiet; then
+            git commit -m "Actualizar tablero"
+            git pull --rebase origin main
+            git push
+            gh workflow run static.yml || echo "Publica el sitio manualmente (static.yml)"
+          fi

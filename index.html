@@ -410,6 +410,17 @@ main section{margin-top:1.9em}.sec-p{margin-top:.4em}
 @media(max-width:640px){main section{margin-top:1.5em}.cats{gap:1em}.cards{grid-template-columns:1fr 1fr;gap:.45em}
  .svc{grid-template-columns:2.6em 1fr;gap:.4em;min-height:3.8em;padding:.1em .35em .1em .15em;border-width:8px;border-image-width:8px}
  .svc .ic{width:2.6em}.svc b{font-size:.86em}.svc small{font-size:.74em;line-height:1.25}.cat .tit{width:min(100%,260px)}}
+/* ===== Tablero: novedades, avisos y NUEVO ===== */
+.nov{display:flex;flex-wrap:wrap;align-items:center;gap:.5em .7em;margin-top:.7em;padding:.5em .7em;border-radius:.9em;background:#f4f9f3;border:1px solid #cfe0d2}
+.nov .nt{font:800 .72em var(--fd);letter-spacing:.09em;text-transform:uppercase;color:#b45f06}
+.nov .ncs{display:flex;flex-wrap:wrap;gap:.4em;flex:1;min-width:0}.nov .nn{font-size:.9em;opacity:.85}
+.nov .chn{display:flex;flex-direction:column;padding:.25em .8em;border-radius:.7em;background:#fff;border:1px solid #d3e0d5;color:#12306e;text-decoration:none;line-height:1.2;max-width:100%;transition:transform .2s,box-shadow .2s}
+.nov .chn b{font-size:.88em;overflow:hidden;text-overflow:ellipsis}.nov .chn small{font-size:.74em;color:#4b5b52}
+.nov .chn:hover,.nov .chn:focus-visible{transform:translateY(-2px);box-shadow:0 0 12px rgba(255,205,70,.9);outline:none}
+.nov .bell{font:700 .82em var(--fs);cursor:pointer;border:1px solid #1b8a35;background:#fff;color:#0d5a1e;border-radius:999px;padding:.35em .9em;transition:background .2s,transform .2s}
+.nov .bell:hover:not(:disabled){background:#eaf5ed;transform:translateY(-1px)}.nov .bell.on{background:#1b8a35;color:#fff}.nov .bell:disabled{opacity:.6;cursor:not-allowed}
+.nuevo{position:absolute;z-index:4;top:-.55em;left:.5em;padding:.1em .6em .15em;border-radius:999px;font:800 .66rem var(--fd);letter-spacing:.07em;color:#fff;background:linear-gradient(#ff6a5e,#d92d3a);border:2px solid #fff;box-shadow:0 3px 6px rgba(0,0,0,.3);animation:nuevo 1.8s ease-in-out infinite}
+@keyframes nuevo{50%{transform:scale(1.12);box-shadow:0 0 12px rgba(255,90,78,.9)}}
 </style>
 <script>
 function fit(){var sw=screen.width,iw=innerWidth,ua=navigator.userAgent,ph=/Android.*Mobile|iPhone/i.test(ua),m=iw<=860,z=1;if(sw<=600&&iw>sw*1.25){z=iw/sw;m=true}else if(ph&&iw>=700){z=iw/420;m=true}document.documentElement.classList.toggle('m',m);if(document.body)document.body.style.zoom=z>1?z:''}
@@ -550,6 +561,7 @@ const CATS=[
   ['Documentos docentes','Planeación docente en Drive',G+'DRIVE_PLANEACION_DOCENTE.html','ic-02']]},
  {id:'gestion',t:'Gestión y calidad',c:'bl',it:[
   ['Calidad','Gestión de calidad',G+'CALIDAD.html','ic-11'],
+  ['Colegio en cifras','Datos y gráficas vivas',G+'cifras.html','ic-15'],
   ['Procesos','Gestiones y evidencias',G+'PROCESOS.html','ic-07']]}];
 const LOCK=['Planes de área 2026','Documentos docentes']; // secciones con contraseña
 const HASH='ef44b50b12b77a8a38936199d3edc55c7370ceff204c89580c2b144981b3c17f'; // huella SHA-256 de la contraseña (no se guarda en texto claro)
@@ -738,6 +750,7 @@ if('serviceWorker' in navigator&&location.protocol==='https:')navigator.serviceW
 <script>window.ARIA_DOCS_NOAUTO=1</script><script src="aria-docs.js" defer></script>
 <script src="assets/js/nav.js" defer></script>
 <script src="assets/js/encabezado.js" defer></script>
+<script src="assets/js/tablero.js" defer></script>
 <script>
 /* ====== EFECTOS AL PASAR EL MOUSE: foco de luz, inclinación, onda y aviso "Abrir" ====== */
 (function(){

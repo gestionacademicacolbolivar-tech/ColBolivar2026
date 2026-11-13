@@ -1,0 +1,5 @@
+{"_ayuda": "Rectoría/coordinación: complete SOLO con datos oficiales. Cuando haya datos, el panel «Colegio en cifras» dibuja la gráfica solo.",
+ "matricula": {"anio": 2026, "por_sede": [], "por_nivel": []},
+ "icfes": {"serie": []},
+ "visitas": {"serie": []},
+ "_ejemplos": {"por_sede": [{"n": "Sede 1", "v": 0}], "por_nivel": [{"n": "Primaria", "v": 0}], "icfes_serie": [{"a": 2024, "v": 0}], "visitas_serie": [{"e": "2026-11", "v": 0}]}}
