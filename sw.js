@@ -1,5 +1,5 @@
-const C='colbolivar-v16';
-const CORE=['./','./index.html','./datos/hoy-data.js','./datos/cumpleanos-data.js','./favicon.ico','./assets/img/escudo.webp','./assets/icons/icon-192.png','./assets/css/ui.css','./assets/js/nav.js','./assets/js/tablero.js','./datos/hoy-auto.json','./PROCESOS.html','./procesos/procesos.json','./aria-kb.js','./aria-conocimiento/base-colegio.json','./assets/img/ui-nav.webp','./assets/img/ui-docs.webp','./assets/img/46b47eb28f.webp'];
+const C='colbolivar-v17';
+const CORE=['./','./index.html','./datos/hoy-data.js','./datos/cumpleanos-data.js','./favicon.ico','./assets/img/escudo.webp','./assets/icons/icon-192.png','./assets/icons/icon-512.png','./manifest.webmanifest','./assets/img/portada/nuevo/fondo-esmeralda.webp','./assets/css/ui.css','./assets/js/nav.js','./assets/js/tablero.js','./datos/hoy-auto.json','./PROCESOS.html','./procesos/procesos.json','./aria-kb.js','./aria-conocimiento/base-colegio.json','./assets/img/ui-nav.webp','./assets/img/ui-docs.webp','./assets/img/46b47eb28f.webp'];
 const CACHEABLE=/\.(html|js|css|webp|png|jpe?g|svg|json|webmanifest)$|\/$/i;
 self.addEventListener('install',e=>{self.skipWaiting();e.waitUntil(caches.open(C).then(c=>c.addAll(CORE).catch(()=>{})))});
 self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(n=>n!==C).map(n=>caches.delete(n)))).then(()=>clients.claim())));
