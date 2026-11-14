@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#12306e">
+<title>Calendario institucional · ColBolívar</title>
+<meta name="description" content="Fechas del año escolar del Colegio Integrado Simón Bolívar con suscripción para Google Calendar, Outlook y el celular.">
+<link rel="icon" href="favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--g:#2b7a3a;--gd:#1c4f27;--o:#f58220;--n:#12306e;--r:#d92d3a;--ink:#16241b;--mut:#4a5b50;--bg:#eef4ee;--card:#fff;--line:#d3e0d5}
+*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font:17px/1.5 Nunito,system-ui,sans-serif;color:var(--ink);background:var(--bg)}
+h1,h2,h3{font-family:Sora,Nunito,sans-serif;line-height:1.15;color:var(--gd)}
+a{color:inherit}a:focus-visible,button:focus-visible{outline:3px solid var(--o);outline-offset:3px}
+.top{background:linear-gradient(135deg,#0b1a44,#12306e 60%,#1c4f27);color:#fff;position:relative;overflow:hidden;isolation:isolate}
+.top:before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(500px 220px at 85% 0,rgba(255,200,70,.25),transparent 70%),repeating-linear-gradient(0deg,rgba(255,255,255,.04) 0 1px,transparent 1px 38px),repeating-linear-gradient(90deg,rgba(255,255,255,.04) 0 1px,transparent 1px 38px)}
+.top .in{max-width:1000px;margin:0 auto;padding:14px clamp(14px,3vw,30px) 20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.top img{width:56px;height:auto;filter:drop-shadow(0 4px 6px rgba(0,0,0,.4))}
+.top h1{color:#fff;font-size:clamp(1.3rem,4vw,2rem)}.top p{opacity:.85;font-size:.92rem}
+.top .back{margin-left:auto;text-decoration:none;font-weight:700;font-size:.9rem;padding:.45em 1em;border:1px solid rgba(255,255,255,.5);border-radius:999px;transition:background .2s}
+.top .back:hover{background:rgba(255,255,255,.16)}
+main{max-width:1000px;margin:0 auto;padding:16px clamp(14px,3vw,30px) 40px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;box-shadow:0 6px 16px rgba(12,42,24,.07)}
+.btn{display:inline-flex;align-items:center;gap:.5em;font:700 .95rem Nunito,sans-serif;text-decoration:none;cursor:pointer;border:2px solid var(--g);background:#fff;color:var(--gd);border-radius:999px;padding:.55em 1.1em;transition:transform .15s,box-shadow .15s,background .15s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 0 12px rgba(255,190,60,.8)}.btn.p{background:var(--g);color:#fff}.btn.o{background:var(--o);border-color:var(--o);color:#2b1500}
+.chips{display:flex;flex-wrap:wrap;gap:6px}.chip{font:700 .8rem Nunito,sans-serif;border:1px solid var(--line);background:#fff;border-radius:999px;padding:.3em .85em;cursor:pointer;color:var(--mut)}
+.chip.on{background:var(--gd);color:#fff;border-color:var(--gd)}
+.foot{margin-top:18px;text-align:center;color:var(--mut);font-size:.86rem}code{background:#eef4ee;padding:.05em .4em;border-radius:5px;font-size:.88em}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+.sub-box{display:grid;gap:10px;background:linear-gradient(135deg,#fff,#f1f8f2);border-left:5px solid var(--o)}
+.sub-box h2{font-size:1.1rem}.sub-box p{color:var(--mut);font-size:.92rem}
+.sub-act{display:flex;flex-wrap:wrap;gap:8px}.sub-url{font-size:.8rem;color:var(--mut);word-break:break-all}
+.next{margin-top:12px;display:flex;gap:16px;align-items:center;flex-wrap:wrap;background:linear-gradient(135deg,#12306e,#1c4f27);color:#fff;border:0}
+.next b.n{font:800 clamp(2.2rem,8vw,3.4rem)/1 Sora,sans-serif;color:#ffd96b}.next small{opacity:.85}.next h2{color:#fff;font-size:1.25rem}
+.bar{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin:16px 0 4px}
+.mes{margin:14px 0 4px;font:800 .8rem Sora,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--gd);display:flex;align-items:center;gap:10px}.mes:after{content:"";flex:1;height:2px;background:var(--line)}
+.tl{position:relative;display:grid;gap:8px;padding-left:18px;border-left:3px solid #c5d8c8;margin-left:6px}
+.ev{position:relative;display:grid;grid-template-columns:62px 1fr;gap:12px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:8px 12px}
+.ev:before{content:"";position:absolute;left:-27px;top:50%;width:13px;height:13px;margin-top:-7px;border-radius:50%;background:var(--c,var(--g));border:3px solid var(--bg)}
+.ev .d{text-align:center;line-height:1}.ev .d b{display:block;font:800 1.6rem Sora,sans-serif;color:var(--c,var(--g))}.ev .d small{font-size:.7rem;text-transform:uppercase;color:var(--mut)}
+.ev h3{font-size:1rem;color:var(--ink)}.ev .m{font-size:.8rem;color:var(--mut)}.ev .t{display:inline-block;font:700 .68rem Nunito,sans-serif;padding:.1em .6em;border-radius:99px;background:var(--c,var(--g));color:#fff;margin-right:6px;vertical-align:1px}
+.ev.fest{background:#f7f6ef;--c:#9a7b1d}.ev.past{opacity:.5}
+.hoy{display:flex;align-items:center;gap:8px;color:var(--r);font:800 .78rem Sora,sans-serif;letter-spacing:.08em;margin:4px 0}.hoy:before,.hoy:after{content:"";height:2px;background:var(--r);flex:1;border-radius:2px}
+.vacio{color:var(--mut);text-align:center;padding:18px}
+</style>
+</head>
+<body>
+<header class="top"><div class="in"><img src="assets/img/escudo.webp" alt="Escudo del colegio"><div><h1>Calendario institucional</h1><p>Fechas del año escolar y festivos, siempre al día.</p></div><a class="back" href="index.html">← Volver al portal</a></div></header>
+<main id="app"><section class="card sub-box" id="sub"><h2>📅 Suscríbete y recibe las fechas en tu calendario</h2>
+<p>Se agrega una sola vez y las fechas se actualizan solas en tu celular o computador, sin volver a abrir la web.</p>
+<div class="sub-act"><a class="btn p" id="b-web" href="#">📱 Agregar a mi calendario</a><a class="btn" id="b-goo" target="_blank" rel="noopener" href="#">Google Calendar</a><a class="btn" id="b-out" target="_blank" rel="noopener" href="#">Outlook</a><a class="btn" id="b-ics" href="datos/calendario.ics" download>⬇ Descargar .ics</a><button class="btn" id="b-cp" type="button">📋 Copiar enlace</button></div>
+<p class="sub-url" id="url"></p><p class="sub-url">Incluye recordatorio un día antes de cada fecha institucional y los festivos de Colombia.</p></section>
+<div id="next"></div>
+<div class="bar"><div class="chips" id="fil"><button class="chip on" data-f="todo">Todo</button><button class="chip" data-f="inst">Institucional</button><button class="chip" data-f="fest">Festivos</button></div><button class="chip" id="past">Mostrar fechas pasadas</button></div>
+<div id="tl"></div>
+<p class="foot">Las fechas institucionales las actualiza coordinación académica; los festivos de Colombia se calculan solos.</p></main>
+<script>
+var $=function(q,r){return (r||document).querySelector(q)},E=function(t){return String(t).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})};
+var MES=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'],DIA=['dom','lun','mar','mié','jue','vie','sáb'];
+var TIPO={periodo:['Período','#12306e'],informes:['Informes','#d92d3a'],reunion:['Reunión','#7a4fb5'],vacaciones:['Vacaciones','#e38a10'],festivo:['Festivo','#9a7b1d'],evento:['Evento','#2b7a3a']};
+var ics=new URL('datos/calendario.ics',location.href).href,web=ics.replace(/^https?:/,'webcal:');
+$('#b-web').href=web;$('#b-goo').href='https://calendar.google.com/calendar/u/0/r?cid='+web;$('#b-out').href='https://outlook.live.com/calendar/0/addfromweb?url='+encodeURIComponent(ics)+'&name='+encodeURIComponent('Calendario ColBolívar');$('#url').textContent=ics;
+$('#b-cp').addEventListener('click',function(){var b=this;(navigator.clipboard?navigator.clipboard.writeText(ics):Promise.reject()).then(function(){b.textContent='✔ Enlace copiado'},function(){prompt('Copia este enlace:',ics)})});
+var hoy=new Date();hoy=new Date(hoy.getFullYear(),hoy.getMonth(),hoy.getDate());var hoyISO=hoy.toISOString().slice(0,10).replace(/.*/,function(){var d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')});
+var D=[],filtro='todo',pasadas=false;
+function dd(f){var a=f.split('-');return new Date(+a[0],+a[1]-1,+a[2])}
+function dias(f){return Math.round((dd(f)-hoy)/864e5)}
+function rango(e){return e.fin>e.f?dd(e.f).getDate()+' '+MES[dd(e.f).getMonth()].slice(0,3)+' – '+dd(e.fin).getDate()+' '+MES[dd(e.fin).getMonth()].slice(0,3):''}
+function pintar(){var h='',ult='',pintoHoy=false;
+ var L=D.filter(function(e){return filtro==='todo'||(filtro==='fest'?e.tipo==='festivo':e.tipo!=='festivo')}).filter(function(e){return pasadas||e.fin>=hoyISO});
+ if(!L.length){$('#tl').innerHTML='<p class="vacio">No hay fechas para mostrar con este filtro.</p>';return}
+ L.forEach(function(e){var m=MES[dd(e.f).getMonth()]+' '+dd(e.f).getFullYear();
+  if(pasadas&&!pintoHoy&&e.f>hoyISO){h+='</div><div class="hoy">HOY</div><div class="tl">';pintoHoy=true}
+  if(m!==ult){h+=(ult?'</div>':'')+'<div class="mes">'+m+'</div><div class="tl">';ult=m}
+  var t=TIPO[e.tipo]||TIPO.evento,past=e.fin<hoyISO;
+  h+='<div class="ev'+(e.tipo==='festivo'?' fest':'')+(past?' past':'')+'" style="--c:'+t[1]+'"><div class="d"><b>'+dd(e.f).getDate()+'</b><small>'+DIA[dd(e.f).getDay()]+'</small></div><div><h3>'+E(e.t)+'</h3><div class="m"><span class="t">'+t[0]+'</span>'+(rango(e)?E(rango(e))+' · ':'')+(past?'ya pasó':dias(e.f)<=0&&e.fin>=hoyISO?'¡en curso hoy!':dias(e.f)===1?'mañana':'en '+dias(e.f)+' días')+(e.d?' · '+E(e.d):'')+'</div></div></div>'});
+ $('#tl').innerHTML=h+'</div>'}
+fetch('datos/calendario-auto.json',{cache:'no-cache'}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(j){D=j.eventos||[];
+ var n=D.filter(function(e){return e.tipo!=='festivo'&&e.fin>=hoyISO})[0];
+ $('#next').innerHTML=n?'<div class="card next"><div><b class="n">'+(dias(n.f)<=0?'HOY':dias(n.f))+'</b><small>'+(dias(n.f)<=0?'':'días')+'</small></div><div><small>Próxima fecha institucional</small><h2>'+E(n.t)+'</h2><small>'+dd(n.f).getDate()+' de '+MES[dd(n.f).getMonth()]+' de '+dd(n.f).getFullYear()+'</small></div></div>':'';
+ pintar()}).catch(function(){$('#tl').innerHTML='<p class="vacio">No se pudo cargar el calendario. Intenta de nuevo en unos minutos.</p>'});
+$('#fil').addEventListener('click',function(e){var b=e.target.closest('.chip');if(!b)return;filtro=b.dataset.f;[].forEach.call($('#fil').children,function(c){c.classList.toggle('on',c===b)});pintar()});
+$('#past').addEventListener('click',function(){pasadas=!pasadas;this.classList.toggle('on',pasadas);this.textContent=pasadas?'Ocultar fechas pasadas':'Mostrar fechas pasadas';pintar()});
+
+</script>
+</body>
+</html>

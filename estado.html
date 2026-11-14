@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#12306e">
+<title>Estado del portal · ColBolívar</title>
+<meta name="description" content="Semáforo diario de los enlaces del portal del Colegio Integrado Simón Bolívar.">
+<link rel="icon" href="favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--g:#2b7a3a;--gd:#1c4f27;--o:#f58220;--n:#12306e;--r:#d92d3a;--ink:#16241b;--mut:#4a5b50;--bg:#eef4ee;--card:#fff;--line:#d3e0d5}
+*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font:17px/1.5 Nunito,system-ui,sans-serif;color:var(--ink);background:var(--bg)}
+h1,h2,h3{font-family:Sora,Nunito,sans-serif;line-height:1.15;color:var(--gd)}
+a{color:inherit}a:focus-visible,button:focus-visible{outline:3px solid var(--o);outline-offset:3px}
+.top{background:linear-gradient(135deg,#0b1a44,#12306e 60%,#1c4f27);color:#fff;position:relative;overflow:hidden;isolation:isolate}
+.top:before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(500px 220px at 85% 0,rgba(255,200,70,.25),transparent 70%),repeating-linear-gradient(0deg,rgba(255,255,255,.04) 0 1px,transparent 1px 38px),repeating-linear-gradient(90deg,rgba(255,255,255,.04) 0 1px,transparent 1px 38px)}
+.top .in{max-width:1000px;margin:0 auto;padding:14px clamp(14px,3vw,30px) 20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.top img{width:56px;height:auto;filter:drop-shadow(0 4px 6px rgba(0,0,0,.4))}
+.top h1{color:#fff;font-size:clamp(1.3rem,4vw,2rem)}.top p{opacity:.85;font-size:.92rem}
+.top .back{margin-left:auto;text-decoration:none;font-weight:700;font-size:.9rem;padding:.45em 1em;border:1px solid rgba(255,255,255,.5);border-radius:999px;transition:background .2s}
+.top .back:hover{background:rgba(255,255,255,.16)}
+main{max-width:1000px;margin:0 auto;padding:16px clamp(14px,3vw,30px) 40px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;box-shadow:0 6px 16px rgba(12,42,24,.07)}
+.btn{display:inline-flex;align-items:center;gap:.5em;font:700 .95rem Nunito,sans-serif;text-decoration:none;cursor:pointer;border:2px solid var(--g);background:#fff;color:var(--gd);border-radius:999px;padding:.55em 1.1em;transition:transform .15s,box-shadow .15s,background .15s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 0 12px rgba(255,190,60,.8)}.btn.p{background:var(--g);color:#fff}.btn.o{background:var(--o);border-color:var(--o);color:#2b1500}
+.chips{display:flex;flex-wrap:wrap;gap:6px}.chip{font:700 .8rem Nunito,sans-serif;border:1px solid var(--line);background:#fff;border-radius:999px;padding:.3em .85em;cursor:pointer;color:var(--mut)}
+.chip.on{background:var(--gd);color:#fff;border-color:var(--gd)}
+.foot{margin-top:18px;text-align:center;color:var(--mut);font-size:.86rem}code{background:#eef4ee;padding:.05em .4em;border-radius:5px;font-size:.88em}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+.sem{display:flex;align-items:center;gap:16px;flex-wrap:wrap}.luz{width:74px;height:74px;border-radius:50%;flex:none;background:var(--c);box-shadow:0 0 0 6px rgba(0,0,0,.06),0 0 26px var(--c);animation:lz 2.4s ease-in-out infinite}
+@keyframes lz{50%{box-shadow:0 0 0 6px rgba(0,0,0,.06),0 0 40px var(--c)}}
+.sem>div:last-child{flex:1;min-width:220px}.sem h2{font-size:1.4rem}.sem p{color:var(--mut)}
+.cnt{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:14px 0}.cn{background:#fff;border:1px solid var(--line);border-top:4px solid var(--c);border-radius:14px;padding:10px 12px}.cn b{display:block;font:800 1.7rem Sora,sans-serif;color:var(--c)}.cn span{font-size:.82rem;color:var(--mut)}
+.it{display:grid;grid-template-columns:34px 1fr;gap:10px;align-items:start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:9px 12px;margin-bottom:8px}
+.it .e{font-size:1.3rem}.it b{display:block;word-break:break-word}.it small{display:block;color:var(--mut);font-size:.8rem;word-break:break-all}.it a{color:var(--n)}
+.bar{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 12px}
+@media(max-width:640px){.cnt{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<header class="top"><div class="in"><img src="assets/img/escudo.webp" alt="Escudo del colegio"><div><h1>Estado del portal</h1><p>Semáforo de los enlaces del colegio, revisado cada noche.</p></div><a class="back" href="index.html">← Volver al portal</a></div></header>
+<main id="app"><div id="sem"><p class="foot">Cargando…</p></div></main>
+<script>
+var $=function(q,r){return (r||document).querySelector(q)},E=function(t){return String(t).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})};
+var EST={ok:['🟢','Funciona','#2fa84f'],intermitente:['🟡','Falló hoy: se vuelve a revisar','#e0a100'],caido:['🔴','No responde','#d92d3a'],no_verificable:['⚪','No verificable (el sitio bloquea revisiones automáticas)','#7b8a80']};
+var D,filtro='todos';
+function fecha(g){return (g||'').slice(0,10)}
+function pintar(){var r=D.resumen,col=r.caido?EST.caido[2]:r.intermitente?EST.intermitente[2]:EST.ok[2];
+ var h='<div class="card sem"><div class="luz" style="--c:'+col+'"></div><div><h2>'+(r.caido?r.caido+' enlace'+(r.caido>1?'s':'')+' sin responder':r.intermitente?'Todo bien, con '+r.intermitente+' enlace'+(r.intermitente>1?'s':'')+' en observación':'Todos los enlaces funcionan')+'</h2><p>Última revisión: '+E(fecha(D.generado))+' · se repite cada noche · '+r.total+' enlaces revisados.</p></div></div>';
+ h+='<div class="cnt">'+['ok','intermitente','caido','no_verificable'].map(function(k){return '<div class="cn" style="--c:'+EST[k][2]+'"><b>'+r[k]+'</b><span>'+EST[k][0]+' '+({ok:'Funcionan',intermitente:'En observación',caido:'Caídos',no_verificable:'No verificables'})[k]+'</span></div>'}).join('')+'</div>';
+ h+='<div class="bar chips" id="fil">'+[['todos','Todos'],['caido','Caídos'],['intermitente','En observación'],['no_verificable','No verificables'],['ok','Funcionan']].map(function(x){return '<button class="chip'+(filtro===x[0]?' on':'')+'" data-f="'+x[0]+'">'+x[1]+'</button>'}).join('')+'</div>';
+ var L=D.enlaces.filter(function(e){return filtro==='todos'||e.estado===filtro});
+ h+=L.length?L.map(function(e){var t=EST[e.estado];return '<div class="it"><span class="e" title="'+E(t[1])+'">'+t[0]+'</span><div><b>'+E(e.n||e.u)+'</b><small>'+(e.origen==='externo'?'<a href="'+E(e.u)+'" target="_blank" rel="noopener">'+E(e.u)+'</a>':E(e.u))+'</small><small>'+E(t[1])+(e.codigo?' · código '+e.codigo:'')+(e.estado!=='ok'?' · desde '+E(e.desde):'')+' · aparece en '+E(e.fuentes.join(', '))+'</small></div></div>'}).join(''):'<p class="foot">No hay enlaces en esta categoría.</p>';
+ $('#sem').innerHTML=h+'<p class="foot">🟢 funciona · 🟡 falló hoy y se vuelve a revisar mañana · 🔴 falló en dos revisiones seguidas o no existe · ⚪ redes sociales y sitios que bloquean robots: ábrelos para comprobarlos.</p>'}
+fetch('datos/estado-enlaces.json',{cache:'no-cache'}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(j){D=j;pintar()}).catch(function(){$('#sem').innerHTML='<div class="card"><h2>Aún no hay una revisión</h2><p>La primera revisión automática se hace de noche y aparecerá aquí.</p></div>'});
+$('#sem').addEventListener('click',function(e){var b=e.target.closest('#fil .chip');if(!b||!D)return;filtro=b.dataset.f;pintar()});
+
+</script>
+</body>
+</html>

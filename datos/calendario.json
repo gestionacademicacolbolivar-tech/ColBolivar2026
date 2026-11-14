@@ -1,0 +1,3 @@
+{"_ayuda": "Coordinación académica: agregue aquí el calendario del año escolar. Cada evento: t (título), f (fecha AAAA-MM-DD), fin (opcional, última fecha si dura varios días), tipo (periodo, informes, reunion, vacaciones, evento) y d (descripción opcional). Las fechas de 'Hoy en Bolívar' (datos/hoy-data.js) y los festivos de Colombia se agregan solos.",
+ "eventos": [],
+ "_ejemplo": [{"t": "Inicio del Período 1", "f": "2027-01-25", "tipo": "periodo", "d": "Inicio de clases"}, {"t": "Semana de receso estudiantil", "f": "2027-03-22", "fin": "2027-03-26", "tipo": "vacaciones"}]}
