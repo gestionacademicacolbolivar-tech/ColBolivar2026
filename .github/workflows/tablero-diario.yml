@@ -37,7 +37,9 @@ jobs:
           git add datos/hoy-auto.json datos/cifras-auto.json datos/avisos-enviados.json datos/calendario.ics datos/calendario-auto.json 2>/dev/null || true
           if ! git diff --cached --quiet; then
             git commit -m "Actualizar tablero"
-            git pull --rebase origin main
-            git push
+            for i in 1 2 3 4 5; do
+              git pull --rebase origin main && git push && break
+              echo "Reintento $i (otro flujo publicó al mismo tiempo)"; sleep $((RANDOM % 10 + 5))
+            done
             gh workflow run static.yml || echo "Publica el sitio manualmente (static.yml)"
           fi
