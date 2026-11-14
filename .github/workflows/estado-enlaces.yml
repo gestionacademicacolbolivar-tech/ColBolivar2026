@@ -1,0 +1,52 @@
+name: Semáforo de enlaces del portal
+on:
+  schedule:
+    - cron: "30 10 * * *"       # 5:30 a. m. hora de Colombia, todos los días
+  push:
+    branches: ["main"]
+    paths: ["scripts/revisar_enlaces.py", ".github/workflows/estado-enlaces.yml"]
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: write
+  issues: write
+concurrency:
+  group: enlaces
+  cancel-in-progress: false
+jobs:
+  enlaces:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: Revisar los enlaces
+        run: python scripts/revisar_enlaces.py
+      - name: Guardar el estado y volver a publicar el sitio
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "aria-bot"; git config user.email "aria-bot@users.noreply.github.com"
+          git add datos/estado-enlaces.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Actualizar estado de enlaces"
+            for i in 1 2 3 4 5; do
+              git pull --rebase origin main && git push && break
+              echo "Reintento $i (otro flujo publicó al mismo tiempo)"; sleep $((RANDOM % 10 + 5))
+            done
+            gh workflow run static.yml || echo "Publica el sitio manualmente (static.yml)"
+          fi
+      - name: Avisar en GitHub si hay enlaces caídos
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          rojos=$(python -c "import json;print(json.load(open('datos/estado-enlaces.json'))['resumen']['caido'])")
+          gh label create enlaces-caidos --color d93f0b --description "Enlaces del portal que no responden" 2>/dev/null || true
+          num=$(gh issue list --label enlaces-caidos --state open --json number -q '.[0].number' 2>/dev/null || true)
+          if [ "$rojos" -gt 0 ]; then
+            python scripts/revisar_enlaces.py --informe > informe.md
+            if [ -n "$num" ]; then gh issue edit "$num" --body-file informe.md || true
+            else gh issue create --title "Enlaces caídos en el portal" --label enlaces-caidos --body-file informe.md || echo "No se pudo crear el aviso (¿Issues desactivados?)"; fi
+          elif [ -n "$num" ]; then
+            gh issue close "$num" --comment "Todos los enlaces vuelven a responder ✅" || true
+          fi

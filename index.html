@@ -491,6 +491,7 @@ main section{margin-top:1.9em}.sec-p{margin-top:.4em}
 .nuevo{position:absolute;z-index:4;top:-.55em;left:.5em;padding:.1em .6em .15em;border-radius:999px;font:800 .66rem var(--fd);letter-spacing:.07em;color:#fff;background:linear-gradient(#ff6a5e,#d92d3a);border:2px solid #fff;box-shadow:0 3px 6px rgba(0,0,0,.3);animation:nuevo 1.8s ease-in-out infinite}
 @keyframes nuevo{50%{transform:scale(1.12);box-shadow:0 0 12px rgba(255,90,78,.9)}}
 @media(min-width:901px){.cats{grid-template-columns:repeat(2,minmax(0,1fr))}.cards{grid-template-columns:repeat(auto-fill,minmax(min(100%,12em),1fr))}}
+.hoy-t .mas{margin-left:auto;font-weight:700;font-size:.85em;color:#0d5a1e;text-decoration:none;white-space:nowrap}.hoy-t .mas:hover{text-decoration:underline}
 </style>
 <script>
 function fit(){var sw=screen.width,iw=innerWidth,ua=navigator.userAgent,ph=/Android.*Mobile|iPhone/i.test(ua),m=iw<=860,z=1;if(sw<=600&&iw>sw*1.25){z=iw/sw;m=true}else if(ph&&iw>=700){z=iw/420;m=true}document.documentElement.classList.toggle('m',m);if(document.body)document.body.style.zoom=z>1?z:''}
@@ -545,7 +546,7 @@ el.addEventListener("click",end);addEventListener("keydown",function(e){if(e.key
 
 <main class="w" id="main" tabindex="-1">
 <section id="hoy" class="hoy rv" aria-live="polite" aria-label="Hoy en Bolívar">
-<div class="hoy-t"><span class="pill">Hoy en Bolívar</span><span class="f" id="hfecha"></span></div>
+<div class="hoy-t"><span class="pill">Hoy en Bolívar</span><span class="f" id="hfecha"></span><a class="mas" href="calendario.html">Calendario ›</a></div>
 <div class="hoy-g">
 <div class="hc1"><img class="ii" id="hsol" src="assets/img/portada/nuevo/ic-02.webp" alt="" aria-hidden="true"><div><b class="t" id="hsal">Buen día</b><small>Comunidad ColBolívar</small></div></div>
 <div class="hc1 cumple" id="hcum"><img class="ii" src="assets/img/portada/nuevo/ic-06.webp" alt="" aria-hidden="true"><div><b class="t" id="cum-t">Cumpleaños</b><small id="cum-p">Felicita a nuestra comunidad.</small><a class="mas" href="cumpleanos.html">Ver cumpleaños ›</a></div></div>
@@ -656,6 +657,8 @@ const CATS=[
   ['Circulares','Comunicados oficiales',B+'circulares','ic-06'],
   ['Cartelera','Eventos y fechas del colegio',G+'cartelera.html','ic-05'],
   ['Notas y planillas','Plataforma WebColegios','https://www.webcolegios.com/simon/','ic-04'],
+  ['Calendario','Fechas y suscripción',G+'calendario.html','ic-05'],
+  ['¿Qué hago si…?','Rutas de atención paso a paso',G+'rutas.html','ic-09'],
   ['Sede San Martín 2026','Información de la sede',B+'sanmart%C3%ADn','ic-16']]},
  {id:'docs',t:'Documentos y planeación',c:'mar',it:[
   ['Documentos institucionales','Manuales y formatos',G+'DOCUMENTOS%20INSTITUCIONALES.html','ic-03'],
@@ -664,7 +667,8 @@ const CATS=[
  {id:'gestion',t:'Gestión y calidad',c:'bl',it:[
   ['Calidad','Gestión de calidad',G+'CALIDAD.html','ic-11'],
   ['Colegio en cifras','Datos y gráficas vivas',G+'cifras.html','ic-15'],
-  ['Procesos','Gestiones y evidencias',G+'PROCESOS.html','ic-07']]}];
+  ['Procesos','Gestiones y evidencias',G+'PROCESOS.html','ic-07'],
+  ['Estado del portal','Semáforo de enlaces',G+'estado.html','ic-07']]}];
 const LOCK=['Planes de área 2026','Documentos docentes']; // secciones con contraseña
 const HASH='ef44b50b12b77a8a38936199d3edc55c7370ceff204c89580c2b144981b3c17f'; // huella SHA-256 de la contraseña (no se guarda en texto claro)
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];

@@ -4,7 +4,7 @@ on:
     - cron: "0 10 * * *"        # 5:00 a.m. hora de Colombia, todos los días
   push:
     branches: ["main"]
-    paths: ["documentos/**", "datos/hoy-data.js", "datos/cumpleanos-data.js", "datos/novedades-manual.json", "datos/novedades-config.json", "datos/cifras-manual.json", "procesos/procesos.json", "scripts/generar_tablero.py"]
+    paths: ["documentos/**", "datos/hoy-data.js", "datos/cumpleanos-data.js", "datos/novedades-manual.json", "datos/novedades-config.json", "datos/cifras-manual.json", "procesos/procesos.json", "datos/calendario.json", "scripts/generar_tablero.py", "scripts/generar_calendario.py"]
   workflow_dispatch:
 permissions:
   contents: write
@@ -22,6 +22,8 @@ jobs:
         with: {python-version: "3.12"}
       - name: Generar datos del tablero y de las cifras
         run: python scripts/generar_tablero.py
+      - name: Generar calendario institucional (.ics) y festivos
+        run: python scripts/generar_calendario.py
       - name: Enviar avisos push (solo si OneSignal está configurado)
         env:
           ONESIGNAL_APP_ID: ${{ secrets.ONESIGNAL_APP_ID }}
@@ -32,10 +34,12 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           git config user.name "aria-bot"; git config user.email "aria-bot@users.noreply.github.com"
-          git add datos/hoy-auto.json datos/cifras-auto.json datos/avisos-enviados.json 2>/dev/null || true
+          git add datos/hoy-auto.json datos/cifras-auto.json datos/avisos-enviados.json datos/calendario.ics datos/calendario-auto.json 2>/dev/null || true
           if ! git diff --cached --quiet; then
             git commit -m "Actualizar tablero"
-            git pull --rebase origin main
-            git push
+            for i in 1 2 3 4 5; do
+              git pull --rebase origin main && git push && break
+              echo "Reintento $i (otro flujo publicó al mismo tiempo)"; sleep $((RANDOM % 10 + 5))
+            done
             gh workflow run static.yml || echo "Publica el sitio manualmente (static.yml)"
           fi
