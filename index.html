@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#12306e">
-<script>(function(){try{var d=new Date().toDateString();if(localStorage.getItem("cbintro")!==d&&!/[#&?]sin-intro/.test(location.href)&&!matchMedia("(prefers-reduced-motion:reduce)").matches)document.documentElement.classList.add("intro")}catch(e){}})()</script>
+<meta name="theme-color" content="#12306e"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="ColBolívar"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="application-name" content="ColBolívar">
+<script>(function(){try{var d=new Date().toDateString(),sa=matchMedia("(display-mode: standalone)").matches||navigator.standalone===true;if((sa||localStorage.getItem("cbintro")!==d)&&!/[#&?]sin-intro/.test(location.href))document.documentElement.classList.add("intro")}catch(e){}})();window.addEventListener("beforeinstallprompt",function(e){e.preventDefault();window.__dp=e;window.dispatchEvent(new Event("cb-installable"))})</script>
 <title>ColBolívar · Institución Educativa Colegio Integrado Simón Bolívar, Cúcuta</title>
 <meta name="description" content="Portal oficial de la I.E. Colegio Integrado Simón Bolívar de Cúcuta: documentos institucionales, planes, cartelera, cumpleaños y ColBolívar Radio.">
 <meta property="og:title" content="ColBolívar · Todos somos ColBolívar"><meta property="og:type" content="website"><meta property="og:locale" content="es_CO"><meta property="og:site_name" content="ColBolívar">
@@ -12,7 +12,7 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "EducationalOrganization", "name": "Institución Educativa Colegio Integrado Simón Bolívar", "alternateName": "ColBolívar", "url": "https://gestionacademicacolbolivar-tech.github.io/ColBolivar2026/", "logo": "https://gestionacademicacolbolivar-tech.github.io/ColBolivar2026/assets/img/escudo.webp", "email": "colintsimonbolivar@semcucuta.gov.co", "telephone": "+576075943344", "foundingDate": "1992-02-18", "address": {"@type": "PostalAddress", "streetAddress": "Calle 4 N.º 11A-26, Urbanización San Martín", "addressLocality": "Cúcuta", "addressRegion": "Norte de Santander", "addressCountry": "CO"}, "sameAs": ["https://www.facebook.com/profile.php?id=61566338526972", "https://www.youtube.com/@ColBolivar"]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="manifest" href="manifest.webmanifest">
+<link rel="manifest" href="manifest.webmanifest?v=2">
 <style>
 :root{--g:#14652D;--gd:#1C4F27;--o:#F58220;--r:#B3261E;--n:#14294D;--ink:#14231A;--bg:#EDF3EE;--mut:#42564A;--line:#CFDDD3;--W:1240px;--P:assets/img/portada;--N:assets/img/portada/nuevo;
 --esm:#14652D;--bos:#1C4F27;--noche:#0C2A18;--nar:#F58220;--oro:#D9A441;--mar:#14294D;--fs:"IBM Plex Sans",system-ui,sans-serif;--fd:Sora,"IBM Plex Sans",sans-serif;--fz:clamp(17px,.42vw + 15.3px,21.5px)}
@@ -86,7 +86,7 @@ img{max-width:100%}
  .hc{left:0;right:0;top:67cqh;justify-content:center;gap:8px}.hc a{height:32px;padding:0 13px;font-size:12px}
  .E.fol{left:2%;height:11cqh}.E.arb{right:2%;height:9cqh}}
 /* Con "reducir animaciones" activo se mantienen solo los efectos suaves y decorativos del encabezado (sin parallax) */
-@media(prefers-reduced-motion:reduce){.hero *{animation:none!important}.hero .nb{left:0;animation:viento calc(var(--s)*1.8) linear var(--dl) infinite!important}
+@media(prefers-reduced-motion:reduce){.hero .nb{left:0;animation:viento calc(var(--s)*1.8) linear var(--dl) infinite!important}
 .hero .nb img{animation:forma var(--m,22s) ease-in-out infinite alternate!important}
 .hero .sol{animation:pulso 6s ease-in-out infinite!important}
 .hero .escw .halo{animation:halo 4.5s ease-in-out infinite!important}.hero .escw img{animation:flota 6s ease-in-out infinite!important}
@@ -151,9 +151,9 @@ img{max-width:100%}
 .svc:hover .ic,.svc:focus-visible .ic{transform:scale(1.15) rotate(-5deg)}
 .svc b{display:block;font:700 1.02em/1.2 var(--fd);color:var(--noche)}
 .svc small{display:block;margin-top:.2em;font-size:.93em;line-height:1.35;color:#33473B}
-.svc .go{position:absolute;z-index:3;top:-1.45em;right:-.3em;padding:.2em .9em .25em;border-radius:999px;font:700 .82em var(--fd);color:#2E1700;background:linear-gradient(#FFB655,#F58220);border:2px solid #fff;box-shadow:0 4px 8px rgba(0,0,0,.3);opacity:0;transform:translateY(.5em) scale(.9);transition:opacity .2s,transform .25s;pointer-events:none}
+.svc .go{position:absolute;z-index:3;top:-1.5em;right:-.3em;padding:.2em .9em .25em;border-radius:999px;font:700 .82em var(--fd);color:#2E1700;background:linear-gradient(#FFB655,#F58220);border:2px solid #fff;box-shadow:0 4px 8px rgba(0,0,0,.3);opacity:0;transform:translateY(.5em) scale(.9);transition:opacity .2s,transform .25s;pointer-events:none}
 .svc:hover .go,.svc:focus-visible .go{opacity:1;transform:none}
-@media(hover:none){.svc .go{opacity:1;transform:none;top:-1.2em}}
+@media(hover:none){.svc .go{opacity:1;transform:none;top:50%;right:.35em;margin-top:-.9em;width:1.8em;height:1.8em;padding:0;display:grid;place-items:center;font-size:0}.svc .go:after{content:"\203A";font:800 1.35rem/1 var(--fd)}.svc{padding-right:1.6em}}
 .svc .lkb{display:inline-block;margin-top:.35em;padding:.1em .7em;border-radius:999px;font:700 .8em var(--fs);color:#5A3E00;background:#FBE7B0;border:1px solid #D9A441}
 .qres{margin:1.2em 0 0;padding:.8em 1em 1em;border:12px solid transparent;border-image:url(assets/img/portada/nuevo/marco-borde.webp) 28 fill/12px stretch;filter:drop-shadow(0 8px 12px rgba(12,42,24,.25))}
 .qres h3{margin:12px 0 4px;font:700 .85em var(--fs);text-transform:uppercase;letter-spacing:.07em;color:var(--mut)}
@@ -293,7 +293,7 @@ details.prom{margin-top:.7em;font-size:.97em}details.prom summary{cursor:pointer
 .lk{display:flex;flex-wrap:wrap;gap:.4em 1.3em;justify-content:center;margin:.6em 0 0;font-weight:700;font-size:1em}.lk a{color:#14294D;background:linear-gradient(#E5681A,#E5681A) left bottom/100% 2px no-repeat;transition:background-size .25s,color .2s}.lk a:hover{background-size:100% 100%;color:#fff}
 
 /* ---- Acceso docentes ---- */
-.md{position:fixed;inset:0;z-index:50;display:grid;place-items:center;padding:16px;background:rgba(8,26,15,.72);backdrop-filter:blur(4px)}.md[hidden]{display:none}
+.md{position:fixed;inset:0;z-index:2147483600;display:grid;place-items:center;padding:16px;background:rgba(8,26,15,.72);backdrop-filter:blur(4px)}.md[hidden]{display:none}
 .mb{width:100%;max-width:26em;padding:1.4em 1.5em;border:12px solid transparent;border-image:url(assets/img/portada/nuevo/marco-borde.webp) 28 fill/12px stretch;filter:drop-shadow(0 20px 40px rgba(0,0,0,.5))}
 .mb h3{display:flex;align-items:center;gap:.5em;margin-bottom:.3em;font-size:1.2em}
 .mb p{color:var(--mut)}
@@ -330,7 +330,7 @@ footer.pie:after{content:"";position:absolute;inset:0;z-index:-1;background:rgba
  .pie .mail{margin-left:0}
  .tit h2,.tit h3{font-size:clamp(1.1em,5.4cqw,1.6em)}
 }
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}.rv{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){main *,footer.pie *,.md *{animation:none!important;transition:none!important}html{scroll-behavior:auto}.rv{opacity:1;transform:none}}
 
 .stage{margin:0;border-radius:0;max-width:none}
 /* LEMAS: franja delgada animada */
@@ -373,32 +373,101 @@ display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:.05em 
 .dots b{display:block;width:100%;height:100%;background:#ffd23f;transform:scaleX(0);transform-origin:left}
 .dots button[aria-current=true] i{width:30px}
 .dots button:focus-visible{outline:3px solid #ffd23f;outline-offset:-3px;border-radius:12px}
-/* ===== INTRO ===== */
+/* ===== INTRO DE CARGA ===== */
 #intro{display:none}
 html.intro,html.intro body{overflow:hidden}
-html.intro #intro{display:flex}
-#intro{position:fixed;inset:0;z-index:9999;align-items:center;justify-content:center;text-align:center;color:#fff;cursor:pointer;overflow:hidden;background:radial-gradient(90% 70% at 50% 38%,#1d4fb8 0%,#12306e 48%,#08183a 100%);transition:transform .65s cubic-bezier(.7,0,.3,1),opacity .65s}
-#intro.out{transform:translateY(-100%);opacity:.2;pointer-events:none}
-#intro .ig{position:absolute;left:50%;top:38%;width:min(130vw,900px);aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(closest-side,#ffd23f66,#ffd23f22 45%,#ffd23f00 72%);animation:iglow 3.4s ease-in-out infinite alternate;will-change:opacity}
-#intro .ib{position:absolute;left:0;right:0;bottom:0;height:12px;display:flex}
-#intro .ib i{flex:1}#intro .ib i:nth-child(1){background:#ffd23f;flex:2}#intro .ib i:nth-child(2){background:#1d4fb8}#intro .ib i:nth-child(3){background:#d92d3a}
-#intro .ic2{position:relative;display:flex;flex-direction:column;align-items:center;padding:20px;max-width:92vw}
-#intro .iesc{width:auto;height:min(40vh,300px);max-width:70vw;object-fit:contain;filter:drop-shadow(0 14px 28px #000b);animation:ipop 1s cubic-bezier(.2,1.5,.4,1) both,iflo 3.2s ease-in-out 1s infinite}
-#intro .ik{margin:18px 0 2px;font:700 .95rem/1 Nunito,system-ui,sans-serif;letter-spacing:.28em;text-transform:uppercase;color:#cfe0ff;animation:iup .7s .55s both}
-#intro .it{margin:0;font:800 clamp(1.25rem,4.6vw,2.1rem)/1.15 Sora,Nunito,sans-serif;animation:iup .7s .75s both}
-#intro .it b{color:#ffd23f}
-#intro .il{margin:12px 0 0;font:800 clamp(1.5rem,6vw,2.6rem)/1 Sora,Nunito,sans-serif;animation:iup .7s 1s both}
-#intro .il span{color:#ffd23f}#intro .il em{font-style:normal;color:#fff;text-shadow:0 3px 0 #d92d3a}
-#intro .ip{width:min(300px,70vw);height:8px;margin:26px 0 14px;border-radius:99px;background:#ffffff2e;overflow:hidden;animation:iup .5s 1.1s both}
-#intro .ip i{display:block;height:100%;width:100%;transform-origin:0 50%;transform:scaleX(0);border-radius:99px;background:linear-gradient(90deg,#ffd23f,#ffa63d);animation:ifill 2.7s cubic-bezier(.4,.1,.3,1) 1.1s forwards}
-#intro .is{all:unset;cursor:pointer;padding:10px 26px;border-radius:99px;font:800 .95rem Sora,Nunito,sans-serif;background:#fff;color:#12306e;box-shadow:0 4px 0 #9fb3d9;animation:iup .5s 1.5s both}
-#intro .is:focus-visible{outline:3px solid #ffa63d;outline-offset:3px}
-@keyframes iglow{from{opacity:.45}to{opacity:1}}
-@keyframes ipop{0%{opacity:0;transform:scale(.3) rotate(-8deg)}100%{opacity:1;transform:none}}
+html.intro #intro{display:block}
+#intro{position:fixed;inset:0;z-index:9999;color:#fff;overflow:hidden;cursor:pointer;background:#06190E;transition:opacity .7s ease,transform .7s cubic-bezier(.7,0,.3,1),filter .7s}
+#intro.out{opacity:0;transform:scale(1.08);filter:blur(6px);pointer-events:none}
+#intro .ibg{position:absolute;inset:0;background:radial-gradient(90% 70% at 50% 36%,#22994A 0%,#14652D 38%,#0A2E18 74%,#05160C 100%)}
+#intro .ibg:after{content:"";position:absolute;inset:0;background:url(assets/img/portada/nuevo/fondo-esmeralda.webp) center/cover;opacity:.3;mix-blend-mode:soft-light}
+#intro .irays{position:absolute;left:50%;top:36%;width:170vmax;height:170vmax;margin:-85vmax 0 0 -85vmax;background:repeating-conic-gradient(from 0deg,rgba(255,214,110,.18) 0 5deg,transparent 5deg 15deg);-webkit-mask-image:radial-gradient(closest-side,#000 4%,transparent 40%);mask-image:radial-gradient(closest-side,#000 4%,transparent 40%);animation:irot 40s linear infinite}
+#intro .ivg{position:absolute;inset:0;background:radial-gradient(120% 90% at 50% 40%,transparent 52%,rgba(0,0,0,.6) 100%)}
+#intro .ipart{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+#intro .ipart i{position:absolute;bottom:-14px;left:var(--x);width:var(--s);height:var(--s);border-radius:50%;background:radial-gradient(circle,#fff8d0,#ffd66b 55%,transparent 72%);opacity:0;animation:iris var(--d) linear var(--l) infinite}
+#intro .imain{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:3vh 20px calc(3vh + env(safe-area-inset-bottom,0px));text-align:center}
+#intro .iemb{position:relative;width:min(56vw,300px,36vh);aspect-ratio:1;display:grid;place-items:center;margin-bottom:2.4vh}
+#intro .iglow{position:absolute;inset:-22%;border-radius:50%;background:radial-gradient(closest-side,rgba(255,214,110,.5),rgba(255,214,110,0));animation:iglow 3s ease-in-out infinite alternate}
+#intro .ir{position:absolute;inset:0;border-radius:50%}
+#intro .r1{background:conic-gradient(from 0deg,#FFE08A,rgba(255,214,110,0) 34%,#FFD66B 56%,rgba(255,214,110,0) 86%,#FFE08A);-webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 5px),#000 calc(100% - 4px));mask:radial-gradient(farthest-side,transparent calc(100% - 5px),#000 calc(100% - 4px));animation:irot 3.2s linear infinite;filter:drop-shadow(0 0 7px rgba(255,214,110,.9))}
+#intro .r2{inset:-8%;border:1.5px dashed rgba(255,226,150,.6);animation:irot 16s linear infinite reverse}
+#intro .r3{inset:5%;border:2px solid rgba(255,214,110,.65);animation:ipulse 2.4s ease-out infinite}
+#intro .ish{position:relative;z-index:2;height:76%;aspect-ratio:600/726;animation:ipop 1s cubic-bezier(.2,1.5,.4,1) both,iflo 3.4s ease-in-out 1s infinite}
+#intro .iesc{display:block;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 14px 22px rgba(0,0,0,.6)) drop-shadow(0 0 20px rgba(255,214,110,.5))}
+#intro .ishine{position:absolute;inset:0;-webkit-mask:url(assets/img/escudo.webp) center/contain no-repeat;mask:url(assets/img/escudo.webp) center/contain no-repeat;background:linear-gradient(110deg,transparent 38%,rgba(255,255,255,.9) 50%,transparent 62%) 150% 0/260% 100% no-repeat;animation:ishine 2.6s ease-in-out 1.3s infinite}
+#intro .ik{margin:0;font:700 clamp(.72rem,2.6vw,.95rem)/1 "IBM Plex Sans",Nunito,system-ui,sans-serif;letter-spacing:.3em;text-transform:uppercase;color:#CFEBD8;animation:iup .7s .5s both}
+#intro .it{margin:.55em 0 0;font:800 clamp(1.25rem,5.4vw,2.1rem)/1.15 Sora,Nunito,sans-serif;animation:iup .7s .7s both}
+#intro .it b{color:#FFD66B}
+#intro .il{margin:.5em 0 0;font:800 clamp(1.55rem,7vw,2.8rem)/1 Sora,Nunito,sans-serif;animation:iup .7s .95s both}
+#intro .il span{background:linear-gradient(90deg,#FFE08A,#F5A623,#FFE08A);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;animation:ishimmer 2.4s linear infinite}
+#intro .il em{font-style:normal;color:#fff;text-shadow:0 3px 0 rgba(0,0,0,.35)}
+#intro .ipb{width:min(340px,78vw);margin-top:3.4vh;animation:iup .6s 1.15s both}
+#intro .ipt{height:14px;padding:2px;border-radius:99px;background:rgba(255,255,255,.12);box-shadow:inset 0 1px 3px rgba(0,0,0,.45),0 0 0 1px rgba(255,214,110,.4)}
+#intro .ipt i{display:block;height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,#FFB300,#FFE08A,#FFB300);background-size:200% 100%;box-shadow:0 0 12px rgba(255,200,70,.85);animation:ishimmer 1.4s linear infinite}
+#intro .ipm{display:flex;justify-content:space-between;gap:10px;margin-top:.7em;font:600 .86rem "IBM Plex Sans",Nunito,sans-serif;color:#DDF0E3;text-align:left}
+#intro .ipm b{flex:none;font:800 .98rem Sora,Nunito,sans-serif;color:#FFD66B;font-variant-numeric:tabular-nums}
+#intro .is{all:unset;cursor:pointer;margin-top:2.2vh;padding:.65em 1.8em;border-radius:99px;font:800 .95rem Sora,Nunito,sans-serif;color:#2E1700;background:linear-gradient(#FFD27A,#F5A01F);border:2px solid #fff;box-shadow:0 4px 0 #B86D12;animation:iup .5s 1.9s both}
+#intro .is:focus-visible{outline:3px solid #fff;outline-offset:3px}
+#intro .ipl{position:absolute;left:0;right:0;bottom:calc(14px + env(safe-area-inset-bottom,0px));text-align:center;font:600 .78rem "IBM Plex Sans",sans-serif;letter-spacing:.18em;text-transform:uppercase;color:rgba(220,240,228,.7)}
+@keyframes irot{to{transform:rotate(1turn)}}
+@keyframes iris{0%{transform:translate(0,0) scale(.6);opacity:0}15%{opacity:.95}100%{transform:translate(var(--dx),-112vh) scale(1);opacity:0}}
+@keyframes iglow{from{opacity:.55;transform:scale(.94)}to{opacity:1;transform:scale(1.06)}}
+@keyframes ipulse{0%{transform:scale(1);opacity:.75}100%{transform:scale(1.55);opacity:0}}
+@keyframes ipop{0%{opacity:0;transform:scale(.3) rotate(-10deg)}100%{opacity:1;transform:none}}
 @keyframes iflo{50%{transform:translateY(-8px)}}
+@keyframes ishine{to{background-position:-70% 0}}
+@keyframes ishimmer{to{background-position:200% 0}}
 @keyframes iup{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-@keyframes ifill{to{transform:scaleX(1)}}
-@media(prefers-reduced-motion:reduce){#intro,#intro *{animation:none!important;transition:none!important}}
+@media(prefers-reduced-motion:reduce){#intro *{animation:none!important}#intro .ipart,#intro .irays{display:none}}
+/* ===== APP INSTALABLE ===== */
+.app{position:relative;isolation:isolate;overflow:hidden;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:1.4em;padding:1.5em 1.8em;border-radius:1.2em;border:3px solid var(--oro);color:#fff;background:#0A2E18;box-shadow:0 18px 40px -20px rgba(12,42,24,.8)}
+.app[hidden]{display:none}
+.app:before{content:"";position:absolute;inset:0;z-index:-2;background:url(assets/img/portada/nuevo/fondo-oro.webp) center/cover}
+.app:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(100deg,rgba(6,28,15,.93) 32%,rgba(20,101,45,.4))}
+.app-k{display:inline-block;padding:.15em .85em;border-radius:99px;font:700 .85em var(--fs);color:#2E1700;background:linear-gradient(#FFD27A,#F5A01F)}
+.app h2{margin:.4em 0 .3em;font:800 clamp(1.45em,3vw,2.15em)/1.12 var(--fd);color:#fff}.app h2 b{color:#FFC259}
+.app-ul{list-style:none;padding:0;margin:.5em 0 1em;display:grid;gap:.4em}
+.app-ul li{position:relative;padding-left:1.8em;font-size:1.03em;line-height:1.4;color:#E4F1E8}
+.app-ul li:before{content:"\2713";position:absolute;left:0;top:.05em;width:1.4em;height:1.4em;border-radius:50%;display:grid;place-items:center;font:800 .8em var(--fs);color:#2E1700;background:#FFC259}
+.app-cta{display:flex;flex-wrap:wrap;align-items:center;gap:.7em 1em}
+.app-btn{position:relative;display:inline-flex;align-items:center;gap:.6em;padding:.8em 1.5em;border-radius:.9em;border:2px solid #fff;font:800 1.08em var(--fd);color:#2E1700;background:linear-gradient(#FFD27A,#F5A01F);box-shadow:0 5px 0 #B86D12,0 0 0 0 rgba(255,194,89,.7);animation:appglow 2.2s ease-out infinite;transition:transform .15s}
+.app-btn:hover{transform:translateY(-3px)}
+.app-btn:active{transform:translateY(2px);box-shadow:0 2px 0 #B86D12}
+.app-btn b{display:grid;place-items:center;width:1.5em;height:1.5em;border-radius:50%;font-size:.9em;color:#fff;background:#14652D}
+@keyframes appglow{70%{box-shadow:0 5px 0 #B86D12,0 0 0 .9em rgba(255,194,89,0)}}
+.app-hint{font-size:.92em;color:#CFE6D6}
+.app-mock{justify-self:center;width:min(15em,60vw)}
+.mk-phone{position:relative;aspect-ratio:9/15.5;margin:0 auto;border-radius:2em;padding:2.2em .9em 1em;background:linear-gradient(160deg,#2c4a63,#16293a 60%,#0e1a26);border:.4em solid #0b0f14;box-shadow:0 22px 40px rgba(0,0,0,.55),inset 0 0 0 1px rgba(255,255,255,.18)}
+.mk-phone:before{content:"";position:absolute;left:50%;top:.55em;width:3.4em;height:.9em;transform:translateX(-50%);border-radius:99px;background:#05080b}
+.mk-g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.1em .8em;align-content:center;height:100%}
+.mk-t,.mk-me{min-width:0}
+.mk-t{display:grid;justify-items:center;gap:.35em}
+.mk-t i{display:block;width:100%;aspect-ratio:1;border-radius:24%;background:linear-gradient(135deg,var(--c1),var(--c2));opacity:.7}
+.mk-t span{width:68%;height:.34em;border-radius:3px;background:rgba(255,255,255,.38)}
+.mk-me{position:relative;grid-column:2;grid-row:2;z-index:2;transform:scale(1.3)}
+.mk-me img{display:block;width:100%;height:auto;aspect-ratio:1;border-radius:24%;box-shadow:0 0 0 .18em rgba(255,214,110,.95),0 0 1.5em rgba(255,214,110,.95);animation:mkp 2s ease-in-out infinite}
+.mk-me span{display:block;margin-top:.35em;text-align:center;font:700 .62em var(--fs);color:#fff}
+.mk-tag{position:absolute;z-index:3;top:-2.2em;left:50%;white-space:nowrap;padding:.15em .75em;border-radius:99px;font:800 .72em var(--fd);color:#2E1700;background:linear-gradient(#FFD27A,#F5A01F);border:1.5px solid #fff;transform:translateX(-50%);animation:mkb 1.4s ease-in-out infinite}
+@keyframes mkp{50%{box-shadow:0 0 0 .3em rgba(255,214,110,.6),0 0 2.2em rgba(255,214,110,1)}}
+@keyframes mkb{50%{transform:translate(-50%,-.3em)}}
+/* aviso superior para instalar */
+.apb{position:fixed;z-index:8500;left:50%;top:calc(10px + env(safe-area-inset-top,0px));width:min(94vw,25em);display:grid;grid-template-columns:3.8em 1fr;gap:.2em .8em;align-items:center;padding:.8em .9em;font-size:16px;border-radius:1em;border:2px solid var(--oro);color:#fff;background:linear-gradient(135deg,#14652D,#0C2A18);box-shadow:0 14px 30px rgba(0,0,0,.5);transform:translate(-50%,-150%);transition:transform .55s cubic-bezier(.2,1.2,.4,1)}
+.apb.on{transform:translate(-50%,0)}
+.apb img{width:3.8em;height:3.8em;border-radius:22%;box-shadow:0 0 0 2px rgba(255,214,110,.9),0 0 14px rgba(255,214,110,.7)}
+.apb b{display:block;font:800 1em var(--fd)}
+.apb p{margin:.15em 0 0;font-size:.88em;line-height:1.3;color:#D4EADB}
+.apb .ab{grid-column:1/-1;display:flex;gap:.6em;margin-top:.5em}
+.apb button{flex:1;height:2.6em;border-radius:.7em;border:2px solid var(--oro);font:700 .95em var(--fd)}
+.apb .ok{background:linear-gradient(#FFD27A,#F5A01F);color:#2E1700}
+.apb .no{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
+@media(min-width:900px){.apb{left:auto;right:16px;transform:translateX(130%)}.apb.on{transform:none}}
+/* pasos para instalar a mano */
+.st{list-style:none;counter-reset:s;padding:0;margin:.8em 0 .5em}
+.st li{counter-increment:s;position:relative;padding:.4em 0 .4em 2.5em;line-height:1.45}
+.st li:before{content:counter(s);position:absolute;left:0;top:.3em;width:1.8em;height:1.8em;border-radius:50%;display:grid;place-items:center;font:800 .95em var(--fd);color:#2E1700;background:linear-gradient(#FFD27A,#F5A01F)}
+.mb .app-note{margin-top:.6em;padding:.6em .8em;border-radius:.7em;font-size:.93em;background:#FFF4DC;border:1px solid #E6D19B;color:#4a3300}
+@media(max-width:760px){.app{grid-template-columns:1fr;padding:1.2em 1.2em 1.4em}.app-mock{order:-1;width:min(11em,56vw)}.mk-phone{aspect-ratio:9/12}}
+@media(prefers-reduced-motion:reduce){.app-btn,.mk-me img,.mk-tag{animation:none!important}}
 .stage{margin:0!important;border-radius:0!important;max-width:none!important}
 /* ===== Compacto: menos aire entre secciones y tarjetas ===== */
 main section{margin-top:1.9em}.sec-p{margin-top:.4em}
@@ -421,17 +490,35 @@ main section{margin-top:1.9em}.sec-p{margin-top:.4em}
 .nov .bell:hover:not(:disabled){background:#eaf5ed;transform:translateY(-1px)}.nov .bell.on{background:#1b8a35;color:#fff}.nov .bell:disabled{opacity:.6;cursor:not-allowed}
 .nuevo{position:absolute;z-index:4;top:-.55em;left:.5em;padding:.1em .6em .15em;border-radius:999px;font:800 .66rem var(--fd);letter-spacing:.07em;color:#fff;background:linear-gradient(#ff6a5e,#d92d3a);border:2px solid #fff;box-shadow:0 3px 6px rgba(0,0,0,.3);animation:nuevo 1.8s ease-in-out infinite}
 @keyframes nuevo{50%{transform:scale(1.12);box-shadow:0 0 12px rgba(255,90,78,.9)}}
+@media(min-width:901px){.cats{grid-template-columns:repeat(2,minmax(0,1fr))}.cards{grid-template-columns:repeat(auto-fill,minmax(min(100%,12em),1fr))}}
 </style>
 <script>
 function fit(){var sw=screen.width,iw=innerWidth,ua=navigator.userAgent,ph=/Android.*Mobile|iPhone/i.test(ua),m=iw<=860,z=1;if(sw<=600&&iw>sw*1.25){z=iw/sw;m=true}else if(ph&&iw>=700){z=iw/420;m=true}document.documentElement.classList.toggle('m',m);if(document.body)document.body.style.zoom=z>1?z:''}
 fit();addEventListener('resize',fit);addEventListener('DOMContentLoaded',fit);
 </script>
-<link rel="icon" href="favicon.ico" sizes="48x48"><link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png"><link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+<link rel="icon" href="favicon.ico?v=2" sizes="48x48"><link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png?v=2"><link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16.png?v=2"><link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png?v=2">
 <link rel="stylesheet" href="assets/css/ui.css">
 </head>
 <body>
-<div id="intro" role="dialog" aria-modal="true" aria-label="Bienvenida a ColBol&iacute;var"><div class="ig" aria-hidden="true"></div><div class="ic2"><img class="iesc" src="assets/img/escudo.webp" width="600" height="726" alt="Escudo del Colegio Integrado Sim&oacute;n Bol&iacute;var"><p class="ik">Instituci&oacute;n Educativa</p><p class="it">Colegio Integrado <b>Sim&oacute;n Bol&iacute;var</b></p><p class="il">Todos somos <span>Col</span><em>Bol&iacute;var</em></p><div class="ip" aria-hidden="true"><i></i></div><button class="is" type="button">Entrar &rsaquo;</button></div><div class="ib" aria-hidden="true"><i></i><i></i><i></i></div></div>
-<script>(function(){var h=document.documentElement,el=document.getElementById("intro");if(!el)return;if(!h.classList.contains("intro")){el.remove();return}var done=false;function end(){if(done)return;done=true;try{localStorage.setItem("cbintro",new Date().toDateString())}catch(e){}el.classList.add("out");setTimeout(function(){h.classList.remove("intro");el.remove()},680)}el.querySelector(".ip i").addEventListener("animationend",end);el.addEventListener("click",end);addEventListener("keydown",function(e){if(e.key==="Escape"||e.key==="Enter"||e.key===" ")end()});setTimeout(end,5200);try{el.querySelector(".is").focus({preventScroll:true})}catch(e){}})();</script>
+<div id="intro" role="dialog" aria-modal="true" aria-label="Cargando ColBol&iacute;var"><div class="ibg"></div><div class="irays" aria-hidden="true"></div><div class="ivg"></div><div class="ipart" aria-hidden="true"><i style="--x:43%;--s:5px;--d:6.8s;--l:-0.3s;--dx:45px"></i><i style="--x:70%;--s:4px;--d:6.6s;--l:-0.3s;--dx:4px"></i><i style="--x:29%;--s:4px;--d:5.4s;--l:-2.5s;--dx:-30px"></i><i style="--x:13%;--s:10px;--d:6.9s;--l:-5.0s;--dx:-45px"></i><i style="--x:30%;--s:10px;--d:9.3s;--l:-3.5s;--dx:-10px"></i><i style="--x:8%;--s:5px;--d:5.2s;--l:-5.2s;--dx:-23px"></i><i style="--x:55%;--s:5px;--d:7.4s;--l:-3.4s;--dx:11px"></i><i style="--x:89%;--s:5px;--d:5.5s;--l:-3.4s;--dx:-36px"></i><i style="--x:49%;--s:4px;--d:7.5s;--l:-0.4s;--dx:-53px"></i><i style="--x:81%;--s:5px;--d:7.2s;--l:-3.2s;--dx:39px"></i><i style="--x:42%;--s:8px;--d:7.6s;--l:-2.7s;--dx:-22px"></i><i style="--x:33%;--s:5px;--d:8.1s;--l:-1.5s;--dx:13px"></i><i style="--x:40%;--s:10px;--d:7.2s;--l:-2.1s;--dx:-3px"></i><i style="--x:38%;--s:10px;--d:9.4s;--l:-0.7s;--dx:-7px"></i><i style="--x:23%;--s:6px;--d:5.7s;--l:-2.9s;--dx:-55px"></i><i style="--x:87%;--s:4px;--d:8.4s;--l:-3.4s;--dx:52px"></i><i style="--x:42%;--s:6px;--d:8.1s;--l:-3.6s;--dx:14px"></i><i style="--x:60%;--s:4px;--d:8.8s;--l:-5.7s;--dx:0px"></i><i style="--x:91%;--s:4px;--d:5.3s;--l:-4.2s;--dx:22px"></i><i style="--x:75%;--s:8px;--d:6.3s;--l:-2.3s;--dx:25px"></i><i style="--x:46%;--s:4px;--d:9.2s;--l:-2.1s;--dx:18px"></i><i style="--x:16%;--s:8px;--d:5.3s;--l:-4.6s;--dx:-44px"></i><i style="--x:96%;--s:5px;--d:6.8s;--l:-5.5s;--dx:3px"></i><i style="--x:12%;--s:5px;--d:7.0s;--l:-3.3s;--dx:53px"></i><i style="--x:19%;--s:8px;--d:8.9s;--l:-1.7s;--dx:-7px"></i><i style="--x:47%;--s:8px;--d:9.3s;--l:-0.9s;--dx:-38px"></i></div><div class="imain"><div class="iemb" aria-hidden="true"><span class="iglow"></span><span class="ir r3"></span><span class="ir r2"></span><span class="ir r1"></span><div class="ish"><img class="iesc" src="assets/img/escudo.webp" width="600" height="726" alt=""><span class="ishine"></span></div></div><p class="ik">Instituci&oacute;n Educativa</p><p class="it">Colegio Integrado <b>Sim&oacute;n Bol&iacute;var</b></p><p class="il">Todos somos <span>Col</span><em>Bol&iacute;var</em></p><div class="ipb"><div class="ipt" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i></i></div><div class="ipm"><span id="ipm">Preparando tu portada&hellip;</span><b id="ipp">0%</b></div></div><button class="is" type="button">Entrar &rsaquo;</button></div><p class="ipl" aria-hidden="true">C&uacute;cuta &middot; Norte de Santander</p></div>
+<script>(function(){var h=document.documentElement,el=document.getElementById("intro");if(!el)return;if(!h.classList.contains("intro")){el.remove();return}
+var tc=document.querySelector('meta[name="theme-color"]'),tc0=tc&&tc.getAttribute("content");if(tc)tc.setAttribute("content","#0A2E18");
+var bar=el.querySelector(".ipt i"),pb=el.querySelector(".ipt"),pc=document.getElementById("ipp"),ms=document.getElementById("ipm");
+var sa=matchMedia("(display-mode: standalone)").matches||navigator.standalone===true,MIN=sa?1900:2900,MAX=7500,t0=performance.now(),p=0,target=12,done=false,last=-1;
+var MS=[[0,"Preparando tu portada\u2026"],[30,"Cargando los servicios del colegio\u2026"],[58,"Afinando la radio y la cartelera\u2026"],[84,"Casi listo\u2026"],[99,"\u00a1Bienvenido a ColBol\u00edvar!"]];
+function bump(v){if(v>target)target=v}
+function ready(f){document.readyState!=="loading"?f():document.addEventListener("DOMContentLoaded",f)}
+ready(function(){bump(38);var l=[].slice.call(document.images).filter(function(i){return !el.contains(i)&&!i.complete&&i.loading!=="lazy"});if(l.length){var c=0,n=l.length;l.forEach(function(i){var u=function(){c++;bump(66+Math.round(c/n*26))};i.addEventListener("load",u);i.addEventListener("error",u)})}});
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){bump(66)},function(){bump(66)});else bump(66);
+if(document.readyState==="complete")bump(100);else addEventListener("load",function(){bump(100)});
+function end(){if(done)return;done=true;try{localStorage.setItem("cbintro",new Date().toDateString())}catch(e){}if(tc&&tc0)tc.setAttribute("content",tc0);el.classList.add("out");setTimeout(function(){h.classList.remove("intro");el.remove();window.dispatchEvent(new Event("cb-intro-end"))},700)}
+function tick(now){if(done)return;var t=now-t0,goal=Math.min(target,t/MIN*100+6);if(goal>p)p+=(goal-p)*.12;var v=Math.min(100,Math.round(p));
+bar.style.width=Math.max(2,p)+"%";pc.textContent=v+"%";pb.setAttribute("aria-valuenow",v);
+for(var i=MS.length-1;i>=0;i--){if(v>=MS[i][0]){if(last!==i){last=i;ms.textContent=MS[i][1]}break}}
+if(p>=99.4){setTimeout(end,380);return}if(t>MAX){end();return}requestAnimationFrame(tick)}
+requestAnimationFrame(tick);
+el.addEventListener("click",end);addEventListener("keydown",function(e){if(e.key==="Escape"||e.key==="Enter"||e.key===" ")end()});
+})();</script>
 <a class="skip" href="#main">Saltar al contenido</a>
 <header class="hero" id="hero">
 <img class="L cielo" src="assets/img/portada/encabezado/cielo.webp" alt="" aria-hidden="true" decoding="async"><img class="L sol" src="assets/img/portada/encabezado/sol.webp" alt="" aria-hidden="true" decoding="async"><img class="L hz" src="assets/img/portada/encabezado/paisaje.webp" alt="" aria-hidden="true" decoding="async">
@@ -480,6 +567,19 @@ fit();addEventListener('resize',fit);addEventListener('DOMContentLoaded',fit);
 <div class="rtx"><span class="rlv">EN VIVO</span><h2>Col<b>Bolívar</b> Radio</h2><p>Música y podcast de nuestra comunidad, todo el día.</p><span class="rgo">▶ Escuchar ahora</span></div>
 <div class="req" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><i class="fxs"></i>
 </a></section>
+<section id="instalar" class="app rv" hidden aria-labelledby="apt">
+<div class="app-tx"><span class="app-k">App ColBolívar &middot; Gratis</span>
+<h2 id="apt">Lleva <b>ColBolívar</b> en tu pantalla de inicio</h2>
+<ul class="app-ul"><li>Se instala en segundos, sin tienda de aplicaciones.</li><li>Un toque en su icono y abre directo en la portada, a pantalla completa.</li><li>Cartelera, radio, documentos y cumplea&ntilde;os siempre a la mano.</li></ul>
+<div class="app-cta"><button class="app-btn" id="appBtn" type="button"><b aria-hidden="true">&darr;</b><span id="appBtnT">Instalar app</span></button><span class="app-hint" id="appHint"></span></div></div>
+<div class="app-mock" aria-hidden="true"><div class="mk-phone"><div class="mk-g">
+<div class="mk-t" style="--c1:#5b8def;--c2:#2a4fb5"><i></i><span></span></div><div class="mk-t" style="--c1:#f08a5d;--c2:#c2410c"><i></i><span></span></div><div class="mk-t" style="--c1:#7dd3a8;--c2:#0f766e"><i></i><span></span></div>
+<div class="mk-t" style="--c1:#c084fc;--c2:#7e22ce"><i></i><span></span></div>
+<div class="mk-me"><em class="mk-tag" style="font-style:normal">&iexcl;Aqu&iacute; queda!</em><img src="assets/icons/icon-512.png?v=2" width="512" height="512" alt="" loading="lazy" decoding="async"><span>ColBol&iacute;var</span></div>
+<div class="mk-t" style="--c1:#fcd34d;--c2:#d97706"><i></i><span></span></div>
+<div class="mk-t" style="--c1:#f472b6;--c2:#be185d"><i></i><span></span></div><div class="mk-t" style="--c1:#67e8f9;--c2:#0e7490"><i></i><span></span></div><div class="mk-t" style="--c1:#a3e635;--c2:#4d7c0f"><i></i><span></span></div>
+</div></div></div>
+</section>
 <section id="conocenos" aria-labelledby="cnt">
 <div class="tit mar"><h2 id="cnt">Conoce el colegio</h2></div>
 <p class="sec-p">Sedes, jornadas y la carta de navegación que orienta nuestro trabajo.</p>
@@ -530,7 +630,9 @@ fit();addEventListener('resize',fit);addEventListener('DOMContentLoaded',fit);
 <input id="mdp" type="password" autocomplete="off" placeholder="Contraseña" aria-label="Contraseña">
 <p class="er" id="mde" role="alert"></p>
 <div class="mbt"><button class="cta v" id="mdok" type="button">Entrar</button><button class="cta n" id="mdno" type="button">Cancelar</button></div></div></div>
-<footer class="pie"><div class="dvf" aria-hidden="true"></div><div class="w"><img src="assets/img/escudo.webp" width="54" height="65" alt="Escudo del colegio"><div><b>© 2026 Institución Educativa Colegio Integrado Simón Bolívar</b>Cúcuta, Norte de Santander</div><a class="mail" href="mailto:colintsimonbolivar@semcucuta.gov.co">colintsimonbolivar@semcucuta.gov.co</a></div></footer>
+<footer class="pie"><div class="dvf" aria-hidden="true"></div><div class="w"><img src="assets/img/escudo.webp" width="54" height="65" alt="Escudo del colegio"><div><b>© 2026 Institución Educativa Colegio Integrado Simón Bolívar</b>Cúcuta, Norte de Santander</div><a class="mail" href="mailto:colintsimonbolivar@semcucuta.gov.co">colintsimonbolivar@semcucuta.gov.co</a><a id="appfoot" href="#instalar" hidden>Instalar app</a></div></footer>
+<div class="apb" id="apb" role="dialog" aria-label="Instalar la app ColBolívar"><img src="assets/icons/icon-192.png?v=2" width="192" height="192" alt=""><div><b>Instala la app ColBolívar</b><p>Acceso directo en tu pantalla de inicio. Abre la portada con un toque.</p></div><div class="ab"><button class="ok" id="apbOk" type="button">Instalar</button><button class="no" id="apbNo" type="button">Ahora no</button></div></div>
+<div class="md" id="appmd" hidden role="dialog" aria-modal="true" aria-labelledby="appmdt"><div class="mb"><h3 id="appmdt">Instalar ColBolívar</h3><div id="appmdb"></div><div class="mbt"><button class="cta n" id="appmdc" type="button">Copiar enlace</button><button class="cta v" id="appmdx" type="button">Entendido</button></div></div></div>
 <script>
 /* ====== CONFIGURACIÓN: edita solo este bloque ====== */
 const B='https://gestionacademicaco.wixsite.com/colbolivar1/';
@@ -751,6 +853,54 @@ if('serviceWorker' in navigator&&location.protocol==='https:')navigator.serviceW
 <script src="assets/js/nav.js" defer></script>
 <script src="assets/js/encabezado.js" defer></script>
 <script src="assets/js/tablero.js" defer></script>
+<script>
+/* ====== APP INSTALABLE: detecta celular / computador / navegador y ofrece la mejor forma de instalar ====== */
+(function(){
+var ua=navigator.userAgent,$=function(i){return document.getElementById(i)};
+var sa=matchMedia('(display-mode: standalone)').matches||navigator.standalone===true||/^android-app:/.test(document.referrer);
+var ios=/iPad|iPhone|iPod/.test(ua)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+var android=/Android/i.test(ua),inapp=/FBAN|FBAV|Instagram|WhatsApp|Line\/|TikTok|; wv\)/i.test(ua);
+var iosSafari=ios&&!/CriOS|FxiOS|EdgiOS|OPiOS|GSA\//.test(ua),firefox=/Firefox|FxiOS/.test(ua),edge=/Edg\//.test(ua);
+var chromium=/Chrome|CriOS|Chromium|Edg\//.test(ua)&&!/OPR\//.test(ua);
+var phone=ios||android||/Mobi/.test(ua),card=$('instalar'),bar=$('apb'),md=$('appmd');
+var KEY='cbapp-no',INST='cbinst';
+function ls(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)}catch(e){return null}}
+if(sa){if(card)card.hidden=true;var f0=$('appfoot');if(f0)f0.hidden=true;ls(INST,'1');return}
+function label(){if(window.__dp)return phone?'Instalar app en mi celular':'Instalar app en mi computador';
+ if(ios)return iosSafari?'Agregar a mi pantalla de inicio':'Cómo instalar en iPhone';
+ return 'Cómo instalar la app'}
+function hint(){if(window.__dp)return phone?'Queda como un icono más en tu pantalla de inicio.':'Se crea un acceso directo en tu escritorio y menú de inicio.';
+ if(ios)return iosSafari?'Te mostramos los 3 pasos, es muy rápido.':'En iPhone solo se instala desde Safari.';
+ if(firefox&&!phone)return 'Tu navegador no instala apps: te damos otra opción.';
+ return 'Te guiamos paso a paso según tu navegador.'}
+function paint(){var t=$('appBtnT'),h=$('appHint');if(t)t.textContent=label();if(h)h.textContent=hint()}
+if(card){card.hidden=false;paint()}
+var ff=$('appfoot');if(ff)ff.hidden=false;
+window.addEventListener('cb-installable',paint);
+function help(){var h='',link=location.origin+location.pathname;
+ if(inapp)h='<p><b>Estás dentro de otra app</b> (WhatsApp, Facebook, etc.).</p><ol class="st"><li>Toca los tres puntos <b>⋮</b> o el icono de compartir.</li><li>Elige <b>«Abrir en Chrome»</b> (o «Abrir en el navegador»).</li><li>Ya en el navegador, pulsa de nuevo <b>Instalar app</b>.</li></ol>';
+ else if(ios&&iosSafari)h='<p>En iPhone y iPad se instala desde Safari en 3 pasos:</p><ol class="st"><li>Toca el botón <b>Compartir</b> (el cuadrado con una flecha hacia arriba), abajo en el centro.</li><li>Desliza y elige <b>«Agregar a inicio»</b>.</li><li>Toca <b>«Agregar»</b>. ¡Listo! ColBolívar queda junto a tus otras apps.</li></ol>';
+ else if(ios)h='<p>En iPhone y iPad la instalación solo funciona desde <b>Safari</b>.</p><ol class="st"><li>Pulsa <b>Copiar enlace</b>.</li><li>Abre <b>Safari</b> y pega el enlace.</li><li>Toca <b>Compartir</b> y luego <b>«Agregar a inicio»</b>.</li></ol>';
+ else if(android)h='<p>En Android, desde Chrome:</p><ol class="st"><li>Toca los tres puntos <b>⋮</b>, arriba a la derecha.</li><li>Elige <b>«Instalar app»</b> o <b>«Agregar a la pantalla de inicio»</b>.</li><li>Confirma con <b>«Instalar»</b>. El icono aparecerá en tu pantalla.</li></ol><p class="app-note">Si no ves la opción, recarga la página y espera unos segundos.</p>';
+ else if(edge)h='<p>En Microsoft Edge:</p><ol class="st"><li>Abre el menú <b>⋯</b> (arriba a la derecha).</li><li>Ve a <b>Aplicaciones</b>.</li><li>Elige <b>«Instalar este sitio como aplicación»</b>.</li></ol>';
+ else if(chromium)h='<p>En Google Chrome:</p><ol class="st"><li>Busca el icono de <b>instalar</b> (un monitor con flecha) al final de la barra de direcciones, o abre el menú <b>⋮</b>.</li><li>Elige <b>«Instalar ColBolívar»</b> (en «Transmitir, guardar y compartir»).</li><li>Confirma. Se crea un acceso directo en tu escritorio y en el menú de inicio.</li></ol>';
+ else h='<p>Este navegador no permite instalar la app, pero puedes dejar un acceso directo:</p><ol class="st"><li>Pulsa <b>Ctrl + D</b> (en Mac, <b>⌘ + D</b>) para guardar la portada en tus marcadores.</li><li>Para instalarla como app, abre este enlace en <b>Google Chrome</b> o <b>Microsoft Edge</b>.</li></ol>';
+ $('appmdb').innerHTML=h;$('appmdc').dataset.l=link;md.hidden=false;try{$('appmdx').focus()}catch(e){}}
+function close(){md.hidden=true}
+$('appmdx').onclick=close;md.addEventListener('click',function(e){if(e.target===md)close()});addEventListener('keydown',function(e){if(e.key==='Escape'&&!md.hidden)close()});
+$('appmdc').onclick=function(){var l=this.dataset.l,b=this;(navigator.clipboard?navigator.clipboard.writeText(l):Promise.reject()).then(function(){b.textContent='¡Copiado!'},function(){prompt('Copia este enlace:',l)});setTimeout(function(){b.textContent='Copiar enlace'},1800)};
+function go(){var d=window.__dp;if(d){try{d.prompt();d.userChoice.then(function(r){window.__dp=null;if(r&&r.outcome==='accepted')toast('¡Instalando! Busca «ColBolívar» en tu pantalla de inicio.');paint()})}catch(e){help()}}else help()}
+if($('appBtn'))$('appBtn').onclick=go;
+if($('appfoot'))$('appfoot').onclick=function(e){if(card){e.preventDefault();card.scrollIntoView({behavior:'smooth',block:'center'})}};
+/* aviso superior (una vez por semana) */
+function toast(m){if(!bar)return;bar.querySelector('p').textContent=m;bar.querySelector('b').textContent='¡Listo!';bar.querySelector('.ab').style.display='none';bar.classList.add('on');setTimeout(function(){bar.classList.remove('on')},4800)}
+function showBar(){if(!bar||ls(INST)==='1')return;var t=+ls(KEY)||0;if(Date.now()-t<6048e5)return;bar.classList.add('on');setTimeout(function(){if(bar.classList.contains('on')){bar.classList.remove('on');ls(KEY,String(Date.now()))}},14000)}
+if(bar){$('apbNo').onclick=function(){ls(KEY,String(Date.now()));bar.classList.remove('on')};$('apbOk').onclick=function(){ls(KEY,String(Date.now()));bar.classList.remove('on');go()}}
+function arm(){setTimeout(showBar,3500)}
+if(document.documentElement.classList.contains('intro'))window.addEventListener('cb-intro-end',arm);else arm();
+window.addEventListener('appinstalled',function(){ls(INST,'1');window.__dp=null;if(card)card.hidden=true;if($('appfoot'))$('appfoot').hidden=true;toast('ColBolívar ya está en tu pantalla de inicio.')});
+})();
+</script>
 <script>
 /* ====== EFECTOS AL PASAR EL MOUSE: foco de luz, inclinación, onda y aviso "Abrir" ====== */
 (function(){
