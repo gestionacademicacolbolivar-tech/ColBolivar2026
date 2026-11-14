@@ -28,6 +28,7 @@ def clasificar(u, fuente, nombre=""):
     u = html.unescape(u.strip())
     if not u or u.startswith(("#", "mailto:", "tel:", "javascript:", "data:", "sms:", "webcal:", "whatsapp:")) or re.search(r"[{}']|\+|\$\{", u): return
     if u.startswith("//"): u = "https:" + u
+    if u.endswith(("=", "?")) or re.match(r"https?://(fonts\.googleapis\.com|fonts\.gstatic\.com|wa\.me)/?$", u): return   # precargas y prefijos de enlaces armados por JavaScript
     if re.match(r"https?://", u): anotar(externos, u.split("#")[0], fuente, nombre)
     elif not re.match(r"^[a-z]+:", u):
         ruta = urllib.parse.unquote(u.split("#")[0].split("?")[0])
@@ -76,6 +77,8 @@ def chequear(u):
         time.sleep(1)
     return "falla", ultimo
 def estado_final(u, bruto, codigo):
+    host = urllib.parse.urlparse(u).hostname or ""
+    if bruto == "falla" and host.endswith((".gov.co", ".edu.co")): return "no_verificable"   # suelen bloquear conexiones desde fuera de Colombia
     if bruto == "muerto": return "caido"
     if bruto == "falla": return "caido" if previo.get(u, {}).get("estado") in ("intermitente", "caido") else "intermitente"
     return bruto
