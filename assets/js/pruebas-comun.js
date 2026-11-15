@@ -8,9 +8,16 @@ var PR = (function () {
       var p = metodo === 'GET'
         ? fetch(c.url + (c.url.indexOf('?') < 0 ? '?' : '&') + new URLSearchParams(Object.assign({ accion: accion }, datos)).toString())
         : fetch(c.url, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(Object.assign({ accion: accion }, datos)) });
-      return p.then(function (r) { return r.json(); }, function () { throw { codigo: 'red', message: 'No hay conexión con la plataforma. Revisa tu internet.' }; })
+      return p.then(function (r) { return r.json(); }, function () { return diagnostico(c.url).then(function (m) { throw { codigo: 'red', message: m }; }); })
         .then(function (j) { if (!j.ok) throw { codigo: j.error, message: j.mensaje || j.error }; return j; });
     });
+  }
+  // Cuando falla la conexión, explica la causa probable (internet, o la implementación de Google sin acceso «Cualquier persona»)
+  function diagnostico(url) {
+    if (navigator.onLine === false) return Promise.resolve('No hay internet en este dispositivo. Revisa tu conexión e intenta de nuevo.');
+    return fetch(url + (url.indexOf('?') < 0 ? '?' : '&') + 'accion=ping').then(function (r) { return r.json(); }).then(function (j) {
+      return j && j.ok ? 'La plataforma está conectada, pero no aceptó este envío (¿la prueba pesa mucho?). Intenta otra vez o usa menos imágenes.' : 'La plataforma respondió algo inesperado. Avisa a quien administra el portal.';
+    }, function () { return 'No se pudo conectar con la plataforma de Google. Si tienes internet, quien administra el portal debe revisar que la aplicación web esté publicada con acceso «Cualquier persona» (guía: pruebas/LEEME-INSTALACION.md, paso 3).'; });
   }
   function E(t) { return String(t === undefined || t === null ? '' : t).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
   function LS(k, v) { try { if (v === undefined) return JSON.parse(localStorage.getItem(k)); localStorage.setItem(k, JSON.stringify(v)); } catch (e) { return null; } }
@@ -19,6 +26,7 @@ var PR = (function () {
   function qr(url, celda) { var q = qrcode(0, 'M'); q.addData(url); q.make(); return q.createSvgTag({ cellSize: celda || 5, margin: 2, scalable: true }); }
   function mezclar(a, rnd) { a = a.slice(); for (var i = a.length - 1; i > 0; i--) { var j = Math.floor((rnd ? rnd() : Math.random()) * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
   function semilla(s) { return function () { s |= 0; s = s + 0x6D2B79F5 | 0; var t = Math.imul(s ^ s >>> 15, 1 | s); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+  function codigoDocente(v) { return v === undefined ? (LS('cb_docente_codigo') || '') : LS('cb_docente_codigo', String(v).trim().toUpperCase()); }
   function misPruebas() { return LS('cb_pruebas') || []; }
   function guardarPrueba(p) { var l = misPruebas().filter(function (x) { return x.codigo !== p.codigo; }); l.unshift(p); LS('cb_pruebas', l.slice(0, 60)); }
   function quitarPrueba(c) { LS('cb_pruebas', misPruebas().filter(function (x) { return x.codigo !== c; })); }
@@ -95,7 +103,7 @@ var PR = (function () {
   }
   function nota(n) { return (Math.round(n * 10) / 10).toFixed(1).replace('.', ','); }
   function colorNota(n) { return n >= 4 ? '#2fa84f' : n >= 3 ? '#e0a100' : '#d92d3a'; }
-  return { api: api, cfg: cfg, E: E, LS: LS, linkPrueba: linkPrueba, linkResultados: linkResultados, qr: qr, mezclar: mezclar, semilla: semilla, misPruebas: misPruebas, guardarPrueba: guardarPrueba, quitarPrueba: quitarPrueba,
+  return { codigoDocente: codigoDocente, api: api, cfg: cfg, E: E, LS: LS, linkPrueba: linkPrueba, linkResultados: linkResultados, qr: qr, mezclar: mezclar, semilla: semilla, misPruebas: misPruebas, guardarPrueba: guardarPrueba, quitarPrueba: quitarPrueba,
     desdeExam: desdeExam, desdeTexto: desdeTexto, nota: nota, colorNota: colorNota };
 })();
 if (typeof module !== 'undefined') module.exports = PR;

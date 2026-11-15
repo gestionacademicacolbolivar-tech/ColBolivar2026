@@ -24,8 +24,8 @@
 <body>
 <header class="top"><div class="in"><img src="assets/img/escudo.webp" alt="Escudo del colegio"><div><h1>Resultados de la prueba</h1><p>Reporte para el docente</p></div><a class="back" href="pruebas.html">← Mis pruebas</a></div></header>
 <main id="app">
-<section class="card" id="gate"><h2>Abrir resultados</h2><p class="sub">Escribe el código de la prueba y tu clave (la recibiste al publicarla).</p>
-<div class="g2"><div><label class="f">Código de la prueba</label><input type="text" id="gc" maxlength="8" style="text-transform:uppercase"></div><div><label class="f">Tu clave</label><input type="password" id="gp" maxlength="12" autocomplete="off"></div></div>
+<section class="card" id="gate"><h2>Abrir resultados</h2><p class="sub">Escribe el código de la prueba y tu <b>código de docente</b> (o la clave de esa prueba).</p>
+<div class="g2"><div><label class="f">Código de la prueba</label><input type="text" id="gc" maxlength="8" style="text-transform:uppercase"></div><div><label class="f">Tu código de docente o clave</label><input type="password" id="gp" maxlength="12" autocomplete="off" placeholder="D-XXXXXX"></div></div>
 <div id="ge"></div><div class="row" style="margin-top:12px"><button class="btn p" id="gb">Ver resultados</button></div></section>
 <div id="rep" hidden></div>
 </main>
@@ -38,10 +38,10 @@ var COL=['#2b7a3a','#f58220','#12306e','#d92d3a','#7a4fb5','#0b8da6'];
 function colPct(p){return p>=70?'#2fa84f':p>=40?'#e0a100':'#d92d3a'}
 function err(m){$('#ge').innerHTML=m?'<div class="msg a">'+E(m)+'</div>':''}
 var qs=new URLSearchParams(location.search);cod=(qs.get('c')||'').toUpperCase();$('#gc').value=cod;
-var guardada=PR.misPruebas().filter(function(p){return p.codigo===cod})[0];if(guardada){$('#gp').value=guardada.pin;cargar()}
+var guardada=PR.misPruebas().filter(function(p){return p.codigo===cod})[0],cd=PR.codigoDocente();if(guardada){$('#gp').value=guardada.pin;cargar()}else if(cod&&cd){$('#gp').value=cd;cargar()}
 $('#gb').addEventListener('click',function(){cod=$('#gc').value.trim().toUpperCase();pin=$('#gp').value.trim();cargar()});
 function cargar(sil){cod=$('#gc').value.trim().toUpperCase();pin=$('#gp').value.trim();if(!cod||!pin){err('Escribe el código y la clave.');return Promise.resolve()}
- return PR.api('resultados',{codigo:cod,pin:pin}).then(function(j){D=j;$('#gate').hidden=true;$('#rep').hidden=false;if(!PR.misPruebas().some(function(p){return p.codigo===cod}))PR.guardarPrueba({codigo:cod,pin:pin,titulo:j.meta.titulo,fecha:new Date().toISOString()});pinta()})
+ return PR.api('resultados',{codigo:cod,pin:pin}).then(function(j){D=j;$('#gate').hidden=true;$('#rep').hidden=false;if(/^D-/i.test(pin))PR.codigoDocente(pin);else if(!PR.misPruebas().some(function(p){return p.codigo===cod}))PR.guardarPrueba({codigo:cod,pin:pin,titulo:j.meta.titulo,fecha:new Date().toISOString()});pinta()})
  .catch(function(e){if(sil)return;$('#gate').hidden=false;err(e.message)})}
 /* ---------- cálculos ---------- */
 function prom(a){return a.length?a.reduce(function(s,x){return s+x},0)/a.length:0}

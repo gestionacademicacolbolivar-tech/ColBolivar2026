@@ -1,50 +1,44 @@
-# 📝 Pruebas en línea — instalación (una sola vez, ~10 minutos)
+# 📝 Pruebas en línea — instalación y administración
 
-Esta plataforma usa **una hoja de Google Sheets** como base de datos y **Google Apps Script** como servidor. Es gratis y no hay nada que mantener.
-Hazlo con una cuenta de Google del colegio (por ejemplo la de gestión académica): ahí quedarán guardadas las pruebas y los resultados.
+Usa **una hoja de Google Sheets** como base de datos y **Google Apps Script** como servidor. Es gratis y no hay nada que mantener.
 
-## Paso 1 · Crear la hoja y pegar el código
-1. Entra a **sheets.new** (crea una hoja de cálculo) y ponle de nombre `ColBolívar · Pruebas en línea`.
-2. Menú **Extensiones → Apps Script**.
-3. Borra lo que aparece y **pega todo el contenido de `pruebas/Code.gs`**. Guarda (💾).
+## Instalar (una sola vez, ~10 minutos)
+1. **sheets.new** → ponle nombre `ColBolívar · Pruebas en línea`.
+2. **Extensiones → Apps Script** → borra lo que aparece y pega **todo `pruebas/Code.gs`** → guarda 💾.
+3. Elige la función **`instalar`** → **▶ Ejecutar** → acepta los permisos (*Revisar permisos → tu cuenta → Avanzado → Ir a… → Permitir*).
+4. **Ver → Registros de ejecución**: anota el **CÓDIGO DEL COLEGIO** y la **CLAVE MAESTRA**.
+5. **Implementar → Nueva implementación → ⚙️ Aplicación web**:
+   - *Ejecutar como:* **Yo**
+   - *Quién tiene acceso:* **Cualquier persona** ⚠️ (por defecto sale «Solo yo»: si se deja así, **nadie podrá conectarse** y el portal dirá «no se pudo conectar»).
+6. Copia la **URL** (termina en `/exec`) y pégala en `datos/pruebas-config.json`.
+7. Comprueba: abre `TU-URL/exec?accion=ping` en el navegador → debe verse `{"ok":true,"version":"1.2"}`.
 
-## Paso 2 · Instalar
-1. En la barra superior elige la función **`instalar`** y pulsa **▶ Ejecutar**.
-2. Google pedirá permisos (*Revisar permisos → tu cuenta → Avanzado → Ir a … → Permitir*). Es normal: es tu propio script.
-3. Abre **Ver → Registros de ejecución**: allí verás tu **CÓDIGO DE DOCENTES** y tu **CLAVE MAESTRA**.
-   - **Código de docentes:** se lo das a los profes; lo piden solo al publicar una prueba. Para cambiarlo: ⚙️ *Configuración del proyecto → Propiedades de la secuencia de comandos → `CODIGO_DOCENTES`*.
-   - **Clave maestra:** abre el reporte de **cualquier** prueba (para rectoría/coordinación). Guárdala bien.
+> Si en el paso 5 no aparece la opción **«Cualquier persona»**, tu cuenta de Google pertenece a una organización que la bloquea. Haz el proceso con una cuenta Gmail normal (por ejemplo `gestionacademica…@gmail.com`).
 
-## Paso 3 · Publicar como aplicación web
-1. **Implementar → Nueva implementación → ⚙️ Aplicación web**.
-2. *Ejecutar como:* **Yo** · *Quién tiene acceso:* **Cualquier persona**.
-3. **Implementar** y copia la **URL de la aplicación web** (termina en `/exec`).
+## Cómo se registran los docentes
+Cada profe entra a **`docentes.html`** (enlace «Registro de docentes» dentro de *Pruebas en línea*), escribe **nombre, sede** y el **código del colegio**, y recibe su **código personal** (`D-XXXXXX`).
+- Todo queda en la hoja **Docentes** del Sheet: ahí ves nombre, sede, fecha y **el código de cada profe**.
+- **Bloquear a alguien:** cambia su `estado` a `bloqueado` (ya no puede publicar ni abrir resultados).
+- **Código del colegio:** se lo compartes a todos por WhatsApp una vez. Cámbialo cuando quieras en ⚙️ *Configuración del proyecto → Propiedades de la secuencia de comandos → `CODIGO_DOCENTES`*.
+- **Cerrar el registro** cuando todos estén inscritos: `REGISTRO_ABIERTO` = `no`.
+- Con su código el profe ve **todas sus pruebas desde cualquier celular o computador** y abre sus resultados sin más claves. La **clave maestra** abre cualquier prueba (rectoría/coordinación).
 
-## Paso 4 · Conectar el portal
-En el repositorio abre `datos/pruebas-config.json` y pega la URL:
-```json
-{"url": "https://script.google.com/macros/s/XXXXXXXX/exec"}
-```
-Guarda (commit). En un par de minutos la tarjeta **Pruebas en línea** del portal ya funciona.
+Mensaje sugerido para el grupo de profes:
+> 📝 *Pruebas en línea ColBolívar*: regístrate en TU-PORTAL/docentes.html con tu nombre y sede. Código del colegio: **XXXX**. Te dará tu código personal. Guía: TU-PORTAL/pruebas.html
 
-## Paso 5 (recomendado) · Privacidad
-En el editor de Apps Script, ejecuta una vez la función **`crearDisparadorLimpieza`**: cada noche borra las pruebas y resultados con más de **180 días** (cámbialo con la propiedad `DIAS_RETENCION`).
-Solo se guardan **nombre y curso** del estudiante (nada de documentos ni contactos). Avísales a los estudiantes y acudientes que sus nombres se registran para la prueba.
+## Actualizar el script
+Cada vez que cambie `Code.gs`: pégalo, guarda y **Implementar → Administrar implementaciones → ✏️ → Versión: Nueva versión → Implementar** (la URL no cambia; revisa que el acceso siga en «Cualquier persona»).
 
-## Actualizar a la versión 1.1 (recomendado)
-La 1.1 solo acepta imágenes incrustadas válidas. Pega el nuevo `Code.gs` y luego **Implementar → Administrar implementaciones → ✏️ → Versión: Nueva versión → Implementar** (la URL no cambia). Las imágenes también funcionan con la 1.0.
+## Privacidad (recomendado)
+Ejecuta una vez **`crearDisparadorLimpieza`**: cada noche borra las pruebas y resultados con más de **180 días** (`DIAS_RETENCION`). Se guardan solo **nombre y curso** del estudiante. Avisa a estudiantes y acudientes que su nombre se registra para la prueba.
 
-## Si cambias el código
-Cada vez que modifiques `Code.gs`: **Implementar → Administrar implementaciones → ✏️ → Versión: Nueva versión → Implementar** (la URL no cambia).
+## Si el portal dice «No se pudo conectar»
+1. Abre `TU-URL/exec?accion=ping` en el navegador. Si pide iniciar sesión o da error → el acceso **no** es «Cualquier persona» (paso 5).
+2. Si la URL en `datos/pruebas-config.json` cambió o tiene espacios, corrígela.
+3. Si ping funciona pero publicar falla, la prueba es muy pesada: usa menos imágenes.
 
-## ¿Cómo la usa un profe?
-1. Crea la prueba como siempre (el asistente de pruebas genera un `exam.json`) **o** pega sus preguntas en texto simple en la página.
-2. Entra a **Pruebas en línea**, sube el archivo, revisa, pon el código de docentes y pulsa **Publicar**.
-3. Comparte el enlace / QR / cartel. Los estudiantes la resuelven desde el celular.
-4. Abre **Resultados** con su clave para ver notas, preguntas más falladas y comparación por curso.
-
-## Límites a tener en cuenta
-- La calificación de selección múltiple es automática; las **preguntas abiertas** las califica el docente en el reporte.
-- **Gráficos e imágenes:** con el generador de pruebas actualizado (parche `exportar-en-linea.patch`), cada generación crea además `prueba-en-linea.json` con las figuras y las ilustraciones incluidas; ese es el archivo que se sube. Las tablas y los recuadros de texto se dibujan solos. Si se sube un `exam.json` viejo, las preguntas con gráfico se omiten con aviso.
-- Google limita las ejecuciones simultáneas (~30): un curso de 40 estudiantes entrando a la vez funciona; grupos mucho más grandes pueden notar lentitud.
-- Es un **apoyo**: las notas oficiales se siguen registrando en la plataforma institucional.
+## Límites
+- La selección múltiple se califica sola; las **preguntas abiertas** las califica el docente en el reporte.
+- Las figuras e ilustraciones llegan con el archivo **`prueba-en-linea.json`** que crea el generador de pruebas actualizado (parche `exportar-en-linea.patch`). Las tablas y recuadros de texto se dibujan solos.
+- Google limita las ejecuciones simultáneas (~30): un curso de 40 estudiantes funciona; grupos mucho más grandes pueden notar lentitud.
+- Es un **apoyo**: las notas oficiales se registran en la plataforma institucional.

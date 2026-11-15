@@ -2,6 +2,7 @@
  * ColBolívar · Pruebas en línea — Google Apps Script (aplicación web)
  * ------------------------------------------------------------------
  * Esta hoja de cálculo es la base de datos. Hojas que se crean solas:
+ *   Docentes    -> cada docente que se registra (nombre, sede y su CÓDIGO personal). Para bloquear a alguien: cambia su estado a «bloqueado»
  *   Pruebas     -> una fila por prueba publicada (la clave de cada prueba NO está aquí)
  *   Respuestas  -> una fila por estudiante que entrega
  *   _datos      -> (oculta) preguntas y claves de cada prueba, en trozos
@@ -11,12 +12,13 @@
  *   1) Pegar este archivo en Extensiones > Apps Script   2) Ejecutar «instalar» una vez
  *   3) Implementar > Nueva implementación > Aplicación web (ejecutar como: yo · acceso: cualquier persona)
  */
-var VERSION = '1.1';
-var HOJAS = { pruebas: 'Pruebas', resp: 'Respuestas', datos: '_datos' };
+var VERSION = '1.2';
+var HOJAS = { pruebas: 'Pruebas', resp: 'Respuestas', datos: '_datos', docentes: 'Docentes' };
 var COL = {
-  pruebas: ['codigo', 'titulo', 'area', 'grado', 'docente', 'cursos', 'modo', 'minutos', 'abre', 'cierra', 'mostrar', 'intentos', 'mezclar', 'estado', 'creada', 'n_multiple', 'n_abiertas', 'pin_hash'],
+  pruebas: ['codigo', 'titulo', 'area', 'grado', 'docente', 'cursos', 'modo', 'minutos', 'abre', 'cierra', 'mostrar', 'intentos', 'mezclar', 'estado', 'creada', 'n_multiple', 'n_abiertas', 'pin_hash', 'docente_cod'],
   resp: ['id', 'fecha', 'codigo', 'nombre', 'curso', 'intento', 'aciertos', 'total', 'segundos', 'salidas', 'respuestas', 'abiertas', 'pts_abiertas'],
-  datos: ['codigo', 'tipo', 'idx', 'trozo']
+  datos: ['codigo', 'tipo', 'idx', 'trozo'],
+  docentes: ['codigo', 'nombre', 'sede', 'area', 'fecha', 'estado']
 };
 var TROZO = 40000;            // caracteres por celda (el límite de Sheets es 50 000)
 var TROZO_CACHE = 30000;      // la caché admite ~100 KB por valor
@@ -25,15 +27,17 @@ var ALFABETO = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';   // sin 0/O/1/I para evitar 
 
 /* ===================== INSTALACIÓN ===================== */
 function instalar() {
-  hoja_('pruebas'); hoja_('resp'); hoja_('datos');
+  hoja_('pruebas'); hoja_('resp'); hoja_('datos'); hoja_('docentes'); asegurarEncabezados_();
   var p = PropertiesService.getScriptProperties(), v = p.getProperties();
   if (!v.CODIGO_DOCENTES) p.setProperty('CODIGO_DOCENTES', 'cambia-este-codigo');
   if (!v.CLAVE_MAESTRA) p.setProperty('CLAVE_MAESTRA', aleatorio_(8, '0123456789'));
   if (!v.SAL) p.setProperty('SAL', aleatorio_(24, ALFABETO));
   if (!v.DIAS_RETENCION) p.setProperty('DIAS_RETENCION', '180');
+  if (!v.REGISTRO_ABIERTO) p.setProperty('REGISTRO_ABIERTO', 'si');
   v = p.getProperties();
   Logger.log('✔ Instalado (v' + VERSION + ').');
-  Logger.log('CÓDIGO DE DOCENTES (se lo das a los profes): ' + v.CODIGO_DOCENTES + '   → cámbialo en Configuración del proyecto > Propiedades de la secuencia de comandos');
+  Logger.log('CÓDIGO DEL COLEGIO (los profes lo usan UNA vez para registrarse): ' + v.CODIGO_DOCENTES + '   → cámbialo en Configuración del proyecto > Propiedades de la secuencia de comandos (CODIGO_DOCENTES)');
+  Logger.log('Cada docente recibe un CÓDIGO PERSONAL al registrarse (hoja «Docentes»). Para cerrar el registro: REGISTRO_ABIERTO = no');
   Logger.log('CLAVE MAESTRA (rectoría, abre cualquier reporte): ' + v.CLAVE_MAESTRA);
   Logger.log('Ahora: Implementar > Nueva implementación > Aplicación web.');
 }
@@ -59,7 +63,7 @@ function doGet(e) {
 function doPost(e) {
   try {
     var d = JSON.parse((e && e.postData && e.postData.contents) || '{}');
-    var acciones = { publicar: publicar_, entregar: entregar_, resultados: resultados_, estado: estado_, calificar: calificar_abierta_, eliminar: eliminar_pin_ };
+    var acciones = { registrar: registrar_, misPruebas: misPruebas_, publicar: publicar_, entregar: entregar_, resultados: resultados_, estado: estado_, calificar: calificar_abierta_, eliminar: eliminar_pin_ };
     if (!acciones[d.accion]) return salida_({ ok: false, error: 'accion' });
     return salida_(acciones[d.accion](d));
   } catch (err) { return salida_(fallo_(err)); }
@@ -73,8 +77,7 @@ function error_(codigo, mensaje) { var e = new Error(mensaje || codigo); e.codig
 
 /* ===================== ACCIONES ===================== */
 function publicar_(d) {
-  var props = PropertiesService.getScriptProperties();
-  if (!d.codigoDocentes || d.codigoDocentes !== props.getProperty('CODIGO_DOCENTES')) throw error_('codigo_docentes', 'El código de docentes no es correcto.');
+  var doc = docenteDe_(d.codigoDocente);
   var pub = d.publico || {}, clave = d.clave || { m: {}, a: {} }, ps = pub.preguntas || [];
   if (!ps.length || ps.length > 100) throw error_('prueba_invalida', 'La prueba debe tener entre 1 y 100 preguntas.');
   (ps).concat(pub.estimulos || []).forEach(function (o) { if (o && o.img && !RX_IMG.test(String(o.img))) delete o.img; });
@@ -93,7 +96,7 @@ function publicar_(d) {
   try {
     var codigo = codigoNuevo_(), pin = aleatorio_(6, '0123456789');
     var fila = {
-      codigo: codigo, titulo: limpio_(m.titulo, 120) || 'Prueba', area: limpio_(m.area, 60), grado: limpio_(m.grado, 20), docente: limpio_(m.docente, 80),
+      codigo: codigo, titulo: limpio_(m.titulo, 120) || 'Prueba', area: limpio_(m.area, 60), grado: limpio_(m.grado, 20), docente: doc.nombre, docente_cod: doc.codigo,
       cursos: (m.cursos || []).map(function (x) { return limpio_(x, 20); }).filter(String).slice(0, 12).join(','),
       modo: c.modo === 'repaso' ? 'repaso' : 'evaluacion', minutos: Math.max(0, Math.min(300, Number(c.minutos) || 0)),
       abre: validaFecha_(c.abre), cierra: validaFecha_(c.cierra),
@@ -103,7 +106,7 @@ function publicar_(d) {
     };
     anexar_('pruebas', fila);
     guardarGrande_(codigo, 'publico', pub); guardarGrande_(codigo, 'clave', clave);
-    return { ok: true, codigo: codigo, pin: pin };
+    return { ok: true, codigo: codigo, pin: pin, docente: doc.nombre };
   } finally { lock.releaseLock(); }
 }
 
@@ -230,11 +233,52 @@ function eliminar_(codigo) {
   var c = CacheService.getScriptCache(); ['publico', 'clave'].forEach(function (t) { var n = Number(c.get(t + ':' + codigo + ':n') || 0); for (var i = 0; i < n; i++) c.remove(t + ':' + codigo + ':' + i); c.remove(t + ':' + codigo + ':n'); });
 }
 
+/* ===================== DOCENTES ===================== */
+/** Registro: el docente escribe su nombre y sede + el código del colegio, y recibe su código personal (queda en la hoja «Docentes»). */
+function registrar_(d) {
+  var props = PropertiesService.getScriptProperties();
+  if (props.getProperty('REGISTRO_ABIERTO') === 'no') throw error_('registro_cerrado', 'El registro de docentes está cerrado. Habla con coordinación.');
+  if (!d.codigoColegio || String(d.codigoColegio).trim() !== props.getProperty('CODIGO_DOCENTES')) throw error_('codigo_colegio', 'El código del colegio no es correcto. Pídelo a coordinación.');
+  var nombre = limpio_(d.nombre, 80), sede = limpio_(d.sede, 40), area = limpio_(d.area, 60);
+  if (nombre.length < 5 || nombre.indexOf(' ') < 0) throw error_('nombre', 'Escribe tu nombre y apellido.');
+  if (!sede) throw error_('sede', 'Elige o escribe tu sede.');
+  var lock = LockService.getScriptLock(); lock.waitLock(25000);
+  try {
+    var todos = tabla_('docentes'), k = norm_(nombre) + '|' + norm_(sede);
+    if (todos.some(function (r) { return norm_(r.nombre) + '|' + norm_(r.sede) === k; })) throw error_('ya_registrado', 'Ya hay un docente registrado con ese nombre y sede. Si olvidaste tu código, pídeselo a coordinación (aparece en la hoja «Docentes»).');
+    var usados = todos.map(function (r) { return r.codigo; }), c;
+    do { c = 'D-' + aleatorio_(6, ALFABETO); } while (usados.indexOf(c) >= 0);
+    anexar_('docentes', { codigo: c, nombre: nombre, sede: sede, area: area, fecha: new Date().toISOString(), estado: 'activo' });
+    return { ok: true, codigo: c, nombre: nombre, sede: sede };
+  } finally { lock.releaseLock(); }
+}
+function docenteActivo_(codigo) {
+  codigo = String(codigo || '').trim().toUpperCase();
+  return tabla_('docentes').filter(function (r) { return r.codigo === codigo && r.estado === 'activo'; })[0] || null;
+}
+function docenteDe_(codigo) {
+  var c = String(codigo || '').trim();
+  if (c && c === PropertiesService.getScriptProperties().getProperty('CLAVE_MAESTRA')) return { codigo: 'MAESTRA', nombre: 'Coordinación' };
+  var r = docenteActivo_(c);
+  if (!r) throw error_('codigo_docente', 'Tu código de docente no es válido o está bloqueado. Regístrate en «Registro de docentes» o habla con coordinación.');
+  return r;
+}
+/** Valida el código personal y devuelve las pruebas de ese docente (la clave maestra ve todas). */
+function misPruebas_(d) {
+  var doc = docenteDe_(d.codigoDocente), maestra = doc.codigo === 'MAESTRA', conteo = {};
+  tabla_('resp').forEach(function (r) { conteo[r.codigo] = (conteo[r.codigo] || 0) + 1; });
+  var lista = tabla_('pruebas').filter(function (p) { return p.estado !== 'eliminada' && (maestra || p.docente_cod === doc.codigo); })
+    .sort(function (a, b) { return Date.parse(b.creada) - Date.parse(a.creada); }).slice(0, 100)
+    .map(function (p) { return { codigo: p.codigo, titulo: p.titulo, area: p.area, grado: p.grado, docente: p.docente, creada: p.creada, estado: p.estado, entregas: conteo[p.codigo] || 0 }; });
+  return { ok: true, docente: { nombre: doc.nombre, sede: doc.sede || '', maestra: maestra }, pruebas: lista };
+}
+
 /* ===================== AUXILIARES ===================== */
 function auth_(codigo, pin) {
   var p = filaPrueba_(String(codigo || '')); if (!p) throw error_('no_existe', 'No encontramos esa prueba.');
-  var maestra = PropertiesService.getScriptProperties().getProperty('CLAVE_MAESTRA');
-  if (!pin || (hash_(String(pin), p.codigo) !== p.pin_hash && String(pin) !== maestra)) throw error_('pin', 'La clave de la prueba no es correcta.');
+  var maestra = PropertiesService.getScriptProperties().getProperty('CLAVE_MAESTRA'), clave = String(pin || '').trim();
+  var esDueno = clave && p.docente_cod && clave.toUpperCase() === p.docente_cod && docenteActivo_(p.docente_cod);   // su código personal abre sus propias pruebas
+  if (!clave || (!esDueno && hash_(clave, p.codigo) !== p.pin_hash && clave !== maestra)) throw error_('pin', 'El código o la clave no es correcto para esta prueba.');
   return p;
 }
 function filaPrueba_(codigo) { codigo = String(codigo).toUpperCase().trim(); return tabla_('pruebas').filter(function (r) { return r.codigo === codigo; })[0] || null; }
@@ -249,6 +293,13 @@ function norm_(s) { return String(s || '').toLowerCase().normalize('NFD').replac
 function validaFecha_(s) { if (!s) return ''; var t = Date.parse(s); return isNaN(t) ? '' : new Date(t).toISOString(); }
 function redondeo_(x) { return Math.round(x * 10) / 10; }
 function parse_(s, def) { try { return s ? JSON.parse(s) : def; } catch (e) { return def; } }
+/** Si la hoja ya existía de una versión anterior, completa los encabezados nuevos. */
+function asegurarEncabezados_() {
+  Object.keys(HOJAS).forEach(function (k) {
+    var h = hoja_(k), enc = COL[k], act = h.getRange(1, 1, 1, enc.length).getValues()[0];
+    if (enc.some(function (c, i) { return act[i] !== c; })) h.getRange(1, 1, 1, enc.length).setValues([enc]);
+  });
+}
 function hoja_(clave) {
   var s = SpreadsheetApp.getActiveSpreadsheet(), h = s.getSheetByName(HOJAS[clave]);
   if (!h) {

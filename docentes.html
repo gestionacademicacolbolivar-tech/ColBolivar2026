@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#12306e">
+<title>Registro de docentes · ColBolívar</title>
+<meta name="description" content="Regístrate como docente para crear pruebas en línea y ver sus resultados.">
+<link rel="icon" href="favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/pruebas.css">
+<style>
+.cod{font:800 clamp(2rem,9vw,3rem) Sora,sans-serif;letter-spacing:.18em;color:var(--gd);background:#eaf5ed;border:2px dashed var(--g);border-radius:16px;padding:.25em .6em;display:inline-block;margin:8px 0}
+.ok{text-align:center}.pasos{counter-reset:p;list-style:none;display:grid;gap:8px;margin:12px 0;text-align:left}.pasos li{counter-increment:p;display:grid;grid-template-columns:30px 1fr;gap:10px;align-items:start;background:#f4f9f3;border:1px solid var(--line);border-radius:12px;padding:8px 12px;font-size:.95rem}
+.pasos li:before{content:counter(p);display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--g);color:#fff;font:800 .85rem Sora,sans-serif}
+</style>
+</head>
+<body>
+<header class="top"><div class="in"><img src="assets/img/escudo.webp" alt="Escudo del colegio"><div><h1>Registro de docentes</h1><p>Un minuto y recibes tu código personal para crear pruebas.</p></div><a class="back" href="pruebas.html">← Pruebas en línea</a></div></header>
+<main>
+<div class="msg w" id="sinCfg" hidden><b>La plataforma aún no está conectada.</b> Quien administra el portal debe revisar <code>datos/pruebas-config.json</code>.</div>
+<section class="card" id="form"><h2>Regístrate</h2><p class="sub">Tu nombre y tu sede quedan registrados en la hoja de coordinación, junto con tu código. Solo se guarda eso: ningún dato de estudiantes.</p>
+<label class="f" for="nom">Tu nombre completo</label><input type="text" id="nom" maxlength="80" autocomplete="name" placeholder="Nombre y apellido">
+<div class="g2"><div><label class="f" for="sede">Tu sede</label><input type="text" id="sede" maxlength="40" list="sedes" placeholder="Elige o escribe"><datalist id="sedes"></datalist></div>
+<div><label class="f" for="area">Área o grado que enseñas <small style="font-weight:600;color:var(--mut)">(opcional)</small></label><input type="text" id="area" maxlength="60" placeholder="Ej.: Matemáticas, 5.º"></div></div>
+<label class="f" for="col">Código del colegio <small style="font-weight:600;color:var(--mut)">(lo da coordinación; se usa solo para registrarte)</small></label><input type="password" id="col" autocomplete="off">
+<div id="err"></div><div class="row" style="margin-top:14px"><button class="btn p" id="go">✔ Registrarme</button></div></section>
+<section class="card ok" id="listo" hidden><h2>¡Listo, <span id="hola"></span>!</h2><p class="sub">Este es tu <b>código de docente</b>. Guárdalo: lo usas para publicar pruebas y para ver sus resultados desde cualquier equipo.</p>
+<div class="cod" id="cod"></div><div class="row" style="justify-content:center"><button class="btn" id="cp">📋 Copiar código</button><a class="btn p" href="pruebas.html">🚀 Crear mi primera prueba</a></div>
+<ol class="pasos"><li>Ya quedó guardado en este navegador, así que no tendrás que escribirlo aquí.</li><li>En otro celular o computador, escríbelo una vez y listo.</li><li>Si lo olvidas, coordinación puede verlo en la hoja «Docentes».</li></ol></section>
+</main>
+<script src="assets/js/pruebas-comun.js"></script>
+<script>
+(function(){
+var $=function(q){return document.querySelector(q)},E=PR.E;
+PR.cfg().then(function(c){if(!c.url)$('#sinCfg').hidden=false;(c.sedes||[]).forEach(function(s){var o=document.createElement('option');o.value=s;$('#sedes').appendChild(o)})});
+$('#go').addEventListener('click',function(){var b=this,er=$('#err');er.innerHTML='';
+ b.disabled=true;b.textContent='Registrando…';
+ PR.api('registrar',{codigoColegio:$('#col').value,nombre:$('#nom').value,sede:$('#sede').value,area:$('#area').value})
+ .then(function(j){PR.codigoDocente(j.codigo);$('#form').hidden=true;$('#listo').hidden=false;$('#hola').textContent=j.nombre.split(' ')[0];$('#cod').textContent=j.codigo;window.scrollTo(0,0)})
+ .catch(function(e){er.innerHTML='<div class="msg a">'+E(e.message||'No se pudo registrar.')+'</div>'}).then(function(){b.disabled=false;b.textContent='✔ Registrarme'})});
+$('#cp').addEventListener('click',function(){var b=this,c=$('#cod').textContent;(navigator.clipboard?navigator.clipboard.writeText(c):Promise.reject()).then(function(){b.textContent='✔ Copiado'},function(){prompt('Copia tu código:',c)})});
+})();
+</script>
+</body>
+</html>
