@@ -1,11 +1,11 @@
 {
- "version": 1,
+ "version": 2,
  "faq": [
   {
    "id": "tipo2",
    "k": [
-    "tipo (ii|2|dos)\\b",
-    "procedimiento|protocolo|ruta de atencion|que hago|descargo|interrogatorio"
+    "(situacion(es)? |falta[s]? )?tipo (ii|2|dos)\\b",
+    "procedimiento|protocolo|ruta de atencion|que hago|descargo|interrogatorio|como (manejo|actuo|atiendo|trato|resuelvo)"
    ],
    "f": "documentos/02-convivencia-e-inclusion/Manual de convivencia.pdf",
    "d": "Manual de convivencia",
@@ -61,8 +61,8 @@
   {
    "id": "promocion",
    "k": [
-    "promo(vid|cion|ver)",
-    "reprob|perder el ano|pierd[ea]|areas? perdid|no aprueb"
+    "promo(vid|cion|ver)|promueven|se promueve",
+    "reprueb|reprob|perder el ano|se pierde el ano|pierd[ea]|no aprueb|perdida del ano"
    ],
    "f": "documentos/01-academicos/GA-D1_MANUAL_SIEE_2024_REORGANIZADO 2026.pdf",
    "d": "Manual SIEE 2026",
@@ -75,9 +75,8 @@
   {
    "id": "inasistencia",
    "k": [
-    "inasistencia|fallas|ausencia|asistencia",
-    "25 ?%|veinticinco",
-    "fallas|faltas de asistencia"
+    "inasistencia|fallas|ausencia|asistencia|faltas de asistencia",
+    "25 ?%|veinticinco|cuantas fallas"
    ],
    "f": "documentos/01-academicos/GA-D1_MANUAL_SIEE_2024_REORGANIZADO 2026.pdf",
    "d": "Manual SIEE 2026",
@@ -98,6 +97,650 @@
     14
    ],
    "r": "La Comisión de Evaluación y Promoción se reúne al final de cada período para analizar los casos especiales de estudiantes con áreas en desempeño Bajo y los de desempeño Superior (para recomendar motivación o promoción anticipada)."
+  },
+  {
+   "id": "siee-anticipada",
+   "k": [
+    "promocion anticipada|promover anticipadamente|adelantar(se)? (el )?(ano|grado)|salt\\w* (un |de )?grado",
+    "suficiencia|prueba de calidad"
+   ],
+   "f": "documentos/01-academicos/GA-D1_MANUAL_SIEE_2024_REORGANIZADO 2026.pdf",
+   "d": "Manual SIEE 2026",
+   "p": [
+    32,
+    33
+   ],
+   "r": "Promoción anticipada (SIEE, arts. 10–11): aplica de 1.º a 9.º, para estudiantes de rendimiento superior.\n• Solicitud escrita de los padres o acudientes al Rector dentro de las 5 primeras semanas del año; pasa al Consejo Académico y la decide el Consejo Directivo (queda en acta).\n• Desempeño Superior (4.5 a 5.0) en todas las áreas al terminar el primer período.\n• Prueba de suficiencia del grado: 20 preguntas por cada área evaluada por el ICFES, con valoración mínima de 4.0.\n• Trámite: resultado del período I → solicitud en el formato institucional → verificación de criterios → respuesta."
+  },
+  {
+   "id": "siee-posterior",
+   "k": [
+    "promocion posterior|posterior al ano lectivo|despues del ano lectivo"
+   ],
+   "f": "documentos/01-academicos/GA-D1_MANUAL_SIEE_2024_REORGANIZADO 2026.pdf",
+   "d": "Manual SIEE 2026",
+   "p": [
+    33
+   ],
+   "r": "Promoción posterior al año lectivo (SIEE, arts. 12–13): es para estudiantes que no fueron promovidos pero tuvieron excelente comportamiento y deseos de superación. La solicita el padre de familia o representante legal con el formato correspondiente; solo aplica a quienes continúan en la Institución (no a quien ya fue retirado) y exige seguimiento continuo y comunicación permanente con la familia."
+  },
+  {
+   "id": "siee-superacion",
+   "k": [
+    "superacion|recuperacion|recuperar|nivelacion|subir de grado|semanas? 39|precomision",
+    "areas? perdid|areas? no aprobad|perdio (un |una )?(area|materia)|materia perdida"
+   ],
+   "f": "documentos/01-academicos/GA-D1_MANUAL_SIEE_2024_REORGANIZADO 2026.pdf",
+   "d": "Manual SIEE 2026",
+   "p": [
+    36,
+    37
+   ],
+   "r": "Estrategia de apoyo para áreas perdidas (SIEE, art. 22): el día hábil siguiente a la semana 38 hay precomisión de docentes; al día siguiente se entrega un preinforme especial a los padres indicando quiénes deben cumplir la estrategia en las semanas 39 y 40. Aplica a estudiantes con áreas perdidas. Debe cumplirse todo lo planificado por el docente (talleres, pruebas, trabajos…) y el 100 % del horario. La valoración final de la superación es nivel Básico (3.0 a 3.6). En la semana 40 se reúne la Comisión de Evaluación y Promoción.\nGrado 11.º: puede graduarse con una asignatura pendiente solo si el acudiente firma el acta de aceptación; después de graduado no podrá recuperarla."
+  },
+  {
+   "id": "siee-periodos",
+   "k": [
+    "cuantos periodos|periodos academicos|semanas (del|de cada) periodo|duracion del periodo|38 semanas",
+    "cuatro periodos|cuantas semanas"
+   ],
+   "f": "documentos/01-academicos/GA-D1_MANUAL_SIEE_2024_REORGANIZADO 2026.pdf",
+   "d": "Manual SIEE 2026",
+   "p": [
+    36
+   ],
+   "r": "El año tiene cuatro períodos académicos: los dos primeros de 9 semanas y el tercero y el cuarto de 10 semanas, para un total de 38 semanas anuales. Las semanas 39 y 40 se usan para las estrategias de superación y la Comisión de Evaluación y Promoción."
+  },
+  {
+   "id": "siee-reclamaciones",
+   "k": [
+    "reclam|apelacion|apelar|reposicion|inconform|queja academica",
+    "instancias?|conducto regular|dias habiles|a quien (le )?reclamo"
+   ],
+   "f": "documentos/01-academicos/GA-D1_MANUAL_SIEE_2024_REORGANIZADO 2026.pdf",
+   "d": "Manual SIEE 2026",
+   "p": [
+    40
+   ],
+   "r": "Reclamaciones sobre evaluación y promoción (SIEE, art. 29).\nEstudiantes, por escrito y en este orden: docente del área → titular de grupo → coordinación → Rector → Comisión de Evaluación y Promoción → Consejo Académico → Consejo Directivo → Secretaría de Educación. El Personero puede acompañar el caso (sin voto).\nPadres o acudientes: entrevista con el docente → titular → solicitud escrita a coordinación, luego rectoría, Comisión de Evaluación y, como última instancia, Consejo Académico.\nContra decisiones de la Comisión: apelación escrita dentro de 5 días hábiles desde la notificación (respuesta en 10 días hábiles); reposición ante el Consejo Académico dentro de otros 5 días hábiles (se reúne en máximo 10 días hábiles)."
+  },
+  {
+   "id": "siee-informes",
+   "k": [
+    "boletin|informes? academico|entrega de informes|cuando se entregan|entrega de notas"
+   ],
+   "f": "documentos/01-academicos/GA-D1_MANUAL_SIEE_2024_REORGANIZADO 2026.pdf",
+   "d": "Manual SIEE 2026",
+   "p": [
+    39
+   ],
+   "r": "Informes académicos (SIEE, art. 27): el Colegio entrega el informe una vez realizada la Comisión de Evaluación y Promoción de cada período; son cuatro informes al año e incluyen la valoración de la convivencia social."
+  },
+  {
+   "id": "siee-autoevaluacion",
+   "k": [
+    "autoevaluacion|coevaluacion|heteroevaluacion"
+   ],
+   "f": "documentos/01-academicos/GA-D1_MANUAL_SIEE_2024_REORGANIZADO 2026.pdf",
+   "d": "Manual SIEE 2026",
+   "p": [
+    35,
+    36
+   ],
+   "r": "La autoevaluación del estudiante se hace con el formato institucional (Tabla 13): 10 ítems (participación, atención, materiales, tareas, respeto, puntualidad, presentación personal, esfuerzo, participación en el área y cuidado del inmueble), valorados de 1.0 a 5.0 en cada período. Se realiza desde cada área o asignatura, orientada por el docente."
+  },
+  {
+   "id": "siee-yukpa",
+   "k": [
+    "yukpa|indigena"
+   ],
+   "f": "documentos/01-academicos/GA-D1_MANUAL_SIEE_2024_REORGANIZADO 2026.pdf",
+   "d": "Manual SIEE 2026",
+   "p": [
+    43,
+    45
+   ],
+   "r": "Los niños de la comunidad Yukpa tienen un sistema de evaluación diferencial propio, separado del SIEE general (anexo, Sección 10). Es contextualizado, participativo y colaborativo, y usa la tradición oral y la narración. Su escala de valoración también es propia."
+  },
+  {
+   "id": "siee-graduacion",
+   "k": [
+    "graduacion|graduar|bachiller|boton de oro|mejor bachiller|proclamacion"
+   ],
+   "f": "documentos/01-academicos/GA-D1_MANUAL_SIEE_2024_REORGANIZADO 2026.pdf",
+   "d": "Manual SIEE 2026",
+   "p": [
+    31,
+    37,
+    42
+   ],
+   "r": "Grado 11.º: se gradúa quien aprueba todas las áreas. Si pierde asignaturas puede hacer actividades de superación; si decide graduarse en ceremonia con una asignatura pendiente, el acudiente firma el acta de aceptación y luego no podrá recuperarla (pág. 37). En la ceremonia se otorgan las distinciones de Mejor Bachiller y el «Botón de Oro» (menor puntaje de referencia en Saber 11.º, pág. 42)."
+  },
+  {
+   "id": "siee-reconocimientos",
+   "k": [
+    "reconocimiento|diploma|primeros puestos|cuadro de honor|mejor estudiante|excelencia academica"
+   ],
+   "f": "documentos/01-academicos/GA-D1_MANUAL_SIEE_2024_REORGANIZADO 2026.pdf",
+   "d": "Manual SIEE 2026",
+   "p": [
+    42
+   ],
+   "r": "Reconocimientos (SIEE, pág. 42): al finalizar cada período se entrega un diploma de excelente desempeño académico a los cinco primeros estudiantes por promedio cuantitativo, siempre que su convivencia social sea excelente. Al final del año se reconoce a los tres primeros puestos. Además hay reconocimiento por convivencia y, en 11.º, Mejor Bachiller y Botón de Oro."
+  },
+  {
+   "id": "siee-media-tecnica",
+   "k": [
+    "media tecnica|sena\\b|\\bcap\\b|asesoria comercial|equipos de computo|practica empresarial"
+   ],
+   "f": "documentos/01-academicos/GA-D1_MANUAL_SIEE_2024_REORGANIZADO 2026.pdf",
+   "d": "Manual SIEE 2026",
+   "p": [
+    17,
+    18
+   ],
+   "r": "Media Técnica (SIEE, sección 3.1): se rige además por las normas del SENA. Hay dos modalidades en convenio: Mantenimiento de Equipos de Cómputo y Asesoría Comercial. Valoración SENA: docente en el aula 30 %, instructor SENA (portafolio) 20 % y valoración de la práctica 50 %. Para el CAP (Certificado de Aptitud Profesional) se exige mínimo 75 % del proceso con concepto Aprobado."
+  },
+  {
+   "id": "siee-diferenciada",
+   "k": [
+    "evaluacion diferenciada|\\bnee\\b|necesidades educativas|discapacidad|migrante|venezolan|validacion de estudios"
+   ],
+   "f": "documentos/01-academicos/GA-D1_MANUAL_SIEE_2024_REORGANIZADO 2026.pdf",
+   "d": "Manual SIEE 2026",
+   "p": [
+    17,
+    24
+   ],
+   "r": "La Sección 3 del SIEE (págs. 17–25) reúne las poblaciones con evaluación diferenciada: Media Técnica, Modelos Educativos Flexibles, primera infancia, estudiantes con NEE y estudiantes migrantes o en validación de estudios (Decretos 1290/2009, 1421/2017, 1075/2015 y, para migrantes venezolanos, 1288/2018)."
+  },
+  {
+   "id": "siee-pct-0",
+   "k": [
+    "biologia|fisica|quimica|ciencias naturales",
+    "porcentaje|cuanto vale|cuanto (cuenta|pesa)|valor (del|de)|saber|componente|ponderacion"
+   ],
+   "f": "documentos/01-academicos/GA-D1_MANUAL_SIEE_2024_REORGANIZADO 2026.pdf",
+   "d": "Manual SIEE 2026",
+   "p": [
+    10
+   ],
+   "r": "Biología, Física y Química (Ciencias Naturales): Saber-Saber 25 % · Saber-Hacer 25 % · Saber Ser y Convivir 20 % · Prueba de Comprensión 30 % (SIEE, Tabla 2)."
+  },
+  {
+   "id": "siee-pct-1",
+   "k": [
+    "aritmetica|estadistica|razonamiento|matematicas",
+    "porcentaje|cuanto vale|cuanto (cuenta|pesa)|valor (del|de)|saber|componente|ponderacion"
+   ],
+   "f": "documentos/01-academicos/GA-D1_MANUAL_SIEE_2024_REORGANIZADO 2026.pdf",
+   "d": "Manual SIEE 2026",
+   "p": [
+    10
+   ],
+   "r": "Aritmética, Estadística y Razonamiento (Matemáticas): Saber-Saber 30 % · Saber-Hacer 30 % · Saber Ser y Convivir 10 % · Prueba de Comprensión 30 % (SIEE, Tabla 2)."
+  },
+  {
+   "id": "siee-pct-2",
+   "k": [
+    "lengua castellana|\\bleco\\b|lenguaje|castellano",
+    "porcentaje|cuanto vale|cuanto (cuenta|pesa)|valor (del|de)|saber|componente|ponderacion"
+   ],
+   "f": "documentos/01-academicos/GA-D1_MANUAL_SIEE_2024_REORGANIZADO 2026.pdf",
+   "d": "Manual SIEE 2026",
+   "p": [
+    10
+   ],
+   "r": "Lengua Castellana y LECO (Humanidades): Saber-Saber 30 % · Saber-Hacer 20 % · Saber Ser y Convivir 20 % · Prueba de Comprensión 30 % (SIEE, Tabla 2)."
+  },
+  {
+   "id": "siee-pct-3",
+   "k": [
+    "ingles",
+    "porcentaje|cuanto vale|cuanto (cuenta|pesa)|valor (del|de)|saber|componente|ponderacion"
+   ],
+   "f": "documentos/01-academicos/GA-D1_MANUAL_SIEE_2024_REORGANIZADO 2026.pdf",
+   "d": "Manual SIEE 2026",
+   "p": [
+    10
+   ],
+   "r": "Inglés y Laboratorio de Inglés: Saber-Saber 25 % · Saber-Hacer 25 % · Saber Ser y Convivir 30 % · Prueba de Comprensión 30 % (SIEE, Tabla 2)."
+  },
+  {
+   "id": "siee-pct-4",
+   "k": [
+    "religion|educacion religiosa",
+    "porcentaje|cuanto vale|cuanto (cuenta|pesa)|valor (del|de)|saber|componente|ponderacion"
+   ],
+   "f": "documentos/01-academicos/GA-D1_MANUAL_SIEE_2024_REORGANIZADO 2026.pdf",
+   "d": "Manual SIEE 2026",
+   "p": [
+    10
+   ],
+   "r": "Religión (Educación Religiosa Escolar): Saber-Saber 15 % · Saber-Hacer 25 % · Saber Ser y Convivir 30 % · Prueba de Comprensión 30 % (SIEE, Tabla 2)."
+  },
+  {
+   "id": "siee-pct-5",
+   "k": [
+    "filosofia",
+    "porcentaje|cuanto vale|cuanto (cuenta|pesa)|valor (del|de)|saber|componente|ponderacion"
+   ],
+   "f": "documentos/01-academicos/GA-D1_MANUAL_SIEE_2024_REORGANIZADO 2026.pdf",
+   "d": "Manual SIEE 2026",
+   "p": [
+    10
+   ],
+   "r": "Filosofía: Saber-Saber 25 % · Saber-Hacer 25 % · Saber Ser y Convivir 20 % · Prueba de Comprensión 30 % (SIEE, Tabla 2)."
+  },
+  {
+   "id": "siee-pct-6",
+   "k": [
+    "educacion fisica",
+    "porcentaje|cuanto vale|cuanto (cuenta|pesa)|valor (del|de)|saber|componente|ponderacion"
+   ],
+   "f": "documentos/01-academicos/GA-D1_MANUAL_SIEE_2024_REORGANIZADO 2026.pdf",
+   "d": "Manual SIEE 2026",
+   "p": [
+    10
+   ],
+   "r": "Educación Física: Saber-Saber 10 % · Saber-Hacer 40 % · Saber Ser y Convivir 20 % · Prueba de Comprensión 30 % (SIEE, Tabla 2)."
+  },
+  {
+   "id": "siee-pct-7",
+   "k": [
+    "economicas|politicas",
+    "porcentaje|cuanto vale|cuanto (cuenta|pesa)|valor (del|de)|saber|componente|ponderacion"
+   ],
+   "f": "documentos/01-academicos/GA-D1_MANUAL_SIEE_2024_REORGANIZADO 2026.pdf",
+   "d": "Manual SIEE 2026",
+   "p": [
+    10
+   ],
+   "r": "Ciencias Económicas y Políticas: Saber-Saber 25 % · Saber-Hacer 25 % · Saber Ser y Convivir 20 % · Prueba de Comprensión 30 % (SIEE, Tabla 2)."
+  },
+  {
+   "id": "siee-pct-8",
+   "k": [
+    "sociales|geografia|historia",
+    "porcentaje|cuanto vale|cuanto (cuenta|pesa)|valor (del|de)|saber|componente|ponderacion"
+   ],
+   "f": "documentos/01-academicos/GA-D1_MANUAL_SIEE_2024_REORGANIZADO 2026.pdf",
+   "d": "Manual SIEE 2026",
+   "p": [
+    10
+   ],
+   "r": "Ciencias Sociales (Sociales; Geografía e historia): Saber-Saber 20 % · Saber-Hacer 25 % · Saber Ser y Convivir 25 % · Prueba de Comprensión 30 % (SIEE, Tabla 2)."
+  },
+  {
+   "id": "siee-pct-9",
+   "k": [
+    "constitucion politica|catedra de la paz",
+    "porcentaje|cuanto vale|cuanto (cuenta|pesa)|valor (del|de)|saber|componente|ponderacion"
+   ],
+   "f": "documentos/01-academicos/GA-D1_MANUAL_SIEE_2024_REORGANIZADO 2026.pdf",
+   "d": "Manual SIEE 2026",
+   "p": [
+    10
+   ],
+   "r": "Constitución política y cátedra de la paz: Saber-Saber 25 % · Saber-Hacer 25 % · Saber Ser y Convivir 20 % · Prueba de Comprensión 30 % (SIEE, Tabla 2)."
+  },
+  {
+   "id": "siee-pct-10",
+   "k": [
+    "tecnologia|informatica",
+    "porcentaje|cuanto vale|cuanto (cuenta|pesa)|valor (del|de)|saber|componente|ponderacion"
+   ],
+   "f": "documentos/01-academicos/GA-D1_MANUAL_SIEE_2024_REORGANIZADO 2026.pdf",
+   "d": "Manual SIEE 2026",
+   "p": [
+    10
+   ],
+   "r": "Tecnología e Informática: Saber-Saber 20 % · Saber-Hacer 30 % · Saber Ser y Convivir 20 % · Prueba de Comprensión 30 % (SIEE, Tabla 2)."
+  },
+  {
+   "id": "siee-pct-11",
+   "k": [
+    "artistica|artes",
+    "porcentaje|cuanto vale|cuanto (cuenta|pesa)|valor (del|de)|saber|componente|ponderacion"
+   ],
+   "f": "documentos/01-academicos/GA-D1_MANUAL_SIEE_2024_REORGANIZADO 2026.pdf",
+   "d": "Manual SIEE 2026",
+   "p": [
+    10
+   ],
+   "r": "Educación Artística: Saber-Saber 10 % · Saber-Hacer 40 % · Saber Ser y Convivir 20 % · Prueba de Comprensión 30 % (SIEE, Tabla 2)."
+  },
+  {
+   "id": "siee-pct-12",
+   "k": [
+    "etica|valores humanos",
+    "porcentaje|cuanto vale|cuanto (cuenta|pesa)|valor (del|de)|saber|componente|ponderacion"
+   ],
+   "f": "documentos/01-academicos/GA-D1_MANUAL_SIEE_2024_REORGANIZADO 2026.pdf",
+   "d": "Manual SIEE 2026",
+   "p": [
+    10
+   ],
+   "r": "Ética y Valores Humanos: Saber-Saber 20 % · Saber-Hacer 25 % · Saber Ser y Convivir 25 % · Prueba de Comprensión 30 % (SIEE, Tabla 2)."
+  },
+  {
+   "id": "siee-pct-13",
+   "k": [
+    "practica empresarial",
+    "porcentaje|cuanto vale|cuanto (cuenta|pesa)|valor (del|de)|saber|componente|ponderacion"
+   ],
+   "f": "documentos/01-academicos/GA-D1_MANUAL_SIEE_2024_REORGANIZADO 2026.pdf",
+   "d": "Manual SIEE 2026",
+   "p": [
+    10
+   ],
+   "r": "Práctica Empresarial (Media Técnica): Saber-Saber 15 % · Saber-Hacer 30 % · Saber Ser y Convivir 25 % · Prueba de Comprensión 30 % (SIEE, Tabla 2)."
+  },
+  {
+   "id": "man-tipos",
+   "k": [
+    "que (es|son|significa).{0,30}(situacion|falta)|diferencia(s)? entre|clasificacion|tipos de (situacion|falta)",
+    "(situacion(es)?|falta[s]?) tipo (i|ii|iii|1|2|3)\\b|falta[s]? (leve|grave|muy grave|gravisima)"
+   ],
+   "f": "documentos/02-convivencia-e-inclusion/Manual de convivencia.pdf",
+   "d": "Manual de convivencia",
+   "p": [
+    178
+   ],
+   "r": "Clasificación de las situaciones (Decreto 1075/2015, art. 2.3.5.4.2.6; Manual pág. 178):\n• Tipo I: conflictos mal manejados y situaciones esporádicas que afectan el clima escolar, sin daño al cuerpo o la salud.\n• Tipo II: agresión escolar, acoso (bullying) o ciberacoso que no sean delito y que sean repetidos o sistemáticos, o causen daños al cuerpo o la salud sin incapacidad.\n• Tipo III: agresión escolar que constituya presunto delito (contra la libertad, integridad y formación sexual u otro delito de la ley penal)."
+  },
+  {
+   "id": "man-uniforme",
+   "k": [
+    "uniform|jardinera|camibuso|corbata",
+    "mal uso|citacion|cupo|30 dias|promocion|camiseta"
+   ],
+   "f": "documentos/02-convivencia-e-inclusion/Manual de convivencia.pdf",
+   "d": "Manual de convivencia",
+   "p": [
+    105,
+    106
+   ],
+   "r": "Uniforme (Manual págs. 105–106): hay uniforme de diario, de educación física y de gala; no se combinan prendas de uno y otro, y el de educación física solo se usa los días de esa clase. El mal uso reiterado (hasta 3 ocasiones) genera citación al acudiente para firmar compromiso pedagógico; si no se presenta, se remite por abandono a la Comisaría de Familia; la reincidencia puede llevar a no renovar el cupo (acta del Consejo Directivo). Si los padres compran un uniforme que no cumple el modelo, tienen hasta 30 días hábiles para adquirir el reglamentario. La camiseta de la «Promoción» la aprueba Rectoría y solo la usa 11.º en los días que indique Coordinación."
+  },
+  {
+   "id": "man-cabello",
+   "k": [
+    "cabello|pelo|peinado|tinte|piercing|tatuaje|expansion|presentacion personal"
+   ],
+   "f": "documentos/02-convivencia-e-inclusion/Manual de convivencia.pdf",
+   "d": "Manual de convivencia",
+   "p": [
+    99,
+    106
+   ],
+   "r": "Presentación personal (Manual págs. 99 y 106): el cabello debe llevarse aseado, peinado y recogido en estilo formal, largo o corto (se prefiere corto/clásico, pero se permite largo). Se excluyen los tintes y las expresiones que particularicen tanto al estudiante que puedan generar distracción o discriminación. Revisa la pág. 99 para el detalle sobre piercings, tatuajes y accesorios."
+  },
+  {
+   "id": "man-llegadas",
+   "k": [
+    "retardo|lleg\\w* tarde|impuntual|hora de (entrada|ingreso)|a que hora (entran|ingresan|abren|cierran)|puerta|tarde al colegio"
+   ],
+   "f": "documentos/02-convivencia-e-inclusion/Manual de convivencia.pdf",
+   "d": "Manual de convivencia",
+   "p": [
+    111,
+    246
+   ],
+   "r": "Llegadas tarde (Manual págs. 111 y 246): las puertas se cierran a las 6:05 a. m. y a las 12:20 p. m., y desde esa hora inicia el proceso disciplinario (pág. 111). Se considera retardo el ingreso posterior a 15 minutos de la hora de inicio de clases; Portería lo registra en la planilla y el estudiante pasa por Coordinación de Convivencia, que autoriza el ingreso, avisa al acudiente y deja constancia en el observador; con más de 3 retardos se cita para firmar compromiso (pág. 246). Ojo: las dos páginas fijan criterios distintos; si hay duda, confirma con Coordinación de Convivencia."
+  },
+  {
+   "id": "man-permisos",
+   "k": [
+    "permiso (de )?salida|permisos de salida|salir del colegio|retirar (al|a un) (estudiante|nino|educando)|recoger al|salida anticipada"
+   ],
+   "f": "documentos/02-convivencia-e-inclusion/Manual de convivencia.pdf",
+   "d": "Manual de convivencia",
+   "p": [
+    245
+   ],
+   "r": "Permiso de salida (Manual pág. 245): solo el padre o acudiente lo solicita, por la agenda virtual, a Coordinación de Convivencia, a más tardar el día anterior, indicando motivo, hora y si el estudiante sale solo o lo recogen en el colegio. Coordinación gestiona el formato de autorización y lo entrega en portería. No se aceptan solicitudes de otras personas."
+  },
+  {
+   "id": "man-excusas",
+   "k": [
+    "excusa|justific\\w* (una |la )?(inasistencia|falta|ausencia)|justific|incapacidad|calamidad",
+    "evaluacion|taller|tarea|plazo|dias habiles|eps"
+   ],
+   "f": "documentos/02-convivencia-e-inclusion/Manual de convivencia.pdf",
+   "d": "Manual de convivencia",
+   "p": [
+    111
+   ],
+   "r": "Justificar inasistencias o retardos (Manual pág. 111): el acudiente se presenta ante Coordinación Académica y Coordinación de Convivencia, diligencia el formato y, si fue por enfermedad, aporta certificación de la EPS, a más tardar 2 días hábiles después de la incapacidad o calamidad familiar. Con el formato de excusa autorizado por ambas coordinaciones, el estudiante acuerda con cada docente las fechas para presentar tareas, talleres y evaluaciones pendientes; los docentes no están obligados a volver a explicar los temas vistos durante la ausencia."
+  },
+  {
+   "id": "man-celular",
+   "k": [
+    "celular|telefono|tablet|dispositivo (movil|electronico)|audifonos|incautar"
+   ],
+   "f": "documentos/02-convivencia-e-inclusion/Manual de convivencia.pdf",
+   "d": "Manual de convivencia",
+   "p": [
+    187,
+    263
+   ],
+   "r": "Celulares (Manual pág. 187): solo se usan (1) al ingresar a la jornada, antes de entrar al salón; (2) en descansos y recreo; (3) cuando el docente lo autorice con fines académicos; (4) en emergencias de fuerza mayor; (5) en pasillos y patio, nunca en baños ni en salones sin autorización. El colegio no responde por pérdida, hurto o daño. Los procedimientos para incautar el dispositivo están en la misma pág. 187; la pág. 263 prohíbe usarlos para provocar desorden o sabotear la clase."
+  },
+  {
+   "id": "man-comite",
+   "k": [
+    "comite (escolar )?de convivencia|quienes (lo )?(integran|conforman)|conformacion del comite|funciones del comite"
+   ],
+   "f": "documentos/02-convivencia-e-inclusion/Manual de convivencia.pdf",
+   "d": "Manual de convivencia",
+   "p": [
+    153
+   ],
+   "r": "Comité Escolar de Convivencia (Manual pág. 153): lo conforman el Rector (que lo preside), el personero estudiantil, la docente orientadora, el líder de convivencia escolar, los coordinadores de cada sede y jornada, el presidente del consejo de padres y el presidente del consejo de estudiantes. Entre sus funciones: identificar, documentar, analizar y resolver conflictos entre docentes, estudiantes y directivos, y liderar acciones de convivencia y ciudadanía."
+  },
+  {
+   "id": "man-docente",
+   "k": [
+    "deberes (del|de los) (docente|profesor|maestro)|obligaciones (del|de los) (docente|profesor|maestro)|responsabilidades (del|de los) docentes?|que debe hacer (el|un) docente"
+   ],
+   "f": "documentos/02-convivencia-e-inclusion/Manual de convivencia.pdf",
+   "d": "Manual de convivencia",
+   "p": [
+    227
+   ],
+   "r": "Deberes del docente (Manual pág. 227): cumplir sus compromisos profesionales, mantener relaciones armónicas con directivos, padres y toda la comunidad, y aportar con su ejemplo a un buen clima institucional. Debe cumplir las responsabilidades de la Ley 1620 de 2013 (art. 19), entre ellas identificar, reportar y hacer seguimiento a los casos de acoso escolar y violencia escolar. La lista completa está en esa página."
+  },
+  {
+   "id": "man-personero",
+   "k": [
+    "personero|personera"
+   ],
+   "f": "documentos/02-convivencia-e-inclusion/Manual de convivencia.pdf",
+   "d": "Manual de convivencia",
+   "p": [
+    255,
+    256
+   ],
+   "r": "Personero estudiantil (Manual págs. 255–256): es un estudiante del último grado que ofrece la institución y promueve los derechos y deberes de los estudiantes. Entre sus funciones: conocer y respetar el debido proceso y la ruta de atención, difundir el Manual con el Consejo de Estudiantes y promover el respeto de los derechos de los estudiantes (medios internos, foros, colaboración del Consejo de Estudiantes)."
+  },
+  {
+   "id": "man-cancelacion",
+   "k": [
+    "cancelacion de (la )?matricula|cancela(r|n)? (la |el )?(matricula|cupo)|perdida del cupo|no renovacion|renovar (el )?cupo|expulsion|expulsar|excluir|exclusion|quitar el cupo"
+   ],
+   "f": "documentos/02-convivencia-e-inclusion/Manual de convivencia.pdf",
+   "d": "Manual de convivencia",
+   "p": [
+    86,
+    14
+   ],
+   "r": "Cancelación de matrícula o pérdida del cupo (Manual pág. 86): la analiza el Consejo Directivo, convocado por el Rector, caso por caso y siguiendo el debido proceso y la ruta de atención (arts. 87 y 96 de la Ley 115/1994). Reprobar un grado por primera vez no es causal de exclusión salvo que esté asociado a otra causal expresa del Manual (art. 96, pág. 14)."
+  },
+  {
+   "id": "man-salidas",
+   "k": [
+    "salida pedagogica|salidas pedagogicas|dia conmemorativo|excursion|paseo"
+   ],
+   "f": "documentos/02-convivencia-e-inclusion/Manual de convivencia.pdf",
+   "d": "Manual de convivencia",
+   "p": [
+    114
+   ],
+   "r": "Salidas pedagógicas y días conmemorativos (Manual pág. 114): cada año lectivo las programan la Coordinación de Convivencia junto con la Coordinación Académica, con fines de aprendizaje significativo; consulta esa página para los requisitos de autorización."
+  },
+  {
+   "id": "pei-identidad",
+   "k": [
+    "direccion|sedes?|donde (queda|esta)|codigo dane|\\bdane\\b|nit\\b|identificacion institucional|telefono del colegio"
+   ],
+   "f": "documentos/01-academicos/RESIGNIFICACION PEI 2024-2027 COLEGIO SIMON BOLIVAR.pdf",
+   "d": "PEI 2024-2027",
+   "p": [
+    14
+   ],
+   "r": "I.E. Colegio Integrado Simón Bolívar (oficial, Cúcuta, comuna 4; DANE 154001008266; NIT 800181183-7). Sedes: Sede 1, Calle 4 N.º 11A-26, Urb. San Martín; Sede 2, Av. 5N N.º 7-20, Barrio San Martín; Sede 3 (Hernando Acevedo Ortega), Calle 0 N.º 13-06, Urb. Torcoroma II (PEI, pág. 14)."
+  },
+  {
+   "id": "pei-resena",
+   "k": [
+    "resena|historia del colegio|cuando (se )?(fundo|inicio)|fundacion|fundado|origen del colegio"
+   ],
+   "f": "documentos/01-academicos/RESIGNIFICACION PEI 2024-2027 COLEGIO SIMON BOLIVAR.pdf",
+   "d": "PEI 2024-2027",
+   "p": [
+    17
+   ],
+   "r": "El Colegio Integrado Simón Bolívar inició labores el 18 de febrero de 1992 en dos aulas construidas por el INURBE para la ciudadela San Martín, con 23 alumnos matriculados al comienzo (PEI, pág. 17). Las sedes Hernando Acevedo y San Martín N.º 65 tienen su propia síntesis histórica en las págs. 21–22."
+  },
+  {
+   "id": "pei-valores",
+   "k": [
+    "valores institucionales|valores del colegio|estrella colbolivar|principios y valores|valores colbolivar"
+   ],
+   "f": "documentos/01-academicos/RESIGNIFICACION PEI 2024-2027 COLEGIO SIMON BOLIVAR.pdf",
+   "d": "PEI 2024-2027",
+   "p": [
+    28,
+    25
+   ],
+   "r": "Valores institucionales (PEI, pág. 28), enmarcados en la «estrella Colbolívar»: honestidad (ética, verdad, puntualidad), amor (paz, amistad, respeto, sana convivencia), esfuerzo (hábitos de estudio, responsabilidad, trabajo en equipo) y fe (espiritualidad, autoestima, autocontrol). Los principios antropológicos, psicológicos, sociológicos, pedagógicos y éticos están en las págs. 25–27."
+  },
+  {
+   "id": "pei-mision",
+   "k": [
+    "mision|vision|politica de calidad|horizonte institucional"
+   ],
+   "f": "documentos/01-academicos/RESIGNIFICACION PEI 2024-2027 COLEGIO SIMON BOLIVAR.pdf",
+   "d": "PEI 2024-2027",
+   "p": [
+    24
+   ],
+   "r": "La Misión, la Visión y la Política de Calidad están en el Horizonte Institucional (PEI, pág. 24). En el PDF ese texto aparece como imagen, por eso no puedo citarlo aquí: ábrelo en esa página."
+  },
+  {
+   "id": "pei-simbolos",
+   "k": [
+    "escudo|bandera|himno|simbolos"
+   ],
+   "f": "documentos/01-academicos/RESIGNIFICACION PEI 2024-2027 COLEGIO SIMON BOLIVAR.pdf",
+   "d": "PEI 2024-2027",
+   "p": [
+    32,
+    33
+   ],
+   "r": "Símbolos institucionales (PEI, págs. 32–33): el escudo representa el tórax del estudiante con los colores de Norte de Santander y el principio rector del PEI; la bandera representa a Cúcuta y al colegio; el himno está en la pág. 33."
+  },
+  {
+   "id": "pei-perfil-estudiante",
+   "k": [
+    "perfil del (estudiante|educando|alumno)|como debe ser el estudiante|egresado|que (tipo de )?persona"
+   ],
+   "f": "documentos/01-academicos/RESIGNIFICACION PEI 2024-2027 COLEGIO SIMON BOLIVAR.pdf",
+   "d": "PEI 2024-2027",
+   "p": [
+    39
+   ],
+   "r": "Perfil del educando (PEI, pág. 39): al terminar su formación será una persona capaz de aplicar conocimientos técnicos, científicos y tecnológicos en su proyección social, tomar decisiones libres, responsables y autónomas, expresar amor en sus relaciones, comprometerse solidariamente con su comunidad y comunicarse correctamente; un ciudadano tolerante, crítico, responsable, solidario y participativo."
+  },
+  {
+   "id": "pei-modelo",
+   "k": [
+    "modelo pedagogico|escuelas que aprenden|enfoque pedagogico|modelo educativo"
+   ],
+   "f": "documentos/01-academicos/RESIGNIFICACION PEI 2024-2027 COLEGIO SIMON BOLIVAR.pdf",
+   "d": "PEI 2024-2027",
+   "p": [
+    71
+   ],
+   "r": "Modelo pedagógico Colbolívar (PEI, pág. 71): está basado en «Escuelas que aprenden» y tiene como principios la inclusión, la individualidad, la educación como proceso influido por la cultura y el currículo como proceso administrativo y pedagógico. El detalle del modelo educativo sigue en las págs. 72–78."
+  },
+  {
+   "id": "pei-gobierno",
+   "k": [
+    "gobierno escolar|consejo directivo|consejo academico|consejo estudiantil|consejo de padres|asamblea de padres"
+   ],
+   "f": "documentos/01-academicos/RESIGNIFICACION PEI 2024-2027 COLEGIO SIMON BOLIVAR.pdf",
+   "d": "PEI 2024-2027",
+   "p": [
+    47,
+    48,
+    49,
+    50
+   ],
+   "r": "Gobierno escolar (PEI, págs. 47–50): Consejo Directivo (47), Consejo Académico (48), Comisión de Evaluación y Promoción (48), Personero Estudiantil (49), Consejo Estudiantil (50) y Consejo de Padres de Familia (50). El Manual de convivencia trata el Consejo Directivo desde la pág. 178."
+  },
+  {
+   "id": "pei-estructura",
+   "k": [
+    "estructura del pei|contenido del pei|capitulos del pei|que contiene el pei|componentes del pei|indice del pei"
+   ],
+   "f": "documentos/01-academicos/RESIGNIFICACION PEI 2024-2027 COLEGIO SIMON BOLIVAR.pdf",
+   "d": "PEI 2024-2027",
+   "p": [
+    3,
+    4,
+    5
+   ],
+   "r": "El PEI tiene cuatro componentes: conceptual y de gestión directiva (cap. 1, pág. 14), pedagógico (cap. 2, pág. 71: modelo, currículo, pensum, evaluación, proyectos transversales), administrativo (cap. 3, pág. 99: matrícula, servicios, talento humano) y comunitario (cap. 4, pág. 110: inclusión, convivencia, servicio social, escuela segura)."
+  },
+  {
+   "id": "pei-yukpa",
+   "k": [
+    "propuesta intercultural|intercultural yukpa|yukpa"
+   ],
+   "f": "documentos/01-academicos/RESIGNIFICACION PEI 2024-2027 COLEGIO SIMON BOLIVAR.pdf",
+   "d": "PEI 2024-2027",
+   "p": [
+    62,
+    66
+   ],
+   "r": "La Propuesta Intercultural Yukpa está en el PEI págs. 62–67 (contexto, objetivos, enfoque metodológico e intercultural, y evaluación). La evaluación específica está en el anexo del SIEE."
+  },
+  {
+   "id": "pei-servicios",
+   "k": [
+    "transporte humanitario|restaurante escolar|servicio de restaurante|servicios complementarios|pae\\b|comedor"
+   ],
+   "f": "documentos/01-academicos/RESIGNIFICACION PEI 2024-2027 COLEGIO SIMON BOLIVAR.pdf",
+   "d": "PEI 2024-2027",
+   "p": [
+    105
+   ],
+   "r": "Servicios complementarios (PEI, pág. 105): transporte humanitario y servicio de restaurante."
+  },
+  {
+   "id": "pei-convenios",
+   "k": [
+    "convenio|alianza|universidad de pamplona|ufps|francisco de paula"
+   ],
+   "f": "documentos/01-academicos/RESIGNIFICACION PEI 2024-2027 COLEGIO SIMON BOLIVAR.pdf",
+   "d": "PEI 2024-2027",
+   "p": [
+    17,
+    58
+   ],
+   "r": "Convenios y alianzas: el colegio tiene convenio con el SENA, la Universidad de Pamplona y la Universidad Francisco de Paula Santander (PEI, pág. 17); el detalle está en el apartado 1.9 (pág. 58)."
   }
  ]
 }
