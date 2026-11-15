@@ -6,6 +6,7 @@
 | `cumpleanos-data.js` | Lista de cumpleaños. | ✅ Sí |
 | `estudio-preguntas.json` | Preguntas del **Modo estudio** (cada una con su página del PDF). | Con ayuda |
 | `novedades-manual.json`, `novedades-config.json` | Avisos manuales (circulares) y ajustes de «NUEVO». | ✅ Sí (ver `AVISOS-LEEME.md`) |
+| `pruebas-config.json` | Enlace (URL) de Google Apps Script para «Pruebas en línea». | ✅ Sí (ver `pruebas/LEEME-INSTALACION.md`) |
 | `cifras-manual.json` | Matrícula, ICFES y visitas para «Colegio en cifras». | ✅ Sí |
 | `hoy-auto.json`, `cifras-auto.json`, `avisos-enviados.json` | Los genera el flujo «Tablero diario» cada noche. | ❌ No |
 | `catalogo-documentos.json` | Lista de los PDF de `documentos/`. **Lo genera un robot**, no lo edites. | ❌ No |

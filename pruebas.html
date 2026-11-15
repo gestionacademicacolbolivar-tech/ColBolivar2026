@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#12306e">
+<title>Pruebas en línea · ColBolívar</title>
+<meta name="description" content="Crea pruebas en línea con código QR y calificación automática a partir de tus preguntas.">
+<link rel="icon" href="favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/pruebas.css">
+<style>
+.tabs{display:flex;gap:6px;margin:8px 0}.tabs button{flex:1;font:700 .95rem Nunito,sans-serif;border:2px solid var(--line);background:#fff;border-radius:12px;padding:.6em;cursor:pointer;color:var(--mut)}.tabs button.on{border-color:var(--g);background:#eaf5ed;color:var(--gd)}
+.zona{border:2px dashed #b9cdbc;border-radius:14px;padding:22px;text-align:center;color:var(--mut);cursor:pointer;transition:background .2s,border-color .2s}.zona:hover,.zona.sobre{background:#f1f8f2;border-color:var(--g)}.zona b{display:block;color:var(--gd);font-size:1.05rem}
+.qv{border:1px solid var(--line);border-radius:12px;padding:8px 12px;margin-bottom:8px;display:grid;grid-template-columns:28px 1fr;gap:8px;background:#fafcfa}.qv.off{opacity:.45}.qv h3{font:700 .95rem Nunito,sans-serif;color:var(--ink)}.qv ol{margin:4px 0 0 1.2em;font-size:.88rem;color:var(--mut)}.qv li.ok{color:#14532d;font-weight:700}.qv li.ok:after{content:" ✓"}
+.qv small{color:var(--mut)}
+.listo{text-align:center}.qrbox{width:min(260px,70vw);margin:10px auto;background:#fff;padding:8px;border:1px solid var(--line);border-radius:14px}.qrbox svg{width:100%;height:auto;display:block}
+.cod{font:800 2.2rem Sora,sans-serif;letter-spacing:.2em;color:var(--gd)}.url{font-size:.85rem;color:var(--mut);word-break:break-all}
+.pin{display:inline-block;font:800 1.6rem Sora,sans-serif;letter-spacing:.25em;background:#fff8e1;border:2px dashed var(--o);border-radius:12px;padding:.2em .7em;color:#6b4a00}
+.mi{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;border:1px solid var(--line);border-radius:12px;padding:8px 12px;margin-bottom:8px}.mi b{display:block}.mi small{color:var(--mut)}
+.cartel{display:none}
+@media print{body.imp-cartel>*:not(.cartel){display:none!important}body.imp-cartel .cartel{display:flex!important;flex-direction:column;align-items:center;text-align:center;gap:10px;padding:30px}.cartel img{width:90px}.cartel h1{font-size:2.2rem}.cartel .q{width:420px}.cartel .c{font:800 3rem Sora,sans-serif;letter-spacing:.25em}.cartel p{font-size:1.1rem}}
+</style>
+</head>
+<body>
+<header class="top"><div class="in"><img src="assets/img/escudo.webp" alt="Escudo del colegio"><div><h1>Pruebas en línea</h1><p>Convierte tus preguntas en una prueba con enlace y código QR. Se califica sola.</p></div><a class="back" href="index.html">← Volver al portal</a></div></header>
+<main>
+<div class="msg w" id="sinCfg" hidden><b>La plataforma aún no está conectada.</b> Quien administra el portal debe pegar el enlace de Google Apps Script en <code>datos/pruebas-config.json</code> (ver <code>pruebas/LEEME-INSTALACION.md</code>).</div>
+<section class="card" id="mis" hidden><h2>Mis pruebas</h2><p class="sub">Guardadas en este navegador, con su clave para ver resultados.</p><div id="misLista"></div></section>
+
+<section class="card" id="paso1"><h2>1 · Sube o pega tus preguntas</h2>
+<p class="sub">Puedes usar el archivo <code>exam.json</code> que genera tu asistente de pruebas, o pegar las preguntas en texto simple (como en Word).</p>
+<div class="tabs"><button class="on" data-t="arch">📄 Archivo exam.json</button><button data-t="txt">✍️ Pegar texto</button></div>
+<div id="t-arch"><label class="zona" id="zona" for="file"><b>Toca para elegir el archivo</b>o arrástralo aquí<input id="file" type="file" accept=".json,application/json" hidden></label></div>
+<div id="t-txt" hidden><textarea id="txt" placeholder="Tema: Fracciones&#10;Área: Matemáticas&#10;Grado: 5&#10;&#10;1. ¿Cuál fracción es mayor?&#10;A) 1/2&#10;B) 3/4&#10;*C) 5/6&#10;D) 2/3&#10;Explicación: 5/6 es la mayor."></textarea>
+<div class="row" style="margin-top:8px"><button class="btn p" id="leerTxt">Leer preguntas</button><button class="btn sm" id="ejemplo">Cargar ejemplo</button></div>
+<details style="margin-top:8px"><summary><b>¿Cómo escribo las preguntas?</b></summary><div class="msg i">Numera cada pregunta y escribe las opciones A), B), C)… Marca la correcta con <b>*</b> antes de la letra (o escribe una línea <code>Respuesta: C</code>). Opcional: <code>Explicación:</code>, <code>Competencia:</code>, <code>Componente:</code>, <code>Nivel:</code>. Al inicio puedes poner <code>Tema:</code>, <code>Área:</code>, <code>Grado:</code> y <code>Docente:</code>.</div></details></div>
+<div id="err1"></div></section>
+
+<section class="card" id="vista" hidden><h2>2 · Revisa tu prueba</h2><p class="sub" id="resumen"></p><div id="avisos"></div><div id="lista"></div></section>
+
+<section class="card" id="conf" hidden><h2>3 · Configura y publica</h2>
+<label class="f">Nombre de la prueba</label><input type="text" id="titulo" maxlength="120">
+<div class="g3"><div><label class="f">Área</label><input type="text" id="area" maxlength="60"></div><div><label class="f">Grado</label><input type="text" id="grado" maxlength="20"></div><div><label class="f">Docente</label><input type="text" id="docente" maxlength="80"></div></div>
+<label class="f">Curso(s) que la presentarán <small style="font-weight:600;color:var(--mut)">(separa con comas: 5-A, 5-B)</small></label><input type="text" id="cursos" maxlength="150" placeholder="5-A, 5-B">
+<label class="f">¿Qué tipo de prueba es?</label>
+<div class="chips" id="modo"><button class="chip on" data-v="evaluacion">📝 Evaluación (1 intento)</button><button class="chip" data-v="repaso">🔁 Repaso / simulacro (varios intentos, con respuestas)</button></div>
+<div class="g3"><div><label class="f">Tiempo (minutos, 0 = sin límite)</label><input type="number" id="minutos" min="0" max="300" value="30"></div><div><label class="f">Intentos por estudiante</label><input type="number" id="intentos" min="1" max="99" value="1"></div><div><label class="f">Al terminar, el estudiante ve…</label><select id="mostrar"><option value="nota">Su nota (sin respuestas)</option><option value="completo">Nota y respuestas correctas</option><option value="nada">Solo «recibido»</option></select></div></div>
+<div class="g2"><div><label class="f">Se abre (opcional)</label><input type="datetime-local" id="abre"></div><div><label class="f">Se cierra (opcional)</label><input type="datetime-local" id="cierra"></div></div>
+<label class="f"><input type="checkbox" id="mezclar" checked> Mezclar el orden de las preguntas para cada estudiante (las de un mismo texto siempre van juntas)</label>
+<label class="f">Código de docentes <small style="font-weight:600;color:var(--mut)">(te lo da coordinación)</small></label><input type="password" id="codDoc" autocomplete="off">
+<div id="err3"></div>
+<div class="row" style="margin-top:12px"><button class="btn p" id="publicar">🚀 Publicar prueba</button></div></section>
+
+<section class="card listo" id="listo" hidden><h2>🎉 ¡Tu prueba está lista!</h2><p class="sub" id="lt"></p>
+<div class="qrbox" id="qr"></div><div class="cod" id="cod"></div><p class="url" id="url"></p>
+<div class="row" style="justify-content:center;margin:12px 0"><button class="btn p" id="copiar">📋 Copiar enlace</button><a class="btn" id="wa" target="_blank" rel="noopener">💬 WhatsApp</a><button class="btn" id="cartelBtn">🖨️ Imprimir cartel con QR</button><a class="btn o" id="verRes">📊 Ver resultados</a></div>
+<div class="msg w">Tu <b>clave para ver los resultados</b>: <span class="pin" id="pin"></span><br>Se guardó en este navegador, pero anótala por si cambias de equipo. No se puede recuperar.</div></section>
+<p class="foot">La prueba es un apoyo: para notas oficiales conserva también tu registro habitual.</p>
+</main>
+<div class="cartel" id="cartel"><img src="assets/img/escudo.webp" alt=""><h1 id="cT"></h1><p>Escanea con la cámara de tu celular</p><div class="q" id="cQ"></div><div class="c" id="cC"></div><p id="cU"></p></div>
+<script src="assets/js/qrcode.js"></script>
+<script src="assets/js/pruebas-comun.js"></script>
+<script>
+(function(){
+var $=function(q){return document.querySelector(q)},E=PR.E,P=null,modo='evaluacion',ultima=null;
+PR.cfg().then(function(c){if(!c.url)$('#sinCfg').hidden=false});
+/* ---- Mis pruebas ---- */
+function pintaMis(){var l=PR.misPruebas();$('#mis').hidden=!l.length;$('#misLista').innerHTML=l.map(function(p){return '<div class="mi"><div><b>'+E(p.titulo)+'</b><small>Código <b>'+E(p.codigo)+'</b> · '+E((p.fecha||'').slice(0,10))+'</small></div><div class="row"><a class="btn sm p" href="resultados.html?c='+E(p.codigo)+'">📊 Resultados</a><button class="btn sm" data-q="'+E(p.codigo)+'" data-a="qr">QR / cartel</button><button class="btn sm r" data-q="'+E(p.codigo)+'" data-a="x" title="Quitar de esta lista">✕</button></div></div>'}).join('')}
+$('#misLista').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;var p=PR.misPruebas().filter(function(x){return x.codigo===b.dataset.q})[0];if(!p)return;if(b.dataset.a==='x'){if(confirm('¿Quitar esta prueba de tu lista? (No se borra de la plataforma)')){PR.quitarPrueba(p.codigo);pintaMis()}}else mostrarListo(p,true)});
+pintaMis();
+/* ---- pestañas ---- */
+document.querySelector('.tabs').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;[].forEach.call(this.children,function(x){x.classList.toggle('on',x===b)});$('#t-arch').hidden=b.dataset.t!=='arch';$('#t-txt').hidden=b.dataset.t!=='txt'});
+/* ---- cargar archivo ---- */
+function error1(m){$('#err1').innerHTML=m?'<div class="msg a">'+m+'</div>':''}
+function leerArchivo(f){if(!f)return;if(f.size>8e6){error1('El archivo es muy grande (máx. 8 MB).');return}var r=new FileReader();r.onload=function(){try{procesar(JSON.parse(r.result),f.name.replace(/\.json$/i,''))}catch(e){error1('No pude leer ese archivo: debe ser el <code>exam.json</code> de tu asistente de pruebas.')}};r.readAsText(f)}
+$('#file').addEventListener('change',function(){leerArchivo(this.files[0])});
+var z=$('#zona');['dragover','dragenter'].forEach(function(n){z.addEventListener(n,function(e){e.preventDefault();z.classList.add('sobre')})});['dragleave','drop'].forEach(function(n){z.addEventListener(n,function(e){e.preventDefault();z.classList.remove('sobre')})});z.addEventListener('drop',function(e){leerArchivo(e.dataTransfer.files[0])});
+$('#leerTxt').addEventListener('click',function(){var t=$('#txt').value.trim();if(!t){error1('Pega tus preguntas primero.');return}
+ if(t.charAt(0)==='{'){try{procesar(JSON.parse(t),'');return}catch(e){}}
+ var r=PR.desdeTexto(t);if(!r.preguntas.length){error1('No encontré preguntas completas. Revisa el formato (ver «¿Cómo escribo las preguntas?»).'+(r.problemas.length?'<br>'+r.problemas.map(E).join('<br>'):''));return}
+ procesar({meta:r.meta,preguntas:r.preguntas},'',r.problemas)});
+$('#ejemplo').addEventListener('click',function(){$('#txt').value='Tema: Repaso de fracciones\nÁrea: Matemáticas\nGrado: 5\n\n1. ¿Cuál de estas fracciones es la mayor?\nA) 1/2\nB) 3/4\n*C) 5/6\nD) 2/3\nExplicación: 5/6 es la más cercana a 1 entera.\nCompetencia: Razonamiento\n\n2. ¿Cuál es la capital de Colombia?\nA) Cali\n*B) Bogotá\nC) Medellín\nD) Cúcuta\n\n3. Si compras 3 cuadernos de $2.500 cada uno, ¿cuánto pagas en total?\nA) $5.000\nB) $6.500\n*C) $7.500\nD) $8.000\nRespuesta: C'});
+/* ---- convertir y revisar ---- */
+function procesar(ex,nombre,probl){error1('');var r=PR.desdeExam(ex);P=r;P.problemas=probl||[];if(!r.nMultiple&&!r.publico.preguntas.length){error1('Esa prueba no tiene preguntas que se puedan publicar'+(r.avisos.length?' ('+r.avisos.length+' usan gráficos, que llegarán en una próxima versión)':'')+'.');return}
+ r.publico.preguntas.forEach(function(q){q._on=true});
+ $('#vista').hidden=false;$('#conf').hidden=false;$('#listo').hidden=true;
+ var av=(r.avisos.concat(P.problemas)).map(function(a){return '<div class="msg w">⚠️ '+E(a)+'</div>'}).join('');$('#avisos').innerHTML=av;
+ var est={};r.publico.estimulos.forEach(function(e){est[e.id]=e});
+ $('#lista').innerHTML=r.publico.preguntas.map(function(q,i){var k=r.clave.m[q.id];return '<div class="qv" data-i="'+i+'"><input type="checkbox" checked aria-label="Incluir"><div><h3>'+(i+1)+'. '+E(q.pregunta||q.enunciado)+'</h3>'+(q.estimulo&&est[q.estimulo]?'<small>📖 Texto: '+E(est[q.estimulo].titulo||q.estimulo)+'</small>':'')+(q.tipo==='abierta'?'<br><small>✍️ Pregunta abierta · la calificas tú ('+q.puntos+' pto)</small>':'<ol type="A">'+q.opciones.map(function(o,j){return '<li class="'+(j===k.ci?'ok':'')+'">'+E(o)+'</li>'}).join('')+'</ol>')+'<small>'+[q.competencia,q.componente,q.nivel].filter(String).map(E).join(' · ')+'</small></div></div>'}).join('');
+ resumen();
+ if(!$('#titulo').value)$('#titulo').value=r.meta.titulo||nombre||'Prueba';if(!$('#area').value)$('#area').value=r.meta.area;if(!$('#grado').value)$('#grado').value=r.meta.grado;if(!$('#docente').value)$('#docente').value=r.meta.docente||PR.LS('cb_docente')||'';
+ $('#codDoc').value=PR.LS('cb_codigo_docentes')||'';
+ $('#vista').scrollIntoView({behavior:'smooth'})}
+function resumen(){var on=P.publico.preguntas.filter(function(q){return q._on});$('#resumen').textContent=on.length+' pregunta'+(on.length===1?'':'s')+' incluida'+(on.length===1?'':'s')+' · la respuesta correcta está marcada con ✓ (las opciones se mezclan para cada estudiante).'}
+$('#lista').addEventListener('change',function(e){var c=e.target,d=c.closest('.qv');if(!d)return;var q=P.publico.preguntas[+d.dataset.i];q._on=c.checked;d.classList.toggle('off',!c.checked);resumen()});
+$('#modo').addEventListener('click',function(e){var b=e.target.closest('.chip');if(!b)return;modo=b.dataset.v;[].forEach.call(this.children,function(x){x.classList.toggle('on',x===b)});if(modo==='repaso'){$('#intentos').value=3;$('#mostrar').value='completo';$('#minutos').value=0}else{$('#intentos').value=1;$('#mostrar').value='nota';$('#minutos').value=30}});
+/* ---- publicar ---- */
+function iso(v){return v?new Date(v).toISOString():''}
+$('#publicar').addEventListener('click',function(){var b=this,er=$('#err3');er.innerHTML='';
+ var on=P.publico.preguntas.filter(function(q){return q._on});if(!on.length){er.innerHTML='<div class="msg a">Deja al menos una pregunta marcada.</div>';return}
+ var cod=$('#codDoc').value.trim();if(!cod){er.innerHTML='<div class="msg a">Escribe el código de docentes.</div>';return}
+ var usadas={};on.forEach(function(q){if(q.estimulo)usadas[q.estimulo]=1});
+ var pub={estimulos:P.publico.estimulos.filter(function(e){return usadas[e.id]}),preguntas:on.map(function(q){var c=Object.assign({},q);delete c._on;return c})};
+ var cursos=$('#cursos').value.split(',').map(function(s){return s.trim()}).filter(String);
+ b.disabled=true;b.textContent='Publicando…';
+ PR.api('publicar',{codigoDocentes:cod,meta:{titulo:$('#titulo').value,area:$('#area').value,grado:$('#grado').value,docente:$('#docente').value,cursos:cursos},
+  config:{modo:modo,minutos:+$('#minutos').value||0,intentos:+$('#intentos').value||1,mostrar:$('#mostrar').value,mezclar:$('#mezclar').checked,abre:iso($('#abre').value),cierra:iso($('#cierra').value)},publico:pub,clave:P.clave})
+ .then(function(j){PR.LS('cb_codigo_docentes',cod);PR.LS('cb_docente',$('#docente').value);var p={codigo:j.codigo,pin:j.pin,titulo:$('#titulo').value||'Prueba',fecha:new Date().toISOString()};PR.guardarPrueba(p);pintaMis();mostrarListo(p,false)})
+ .catch(function(e){er.innerHTML='<div class="msg a">'+E(e.message||'No se pudo publicar.')+'</div>'}).then(function(){b.disabled=false;b.textContent='🚀 Publicar prueba'})});
+function mostrarListo(p,desdeLista){ultima=p;var u=PR.linkPrueba(p.codigo);$('#listo').hidden=false;$('#lt').textContent=p.titulo;$('#qr').innerHTML=PR.qr(u,6);$('#cod').textContent=p.codigo;$('#url').textContent=u;$('#pin').textContent=p.pin||'(guardada en otro equipo)';
+ $('#wa').href='https://wa.me/?text='+encodeURIComponent('Prueba en línea: '+p.titulo+'\n'+u);$('#verRes').href='resultados.html?c='+encodeURIComponent(p.codigo);
+ $('#cT').textContent=p.titulo;$('#cQ').innerHTML=PR.qr(u,8);$('#cC').textContent=p.codigo;$('#cU').textContent=u;
+ $('#listo').scrollIntoView({behavior:'smooth'})}
+$('#copiar').addEventListener('click',function(){var b=this,u=PR.linkPrueba(ultima.codigo);(navigator.clipboard?navigator.clipboard.writeText(u):Promise.reject()).then(function(){b.textContent='✔ Copiado'},function(){prompt('Copia este enlace:',u)})});
+$('#cartelBtn').addEventListener('click',function(){document.body.classList.add('imp-cartel');setTimeout(function(){print();document.body.classList.remove('imp-cartel')},150)});
+})();
+</script>
+</body>
+</html>

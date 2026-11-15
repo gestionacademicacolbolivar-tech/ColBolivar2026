@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#12306e">
+<meta name="robots" content="noindex">
+<title>Prueba en línea · ColBolívar</title>
+<link rel="icon" href="favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/pruebas.css">
+<style>
+body{font-size:18px}main{max-width:720px;padding-top:12px}
+.hd{display:flex;align-items:center;gap:10px;padding:10px clamp(14px,3vw,24px);background:linear-gradient(135deg,#0b1a44,#12306e 70%,#1c4f27);color:#fff}.hd img{width:38px}.hd b{font:700 .95rem Sora,sans-serif;flex:1;line-height:1.2}.hd span{font-size:.8rem;opacity:.85}
+.prog{height:7px;background:rgba(255,255,255,.25)}.prog i{display:block;height:100%;width:0;background:#ffd96b;transition:width .3s}
+.tm{font:800 1rem Sora,sans-serif;background:rgba(255,255,255,.14);border-radius:99px;padding:.15em .8em}.tm.u{background:#d92d3a;animation:parp 1s infinite}@keyframes parp{50%{opacity:.6}}
+.est{border:1px solid var(--line);border-left:5px solid var(--n);background:#f7f9ff;border-radius:12px;padding:10px 14px;margin-bottom:12px;font-size:.98rem}.est h3{font-size:1rem;color:var(--n);margin-bottom:4px}.est p{margin:4px 0}.est .ins{font-size:.82rem;color:var(--mut)}
+.est p .np{font-weight:800;color:var(--n);margin-right:.35em}
+.enun{font-size:.98rem;color:#33443a;margin-bottom:6px}.preg{font:700 1.15rem/1.35 Nunito,sans-serif;margin-bottom:12px}
+.op{display:grid;grid-template-columns:38px 1fr;gap:10px;align-items:center;text-align:left;width:100%;font:600 1.02rem/1.35 Nunito,sans-serif;background:#fff;border:2px solid var(--line);border-radius:14px;padding:10px 12px;margin-bottom:9px;cursor:pointer;color:var(--ink);transition:border-color .15s,background .15s,transform .15s}
+.op:hover{border-color:var(--g);transform:translateX(3px)}.op b{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#eaf0ea;color:var(--gd);font:800 .95rem Sora,sans-serif}
+.op.sel{border-color:var(--g);background:#eaf5ed;box-shadow:0 0 0 3px rgba(43,122,58,.18)}.op.sel b{background:var(--g);color:#fff}
+.nav{display:flex;gap:10px;justify-content:space-between;margin-top:14px;position:sticky;bottom:0;background:linear-gradient(transparent,var(--bg) 30%);padding:14px 0 10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(52px,1fr));gap:8px;margin:12px 0}.grid button{font:800 1rem Sora,sans-serif;border:2px solid var(--line);background:#fff;border-radius:12px;padding:.55em 0;cursor:pointer}.grid button.si{background:#eaf5ed;border-color:var(--g);color:var(--gd)}.grid button.no{background:#fff3e0;border-color:var(--o);color:#8a4b00}
+.big{font:800 clamp(3rem,16vw,5rem)/1 Sora,sans-serif;color:var(--c)}.res{text-align:center}.ring{width:150px;height:150px;border-radius:50%;margin:8px auto;display:grid;place-items:center;border:10px solid var(--c);background:#fff}
+.dt{border:1px solid var(--line);border-radius:12px;margin-bottom:8px;background:#fff;overflow:hidden}.dt summary{cursor:pointer;padding:9px 12px;font-weight:700;display:flex;gap:8px;align-items:center}.dt .b{padding:0 12px 10px;font-size:.95rem}.dt .ok{color:#14532d}.dt .no{color:#7b1620}
+.dt.ok{border-left:5px solid var(--g)}.dt.mal{border-left:5px solid var(--r)}
+.cen{text-align:center;padding:30px 10px}.cen .ic{font-size:3rem}
+input.n{font-size:1.1rem}
+</style>
+</head>
+<body>
+<div class="hd" id="hd" hidden><img src="assets/img/escudo.webp" alt=""><b id="hT">Prueba</b><span class="tm" id="tm" hidden></span></div><div class="prog" id="prog" hidden><i></i></div>
+<main id="app" aria-live="polite"><div class="cen"><div class="ic">⏳</div><p>Cargando la prueba…</p></div></main>
+<script src="assets/js/pruebas-comun.js"></script>
+<script>
+(function(){
+var $=function(q){return document.querySelector(q)},E=PR.E,app=$('#app');
+var cod=(new URLSearchParams(location.search).get('c')||'').toUpperCase().replace(/[^A-Z0-9]/g,'');
+var M,PB,ST,orden=[],opts={},timer=null,enviando=false,LK='pr_'+cod;
+function pantalla(h){app.innerHTML=h;window.scrollTo(0,0)}
+function msg(ic,t,p,extra){pantalla('<div class="cen"><div class="ic">'+ic+'</div><h2>'+t+'</h2><p class="sub">'+(p||'')+'</p>'+(extra||'')+'</div>')}
+function guardar(){PR.LS(LK,ST)}
+if(!cod){msg('🔎','Falta el código de la prueba','Escanea el código QR o usa el enlace que te dio tu profe.');return}
+PR.api('prueba',{codigo:cod},'GET').then(function(j){M=j.meta;PB=j.publico;ST=PR.LS(LK);
+ if(ST&&ST.resultado){resultado(ST.resultado);return}
+ if(!j.abierta.si&&!(ST&&ST.nombre&&!ST.enviado)){var m=j.abierta.motivo;msg(m==='aun_no'?'🕒':'🔒',m==='aun_no'?'La prueba aún no abre':'La prueba ya está cerrada',m==='aun_no'?'Abre el '+new Date(j.abierta.abre).toLocaleString('es-CO',{dateStyle:'long',timeStyle:'short'})+'.':'Si crees que es un error, habla con tu profe.');return}
+ $('#hT').textContent=M.titulo;$('#hd').hidden=false;
+ if(ST&&ST.nombre&&!ST.enviado){preparar();empezar(true)}else portada()})
+.catch(function(e){msg('⚠️',e.codigo==='no_existe'?'No encontramos esa prueba':'No se pudo cargar',E(e.message),'<button class="btn p" onclick="location.reload()">Reintentar</button>')});
+
+/* ---------- portada ---------- */
+function portada(){var n=PB.preguntas.length,reglas=M.modo==='repaso'?'Es un <b>repaso</b>: puedes repetirlo y verás las respuestas correctas al final.':'Tienes <b>'+M.intentos+' intento'+(M.intentos>1?'s':'')+'</b>. Una vez que entregues no podrás cambiar tus respuestas. Se registra si sales de la pantalla de la prueba.';
+ var cursos=M.cursos&&M.cursos.length?'<select id="cur" class="n"><option value="">Elige tu curso…</option>'+M.cursos.map(function(c){return '<option>'+E(c)+'</option>'}).join('')+'</select>':'<input type="text" id="cur" class="n" maxlength="20" placeholder="Ej.: 5-A">';
+ pantalla('<div class="card"><h2>'+E(M.titulo)+'</h2><p class="sub">'+[M.area,M.grado&&('Grado '+M.grado),M.docente&&('Prof. '+M.docente)].filter(String).map(E).join(' · ')+'</p>'
+ +'<div class="kpis"><div class="kpi"><b>'+n+'</b><span>pregunta'+(n>1?'s':'')+'</span></div><div class="kpi" style="--c:#12306e"><b>'+(M.minutos||'∞')+'</b><span>'+(M.minutos?'minutos':'sin límite de tiempo')+'</span></div></div>'
+ +'<div class="msg i">'+reglas+'</div><label class="f" for="nom">Tu nombre completo</label><input type="text" id="nom" class="n" maxlength="70" autocomplete="name" placeholder="Nombre y apellido"><label class="f" for="cur">Tu curso</label>'+cursos
+ +'<div id="e0"></div><div class="row" style="margin-top:14px"><button class="btn p" id="go" style="width:100%;justify-content:center;font-size:1.1rem">▶ Comenzar</button></div></div>');
+ $('#go').addEventListener('click',function(){var nom=$('#nom').value.trim(),cu=$('#cur').value.trim();if(nom.length<3||!cu){$('#e0').innerHTML='<div class="msg a">Escribe tu nombre completo y elige tu curso.</div>';return}
+  ST={nombre:nom,curso:cu,seed:Math.floor(Math.random()*2147483647),resp:{},abiertas:{},i:0,inicio:Date.now(),salidas:0,cid:'c'+Date.now().toString(36)+Math.random().toString(36).slice(2,8)};guardar();preparar();empezar(false)})}
+
+/* ---------- preparar orden y opciones (distinto para cada estudiante) ---------- */
+function preparar(){var rnd=PR.semilla(ST.seed),unidades=[],ult=null;
+ PB.preguntas.forEach(function(q,i){if(q.estimulo&&ult&&ult.est===q.estimulo)ult.q.push(i);else{ult={est:q.estimulo||'',q:[i]};unidades.push(ult)}});
+ if(M.mezclar)unidades=PR.mezclar(unidades,rnd);orden=[];unidades.forEach(function(u){u.q.forEach(function(i){orden.push(i)})});
+ PB.preguntas.forEach(function(q){if(q.tipo==='abierta')return;var ix=q.opciones.map(function(_,k){return k});opts[q.id]=q.fijo?ix:PR.mezclar(ix,rnd)})}
+
+/* ---------- prueba ---------- */
+function empezar(reanuda){$('#prog').hidden=false;pinta();temporizador();
+ document.addEventListener('visibilitychange',function(){if(document.hidden&&ST&&!ST.enviado&&!enviando){ST.salidas=(ST.salidas||0)+1;guardar()}});
+ window.addEventListener('beforeunload',function(e){if(ST&&!ST.enviado){e.preventDefault();e.returnValue=''}});
+ window.addEventListener('online',function(){if(ST&&ST.pendiente)entregar()})}
+function temporizador(){if(!M.minutos)return;var tm=$('#tm');tm.hidden=false;var fin=ST.inicio+M.minutos*60000;
+ function t(){var r=Math.max(0,fin-Date.now()),m=Math.floor(r/60000),s=Math.floor(r%60000/1000);tm.textContent='⏱ '+m+':'+(s<10?'0':'')+s;tm.classList.toggle('u',r<60000);if(r<=0){clearInterval(timer);if(!ST.enviado&&!enviando){ST.tiempoAgotado=true;entregar()}}}
+ t();timer=setInterval(t,1000)}
+function barra(){$('#prog i').style.width=(ST.i/PB.preguntas.length*100)+'%'}
+function pinta(){if(ST.i>=orden.length){revision();return}barra();
+ var q=PB.preguntas[orden[ST.i]],h='<div class="card">';
+ if(q.estimulo){var e=PB.estimulos.filter(function(x){return x.id===q.estimulo})[0];if(e){var ps=String(e.texto||'').split('\n').filter(String);
+  h+='<div class="est"><h3>'+E(e.titulo||'Texto')+'</h3>'+(e.instruccion?'':'')+ps.map(function(p,k){return '<p>'+(e.numerar?'<span class="np">'+(k+1)+'</span>':'')+E(p)+'</p>'}).join('')+(e.fuente?'<div class="ins">'+E(e.fuente)+'</div>':'')+'</div>'}}
+ h+='<div class="sub">Pregunta '+(ST.i+1)+' de '+orden.length+'</div>'+(q.enunciado?'<div class="enun">'+E(q.enunciado)+'</div>':'')+'<div class="preg">'+E(q.pregunta)+'</div>';
+ if(q.tipo==='abierta')h+='<textarea id="ab" style="min-height:140px;font:1rem/1.4 Nunito,sans-serif" maxlength="2000" placeholder="Escribe tu respuesta aquí…">'+E(ST.abiertas[q.id]||'')+'</textarea>';
+ else opts[q.id].forEach(function(k,j){h+='<button class="op'+(ST.resp[q.id]===k?' sel':'')+'" data-k="'+k+'"><b>'+'ABCDEF'.charAt(j)+'</b><span>'+E(q.opciones[k])+'</span></button>'});
+ h+='</div><div class="nav"><button class="btn" id="ant"'+(ST.i?'':' disabled')+'>← Anterior</button><button class="btn p" id="sig">'+(ST.i===orden.length-1?'Revisar y entregar':'Siguiente →')+'</button></div>';
+ pantalla(h);
+ app.querySelectorAll('.op').forEach(function(b){b.addEventListener('click',function(){ST.resp[q.id]=+b.dataset.k;guardar();app.querySelectorAll('.op').forEach(function(x){x.classList.toggle('sel',x===b)})})});
+ var ab=$('#ab');if(ab)ab.addEventListener('input',function(){ST.abiertas[q.id]=ab.value;guardar()});
+ $('#ant').addEventListener('click',function(){ST.i--;guardar();pinta()});$('#sig').addEventListener('click',function(){ST.i++;guardar();pinta()})}
+function revision(){$('#prog i').style.width='100%';var h='<div class="card"><h2>Revisa antes de entregar</h2><p class="sub">Toca un número para volver a esa pregunta. <b style="color:#8a4b00">Naranja</b> = sin responder.</p><div class="grid">';
+ orden.forEach(function(ix,p){var q=PB.preguntas[ix],r=q.tipo==='abierta'?(ST.abiertas[q.id]||'').trim():ST.resp[q.id]!==undefined;h+='<button class="'+(r?'si':'no')+'" data-p="'+p+'">'+(p+1)+'</button>'});
+ var sin=orden.filter(function(ix){var q=PB.preguntas[ix];return q.tipo==='abierta'?!(ST.abiertas[q.id]||'').trim():ST.resp[q.id]===undefined}).length;
+ h+='</div>'+(sin?'<div class="msg w">Te faltan <b>'+sin+'</b> pregunta'+(sin>1?'s':'')+' por responder.</div>':'<div class="msg ok">¡Respondiste todo!</div>')+'<div id="e1"></div><div class="row"><button class="btn" id="vol">← Volver</button><button class="btn p" id="ent" style="flex:1;justify-content:center;font-size:1.05rem">✔ Entregar prueba</button></div></div>';
+ pantalla(h);app.querySelectorAll('.grid button').forEach(function(b){b.addEventListener('click',function(){ST.i=+b.dataset.p;guardar();pinta()})});
+ $('#vol').addEventListener('click',function(){ST.i=orden.length-1;pinta()});$('#ent').addEventListener('click',function(){if(!sin||confirm('Tienes preguntas sin responder. ¿Entregar de todos modos?'))entregar()})}
+
+/* ---------- entregar (con reintento si falla la señal) ---------- */
+function entregar(){if(enviando)return;enviando=true;clearInterval(timer);
+ pantalla('<div class="cen"><div class="ic">📤</div><h2>Enviando tus respuestas…</h2><p class="sub">No cierres esta pantalla.</p></div>');
+ var r={};PB.preguntas.forEach(function(q){if(q.tipo!=='abierta')r[q.id]=ST.resp[q.id]===undefined?null:ST.resp[q.id]});
+ PR.api('entregar',{codigo:cod,nombre:ST.nombre,curso:ST.curso,respuestas:r,abiertas:ST.abiertas,segundos:Math.round((Date.now()-ST.inicio)/1000),salidas:ST.salidas||0,cid:ST.cid})
+ .then(function(j){ST.enviado=true;ST.pendiente=false;ST.resultado=j.resultado;guardar();enviando=false;resultado(j.resultado)})
+ .catch(function(e){enviando=false;ST.pendiente=true;guardar();
+  if(e.codigo==='intentos'||e.codigo==='cerrada'||e.codigo==='nombre'){msg('⚠️',E(e.message),'',e.codigo==='nombre'?'<button class="btn p" id="rv">Volver</button>':'');var rv=$('#rv');if(rv)rv.addEventListener('click',function(){ST.i=0;pinta()});return}
+  msg('📶','No se pudo enviar todavía','Tus respuestas están <b>guardadas en tu celular</b>. Cuando vuelva la señal se enviarán solas, o toca el botón.','<button class="btn p" id="rt">Reintentar ahora</button>');$('#rt').addEventListener('click',entregar)})}
+
+/* ---------- resultado ---------- */
+function resultado(r){$('#prog').hidden=true;$('#tm').hidden=true;$('#hd').hidden=false;if(M)$('#hT').textContent=M.titulo;
+ if(r.mostrar==='nada'||r.recibido){msg('✅','¡Respuestas recibidas!','Tu profe revisará los resultados. ¡Gracias, '+E((ST&&ST.nombre||'').split(' ')[0])+'!');return}
+ var col=PR.colorNota(r.nota),pct=r.total?Math.round(r.aciertos/r.total*100):0,h='<div class="card res"><h2>Tu resultado</h2><div class="ring" style="--c:'+col+'"><div><span class="big" style="--c:'+col+'">'+PR.nota(r.nota)+'</span><div class="sub" style="margin:0">de 5,0</div></div></div>'
+ +'<p><b>'+r.aciertos+' de '+r.total+'</b> respuestas correctas ('+pct+'%)</p>'+(r.provisional?'<div class="msg w">Nota provisional: tu profe aún debe calificar las preguntas abiertas.</div>':'')+'</div>';
+ if(r.competencias&&r.competencias.length>1||(r.competencias&&r.competencias[0]&&r.competencias[0].c!=='General')){h+='<div class="card"><h2>Por competencia</h2><div class="bars">'+r.competencias.map(function(c){var p=Math.round(c.ok/c.n*100);return '<div class="bar" style="--c:'+(p>=70?'#2fa84f':p>=40?'#e0a100':'#d92d3a')+'"><div class="t"><span>'+E(c.c)+'</span><small>'+c.ok+'/'+c.n+'</small></div><div class="rail"><div class="fill" style="width:'+p+'%"></div></div></div>'}).join('')+'</div></div>'}
+ if(r.detalle){var h2='';PB.preguntas.forEach(function(q,i){var d=r.detalle.filter(function(x){return x.id===q.id})[0];if(!d)return;var el=d.elegida;
+  h2+='<details class="dt '+(d.ok?'ok':'mal')+'"><summary>'+(d.ok?'✅':'❌')+' Pregunta '+(i+1)+'</summary><div class="b"><p><b>'+E(q.pregunta)+'</b></p>'+(el!==null&&el!==undefined?'<p class="'+(d.ok?'ok':'no')+'">Tu respuesta: '+E(q.opciones[el])+'</p>':'<p class="no">Sin responder</p>')+(d.ok?'':'<p class="ok">Respuesta correcta: <b>'+E(q.opciones[d.correcta])+'</b></p>')+(d.error?'<p>💡 '+E(d.error)+'</p>':'')+(d.just?'<p class="sub" style="margin:4px 0 0">'+E(d.just)+'</p>':'')+'</div></details>'});
+  h+='<div class="card"><h2>Revisa tus respuestas</h2><p class="sub">Toca cada pregunta para ver la explicación.</p>'+h2+'</div>'}
+ if(M&&M.modo==='repaso')h+='<div class="row" style="justify-content:center"><button class="btn p" id="otra">🔁 Intentarlo otra vez</button></div>';
+ pantalla(h);var o=$('#otra');if(o)o.addEventListener('click',function(){try{localStorage.removeItem(LK)}catch(e){}location.reload()})}
+})();
+</script>
+</body>
+</html>
