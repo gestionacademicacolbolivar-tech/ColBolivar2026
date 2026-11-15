@@ -1,0 +1,103 @@
+{
+ "version": 1,
+ "faq": [
+  {
+   "id": "tipo2",
+   "k": [
+    "tipo (ii|2|dos)\\b",
+    "procedimiento|protocolo|ruta de atencion|que hago|descargo|interrogatorio"
+   ],
+   "f": "documentos/02-convivencia-e-inclusion/Manual de convivencia.pdf",
+   "d": "Manual de convivencia",
+   "p": [
+    181,
+    182,
+    183
+   ],
+   "r": "Protocolo para situaciones Tipo II (resumen):\n1. Reunir a los implicados y testigos y recibir sus descargos por escrito, de puño y letra (con el personero si hace falta). No se hacen interrogatorios: el docente no actúa como policía judicial.\n2. Si hay agresión física, primero garantizar atención en salud. Si deja incapacidad médica, pasa a Tipo III: remisión a salud, acta especial, Policía de Infancia o Comisaría de Familia y aviso a los acudientes.\n3. Elaborar el acta de debido proceso (modo, tiempo y lugar).\n4. Reflexión y orientación con el agresor, con el personero y el psicoorientador.\n5. Llamar a los acudientes: la llamada informativa la hace el Coordinador de convivencia o disciplina.\n6. Sanción pedagógica y compromisos por escrito.\n7. El Comité Escolar de Convivencia informa, hace seguimiento y deja acta; el Rector reporta el caso en el sistema de información de convivencia."
+  },
+  {
+   "id": "tipo1",
+   "k": [
+    "tipo (i|1|uno)\\b",
+    "sancion|medida|correctivo"
+   ],
+   "f": "documentos/02-convivencia-e-inclusion/Manual de convivencia.pdf",
+   "d": "Manual de convivencia",
+   "p": [
+    181
+   ],
+   "r": "Sanciones para situaciones Tipo I:\n1. Trabajo manuscrito de dos hojas sobre la infracción, como reflexión.\n2. Anotación de los hechos en el observador del estudiante.\n3. Llamado de atención conductual y reflexivo.\n4. Compromiso escrito de no reincidencia, con copia al observador."
+  },
+  {
+   "id": "nota-periodo",
+   "k": [
+    "promedi|nota del periodo|valoracion definitiva|nota definitiva",
+    "como se (calcula|saca|obtiene|califica|valora)",
+    "porcentaje|saber saber|saber hacer|prueba de comprension"
+   ],
+   "f": "documentos/01-academicos/GA-D1_MANUAL_SIEE_2024_REORGANIZADO 2026.pdf",
+   "d": "Manual SIEE 2026",
+   "p": [
+    9,
+    10
+   ],
+   "r": "La nota del período no es un promedio simple: es la suma ponderada de cuatro componentes (Saber-Saber, Saber-Hacer, Saber Ser y Convivir, y Prueba de Comprensión). La Prueba de Comprensión vale 30 % en todas las áreas; los demás porcentajes dependen del área (Tabla 2). Ejemplos: Aritmética 30 % / 30 % / 10 % + 30 % de la prueba; Biología, Física y Química 25 % / 25 % / 20 % + 30 %. Las notas llevan un solo decimal."
+  },
+  {
+   "id": "escala",
+   "k": [
+    "escala",
+    "rango|nota minima|desempeno (superior|alto|basico|bajo)",
+    "que significa (alto|basico|bajo|superior)"
+   ],
+   "f": "documentos/01-academicos/GA-D1_MANUAL_SIEE_2024_REORGANIZADO 2026.pdf",
+   "d": "Manual SIEE 2026",
+   "p": [
+    26
+   ],
+   "r": "Escala de valoración institucional: Superior 4.5 a 5.0 · Alto 3.7 a 4.4 · Básico 3.0 a 3.6 · Bajo 1.0 a 2.9."
+  },
+  {
+   "id": "promocion",
+   "k": [
+    "promo(vid|cion|ver)",
+    "reprob|perder el ano|pierd[ea]|areas? perdid|no aprueb"
+   ],
+   "f": "documentos/01-academicos/GA-D1_MANUAL_SIEE_2024_REORGANIZADO 2026.pdf",
+   "d": "Manual SIEE 2026",
+   "p": [
+    30,
+    31
+   ],
+   "r": "Promoción (Tabla 11): en 3.º, 4.º y 5.º se promueve solo quien aprueba todas las áreas; perder una o más implica No Promoción. En 1.º y 2.º se admite hasta 2 áreas no aprobadas, siempre que ninguna sea Matemáticas o Lengua Castellana. En 6.º a 11.º, perder una o más áreas implica No Promoción. En todos los grados, la inasistencia injustificada del 25 % o más también causa No Promoción.\nNota: el propio SIEE 2026 aclara (pág. 29) que los artículos 7 y 8 se reconstruyeron a partir del resto del documento; conviene confirmar casos dudosos con coordinación."
+  },
+  {
+   "id": "inasistencia",
+   "k": [
+    "inasistencia|fallas|ausencia|asistencia",
+    "25 ?%|veinticinco",
+    "fallas|faltas de asistencia"
+   ],
+   "f": "documentos/01-academicos/GA-D1_MANUAL_SIEE_2024_REORGANIZADO 2026.pdf",
+   "d": "Manual SIEE 2026",
+   "p": [
+    30,
+    31
+   ],
+   "r": "La inasistencia injustificada igual o superior al 25 % de las actividades académicas programadas en el año es causal de No Promoción en todos los grados, sin importar los resultados académicos (se exige mínimo 75 % de asistencia justificada)."
+  },
+  {
+   "id": "comision",
+   "k": [
+    "comision de (evaluacion|promocion)"
+   ],
+   "f": "documentos/01-academicos/GA-D1_MANUAL_SIEE_2024_REORGANIZADO 2026.pdf",
+   "d": "Manual SIEE 2026",
+   "p": [
+    14
+   ],
+   "r": "La Comisión de Evaluación y Promoción se reúne al final de cada período para analizar los casos especiales de estudiantes con áreas en desempeño Bajo y los de desempeño Superior (para recomendar motivación o promoción anticipada)."
+  }
+ ]
+}
