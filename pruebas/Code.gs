@@ -11,7 +11,7 @@
  *   1) Pegar este archivo en Extensiones > Apps Script   2) Ejecutar «instalar» una vez
  *   3) Implementar > Nueva implementación > Aplicación web (ejecutar como: yo · acceso: cualquier persona)
  */
-var VERSION = '1.0';
+var VERSION = '1.1';
 var HOJAS = { pruebas: 'Pruebas', resp: 'Respuestas', datos: '_datos' };
 var COL = {
   pruebas: ['codigo', 'titulo', 'area', 'grado', 'docente', 'cursos', 'modo', 'minutos', 'abre', 'cierra', 'mostrar', 'intentos', 'mezclar', 'estado', 'creada', 'n_multiple', 'n_abiertas', 'pin_hash'],
@@ -20,6 +20,7 @@ var COL = {
 };
 var TROZO = 40000;            // caracteres por celda (el límite de Sheets es 50 000)
 var TROZO_CACHE = 30000;      // la caché admite ~100 KB por valor
+var RX_IMG = /^data:image\/(webp|png|jpeg);base64,[A-Za-z0-9+\/=]+$/;   // solo se aceptan imágenes incrustadas (WebP/PNG/JPEG)
 var ALFABETO = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';   // sin 0/O/1/I para evitar confusiones
 
 /* ===================== INSTALACIÓN ===================== */
@@ -76,6 +77,7 @@ function publicar_(d) {
   if (!d.codigoDocentes || d.codigoDocentes !== props.getProperty('CODIGO_DOCENTES')) throw error_('codigo_docentes', 'El código de docentes no es correcto.');
   var pub = d.publico || {}, clave = d.clave || { m: {}, a: {} }, ps = pub.preguntas || [];
   if (!ps.length || ps.length > 100) throw error_('prueba_invalida', 'La prueba debe tener entre 1 y 100 preguntas.');
+  (ps).concat(pub.estimulos || []).forEach(function (o) { if (o && o.img && !RX_IMG.test(String(o.img))) delete o.img; });
   var nM = 0, nA = 0;
   ps.forEach(function (q) {
     if (!q.id) throw error_('prueba_invalida', 'Falta el identificador de una pregunta.');

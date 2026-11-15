@@ -26,17 +26,25 @@ var PR = (function () {
   /* ---------- conversión exam.json (repositorio de creación de pruebas) -> prueba en línea ---------- */
   var RX_NUM = /^[\$\s]*[-+]?\d+([.,]\d+)?(\s*\/\s*\d+)?\s*(%|[A-Za-zµ²³°\/ ]{0,10})?$/, RX_ULT = /(todas|ninguna|ambas)\s+(las\s+)?(anteriores|opciones)|^[a-d]\s+y\s+[a-d]\b/i;
   function numDe(s) { var t = String(s).replace(/[\$\s%]/g, '').replace(',', '.'), m = t.match(/^([-+]?\d+(?:\.\d+)?)(?:\/(\d+))?/); if (!m) return NaN; return m[2] ? parseFloat(m[1]) / parseFloat(m[2]) : parseFloat(m[1]); }
-  function tieneVisual(o) { return !!(o && (o.visual || o.imagen || o.imagenPrompt || o.imagenes)); }
+  var RX_IMG = /^data:image\/(webp|png|jpeg);base64,[A-Za-z0-9+\/=]+$/;
+  function imgOk(u) { return typeof u === 'string' && RX_IMG.test(u) ? u : ''; }
+  // ¿necesita una imagen que el generador dibuja (figura tipo 1/3, ilustración)? Las tablas (tipo 2) y los cuadros de texto (tipo 4) se dibujan solas en la web.
+  function necesitaImagen(o) { return !!(o && ((o.visual && (o.visual.tipo === 1 || o.visual.tipo === 3)) || o.imagenPrompt || o.imagen || o.imagenes)); }
+  function visDe(o) { var v = o && o.visual; if (!v) return null;
+    if (v.tipo === 2 && v.headers && v.rows) return { t: 'tabla', titulo: v.titulo || '', headers: v.headers.map(String), rows: v.rows.map(function (r) { return r.map(String); }) };
+    if (v.tipo === 4 && v.texto) return { t: 'texto', titulo: v.titulo || '', texto: String(v.texto), fuente: v.fuente || '' }; return null; }
   function desdeExam(ex, op) {
-    op = op || {}; var avisos = [], omitE = {}, estim = [], pregs = [], clave = { m: {}, a: {} }, n = 0;
+    op = op || {}; var avisos = [], omitE = {}, estim = [], pregs = [], clave = { m: {}, a: {} }, n = 0, IM = ex.imagenes || { preguntas: {}, estimulos: {} }, conImg = 0;
     (ex.estimulos || []).forEach(function (e) {
-      if (tieneVisual(e)) omitE[e.id] = true;
-      estim.push({ id: e.id, titulo: e.titulo || '', texto: e.texto || '', fuente: e.fuente || '', numerar: !!e.numerarParrafos, instruccion: e.instruccion || '' });
+      var im = imgOk((IM.estimulos || {})[e.id]); if (im) conImg++;
+      if (necesitaImagen(e) && !im) omitE[e.id] = true;
+      estim.push({ id: e.id, titulo: e.titulo || '', texto: e.texto || '', fuente: e.fuente || '', numerar: !!e.numerarParrafos, instruccion: e.instruccion || '', img: im, vis: visDe(e) });
     });
     (ex.preguntas || []).forEach(function (p, i) {
-      var id = 'p' + (i + 1), conGrafico = tieneVisual(p) || (p.estimulo && omitE[p.estimulo]), etiqueta = 'Pregunta ' + (i + 1);
-      if (conGrafico && op.omitirGraficos !== false) { avisos.push(etiqueta + ' usa un gráfico o imagen y no se incluyó (próximamente).'); return; }
-      var base = { id: id, estimulo: p.estimulo || '', enunciado: p.enunciado || '', pregunta: p.pregunta || '', competencia: p.competencia || '', componente: p.componente || '', nivel: p.nivel || '', dba: p.dba || '', origen: i + 1 };
+      var id = 'p' + (i + 1), im = imgOk((IM.preguntas || {})[i]), conGrafico = (necesitaImagen(p) && !im) || (p.estimulo && omitE[p.estimulo]), etiqueta = 'Pregunta ' + (i + 1);
+      if (conGrafico) { avisos.push(etiqueta + ' usa un gráfico o imagen y no se incluyó. Genera el archivo «prueba-en-linea.json» con el generador de pruebas actualizado (trae las imágenes) y súbelo.'); return; }
+      if (im) conImg++;
+      var base = { img: im, vis: visDe(p), leyenda: (p.visual && p.visual.leyenda) || '', id: id, estimulo: p.estimulo || '', enunciado: p.enunciado || '', pregunta: p.pregunta || '', competencia: p.competencia || '', componente: p.componente || '', nivel: p.nivel || '', dba: p.dba || '', origen: i + 1 };
       if (p.tipo === 'abierta') {
         pregs.push(Object.assign(base, { tipo: 'abierta', puntos: Number(p.puntos) || 1, lineas: p.lineas || 4 }));
         clave.a[id] = { modelo: p.respuestaModelo || '', criterios: p.criterios || [] };
@@ -56,7 +64,7 @@ var PR = (function () {
     });
     var usadas = {}; pregs.forEach(function (q) { if (q.estimulo) usadas[q.estimulo] = 1; });
     var meta = ex.meta || {};
-    return { publico: { estimulos: estim.filter(function (e) { return usadas[e.id]; }), preguntas: pregs }, clave: clave, avisos: avisos, nMultiple: n,
+    return { publico: { estimulos: estim.filter(function (e) { return usadas[e.id]; }), preguntas: pregs }, clave: clave, avisos: avisos, nMultiple: n, nImagenes: conImg,
       meta: { titulo: meta.tema || meta.titulo || meta.nombre || '', area: meta.area || '', grado: String(meta.grado || ''), docente: meta.docente || '' } };
   }
 

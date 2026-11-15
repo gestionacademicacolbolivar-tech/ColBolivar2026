@@ -31,6 +31,9 @@ Guarda (commit). En un par de minutos la tarjeta **Pruebas en línea** del porta
 En el editor de Apps Script, ejecuta una vez la función **`crearDisparadorLimpieza`**: cada noche borra las pruebas y resultados con más de **180 días** (cámbialo con la propiedad `DIAS_RETENCION`).
 Solo se guardan **nombre y curso** del estudiante (nada de documentos ni contactos). Avísales a los estudiantes y acudientes que sus nombres se registran para la prueba.
 
+## Actualizar a la versión 1.1 (recomendado)
+La 1.1 solo acepta imágenes incrustadas válidas. Pega el nuevo `Code.gs` y luego **Implementar → Administrar implementaciones → ✏️ → Versión: Nueva versión → Implementar** (la URL no cambia). Las imágenes también funcionan con la 1.0.
+
 ## Si cambias el código
 Cada vez que modifiques `Code.gs`: **Implementar → Administrar implementaciones → ✏️ → Versión: Nueva versión → Implementar** (la URL no cambia).
 
@@ -42,6 +45,6 @@ Cada vez que modifiques `Code.gs`: **Implementar → Administrar implementacione
 
 ## Límites a tener en cuenta
 - La calificación de selección múltiple es automática; las **preguntas abiertas** las califica el docente en el reporte.
-- Preguntas con **gráficos o imágenes** (las que el generador dibuja con `visual`/`imagenPrompt`) aún no se publican: se omiten con aviso.
+- **Gráficos e imágenes:** con el generador de pruebas actualizado (parche `exportar-en-linea.patch`), cada generación crea además `prueba-en-linea.json` con las figuras y las ilustraciones incluidas; ese es el archivo que se sube. Las tablas y los recuadros de texto se dibujan solos. Si se sube un `exam.json` viejo, las preguntas con gráfico se omiten con aviso.
 - Google limita las ejecuciones simultáneas (~30): un curso de 40 estudiantes entrando a la vez funciona; grupos mucho más grandes pueden notar lentitud.
 - Es un **apoyo**: las notas oficiales se siguen registrando en la plataforma institucional.
