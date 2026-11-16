@@ -478,8 +478,7 @@
   {
    "id": "man-uniforme",
    "k": [
-    "uniform|jardinera|camibuso|corbata",
-    "mal uso|citacion|cupo|30 dias|promocion|camiseta"
+    "uniform|jardinera|camibuso|corbata|mal vestid\\w+|sin uniforme|ropa del colegio"
    ],
    "f": "documentos/02-convivencia-e-inclusion/Manual de convivencia.pdf",
    "d": "Manual de convivencia",
@@ -505,7 +504,7 @@
   {
    "id": "man-llegadas",
    "k": [
-    "retardo|lleg\\w* tarde|impuntual|hora de (entrada|ingreso)|a que hora (entran|ingresan|abren|cierran)|puerta|tarde al colegio|hasta que hora|hora (limite|maxima)|puede entrar|entrar al colegio"
+    "retardo|lleg\\w* tarde|impuntual|hora de (entrada|ingreso)|a que hora (entran|ingresan|abren|cierran)|cierre de (la )?puerta|cierran (la )?puerta|puertas (se )?cierran|tarde al colegio|hasta que hora|hora (limite|maxima)|puede entrar|entrar al colegio"
    ],
    "f": "documentos/02-convivencia-e-inclusion/Manual de convivencia.pdf",
    "d": "Manual de convivencia",
@@ -544,7 +543,7 @@
   {
    "id": "man-celular",
    "k": [
-    "celular|telefono movil|tablet|audifonos|uso del celular|usar el celular"
+    "celular|celu\\b|celus|telefono movil|tablet|audifonos|uso del celular|usar el celular"
    ],
    "f": "documentos/02-convivencia-e-inclusion/Manual de convivencia.pdf",
    "d": "Manual de convivencia",
@@ -1307,10 +1306,11 @@
    "f": "documentos/01-academicos/GA-D1_MANUAL_SIEE_2024_REORGANIZADO 2026.pdf",
    "d": "Manual SIEE 2026",
    "p": [
+    26,
     27,
     28
    ],
-   "r": "Qué significa cada desempeño (SIEE, págs. 27–28):\n• Alto: alcanza con facilidad todos los logros; solo necesita algunas actividades de nivelación; sus ausencias están justificadas y no afectan su aprendizaje; entrega a tiempo; evita situaciones de convivencia negativas; trabaja en equipo y a ritmo constante.\n• Básico: obtiene lo mínimo; alcanza los indicadores con cierta dificultad pero con actitud positiva; entrega actividades tarde o falta reiteradamente (aunque justifique) afectando su aprendizaje.\n• Bajo: no alcanza los logros aun con refuerzo y superación; falta al 25 % o más sin justificación; actitud negativa; hace solo el mínimo o incumple las actividades.\nLos rangos numéricos están en la pág. 26."
+   "r": "Qué significa cada desempeño (SIEE, págs. 26–28):\n• Superior: supera ampliamente y con excepcionalidad los criterios; se concentra, es responsable y aplica lo aprendido, sin registro de situaciones disciplinarias.\n• Alto: alcanza con facilidad todos los logros; solo necesita algunas actividades de nivelación; sus ausencias están justificadas y no afectan su aprendizaje; entrega a tiempo; evita situaciones de convivencia negativas; trabaja en equipo y a ritmo constante.\n• Básico: obtiene lo mínimo; alcanza los indicadores con cierta dificultad pero con actitud positiva; entrega actividades tarde o falta reiteradamente (aunque justifique) afectando su aprendizaje.\n• Bajo: no alcanza los logros aun con refuerzo y superación; falta al 25 % o más sin justificación; actitud negativa; hace solo el mínimo o incumple las actividades.\nLos rangos numéricos están en la pág. 26."
   },
   {
    "id": "siee-coordinaciones",
@@ -1327,8 +1327,8 @@
   {
    "id": "siee-padres-est",
    "k": [
-    "deberes? (de los )?(padres|acudientes) (en|con) (la )?(evaluacion|siee)|deberes? (de los )?estudiantes (en|con) (la )?(evaluacion|siee)|fraude|plagio|doble r\\b|codigo de etica",
-    "responsabilidades? (de los )?(estudiantes|padres)|que deben hacer (los )?(padres|estudiantes)|frente a la evaluacion|infraccion academica|copia en|copiar|trampa|copia\\b"
+    "deberes? (de los )?(padres|acudientes) (en|con) (la )?(evaluacion|siee)|deberes? (de los )?estudiantes (en|con) (la )?(evaluacion|siee)|doble r\\b|codigo de etica",
+    "responsabilidades? (de los )?(estudiantes|padres)|que deben hacer (los )?(padres|estudiantes)|frente a la evaluacion|infraccion academica"
    ],
    "f": "documentos/01-academicos/GA-D1_MANUAL_SIEE_2024_REORGANIZADO 2026.pdf",
    "d": "Manual SIEE 2026",
@@ -1555,7 +1555,7 @@
   {
    "id": "pei-procesos",
    "k": [
-    "mapa de procesos|gestion por procesos|procesos institucionales|gestion escolar por procesos"
+    "mapa de procesos|gestion por procesos|procesos institucionales|gestion escolar por procesos|gestiones? (directiva|academica|administrativa|de la comunidad)|cuantos procesos|subprocesos?|cuales son las gestiones|gestiones del colegio"
    ],
    "f": "documentos/01-academicos/RESIGNIFICACION PEI 2024-2027 COLEGIO SIMON BOLIVAR.pdf",
    "d": "PEI 2024-2027",
@@ -1563,12 +1563,21 @@
     60,
     62
    ],
-   "r": "Gestión escolar por procesos (PEI, págs. 60–62): el PEI describe la gestión por procesos, el proceso administrativo de la gestión escolar (pág. 61) y el Mapa de Procesos (pág. 62)."
+   "r": "Mapa de Procesos (PEI págs. 60–62 y página «Procesos» de este sitio): organiza la gestión escolar en 4 gestiones y 17 procesos, cada uno con su evidencia (documento, página y cita). Directiva (6): Direccionamiento estratégico y horizonte institucional; Gestión estratégica; Gobierno escolar; Cultura institucional; Clima escolar; Relaciones con el entorno. Académica (4): Diseño pedagógico (curricular); Prácticas pedagógicas; Gestión de aula; Seguimiento académico. Administrativa y Financiera (5): Apoyo a la gestión académica; Administración de la planta física y los recursos; Administración de servicios complementarios; Talento humano; Apoyo financiero y contable. de la Comunidad (2): Accesibilidad; Proyección a la comunidad.",
+   "o": [
+    {
+     "u": "PROCESOS.html",
+     "d": "Página de Procesos",
+     "p": [
+      0
+     ]
+    }
+   ]
   },
   {
    "id": "pei-talento-funciones",
    "k": [
-    "talento humano|manual de funciones|presupuesto|fondo de servicios|funciones del (rector|docente|coordinador)"
+    "talento humano|manual de funciones|presupuesto|fondo de servicios"
    ],
    "f": "documentos/01-academicos/RESIGNIFICACION PEI 2024-2027 COLEGIO SIMON BOLIVAR.pdf",
    "d": "PEI 2024-2027",
@@ -1582,7 +1591,7 @@
   {
    "id": "pei-organigrama",
    "k": [
-    "organigrama|estructura organizacional|jerarquia|quien es el rector"
+    "organigrama|estructura organizacional|jerarquia"
    ],
    "f": "documentos/01-academicos/RESIGNIFICACION PEI 2024-2027 COLEGIO SIMON BOLIVAR.pdf",
    "d": "PEI 2024-2027",
@@ -1591,6 +1600,701 @@
    ],
    "r": "El organigrama institucional está en la pág. 31 del PEI.",
    "s": 1
+  },
+  {
+   "id": "dir-rector-funciones",
+   "k": [
+    "funciones (de|del) (el |la )?rector(a)?|que hace (el|la) rector(a)?|obligaciones del rector|atribuciones del rector",
+    "rector(a)?\\b|rectoria|directivos?"
+   ],
+   "f": "documentos/02-convivencia-e-inclusion/Manual de convivencia.pdf",
+   "d": "Manual de convivencia",
+   "p": [
+    230,
+    231
+   ],
+   "r": "Funciones del rector (Manual págs. 230–231; Ley 715/2001, art. 10): dirigir la preparación del PEI con la participación de la comunidad; presidir el Consejo Directivo y el Consejo Académico y coordinar los órganos del gobierno escolar; representar al colegio ante las autoridades educativas y la comunidad; formular planes anuales de acción; distribuir la asignación académica y las funciones de docentes, directivos y administrativos; evaluar cada año el desempeño de docentes, directivos docentes y administrativos; ejercer las funciones disciplinarias que le dan la ley y el Manual; proponer a los docentes que recibirán capacitación; responder por la calidad del servicio; rendir informe al Consejo Directivo al menos cada seis meses; y administrar el Fondo de Servicios Educativos. Además, como primer garante de los derechos de los estudiantes, debe cumplir la Ley 1620/2013 (arts. 17 y 18).",
+   "a": 1
+  },
+  {
+   "id": "dir-rector-quien",
+   "k": [
+    "quien es (el|la) rector(a)?|nombre (del|de la) rector(a)?|rector(a)? actual|como se llama (el|la) rector(a)?|rectores? del colegio|historia de los rectores|rectores anteriores|rector que|llamo el rector|nombre del rector|rector del colegio"
+   ],
+   "f": "documentos/01-academicos/RESIGNIFICACION PEI 2024-2027 COLEGIO SIMON BOLIVAR.pdf",
+   "d": "PEI 2024-2027",
+   "p": [
+    17,
+    18
+   ],
+   "r": "El PEI no trae una lista de directivos vigente; en su historia (págs. 17–18) registra a los rectores: Lic. Luis Eduardo Bastos Porras (nombrado en propiedad en los primeros años del colegio), Esp. Carlos Humberto Lobo (2006), Mag. Serafín Bautista (2007) y el Dr. Jesús Maldonado Serrano, nombrado el 20 de mayo de 2008, quien conformó el grupo de calidad y lideró la modernización del colegio. Para saber quién ejerce hoy el cargo, confirma con la Secretaría o la Rectoría."
+  },
+  {
+   "id": "dir-perfil-directivo",
+   "k": [
+    "perfil del (directivo|directivo docente|rector|coordinador)|como debe ser (el|un) (directivo|rector|coordinador)|competencias del directivo|caracteristicas del directivo"
+   ],
+   "f": "documentos/01-academicos/RESIGNIFICACION PEI 2024-2027 COLEGIO SIMON BOLIVAR.pdf",
+   "d": "PEI 2024-2027",
+   "p": [
+    44
+   ],
+   "r": "Perfil del directivo docente (PEI, pág. 44): combina competencias administrativas, pedagógicas y de liderazgo, con enfoque en la mejora continua. Sus características clave son: formación académica sólida; liderazgo y habilidades de gestión (motivar al personal, decidir estratégicamente y gestionar bien los recursos); conocimiento del sistema educativo y de los lineamientos del MEN; visión pedagógica; habilidad para trabajar en equipo con docentes, padres y otros actores; ética y valores, con compromiso con la equidad y la inclusión; y capacidad de innovación."
+  },
+  {
+   "id": "dir-consejo-directivo",
+   "k": [
+    "consejo directivo",
+    "integra|conforma|compone|quienes|integrantes|miembros|conformacion"
+   ],
+   "f": "documentos/01-academicos/RESIGNIFICACION PEI 2024-2027 COLEGIO SIMON BOLIVAR.pdf",
+   "d": "PEI 2024-2027",
+   "p": [
+    47
+   ],
+   "r": "Consejo Directivo (PEI, pág. 47): está conformado según el art. 21 del Decreto 1860/1994: el rector, dos representantes del personal docente, dos representantes de los padres de familia y los demás representantes que fija esa norma. Según el Manual (pág. 257), la asociación de exalumnos nombra un representante y el sector productivo elige el suyo en asamblea. En el Manual de convivencia, el Consejo Directivo decide la cancelación de matrícula y revisa los casos graves (págs. 86 y 92).",
+   "o": [
+    {
+     "f": "documentos/02-convivencia-e-inclusion/Manual de convivencia.pdf",
+     "d": "Manual de convivencia",
+     "p": [
+      257
+     ]
+    }
+   ],
+   "a": 1
+  },
+  {
+   "id": "coord-general",
+   "k": [
+    "coordinadores?|coordinacion|coordinadora",
+    "que hacen?|funciones|quienes son|para que sirven?|a quien (acudo|me dirijo)|atribuciones|cuantos"
+   ],
+   "f": "documentos/02-convivencia-e-inclusion/Manual de convivencia.pdf",
+   "d": "Manual de convivencia",
+   "p": [
+    109,
+    111,
+    148,
+    171,
+    182,
+    245
+   ],
+   "r": "Coordinadores (Manual y SIEE): el colegio tiene coordinaciones de Convivencia y Académica en cada sede y jornada, y los coordinadores de cada sede integran el Comité de Convivencia (Manual, pág. 155). Convivencia atiende permisos de salida, retardos, autorizaciones de los padres, compromisos y el decomiso de bienes; Académica hace seguimiento al SIEE, atiende las reclamaciones de evaluación y recibe, con Convivencia, las excusas de inasistencia. Pregunta por «coordinador de convivencia» o «coordinador académico» para ver cada función con su página.",
+   "o": [
+    {
+     "f": "documentos/01-academicos/GA-D1_MANUAL_SIEE_2024_REORGANIZADO 2026.pdf",
+     "d": "Manual SIEE 2026",
+     "p": [
+      38
+     ]
+    }
+   ],
+   "a": 1
+  },
+  {
+   "id": "coord-convivencia",
+   "k": [
+    "coordinador(a)?( de)? (convivencia|disciplina)|coordinacion de convivencia|coordinador de disciplina"
+   ],
+   "f": "documentos/02-convivencia-e-inclusion/Manual de convivencia.pdf",
+   "d": "Manual de convivencia",
+   "p": [
+    148,
+    171,
+    176,
+    182,
+    245,
+    246
+   ],
+   "r": "Coordinación de Convivencia (Manual): autoriza el ingreso de quien llega tarde y deja constancia en el observador (pág. 246); gestiona los permisos de salida y entrega el formato en portería (pág. 245); recibe a primera hora o en el descanso las autorizaciones escritas y firmadas de los padres (pág. 148); firma, con el director de grupo, el orientador y el rector, el acta de descargos (pág. 171) y las anotaciones del observador por faltas reincidentes (pág. 176); hace la llamada informativa a los acudientes en las situaciones Tipo II (pág. 182); recibe y devuelve los bienes decomisados (pág. 109); programa con Coordinación Académica las salidas pedagógicas (pág. 114) y integra el Comité de Convivencia."
+  },
+  {
+   "id": "coord-academico",
+   "k": [
+    "coordinador(a)?( de)? academic[oa]|coordinacion academica|coordinador academico"
+   ],
+   "f": "documentos/01-academicos/GA-D1_MANUAL_SIEE_2024_REORGANIZADO 2026.pdf",
+   "d": "Manual SIEE 2026",
+   "p": [
+    38,
+    40,
+    34
+   ],
+   "r": "Coordinación Académica (SIEE, art. 23, pág. 38): hace seguimiento a la aplicación del SIEE en las aulas; garantiza que el 100 % de los docentes lo conozca; divulga el SIEE a la comunidad; diseña rejillas de seguimiento con evidencias de aula; puede pedir un segundo evaluador; atiende las reclamaciones de estudiantes y padres (pág. 40); analiza las solicitudes de cambio o transferencia interna antes de la autorización del Rector (pág. 34); y acompaña a los docentes, a las comisiones de evaluación y al Consejo Académico. Con Convivencia recibe las excusas de inasistencia y programa las salidas pedagógicas (Manual, págs. 111 y 114).",
+   "o": [
+    {
+     "f": "documentos/02-convivencia-e-inclusion/Manual de convivencia.pdf",
+     "d": "Manual de convivencia",
+     "p": [
+      111,
+      114
+     ]
+    }
+   ]
+  },
+  {
+   "id": "coord-reunion-acudientes",
+   "k": [
+    "(a )?solas con (un |el |los )?acudientes?|reunirse con (un )?(padre|acudiente)|reunion(es)? (con|de) (los )?(padres|acudientes)|puedo (hablar|reunirme) con (un )?(padre|acudiente)|atender (a )?(un )?(padre|acudiente)|cita con (un )?(docente|profesor)"
+   ],
+   "f": "documentos/02-convivencia-e-inclusion/Manual de convivencia.pdf",
+   "d": "Manual de convivencia",
+   "p": [
+    249
+   ],
+   "r": "Reuniones de docentes con padres o acudientes (Manual pág. 249): quien necesite una cita con un docente debe solicitarla antes en la secretaría académica o la secretaría de rectoría, o por escrito directamente al docente con copia al coordinador de convivencia o al académico, según el caso, para agendar la reunión. El docente no puede reunirse a solas con los acudientes: siempre debe estar presente algún coordinador."
+  },
+  {
+   "id": "coord-historia",
+   "k": [
+    "coordinador(es|as)? (de la|de la jornada|anteriores?|historic)|jornada (de la )?tarde|quien (fue|era) (el )?coordinador|coordinadora de la tarde|coordinadora de la jornada"
+   ],
+   "f": "documentos/01-academicos/RESIGNIFICACION PEI 2024-2027 COLEGIO SIMON BOLIVAR.pdf",
+   "d": "PEI 2024-2027",
+   "p": [
+    19,
+    20
+   ],
+   "r": "Coordinadores mencionados en el PEI: al iniciar la Jornada Única en la sede San Martín (2015) la orientó el coordinador encargado Luis Francisco Meléndez y luego la fortaleció el coordinador Edgar Olave Rueda (pág. 19); y, con las dobles titulaciones del SENA, se incorporó a la planta directiva la Ing. Claudia Elena Tamayo Tamayo como coordinadora de la jornada de la tarde (pág. 20). Son datos históricos: confirma con la Rectoría quién ejerce cada coordinación hoy."
+  },
+  {
+   "id": "pei-jornada-unica",
+   "k": [
+    "jornada unica",
+    "cuando|inicio|desde|sede|grados"
+   ],
+   "f": "documentos/01-academicos/RESIGNIFICACION PEI 2024-2027 COLEGIO SIMON BOLIVAR.pdf",
+   "d": "PEI 2024-2027",
+   "p": [
+    19
+   ],
+   "r": "Jornada Única (PEI, pág. 19): inició en 2015 en la sede San Martín con los grados 3.º y 4.º, orientada por el coordinador encargado Luis Francisco Meléndez y fortalecida después con el coordinador Edgar Olave Rueda.",
+   "a": 1
+  },
+  {
+   "id": "luis-quien",
+   "k": [
+    "luis alberto|avellaneda|luis avellaneda|quien (creo|hizo|programo|desarrollo|diseno) (esta|la|el) (pagina|web|sitio|aria|asistente|colbot)|creador (de|del) (la )?(pagina|web|sitio|aria|proyecto)|quien es (el )?luis|autor (de|del) (la )?(pagina|web|sitio|aria)|desarrollador|quien manda|webmaster"
+   ],
+   "f": "documentos/01-academicos/RESIGNIFICACION PEI 2024-2027 COLEGIO SIMON BOLIVAR.pdf",
+   "d": "PEI 2024-2027",
+   "p": [
+    21
+   ],
+   "r": "Luis Alberto Avellaneda Cáceres es docente del Colegio Integrado Simón Bolívar (matemáticas, tecnología e informática y lengua castellana en 4.º y 5.º) y es el creador de este sitio de gestión académica, del asistente ARIA y de ColBolívar Radio. El PEI (pág. 21) registra su incorporación al campo de gestión académica para acompañar los procesos estratégicos de la gestión digital documental, que permite un proyecto educativo más inteligente.",
+   "o": [
+    {
+     "u": "colbolivar-radio/index.html",
+     "d": "ColBolívar Radio (créditos)",
+     "p": [
+      0
+     ]
+    }
+   ]
+  },
+  {
+   "id": "luis-obras",
+   "k": [
+    "que (ha )?(hizo|hecho|creo|elaboro|desarrollo|programo)|obras|aportes|trabajos|proyectos|herramientas|sistemas",
+    "luis|avellaneda|creador"
+   ],
+   "f": "documentos/01-academicos/RESIGNIFICACION PEI 2024-2027 COLEGIO SIMON BOLIVAR.pdf",
+   "d": "PEI 2024-2027",
+   "p": [
+    21
+   ],
+   "r": "Aportes de Luis Alberto Avellaneda a la institución: este sitio de gestión académica y su asistente ARIA; ColBolívar Radio (emisora web del colegio); el Mapa de Procesos; el aplicativo de los 19 Componentes de Gestión Académica; y sistemas interactivos de clases y evaluaciones para 4.º y 5.º (matemáticas y tecnología). El PEI (pág. 21) lo reconoce en el acompañamiento de la gestión digital documental.",
+   "a": 1,
+   "o": [
+    {
+     "u": "PROCESOS.html",
+     "d": "Página de Procesos",
+     "p": [
+      0
+     ]
+    }
+   ]
+  },
+  {
+   "id": "comp-19",
+   "k": [
+    "19 componentes|diecinueve componentes|componentes de gestion academica|aplicativo de gestion academica|19 componentes de gestion"
+   ],
+   "f": "documentos/01-academicos/RESIGNIFICACION PEI 2024-2027 COLEGIO SIMON BOLIVAR.pdf",
+   "d": "PEI 2024-2027",
+   "p": [
+    21
+   ],
+   "r": "Los 19 Componentes de Gestión Académica son un aplicativo elaborado por el docente Luis Alberto Avellaneda para la gestión académica del colegio. El detalle de cada componente todavía no está cargado en esta base de respuestas; consulta con Gestión Académica o pide que se agregue el documento."
+  },
+  {
+   "id": "man-descargos-firmas",
+   "k": [
+    "descargos|acta de descargos|guardar silencio|derecho al silencio|quien firma el acta|quien firma (los )?descargos"
+   ],
+   "f": "documentos/02-convivencia-e-inclusion/Manual de convivencia.pdf",
+   "d": "Manual de convivencia",
+   "p": [
+    171
+   ],
+   "r": "Acta de descargos (Manual pág. 171): el estudiante relata los hechos de su puño y letra o se abstiene de hacerlo, en ejercicio de su derecho a guardar silencio. Firman el primer respondiente (quien conoció el caso), el director de grupo, el coordinador de convivencia, el orientador y el rector, dejando constancia de que se garantizó el debido proceso y el derecho a la defensa."
+  },
+  {
+   "id": "man-observador-firma",
+   "k": [
+    "quien firma el observador|firmas? del observador|anotacion en el observador|reincidente|reincidencia"
+   ],
+   "f": "documentos/02-convivencia-e-inclusion/Manual de convivencia.pdf",
+   "d": "Manual de convivencia",
+   "p": [
+    176
+   ],
+   "r": "Anotación en el observador por falta reincidente (Manual pág. 176): se consigna una descripción de la falta que firman quien la conoció directamente, el director de grado, el coordinador de convivencia y el estudiante implicado. La amonestación verbal, en cambio, se anota sin firma del estudiante."
+  },
+  {
+   "id": "man-evasion",
+   "k": [
+    "evasion|evadirse|evade|se (fue|salio) del colegio|abandono (del colegio|temporal)|se escapo|fuga|se volo"
+   ],
+   "f": "documentos/02-convivencia-e-inclusion/Manual de convivencia.pdf",
+   "d": "Manual de convivencia",
+   "p": [
+    111
+   ],
+   "r": "Evasión de clases (Manual pág. 111): si el estudiante falta un día de clases mientras sus padres creen que está en el colegio, es decir, se evade de las instalaciones sin autorización, se considera una situación Tipo II. Además, en los descansos, en actividades fuera del aula y al terminar la jornada, todos los salones deben permanecer con las puertas cerradas. Evadirse de clase usando la biblioteca u otro sitio es falta grave (pág. 161).",
+   "o": [
+    {
+     "f": "documentos/02-convivencia-e-inclusion/Manual de convivencia.pdf",
+     "d": "Manual de convivencia",
+     "p": [
+      161
+     ]
+    }
+   ]
+  },
+  {
+   "id": "man-fraude",
+   "k": [
+    "fraude|copiar|copia en|copiarse|trampa|plagio|suplantacion"
+   ],
+   "f": "documentos/02-convivencia-e-inclusion/Manual de convivencia.pdf",
+   "d": "Manual de convivencia",
+   "p": [
+    161
+   ],
+   "r": "Fraude y copia: el Manual califica como falta grave el fraude comprobado en evaluaciones y trabajos (pág. 161), con las sanciones de las faltas graves (pág. 162). El SIEE (art. 26) exige además a los estudiantes no cometer infracción académica de ninguna categoría: fraude, copia o plagio.",
+   "o": [
+    {
+     "f": "documentos/01-academicos/GA-D1_MANUAL_SIEE_2024_REORGANIZADO 2026.pdf",
+     "d": "Manual SIEE 2026",
+     "p": [
+      39
+     ]
+    }
+   ]
+  },
+  {
+   "id": "man-entrada-ajenos",
+   "k": [
+    "entrada principal|salir por otro lado|ingresar por|personas ajenas|visitantes|ingreso de amigos|ingreso de extranos|colarse|saltar la reja|pasar por la reja|otra puerta|puerta (diferente|trasera)|entrada diferente|salir por"
+   ],
+   "f": "documentos/02-convivencia-e-inclusion/Manual de convivencia.pdf",
+   "d": "Manual de convivencia",
+   "p": [
+    161
+   ],
+   "r": "Ingreso y salida (Manual pág. 161): es falta grave ingresar o salir del plantel por lugares distintos a la entrada principal y permitir el ingreso de amigos o personas ajenas con el ánimo de entorpecer las actividades institucionales."
+  },
+  {
+   "id": "man-danos",
+   "k": [
+    "dana\\b|danan|danar|dano|danos|rompio|romper|reposicion|reponer|vandalismo|mal uso de (los )?(muebles|enseres|pupitres)|rayar|grafiti|quien paga"
+   ],
+   "f": "documentos/02-convivencia-e-inclusion/Manual de convivencia.pdf",
+   "d": "Manual de convivencia",
+   "p": [
+    109,
+    161
+   ],
+   "r": "Daños a bienes (Manual págs. 109 y 161): quien cause un daño en las instalaciones o bienes del colegio debe reponer el bien o reparar la planta física; como son bienes del Estado, el daño puede asimilarse a una situación Tipo III. El director de curso informa el hecho. El mal uso de muebles, enseres, restaurante y buses escolares es falta grave (pág. 161).",
+   "s": 1
+  },
+  {
+   "id": "man-ventas-rifas",
+   "k": [
+    "vender|ventas?|negocios?|rifas?|bonos?|colectas?|cuotas?|fiestas?|bailes?|comerciar"
+   ],
+   "f": "documentos/02-convivencia-e-inclusion/Manual de convivencia.pdf",
+   "d": "Manual de convivencia",
+   "p": [
+    161,
+    229
+   ],
+   "r": "Ventas, rifas y cuotas: para los estudiantes, hacer negocios dentro del colegio es falta grave (Manual pág. 161). A los docentes les está prohibido promover con los estudiantes rifas, bonos, bailes, fiestas o eventos no autorizados por coordinación o rectoría, y exigir cuotas para material o evaluaciones sin autorización del coordinador (pág. 229).",
+   "s": 1
+  },
+  {
+   "id": "man-uniforme-gala",
+   "k": [
+    "uniforme de gala|gala|camisa manga larga con corbata|ceremonia|actos? especiales?"
+   ],
+   "f": "documentos/02-convivencia-e-inclusion/Manual de convivencia.pdf",
+   "d": "Manual de convivencia",
+   "p": [
+    105
+   ],
+   "r": "Uniforme de gala (Manual pág. 105): para actividades especiales, los niños usan camisa manga larga con corbata del mismo color y tela del pantalón; las niñas, blusa manga larga y cinta del mismo color y tela de la jardinera. La responsabilidad de cumplir el modelo también se extiende a los padres, que no deben adquirir uniformes sin tener en cuenta el reglamento."
+  },
+  {
+   "id": "man-escuela-padres",
+   "k": [
+    "escuela de padres|talleres? (a|para) padres|encuentro de familias|charlas? (a|para) padres"
+   ],
+   "f": "documentos/02-convivencia-e-inclusion/Manual de convivencia.pdf",
+   "d": "Manual de convivencia",
+   "p": [
+    239,
+    240
+   ],
+   "r": "Escuela de Padres (Manual págs. 239–240): es un encuentro de familias para mejorar los procesos académicos y formativos mediante diálogo, concertación y compromiso. La dirige el psicoorientador según un cronograma que cubre a todos los padres y una programación de temas; también intervienen profesionales idóneos. El SIEE (art. 25) pide a los padres participar en este proyecto.",
+   "o": [
+    {
+     "f": "documentos/01-academicos/GA-D1_MANUAL_SIEE_2024_REORGANIZADO 2026.pdf",
+     "d": "Manual SIEE 2026",
+     "p": [
+      38
+     ]
+    }
+   ]
+  },
+  {
+   "id": "man-perfil-educador-padres",
+   "k": [
+    "perfil del educador|perfil de los padres|perfil de la familia|como debe ser (el|un) (educador|profesor|docente|padre)"
+   ],
+   "f": "documentos/02-convivencia-e-inclusion/Manual de convivencia.pdf",
+   "d": "Manual de convivencia",
+   "p": [
+    64
+   ],
+   "r": "Perfiles (Manual pág. 64): el educador debe ser investigador, responsable, amable, cariñoso, líder, colaborador, flexible e idóneo, y enseñar con respeto, tolerancia, vocación y amor. Los padres y madres deben ser activos, dinamizadores y comprometidos con los logros de aprendizaje de sus hijos, solidarios, responsables y afectivos. El perfil del personal administrativo también está en esa página."
+  },
+  {
+   "id": "man-asociacion-padres",
+   "k": [
+    "asociacion de padres|junta de padres|asopadres"
+   ],
+   "f": "documentos/02-convivencia-e-inclusion/Manual de convivencia.pdf",
+   "d": "Manual de convivencia",
+   "p": [
+    254
+   ],
+   "r": "Asociación de Padres de Familia (Manual pág. 254; Decreto 1286/2005, art. 9): es una entidad privada sin ánimo de lucro que agrupa y representa a los padres del establecimiento para defender sus derechos y promover el cumplimiento de sus deberes en el servicio educativo. Sus finalidades están en la misma página."
+  },
+  {
+   "id": "man-exalumnos-sector",
+   "k": [
+    "exalumnos|ex alumnos|egresados|asociacion de exalumnos|sector productivo"
+   ],
+   "f": "documentos/02-convivencia-e-inclusion/Manual de convivencia.pdf",
+   "d": "Manual de convivencia",
+   "p": [
+    257
+   ],
+   "r": "Exalumnos y sector productivo (Manual pág. 257): la Asociación de Exalumnos reúne a los egresados; su junta directiva nombra un representante al Consejo Directivo, y la vinculación se hace por el Servicio de Orientación. Para elegir al representante del sector productivo se convoca una asamblea de los representantes de ese sector."
+  },
+  {
+   "id": "man-difusion",
+   "k": [
+    "difusion del manual|socializacion del manual|como se da a conocer el manual|cuando se (da a conocer|socializa) el manual|divulgacion del manual"
+   ],
+   "f": "documentos/02-convivencia-e-inclusion/Manual de convivencia.pdf",
+   "d": "Manual de convivencia",
+   "p": [
+    273
+   ],
+   "r": "Difusión del Manual (pág. 273): se da a conocer cada año a toda la comunidad: a los padres en una reunión general de socialización según el Cronograma Académico, a los docentes en la semana de planeación escolar, y a los estudiantes en jornadas de divulgación durante las horas de asesoría de las dos primeras semanas del año. Los cambios y reformas también se dan a conocer cuando surjan."
+  },
+  {
+   "id": "man-causales-cupo",
+   "k": [
+    "causales? (de|para) (la )?(perdida|cancelacion)|motivos? (para|de|por)|por que (me|le) pueden (quitar|cancelar)|perder el cupo|pierd\\w+ (el )?cupo|no renovar|cuando (me|le) cancelan"
+   ],
+   "f": "documentos/02-convivencia-e-inclusion/Manual de convivencia.pdf",
+   "d": "Manual de convivencia",
+   "p": [
+    92,
+    93
+   ],
+   "r": "Motivos para perder el carácter de educando (Manual págs. 92–93): el Consejo Directivo puede determinarlo, entre otras, cuando al finalizar el año no se entrega la orden de renovación de matrícula por razones académicas, actitudinales, convivenciales o incumplimiento de compromisos; por porte o consumo de sustancias psicotrópicas o uso de armas u objetos intimidatorios (tras el debido proceso); por inasistencia habitual injustificada; por cancelación voluntaria de mutuo acuerdo; por inasistencia del acudiente a tres reuniones sin excusa; por falta de acompañamiento de los padres; por perfil inadecuado reiterado tras compromisos; por irrespeto o agresiones de los padres o familiares contra miembros de la comunidad; y por retiro voluntario. La lista completa (más de 14 motivos) está en esas páginas."
+  },
+  {
+   "id": "man-comite-reglamento",
+   "k": [
+    "cada cuanto se reune el comite|reglamento (interno )?del comite|reglamento del comite de convivencia|donde se reune el comite|cuando se reune el comite|sesiones del comite|cada cuanto se reune|frecuencia|se reune el comite|reuniones del comite"
+   ],
+   "f": "documentos/02-convivencia-e-inclusion/Manual de convivencia.pdf",
+   "d": "Manual de convivencia",
+   "p": [
+    155
+   ],
+   "r": "Reglamento del Comité de Convivencia (Manual págs. 155–158): se rige por los principios de participación, corresponsabilidad, autonomía, diversidad e integralidad. Lo integran el rector (preside), la docente orientadora, el docente líder de convivencia, el representante de docentes, los coordinadores de cada sede, el presidente del consejo de padres y el presidente del consejo de estudiantes. Las reuniones son en la sede Central (días y horarios fijados en el reglamento)."
+  },
+  {
+   "id": "man-servicio-social-manual",
+   "k": [
+    "objetivos? del servicio social|para que sirve el servicio social|servicio social (obligatorio )?(es|significa)|resolucion 4210"
+   ],
+   "f": "documentos/02-convivencia-e-inclusion/Manual de convivencia.pdf",
+   "d": "Manual de convivencia",
+   "p": [
+    158,
+    159
+   ],
+   "r": "Servicio social (Manual págs. 158–159; Decreto 1860/1994 art. 39, Ley 115/1994 art. 97, Resolución 4210/1996): busca que el estudiante se integre a la comunidad y contribuya a su mejoramiento social, cultural y económico, desarrollando solidaridad y conocimiento de su entorno. Se ejecuta con entidades gubernamentales y no gubernamentales dentro del PEI. Los objetivos están en la pág. 159 y la intensidad (80 horas) en el PEI, pág. 118.",
+   "o": [
+    {
+     "f": "documentos/01-academicos/RESIGNIFICACION PEI 2024-2027 COLEGIO SIMON BOLIVAR.pdf",
+     "d": "PEI 2024-2027",
+     "p": [
+      118
+     ]
+    }
+   ]
+  },
+  {
+   "id": "siee-comision-funciones",
+   "k": [
+    "comision de (evaluacion|promocion)",
+    "funciones|que hace|integrantes|conforma|reune|quienes|reinicio|repetir (el )?(ano|grado)|quien decide"
+   ],
+   "f": "documentos/01-academicos/GA-D1_MANUAL_SIEE_2024_REORGANIZADO 2026.pdf",
+   "d": "Manual SIEE 2026",
+   "p": [
+    14
+   ],
+   "r": "Funciones de la Comisión de Evaluación y Promoción (SIEE, pág. 14): elegir su secretario; reunirse al final de cada período para analizar los casos de estudiantes con áreas en desempeño Bajo; analizar los casos de desempeño Superior para recomendar motivación o promoción anticipada; estudiar al terminar el año los casos de estudiantes considerados para reiniciar un grado y decidir; dejar en actas las decisiones y recomendaciones; hacer recomendaciones a docentes y otras instancias sobre refuerzo y superación; y mantener la comunicación con padres y estudiantes sobre informes, apoyos y compromisos.",
+   "a": 1
+  },
+  {
+   "id": "siee-docente-evaluador",
+   "k": [
+    "(deberes?|responsabilidades?|obligaciones|funciones) (de los |del )?docentes? (en|con|como) (la )?(evaluacion|siee|evaluador)|que debe hacer (el|un) docente (en|con|segun) (el )?siee|docente.{0,20}siee|siee.{0,20}docente|funciones del docente (como )?(agente )?evaluador"
+   ],
+   "f": "documentos/01-academicos/GA-D1_MANUAL_SIEE_2024_REORGANIZADO 2026.pdf",
+   "d": "Manual SIEE 2026",
+   "p": [
+    38,
+    13
+   ],
+   "r": "Deberes de los docentes según el SIEE (art. 24, pág. 38): aplicar el Sistema de Evaluación y Promoción; acompañar y hacer seguimiento a los estudiantes con el formato de atención a estudiantes; contestar los recursos de apelación; presentar a la Comisión de Evaluación la información y los procedimientos realizados; asistir a las reuniones de las comisiones; y diligenciar las evidencias. Como agente evaluador es el principal acompañante, motivador y orientador del proceso formativo (pág. 13)."
+  },
+  {
+   "id": "siee-agentes",
+   "k": [
+    "quienes evaluan|quien evalua|agentes? valorativos?|agentes? de la evaluacion"
+   ],
+   "f": "documentos/01-academicos/GA-D1_MANUAL_SIEE_2024_REORGANIZADO 2026.pdf",
+   "d": "Manual SIEE 2026",
+   "p": [
+    13
+   ],
+   "r": "Quiénes evalúan (SIEE, pág. 13): el Decreto 1290 reconoce como agentes de la evaluación al docente, a la Comisión de Evaluación y Promoción y a las instancias directivas. El docente es el principal acompañante, motivador y orientador del proceso del estudiante; la Comisión y las directivas tienen funciones específicas detalladas en la misma sección."
+  },
+  {
+   "id": "siee-componentes-def",
+   "k": [
+    "que (es|significa) (la |el )?(prueba de comprension|saber|hacer|ser y convivir|componente)|pilares|delors|cuatro componentes|componentes de la evaluacion|que se evalua|que evalua el colegio"
+   ],
+   "f": "documentos/01-academicos/GA-D1_MANUAL_SIEE_2024_REORGANIZADO 2026.pdf",
+   "d": "Manual SIEE 2026",
+   "p": [
+    9
+   ],
+   "r": "Qué se evalúa (SIEE, pág. 9): el colegio adopta los cuatro pilares de la educación de Delors (1996) —aprender a conocer, hacer, vivir juntos y ser— y los resume en Saber-Saber, Saber-Hacer y Saber Ser y Convivir, más un cuarto componente: la Prueba de Comprensión, que vale 30 % en todas las áreas. Cada componente tiene un porcentaje según el área (Tabla 2, págs. 9–10). El Saber-Saber (cognitivo) recoge las actividades de comprobación del aprendizaje, sobre todo evaluaciones donde el estudiante demuestra dominio de la estructura conceptual de un contenido."
+  },
+  {
+   "id": "siee-diagnostica",
+   "k": [
+    "prueba diagnostica|pruebas diagnosticas|diagnostico inicial|prueba inicial|saberes previos"
+   ],
+   "f": "documentos/01-academicos/GA-D1_MANUAL_SIEE_2024_REORGANIZADO 2026.pdf",
+   "d": "Manual SIEE 2026",
+   "p": [
+    16
+   ],
+   "r": "Pruebas diagnósticas (SIEE, pág. 16): se aplican al inicio del año, de un período, unidad o proyecto cuando las condiciones pedagógicas lo requieran, para identificar saberes previos, niveles de desempeño, fortalezas, dificultades e intereses. Su información sirve para planear, caracterizar los grupos y definir estrategias de nivelación y refuerzo. Por su naturaleza formativa, no se usa como sanción ni como único criterio del desempeño académico."
+  },
+  {
+   "id": "siee-decimales",
+   "k": [
+    "decimal(es)?|redondeo|redondear|cifra significativa|una cifra|cuantos decimales"
+   ],
+   "f": "documentos/01-academicos/GA-D1_MANUAL_SIEE_2024_REORGANIZADO 2026.pdf",
+   "d": "Manual SIEE 2026",
+   "p": [
+    26
+   ],
+   "r": "Decimales (SIEE, pág. 26): para la valoración institucional, las calificaciones se asignan con un solo decimal, aplicando el concepto de cifra significativa."
+  },
+  {
+   "id": "siee-notas-editor",
+   "k": [
+    "notas? del editor|articulos? (7|8|21)|reconstruid|falta(n)? (partes|articulos)|esta completo el siee|errores del siee"
+   ],
+   "f": "documentos/01-academicos/GA-D1_MANUAL_SIEE_2024_REORGANIZADO 2026.pdf",
+   "d": "Manual SIEE 2026",
+   "p": [
+    29,
+    35
+   ],
+   "r": "Notas del editor en el SIEE: en la pág. 29 se aclara que los artículos 7 y 8 (criterios de evaluación y de promoción) se reconstruyeron a partir del resto del documento, y en la pág. 35 que el «artículo 21» (acciones de seguimiento) citado en el documento original no se encontró en el archivo. Conviene que el Consejo Académico confirme esos apartados."
+  },
+  {
+   "id": "pei-piar",
+   "k": [
+    "piar|marisol solarte|psicologa|quien (dirige|lidera) el piar|proyecto piar"
+   ],
+   "f": "documentos/01-academicos/RESIGNIFICACION PEI 2024-2027 COLEGIO SIMON BOLIVAR.pdf",
+   "d": "PEI 2024-2027",
+   "p": [
+    21
+   ],
+   "r": "PIAR (PEI, pág. 21): el PEI registra que se fortalece el proyecto PIAR dirigido por la psicóloga Marisol Solarte y su equipo, con el apoyo del docente de aula contratado por la Secretaría de Educación Municipal. Los ajustes razonables y la evaluación de estudiantes con NEE están en el SIEE (págs. 22–23).",
+   "o": [
+    {
+     "f": "documentos/01-academicos/GA-D1_MANUAL_SIEE_2024_REORGANIZADO 2026.pdf",
+     "d": "Manual SIEE 2026",
+     "p": [
+      22,
+      23
+     ]
+    }
+   ]
+  },
+  {
+   "id": "pei-novedades-2024",
+   "k": [
+    "plan plurianual|desarrollo institucional|nuevos docentes|docentes nuevos|cuantos (estudiantes )?se graduaron|graduados del ano|graduaron 129"
+   ],
+   "f": "documentos/01-academicos/RESIGNIFICACION PEI 2024-2027 COLEGIO SIMON BOLIVAR.pdf",
+   "d": "PEI 2024-2027",
+   "p": [
+    21
+   ],
+   "r": "Novedades recientes (PEI, pág. 21): en 2024 se inició con dos semanas de desarrollo institucional en la sede San Martín, dando comienzo al plan plurianual 2024–2027; ingresaron 15 nuevos docentes por mérito; se dinamizaron los proyectos transversales; se graduaron 129 estudiantes en el año anterior; y se fortaleció el proyecto PIAR."
+  },
+  {
+   "id": "pei-historia-sedes",
+   "k": [
+    "sede san martin|san martin (no\\.? ?)?65|hernando acevedo (historia|sede)|historia de (la )?sede|origen de la sede|escuela san martin|centro docente san martin"
+   ],
+   "f": "documentos/01-academicos/RESIGNIFICACION PEI 2024-2027 COLEGIO SIMON BOLIVAR.pdf",
+   "d": "PEI 2024-2027",
+   "p": [
+    21,
+    22
+   ],
+   "r": "Sede San Martín N.º 65 (PEI, pág. 22): según su libro de registro histórico, en 1979 un comité comunitario lideró la solicitud y creación de una escuela en el barrio San Martín para atender a 45 estudiantes; el comité pagó el arriendo de una casa en la avenida 9.ª entre calles primera y segunda. La síntesis histórica de la sede Hernando Acevedo está en la pág. 21."
+  },
+  {
+   "id": "pei-entorno",
+   "k": [
+    "barrio|comuna|entorno|contexto del colegio|limita|alrededores|vecindario|sector del colegio|alto pamplonita"
+   ],
+   "f": "documentos/01-academicos/RESIGNIFICACION PEI 2024-2027 COLEGIO SIMON BOLIVAR.pdf",
+   "d": "PEI 2024-2027",
+   "p": [
+    34,
+    35
+   ],
+   "r": "Entorno (PEI, pág. 34): el colegio está en la Comuna 4 de Cúcuta, en el barrio y urbanización San Martín, al nororiente de la ciudad, sobre una pequeña meseta. Limita al oriente con los barrios Alto Pamplonita, Aniversario, Torcoroma y La Libertad, y al norte con la urbanización Prados del Este y la autopista Internacional vía Ureña. El barrio San Martín fue fundado en 1980. La situación socioeconómica y la composición familiar están en las págs. 36–37."
+  },
+  {
+   "id": "pei-consejo-estudiantil",
+   "k": [
+    "consejo estudiantil|consejo de estudiantes|vocero(s)? (estudiantil|de grado|de curso)|eleccion de voceros|como se elige (al )?vocero",
+    "vocero|elige|eleccion|conforma|integra|votacion|semanas"
+   ],
+   "f": "documentos/01-academicos/RESIGNIFICACION PEI 2024-2027 COLEGIO SIMON BOLIVAR.pdf",
+   "d": "PEI 2024-2027",
+   "p": [
+    50
+   ],
+   "r": "Consejo Estudiantil (PEI, pág. 50; Decreto 1860, art. 29): es el máximo órgano de participación de los estudiantes y lo integra un vocero de cada grado. El Consejo Directivo convoca, dentro de las cuatro primeras semanas del calendario académico, asambleas por grado para elegir por votación secreta al vocero estudiantil del año. El procedimiento para preescolar y los primeros grados de primaria está en la misma página.",
+   "a": 1
+  },
+  {
+   "id": "siee-reprobar-decide",
+   "k": [
+    "quien decide (si|la|el)? ?(un )?(estudiante )?(repite|reprueba|pierde|reinicia)|quien decide (la )?(promocion|reprobacion)|repite el ano|repetir el ano|reiniciar (un )?grado|reinicio de (un )?grado"
+   ],
+   "f": "documentos/01-academicos/GA-D1_MANUAL_SIEE_2024_REORGANIZADO 2026.pdf",
+   "d": "Manual SIEE 2026",
+   "p": [
+    14
+   ],
+   "r": "Quién decide si un estudiante repite el año (SIEE, pág. 14): la Comisión de Evaluación y Promoción estudia, al finalizar el año lectivo, los casos de estudiantes considerados para el reinicio de un grado y decide al respecto, dejando la decisión en acta. Antes de eso, los estudiantes con áreas perdidas tienen la estrategia de apoyo de las semanas 39 y 40 (págs. 36–37), y las decisiones pueden reclamarse con apelación y reposición (pág. 40)."
+  },
+  {
+   "id": "man-acta-exencion",
+   "k": [
+    "acta de exencion|exencion de responsabilidad|acta de aceptacion|menores de catorce|menores de 14"
+   ],
+   "f": "documentos/02-convivencia-e-inclusion/Manual de convivencia.pdf",
+   "d": "Manual de convivencia",
+   "p": [
+    86
+   ],
+   "r": "Acta de aceptación y de exención (Manual pág. 86): el acta de exención de responsabilidad es de obligatorio cumplimiento y busca proteger los derechos de los menores de catorce años escolarizados en el colegio."
+  },
+  {
+   "id": "man-flagrancia",
+   "k": [
+    "flagrancia|sorprendido (con|consumiendo)|consumiendo (en|dentro)|encontre (a un|un) estudiante (con|consumiendo)|consumo de sustancias (en|dentro)"
+   ],
+   "f": "documentos/02-convivencia-e-inclusion/Manual de convivencia.pdf",
+   "d": "Manual de convivencia",
+   "p": [
+    213
+   ],
+   "r": "Consumo de sustancias en flagrancia (Manual pág. 213): declarada la flagrancia por consumo de sustancias, el rector y el coordinador de convivencia aplican medidas de restablecimiento de derechos, con fundamento en el art. 44 de la Constitución y en la Ley 1098/2006. El protocolo completo para drogas y sustancias prohibidas está en las págs. 210–217."
+  },
+  {
+   "id": "man-padre-no-asiste",
+   "k": [
+    "(el )?(padre|acudiente|madre) no (asiste|viene|se presenta|responde|llega)|no (asisten|vienen) (a )?(las )?(citaciones|reuniones)|padres? que no (asisten|vienen)|citacion (al|del) (padre|acudiente) (sin|y no)|inasistencia del acudiente"
+   ],
+   "f": "documentos/02-convivencia-e-inclusion/Manual de convivencia.pdf",
+   "d": "Manual de convivencia",
+   "p": [
+    183,
+    162,
+    92
+   ],
+   "r": "Cuando el padre o acudiente no asiste: si el estudiante tiene una situación Tipo II o una falta grave y los padres no atienden la citación, se oficia a la Comisaría de Familia o a la Personería por presunto abandono y trato negligente (Manual págs. 183 y 162, Ley 1098/2006 arts. 18 y 20). Además, la inasistencia del acudiente a tres reuniones programadas sin excusa es motivo para perder el carácter de educando (pág. 92)."
+  },
+  {
+   "id": "man-autorizaciones",
+   "k": [
+    "autorizacion (escrita|de los padres|firmada)|permiso (de )?(los )?padres|presentarse (a|al) coordinador|nota de los padres|carta de los padres|excusa firmada"
+   ],
+   "f": "documentos/02-convivencia-e-inclusion/Manual de convivencia.pdf",
+   "d": "Manual de convivencia",
+   "p": [
+    148
+   ],
+   "r": "Autorizaciones de los padres (Manual pág. 148): el estudiante debe presentarse a primera hora o en el descanso ante el coordinador de convivencia con la autorización escrita y firmada de los padres o acudientes para informar o acreditar situaciones especiales como salidas del colegio o permisos. Los permisos de salida también se solicitan por la agenda virtual (pág. 245).",
+   "o": [
+    {
+     "f": "documentos/02-convivencia-e-inclusion/Manual de convivencia.pdf",
+     "d": "Manual de convivencia",
+     "p": [
+      245
+     ]
+    }
+   ]
   }
  ]
 }
