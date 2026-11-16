@@ -12,7 +12,7 @@
  *   1) Pegar este archivo en Extensiones > Apps Script   2) Ejecutar «instalar» una vez
  *   3) Implementar > Nueva implementación > Aplicación web (ejecutar como: yo · acceso: cualquier persona)
  */
-var VERSION = '1.2';
+var VERSION = '1.3';
 var HOJAS = { pruebas: 'Pruebas', resp: 'Respuestas', datos: '_datos', docentes: 'Docentes' };
 var COL = {
   pruebas: ['codigo', 'titulo', 'area', 'grado', 'docente', 'cursos', 'modo', 'minutos', 'abre', 'cierra', 'mostrar', 'intentos', 'mezclar', 'estado', 'creada', 'n_multiple', 'n_abiertas', 'pin_hash', 'docente_cod'],
@@ -46,9 +46,179 @@ function crearDisparadorLimpieza() {
   ScriptApp.getProjectTriggers().forEach(function (t) { if (t.getHandlerFunction() === 'limpiarAntiguas') ScriptApp.deleteTrigger(t); });
   ScriptApp.newTrigger('limpiarAntiguas').timeBased().everyDays(1).atHour(3).create();
 }
-function limpiarAntiguas() {
-  var dias = Number(PropertiesService.getScriptProperties().getProperty('DIAS_RETENCION') || 180), limite = Date.now() - dias * 864e5;
-  tabla_('pruebas').forEach(function (p) { if (Date.parse(p.creada) < limite) eliminar_(p.codigo); });
+function limpiarAntiguas() { borrarVencidas_(Number(PropertiesService.getScriptProperties().getProperty('DIAS_RETENCION') || 180)); }
+/** Borra las pruebas (con sus respuestas) creadas hace más de «dias» días. Devuelve cuántas borró. */
+function borrarVencidas_(dias) {
+  var limite = Date.now() - dias * 864e5, n = 0;
+  tabla_('pruebas').forEach(function (p) { if (Date.parse(p.creada) < limite) { eliminar_(p.codigo); n++; } });
+  return n;
+}
+
+/* ===================== MENÚ DE ADMINISTRACIÓN (en la barra de la hoja de cálculo) ===================== */
+function onOpen() {
+  var ui = SpreadsheetApp.getUi();
+  ui.createMenu('📝 ColBolívar')
+    .addItem('🔎 Ver claves y estado', 'menuEstado')
+    .addSeparator()
+    .addSubMenu(ui.createMenu('👩‍🏫 Docentes')
+      .addItem('Cambiar el código del colegio…', 'menuCambiarCodigoColegio')
+      .addItem('Abrir / cerrar el registro de docentes', 'menuAlternarRegistro')
+      .addSeparator()
+      .addItem('Bloquear al docente de la fila seleccionada', 'menuBloquearDocente')
+      .addItem('Desbloquear al docente de la fila seleccionada', 'menuDesbloquearDocente')
+      .addItem('Dar un código nuevo al docente de la fila seleccionada', 'menuCodigoNuevoDocente')
+      .addItem('Eliminar al docente de la fila seleccionada', 'menuEliminarDocente'))
+    .addSubMenu(ui.createMenu('📝 Pruebas')
+      .addItem('Cerrar la prueba de la fila seleccionada', 'menuCerrarPrueba')
+      .addItem('Reabrir la prueba de la fila seleccionada', 'menuReabrirPrueba')
+      .addItem('Borrar las respuestas de la prueba seleccionada', 'menuBorrarRespuestas')
+      .addItem('Eliminar la prueba seleccionada (y sus respuestas)', 'menuEliminarPrueba')
+      .addSeparator()
+      .addItem('Borrar las pruebas que no tienen ninguna entrega', 'menuBorrarVacias')
+      .addItem('Borrar las pruebas con más de N días…', 'menuBorrarViejas'))
+    .addSubMenu(ui.createMenu('🔐 Seguridad y privacidad')
+      .addItem('Generar una clave maestra nueva', 'menuClaveMaestra')
+      .addItem('Cambiar cuántos días se guardan las pruebas…', 'menuRetencion')
+      .addItem('Activar el borrado automático nocturno', 'menuActivarLimpieza'))
+    .addToUi();
+}
+function ui_() { return SpreadsheetApp.getUi(); }
+function aviso_(t, m) { var u = ui_(); u.alert(t, m, u.ButtonSet.OK); }
+function si_(t, m) { var u = ui_(); return u.alert(t, m, u.ButtonSet.YES_NO) === u.Button.YES; }
+function pedir_(t, m) { var u = ui_(), r = u.prompt(t, m, u.ButtonSet.OK_CANCEL); return r.getSelectedButton() === u.Button.OK ? String(r.getResponseText()).trim() : null; }
+function seguro_(f) { try { f(); } catch (e) { aviso_('No se pudo hacer', (e && e.message) || String(e)); } }
+function props_() { return PropertiesService.getScriptProperties(); }
+/** La fila que tiene seleccionada el usuario en la hoja indicada («Docentes» o «Pruebas»). */
+function filaActiva_(clave) {
+  var h = SpreadsheetApp.getActiveSheet();
+  if (h.getName() !== HOJAS[clave]) throw new Error('Primero ve a la hoja «' + HOJAS[clave] + '» y haz clic en cualquier celda de la fila que quieres usar.');
+  var r = h.getActiveRange().getRow();
+  if (r < 2) throw new Error('Selecciona una fila de datos, no el encabezado.');
+  var o = tabla_(clave).filter(function (x) { return x._fila === r; })[0];
+  if (!o) throw new Error('La fila seleccionada está vacía.');
+  return o;
+}
+function ponerCelda_(clave, fila, campo, valor) { hoja_(clave).getRange(fila, COL[clave].indexOf(campo) + 1).setValue(valor); }
+
+function menuEstado() {
+  seguro_(function () {
+    var p = props_().getProperties(), docs = tabla_('docentes'), pr = tabla_('pruebas'), url = '';
+    try { url = ScriptApp.getService().getUrl() || ''; } catch (e) { }
+    var activos = docs.filter(function (d) { return d.estado === 'activo'; }).length;
+    var trig = ScriptApp.getProjectTriggers().some(function (t) { return t.getHandlerFunction() === 'limpiarAntiguas'; });
+    aviso_('Estado de Pruebas en línea (v' + VERSION + ')',
+      'CÓDIGO DEL COLEGIO (para registrarse): ' + (p.CODIGO_DOCENTES || '—') + '\n' +
+      'CLAVE MAESTRA (abre cualquier prueba; no la compartas): ' + (p.CLAVE_MAESTRA || '—') + '\n' +
+      'Registro de docentes: ' + (p.REGISTRO_ABIERTO === 'no' ? 'CERRADO' : 'abierto') + '\n\n' +
+      'Docentes: ' + activos + ' activos, ' + (docs.length - activos) + ' bloqueados\n' +
+      'Pruebas: ' + pr.length + ' · Entregas: ' + tabla_('resp').length + '\n' +
+      'Se guardan ' + (p.DIAS_RETENCION || 180) + ' días · Borrado automático: ' + (trig ? 'ACTIVADO' : 'desactivado') + '\n\n' +
+      'URL de la aplicación web:\n' + (url || '(aún no implementada)') + '\n(debe ser la misma de datos/pruebas-config.json)');
+  });
+}
+function menuCambiarCodigoColegio() {
+  seguro_(function () {
+    var n = pedir_('Código del colegio', 'Escribe el nuevo código (sin espacios, mínimo 6 caracteres). Los docentes ya registrados no necesitan hacer nada.\nActual: ' + (props_().getProperty('CODIGO_DOCENTES') || '—'));
+    if (n === null) return;
+    if (!/^\S{6,30}$/.test(n)) throw new Error('El código debe tener entre 6 y 30 caracteres y no llevar espacios.');
+    props_().setProperty('CODIGO_DOCENTES', n); aviso_('Listo', 'El nuevo código del colegio es:\n\n' + n);
+  });
+}
+function menuAlternarRegistro() {
+  seguro_(function () {
+    var cerrado = props_().getProperty('REGISTRO_ABIERTO') === 'no';
+    if (!si_(cerrado ? 'Abrir el registro' : 'Cerrar el registro', cerrado ? 'Los docentes podrán volver a registrarse. ¿Abrirlo?' : 'Nadie más podrá registrarse (los ya inscritos siguen igual). ¿Cerrarlo?')) return;
+    props_().setProperty('REGISTRO_ABIERTO', cerrado ? 'si' : 'no'); aviso_('Listo', 'El registro de docentes ahora está ' + (cerrado ? 'ABIERTO.' : 'CERRADO.'));
+  });
+}
+function cambiarEstadoDocente_(estado) {
+  var d = filaActiva_('docentes');
+  if (!si_(estado === 'bloqueado' ? 'Bloquear docente' : 'Desbloquear docente', (estado === 'bloqueado' ? 'No podrá publicar pruebas ni abrir resultados.\n\n' : 'Volverá a poder usar sus pruebas.\n\n') + d.nombre + ' · ' + d.sede + ' · ' + d.codigo + '\n\n¿Continuar?')) return;
+  ponerCelda_('docentes', d._fila, 'estado', estado); aviso_('Listo', d.nombre + ': ' + estado + '.');
+}
+function menuBloquearDocente() { seguro_(function () { cambiarEstadoDocente_('bloqueado'); }); }
+function menuDesbloquearDocente() { seguro_(function () { cambiarEstadoDocente_('activo'); }); }
+function menuCodigoNuevoDocente() {
+  seguro_(function () {
+    var d = filaActiva_('docentes');
+    if (!si_('Código nuevo', 'Se le dará un código nuevo a ' + d.nombre + ' y el actual (' + d.codigo + ') dejará de servir. Sus pruebas pasan al código nuevo.\n\n¿Continuar?')) return;
+    var usados = tabla_('docentes').map(function (r) { return r.codigo; }), c;
+    do { c = 'D-' + aleatorio_(6, ALFABETO); } while (usados.indexOf(c) >= 0);
+    ponerCelda_('docentes', d._fila, 'codigo', c);
+    tabla_('pruebas').forEach(function (p) { if (p.docente_cod === d.codigo) ponerCelda_('pruebas', p._fila, 'docente_cod', c); });
+    aviso_('Listo', 'Nuevo código de ' + d.nombre + ':\n\n' + c + '\n\nEntrégaselo (el anterior ya no funciona).');
+  });
+}
+function menuEliminarDocente() {
+  seguro_(function () {
+    var d = filaActiva_('docentes');
+    if (!si_('Eliminar docente', 'Se borra a ' + d.nombre + ' (' + d.codigo + ') de la lista. Sus pruebas NO se borran, pero él ya no podrá abrirlas con su código.\n\n¿Eliminarlo?')) return;
+    hoja_('docentes').deleteRow(d._fila); aviso_('Listo', 'Docente eliminado.');
+  });
+}
+function cambiarEstadoPrueba_(estado) {
+  var p = filaActiva_('pruebas');
+  if (!si_(estado === 'cerrada' ? 'Cerrar prueba' : 'Reabrir prueba', '«' + p.titulo + '» (' + p.codigo + ')\n\n¿' + (estado === 'cerrada' ? 'Cerrarla? Los estudiantes ya no podrán entregar.' : 'Reabrirla?'))) return;
+  ponerCelda_('pruebas', p._fila, 'estado', estado); aviso_('Listo', 'La prueba quedó ' + (estado === 'cerrada' ? 'CERRADA.' : 'ABIERTA.'));
+}
+function menuCerrarPrueba() { seguro_(function () { cambiarEstadoPrueba_('cerrada'); }); }
+function menuReabrirPrueba() { seguro_(function () { cambiarEstadoPrueba_('activa'); }); }
+function borrarRespuestas_(codigo) {
+  var h = hoja_('resp'), t = tabla_('resp').filter(function (r) { return r.codigo === codigo; });
+  for (var i = t.length - 1; i >= 0; i--) h.deleteRow(t[i]._fila);
+  return t.length;
+}
+function menuBorrarRespuestas() {
+  seguro_(function () {
+    var p = filaActiva_('pruebas'), n = tabla_('resp').filter(function (r) { return r.codigo === p.codigo; }).length;
+    if (!n) { aviso_('Sin respuestas', 'Esa prueba aún no tiene entregas.'); return; }
+    if (!si_('Borrar respuestas', 'Se borrarán las ' + n + ' entregas de «' + p.titulo + '». La prueba se conserva (útil para dejarla limpia después de un ensayo).\n\nEsto no se puede deshacer. ¿Continuar?')) return;
+    aviso_('Listo', borrarRespuestas_(p.codigo) + ' entregas borradas.');
+  });
+}
+function menuEliminarPrueba() {
+  seguro_(function () {
+    var p = filaActiva_('pruebas'), n = tabla_('resp').filter(function (r) { return r.codigo === p.codigo; }).length;
+    if (!si_('Eliminar prueba', 'Se borrará «' + p.titulo + '» (' + p.codigo + ') junto con sus ' + n + ' entregas.\n\nEsto no se puede deshacer. ¿Eliminarla?')) return;
+    eliminar_(p.codigo); aviso_('Listo', 'Prueba eliminada.');
+  });
+}
+function menuBorrarVacias() {
+  seguro_(function () {
+    var conteo = {}; tabla_('resp').forEach(function (r) { conteo[r.codigo] = 1; });
+    var v = tabla_('pruebas').filter(function (p) { return !conteo[p.codigo]; });
+    if (!v.length) { aviso_('Nada que borrar', 'Todas las pruebas tienen al menos una entrega.'); return; }
+    if (!si_('Borrar pruebas sin entregas', 'Hay ' + v.length + ' prueba(s) sin ninguna entrega:\n' + v.slice(0, 8).map(function (p) { return '• ' + p.titulo + ' (' + p.codigo + ')'; }).join('\n') + (v.length > 8 ? '\n…' : '') + '\n\n¿Borrarlas?')) return;
+    v.forEach(function (p) { eliminar_(p.codigo); }); aviso_('Listo', v.length + ' prueba(s) borradas.');
+  });
+}
+function menuBorrarViejas() {
+  seguro_(function () {
+    var t = pedir_('Borrar pruebas antiguas', 'Se borrarán las pruebas (y sus respuestas) creadas hace MÁS de cuántos días?');
+    if (t === null) return;
+    var dias = Number(t); if (!(dias >= 1 && dias <= 3650)) throw new Error('Escribe un número de días entre 1 y 3650.');
+    var limite = Date.now() - dias * 864e5, v = tabla_('pruebas').filter(function (p) { return Date.parse(p.creada) < limite; });
+    if (!v.length) { aviso_('Nada que borrar', 'No hay pruebas con más de ' + dias + ' días.'); return; }
+    if (!si_('Confirmar', 'Se borrarán ' + v.length + ' prueba(s) con más de ' + dias + ' días y todas sus respuestas.\n\nNo se puede deshacer. ¿Continuar?')) return;
+    aviso_('Listo', borrarVencidas_(dias) + ' prueba(s) borradas.');
+  });
+}
+function menuClaveMaestra() {
+  seguro_(function () {
+    if (!si_('Clave maestra nueva', 'La clave actual dejará de funcionar. Úsala si crees que se filtró.\n\n¿Generar una nueva?')) return;
+    var k = aleatorio_(8, '0123456789'); props_().setProperty('CLAVE_MAESTRA', k); aviso_('Listo', 'Nueva CLAVE MAESTRA:\n\n' + k + '\n\nGuárdala en un lugar seguro.');
+  });
+}
+function menuRetencion() {
+  seguro_(function () {
+    var t = pedir_('Días que se guardan las pruebas', 'Pasado ese tiempo el borrado automático las elimina (privacidad). Actual: ' + (props_().getProperty('DIAS_RETENCION') || 180) + ' días. Escribe un número entre 7 y 3650.');
+    if (t === null) return;
+    var d = Number(t); if (!(d >= 7 && d <= 3650)) throw new Error('Escribe un número entre 7 y 3650.');
+    props_().setProperty('DIAS_RETENCION', String(Math.round(d))); aviso_('Listo', 'Ahora se guardan ' + Math.round(d) + ' días. Recuerda activar el borrado automático si aún no lo hiciste.');
+  });
+}
+function menuActivarLimpieza() {
+  seguro_(function () { crearDisparadorLimpieza(); aviso_('Listo', 'Cada noche se borrarán las pruebas con más de ' + (props_().getProperty('DIAS_RETENCION') || 180) + ' días.'); });
 }
 
 /* ===================== PUNTOS DE ENTRADA ===================== */

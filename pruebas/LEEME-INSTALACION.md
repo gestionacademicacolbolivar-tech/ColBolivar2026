@@ -11,9 +11,29 @@ Usa **una hoja de Google Sheets** como base de datos y **Google Apps Script** co
    - *Ejecutar como:* **Yo**
    - *Quién tiene acceso:* **Cualquier persona** ⚠️ (por defecto sale «Solo yo»: si se deja así, **nadie podrá conectarse** y el portal dirá «no se pudo conectar»).
 6. Copia la **URL** (termina en `/exec`) y pégala en `datos/pruebas-config.json`.
-7. Comprueba: abre `TU-URL/exec?accion=ping` en el navegador → debe verse `{"ok":true,"version":"1.2"}`.
+7. Comprueba: abre `TU-URL/exec?accion=ping` en el navegador → debe verse `{"ok":true,"version":"1.3"}`.
 
 > Si en el paso 5 no aparece la opción **«Cualquier persona»**, tu cuenta de Google pertenece a una organización que la bloquea. Haz el proceso con una cuenta Gmail normal (por ejemplo `gestionacademica…@gmail.com`).
+
+## 📝 Menú «ColBolívar» en la hoja (administración sin tocar código)
+Después de pegar `Code.gs` (v1.3), **recarga la hoja** (F5). Aparece el menú **📝 ColBolívar** junto a «Ayuda». Si no aparece: en el editor de Apps Script elige la función `onOpen` y pulsa ▶ Ejecutar.
+
+| Opción | Para qué sirve |
+|---|---|
+| 🔎 Ver claves y estado | Muestra el **código del colegio**, la **clave maestra**, si el registro está abierto, cuántos docentes/pruebas/entregas hay y la URL de la aplicación web |
+| 👩‍🏫 Docentes → Cambiar el código del colegio | Pone un código nuevo para registrarse (los ya inscritos no se afectan) |
+| 👩‍🏫 Docentes → Abrir / cerrar el registro | Cierra el registro cuando todos estén inscritos |
+| 👩‍🏫 Docentes → Bloquear / Desbloquear | Actúa sobre el docente de la **fila seleccionada** en la hoja «Docentes» |
+| 👩‍🏫 Docentes → Dar un código nuevo | Si un profe perdió o filtró su código: se genera otro y **conserva sus pruebas** |
+| 👩‍🏫 Docentes → Eliminar | Lo quita de la lista (sus pruebas no se borran) |
+| 📝 Pruebas → Cerrar / Reabrir | Actúa sobre la prueba de la **fila seleccionada** en la hoja «Pruebas» |
+| 📝 Pruebas → Borrar las respuestas | Deja la prueba limpia (útil tras un ensayo); la prueba se conserva |
+| 📝 Pruebas → Eliminar la prueba | La borra con todas sus respuestas |
+| 📝 Pruebas → Borrar las que no tienen entregas / con más de N días | Limpieza en bloque, siempre con confirmación |
+| 🔐 Seguridad → Clave maestra nueva | Invalida la anterior (úsala si se filtró) |
+| 🔐 Seguridad → Días que se guardan / Borrado automático | Privacidad: borra solo cada noche lo vencido |
+
+**Cómo usar las opciones de «fila seleccionada»:** ve a la hoja indicada (pestaña de abajo), haz clic en cualquier celda de la fila y luego elige la opción del menú. Todo lo que borra pide confirmación y **no se puede deshacer**.
 
 ## Cómo se registran los docentes
 Cada profe entra a **`docentes.html`** (enlace «Registro de docentes» dentro de *Pruebas en línea*), escribe **nombre, sede** y el **código del colegio**, y recibe su **código personal** (`D-XXXXXX`).
