@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Diagnóstico de Pruebas en línea · ColBolívar</title>
+<link rel="icon" href="favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/pruebas.css">
+<style>
+.pa{display:grid;grid-template-columns:34px 1fr;gap:10px;align-items:start;border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin-bottom:8px;background:#fff}.pa .l{font-size:1.4rem;line-height:1}.pa b{display:block}.pa small{color:var(--mut)}
+.pa.ok{border-left:5px solid var(--g)}.pa.mal{border-left:5px solid var(--r)}.pa.av{border-left:5px solid var(--o)}.pa ol{margin:6px 0 0 1.2em;font-size:.92rem}
+.url{word-break:break-all;font-size:.85rem;background:#eef4ee;border-radius:8px;padding:6px 10px}
+</style>
+</head>
+<body>
+<header class="top"><div class="in"><img src="assets/img/escudo.webp" alt="Escudo del colegio"><div><h1>Diagnóstico de la conexión</h1><p>Para quien administra: averigua por qué «Pruebas en línea» no conecta con Google.</p></div><a class="back" href="pruebas.html">← Pruebas en línea</a></div></header>
+<main>
+<section class="card"><h2>Comprobación automática</h2><p class="sub">Revisa la dirección guardada en <code>datos/pruebas-config.json</code> y qué responde Google desde este navegador.</p><div id="res"><p class="sub">Revisando…</p></div><div class="row noprint"><button class="btn p" id="otra">↻ Volver a revisar</button></div></section>
+<section class="card"><h2>Prueba rápida a mano (la más segura)</h2><p class="sub">Abre una <b>ventana de incógnito</b> (Ctrl + Shift + N), pega esta dirección y mira qué aparece. Así ves lo mismo que verá un estudiante.</p><div class="url" id="u"></div>
+<ol style="margin:10px 0 0 1.2em;font-size:.95rem"><li>Aparece <code>{"ok":true,"version":"1.3"}</code> → todo bien en Google. Si sigue fallando, avísame con una captura.</li><li>Aparece una página de <b>iniciar sesión de Google</b> → el acceso no es «Cualquier persona» (ver abajo).</li><li>Dice <b>«Se necesita autorización»</b> → en el editor ejecuta la función <code>instalar</code> y acepta los permisos.</li><li>Dice <b>«No se puede abrir el archivo»</b> o <b>«Function not found»</b> → la dirección es de una implementación borrada, o el código no se guardó.</li><li>La versión que muestra es menor que 1.3 → falta publicar una <b>Nueva versión</b> de la implementación.</li></ol></section>
+<section class="card"><h2>Cómo dejar el acceso correcto</h2><ol style="margin:4px 0 0 1.2em;font-size:.95rem"><li>En tu hoja: <b>Extensiones → Apps Script</b>.</li><li>Arriba a la derecha: <b>Implementar → Administrar implementaciones</b>.</li><li>Pulsa el lápiz ✏️ de la implementación activa y revisa: <b>Ejecutar como: Yo</b> · <b>Quién tiene acceso: Cualquier persona</b>.</li><li>En <b>Versión</b> elige <b>Nueva versión</b> → <b>Implementar</b>.</li><li>Si «Cualquier persona» <u>no aparece</u>, tu cuenta pertenece a una organización de Google que lo bloquea: haz el mismo proceso con una cuenta Gmail normal (copia la hoja y el código a esa cuenta).</li><li>Si Google te dio una <b>URL nueva</b> (pasa con «Nueva implementación»), pégala en <code>datos/pruebas-config.json</code>.</li></ol></section>
+</main>
+<script src="assets/js/pruebas-comun.js"></script>
+<script>
+(function(){
+var $=function(q){return document.querySelector(q)};
+function fila(c,t,d,o){return '<div class="pa '+c+'"><span class="l">'+(c==='ok'?'🟢':c==='mal'?'🔴':'🟠')+'</span><div><b>'+t+'</b>'+(d?'<small>'+d+'</small>':'')+(o||'')+'</div></div>'}
+function revisar(){var R=$('#res');R.innerHTML='<p class="sub">Revisando…</p>';
+ PR.cfg().then(function(c){var u=(c.url||'').trim(),h='';$('#u').textContent=(u?u+(u.indexOf('?')<0?'?':'&')+'accion=ping':'(no hay URL en datos/pruebas-config.json)');
+  if(!u){R.innerHTML=fila('mal','No hay dirección configurada','Pega la URL de la aplicación web (termina en /exec) en <code>datos/pruebas-config.json</code>.');return}
+  var okFmt=/^https:\/\/script\.google\.com\/macros\/s\/[A-Za-z0-9_-]+\/exec$/.test(u);
+  if(okFmt)h+=fila('ok','Formato de la dirección correcto','Termina en /exec y es de script.google.com.');
+  else if(/\/a\/macros\//.test(u))h+=fila('av','La dirección es de un dominio de organización (/a/macros/…)','Con esa dirección solo entran personas de esa organización. Los estudiantes no podrían. Usa una cuenta Gmail normal para publicar.');
+  else if(/\/dev$/.test(u))h+=fila('mal','Es la dirección de PRUEBA (/dev)','Solo funciona para ti. Usa la de la implementación (termina en /exec).');
+  else h+=fila('mal','La dirección no tiene el formato esperado','Debe ser https://script.google.com/macros/s/…/exec (sin espacios ni nada más).');
+  PR.sondear(u).then(function(r){
+   if(r.estado==='ok'){h+=fila('ok','Google responde y el portal puede leerlo','Versión del script: '+(r.version||'?')+(r.version&&parseFloat(r.version)<1.3?' — hay una versión más nueva (1.3): pega el nuevo Code.gs y publica Nueva versión.':'. ¡Todo listo!'))}
+   else if(r.estado==='sin_permiso')h+=fila('mal','Google responde, pero el portal NO puede leer la respuesta','Es la señal de que la aplicación web no está con acceso «Cualquier persona», o falta autorizar el script (ejecutar <code>instalar</code>). Sigue «Cómo dejar el acceso correcto», abajo.');
+   else if(r.estado==='sin_ruta')h+=fila('mal','No se pudo llegar a esa dirección','Revisa que esté bien escrita; si lo está, puede que una extensión del navegador (bloqueador de anuncios) o la red del colegio bloqueen script.google.com. Prueba en otro navegador o con datos móviles.');
+   else h+=fila('av','Respuesta inesperada','Google respondió, pero no con lo esperado: revisa que el código pegado sea el Code.gs completo.');
+   R.innerHTML=h})})}
+$('#otra').addEventListener('click',revisar);revisar();
+})();
+</script>
+</body>
+</html>

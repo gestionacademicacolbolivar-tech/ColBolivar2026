@@ -39,7 +39,7 @@ $('#go').addEventListener('click',function(){var b=this,er=$('#err');er.innerHTM
  b.disabled=true;b.textContent='Registrando…';
  PR.api('registrar',{codigoColegio:$('#col').value,nombre:$('#nom').value,sede:$('#sede').value,area:$('#area').value})
  .then(function(j){PR.codigoDocente(j.codigo);$('#form').hidden=true;$('#listo').hidden=false;$('#hola').textContent=j.nombre.split(' ')[0];$('#cod').textContent=j.codigo;window.scrollTo(0,0)})
- .catch(function(e){er.innerHTML='<div class="msg a">'+E(e.message||'No se pudo registrar.')+'</div>'}).then(function(){b.disabled=false;b.textContent='✔ Registrarme'})});
+ .catch(function(e){er.innerHTML='<div class="msg a">'+E(e.message||'No se pudo registrar.')+(e.codigo==='red'?'<br><a href="pruebas-diagnostico.html"><b>Ver la causa (diagnóstico)</b></a>':'')+'</div>'}).then(function(){b.disabled=false;b.textContent='✔ Registrarme'})});
 $('#cp').addEventListener('click',function(){var b=this,c=$('#cod').textContent;(navigator.clipboard?navigator.clipboard.writeText(c):Promise.reject()).then(function(){b.textContent='✔ Copiado'},function(){prompt('Copia tu código:',c)})});
 })();
 </script>

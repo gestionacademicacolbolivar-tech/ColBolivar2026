@@ -12,12 +12,22 @@ var PR = (function () {
         .then(function (j) { if (!j.ok) throw { codigo: j.error, message: j.mensaje || j.error }; return j; });
     });
   }
-  // Cuando falla la conexión, explica la causa probable (internet, o la implementación de Google sin acceso «Cualquier persona»)
+  // Cuando falla la conexión, averigua la causa probable.
+  // Si «no-cors» llega pero la lectura normal no: Google respondió con una página de inicio de sesión o de autorización (acceso mal configurado).
+  function sondear(url) {
+    var u = url + (url.indexOf('?') < 0 ? '?' : '&') + 'accion=ping';
+    return fetch(u).then(function (r) { return r.json(); }).then(function (j) { return { estado: j && j.ok ? 'ok' : 'raro', version: j && j.version }; }, function () {
+      return fetch(u, { mode: 'no-cors' }).then(function () { return { estado: 'sin_permiso' }; }, function () { return { estado: 'sin_ruta' }; });
+    });
+  }
   function diagnostico(url) {
     if (navigator.onLine === false) return Promise.resolve('No hay internet en este dispositivo. Revisa tu conexión e intenta de nuevo.');
-    return fetch(url + (url.indexOf('?') < 0 ? '?' : '&') + 'accion=ping').then(function (r) { return r.json(); }).then(function (j) {
-      return j && j.ok ? 'La plataforma está conectada, pero no aceptó este envío (¿la prueba pesa mucho?). Intenta otra vez o usa menos imágenes.' : 'La plataforma respondió algo inesperado. Avisa a quien administra el portal.';
-    }, function () { return 'No se pudo conectar con la plataforma de Google. Si tienes internet, quien administra el portal debe revisar que la aplicación web esté publicada con acceso «Cualquier persona» (guía: pruebas/LEEME-INSTALACION.md, paso 3).'; });
+    return sondear(url).then(function (r) {
+      if (r.estado === 'ok') return 'La plataforma está conectada, pero no aceptó este envío (¿la prueba pesa mucho?). Intenta otra vez o usa menos imágenes.';
+      if (r.estado === 'sin_permiso') return 'La dirección de Google responde, pero no permite leer la respuesta: la aplicación web no está publicada con acceso «Cualquier persona», o falta autorizar el script. Quien administra el portal puede ver la causa exacta en la página de diagnóstico.';
+      if (r.estado === 'sin_ruta') return 'No se pudo llegar a la dirección de Google: puede estar mal escrita en datos/pruebas-config.json, o algo en este navegador la bloquea (extensión, red del colegio). Quien administra el portal puede ver la causa exacta en la página de diagnóstico.';
+      return 'La plataforma respondió algo inesperado. Avisa a quien administra el portal.';
+    });
   }
   function E(t) { return String(t === undefined || t === null ? '' : t).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
   function LS(k, v) { try { if (v === undefined) return JSON.parse(localStorage.getItem(k)); localStorage.setItem(k, JSON.stringify(v)); } catch (e) { return null; } }
@@ -103,7 +113,7 @@ var PR = (function () {
   }
   function nota(n) { return (Math.round(n * 10) / 10).toFixed(1).replace('.', ','); }
   function colorNota(n) { return n >= 4 ? '#2fa84f' : n >= 3 ? '#e0a100' : '#d92d3a'; }
-  return { codigoDocente: codigoDocente, api: api, cfg: cfg, E: E, LS: LS, linkPrueba: linkPrueba, linkResultados: linkResultados, qr: qr, mezclar: mezclar, semilla: semilla, misPruebas: misPruebas, guardarPrueba: guardarPrueba, quitarPrueba: quitarPrueba,
+  return { codigoDocente: codigoDocente, api: api, cfg: cfg, sondear: sondear, E: E, LS: LS, linkPrueba: linkPrueba, linkResultados: linkResultados, qr: qr, mezclar: mezclar, semilla: semilla, misPruebas: misPruebas, guardarPrueba: guardarPrueba, quitarPrueba: quitarPrueba,
     desdeExam: desdeExam, desdeTexto: desdeTexto, nota: nota, colorNota: colorNota };
 })();
 if (typeof module !== 'undefined') module.exports = PR;

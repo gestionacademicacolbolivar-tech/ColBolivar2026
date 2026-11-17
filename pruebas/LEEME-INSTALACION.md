@@ -53,6 +53,13 @@ Cada vez que cambie `Code.gs`: pégalo, guarda y **Implementar → Administrar i
 Ejecuta una vez **`crearDisparadorLimpieza`**: cada noche borra las pruebas y resultados con más de **180 días** (`DIAS_RETENCION`). Se guardan solo **nombre y curso** del estudiante. Avisa a estudiantes y acudientes que su nombre se registra para la prueba.
 
 ## Si el portal dice «No se pudo conectar»
+**Primero abre la página de diagnóstico del portal: `pruebas-diagnostico.html`.** Te dice la causa exacta (acceso mal configurado, falta autorizar, dirección mal escrita, versión vieja…).
+
+⚠️ **Cada implementación tiene su propia configuración de acceso y su propia URL.** Si usas «Nueva implementación» obtienes una URL nueva (hay que pegarla en `datos/pruebas-config.json`) y hay que volver a poner «Cualquier persona». Para no cambiar la URL, usa Administrar implementaciones → ✏️ → Nueva versión.
+
+La dirección que sirve es la que termina en `/exec` (no la de «biblioteca», `…/macros/library/…`, ni la de prueba `/dev`).
+
+A mano:
 1. Abre `TU-URL/exec?accion=ping` en el navegador. Si pide iniciar sesión o da error → el acceso **no** es «Cualquier persona» (paso 5).
 2. Si la URL en `datos/pruebas-config.json` cambió o tiene espacios, corrígela.
 3. Si ping funciona pero publicar falla, la prueba es muy pesada: usa menos imágenes.
