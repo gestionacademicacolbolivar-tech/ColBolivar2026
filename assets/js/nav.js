@@ -19,6 +19,7 @@ var items=[
  ['estudio.html','Modo estudio','Practica jugando',ic(2,0,'d'),'estudio.html'],
  ['CALIDAD.html','Calidad','Gestión de calidad',ic(3,2,'d'),'CALIDAD.html'],
  ['PROCESOS.html','Procesos','Gestiones y evidencias',ic(1,1,'d'),'PROCESOS.html'],
+ ['autoevaluacion.html','Autoevaluación 2026','Guía 34 · anónima',ic(2,3,'d'),'autoevaluacion.html'],
  ['ORIENTACION_ESCOLAR.html','Orientación escolar','Apoyo psicosocial',ic(0,3,'d'),'ORIENTACION_ESCOLAR.html'],
  ['PROYECTOS_TRANSVERSALES.html','Proyectos transversales','Proyectos del año',ic(1,3,'d'),'PROYECTOS_TRANSVERSALES.html'],
  ['cartelera.html','Cartelera','Avisos y videos',ic(3,3,'d'),'cartelera.html'],
