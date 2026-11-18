@@ -12,9 +12,11 @@
    "p": [
     181,
     182,
-    183
+    183,
+    283,
+    284
    ],
-   "r": "Protocolo para situaciones Tipo II (resumen):\n1. Reunir a los implicados y testigos y recibir sus descargos por escrito, de puño y letra (con el personero si hace falta). No se hacen interrogatorios: el docente no actúa como policía judicial.\n2. Si hay agresión física, primero garantizar atención en salud. Si deja incapacidad médica, pasa a Tipo III: remisión a salud, acta especial, Policía de Infancia o Comisaría de Familia y aviso a los acudientes.\n3. Elaborar el acta de debido proceso (modo, tiempo y lugar).\n4. Reflexión y orientación con el agresor, con el personero y el psicoorientador.\n5. Llamar a los acudientes: la llamada informativa la hace el Coordinador de convivencia o disciplina.\n6. Sanción pedagógica y compromisos por escrito.\n7. El Comité Escolar de Convivencia informa, hace seguimiento y deja acta; el Rector reporta el caso en el sistema de información de convivencia."
+   "r": "Protocolo para situaciones Tipo II (resumen):\n1. Reunir a los implicados y testigos y recibir sus descargos por escrito, de puño y letra (con el personero si hace falta). No se hacen interrogatorios: el docente no actúa como policía judicial.\n2. Si hay agresión física, primero garantizar atención en salud. Si deja incapacidad médica, pasa a Tipo III: remisión a salud, acta especial, Policía de Infancia o Comisaría de Familia y aviso a los acudientes.\n3. Elaborar el acta de debido proceso (modo, tiempo y lugar).\n4. Reflexión y orientación con el agresor, con el personero y el psicoorientador.\n5. Llamar a los acudientes: la llamada informativa la hace el Coordinador de convivencia o disciplina.\n6. Sanción pedagógica y compromisos por escrito.\n7. El Comité Escolar de Convivencia informa, hace seguimiento y deja acta; el Rector reporta el caso en el sistema de información de convivencia.\nVersión del anexo (págs. 283–284): 1) remitir a coordinación (con psicorientación); 2) remitir de inmediato a las entidades competentes si hay daño y dejar constancia; 3) informar a los padres de inmediato; 4) abrir espacios con las partes y los acudientes; 5) según la gravedad, remitir al Comité de Convivencia de la sede; 6) acciones proporcionales: trabajo pedagógico de consulta y, si es necesario, trabajo pedagógico en casa por 3 días (5 si es reincidente), con resolución de estrategia pedagógica y acta de compromiso.\nLas dos versiones no son idénticas; ante la duda, confirma con Coordinación de Convivencia."
   },
   {
    "id": "tipo1",
@@ -25,9 +27,11 @@
    "f": "documentos/02-convivencia-e-inclusion/Manual de convivencia.pdf",
    "d": "Manual de convivencia",
    "p": [
-    181
+    181,
+    281,
+    282
    ],
-   "r": "Sanciones para situaciones Tipo I:\n1. Trabajo manuscrito de dos hojas sobre la infracción, como reflexión.\n2. Anotación de los hechos en el observador del estudiante.\n3. Llamado de atención conductual y reflexivo.\n4. Compromiso escrito de no reincidencia, con copia al observador."
+   "r": "Situaciones Tipo I: sanciones y proceso. Sanciones (Manual pág. 181): trabajo manuscrito de dos hojas sobre la infracción; anotación en el observador; llamado de atención conductual y reflexivo; compromiso escrito de no reincidencia con copia al observador. Proceso del anexo (págs. 281–282): reunir a las partes y mediar de forma formativa, buscar reconciliación y soluciones, firmar compromisos en el observador, registrar en el diario de campo y en el seguimiento de asistencia, citar al acudiente y aplicar acciones proporcionales: amonestación verbal y luego escrita. Los ejemplos de estas situaciones están en la pág. 281."
   },
   {
    "id": "nota-periodo",
@@ -656,14 +660,14 @@
   {
    "id": "pei-mision",
    "k": [
-    "mision|vision|politica de calidad|horizonte institucional"
+    "\\bmision\\b|\\bvision\\b|politica de calidad|horizonte institucional|proposito del colegio|hacia donde va el colegio|a donde quiere llegar|en el ano 2027"
    ],
    "f": "documentos/01-academicos/RESIGNIFICACION PEI 2024-2027 COLEGIO SIMON BOLIVAR.pdf",
    "d": "PEI 2024-2027",
    "p": [
     24
    ],
-   "r": "La Misión, la Visión y la Política de Calidad están en el Horizonte Institucional (PEI, pág. 24). En el PDF ese texto aparece como imagen, por eso no puedo citarlo aquí: ábrelo en esa página."
+   "r": "Horizonte institucional (PEI, pág. 24; texto leído de una imagen con OCR, verifícalo en la página).\n• Misión: el Colegio Simón Bolívar es una institución de carácter oficial que ofrece un servicio de calidad en los niveles de Preescolar, Básica, Media Académica y Técnica, propendiendo por la formación integral del estudiante desde el «saber ser», «saber hacer» y «saber saber», con proyectos en el marco de la inclusión educativa, la evaluación formativa y el trabajo colaborativo que fortalecen la construcción de proyectos de vida con éxito.\n• Visión: en el año 2027 será reconocido a nivel regional y nacional por desarrollar procesos académicos y administrativos de alta calidad, apoyado en el manejo de las TIC, la inclusión escolar y la convivencia ciudadana pospandemia.\n• Política de calidad: «Ofrecer un servicio educativo de alta calidad…» (el resto está en la imagen)."
   },
   {
    "id": "pei-simbolos",
@@ -1045,9 +1049,10 @@
    "d": "Manual de convivencia",
    "p": [
     211,
-    210
+    210,
+    285
    ],
-   "r": "Alcohol, tabaco y drogas (Manual págs. 210–217): está prohibido y sancionado el consumo de bebidas embriagantes (Ley 124/1994 y Decreto 120/2010) y de tabaco y cigarrillo (Ley 1335/2009) por menores de edad; aplica también a vapeadores y cigarrillos electrónicos. Lo mismo rige para sustancias psicotrópicas, estupefacientes, sintéticas, inhalantes y drogas psiquiátricas no formuladas. El protocolo para casos de drogas y sustancias prohibidas empieza en la pág. 210."
+   "r": "Alcohol, tabaco y drogas (Manual págs. 210–217): está prohibido y sancionado el consumo de bebidas embriagantes (Ley 124/1994 y Decreto 120/2010) y de tabaco y cigarrillo (Ley 1335/2009) por menores de edad; aplica también a vapeadores y cigarrillos electrónicos. Lo mismo rige para sustancias psicotrópicas, estupefacientes, sintéticas, inhalantes y drogas psiquiátricas no formuladas. El protocolo para casos de drogas y sustancias prohibidas empieza en la pág. 210.\nEl anexo del Manual (pág. 285) clasifica como situación Tipo III el porte, tráfico y consumo de sustancias psicoactivas (incluidos fármacos sin prescripción), los cigarrillos electrónicos (vapers), incitar a su consumo o distribución y el consumo de bebidas alcohólicas."
   },
   {
    "id": "man-abuso-sexual",
@@ -1072,9 +1077,12 @@
    "f": "documentos/02-convivencia-e-inclusion/Manual de convivencia.pdf",
    "d": "Manual de convivencia",
    "p": [
-    126
+    126,
+    281,
+    283,
+    285
    ],
-   "r": "Manifestaciones erótico-sexuales (Manual pág. 126): si un estudiante mayor de 14 años incurre en actos sexuales inapropiados con menores de 14, o en su presencia, se remite a la Policía de Infancia y Adolescencia (Ley 1098/2006 art. 44 num. 9, Ley 1146/2007 y Ley 1620/2013 arts. 18 y 19). Revisa esa página para el detalle completo."
+   "r": "Manifestaciones erótico-sexuales (Manual pág. 126): si un estudiante mayor de 14 años incurre en actos sexuales inapropiados con menores de 14, o en su presencia, se remite a la Policía de Infancia y Adolescencia (Ley 1098/2006 art. 44 num. 9, Ley 1146/2007 y Ley 1620/2013 arts. 18 y 19). Revisa esa página para el detalle completo.\nEl anexo del Manual clasifica así: las manifestaciones amorosas y afectivas exageradas son Tipo I (pág. 281); los comportamientos sexuales inadecuados (exhibirse, tocar a otros, besar sin consentimiento, material pornográfico) son Tipo II (pág. 283); y los delitos contra la integridad sexual son Tipo III (pág. 285)."
   },
   {
    "id": "man-ruta-acoso",
@@ -1624,10 +1632,11 @@
    "f": "documentos/01-academicos/RESIGNIFICACION PEI 2024-2027 COLEGIO SIMON BOLIVAR.pdf",
    "d": "PEI 2024-2027",
    "p": [
+    154,
     17,
     18
    ],
-   "r": "El PEI no trae una lista de directivos vigente; en su historia (págs. 17–18) registra a los rectores: Lic. Luis Eduardo Bastos Porras (nombrado en propiedad en los primeros años del colegio), Esp. Carlos Humberto Lobo (2006), Mag. Serafín Bautista (2007) y el Dr. Jesús Maldonado Serrano, nombrado el 20 de mayo de 2008, quien conformó el grupo de calidad y lideró la modernización del colegio. Para saber quién ejerce hoy el cargo, confirma con la Secretaría o la Rectoría."
+   "r": "Según la tabla del Comité Escolar de Convivencia del Manual (pág. 154, año 2024), el rector es el Dr. Jesús Maldonado Serrano. El PEI (págs. 17–18) cuenta que fue nombrado el 20 de mayo de 2008, tras los rectores Luis Eduardo Bastos Porras, Carlos Humberto Lobo (2006) y Serafín Bautista (2007), y que conformó el grupo de calidad que lideró la modernización del colegio. Confirma con la Secretaría o la Rectoría quién ejerce hoy el cargo."
   },
   {
    "id": "dir-perfil-directivo",
@@ -1680,7 +1689,7 @@
     182,
     245
    ],
-   "r": "Coordinadores (Manual y SIEE): el colegio tiene coordinaciones de Convivencia y Académica en cada sede y jornada, y los coordinadores de cada sede integran el Comité de Convivencia (Manual, pág. 155). Convivencia atiende permisos de salida, retardos, autorizaciones de los padres, compromisos y el decomiso de bienes; Académica hace seguimiento al SIEE, atiende las reclamaciones de evaluación y recibe, con Convivencia, las excusas de inasistencia. Pregunta por «coordinador de convivencia» o «coordinador académico» para ver cada función con su página.",
+   "r": "Coordinadores (Manual y SIEE): el colegio tiene coordinaciones de Convivencia y Académica en cada sede y jornada, y los coordinadores de cada sede integran el Comité de Convivencia (Manual, pág. 155). Convivencia atiende permisos de salida, retardos, autorizaciones de los padres, compromisos y el decomiso de bienes; Académica hace seguimiento al SIEE, atiende las reclamaciones de evaluación y recibe, con Convivencia, las excusas de inasistencia. Pregunta por «coordinador de convivencia» o «coordinador académico» para ver cada función con su página. Los coordinadores que figuran en el Manual (pág. 154, año 2024) son Carolina Bochagá y Claudia Helena Tamayo (sede central, mañana y tarde), Salvador Peña (Hernando Acevedo Ortega) y Homero Cuevas (San Martín).",
    "o": [
     {
      "f": "documentos/01-academicos/GA-D1_MANUAL_SIEE_2024_REORGANIZADO 2026.pdf",
@@ -1881,9 +1890,10 @@
    "f": "documentos/02-convivencia-e-inclusion/Manual de convivencia.pdf",
    "d": "Manual de convivencia",
    "p": [
-    161
+    161,
+    283
    ],
-   "r": "Fraude y copia: el Manual califica como falta grave el fraude comprobado en evaluaciones y trabajos (pág. 161), con las sanciones de las faltas graves (pág. 162). El SIEE (art. 26) exige además a los estudiantes no cometer infracción académica de ninguna categoría: fraude, copia o plagio.",
+   "r": "Fraude y copia: el Manual califica como falta grave el fraude comprobado en evaluaciones y trabajos (pág. 161), con las sanciones de las faltas graves (pág. 162); el anexo (pág. 283) lo clasifica como situación Tipo II (fraude y plagio). El SIEE (art. 26) exige además a los estudiantes no cometer infracción académica de ninguna categoría: fraude, copia o plagio. Las dos clasificaciones difieren: confirma con Coordinación.",
    "o": [
     {
      "f": "documentos/01-academicos/GA-D1_MANUAL_SIEE_2024_REORGANIZADO 2026.pdf",
@@ -2292,6 +2302,82 @@
      "d": "Manual de convivencia",
      "p": [
       245
+     ]
+    }
+   ]
+  },
+  {
+   "id": "man-tipo1-ejemplos",
+   "k": [
+    "(es|son|cuales son|que son) (una |las )?(situacion(es)?|falta(s)?) tipo (i|1)\\b|ejemplos? de (situacion(es)?|falta(s)?) tipo (i|1)\\b|que (situacion(es)?|falta(s)?) (son|corresponden a) tipo (i|1)\\b|proceso (para|de) (la )?atencion (de )?(situacion(es)? )?tipo (i|1)\\b|tipo (i|1)\\b (incluye|incluyen|ejemplos)"
+   ],
+   "f": "documentos/02-convivencia-e-inclusion/Manual de convivencia.pdf",
+   "d": "Manual de convivencia",
+   "p": [
+    281,
+    282
+   ],
+   "r": "Situaciones Tipo I (anexo del Manual, págs. 281–282; Ley 1620/2013, art. 40): conflictos mal manejados y situaciones esporádicas que afectan el clima escolar sin dañar el cuerpo ni la salud. Ejemplos: llegar tarde a la jornada o al aula; interrumpir la clase (chistes, objetos, gritos, burlas); desacatar instrucciones; inasistencia injustificada; vocabulario soez por primera vez; actividades ajenas a la asignatura; uso inadecuado del uniforme; arrojar basura fuera de los sitios asignados; faltas de respeto entre compañeros (gritos, ofensas, apodos, empujones); dañar o rayar bienes; juegos bruscos sin lesión; ausentarse del aula o de la institución; manifestaciones amorosas exageradas; comer en clase sin autorización; omitir citaciones a los padres; esconder pertenencias; no trabajar en clase; excluir o burlarse de compañeros; incumplir las normas de uso de baños, laboratorios y demás espacios; irrespetar los símbolos patrios e institucionales.\nProceso: 1) reunir a las partes y mediar de forma formativa (pueden participar estudiantes mediadores, con registro en la plataforma webcolegios); 2) buscar una solución imparcial con acciones de reconciliación; 3) firmar compromisos en el observador; 4) registrar en el diario de campo del docente; 5) registrar en el formato de seguimiento de asistencia; 6) hacer seguimiento; 7) citar al padre o acudiente para acuerdos y firmas con documento; 8) aplicar acciones proporcionales: amonestación verbal y, en segunda instancia, amonestación escrita.\nOjo: esta clasificación del anexo difiere en parte de la de las págs. 160–185 del mismo Manual; ante un caso dudoso, confirma con Coordinación de Convivencia."
+  },
+  {
+   "id": "man-tipo2-ejemplos",
+   "k": [
+    "(es|son|cuales son|que son) (una |las )?(situacion(es)?|falta(s)?) tipo (ii|2)\\b|ejemplos? de (situacion(es)?|falta(s)?) tipo (ii|2)\\b|que (situacion(es)?|falta(s)?) (son|corresponden a) tipo (ii|2)\\b|tipo (ii|2)\\b (incluye|incluyen|ejemplos)"
+   ],
+   "f": "documentos/02-convivencia-e-inclusion/Manual de convivencia.pdf",
+   "d": "Manual de convivencia",
+   "p": [
+    283,
+    284
+   ],
+   "r": "Situaciones Tipo II (anexo del Manual, págs. 283–284): agresión escolar, acoso (bullying) y ciberacoso que no son delito y que son repetidos o sistemáticos, o dañan el cuerpo o la salud sin incapacidad. Ejemplos: reincidir 3 veces o más en situaciones Tipo I; agredir físicamente; faltar al respeto a docentes, directivos o acudientes; acoso o burla sistemática; ciberbullying; hurto; comportamientos sexuales inadecuados; portar y compartir material pornográfico; comportamientos externos que afecten el buen nombre del colegio; amenazas; incitar a otros a agredir; fraude; plagio; agresión y prácticas xenofóbicas.\nProceso: 1) remitir a coordinación (con apoyo de psicorientación, en formato escrito o en webcolegios); 2) remitir de inmediato a las entidades competentes si hay o se presume daño, dejando constancia; 3) informar de inmediato a los padres; 4) abrir espacios con las partes y sus acudientes, protegiendo la intimidad (el estudiante sin acudiente no participa en encuentros con acudientes de otros); 5) según la gravedad, remitir al Comité de Convivencia de la sede; 6) aplicar acciones proporcionales: trabajo pedagógico de consulta con material visual y, si es necesario, trabajo pedagógico en casa por 3 días (5 si es reincidente), con resolución de estrategia pedagógica y acta de compromiso.\nOjo: esta clasificación del anexo difiere en parte de la de las págs. 160–185 del mismo Manual; ante un caso dudoso, confirma con Coordinación de Convivencia."
+  },
+  {
+   "id": "man-tipo3-ejemplos",
+   "k": [
+    "(es|son|cuales son|que son) (una |las )?(situacion(es)?|falta(s)?) tipo (iii|3)\\b|ejemplos? de (situacion(es)?|falta(s)?) tipo (iii|3)\\b|que (situacion(es)?|falta(s)?) (son|corresponden a) tipo (iii|3)\\b|tipo (iii|3)\\b (incluye|incluyen|ejemplos)"
+   ],
+   "f": "documentos/02-convivencia-e-inclusion/Manual de convivencia.pdf",
+   "d": "Manual de convivencia",
+   "p": [
+    285,
+    286
+   ],
+   "r": "Situaciones Tipo III (anexo del Manual, págs. 285–286): agresión escolar que sea presunto delito contra la libertad, integridad y formación sexual, o cualquier otro delito de la ley penal. Ejemplos: reincidir en Tipo II; portar, traficar o consumir sustancias psicoactivas (incluidos fármacos sin prescripción); portar y usar cigarrillos electrónicos (vapers); incitar a distribuir o consumir sustancias; incitar o facilitar la autoagresión o ideación suicida; consumir bebidas alcohólicas; portar armas; hurto y hurto agravado; dañar vehículos de miembros de la comunidad; delitos contra la integridad sexual; agredir con objetos contundentes o cortopunzantes; permitir el ingreso de pandillas o grupos ilegales; inducir a la prostitución, trata o reclutamiento forzado.\nProceso: 1) remitir a coordinación, que con psicorientación acompaña y hace las remisiones a las autoridades; 2) atención inmediata y remisión de quien tenga lesión o presunto daño; 3) informar a los padres de inmediato; 4) adoptar medidas de protección para los implicados; 5) remitir al Comité de Convivencia institucional; 6) el Rector reporta el caso al Sistema de Información Unificado de Convivencia Escolar; 7) los casos más graves o reincidentes pasan al Consejo Directivo para estudiar la pérdida del cupo.\nOjo: esta clasificación del anexo difiere en parte de la de las págs. 160–185 del mismo Manual; ante un caso dudoso, confirma con Coordinación de Convivencia."
+  },
+  {
+   "id": "dir-comite-nombres",
+   "k": [
+    "nombres? (de los )?(coordinadores|directivos|directivas)|quienes son (los|las) (coordinadores|directivos)|como se llaman (los|las) (coordinadores|directivos)|quien es (el|la) coordinador(a)?( de| de la)? (sede|jornada|central|san martin|hernando)|coordinador(a)? (de la )?sede|directorio|quien es (el|la) (orientador|psicorientador|docente orientadora)|quien es (el|la) lider de convivencia"
+   ],
+   "f": "documentos/02-convivencia-e-inclusion/Manual de convivencia.pdf",
+   "d": "Manual de convivencia",
+   "p": [
+    154
+   ],
+   "r": "Directivos y coordinadores según la tabla del Comité Escolar de Convivencia (Manual, pág. 154, año 2024): Rector, Jesús Maldonado Serrano; coordinadora de la sede central, jornada mañana, Carolina Bochagá; coordinadora de la sede central, jornada tarde, Claudia Helena Tamayo; coordinador de la sede Hernando Acevedo Ortega, Salvador Peña; coordinador de la sede San Martín, Homero Cuevas; docente orientadora, Marisol Solarte Rodríguez; representante de los docentes, Wencith Guzmán Gutiérrez. La tabla también incluye al líder institucional de convivencia escolar y al personero estudiantil 2024, sin nombre. Son datos de ese año: confirma con Rectoría quién ejerce hoy cada cargo."
+  },
+  {
+   "id": "pei-horas-semanales",
+   "k": [
+    "horas semanales|intensidad horaria|cuantas horas (a la semana|semanales|de clase)|carga horaria|total de horas|cuantas horas tiene|horario semanal"
+   ],
+   "f": "documentos/01-academicos/RESIGNIFICACION PEI 2024-2027 COLEGIO SIMON BOLIVAR.pdf",
+   "d": "PEI 2024-2027",
+   "p": [
+    83,
+    85
+   ],
+   "r": "Horas semanales del plan de estudios (PEI págs. 83–88; cifras leídas de imágenes con OCR, verifícalas en la página): educación inicial y primera infancia, 20 horas; 1.º a 5.º, 25 horas del ciclo común; 10.º y 11.º, 35 horas del ciclo común. La propuesta Yukpa también suma 25 horas semanales (pág. 88). Los totales de 6.º a 9.º y las horas por área están en las págs. 84–87.",
+   "o": [
+    {
+     "f": "documentos/01-academicos/RESIGNIFICACION PEI 2024-2027 COLEGIO SIMON BOLIVAR.pdf",
+     "d": "PEI 2024-2027",
+     "p": [
+      84,
+      85,
+      86,
+      87
      ]
     }
    ]

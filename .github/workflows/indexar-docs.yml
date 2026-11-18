@@ -1,11 +1,19 @@
 name: Indexar documentos para ARIA
+# Cada vez que subes o cambias un documento (PDF, HTML, DOCX, MD, TXT) este flujo:
+#  1) lee todo el repositorio y actualiza el índice clásico (indice-docs.json),
+#  2) pasa OCR en español a las páginas de PDF que son imagen (datos/ocr-paginas.json),
+#  3) extrae las tablas de los PDF como datos (datos/tablas-documentos.json),
+#  4) genera el índice por párrafos con título de sección y página (indice-parrafos.json) que usa ARIA.
 on:
   push:
-    paths-ignore: ["indice-docs.json", "datos/catalogo-documentos.json"]
+    paths-ignore: ["indice-docs.json", "indice-parrafos.json", "datos/catalogo-documentos.json", "datos/ocr-paginas.json", "datos/tablas-documentos.json"]
   workflow_dispatch:
 permissions:
   contents: write
   actions: write
+concurrency:
+  group: indexar-aria
+  cancel-in-progress: true
 jobs:
   indexar:
     runs-on: ubuntu-latest
@@ -13,17 +21,28 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: {python-version: "3.12"}
-      - run: pip install pypdf beautifulsoup4 python-docx
+      - name: Herramientas (lectura de PDF y OCR en español)
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq poppler-utils tesseract-ocr tesseract-ocr-spa
+      - run: pip install pypdf beautifulsoup4 python-docx pdfplumber
       - run: python scripts/indexar_docs.py
+      - name: OCR de páginas-imagen (solo PDF nuevos o cambiados)
+        run: python scripts/ocr_paginas.py
+      - name: Extraer tablas de los PDF
+        run: python scripts/tablas_pdf.py
+      - name: Índice por párrafos
+        run: python scripts/indexar_parrafos.py
       - run: python scripts/generar_catalogo_documentos.py
-      - name: Guardar índice y volver a publicar el sitio
+      - name: Guardar índices y volver a publicar el sitio
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           git config user.name "aria-bot"; git config user.email "aria-bot@users.noreply.github.com"
-          git add indice-docs.json datos/catalogo-documentos.json
+          git add indice-docs.json indice-parrafos.json datos/catalogo-documentos.json datos/ocr-paginas.json datos/tablas-documentos.json
           if ! git diff --cached --quiet; then
             git commit -m "Actualizar índice de ARIA"
+            git pull --rebase origin main || true
             git push
             gh workflow run static.yml || echo "Publica el sitio manualmente (static.yml sin workflow_dispatch)"
           fi
