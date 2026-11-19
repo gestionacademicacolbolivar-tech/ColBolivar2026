@@ -104,7 +104,7 @@ details.ayuda ul{margin:6px 0 4px 1.1em}
 .opt{position:relative;display:block;border:2px solid var(--line);border-radius:14px;padding:10px 12px 10px;cursor:pointer;background:#fff;font-size:.88rem;line-height:1.38;transition:transform .15s,box-shadow .15s}
 .opt:hover{transform:translateY(-2px);box-shadow:0 6px 14px #0002}
 .opt input{position:absolute;opacity:0}
-.opt b{display:flex;align-items:center;gap:8px;font:800 .92rem Sora;margin-bottom:5px;color:var(--c)}
+.opt b{display:flex;align-items:center;gap:8px;font:800 .92rem Sora;margin-bottom:5px;color:#1d2a22}
 .opt b i{font-style:normal;display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--c);color:#fff}
 .opt:focus-within{outline:3px solid var(--o)}
 .opt:has(input:checked){border-color:var(--c);background:color-mix(in srgb,var(--c) 10%,#fff);box-shadow:0 0 0 3px color-mix(in srgb,var(--c) 30%,transparent)}
@@ -189,6 +189,73 @@ table.mx tr.tg td{background:var(--gc);color:#fff;font-weight:800;text-align:lef
  table.mx{font-size:9.5px}
  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
+
+/* ---- inicio compacto ---- */
+.nov{border-top:8px solid var(--o)}
+.nov .tag{display:inline-block;background:var(--o);color:#3a2200;font:800 .75rem Nunito;border-radius:99px;padding:3px 12px;margin-bottom:6px}
+.nov-l{list-style:none;padding:0;display:grid;gap:8px}
+.nov-l li{display:flex;gap:12px;align-items:flex-start;background:#f6faf5;border:1px solid var(--line);border-radius:14px;padding:9px 12px;font-size:.95rem}
+.nov-l li i{flex:none;min-width:48px;text-align:center;font:800 .95rem Sora,sans-serif;font-style:normal;background:var(--n);color:#fff;border-radius:10px;padding:4px 6px}
+.fuente{font-size:.78rem;color:var(--mut);margin-top:10px}
+.pasos{grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr))}
+.lnk{all:unset;cursor:pointer;color:var(--n);font-weight:800;text-decoration:underline}
+.lnk:focus-visible{outline:3px solid var(--o)}
+/* ---- menú de gestiones ---- */
+.mgs{display:grid;gap:14px;grid-template-columns:repeat(2,1fr)}
+@media(max-width:700px){.mgs{grid-template-columns:1fr}}
+.mg{all:unset;box-sizing:border-box;cursor:pointer;display:grid;gap:6px;background:#fff;border:1px solid var(--line);border-left:10px solid var(--gc);border-radius:20px;padding:16px 18px;box-shadow:0 6px 20px #1c4f2712;transition:transform .15s,box-shadow .15s;position:relative}
+.mg:hover{transform:translateY(-3px);box-shadow:0 12px 26px #1c4f2722}
+.mg:focus-visible{outline:3px solid var(--o);outline-offset:3px}
+.mg .e{font-size:2rem;line-height:1}
+.mg b{font:800 1.15rem Sora,sans-serif;color:var(--gc)}
+.mg small{color:var(--mut);font-weight:700;font-size:.86rem}
+.mg .st{font-weight:800;font-size:.85rem}
+.mg .pb{display:block;height:8px;border-radius:99px;background:#e6eee5;overflow:hidden}
+.mg .pb i{display:block;height:100%;background:var(--gc);border-radius:99px}
+.mg .go{font-weight:800;color:#fff;background:var(--gc);border-radius:99px;padding:8px 16px;justify-self:start;margin-top:4px}
+.mg em{font-style:normal;font-size:.78rem;color:var(--mut);font-weight:700}
+/* ---- evaluación paso a paso ---- */
+body.foco .hero,body.foco #aviso-modo{display:none}
+#ev-wiz{max-width:860px;margin:0 auto;scroll-margin-top:70px}
+.wtop{display:flex;gap:12px;align-items:center;margin-bottom:8px}
+.wtop .wt{flex:1;min-width:0}
+.wtop .wt b{display:block;font:800 1.02rem Sora,sans-serif}
+.wtop .wt small{color:var(--mut);font-weight:700}
+.btn.sm{padding:7px 14px;font-size:.88rem}
+.wbar{height:10px;border-radius:99px;background:#e1eae0;overflow:hidden;margin-bottom:14px}
+.wbar i{display:block;height:100%;width:0;background:var(--gc);border-radius:99px;transition:width .35s}
+.wz{background:#fff;border:1px solid var(--line);border-radius:24px;padding:clamp(16px,3vw,30px);box-shadow:0 10px 30px #1c4f2714;min-height:300px}
+.wz.in-r{animation:inr .3s ease}.wz.in-l{animation:inl .3s ease}
+@keyframes inr{from{opacity:0;transform:translateX(26px)}to{opacity:1;transform:none}}
+@keyframes inl{from{opacity:0;transform:translateX(-26px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.wz.in-r,.wz.in-l{animation:none}}
+.wz .crumb{display:inline-block;background:color-mix(in srgb,var(--gc) 14%,#fff);color:var(--gc);font:800 .8rem Nunito;border-radius:99px;padding:3px 12px;margin-bottom:10px}
+.wz h3.q{font-size:clamp(1.2rem,2.6vw,1.6rem);color:var(--ink);margin-bottom:8px}
+.wz .hint{color:var(--mut);font-size:.9rem;margin-bottom:14px}
+.wz .pd{font-size:1.02rem;margin:6px 0 12px}
+.wz .chips{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+.wz .chips span{background:#eef4ee;border-radius:99px;padding:3px 12px;font-weight:800;font-size:.82rem;color:var(--mut)}
+.wz .qn{margin-top:12px;font-size:.82rem;color:var(--mut);font-weight:700;text-align:center}
+.opts.v{grid-template-columns:repeat(2,1fr);gap:10px}
+@media(max-width:700px){.opts.v{grid-template-columns:1fr}}
+.opts.v .opt{font-size:.97rem;padding:12px 14px}
+.opts.v .opt b{font-size:1rem}
+.wnav{display:flex;justify-content:space-between;gap:10px;margin-top:14px}
+@media(max-width:900px){.wnav{flex-direction:column-reverse}.wnav .btn{width:100%;justify-content:center}.wnav>span{display:none}}
+.fin-row{display:grid;grid-template-columns:1fr auto;gap:6px 12px;align-items:center;border:1px solid var(--line);border-radius:14px;padding:8px 12px;margin:8px 0}
+.fin-row b{font-size:.95rem}
+.sqs{display:flex;gap:4px;flex-wrap:wrap}
+.sq{width:20px;height:20px;border-radius:6px;display:inline-block}
+.fin-row details{grid-column:1/-1}
+.fin-row details summary{cursor:pointer;font-size:.85rem;font-weight:800;color:var(--n)}
+.fin-row textarea{margin-top:6px}
+.falta{background:#fff7e6;border:1px solid #ffd58a;border-radius:12px;padding:8px 12px;font-size:.9rem;margin:10px 0}
+.gracias{text-align:center;padding:10px 0}
+.gracias .big{font-size:3.4rem}
+/* ---- resultados: listas por gestión ---- */
+.chips2{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 8px}
+.chip{border:2px solid var(--line);background:#fff;border-radius:99px;padding:6px 14px;font-weight:800;font-size:.9rem}
+.chip.on{background:var(--gc);border-color:var(--gc);color:#fff}
 </style></head>
 <body>
 <header class="hero" id="hero">
@@ -212,42 +279,48 @@ table.mx tr.tg td{background:var(--gc);color:#fff;font-weight:800;text-align:lef
 
  <!-- INICIO -->
  <section class="panel on" id="t-inicio" role="tabpanel" aria-labelledby="b-inicio">
+  <div class="card nov">
+   <span class="tag">Actualizada en 2026</span>
+   <h2>¿Qué hay de nuevo en la Guía 34?</h2>
+   <p class="sub">Este 2026 el Ministerio de Educación publicó la actualización de la Guía 34 (la anterior era de 2008). Lo esencial, en un minuto:</p>
+   <ul class="nov-l">
+    <li><i>93→45</i><span><b>Menos componentes.</b> Se redujeron de 93 a 45 para que la autoevaluación sea más clara y fácil de aplicar.</span></li>
+    <li><i>4</i><span><b>Se mantiene la base:</b> las cuatro áreas de gestión, los cuatro niveles (Existencia, Pertinencia, Apropiación y Mejoramiento continuo) y la ruta autoevaluación → plan de mejoramiento → seguimiento.</span></li>
+    <li><i>✍️</i><span><b>Textos renovados.</b> Los descriptores incorporan la formación integral, el liderazgo distribuido, la evaluación formativa, la inclusión, el bienestar, la transformación digital y la sostenibilidad.</span></li>
+    <li><i>🗂️</i><span><b>Con evidencias.</b> La guía sugiere en qué fuentes apoyarse para cada proceso; las verás al empezar cada uno.</span></li>
+    <li><i>💬</i><span><b>Conversar, no acumular papeles.</b> Los descriptores describen cómo se desarrollan los procesos y las capacidades de gestión, no una lista de documentos.</span></li>
+   </ul>
+   <p class="fuente">Fuente: Guía No. 34 actualizada, Ministerio de Educación Nacional, 2026 (presentación, pp. 8 a 10, y Anexo 1).</p>
+  </div>
   <div class="card">
    <h2>¿Cómo funciona?</h2>
-   <p class="sub">Basado en el Paso 2 de la Guía 34: «Evaluación de las áreas de gestión» y en el instrumento del Anexo 1.</p>
    <div class="pasos">
-    <div class="paso"><b>Lee y elige</b>En cada componente verás 4 descripciones. Elige la que mejor cuente cómo está hoy el colegio.</div>
-    <div class="paso"><b>Apóyate en evidencias</b>Cada proceso trae las fuentes de evidencia que sugiere la guía (Anexo 3). Si no tienes información, marca «No tengo información».</div>
-    <div class="paso"><b>Envía sin registrarte</b>No pedimos nombre ni correo. Puedes evaluar solo las gestiones que conoces.</div>
-    <div class="paso"><b>Mira el resultado</b>El tablero y el informe se actualizan solos con todas las respuestas del colegio.</div>
+    <div class="paso"><b>Elige una gestión</b>Puedes evaluar solo la que conoces. No tienes que hacer las cuatro.</div>
+    <div class="paso"><b>Responde de a una</b>Verás una pregunta a la vez, con 4 descripciones. Escoge la que mejor cuente cómo está el colegio.</div>
+    <div class="paso"><b>Envía sin registrarte</b>Cada gestión se envía por separado y de forma anónima.</div>
    </div>
-   <div class="row" style="margin-top:16px"><button class="btn o" data-go="evaluar">✍️ Comenzar mi autoevaluación</button><button class="btn l" data-go="resultados">📊 Ver resultados</button></div>
+   <details class="ayuda" style="margin-top:12px"><summary>Ver qué significa cada nivel</summary><div class="escala" id="escala" style="margin-top:10px"></div></details>
+   <div class="row" style="margin-top:16px"><button class="btn o" data-go="evaluar">✍️ Elegir gestión y empezar</button><button class="btn l" data-go="resultados">📊 Ver resultados</button></div>
   </div>
-  <div class="anon"><span class="i">🔒</span><div><b>Anónima de verdad.</b> No se guarda nombre, correo ni dirección de internet. Solo se registran las valoraciones, tu rol (opcional) y los comentarios que quieras dejar. Evita escribir nombres de personas en los comentarios.</div></div>
-  <div class="card" style="margin-top:18px">
-   <h2>La escala de 4 niveles de la guía</h2>
-   <p class="sub">Cada componente se valora de 1 a 4, según el nivel de desarrollo del proceso.</p>
-   <div class="escala" id="escala"></div>
-  </div>
-  <div class="card"><h2>Las cuatro gestiones que vamos a evaluar</h2><p class="sub">45 componentes en 15 procesos.</p><div class="grid g4" id="gcards"></div></div>
+  <div class="anon"><span class="i">🔒</span><div><b>Anónima de verdad.</b> No se guarda nombre, correo ni dirección de internet. Evita escribir nombres de personas en los comentarios.</div></div>
  </section>
 
  <!-- EVALUAR -->
  <section class="panel" id="t-evaluar" role="tabpanel" aria-labelledby="b-evaluar">
-  <div id="ev-hecho" hidden></div>
-  <div id="ev-form">
+  <div id="ev-menu">
    <div class="card">
-    <h2>Mi autoevaluación</h2>
-    <p class="sub">Responde lo que conozcas. Tu avance se guarda solo en este dispositivo mientras escribes.</p>
-    <div class="row">
-     <div class="rol"><label for="rol"><b>¿Desde qué rol evalúas?</b> (opcional)</label><select id="rol"></select></div>
-     <div class="rol" id="clave-box" hidden><label for="clave"><b>Clave de participación</b></label><input id="clave" type="password" autocomplete="off" placeholder="Te la da coordinación"></div>
-    </div>
+    <h2>¿Qué gestión quieres evaluar?</h2>
+    <p class="sub">Escoge una. Cada gestión se responde y se envía por separado: puedes hacer una hoy y otra después.</p>
+    <div class="rol"><label for="rol"><b>Tu rol</b> (opcional; ayuda a entender la participación)</label><select id="rol"></select></div>
    </div>
-   <div class="prog" id="prog" aria-live="polite"></div>
-   <div class="gtabs" id="gtabs" role="tablist" aria-label="Gestiones"></div>
-   <div id="gbody"></div>
-   <div class="navbtns" id="gnav"></div>
+   <div class="mgs" id="mg"></div>
+   <p class="sub" style="text-align:center;margin-top:14px"><button class="lnk" data-go="inicio">ℹ️ ¿Qué cambió en la Guía 34?</button> · <button class="lnk" data-newp>👤 Otra persona usa este dispositivo</button></p>
+  </div>
+  <div id="ev-wiz" hidden>
+   <div class="wtop" id="wz-top"></div>
+   <div class="wbar" id="wz-bar"><i></i></div>
+   <div class="wz" id="wz" aria-live="polite"></div>
+   <div class="wnav" id="wz-nav"></div>
   </div>
  </section>
 
@@ -278,7 +351,6 @@ table.mx tr.tg td{background:var(--gc);color:#fff;font-weight:800;text-align:lef
 </main>
 
 <dialog id="mod" aria-labelledby="mtit"><div class="mh"><h2 id="mtit"></h2><button class="x" type="button" id="mx" aria-label="Cerrar">✕</button></div><div class="mb" id="mb"></div></dialog>
-<dialog id="rev" aria-labelledby="rtit"><div class="mh"><h2 id="rtit">Revisa antes de enviar</h2><button class="x" type="button" id="rx" aria-label="Cerrar">✕</button></div><div class="mb" id="rb"></div></dialog>
 <script>
 (()=>{
 'use strict';
@@ -297,7 +369,7 @@ const KB='cb_ae26_borrador',KE='cb_ae26_enviada',KL='cb_ae26_local',KID='cb_ae26
 let CFG={roles:[]},INST=null,ALLC=[],PROCS=[],CBY={},PBY={};
 let DATA=[],MODE='local',DEMO=false,cargado=false,errCarga='',horaAct='';
 let mine=LS.get(KB)||{r:{},c:{},rol:''};
-let curG=0,rolF='';
+let rolF='',resG=0,lastA=null;
 function toast(t){const o=$('.toast');if(o)o.remove();const d=document.createElement('div');d.className='toast';d.setAttribute('role','status');d.textContent=t;document.body.appendChild(d);setTimeout(()=>d.remove(),2600)}
 function dlg(d){if(d.showModal){if(!d.open)d.showModal()}else d.setAttribute('open','')}
 
@@ -310,7 +382,7 @@ Promise.all([fetch('datos/autoevaluacion-guia34.json').then(r=>r.json()),fetch('
 
 /* ================= conexión ================= */
 async function enviar(p){
- if(MODE==='local'){const l=LS.get(KL)||[];l.push({t:new Date().toISOString(),rol:p.rol,r:p.r,c:p.c});LS.set(KL,l);return{ok:true,local:true}}
+ if(MODE==='local'){const l=LS.get(KL)||[];l.push({t:new Date().toISOString(),rol:p.rol,p:p.p,r:p.r,c:p.c});LS.set(KL,l);return{ok:true,local:true}}
  let r;try{r=await fetch(CFG.url,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(Object.assign({accion:'enviar'},p))})}catch(e){throw new Error('No hay conexión con la plataforma. Tu avance sigue guardado en este dispositivo; intenta de nuevo en unos minutos.')}
  let j;try{j=await r.json()}catch(e){throw new Error('La plataforma respondió algo inesperado. Avisa a quien administra el portal.')}
  if(!j.ok)throw new Error(j.mensaje||'No se pudo guardar.');return j;
@@ -318,12 +390,12 @@ async function enviar(p){
 async function cargar(){
  errCarga='';
  if(DEMO){DATA=demo();cargado=true;return}
- if(MODE==='local'){DATA=LS.get(KL)||[];cargado=true;return}
+ if(MODE==='local'){DATA=consolidar(LS.get(KL)||[]);cargado=true;return}
  const k=sessionStorage.getItem('cb_ae26_cv')||'';
  const u=CFG.url+(CFG.url.includes('?')?'&':'?')+'accion=resultados'+(k?'&clave='+encodeURIComponent(k):'');
  try{const j=await (await fetch(u)).json();
   if(!j.ok){errCarga=j.error==='clave'?'clave':(j.mensaje||'error');DATA=[];cargado=false;return}
-  DATA=j.respuestas||[];cargado=true;
+  DATA=consolidar(j.respuestas||[]);cargado=true;
  }catch(e){errCarga='red';cargado=false}
  horaAct=new Date().toLocaleTimeString('es-CO',{hour:'2-digit',minute:'2-digit'});
 }
@@ -394,10 +466,8 @@ function barra(label,o,btnId){return`<div class="bar-row"><${btnId?`button class
 /* ================= inicio ================= */
 function pintarInicio(){
  $('#escala').innerHTML=INST.niveles.map(l=>`<div class="lv lv${l.n}"><b>${l.n} · ${esc(l.t)}</b><small>${esc(l.d)}</small></div>`).join('');
- $('#gcards').innerHTML=INST.gestiones.map(g=>{const nc=ALLC.filter(c=>c.g===g.id).length;return`<div class="gcard" style="background:linear-gradient(135deg,${g.color},${g.color}cc)"><span class="e">${GEMO[g.id]}</span><h3>${esc(g.nombre)}</h3><p>${esc(g.descripcion.slice(0,110))}…</p><div class="m"><span>${g.procesos.length} procesos</span><span>${nc} componentes</span></div></div>`}).join('');
- $('#rol').innerHTML='<option value="">Prefiero no decirlo</option>'+CFG.roles.map(r=>`<option>${esc(r)}</option>`).join('');
+  $('#rol').innerHTML='<option value="">Prefiero no decirlo</option>'+CFG.roles.map(r=>`<option>${esc(r)}</option>`).join('');
  $('#rol').value=mine.rol||'';
- $('#clave-box').hidden=!(CFG.pedirClaveEnviar&&MODE==='real');
 }
 function pintarModo(){
  const el=$('#aviso-modo');
@@ -409,63 +479,111 @@ function pintarStats(){
  $('#stats').innerHTML=[[ok?DATA.length:'–','personas participaron'],[ok?a.all.n:'–','valoraciones'],[ok&&a.all.n?fmt(a.all.mean):'–','nivel global (1-4)'],['45','componentes · 4 gestiones']].map(x=>`<div class="st"><b>${x[0]}</b><span>${x[1]}</span></div>`).join('');
 }
 
-/* ================= evaluar ================= */
+/* ================= evaluar (paso a paso) ================= */
+const KP='cb_ae26_p';
+const uid=()=>(crypto.randomUUID?crypto.randomUUID():String(Date.now())+Math.random().toString(36).slice(2)).replace(/[^A-Za-z0-9-]/g,'').slice(0,40);
+const miP=()=>{let p=LS.get(KP);if(!p){p=uid();LS.set(KP,p)}return p};
+const enviadas=()=>{const e=LS.get(KE);return e&&e.g?e.g:{}};
+let wizG=null,wizPos=0,autoT=null;
 const total=()=>ALLC.length;
-const respondidas=()=>ALLC.filter(c=>mine.r[c.id]!==undefined).length;
-function guardarBorrador(){mine.rol=$('#rol').value;LS.set(KB,mine)}
-function pintarProg(){
- const n=respondidas(),t=total();
- $('#prog').innerHTML=`<div class="row" style="justify-content:space-between"><b>Avance: ${n} de ${t} componentes (${pct(n,t)} %)</b><span class="badge">${n?'Borrador guardado en este dispositivo':'Aún no has respondido'}</span></div><div class="bar"><i style="width:${pct(n,t)}%"></i></div>`;
- $('#gtabs').innerHTML=INST.gestiones.map((g,i)=>{const cs=ALLC.filter(c=>c.g===g.id),h=cs.filter(c=>mine.r[c.id]!==undefined).length;
-  return`<button class="gt" role="tab" data-g="${i}" aria-selected="${i===curG}" style="--gt:${g.color}"><b>${GEMO[g.id]} ${esc(gCorto(g.nombre))}</b><small>${h} de ${cs.length}</small><span class="p" style="width:${pct(h,cs.length)}%"></span></button>`}).join('');
+const gOf=i=>INST.gestiones[i];
+const compsG=g=>ALLC.filter(c=>c.g===g.id);
+const stepsOf=g=>{const s=[];g.procesos.forEach(p=>{s.push({k:'p',pid:p.id});p.componentes.forEach(c=>s.push({k:'c',id:c.id}))});s.push({k:'f'});return s};
+const minutos=n=>Math.max(2,Math.round(n*.4));
+const primera=x=>{x=String(x);const m=x.match(/^(.{60,260}?[.;])\s/);return m?m[1]:x.slice(0,240)};
+function guardarBorrador(){mine.rol=$('#rol').value;mine.pos=mine.pos||{};LS.set(KB,mine)}
+function personasPorG(rows){const o={};INST.gestiones.forEach(g=>o[g.id]=0);rows.forEach(x=>{const s={};for(const k in x.r){if(+x.r[k]>0)s[k.slice(0,2)]=1}for(const g in s)if(o[g]!==undefined)o[g]++});return o}
+function consolidar(rows){
+ const ord=rows.slice().sort((a,b)=>String(a.t).localeCompare(String(b.t))),m={},out=[];
+ ord.forEach(x=>{if(!x.p){out.push(x);return}let q=m[x.p];if(!q){q=m[x.p]={t:x.t,rol:'',p:x.p,r:{},c:{}};out.push(q)}if(x.rol)q.rol=x.rol;Object.assign(q.r,x.r||{});Object.assign(q.c,x.c||{})});
+ return out;
 }
-function pintarGestion(){
- const g=INST.gestiones[curG];
- $('#gbody').innerHTML=`<div class="card" style="border-top:8px solid ${g.color}"><h2>${GEMO[g.id]} ${esc(g.nombre)}</h2><p class="sub">${esc(g.descripcion)}</p></div>`+g.procesos.map(p=>`
- <section class="proc" id="p-${p.id}" style="--gc:${g.color}">
-  <h3>Proceso ${p.n}. ${esc(p.nombre)}<small>${p.componentes.filter(c=>mine.r[c.id]!==undefined).length}/${p.componentes.length}</small></h3>
-  <details class="ayuda"><summary>📖 ¿Qué es este proceso?</summary><p>${esc(p.descripcion)}</p></details>
-  ${p.evidencias&&p.evidencias.length?`<details class="ayuda"><summary>🗂️ Fuentes de evidencia que sugiere la guía (Anexo 3)</summary><ul>${p.evidencias.map(e=>`<li><b>${esc(e.f)}:</b> ${esc(e.e)}</li>`).join('')}</ul></details>`:''}
-  ${p.componentes.map(c=>compHTML(c)).join('')}
-  <label for="co-${p.id}" style="font-weight:800;font-size:.9rem">💬 Comentario sobre este proceso (opcional, sin nombres de personas)</label>
-  <textarea id="co-${p.id}" data-pc="${p.id}" rows="2" maxlength="1000" placeholder="¿Qué evidencia viste? ¿Qué mejorarías?">${esc(mine.c[p.id]||'')}</textarea>
- </section>`).join('');
- const last=curG===INST.gestiones.length-1;
- $('#gnav').innerHTML=(curG>0?`<button class="btn l" data-gn="-1">← ${esc(gCorto(INST.gestiones[curG-1].nombre))}</button>`:'<span></span>')+(last?'<button class="btn o" id="btn-rev">✅ Revisar y enviar</button>':`<button class="btn" data-gn="1">${esc(gCorto(INST.gestiones[curG+1].nombre))} →</button>`);
+function pintarMenu(){
+ wizG=null;clearTimeout(autoT);
+ $('#ev-menu').hidden=false;$('#ev-wiz').hidden=true;
+ const env=enviadas(),pg=DATA.length&&!DEMO?personasPorG(DATA):null;
+ $('#mg').innerHTML=INST.gestiones.map((g,i)=>{
+  const cs=compsG(g),h=cs.filter(c=>mine.r[c.id]!==undefined).length,done=env[g.id];
+  const estado=done?'✅ Enviada':h?`✏️ En curso · ${h} de ${cs.length}`:'Sin empezar';
+  const btn=done?'Revisar o reenviar':h?'Continuar':'Evaluar';
+  return`<button class="mg" data-mg="${i}" style="--gc:${g.color}"><span class="e">${GEMO[g.id]}</span><b>${esc(gCorto(g.nombre))}</b><small>${g.procesos.length} procesos · ${cs.length} preguntas · unos ${minutos(cs.length)} min</small><span class="st">${estado}</span><span class="pb"><i style="width:${pct(h,cs.length)}%"></i></span><span class="go">${btn} →</span>${pg&&pg[g.id]?`<em>${pg[g.id]} persona${pg[g.id]>1?'s':''} ya la evaluó${pg[g.id]>1?'ron':''}</em>`:''}</button>`}).join('');
 }
-function compHTML(c){
- const v=mine.r[c.id];
- return`<div class="comp${v!==undefined?' ok':''}" id="c-${c.id}"><h4><span class="chk" aria-hidden="true">✔</span><span>${esc(c.nombre)}</span></h4>
- <div class="opts" role="radiogroup" aria-label="${esc(c.nombre)}">${c.niveles.map((d,i)=>`<label class="opt" style="--c:${LVC[i+1]}"><input type="radio" name="${c.id}" value="${i+1}"${v===i+1?' checked':''}><b><i>${i+1}</i>${esc(INST.niveles[i].t)}</b>${esc(d)}</label>`).join('')}</div>
- <label class="na"><input type="radio" name="${c.id}" value="0"${v===0?' checked':''}> No tengo información suficiente para valorarlo</label></div>`;
+function abrirGestion(i){
+ wizG=i;const g=gOf(i),st=stepsOf(g);mine.pos=mine.pos||{};
+ let p=mine.pos[g.id];
+ if(p==null||p<0||p>=st.length){const k=st.findIndex(s=>s.k==='c'&&mine.r[s.id]===undefined);p=k<0?st.length-1:(st[k-1]&&st[k-1].k==='p'?k-1:k)}
+ wizPos=p;$('#ev-menu').hidden=true;$('#ev-wiz').hidden=false;document.body.classList.add('foco');
+ $('#ev-wiz').style.setProperty('--gc',g.color);pintarPaso(1);window.scrollTo({top:$('.tabs').offsetTop,behavior:'auto'});
 }
-function irA(i){curG=i;pintarProg();pintarGestion();window.scrollTo({top:$('#t-evaluar').offsetTop+60,behavior:'smooth'})}
-function revisar(){
- const n=respondidas(),val=ALLC.filter(c=>mine.r[c.id]>0).length,a=agg([{r:mine.r}]);
- const filas=INST.gestiones.map(g=>{const cs=ALLC.filter(c=>c.g===g.id),h=cs.filter(c=>mine.r[c.id]!==undefined).length;return`<li><b class="n" style="background:${g.color}">${h}/${cs.length}</b><span>${esc(g.nombre)}<small>${a.gest[g.id].n?'Mi promedio: '+fmt(a.gest[g.id].mean)+' · '+nivelTxt(a.gest[g.id].nivel):'Sin valoraciones'}</small></span></li>`}).join('');
- $('#rb').innerHTML=val?`<p>Vas a enviar <b>${val}</b> valoraciones${n>val?` (y ${n-val} marcadas «No tengo información»)`:''}. ${n<total()?`Te faltan <b>${total()-n}</b> componentes; puedes enviar así o seguir completando.`:'¡Completaste todo!'}</p><ul class="lista">${filas}</ul><div class="chart" style="max-width:520px;margin:auto">${radar(PROCS.map(p=>a.proc[p.id].mean))}</div><p class="sub" style="text-align:center">Así se ve tu mirada por proceso (escala 1 a 4).</p>
-  <div class="row" style="justify-content:flex-end"><button class="btn l" id="rev-no">Seguir revisando</button><button class="btn o" id="rev-si">📨 Enviar mi autoevaluación</button></div><p id="rev-err" style="color:var(--r);font-weight:800;margin-top:8px"></p>`
-  :`<p>Todavía no has valorado ningún componente. Elige al menos uno para poder enviar.</p><div class="row" style="justify-content:flex-end"><button class="btn" id="rev-no">Volver</button></div>`;
- dlg($('#rev'));
+function pintarTop(){
+ const g=gOf(wizG),cs=compsG(g),h=cs.filter(c=>mine.r[c.id]!==undefined).length;
+ $('#wz-top').innerHTML=`<button class="btn l sm" data-wmenu>☰ Menú</button><div class="wt"><b style="color:${g.color}">${GEMO[g.id]} ${esc(gCorto(g.nombre))}</b><small>${h} de ${cs.length} respondidas · tu avance se guarda solo</small></div>`;
 }
-async function confirmarEnvio(){
- const b=$('#rev-si'),er=$('#rev-err');b.disabled=true;b.textContent='Enviando…';er.textContent='';
- let id=LS.get(KID);if(!id){id=(crypto.randomUUID?crypto.randomUUID():String(Date.now())+Math.random().toString(36).slice(2)).replace(/[^A-Za-z0-9-]/g,'').slice(0,40);LS.set(KID,id)}
- const c={};for(const k in mine.c)if((mine.c[k]||'').trim())c[k]=mine.c[k].trim();
- try{await enviar({id,rol:$('#rol').value,r:mine.r,c,clave:($('#clave').value||'')});
-  const sent=Object.assign({},mine.r);LS.set(KE,{t:new Date().toISOString(),r:sent});LS.del(KB);LS.del(KID);mine={r:{},c:{},rol:''};
-  $('#rev').close();await cargar();pintarStats();mostrarHecho();toast('¡Gracias! Tu autoevaluación quedó registrada');
- }catch(e){er.textContent=e.message;b.disabled=false;b.textContent='📨 Enviar mi autoevaluación'}
+function navHTML(s){
+ const prev=wizPos>0?'<button class="btn l" data-wn="-1">← Anterior</button>':'<button class="btn l" data-wmenu>← Menú</button>';
+ if(s.k==='p')return prev+'<button class="btn o" data-wn="1">Empezar →</button>';
+ if(s.k==='c'){const r=mine.r[s.id]!==undefined;return prev+`<button class="btn${r?'':' l'}" data-wn="1">${r?'Siguiente →':'Saltar →'}</button>`}
+ return prev;
 }
-function mostrarHecho(){
- const e=LS.get(KE),h=$('#ev-hecho'),f=$('#ev-form');
- if(!e){h.hidden=true;f.hidden=false;return}
- const mia=agg([{r:e.r}]),all=agg(DATA),hayAll=all.all.n>0&&!DEMO;
- h.hidden=false;f.hidden=true;
- h.innerHTML=`<div class="card" style="text-align:center"><div style="font-size:3.2rem">🎉</div><h2>¡Gracias por participar!</h2><p class="sub">Tu autoevaluación quedó registrada de forma anónima${MODE==='local'?' (en este dispositivo, modo de prueba)':''}.</p>
- <div class="chart" style="max-width:560px;margin:auto">${radar(hayAll?PROCS.map(p=>all.proc[p.id].mean):PROCS.map(p=>mia.proc[p.id].mean),hayAll?PROCS.map(p=>mia.proc[p.id].mean):null)}</div>
- <p class="sub">${hayAll?'<b style="color:#12306e">Azul:</b> promedio del colegio · <b style="color:#e08600">Naranja punteado:</b> tu mirada.':'Tu mirada por proceso.'}</p>
- <div class="row" style="justify-content:center"><button class="btn o" data-go="resultados">📊 Ver el tablero</button><button class="btn l" id="otra">✍️ Otra persona usa este dispositivo</button></div></div>`;
+function pintarPaso(dir){
+ clearTimeout(autoT);
+ const g=gOf(wizG),st=stepsOf(g),s=st[wizPos];mine.pos=mine.pos||{};mine.pos[g.id]=wizPos;guardarBorrador();
+ pintarTop();$('#wz-bar i').style.width=pct(wizPos,st.length-1)+'%';
+ const box=$('#wz');box.className='wz '+(dir>0?'in-r':'in-l');
+ box.innerHTML=s.k==='p'?introHTML(g,PBY[s.pid]):s.k==='c'?pregHTML(g,CBY[s.id]):finHTML(g);
+ $('#wz-nav').innerHTML=navHTML(s);
+}
+function irPaso(d){const st=stepsOf(gOf(wizG));wizPos=Math.max(0,Math.min(st.length-1,wizPos+d));pintarPaso(d);$('#ev-wiz').scrollIntoView({block:'start'})}
+function introHTML(g,p){
+ const n=p.componentes.length;
+ return`<span class="crumb">Proceso ${p.n} de ${g.procesos.length}</span><h3 class="q">${esc(p.nombre)}</h3><p class="pd">${esc(primera(p.descripcion))}</p>
+ <details class="ayuda"><summary>Leer la descripción completa</summary><p>${esc(p.descripcion)}</p></details>
+ ${p.evidencias&&p.evidencias.length?`<details class="ayuda"><summary>🗂️ Evidencias que sugiere la guía para este proceso</summary><ul>${p.evidencias.map(e=>`<li><b>${esc(e.f)}:</b> ${esc(e.e)}</li>`).join('')}</ul></details>`:''}
+ <div class="chips"><span>${n} pregunta${n>1?'s':''}</span><span>unos ${Math.max(1,Math.round(n*.5))} min</span></div>`;
+}
+function pregHTML(g,c){
+ const p=PBY[c.pid],idx=p.componentes.indexOf(c)+1,v=mine.r[c.id];
+ return`<span class="crumb">Proceso ${p.n} · ${esc(p.nombre)}</span><h3 class="q">${esc(c.nombre)}</h3><p class="hint">Elige la descripción que mejor cuenta cómo está hoy el colegio. <span aria-hidden="true">(Atajo: teclas 1 a 4)</span></p>
+ <div class="opts v" role="radiogroup" aria-label="${esc(c.nombre)}">${c.niveles.map((d,i)=>`<label class="opt" style="--c:${LVC[i+1]}"><input type="radio" name="${c.id}" value="${i+1}"${v===i+1?' checked':''}><b><i>${i+1}</i>${esc(INST.niveles[i].t)}</b>${esc(d)}</label>`).join('')}</div>
+ <label class="na"><input type="radio" name="${c.id}" value="0"${v===0?' checked':''}> No tengo información suficiente para valorarlo</label>
+ <div class="qn">Pregunta ${idx} de ${p.componentes.length} de este proceso</div>`;
+}
+function finHTML(g){
+ const cs=compsG(g),n=cs.filter(c=>mine.r[c.id]!==undefined).length,val=cs.filter(c=>mine.r[c.id]>0).length,falta=cs.filter(c=>mine.r[c.id]===undefined);
+ const env=enviadas()[g.id],needKey=CFG.pedirClaveEnviar&&MODE==='real';
+ return`<span class="crumb">Último paso</span><h3 class="q">Revisa y envía: ${esc(gCorto(g.nombre))}</h3>
+ <p class="hint">Cada cuadrito es una pregunta: <b style="color:${LVC[1]}">rojo</b> = nivel 1 … <b style="color:${LVC[4]}">verde oscuro</b> = nivel 4, gris = sin responder.</p>
+ ${g.procesos.map(p=>`<div class="fin-row"><b>${esc(p.nombre)}</b><span class="sqs">${p.componentes.map(c=>{const v=mine.r[c.id];return`<span class="sq" style="background:${v===undefined?'#dfe6df':LVC[v]}" title="${esc(c.nombre)}"></span>`}).join('')}</span>
+  <details><summary>💬 Agregar un comentario (opcional)</summary><textarea data-pc="${p.id}" rows="2" maxlength="1000" placeholder="¿Qué evidencia viste? ¿Qué mejorarías? (sin nombres de personas)">${esc(mine.c[p.id]||'')}</textarea></details></div>`).join('')}
+ ${falta.length?`<div class="falta">Te faltan <b>${falta.length}</b> pregunta${falta.length>1?'s':''}. Puedes enviar así, o <button class="lnk" data-goto="${falta[0].id}">completarlas ahora</button>.</div>`:''}
+ ${needKey?'<div class="rol" style="margin:10px 0"><label for="clave"><b>Clave de participación</b></label><input id="clave" type="password" autocomplete="off" placeholder="Te la da coordinación"></div>':''}
+ <div class="row" style="margin-top:12px"><button class="btn o" id="wz-send"${val?'':' disabled'}>📨 ${env?'Reenviar':'Enviar'} mi evaluación de esta gestión</button></div>
+ <p class="hint" style="margin-top:8px">${val?`Se enviarán ${val} valoraciones de forma anónima${env?'. Si ya la habías enviado, esta versión reemplaza la anterior en los resultados':''}.`:'Responde al menos una pregunta para poder enviar.'}</p><p id="wz-err" style="color:var(--r);font-weight:800"></p>`;
+}
+async function enviarGestion(){
+ const g=gOf(wizG),b=$('#wz-send'),er=$('#wz-err');
+ const r={};compsG(g).forEach(c=>{if(mine.r[c.id]!==undefined)r[c.id]=mine.r[c.id]});
+ const c={};g.procesos.forEach(p=>{const x=(mine.c[p.id]||'').trim();if(x)c[p.id]=x});
+ if(!Object.values(r).some(v=>v>0))return;
+ const kid='cb_ae26_id_'+g.id;let id=LS.get(kid);if(!id){id=uid();LS.set(kid,id)}
+ b.disabled=true;b.textContent='Enviando…';er.textContent='';
+ try{await enviar({id,p:miP(),rol:$('#rol').value,r,c,clave:($('#clave')?$('#clave').value:'')});
+  LS.del(kid);const e=LS.get(KE);const env=e&&e.g?e:{g:{}};env.g[g.id]={t:new Date().toISOString()};LS.set(KE,env);
+  await cargar();pintarStats();graciasHTML(g);
+ }catch(e){er.textContent=e.message;b.disabled=false;b.textContent='📨 Enviar mi evaluación de esta gestión'}
+}
+function graciasHTML(g){
+ const env=enviadas(),faltan=INST.gestiones.filter(x=>!env[x.id]);
+ $('#wz-bar i').style.width='100%';$('#wz-nav').innerHTML='';
+ $('#wz').className='wz in-r';
+ $('#wz').innerHTML=`<div class="gracias"><div class="big">🎉</div><h3 class="q">¡Gracias! Quedó registrada la ${esc(g.nombre)}</h3><p class="sub">Tu respuesta es anónima${MODE==='local'?' (modo de prueba: se guardó solo en este dispositivo)':''}.</p>
+ <div class="row" style="justify-content:center;margin-top:10px"><button class="btn o" data-wmenu>${faltan.length?'✍️ Evaluar otra gestión':'☰ Volver al menú'}</button><button class="btn l" data-go="resultados">📊 Ver resultados</button></div></div>`;
+ toast('¡Gracias! Gestión enviada');
+}
+function nuevaPersona(){
+ if(!confirm('Se borrarán de este dispositivo tus respuestas en borrador y la marca de «enviada», para que otra persona pueda evaluar. Lo ya enviado no se borra. ¿Continuar?'))return;
+ [KB,KE,KP,KL+'_x'].forEach(k=>LS.del(k));try{Object.keys(localStorage).filter(k=>k.indexOf('cb_ae26_id_')===0).forEach(k=>localStorage.removeItem(k))}catch(e){}
+ mine={r:{},c:{},rol:'',pos:{}};$('#rol').value='';pintarMenu();toast('Listo: puede evaluar otra persona');
 }
 
 /* ================= detalle ================= */
@@ -496,7 +614,7 @@ function pintarResultados(){
  const valid=rolesValidos(DATA);if(rolF&&!valid.includes(rolF))rolF='';
  $('#f-rol').innerHTML='<option value="">Todo el colegio</option>'+valid.map(r=>`<option${r===rolF?' selected':''}>${esc(r)}</option>`).join('');
  $('#act').textContent=DEMO?'Datos de ejemplo':horaAct?'Actualizado '+horaAct:'';
- const rows=filtrar(DATA),a=agg(rows);
+ const rows=filtrar(DATA),a=agg(rows);lastA=a;const pg=personasPorG(rows);
  if(!rows.length){body.innerHTML=`<div class="card vacio"><div class="e">📭</div><h2>Aún no hay respuestas</h2><p>Cuando los primeros docentes envíen su autoevaluación, aquí aparecerá el tablero.</p><div class="row" style="justify-content:center;margin-top:12px"><button class="btn o" data-go="evaluar">✍️ Ser la primera persona</button><button class="btn l" id="btn-demo2">🧪 Ver ejemplo</button></div></div>`;return}
  const cob=pct(a.all.n,rows.length*total());
  const ord=ALLC.filter(c=>a.comp[c.id].n>=1).sort((x,y)=>a.comp[y.id].mean-a.comp[x.id].mean);
@@ -514,12 +632,11 @@ function pintarResultados(){
  <div class="grid g2">
   <div class="card"><h2>🕸️ Perfil institucional</h2><p class="sub">Promedio por proceso (escala 1 a 4). Cada color de letra es una gestión.</p><div class="chart">${radar(PROCS.map(p=>a.proc[p.id].mean))}</div></div>
   <div><div class="card"><h2>🎯 Nivel global</h2><div class="chart" style="max-width:360px;margin:auto">${gauge(a.all.mean)}</div><p style="text-align:center;font-weight:800;color:${LVC[a.all.nivel]}">${nivelTxt(a.all.nivel)}</p>${legend()}</div>
-  <div class="card"><h2>🧩 Las cuatro gestiones</h2><p class="sub">Así se reparten las valoraciones (rojo = 1, verde oscuro = 4).</p>${INST.gestiones.map(g=>barra(gCorto(g.nombre),a.gest[g.id])).join('')}${legend()}</div></div>
+  <div class="card"><h2>🧩 Las cuatro gestiones</h2><p class="sub">Así se reparten las valoraciones (rojo = 1, verde oscuro = 4) y cuántas personas evaluaron cada una.</p>${INST.gestiones.map(g=>barra(gCorto(g.nombre)+' · '+pg[g.id]+' pers.',a.gest[g.id])).join('')}${legend()}</div></div>
  </div>
  <div class="card"><h2>🗺️ Mapa de calor de procesos</h2><p class="sub">Toca un proceso para ver sus componentes.</p>
   ${INST.gestiones.map(g=>`<h3 style="color:${g.color};margin:12px 0 6px">${GEMO[g.id]} ${esc(g.nombre)}</h3><div class="tiles">${g.procesos.map(p=>{const o=a.proc[p.id];return`<button class="tile t${o.nivel}" data-proc="${p.id}"><small>n=${o.n}</small><b>${fmt(o.mean)}</b><span>${esc(SHORT[p.id])}</span><em style="display:block;font-style:normal;font-size:.7rem;font-weight:700;opacity:.9;margin-top:2px">${o.nivel?'Nivel '+o.nivel+' · '+nivelTxt(o.nivel):'Sin datos'}</em></button>`}).join('')}</div>`).join('')}</div>
- <div class="card"><h2>📋 Componente por componente</h2><p class="sub">Los 45 componentes de la guía. Toca uno para ver el detalle y lo que dice la guía de su nivel.</p>${legend()}
-  ${INST.gestiones.map(g=>`<details class="ayuda" open><summary style="color:${g.color}">${GEMO[g.id]} ${esc(g.nombre)} · promedio ${fmt(a.gest[g.id].mean)}</summary>${g.procesos.map(p=>`<h4 style="margin:10px 0 2px;font-size:.95rem">${esc(p.nombre)}</h4>${p.componentes.map(c=>barra(c.nombre,a.comp[c.id],c.id)).join('')}`).join('')}</details>`).join('')}</div>
+ <div class="card"><h2>📋 Componente por componente</h2><p class="sub">Elige una gestión para ver sus preguntas. Toca una barra para ver el detalle y lo que dice la guía de su nivel.</p><div id="lista-comp"></div></div>
  <div class="grid g3">
   <div class="card"><h3>🌟 Mayores fortalezas</h3><ul class="lista">${fort.map(c=>li(c,a.comp[c.id])).join('')}</ul></div>
   <div class="card"><h3>🔧 Mayores oportunidades de mejora</h3><ul class="lista">${opor.map(c=>li(c,a.comp[c.id])).join('')}</ul></div>
@@ -529,6 +646,11 @@ function pintarResultados(){
   <div class="card"><h3>👥 ¿Quiénes participaron?</h3>${donut(Object.entries(roles).sort((x,y)=>y[1]-x[1]).map(e=>({t:e[0],v:e[1]})))}<p class="sub" style="margin-top:8px">Solo se muestran roles con 3 o más personas al filtrar, para proteger el anonimato.</p></div>
   <div class="card"><h3>📅 Envíos por día</h3><div class="chart">${linea(rows)}</div></div>
  </div>`;
+ pintarListaComp();
+}
+function pintarListaComp(){
+ const el=$('#lista-comp');if(!el||!lastA)return;const a=lastA,g=INST.gestiones[resG];
+ el.innerHTML=`<div class="chips2">${INST.gestiones.map((x,i)=>`<button class="chip${i===resG?' on':''}" data-rg="${i}" style="--gc:${x.color}">${GEMO[x.id]} ${esc(gCorto(x.nombre))}</button>`).join('')}</div>${legend()}`+g.procesos.map((p,pi)=>`<details class="ayuda"${pi===0?' open':''}><summary>${esc(p.nombre)} · promedio ${fmt(a.proc[p.id].mean)}</summary>${p.componentes.map(c=>barra(c.nombre,a.comp[c.id],c.id)).join('')}</details>`).join('');
 }
 
 /* ================= informe ================= */
@@ -539,6 +661,7 @@ function frase(a,rows){
  const f=d=>d.toLocaleDateString('es-CO',{day:'numeric',month:'long',year:'numeric'});
  return`<p>En la autoevaluación institucional 2026 participaron <b>${rows.length}</b> personas${ts.length?` entre el ${f(ts[0])} y el ${f(ts[ts.length-1])}`:''}, que aportaron <b>${a.all.n}</b> valoraciones sobre los 45 componentes de las cuatro áreas de gestión de la Guía 34. El nivel global de desarrollo es <b>${nivelTxt(a.all.nivel)}</b> (promedio ${fmt(a.all.mean)} de 4).</p>
  ${gs.length>1?`<p>La gestión mejor valorada es <b>${esc(gs[0].g.nombre)}</b> (${fmt(gs[0].o.mean)}) y la que más requiere atención es <b>${esc(gs[gs.length-1].g.nombre)}</b> (${fmt(gs[gs.length-1].o.mean)}).</p>`:''}
+ <p>Personas que evaluaron cada gestión: ${INST.gestiones.map(g=>'<b>'+esc(gCorto(g.nombre))+'</b> ('+personasPorG(rows)[g.id]+')').join(', ')}.</p>
  <p>${altos.length} de los 15 procesos están en nivel 3 (Apropiación) o 4 (Mejoramiento continuo)${bajos.length?`, y ${bajos.length} están en nivel 1 o 2: ${bajos.map(p=>'<b>'+esc(SHORT[p.id])+'</b>').join(', ')}`:''}.</p>`;
 }
 function pintarInforme(){
@@ -556,7 +679,7 @@ function pintarInforme(){
  const prio=PROCS.filter(p=>a.proc[p.id].n).sort((x,y)=>a.proc[x.id].mean-a.proc[y.id].mean).slice(0,5);
  b.innerHTML=`
  ${DEMO?'<div class="aviso">🧪 Informe con <b>datos de ejemplo</b>.</div>':''}
- <div class="card"><h2>1. Resumen</h2>${frase(a,rows)}<div class="grid g2" style="margin-top:12px"><div class="chart" style="max-width:380px;margin:auto">${gauge(a.all.mean)}</div><div>${INST.gestiones.map(g=>barra(gCorto(g.nombre),a.gest[g.id])).join('')}${legend()}</div></div></div>
+ <div class="card"><h2>1. Resumen</h2>${frase(a,rows)}<div class="grid g2" style="margin-top:12px"><div class="chart" style="max-width:380px;margin:auto">${gauge(a.all.mean)}</div><div>${INST.gestiones.map(g=>barra(gCorto(g.nombre)+' · '+personasPorG(rows)[g.id]+' pers.',a.gest[g.id])).join('')}${legend()}</div></div></div>
  <div class="card"><h2>2. Perfil institucional <small style="font-size:.7em;color:var(--mut)">(Paso 3 de la guía)</small></h2><p class="sub">Valoración de los 15 procesos. Sirve para comparar en próximas autoevaluaciones los avances, estancamientos y retrocesos.</p><div class="chart" style="max-width:640px;margin:auto">${radar(PROCS.map(p=>a.proc[p.id].mean))}</div>
   ${INST.gestiones.map(g=>g.procesos.map(p=>barra(`${SHORT[p.id]}`,a.proc[p.id])).join('')).join('')}</div>
  <div class="card"><h2>3. Matriz de resultados <small style="font-size:.7em;color:var(--mut)">(Anexo 2 de la guía)</small></h2><p class="sub">Número de personas que marcó cada nivel en cada componente. El nivel resulta del promedio (menos de 1,5 → 1; hasta 2,4 → 2; hasta 3,4 → 3; desde 3,5 → 4).</p>${tabla}</div>
@@ -596,39 +719,49 @@ async function ir(t,noHash){
  $$('.tab').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.t===t)));
  $$('.panel').forEach(p=>p.classList.toggle('on',p.id==='t-'+t));
  if(!noHash)history.replaceState(null,'','#'+(t==='inicio'?'':t));
- if(t==='evaluar'){mostrarHecho();pintarProg();pintarGestion()}
+ document.body.classList.toggle('foco',t==='evaluar');
+ if(t==='evaluar'){if(wizG==null)pintarMenu();else pintarPaso(1)}
  if(t==='resultados'||t==='informe'){if(!cargado&&!DEMO)await cargar();pintarStats();t==='resultados'?pintarResultados():pintarInforme()}
  window.scrollTo({top:Math.min(window.scrollY,$('.tabs').offsetTop),behavior:'auto'});
 }
 function iniciar(){
- pintarInicio();pintarModo();pintarProg();
- cargar().then(()=>{pintarStats();const h=location.hash.slice(1);if(TABS.includes(h))ir(h,true)});
+ pintarInicio();pintarModo();
+ cargar().then(()=>{pintarStats();if($('#t-evaluar').classList.contains('on')&&wizG==null)pintarMenu();const h=location.hash.slice(1);if(TABS.includes(h)&&h!=='evaluar')ir(h,true)});
  const h=location.hash.slice(1);if(TABS.includes(h))ir(h,true);
  document.addEventListener('click',e=>{
   const t=e.target.closest('[data-t]');if(t&&t.classList.contains('tab'))return ir(t.dataset.t);
   const go=e.target.closest('[data-go]');if(go)return ir(go.dataset.go);
-  const gt=e.target.closest('[data-g]');if(gt&&gt.classList.contains('gt'))return irA(+gt.dataset.g);
-  const gn=e.target.closest('[data-gn]');if(gn)return irA(curG+ +gn.dataset.gn);
+  const mgc=e.target.closest('[data-mg]');if(mgc)return abrirGestion(+mgc.dataset.mg);
+  const wn=e.target.closest('[data-wn]');if(wn)return irPaso(+wn.dataset.wn);
+  if(e.target.closest('[data-wmenu]')){pintarMenu();return window.scrollTo({top:$('.tabs').offsetTop,behavior:'auto'})}
+  if(e.target.closest('[data-newp]'))return nuevaPersona();
+  const gtc=e.target.closest('[data-goto]');if(gtc){const st=stepsOf(gOf(wizG)),k=st.findIndex(s=>s.k==='c'&&s.id===gtc.dataset.goto);if(k>=0){wizPos=k;pintarPaso(-1);$('#ev-wiz').scrollIntoView({block:'start'})}return}
+  const rg=e.target.closest('[data-rg]');if(rg){resG=+rg.dataset.rg;return pintarListaComp()}
   const cp=e.target.closest('[data-comp]');if(cp){const inM=$('#mod').contains(cp);return abrirComp(cp.dataset.comp,filtrar(DATA))}
   const pr=e.target.closest('[data-proc]');if(pr)return abrirProc(pr.dataset.proc,filtrar(DATA));
   const id=e.target.id;
-  if(id==='btn-rev')revisar();else if(id==='rev-no')$('#rev').close();else if(id==='rev-si')confirmarEnvio();
-  else if(id==='otra'){LS.del(KE);mostrarHecho();pintarProg();pintarGestion()}
+  if(id==='wz-send')enviarGestion();
   else if(id==='btn-refrescar'||id==='reint'){DEMO=false;pintarModo();cargar().then(()=>{pintarStats();pintarResultados()})}
   else if(id==='btn-demo'||id==='btn-demo2'||id==='btn-demo3'){DEMO=!DEMO||id!=='btn-demo'?true:false;pintarModo();cargar().then(()=>{pintarStats();$('#t-informe').classList.contains('on')?pintarInforme():pintarResultados()})}
   else if(id==='ver-ok'){sessionStorage.setItem('cb_ae26_cv',$('#clave-ver').value);$('#ver-err').textContent='';cargar().then(()=>{pintarStats();pintarResultados();if(errCarga==='clave')$('#ver-err').textContent='La clave no es correcta.'})}
   else if(id==='btn-print'){ir('informe').then(()=>setTimeout(()=>window.print(),150))}
   else if(id==='btn-csv'){DATA.length?csv():toast('Aún no hay datos para descargar')}
   else if(id==='btn-json'){DATA.length?descargar('autoevaluacion-2026-respuestas.json',JSON.stringify({fuente:'Autoevaluación 2026 · ColBolívar',n:DATA.length,respuestas:DATA},null,1),'application/json'):toast('Aún no hay datos para descargar')}
-  else if(id==='mx')$('#mod').close();else if(id==='rx')$('#rev').close();
+  else if(id==='mx')$('#mod').close();
  });
  document.addEventListener('change',e=>{
   const t=e.target;
-  if(t.matches('.opts input,.na input')){const id=t.name;mine.r[id]=+t.value;guardarBorrador();const box=$('#c-'+id);box&&box.classList.add('ok');pintarProg();const p=PBY[CBY[id].pid],sm=$('#p-'+p.id+' > h3 small');if(sm)sm.textContent=p.componentes.filter(c=>mine.r[c.id]!==undefined).length+'/'+p.componentes.length}
+  if(t.matches('.opts input,.na input')){const id=t.name,pos=wizPos;mine.r[id]=+t.value;guardarBorrador();pintarTop();$('#wz-nav').innerHTML=navHTML({k:'c',id});clearTimeout(autoT);autoT=setTimeout(()=>{if(wizG!=null&&wizPos===pos)irPaso(1)},700)}
   else if(t.id==='rol')guardarBorrador();
   else if(t.id==='f-rol'){rolF=t.value;pintarResultados()}
  });
  document.addEventListener('input',e=>{const t=e.target;if(t.matches('textarea[data-pc]')){mine.c[t.dataset.pc]=t.value;guardarBorrador()}});
+ document.addEventListener('keydown',e=>{
+  if(wizG==null||$('#ev-wiz').hidden||!$('#t-evaluar').classList.contains('on'))return;
+  if(e.ctrlKey||e.metaKey||e.altKey||e.target.closest('textarea,select,input[type=password],input[type=text]'))return;
+  const s=stepsOf(gOf(wizG))[wizPos];if(s.k!=='c'||!/^[0-4]$/.test(e.key))return;
+  const inp=$('#wz input[value="'+e.key+'"]');if(inp&&!inp.checked){inp.checked=true;inp.dispatchEvent(new Event('change',{bubbles:true}))}
+ });
  $$('dialog').forEach(d=>d.addEventListener('click',e=>{if(e.target===d)d.close()}));
  addEventListener('hashchange',()=>{const h=location.hash.slice(1);if(TABS.includes(h))ir(h,true)});
  setInterval(()=>{if(MODE==='real'&&!DEMO&&!document.hidden&&$('#t-resultados').classList.contains('on')&&!$('#mod').open)cargar().then(()=>{pintarStats();pintarResultados()})},90000);
