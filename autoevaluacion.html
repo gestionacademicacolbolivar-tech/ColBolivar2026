@@ -256,6 +256,21 @@ body.foco .hero,body.foco #aviso-modo{display:none}
 .chips2{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 8px}
 .chip{border:2px solid var(--line);background:#fff;border-radius:99px;padding:6px 14px;font-weight:800;font-size:.9rem}
 .chip.on{background:var(--gc);border-color:var(--gc);color:#fff}
+/* ---- sprites ---- */
+.sp{object-fit:contain;flex:none;-webkit-user-drag:none;user-select:none}
+.sp.inl{display:inline-block;vertical-align:middle;margin-right:2px}
+.mg .mgi{width:76px;height:76px;margin-bottom:2px}
+.opt b img.nv{width:56px;height:56px;margin:-6px 0 4px -6px}
+.lv{display:flex;gap:12px;align-items:center}
+.lv .lvi{width:56px;height:56px;background:#ffffffd9;border-radius:14px;padding:4px}
+.nov{position:relative}
+.nov .nov-img{position:absolute;right:18px;top:14px;width:96px;height:96px}
+@media(max-width:700px){.nov .nov-img{display:none}}
+.gracias .gr{width:130px;height:130px;margin:0 auto 4px;display:block}
+.vacio .vc{width:120px;height:120px;margin:0 auto 6px;display:block}
+.wz{position:relative}
+.wz .fin-img{position:absolute;right:16px;top:14px;width:72px;height:72px}
+@media(max-width:600px){.wz .fin-img{display:none}}
 </style></head>
 <body>
 <header class="hero" id="hero">
@@ -280,7 +295,7 @@ body.foco .hero,body.foco #aviso-modo{display:none}
  <!-- INICIO -->
  <section class="panel on" id="t-inicio" role="tabpanel" aria-labelledby="b-inicio">
   <div class="card nov">
-   <span class="tag">Actualizada en 2026</span>
+   <img class="sp nov-img" src="assets/img/autoevaluacion/novedades.png" alt="" width="96" height="96" decoding="async"><span class="tag">Actualizada en 2026</span>
    <h2>¿Qué hay de nuevo en la Guía 34?</h2>
    <p class="sub">Este 2026 el Ministerio de Educación publicó la actualización de la Guía 34 (la anterior era de 2008). Lo esencial, en un minuto:</p>
    <ul class="nov-l">
@@ -293,7 +308,7 @@ body.foco .hero,body.foco #aviso-modo{display:none}
    <p class="fuente">Fuente: Guía No. 34 actualizada, Ministerio de Educación Nacional, 2026 (presentación, pp. 8 a 10, y Anexo 1).</p>
   </div>
   <div class="card">
-   <h2>¿Cómo funciona?</h2>
+   <h2><img class="sp inl" src="assets/img/autoevaluacion/paso-a-paso.png" alt="" width="40" height="40" decoding="async"> ¿Cómo funciona?</h2>
    <div class="pasos">
     <div class="paso"><b>Elige una gestión</b>Puedes evaluar solo la que conoces. No tienes que hacer las cuatro.</div>
     <div class="paso"><b>Responde de a una</b>Verás una pregunta a la vez, con 4 descripciones. Escoge la que mejor cuente cómo está el colegio.</div>
@@ -302,7 +317,7 @@ body.foco .hero,body.foco #aviso-modo{display:none}
    <details class="ayuda" style="margin-top:12px"><summary>Ver qué significa cada nivel</summary><div class="escala" id="escala" style="margin-top:10px"></div></details>
    <div class="row" style="margin-top:16px"><button class="btn o" data-go="evaluar">✍️ Elegir gestión y empezar</button><button class="btn l" data-go="resultados">📊 Ver resultados</button></div>
   </div>
-  <div class="anon"><span class="i">🔒</span><div><b>Anónima de verdad.</b> No se guarda nombre, correo ni dirección de internet. Evita escribir nombres de personas en los comentarios.</div></div>
+  <div class="anon"><img class="sp" src="assets/img/autoevaluacion/anonimo.png" alt="" width="60" height="60" decoding="async" style="flex:none"><div><b>Anónima de verdad.</b> No se guarda nombre, correo ni dirección de internet. Evita escribir nombres de personas en los comentarios.</div></div>
  </section>
 
  <!-- EVALUAR -->
@@ -361,6 +376,10 @@ const pct=(a,b)=>b?Math.round(100*a/b):0;
 const LVC=['#c9d2cb','#d92d3a','#f2a33a','#6bb34a','#1c7a3e'];
 const GCOL={GD:'#2b7a3a',GA:'#d97a06',GF:'#12306e',GC:'#d92d3a'};
 const GEMO={GD:'🧭',GA:'📚',GF:'🏫',GC:'🤝'};
+const IMG='assets/img/autoevaluacion/';
+const GIMG={GD:'gestion-directiva',GA:'gestion-academica',GF:'gestion-administrativa',GC:'gestion-comunidad'};
+const NIMG=['nivel-1-semilla','nivel-2-brote','nivel-3-planta','nivel-4-arbol'];
+const img=(n,c,s)=>`<img class="sp ${c||''}" src="${IMG}${n}.png" alt="" width="${s||64}" height="${s||64}" decoding="async">`;
 const SHORT={GDP1:'Direccionamiento',GDP2:'Gobierno escolar',GDP3:'Cultura institucional',GDP4:'Clima escolar',GDP5:'Bienestar y permanencia',GAP1:'Diseño pedagógico',GAP2:'Prácticas de aula',GAP3:'Seguimiento académico',GFP1:'Cobertura',GFP2:'Planta física y recursos',GFP3:'Talento humano',GFP4:'Apoyo financiero',GCP1:'Accesibilidad',GCP2:'Proyección a la comunidad',GCP3:'Participación y convivencia'};
 const gCorto=n=>{const s=n.replace('Gestión ','');return s.charAt(0).toUpperCase()+s.slice(1)};
 const nivelDe=m=>m==null?0:m<1.5?1:m<2.5?2:m<3.5?3:4;
@@ -465,7 +484,7 @@ function barra(label,o,btnId){return`<div class="bar-row"><${btnId?`button class
 
 /* ================= inicio ================= */
 function pintarInicio(){
- $('#escala').innerHTML=INST.niveles.map(l=>`<div class="lv lv${l.n}"><b>${l.n} · ${esc(l.t)}</b><small>${esc(l.d)}</small></div>`).join('');
+ $('#escala').innerHTML=INST.niveles.map(l=>`<div class="lv lv${l.n}">${img(NIMG[l.n-1],'lvi',56)}<div><b>${l.n} · ${esc(l.t)}</b><small>${esc(l.d)}</small></div></div>`).join('');
   $('#rol').innerHTML='<option value="">Prefiero no decirlo</option>'+CFG.roles.map(r=>`<option>${esc(r)}</option>`).join('');
  $('#rol').value=mine.rol||'';
 }
@@ -506,7 +525,7 @@ function pintarMenu(){
   const cs=compsG(g),h=cs.filter(c=>mine.r[c.id]!==undefined).length,done=env[g.id];
   const estado=done?'✅ Enviada':h?`✏️ En curso · ${h} de ${cs.length}`:'Sin empezar';
   const btn=done?'Revisar o reenviar':h?'Continuar':'Evaluar';
-  return`<button class="mg" data-mg="${i}" style="--gc:${g.color}"><span class="e">${GEMO[g.id]}</span><b>${esc(gCorto(g.nombre))}</b><small>${g.procesos.length} procesos · ${cs.length} preguntas · unos ${minutos(cs.length)} min</small><span class="st">${estado}</span><span class="pb"><i style="width:${pct(h,cs.length)}%"></i></span><span class="go">${btn} →</span>${pg&&pg[g.id]?`<em>${pg[g.id]} persona${pg[g.id]>1?'s':''} ya la evaluó${pg[g.id]>1?'ron':''}</em>`:''}</button>`}).join('');
+  return`<button class="mg" data-mg="${i}" style="--gc:${g.color}">${img(GIMG[g.id],"mgi",76)}<b>${esc(gCorto(g.nombre))}</b><small>${g.procesos.length} procesos · ${cs.length} preguntas · unos ${minutos(cs.length)} min</small><span class="st">${estado}</span><span class="pb"><i style="width:${pct(h,cs.length)}%"></i></span><span class="go">${btn} →</span>${pg&&pg[g.id]?`<em>${pg[g.id]} persona${pg[g.id]>1?'s':''} ya la evaluó${pg[g.id]>1?'ron':''}</em>`:''}</button>`}).join('');
 }
 function abrirGestion(i){
  wizG=i;const g=gOf(i),st=stepsOf(g);mine.pos=mine.pos||{};
@@ -517,7 +536,7 @@ function abrirGestion(i){
 }
 function pintarTop(){
  const g=gOf(wizG),cs=compsG(g),h=cs.filter(c=>mine.r[c.id]!==undefined).length;
- $('#wz-top').innerHTML=`<button class="btn l sm" data-wmenu>☰ Menú</button><div class="wt"><b style="color:${g.color}">${GEMO[g.id]} ${esc(gCorto(g.nombre))}</b><small>${h} de ${cs.length} respondidas · tu avance se guarda solo</small></div>`;
+ $('#wz-top').innerHTML=`<button class="btn l sm" data-wmenu>☰ Menú</button><div class="wt"><b style="color:${g.color}">${img(GIMG[g.id],"inl",30)} ${esc(gCorto(g.nombre))}</b><small>${h} de ${cs.length} respondidas · tu avance se guarda solo</small></div>`;
 }
 function navHTML(s){
  const prev=wizPos>0?'<button class="btn l" data-wn="-1">← Anterior</button>':'<button class="btn l" data-wmenu>← Menú</button>';
@@ -538,20 +557,20 @@ function introHTML(g,p){
  const n=p.componentes.length;
  return`<span class="crumb">Proceso ${p.n} de ${g.procesos.length}</span><h3 class="q">${esc(p.nombre)}</h3><p class="pd">${esc(primera(p.descripcion))}</p>
  <details class="ayuda"><summary>Leer la descripción completa</summary><p>${esc(p.descripcion)}</p></details>
- ${p.evidencias&&p.evidencias.length?`<details class="ayuda"><summary>🗂️ Evidencias que sugiere la guía para este proceso</summary><ul>${p.evidencias.map(e=>`<li><b>${esc(e.f)}:</b> ${esc(e.e)}</li>`).join('')}</ul></details>`:''}
+ ${p.evidencias&&p.evidencias.length?`<details class="ayuda"><summary>${img("evidencias","inl",26)} Evidencias que sugiere la guía para este proceso</summary><ul>${p.evidencias.map(e=>`<li><b>${esc(e.f)}:</b> ${esc(e.e)}</li>`).join('')}</ul></details>`:''}
  <div class="chips"><span>${n} pregunta${n>1?'s':''}</span><span>unos ${Math.max(1,Math.round(n*.5))} min</span></div>`;
 }
 function pregHTML(g,c){
  const p=PBY[c.pid],idx=p.componentes.indexOf(c)+1,v=mine.r[c.id];
  return`<span class="crumb">Proceso ${p.n} · ${esc(p.nombre)}</span><h3 class="q">${esc(c.nombre)}</h3><p class="hint">Elige la descripción que mejor cuenta cómo está hoy el colegio. <span aria-hidden="true">(Atajo: teclas 1 a 4)</span></p>
- <div class="opts v" role="radiogroup" aria-label="${esc(c.nombre)}">${c.niveles.map((d,i)=>`<label class="opt" style="--c:${LVC[i+1]}"><input type="radio" name="${c.id}" value="${i+1}"${v===i+1?' checked':''}><b><i>${i+1}</i>${esc(INST.niveles[i].t)}</b>${esc(d)}</label>`).join('')}</div>
+ <div class="opts v" role="radiogroup" aria-label="${esc(c.nombre)}">${c.niveles.map((d,i)=>`<label class="opt" style="--c:${LVC[i+1]}"><input type="radio" name="${c.id}" value="${i+1}"${v===i+1?' checked':''}><b>${img(NIMG[i],"nv",62)}${i+1} · ${esc(INST.niveles[i].t)}</b>${esc(d)}</label>`).join('')}</div>
  <label class="na"><input type="radio" name="${c.id}" value="0"${v===0?' checked':''}> No tengo información suficiente para valorarlo</label>
  <div class="qn">Pregunta ${idx} de ${p.componentes.length} de este proceso</div>`;
 }
 function finHTML(g){
  const cs=compsG(g),n=cs.filter(c=>mine.r[c.id]!==undefined).length,val=cs.filter(c=>mine.r[c.id]>0).length,falta=cs.filter(c=>mine.r[c.id]===undefined);
  const env=enviadas()[g.id],needKey=CFG.pedirClaveEnviar&&MODE==='real';
- return`<span class="crumb">Último paso</span><h3 class="q">Revisa y envía: ${esc(gCorto(g.nombre))}</h3>
+ return`${img("enviar","fin-img",72)}<span class="crumb">Último paso</span><h3 class="q">Revisa y envía: ${esc(gCorto(g.nombre))}</h3>
  <p class="hint">Cada cuadrito es una pregunta: <b style="color:${LVC[1]}">rojo</b> = nivel 1 … <b style="color:${LVC[4]}">verde oscuro</b> = nivel 4, gris = sin responder.</p>
  ${g.procesos.map(p=>`<div class="fin-row"><b>${esc(p.nombre)}</b><span class="sqs">${p.componentes.map(c=>{const v=mine.r[c.id];return`<span class="sq" style="background:${v===undefined?'#dfe6df':LVC[v]}" title="${esc(c.nombre)}"></span>`}).join('')}</span>
   <details><summary>💬 Agregar un comentario (opcional)</summary><textarea data-pc="${p.id}" rows="2" maxlength="1000" placeholder="¿Qué evidencia viste? ¿Qué mejorarías? (sin nombres de personas)">${esc(mine.c[p.id]||'')}</textarea></details></div>`).join('')}
@@ -576,7 +595,7 @@ function graciasHTML(g){
  const env=enviadas(),faltan=INST.gestiones.filter(x=>!env[x.id]);
  $('#wz-bar i').style.width='100%';$('#wz-nav').innerHTML='';
  $('#wz').className='wz in-r';
- $('#wz').innerHTML=`<div class="gracias"><div class="big">🎉</div><h3 class="q">¡Gracias! Quedó registrada la ${esc(g.nombre)}</h3><p class="sub">Tu respuesta es anónima${MODE==='local'?' (modo de prueba: se guardó solo en este dispositivo)':''}.</p>
+ $('#wz').innerHTML=`<div class="gracias">${img("gracias","gr",130)}<h3 class="q">¡Gracias! Quedó registrada la ${esc(g.nombre)}</h3><p class="sub">Tu respuesta es anónima${MODE==='local'?' (modo de prueba: se guardó solo en este dispositivo)':''}.</p>
  <div class="row" style="justify-content:center;margin-top:10px"><button class="btn o" data-wmenu>${faltan.length?'✍️ Evaluar otra gestión':'☰ Volver al menú'}</button><button class="btn l" data-go="resultados">📊 Ver resultados</button></div></div>`;
  toast('¡Gracias! Gestión enviada');
 }
@@ -615,7 +634,7 @@ function pintarResultados(){
  $('#f-rol').innerHTML='<option value="">Todo el colegio</option>'+valid.map(r=>`<option${r===rolF?' selected':''}>${esc(r)}</option>`).join('');
  $('#act').textContent=DEMO?'Datos de ejemplo':horaAct?'Actualizado '+horaAct:'';
  const rows=filtrar(DATA),a=agg(rows);lastA=a;const pg=personasPorG(rows);
- if(!rows.length){body.innerHTML=`<div class="card vacio"><div class="e">📭</div><h2>Aún no hay respuestas</h2><p>Cuando los primeros docentes envíen su autoevaluación, aquí aparecerá el tablero.</p><div class="row" style="justify-content:center;margin-top:12px"><button class="btn o" data-go="evaluar">✍️ Ser la primera persona</button><button class="btn l" id="btn-demo2">🧪 Ver ejemplo</button></div></div>`;return}
+ if(!rows.length){body.innerHTML=`<div class="card vacio">${img("sin-datos","vc",120)}<h2>Aún no hay respuestas</h2><p>Cuando los primeros docentes envíen su autoevaluación, aquí aparecerá el tablero.</p><div class="row" style="justify-content:center;margin-top:12px"><button class="btn o" data-go="evaluar">✍️ Ser la primera persona</button><button class="btn l" id="btn-demo2">🧪 Ver ejemplo</button></div></div>`;return}
  const cob=pct(a.all.n,rows.length*total());
  const ord=ALLC.filter(c=>a.comp[c.id].n>=1).sort((x,y)=>a.comp[y.id].mean-a.comp[x.id].mean);
  const fort=ord.slice(0,5),opor=ord.slice(-5).reverse(),div=ALLC.filter(c=>a.comp[c.id].div);
@@ -667,7 +686,7 @@ function frase(a,rows){
 function pintarInforme(){
  const b=$('#inf-body'),rows=DATA;
  if(errCarga==='clave'){b.innerHTML='<div class="card vacio"><div class="e">🔐</div><p>Los resultados están protegidos. Entra con la clave desde la pestaña Resultados.</p></div>';return}
- if(!rows.length){b.innerHTML='<div class="card vacio"><div class="e">📭</div><h2>El informe se arma solo</h2><p>Aparecerá aquí cuando haya respuestas.</p><button class="btn l noprint" id="btn-demo3">🧪 Ver informe de ejemplo</button></div>';return}
+ if(!rows.length){b.innerHTML='<div class="card vacio">${img("informe","vc",120)}<h2>El informe se arma solo</h2><p>Aparecerá aquí cuando haya respuestas.</p><button class="btn l noprint" id="btn-demo3">🧪 Ver informe de ejemplo</button></div>';return}
  const a=agg(rows);
  const ord=ALLC.filter(c=>a.comp[c.id].n).sort((x,y)=>a.comp[y.id].mean-a.comp[x.id].mean);
  const fort=ALLC.filter(c=>a.comp[c.id].nivel>=3),opor=ALLC.filter(c=>a.comp[c.id].nivel&&a.comp[c.id].nivel<=2);
@@ -679,7 +698,7 @@ function pintarInforme(){
  const prio=PROCS.filter(p=>a.proc[p.id].n).sort((x,y)=>a.proc[x.id].mean-a.proc[y.id].mean).slice(0,5);
  b.innerHTML=`
  ${DEMO?'<div class="aviso">🧪 Informe con <b>datos de ejemplo</b>.</div>':''}
- <div class="card"><h2>1. Resumen</h2>${frase(a,rows)}<div class="grid g2" style="margin-top:12px"><div class="chart" style="max-width:380px;margin:auto">${gauge(a.all.mean)}</div><div>${INST.gestiones.map(g=>barra(gCorto(g.nombre)+' · '+personasPorG(rows)[g.id]+' pers.',a.gest[g.id])).join('')}${legend()}</div></div></div>
+ <div class="card"><h2>${img("informe","inl",40)} 1. Resumen</h2>${frase(a,rows)}<div class="grid g2" style="margin-top:12px"><div class="chart" style="max-width:380px;margin:auto">${gauge(a.all.mean)}</div><div>${INST.gestiones.map(g=>barra(gCorto(g.nombre)+' · '+personasPorG(rows)[g.id]+' pers.',a.gest[g.id])).join('')}${legend()}</div></div></div>
  <div class="card"><h2>2. Perfil institucional <small style="font-size:.7em;color:var(--mut)">(Paso 3 de la guía)</small></h2><p class="sub">Valoración de los 15 procesos. Sirve para comparar en próximas autoevaluaciones los avances, estancamientos y retrocesos.</p><div class="chart" style="max-width:640px;margin:auto">${radar(PROCS.map(p=>a.proc[p.id].mean))}</div>
   ${INST.gestiones.map(g=>g.procesos.map(p=>barra(`${SHORT[p.id]}`,a.proc[p.id])).join('')).join('')}</div>
  <div class="card"><h2>3. Matriz de resultados <small style="font-size:.7em;color:var(--mut)">(Anexo 2 de la guía)</small></h2><p class="sub">Número de personas que marcó cada nivel en cada componente. El nivel resulta del promedio (menos de 1,5 → 1; hasta 2,4 → 2; hasta 3,4 → 3; desde 3,5 → 4).</p>${tabla}</div>
