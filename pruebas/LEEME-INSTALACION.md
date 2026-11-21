@@ -11,9 +11,16 @@ Usa **una hoja de Google Sheets** como base de datos y **Google Apps Script** co
    - *Ejecutar como:* **Yo**
    - *Quién tiene acceso:* **Cualquier persona** ⚠️ (por defecto sale «Solo yo»: si se deja así, **nadie podrá conectarse** y el portal dirá «no se pudo conectar»).
 6. Copia la **URL** (termina en `/exec`) y pégala en `datos/pruebas-config.json`.
-7. Comprueba: abre `TU-URL/exec?accion=ping` en el navegador → debe verse `{"ok":true,"version":"1.3"}`.
+7. Comprueba: abre `TU-URL/exec?accion=ping` en el navegador → debe verse `{"ok":true,"version":"1.4"}`.
 
 > Si en el paso 5 no aparece la opción **«Cualquier persona»**, tu cuenta de Google pertenece a una organización que la bloquea. Haz el proceso con una cuenta Gmail normal (por ejemplo `gestionacademica…@gmail.com`).
+
+## Actualizar a la versión 1.4 (necesaria para tiempos y seguridad)
+La v1.4 guarda las opciones de cada prueba (tiempo para pensar, límite por pregunta, anti-fraude…) y el registro de salidas de los estudiantes. **Sin esta versión esas opciones se ignoran.**
+1. Pega el nuevo `Code.gs` en el editor y guarda.
+2. **Implementar → Administrar implementaciones → ✏️ → Versión: Nueva versión → Implementar** (la URL no cambia; revisa que el acceso siga en «Cualquier persona»).
+3. No hace falta tocar la hoja: las columnas nuevas se agregan solas al publicar la siguiente prueba.
+4. Comprueba con `…/exec?accion=ping` → `{"ok":true,"version":"1.4"}`.
 
 ## 📝 Menú «ColBolívar» en la hoja (administración sin tocar código)
 Después de pegar `Code.gs` (v1.3), **recarga la hoja** (F5). Aparece el menú **📝 ColBolívar** junto a «Ayuda». Si no aparece: en el editor de Apps Script elige la función `onOpen` y pulsa ▶ Ejecutar.
@@ -66,6 +73,8 @@ A mano:
 
 ## Límites
 - La selección múltiple se califica sola; las **preguntas abiertas** las califica el docente en el reporte.
+- **Word (.docx):** el portal lee el documento en el navegador (no se envía a ningún servidor). Detecta preguntas, opciones, textos compartidos, tablas, imágenes y fórmulas, y la respuesta correcta si está marcada (←, ✓, *, resaltado, sombreado, subrayado, negrita, color, «Respuesta: B» o clave al final). No lee cuadros de texto ni formas, ni imágenes en formato EMF/WMF, ni archivos .doc antiguos (guárdalos como .docx). Siempre se revisa en el editor antes de publicar.
+- **Seguridad:** el anti-fraude detecta salidas de la pestaña/ventana, salida de pantalla completa e intentos de copiar. Es un **disuasivo**, no un candado: no detecta otro dispositivo ni una pantalla dividida.
 - Las figuras e ilustraciones llegan con el archivo **`prueba-en-linea.json`** que crea el generador de pruebas actualizado (parche `exportar-en-linea.patch`). Las tablas y recuadros de texto se dibujan solos.
 - Google limita las ejecuciones simultáneas (~30): un curso de 40 estudiantes funciona; grupos mucho más grandes pueden notar lentitud.
 - Es un **apoyo**: las notas oficiales se registran en la plataforma institucional.

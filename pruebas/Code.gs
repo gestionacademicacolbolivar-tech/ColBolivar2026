@@ -12,11 +12,11 @@
  *   1) Pegar este archivo en Extensiones > Apps Script   2) Ejecutar «instalar» una vez
  *   3) Implementar > Nueva implementación > Aplicación web (ejecutar como: yo · acceso: cualquier persona)
  */
-var VERSION = '1.3';
+var VERSION = '1.4';
 var HOJAS = { pruebas: 'Pruebas', resp: 'Respuestas', datos: '_datos', docentes: 'Docentes' };
 var COL = {
-  pruebas: ['codigo', 'titulo', 'area', 'grado', 'docente', 'cursos', 'modo', 'minutos', 'abre', 'cierra', 'mostrar', 'intentos', 'mezclar', 'estado', 'creada', 'n_multiple', 'n_abiertas', 'pin_hash', 'docente_cod'],
-  resp: ['id', 'fecha', 'codigo', 'nombre', 'curso', 'intento', 'aciertos', 'total', 'segundos', 'salidas', 'respuestas', 'abiertas', 'pts_abiertas'],
+  pruebas: ['codigo', 'titulo', 'area', 'grado', 'docente', 'cursos', 'modo', 'minutos', 'abre', 'cierra', 'mostrar', 'intentos', 'mezclar', 'estado', 'creada', 'n_multiple', 'n_abiertas', 'pin_hash', 'docente_cod', 'opciones'],
+  resp: ['id', 'fecha', 'codigo', 'nombre', 'curso', 'intento', 'aciertos', 'total', 'segundos', 'salidas', 'respuestas', 'abiertas', 'pts_abiertas', 'fraude', 'tq', 'forzada'],
   datos: ['codigo', 'tipo', 'idx', 'trozo'],
   docentes: ['codigo', 'nombre', 'sede', 'area', 'fecha', 'estado']
 };
@@ -24,6 +24,17 @@ var TROZO = 40000;            // caracteres por celda (el límite de Sheets es 5
 var TROZO_CACHE = 30000;      // la caché admite ~100 KB por valor
 var RX_IMG = /^data:image\/(webp|png|jpeg);base64,[A-Za-z0-9+\/=]+$/;   // solo se aceptan imágenes incrustadas (WebP/PNG/JPEG)
 var ALFABETO = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';   // sin 0/O/1/I para evitar confusiones
+
+/** Opciones de la prueba (tiempos y anti-fraude). Todo lo que llegue se sanea: números dentro de rangos, textos de una lista cerrada. */
+function opcionesPorDefecto_() { return { piensa: 0, limite: 0, volver: true, mezclarOpc: true, fraude: { modo: 'alerta', maxSalidas: 3, segundos: 15, pantallaCompleta: false, bloquearCopiar: true }, confeti: true }; }
+function entero_(v, min, max, def) { v = Math.round(Number(v)); return isNaN(v) ? def : Math.max(min, Math.min(max, v)); }
+function sanearOpciones_(o) {
+  var d = opcionesPorDefecto_(); o = o || {}; var f = o.fraude || {};
+  return { piensa: entero_(o.piensa, 0, 600, d.piensa), limite: entero_(o.limite, 0, 900, d.limite), volver: o.volver === false ? false : true, mezclarOpc: o.mezclarOpc === false ? false : true,
+    fraude: { modo: ['off', 'registrar', 'alerta', 'estricto'].indexOf(f.modo) >= 0 ? f.modo : d.fraude.modo, maxSalidas: entero_(f.maxSalidas, 1, 10, d.fraude.maxSalidas),
+      segundos: entero_(f.segundos, 5, 60, d.fraude.segundos), pantallaCompleta: !!f.pantallaCompleta, bloquearCopiar: f.bloquearCopiar === false ? false : true },
+    confeti: o.confeti === false ? false : true };
+}
 
 /* ===================== INSTALACIÓN ===================== */
 function instalar() {
@@ -250,7 +261,13 @@ function publicar_(d) {
   var doc = docenteDe_(d.codigoDocente);
   var pub = d.publico || {}, clave = d.clave || { m: {}, a: {} }, ps = pub.preguntas || [];
   if (!ps.length || ps.length > 100) throw error_('prueba_invalida', 'La prueba debe tener entre 1 y 100 preguntas.');
+  asegurarEncabezados_();
   (ps).concat(pub.estimulos || []).forEach(function (o) { if (o && o.img && !RX_IMG.test(String(o.img))) delete o.img; });
+  ps.forEach(function (q) {
+    if (q.opImg) q.opImg = (q.opImg || []).map(function (u) { return RX_IMG.test(String(u || '')) ? u : ''; });
+    q.piensa = q.piensa === undefined || q.piensa === null || q.piensa === '' ? null : entero_(q.piensa, 0, 600, 0);   // null = usa el valor general de la prueba
+    q.limite = q.limite === undefined || q.limite === null || q.limite === '' ? null : entero_(q.limite, 0, 900, 0);
+  });
   var nM = 0, nA = 0;
   ps.forEach(function (q) {
     if (!q.id) throw error_('prueba_invalida', 'Falta el identificador de una pregunta.');
@@ -272,7 +289,7 @@ function publicar_(d) {
       abre: validaFecha_(c.abre), cierra: validaFecha_(c.cierra),
       mostrar: ['completo', 'nota', 'nada'].indexOf(c.mostrar) >= 0 ? c.mostrar : 'nota',
       intentos: Math.max(1, Math.min(99, Number(c.intentos) || 1)), mezclar: c.mezclar ? 'si' : 'no',
-      estado: 'activa', creada: new Date().toISOString(), n_multiple: nM, n_abiertas: nA, pin_hash: hash_(pin, codigo)
+      estado: 'activa', creada: new Date().toISOString(), n_multiple: nM, n_abiertas: nA, pin_hash: hash_(pin, codigo), opciones: JSON.stringify(sanearOpciones_(c.opciones))
     };
     anexar_('pruebas', fila);
     guardarGrande_(codigo, 'publico', pub); guardarGrande_(codigo, 'clave', clave);
@@ -288,7 +305,7 @@ function prueba_(codigo) {
 }
 function metaPublica_(p) {
   return { codigo: p.codigo, titulo: p.titulo, area: p.area, grado: p.grado, docente: p.docente, cursos: p.cursos ? String(p.cursos).split(',') : [], modo: p.modo,
-    minutos: Number(p.minutos) || 0, mostrar: p.mostrar, mezclar: p.mezclar === 'si', intentos: Number(p.intentos) || 1, abre: p.abre, cierra: p.cierra, estado: p.estado };
+    minutos: Number(p.minutos) || 0, mostrar: p.mostrar, mezclar: p.mezclar === 'si', intentos: Number(p.intentos) || 1, abre: p.abre, cierra: p.cierra, estado: p.estado, opciones: sanearOpciones_(parse_(p.opciones, {})) };
 }
 function abierta_(p) {
   var t = Date.now();
@@ -317,12 +334,21 @@ function entregar_(d) {
     pub.preguntas.forEach(function (q) { if (q.tipo === 'abierta') ab_[q.id] = limpio_((d.abiertas || {})[q.id], 2000); else resp[q.id] = (d.respuestas || {})[q.id] === undefined ? null : Number((d.respuestas || {})[q.id]); });
     var fila = { id: cid || Utilities.getUuid(), fecha: new Date().toISOString(), codigo: p.codigo, nombre: nombre, curso: curso, intento: mias + 1,
       aciertos: g.aciertos, total: g.total, segundos: Math.max(0, Math.min(86400, Number(d.segundos) || 0)), salidas: Math.max(0, Math.min(999, Number(d.salidas) || 0)),
-      respuestas: JSON.stringify(resp), abiertas: JSON.stringify(ab_), pts_abiertas: '{}' };
+      respuestas: JSON.stringify(resp), abiertas: JSON.stringify(ab_), pts_abiertas: '{}', fraude: JSON.stringify(fraude_(d.fraude)), tq: JSON.stringify(tiempos_(d.tq, pub)), forzada: limpio_(d.forzada, 30) };
     anexar_('resp', fila);
     return { ok: true, resultado: armarResultado_(p, pub, clave, fila) };
   } finally { lock.releaseLock(); }
 }
 
+/** Registro de intentos de fraude enviado por el navegador del estudiante: [{ t: tipo, q: n.º de pregunta, h: hora }] (máx. 60). */
+function fraude_(a) {
+  if (!Array.isArray(a)) return [];
+  return a.slice(0, 60).map(function (x) { x = x || {}; return { t: limpio_(x.t, 30), q: entero_(x.q, 0, 200, 0), h: limpio_(x.h, 30) }; });
+}
+/** Segundos que tardó en cada pregunta: { id: segundos } (solo ids que existen). */
+function tiempos_(o, pub) {
+  var r = {}; o = o || {}; pub.preguntas.forEach(function (q) { if (o[q.id] !== undefined) r[q.id] = entero_(o[q.id], 0, 7200, 0); }); return r;
+}
 /** Califica las preguntas de selección múltiple. La clave: { m: { id: { ci, just, err[] } } } */
 function calificar_(pub, clave, respuestas) {
   var aciertos = 0, total = 0;
@@ -361,16 +387,20 @@ function resultados_(d) {
     var n = notaDe_(f, pub), rs = parse_(f.respuestas, {}), okq = {};
     pub.preguntas.forEach(function (q) { if (q.tipo !== 'abierta') okq[q.id] = (rs[q.id] === null || rs[q.id] === undefined) ? null : (Number(rs[q.id]) === clave.m[q.id].ci ? 1 : 0); });
     return { ok: okq, id: f.id, nombre: f.nombre, curso: f.curso, intento: Number(f.intento), aciertos: Number(f.aciertos), total: Number(f.total), nota: n.nota, provisional: n.provisional,
-      segundos: Number(f.segundos), salidas: Number(f.salidas), fecha: f.fecha, abiertas: parse_(f.abiertas, {}), pts: parse_(f.pts_abiertas, {}) };
+      segundos: Number(f.segundos), salidas: Number(f.salidas), fecha: f.fecha, abiertas: parse_(f.abiertas, {}), pts: parse_(f.pts_abiertas, {}), fraude: parse_(f.fraude, []), forzada: f.forzada || '' };
   });
   var preguntas = pub.preguntas.map(function (q, i) {
     if (q.tipo === 'abierta') return { id: q.id, n: i + 1, tipo: 'abierta', pregunta: q.pregunta, enunciado: q.enunciado || '', puntos: Number(q.puntos) || 1, modelo: (clave.a && clave.a[q.id] || {}).modelo || '', criterios: (clave.a && clave.a[q.id] || {}).criterios || [] };
     var k = clave.m[q.id], dist = q.opciones.map(function () { return 0; }), omit = 0, ok = 0;
     filas.forEach(function (f) { var el = parse_(f.respuestas, {})[q.id]; if (el === null || el === undefined) omit++; else { dist[el]++; if (Number(el) === k.ci) ok++; } });
     return { id: q.id, n: i + 1, tipo: 'multiple', estimulo: q.estimulo || '', enunciado: q.enunciado || '', pregunta: q.pregunta, opciones: q.opciones, correcta: k.ci, just: k.just || '', err: k.err || [],
-      competencia: q.competencia || '', componente: q.componente || '', nivel: q.nivel || '', dist: dist, omitidas: omit, aciertos: ok, respondieron: filas.length };
+      competencia: q.competencia || '', componente: q.componente || '', nivel: q.nivel || '', dist: dist, omitidas: omit, aciertos: ok, respondieron: filas.length, tiempoMedio: mediaTq_(filas, q.id) };
   });
   return { ok: true, meta: metaPublica_(p), abierta: abierta_(p), publico: { estimulos: pub.estimulos || [] }, estudiantes: est, preguntas: preguntas, version: VERSION };
+}
+function mediaTq_(filas, id) {
+  var v = filas.map(function (f) { return parse_(f.tq, {})[id]; }).filter(function (x) { return typeof x === 'number'; });
+  return v.length ? Math.round(v.reduce(function (a, b) { return a + b; }, 0) / v.length) : null;
 }
 function calificar_abierta_(d) {
   var p = auth_(d.codigo, d.pin), pub = leerGrande_(p.codigo, 'publico');
